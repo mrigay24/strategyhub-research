@@ -1,0 +1,161 @@
+{
+  "large_cap_momentum": {
+    "longshort": {
+      "sharpe_ratio": -0.151986,
+      "cagr": 0.012743,
+      "max_drawdown": -0.147103,
+      "volatility": 0.042365,
+      "total_return": 0.371585
+    },
+    "longonly_sharpe": 0.55697,
+    "sharpe_improvement": -0.708956
+  },
+  "52_week_high_breakout": {
+    "longshort": {
+      "sharpe_ratio": 0.297758,
+      "cagr": 0.033987,
+      "max_drawdown": -0.158052,
+      "volatility": 0.049139,
+      "total_return": 1.302414
+    },
+    "longonly_sharpe": 0.592673,
+    "sharpe_improvement": -0.294915
+  },
+  "deep_value_all_cap": {
+    "longshort": {
+      "sharpe_ratio": -0.827954,
+      "cagr": -0.017947,
+      "max_drawdown": -0.393296,
+      "volatility": 0.044817,
+      "total_return": -0.363581
+    },
+    "longonly_sharpe": 0.53137,
+    "sharpe_improvement": -1.359324
+  },
+  "high_quality_roic": {
+    "longshort": {
+      "sharpe_ratio": -0.449881,
+      "cagr": -0.004761,
+      "max_drawdown": -0.285073,
+      "volatility": 0.052052,
+      "total_return": -0.112275
+    },
+    "longonly_sharpe": 0.577382,
+    "sharpe_improvement": -1.027263
+  },
+  "low_volatility_shield": {
+    "longshort": {
+      "sharpe_ratio": -0.483445,
+      "cagr": -0.012537,
+      "max_drawdown": -0.463658,
+      "volatility": 0.063319,
+      "total_return": -0.270067
+    },
+    "longonly_sharpe": 0.65902,
+    "sharpe_improvement": -1.142465
+  },
+  "dividend_aristocrats": {
+    "longshort": {
+      "sharpe_ratio": 0.466833,
+      "cagr": 0.063275,
+      "max_drawdown": -0.344739,
+      "volatility": 0.099134,
+      "total_return": 3.622387
+    },
+    "longonly_sharpe": 0.552152,
+    "sharpe_improvement": -0.085319
+  },
+  "moving_average_trend": {
+    "longshort": {
+      "sharpe_ratio": -0.112269,
+      "cagr": 0.014018,
+      "max_drawdown": -0.154836,
+      "volatility": 0.045084,
+      "total_return": 0.415318
+    },
+    "longonly_sharpe": 0.564026,
+    "sharpe_improvement": -0.676295
+  },
+  "rsi_mean_reversion": {
+    "longshort": {
+      "sharpe_ratio": -0.373426,
+      "cagr": 0.006319,
+      "max_drawdown": -0.124255,
+      "volatility": 0.035047,
+      "total_return": 0.170202
+    },
+    "longonly_sharpe": 0.641091,
+    "sharpe_improvement": -1.014517
+  },
+  "value_momentum_blend": {
+    "longshort": {
+      "sharpe_ratio": -0.384325,
+      "cagr": 0.007696,
+      "max_drawdown": -0.105405,
+      "volatility": 0.030853,
+      "total_return": 0.21082
+    },
+    "longonly_sharpe": 0.553707,
+    "sharpe_improvement": -0.938032
+  },
+  "quality_momentum": {
+    "longshort": {
+      "sharpe_ratio": -0.449881,
+      "cagr": -0.004761,
+      "max_drawdown": -0.285073,
+      "volatility": 0.052052,
+      "total_return": -0.112275
+    },
+    "longonly_sharpe": 0.588241,
+    "sharpe_improvement": -1.038122
+  },
+  "quality_low_vol": {
+    "longshort": {
+      "sharpe_ratio": -0.605016,
+      "cagr": -0.01415,
+      "max_drawdown": -0.38461,
+      "volatility": 0.054185,
+      "total_return": -0.299252
+    },
+    "longonly_sharpe": 0.570434,
+    "sharpe_improvement": -1.17545
+  },
+  "composite_factor_score": {
+    "longshort": {
+      "sharpe_ratio": -0.468077,
+      "cagr": -0.001236,
+      "max_drawdown": -0.179921,
+      "volatility": 0.043362,
+      "total_return": -0.030395
+    },
+    "longonly_sharpe": 0.590773,
+    "sharpe_improvement": -1.05885
+  },
+  "volatility_targeting": {
+    "longshort": {
+      "sharpe_ratio": -0.483445,
+      "cagr": -0.012537,
+      "max_drawdown": -0.463658,
+      "volatility": 0.063319,
+      "total_return": -0.270067
+    },
+    "longonly_sharpe": 0.599279,
+    "sharpe_improvement": -1.082724
+  },
+  "earnings_surprise_momentum": {
+    "longshort": {
+      "sharpe_ratio": -1.023716,
+      "cagr": -0.010651,
+      "max_drawdown": -0.243496,
+      "volatility": 0.029569,
+      "total_return": -0.23447
+    },
+    "longonly_sharpe": 0.545592,
+    "sharpe_improvement": -1.569308
+  },
+  "_benchmark": {
+    "sharpe_ratio": 0.693646,
+    "cagr": 0.149737,
+    "max_drawdown": -0.546425
+  }
+}

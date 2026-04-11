@@ -1,0 +1,804 @@
+{
+  "timestamp": "2026-03-05 22:31:36",
+  "avg_inter_strategy_correlation": 0.787895,
+  "diversification_ratios": {
+    "equal_weight_all14": 1.05109,
+    "tier1_equal_weight": 1.026997,
+    "risk_parity_all14": 1.115912
+  },
+  "clustering": {
+    "high_corr_pairs": [
+      [
+        "quality_momentum",
+        "composite_factor_score",
+        0.996
+      ],
+      [
+        "quality_low_vol",
+        "composite_factor_score",
+        0.988
+      ],
+      [
+        "quality_momentum",
+        "quality_low_vol",
+        0.979
+      ],
+      [
+        "52_week_high_breakout",
+        "value_momentum_blend",
+        0.973
+      ],
+      [
+        "52_week_high_breakout",
+        "moving_average_trend",
+        0.969
+      ],
+      [
+        "high_quality_roic",
+        "quality_low_vol",
+        0.968
+      ],
+      [
+        "52_week_high_breakout",
+        "low_volatility_shield",
+        0.967
+      ],
+      [
+        "value_momentum_blend",
+        "composite_factor_score",
+        0.964
+      ],
+      [
+        "value_momentum_blend",
+        "quality_momentum",
+        0.964
+      ],
+      [
+        "52_week_high_breakout",
+        "quality_momentum",
+        0.961
+      ],
+      [
+        "52_week_high_breakout",
+        "composite_factor_score",
+        0.959
+      ],
+      [
+        "high_quality_roic",
+        "composite_factor_score",
+        0.957
+      ],
+      [
+        "high_quality_roic",
+        "quality_momentum",
+        0.95
+      ],
+      [
+        "moving_average_trend",
+        "value_momentum_blend",
+        0.95
+      ],
+      [
+        "52_week_high_breakout",
+        "rsi_mean_reversion",
+        0.949
+      ],
+      [
+        "low_volatility_shield",
+        "moving_average_trend",
+        0.943
+      ],
+      [
+        "low_volatility_shield",
+        "quality_low_vol",
+        0.942
+      ],
+      [
+        "rsi_mean_reversion",
+        "value_momentum_blend",
+        0.942
+      ],
+      [
+        "52_week_high_breakout",
+        "quality_low_vol",
+        0.938
+      ],
+      [
+        "large_cap_momentum",
+        "quality_momentum",
+        0.938
+      ],
+      [
+        "low_volatility_shield",
+        "composite_factor_score",
+        0.937
+      ],
+      [
+        "value_momentum_blend",
+        "quality_low_vol",
+        0.936
+      ],
+      [
+        "low_volatility_shield",
+        "quality_momentum",
+        0.927
+      ],
+      [
+        "deep_value_all_cap",
+        "rsi_mean_reversion",
+        0.927
+      ],
+      [
+        "low_volatility_shield",
+        "value_momentum_blend",
+        0.922
+      ],
+      [
+        "moving_average_trend",
+        "rsi_mean_reversion",
+        0.922
+      ],
+      [
+        "moving_average_trend",
+        "composite_factor_score",
+        0.916
+      ],
+      [
+        "deep_value_all_cap",
+        "value_momentum_blend",
+        0.916
+      ],
+      [
+        "moving_average_trend",
+        "quality_momentum",
+        0.915
+      ],
+      [
+        "large_cap_momentum",
+        "value_momentum_blend",
+        0.915
+      ],
+      [
+        "large_cap_momentum",
+        "composite_factor_score",
+        0.914
+      ],
+      [
+        "low_volatility_shield",
+        "rsi_mean_reversion",
+        0.913
+      ],
+      [
+        "large_cap_momentum",
+        "52_week_high_breakout",
+        0.905
+      ],
+      [
+        "moving_average_trend",
+        "quality_low_vol",
+        0.904
+      ],
+      [
+        "low_volatility_shield",
+        "volatility_targeting",
+        0.894
+      ],
+      [
+        "rsi_mean_reversion",
+        "volatility_targeting",
+        0.893
+      ],
+      [
+        "high_quality_roic",
+        "value_momentum_blend",
+        0.886
+      ],
+      [
+        "high_quality_roic",
+        "low_volatility_shield",
+        0.886
+      ],
+      [
+        "52_week_high_breakout",
+        "high_quality_roic",
+        0.884
+      ],
+      [
+        "52_week_high_breakout",
+        "volatility_targeting",
+        0.882
+      ],
+      [
+        "volatility_targeting",
+        "earnings_surprise_momentum",
+        0.881
+      ],
+      [
+        "rsi_mean_reversion",
+        "quality_momentum",
+        0.881
+      ],
+      [
+        "rsi_mean_reversion",
+        "composite_factor_score",
+        0.88
+      ],
+      [
+        "52_week_high_breakout",
+        "deep_value_all_cap",
+        0.865
+      ],
+      [
+        "large_cap_momentum",
+        "quality_low_vol",
+        0.865
+      ],
+      [
+        "rsi_mean_reversion",
+        "earnings_surprise_momentum",
+        0.851
+      ],
+      [
+        "large_cap_momentum",
+        "rsi_mean_reversion",
+        0.851
+      ],
+      [
+        "rsi_mean_reversion",
+        "quality_low_vol",
+        0.845
+      ],
+      [
+        "52_week_high_breakout",
+        "earnings_surprise_momentum",
+        0.845
+      ],
+      [
+        "large_cap_momentum",
+        "moving_average_trend",
+        0.843
+      ],
+      [
+        "large_cap_momentum",
+        "high_quality_roic",
+        0.841
+      ],
+      [
+        "low_volatility_shield",
+        "earnings_surprise_momentum",
+        0.841
+      ],
+      [
+        "high_quality_roic",
+        "moving_average_trend",
+        0.835
+      ],
+      [
+        "deep_value_all_cap",
+        "moving_average_trend",
+        0.827
+      ],
+      [
+        "deep_value_all_cap",
+        "composite_factor_score",
+        0.826
+      ],
+      [
+        "deep_value_all_cap",
+        "quality_momentum",
+        0.825
+      ],
+      [
+        "moving_average_trend",
+        "earnings_surprise_momentum",
+        0.819
+      ],
+      [
+        "large_cap_momentum",
+        "deep_value_all_cap",
+        0.818
+      ],
+      [
+        "large_cap_momentum",
+        "low_volatility_shield",
+        0.818
+      ],
+      [
+        "value_momentum_blend",
+        "volatility_targeting",
+        0.815
+      ],
+      [
+        "moving_average_trend",
+        "volatility_targeting",
+        0.809
+      ],
+      [
+        "quality_momentum",
+        "volatility_targeting",
+        0.808
+      ],
+      [
+        "composite_factor_score",
+        "volatility_targeting",
+        0.805
+      ]
+    ],
+    "low_corr_pairs": [
+      [
+        "dividend_aristocrats",
+        "moving_average_trend",
+        0.17
+      ],
+      [
+        "dividend_aristocrats",
+        "earnings_surprise_momentum",
+        0.172
+      ],
+      [
+        "dividend_aristocrats",
+        "rsi_mean_reversion",
+        0.237
+      ],
+      [
+        "low_volatility_shield",
+        "dividend_aristocrats",
+        0.258
+      ],
+      [
+        "dividend_aristocrats",
+        "value_momentum_blend",
+        0.262
+      ],
+      [
+        "52_week_high_breakout",
+        "dividend_aristocrats",
+        0.269
+      ],
+      [
+        "deep_value_all_cap",
+        "dividend_aristocrats",
+        0.283
+      ],
+      [
+        "dividend_aristocrats",
+        "volatility_targeting",
+        0.319
+      ],
+      [
+        "large_cap_momentum",
+        "dividend_aristocrats",
+        0.329
+      ],
+      [
+        "dividend_aristocrats",
+        "quality_low_vol",
+        0.331
+      ],
+      [
+        "dividend_aristocrats",
+        "quality_momentum",
+        0.344
+      ],
+      [
+        "dividend_aristocrats",
+        "composite_factor_score",
+        0.347
+      ]
+    ]
+  },
+  "min_corr_selections": {
+    "top3": [
+      "dividend_aristocrats",
+      "earnings_surprise_momentum",
+      "deep_value_all_cap"
+    ],
+    "top5": [
+      "dividend_aristocrats",
+      "earnings_surprise_momentum",
+      "deep_value_all_cap",
+      "volatility_targeting",
+      "large_cap_momentum"
+    ]
+  },
+  "benchmark": {
+    "sharpe": 0.755182,
+    "annual_return": 0.113556,
+    "max_drawdown": -0.167081,
+    "ann_volatility": 0.126597,
+    "total_return": 0.536963
+  },
+  "portfolios": {
+    "equal_weight_all14": {
+      "sharpe": 0.838027,
+      "annual_return": 0.279767,
+      "max_drawdown": -0.417736,
+      "ann_volatility": 0.339931,
+      "total_return": 1.679777
+    },
+    "tier1_equal_weight": {
+      "sharpe": 0.8963,
+      "annual_return": 0.332349,
+      "max_drawdown": -0.427524,
+      "ann_volatility": 0.378349,
+      "total_return": 2.147587
+    },
+    "tier1and2_equal_weight": {
+      "sharpe": 0.881236,
+      "annual_return": 0.292654,
+      "max_drawdown": -0.377238,
+      "ann_volatility": 0.331326,
+      "total_return": 1.789249
+    },
+    "risk_parity_all14": {
+      "sharpe": 0.848969,
+      "annual_return": 0.142085,
+      "max_drawdown": -0.176111,
+      "ann_volatility": 0.145445,
+      "total_return": 0.700453
+    },
+    "risk_parity_tier1": {
+      "sharpe": 0.896921,
+      "annual_return": 0.293925,
+      "max_drawdown": -0.358889,
+      "ann_volatility": 0.323886,
+      "total_return": 1.80022
+    },
+    "min_corr_top3": {
+      "sharpe": 0.737606,
+      "annual_return": 0.113433,
+      "max_drawdown": -0.221228,
+      "ann_volatility": 0.130063,
+      "total_return": 0.536281
+    },
+    "min_corr_top5": {
+      "sharpe": 0.843116,
+      "annual_return": 0.163491,
+      "max_drawdown": -0.243207,
+      "ann_volatility": 0.173901,
+      "total_return": 0.831433
+    }
+  },
+  "individual": {
+    "large_cap_momentum": {
+      "sharpe": 0.899987,
+      "annual_return": 0.363408,
+      "max_drawdown": -0.451902,
+      "ann_volatility": 0.422178,
+      "total_return": 2.451193
+    },
+    "52_week_high_breakout": {
+      "sharpe": 0.864632,
+      "annual_return": 0.459799,
+      "max_drawdown": -0.748757,
+      "ann_volatility": 0.719852,
+      "total_return": 3.534403
+    },
+    "deep_value_all_cap": {
+      "sharpe": 0.729777,
+      "annual_return": 0.202181,
+      "max_drawdown": -0.399835,
+      "ann_volatility": 0.278136,
+      "total_return": 1.087191
+    },
+    "high_quality_roic": {
+      "sharpe": 0.820795,
+      "annual_return": 0.156539,
+      "max_drawdown": -0.186276,
+      "ann_volatility": 0.170599,
+      "total_return": 0.788094
+    },
+    "low_volatility_shield": {
+      "sharpe": 0.86345,
+      "annual_return": 0.246075,
+      "max_drawdown": -0.286285,
+      "ann_volatility": 0.275996,
+      "total_return": 1.408781
+    },
+    "dividend_aristocrats": {
+      "sharpe": 0.518177,
+      "annual_return": 0.037071,
+      "max_drawdown": -0.028709,
+      "ann_volatility": 0.032683,
+      "total_return": 0.156566
+    },
+    "moving_average_trend": {
+      "sharpe": 0.666278,
+      "annual_return": 0.135265,
+      "max_drawdown": -0.263066,
+      "ann_volatility": 0.186622,
+      "total_return": 0.660239
+    },
+    "rsi_mean_reversion": {
+      "sharpe": 0.760646,
+      "annual_return": -0.059479,
+      "max_drawdown": -0.985776,
+      "ann_volatility": 1.544626,
+      "total_return": -0.217328
+    },
+    "value_momentum_blend": {
+      "sharpe": 0.81253,
+      "annual_return": 0.31482,
+      "max_drawdown": -0.517535,
+      "ann_volatility": 0.423959,
+      "total_return": 1.985335
+    },
+    "quality_momentum": {
+      "sharpe": 0.869344,
+      "annual_return": 0.245297,
+      "max_drawdown": -0.283238,
+      "ann_volatility": 0.272197,
+      "total_return": 1.402778
+    },
+    "quality_low_vol": {
+      "sharpe": 0.810112,
+      "annual_return": 0.170207,
+      "max_drawdown": -0.182671,
+      "ann_volatility": 0.192237,
+      "total_return": 0.874045
+    },
+    "composite_factor_score": {
+      "sharpe": 0.864109,
+      "annual_return": 0.228999,
+      "max_drawdown": -0.256201,
+      "ann_volatility": 0.252592,
+      "total_return": 1.279556
+    },
+    "volatility_targeting": {
+      "sharpe": 0.646945,
+      "annual_return": 0.08352,
+      "max_drawdown": -0.133031,
+      "ann_volatility": 0.100988,
+      "total_return": 0.377873
+    },
+    "earnings_surprise_momentum": {
+      "sharpe": 0.524208,
+      "annual_return": 0.082728,
+      "max_drawdown": -0.237605,
+      "ann_volatility": 0.129516,
+      "total_return": 0.373853
+    }
+  },
+  "correlation_matrix": {
+    "large_cap_momentum": {
+      "large_cap_momentum": 1.0,
+      "52_week_high_breakout": 0.905481,
+      "deep_value_all_cap": 0.818125,
+      "high_quality_roic": 0.841091,
+      "low_volatility_shield": 0.818064,
+      "dividend_aristocrats": 0.328672,
+      "moving_average_trend": 0.843022,
+      "rsi_mean_reversion": 0.850752,
+      "value_momentum_blend": 0.914863,
+      "quality_momentum": 0.938004,
+      "quality_low_vol": 0.86468,
+      "composite_factor_score": 0.914262,
+      "volatility_targeting": 0.770433,
+      "earnings_surprise_momentum": 0.730826
+    },
+    "52_week_high_breakout": {
+      "large_cap_momentum": 0.905481,
+      "52_week_high_breakout": 1.0,
+      "deep_value_all_cap": 0.864904,
+      "high_quality_roic": 0.883647,
+      "low_volatility_shield": 0.966691,
+      "dividend_aristocrats": 0.269469,
+      "moving_average_trend": 0.969404,
+      "rsi_mean_reversion": 0.948745,
+      "value_momentum_blend": 0.972937,
+      "quality_momentum": 0.961292,
+      "quality_low_vol": 0.938468,
+      "composite_factor_score": 0.959416,
+      "volatility_targeting": 0.882328,
+      "earnings_surprise_momentum": 0.845072
+    },
+    "deep_value_all_cap": {
+      "large_cap_momentum": 0.818125,
+      "52_week_high_breakout": 0.864904,
+      "deep_value_all_cap": 1.0,
+      "high_quality_roic": 0.730984,
+      "low_volatility_shield": 0.794727,
+      "dividend_aristocrats": 0.28319,
+      "moving_average_trend": 0.827307,
+      "rsi_mean_reversion": 0.927166,
+      "value_momentum_blend": 0.915586,
+      "quality_momentum": 0.824869,
+      "quality_low_vol": 0.773785,
+      "composite_factor_score": 0.825687,
+      "volatility_targeting": 0.772464,
+      "earnings_surprise_momentum": 0.700063
+    },
+    "high_quality_roic": {
+      "large_cap_momentum": 0.841091,
+      "52_week_high_breakout": 0.883647,
+      "deep_value_all_cap": 0.730984,
+      "high_quality_roic": 1.0,
+      "low_volatility_shield": 0.885662,
+      "dividend_aristocrats": 0.424645,
+      "moving_average_trend": 0.835186,
+      "rsi_mean_reversion": 0.782821,
+      "value_momentum_blend": 0.886265,
+      "quality_momentum": 0.950003,
+      "quality_low_vol": 0.967903,
+      "composite_factor_score": 0.957141,
+      "volatility_targeting": 0.732674,
+      "earnings_surprise_momentum": 0.667871
+    },
+    "low_volatility_shield": {
+      "large_cap_momentum": 0.818064,
+      "52_week_high_breakout": 0.966691,
+      "deep_value_all_cap": 0.794727,
+      "high_quality_roic": 0.885662,
+      "low_volatility_shield": 1.0,
+      "dividend_aristocrats": 0.258431,
+      "moving_average_trend": 0.942699,
+      "rsi_mean_reversion": 0.912725,
+      "value_momentum_blend": 0.922451,
+      "quality_momentum": 0.927194,
+      "quality_low_vol": 0.942037,
+      "composite_factor_score": 0.936828,
+      "volatility_targeting": 0.893643,
+      "earnings_surprise_momentum": 0.840937
+    },
+    "dividend_aristocrats": {
+      "large_cap_momentum": 0.328672,
+      "52_week_high_breakout": 0.269469,
+      "deep_value_all_cap": 0.28319,
+      "high_quality_roic": 0.424645,
+      "low_volatility_shield": 0.258431,
+      "dividend_aristocrats": 1.0,
+      "moving_average_trend": 0.170477,
+      "rsi_mean_reversion": 0.236795,
+      "value_momentum_blend": 0.261719,
+      "quality_momentum": 0.34368,
+      "quality_low_vol": 0.330856,
+      "composite_factor_score": 0.346866,
+      "volatility_targeting": 0.319287,
+      "earnings_surprise_momentum": 0.172479
+    },
+    "moving_average_trend": {
+      "large_cap_momentum": 0.843022,
+      "52_week_high_breakout": 0.969404,
+      "deep_value_all_cap": 0.827307,
+      "high_quality_roic": 0.835186,
+      "low_volatility_shield": 0.942699,
+      "dividend_aristocrats": 0.170477,
+      "moving_average_trend": 1.0,
+      "rsi_mean_reversion": 0.922342,
+      "value_momentum_blend": 0.949787,
+      "quality_momentum": 0.914885,
+      "quality_low_vol": 0.904449,
+      "composite_factor_score": 0.915715,
+      "volatility_targeting": 0.809445,
+      "earnings_surprise_momentum": 0.819022
+    },
+    "rsi_mean_reversion": {
+      "large_cap_momentum": 0.850752,
+      "52_week_high_breakout": 0.948745,
+      "deep_value_all_cap": 0.927166,
+      "high_quality_roic": 0.782821,
+      "low_volatility_shield": 0.912725,
+      "dividend_aristocrats": 0.236795,
+      "moving_average_trend": 0.922342,
+      "rsi_mean_reversion": 1.0,
+      "value_momentum_blend": 0.941762,
+      "quality_momentum": 0.880525,
+      "quality_low_vol": 0.845434,
+      "composite_factor_score": 0.87965,
+      "volatility_targeting": 0.893485,
+      "earnings_surprise_momentum": 0.850895
+    },
+    "value_momentum_blend": {
+      "large_cap_momentum": 0.914863,
+      "52_week_high_breakout": 0.972937,
+      "deep_value_all_cap": 0.915586,
+      "high_quality_roic": 0.886265,
+      "low_volatility_shield": 0.922451,
+      "dividend_aristocrats": 0.261719,
+      "moving_average_trend": 0.949787,
+      "rsi_mean_reversion": 0.941762,
+      "value_momentum_blend": 1.0,
+      "quality_momentum": 0.963843,
+      "quality_low_vol": 0.935995,
+      "composite_factor_score": 0.964317,
+      "volatility_targeting": 0.814573,
+      "earnings_surprise_momentum": 0.782452
+    },
+    "quality_momentum": {
+      "large_cap_momentum": 0.938004,
+      "52_week_high_breakout": 0.961292,
+      "deep_value_all_cap": 0.824869,
+      "high_quality_roic": 0.950003,
+      "low_volatility_shield": 0.927194,
+      "dividend_aristocrats": 0.34368,
+      "moving_average_trend": 0.914885,
+      "rsi_mean_reversion": 0.880525,
+      "value_momentum_blend": 0.963843,
+      "quality_momentum": 1.0,
+      "quality_low_vol": 0.979105,
+      "composite_factor_score": 0.996046,
+      "volatility_targeting": 0.807751,
+      "earnings_surprise_momentum": 0.759096
+    },
+    "quality_low_vol": {
+      "large_cap_momentum": 0.86468,
+      "52_week_high_breakout": 0.938468,
+      "deep_value_all_cap": 0.773785,
+      "high_quality_roic": 0.967903,
+      "low_volatility_shield": 0.942037,
+      "dividend_aristocrats": 0.330856,
+      "moving_average_trend": 0.904449,
+      "rsi_mean_reversion": 0.845434,
+      "value_momentum_blend": 0.935995,
+      "quality_momentum": 0.979105,
+      "quality_low_vol": 1.0,
+      "composite_factor_score": 0.987775,
+      "volatility_targeting": 0.779862,
+      "earnings_surprise_momentum": 0.73399
+    },
+    "composite_factor_score": {
+      "large_cap_momentum": 0.914262,
+      "52_week_high_breakout": 0.959416,
+      "deep_value_all_cap": 0.825687,
+      "high_quality_roic": 0.957141,
+      "low_volatility_shield": 0.936828,
+      "dividend_aristocrats": 0.346866,
+      "moving_average_trend": 0.915715,
+      "rsi_mean_reversion": 0.87965,
+      "value_momentum_blend": 0.964317,
+      "quality_momentum": 0.996046,
+      "quality_low_vol": 0.987775,
+      "composite_factor_score": 1.0,
+      "volatility_targeting": 0.805029,
+      "earnings_surprise_momentum": 0.754796
+    },
+    "volatility_targeting": {
+      "large_cap_momentum": 0.770433,
+      "52_week_high_breakout": 0.882328,
+      "deep_value_all_cap": 0.772464,
+      "high_quality_roic": 0.732674,
+      "low_volatility_shield": 0.893643,
+      "dividend_aristocrats": 0.319287,
+      "moving_average_trend": 0.809445,
+      "rsi_mean_reversion": 0.893485,
+      "value_momentum_blend": 0.814573,
+      "quality_momentum": 0.807751,
+      "quality_low_vol": 0.779862,
+      "composite_factor_score": 0.805029,
+      "volatility_targeting": 1.0,
+      "earnings_surprise_momentum": 0.880683
+    },
+    "earnings_surprise_momentum": {
+      "large_cap_momentum": 0.730826,
+      "52_week_high_breakout": 0.845072,
+      "deep_value_all_cap": 0.700063,
+      "high_quality_roic": 0.667871,
+      "low_volatility_shield": 0.840937,
+      "dividend_aristocrats": 0.172479,
+      "moving_average_trend": 0.819022,
+      "rsi_mean_reversion": 0.850895,
+      "value_momentum_blend": 0.782452,
+      "quality_momentum": 0.759096,
+      "quality_low_vol": 0.73399,
+      "composite_factor_score": 0.754796,
+      "volatility_targeting": 0.880683,
+      "earnings_surprise_momentum": 1.0
+    }
+  },
+  "avg_corr_per_strategy": {
+    "large_cap_momentum": 0.810637,
+    "52_week_high_breakout": 0.87445,
+    "deep_value_all_cap": 0.773758,
+    "high_quality_roic": 0.811222,
+    "low_volatility_shield": 0.849392,
+    "dividend_aristocrats": 0.288197,
+    "moving_average_trend": 0.832595,
+    "rsi_mean_reversion": 0.836392,
+    "value_momentum_blend": 0.863581,
+    "quality_momentum": 0.8651,
+    "quality_low_vol": 0.844949,
+    "composite_factor_score": 0.864887,
+    "volatility_targeting": 0.781666,
+    "earnings_surprise_momentum": 0.733706
+  }
+}

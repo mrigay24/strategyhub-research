@@ -1,0 +1,80 @@
+{
+  "regime_performance": {
+    "Bull": {
+      "n_days": 257,
+      "sharpe": 3.595519121502252,
+      "ann_return": 2.0454255308775404,
+      "ann_vol": 0.563319360134926,
+      "max_drawdown": -0.2046526136383584,
+      "win_rate": 0.5330739299610895,
+      "avg_daily_return": 0.008116767979672779,
+      "market_ann_return": 0.33611874085048804,
+      "excess_return": 1.7093067900270524,
+      "sortino": 6.10392459126631,
+      "worst_day": -0.0816317162763367,
+      "best_day": 0.13000088277860145
+    },
+    "Bear": {
+      "n_days": 70,
+      "sharpe": -1.0516031260352103,
+      "ann_return": -1.5554861351955236,
+      "ann_vol": 1.4981755913330865,
+      "max_drawdown": -0.7331052733110934,
+      "win_rate": 0.5285714285714286,
+      "avg_daily_return": -0.006172564028553665,
+      "market_ann_return": -0.26336640851683935,
+      "excess_return": -1.2921197266786844,
+      "sortino": -1.622688787767836,
+      "worst_day": -0.24580373783775056,
+      "best_day": 0.1978998761639179
+    },
+    "High-Vol": {
+      "n_days": 58,
+      "sharpe": 3.8364917616182357,
+      "ann_return": 3.0462194188165332,
+      "ann_vol": 0.7887986230263847,
+      "max_drawdown": -0.1720263455463279,
+      "win_rate": 0.5862068965517241,
+      "avg_daily_return": 0.012088172296891004,
+      "market_ann_return": 0.4725157415879081,
+      "excess_return": 2.5737036772286253,
+      "sortino": 6.571641134538269,
+      "worst_day": -0.08927685017344646,
+      "best_day": 0.13158877052046308
+    },
+    "Sideways": {
+      "n_days": 559,
+      "sharpe": 0.11424051812634922,
+      "ann_return": 0.0955863511193788,
+      "ann_vol": 0.6616422295615013,
+      "max_drawdown": -0.7738155436606735,
+      "win_rate": 0.47942754919499103,
+      "avg_daily_return": 0.00037931091714039206,
+      "market_ann_return": 0.012586873480560801,
+      "excess_return": 0.082999477638818,
+      "sortino": 0.13485100234619868,
+      "worst_day": -0.2607055529053059,
+      "best_day": 0.16665647610216638
+    },
+    "Overall": {
+      "n_days": 944,
+      "sharpe": 0.894877586164231,
+      "ann_return": 0.685279479384463,
+      "ann_vol": 0.7434307101556666
+    }
+  },
+  "edge_score": {
+    "overall_sharpe": 0.894877586164231,
+    "best_regime": "High-Vol",
+    "best_regime_sharpe": 3.8364917616182357,
+    "worst_regime": "Bear",
+    "worst_regime_sharpe": -1.0516031260352103,
+    "regime_spread": 4.8880948876534465,
+    "regime_sharpes": {
+      "Bull": 3.595519121502252,
+      "Bear": -1.0516031260352103,
+      "High-Vol": 3.8364917616182357,
+      "Sideways": 0.11424051812634922
+    }
+  }
+}

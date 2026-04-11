@@ -1,0 +1,15 @@
+strategy,is_sharpe,oos_sharpe,wfe,n_positive_folds,total_folds,verdict
+large_cap_momentum,0.445,0.7162,160.9511,8,9,EXCELLENT
+52_week_high_breakout,0.4987,0.722,144.7951,8,9,EXCELLENT
+deep_value_all_cap,0.4011,0.7311,182.26,8,9,EXCELLENT
+high_quality_roic,0.4316,0.7566,175.3084,8,9,EXCELLENT
+low_volatility_shield,0.5924,0.7445,125.6734,8,9,EXCELLENT
+dividend_aristocrats,0.3728,0.7609,204.1084,8,9,EXCELLENT
+moving_average_trend,0.4444,0.7237,162.8222,8,9,EXCELLENT
+rsi_mean_reversion,0.5788,0.7333,126.6834,8,9,EXCELLENT
+value_momentum_blend,0.4318,0.7209,166.9791,8,9,EXCELLENT
+quality_momentum,0.4904,0.719,146.6052,8,9,EXCELLENT
+quality_low_vol,0.4308,0.7478,173.6074,8,9,EXCELLENT
+composite_factor_score,0.4877,0.7273,149.1195,8,9,EXCELLENT
+volatility_targeting,0.5128,0.7227,140.9498,8,9,EXCELLENT
+earnings_surprise_momentum,0.5627,0.5291,94.0331,7,9,GOOD

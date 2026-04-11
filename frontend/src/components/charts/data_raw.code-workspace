@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../data_raw"
+		},
+		{
+			"path": "../../../../data_processed"
+		},
+		{
+			"path": "../../../../notebooks"
+		},
+		{
+			"path": "../../../../docs"
+		},
+		{
+			"path": "../../../../src"
+		}
+	]
+}

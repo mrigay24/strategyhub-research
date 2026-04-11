@@ -1,0 +1,50 @@
+{
+  "strategy": "dividend_aristocrats",
+  "n_returns": 1007,
+  "iid_bootstrap": {
+    "method": "iid_bootstrap",
+    "n_samples": 10000,
+    "observed_sharpe": 0.518177,
+    "mean_bootstrap_sharpe": 0.514729,
+    "std_bootstrap_sharpe": 0.491551,
+    "ci_lower": -0.44177,
+    "ci_upper": 1.475167,
+    "ci_width": 1.916937,
+    "p_value": 0.1497,
+    "significant_at_5pct": false,
+    "significant_at_1pct": false
+  },
+  "block_bootstrap": {
+    "method": "block_bootstrap",
+    "block_size": 20,
+    "n_samples": 10000,
+    "observed_sharpe": 0.518177,
+    "mean_bootstrap_sharpe": -4648142601703.262,
+    "std_bootstrap_sharpe": 464791018876325.56,
+    "ci_lower": -0.455795,
+    "ci_upper": 1.502229,
+    "ci_width": 1.958024,
+    "p_value": 0.1343,
+    "significant_at_5pct": false,
+    "significant_at_1pct": false
+  },
+  "random_sign_test": {
+    "method": "random_sign_test",
+    "n_permutations": 10000,
+    "observed_sharpe": 0.518177,
+    "mean_random_sharpe": -0.604408,
+    "std_random_sharpe": 0.49956,
+    "p_value": 0.0125,
+    "percentile_rank": 98.75,
+    "significant_at_5pct": true,
+    "significant_at_1pct": false
+  },
+  "additional_metrics": {
+    "n_observations": 1007,
+    "se_sharpe_lo2002": 0.532771,
+    "t_statistic": 0.972607,
+    "skewness": 0.948365,
+    "excess_kurtosis": 15.628414,
+    "adjusted_sharpe_pezier_white": 0.487407
+  }
+}

@@ -1,0 +1,1506 @@
+{
+  "phase": "2.8",
+  "analysis": "Rolling Performance Analysis",
+  "rolling_window_days": 126,
+  "n_strategies": 14,
+  "date_range": {
+    "start": "2014-01-02",
+    "end": "2017-12-29",
+    "n_trading_days": 1007
+  },
+  "rolling_sharpe_summary": {
+    "large_cap_momentum": {
+      "mean_rolling_sharpe": 0.728505,
+      "std_rolling_sharpe": 0.983945,
+      "min_rolling_sharpe": -11.114428,
+      "max_rolling_sharpe": 3.249687,
+      "pct_positive": 0.69161,
+      "pct_above_1": 0.356009,
+      "pct_below_neg1": 0.020408,
+      "sharpe_stability_ratio": 0.740392
+    },
+    "52_week_high_breakout": {
+      "mean_rolling_sharpe": 0.85066,
+      "std_rolling_sharpe": 1.049105,
+      "min_rolling_sharpe": -6.170959,
+      "max_rolling_sharpe": 3.306458,
+      "pct_positive": 0.809524,
+      "pct_above_1": 0.45805,
+      "pct_below_neg1": 0.046485,
+      "sharpe_stability_ratio": 0.810843
+    },
+    "deep_value_all_cap": {
+      "mean_rolling_sharpe": 0.43017,
+      "std_rolling_sharpe": 1.49006,
+      "min_rolling_sharpe": -26.763305,
+      "max_rolling_sharpe": 3.103985,
+      "pct_positive": 0.564626,
+      "pct_above_1": 0.314059,
+      "pct_below_neg1": 0.157596,
+      "sharpe_stability_ratio": 0.288693
+    },
+    "high_quality_roic": {
+      "mean_rolling_sharpe": 0.569744,
+      "std_rolling_sharpe": 1.109746,
+      "min_rolling_sharpe": -3.693775,
+      "max_rolling_sharpe": 3.516892,
+      "pct_positive": 0.539683,
+      "pct_above_1": 0.311791,
+      "pct_below_neg1": 0.047619,
+      "sharpe_stability_ratio": 0.5134
+    },
+    "low_volatility_shield": {
+      "mean_rolling_sharpe": 0.978229,
+      "std_rolling_sharpe": 0.961655,
+      "min_rolling_sharpe": -1.682448,
+      "max_rolling_sharpe": 3.441017,
+      "pct_positive": 0.839002,
+      "pct_above_1": 0.462585,
+      "pct_below_neg1": 0.00907,
+      "sharpe_stability_ratio": 1.017234
+    },
+    "dividend_aristocrats": {
+      "mean_rolling_sharpe": 0.30658,
+      "std_rolling_sharpe": 0.855744,
+      "min_rolling_sharpe": -4.932828,
+      "max_rolling_sharpe": 2.903027,
+      "pct_positive": 0.196145,
+      "pct_above_1": 0.172336,
+      "pct_below_neg1": 0.013605,
+      "sharpe_stability_ratio": 0.358262
+    },
+    "moving_average_trend": {
+      "mean_rolling_sharpe": 0.865366,
+      "std_rolling_sharpe": 0.981143,
+      "min_rolling_sharpe": -6.823607,
+      "max_rolling_sharpe": 3.284134,
+      "pct_positive": 0.782313,
+      "pct_above_1": 0.460317,
+      "pct_below_neg1": 0.020408,
+      "sharpe_stability_ratio": 0.881999
+    },
+    "rsi_mean_reversion": {
+      "mean_rolling_sharpe": 0.797692,
+      "std_rolling_sharpe": 0.960503,
+      "min_rolling_sharpe": -2.175771,
+      "max_rolling_sharpe": 2.862706,
+      "pct_positive": 0.809524,
+      "pct_above_1": 0.480726,
+      "pct_below_neg1": 0.058957,
+      "sharpe_stability_ratio": 0.830493
+    },
+    "value_momentum_blend": {
+      "mean_rolling_sharpe": 0.79516,
+      "std_rolling_sharpe": 0.974343,
+      "min_rolling_sharpe": -1.742334,
+      "max_rolling_sharpe": 3.319695,
+      "pct_positive": 0.699546,
+      "pct_above_1": 0.399093,
+      "pct_below_neg1": 0.027211,
+      "sharpe_stability_ratio": 0.816099
+    },
+    "quality_momentum": {
+      "mean_rolling_sharpe": 0.735126,
+      "std_rolling_sharpe": 0.943522,
+      "min_rolling_sharpe": -1.364165,
+      "max_rolling_sharpe": 3.252404,
+      "pct_positive": 0.706349,
+      "pct_above_1": 0.302721,
+      "pct_below_neg1": 0.006803,
+      "sharpe_stability_ratio": 0.779129
+    },
+    "quality_low_vol": {
+      "mean_rolling_sharpe": 0.708535,
+      "std_rolling_sharpe": 1.015547,
+      "min_rolling_sharpe": -1.394523,
+      "max_rolling_sharpe": 3.36524,
+      "pct_positive": 0.626984,
+      "pct_above_1": 0.318594,
+      "pct_below_neg1": 0.005669,
+      "sharpe_stability_ratio": 0.697688
+    },
+    "composite_factor_score": {
+      "mean_rolling_sharpe": 0.734823,
+      "std_rolling_sharpe": 0.976557,
+      "min_rolling_sharpe": -1.476332,
+      "max_rolling_sharpe": 3.454288,
+      "pct_positive": 0.687075,
+      "pct_above_1": 0.315193,
+      "pct_below_neg1": 0.006803,
+      "sharpe_stability_ratio": 0.752463
+    },
+    "volatility_targeting": {
+      "mean_rolling_sharpe": 0.564531,
+      "std_rolling_sharpe": 0.976519,
+      "min_rolling_sharpe": -1.947139,
+      "max_rolling_sharpe": 2.856558,
+      "pct_positive": 0.732426,
+      "pct_above_1": 0.366213,
+      "pct_below_neg1": 0.080499,
+      "sharpe_stability_ratio": 0.578105
+    },
+    "earnings_surprise_momentum": {
+      "mean_rolling_sharpe": 0.559378,
+      "std_rolling_sharpe": 1.113252,
+      "min_rolling_sharpe": -2.419896,
+      "max_rolling_sharpe": 2.970923,
+      "pct_positive": 0.759637,
+      "pct_above_1": 0.420635,
+      "pct_below_neg1": 0.145125,
+      "sharpe_stability_ratio": 0.502472
+    }
+  },
+  "sub_period_performance": {
+    "large_cap_momentum": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": 0.39728,
+        "cagr": 0.082543,
+        "max_drawdown": -0.096025,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.425663,
+        "cagr": 0.115526,
+        "max_drawdown": -0.233098,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": -0.361794,
+        "cagr": -0.328033,
+        "max_drawdown": -0.451902,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.532486,
+        "cagr": 1.000604,
+        "max_drawdown": -0.288446,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.99235,
+        "cagr": 1.395256,
+        "max_drawdown": -0.146396,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.388048,
+        "cagr": 1.941188,
+        "max_drawdown": -0.258701,
+        "n_days": 132
+      }
+    ],
+    "52_week_high_breakout": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 1.513985,
+        "cagr": 0.476095,
+        "max_drawdown": -0.173771,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": 0.038275,
+        "cagr": -0.10438,
+        "max_drawdown": -0.179468,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.215066,
+        "cagr": -0.293848,
+        "max_drawdown": -0.544612,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.104298,
+        "cagr": -0.389945,
+        "max_drawdown": -0.648837,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.975704,
+        "cagr": 2.66298,
+        "max_drawdown": -0.376697,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.686602,
+        "cagr": 1.419633,
+        "max_drawdown": -0.229421,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.646814,
+        "cagr": 2.868585,
+        "max_drawdown": -0.258542,
+        "n_days": 132
+      }
+    ],
+    "deep_value_all_cap": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.451067,
+        "cagr": -0.020602,
+        "max_drawdown": -0.066939,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": -1.016461,
+        "cagr": -0.298696,
+        "max_drawdown": -0.227297,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.469271,
+        "cagr": 0.137671,
+        "max_drawdown": -0.234385,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 2.567131,
+        "cagr": 1.537893,
+        "max_drawdown": -0.129606,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 0.531889,
+        "cagr": 0.146912,
+        "max_drawdown": -0.154197,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.275381,
+        "cagr": 0.871172,
+        "max_drawdown": -0.15893,
+        "n_days": 132
+      }
+    ],
+    "high_quality_roic": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -1.459598,
+        "cagr": -0.089691,
+        "max_drawdown": -0.05031,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 1.034901,
+        "cagr": 0.27334,
+        "max_drawdown": -0.133032,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.511531,
+        "cagr": 0.122119,
+        "max_drawdown": -0.164656,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 0.211573,
+        "cagr": 0.043408,
+        "max_drawdown": -0.186276,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 2.492081,
+        "cagr": 0.518029,
+        "max_drawdown": -0.051782,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.210524,
+        "cagr": 0.529594,
+        "max_drawdown": -0.055677,
+        "n_days": 132
+      }
+    ],
+    "low_volatility_shield": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 1.196725,
+        "cagr": 0.069959,
+        "max_drawdown": -0.016698,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 1.710416,
+        "cagr": 0.358455,
+        "max_drawdown": -0.093488,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.461798,
+        "cagr": -0.121139,
+        "max_drawdown": -0.087448,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.267589,
+        "cagr": 0.041859,
+        "max_drawdown": -0.254942,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.607139,
+        "cagr": 0.199181,
+        "max_drawdown": -0.246295,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.376575,
+        "cagr": 0.474192,
+        "max_drawdown": -0.17441,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 2.029656,
+        "cagr": 0.515889,
+        "max_drawdown": -0.077038,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.44307,
+        "cagr": 0.60666,
+        "max_drawdown": -0.069458,
+        "n_days": 132
+      }
+    ],
+    "dividend_aristocrats": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.647856,
+        "cagr": 0.093859,
+        "max_drawdown": -0.014947,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.213065,
+        "cagr": 0.21256,
+        "max_drawdown": -0.028709,
+        "n_days": 132
+      }
+    ],
+    "moving_average_trend": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 1.768116,
+        "cagr": 0.1349,
+        "max_drawdown": -0.039551,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.127663,
+        "cagr": -0.009298,
+        "max_drawdown": -0.045116,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.232402,
+        "cagr": 0.044321,
+        "max_drawdown": -0.176947,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.272044,
+        "cagr": 0.057833,
+        "max_drawdown": -0.242181,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 2.047419,
+        "cagr": 0.443342,
+        "max_drawdown": -0.079098,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.435548,
+        "cagr": 0.189508,
+        "max_drawdown": -0.037676,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.43646,
+        "cagr": 0.284927,
+        "max_drawdown": -0.046125,
+        "n_days": 132
+      }
+    ],
+    "rsi_mean_reversion": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 2.307117,
+        "cagr": 1.000963,
+        "max_drawdown": -0.169726,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 1.284933,
+        "cagr": 1.089289,
+        "max_drawdown": -0.399745,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.315424,
+        "cagr": -0.598409,
+        "max_drawdown": -0.404958,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": -0.478191,
+        "cagr": -0.955983,
+        "max_drawdown": -0.883557,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.324208,
+        "cagr": -0.910542,
+        "max_drawdown": -0.892598,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 2.108713,
+        "cagr": 7.670171,
+        "max_drawdown": -0.714768,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 0.930153,
+        "cagr": 0.450283,
+        "max_drawdown": -0.523043,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.122123,
+        "cagr": 5.603969,
+        "max_drawdown": -0.559686,
+        "n_days": 132
+      }
+    ],
+    "value_momentum_blend": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.106294,
+        "cagr": -0.024922,
+        "max_drawdown": -0.101815,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.1606,
+        "cagr": -0.05544,
+        "max_drawdown": -0.320512,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.206465,
+        "cagr": -0.08909,
+        "max_drawdown": -0.458383,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 2.054923,
+        "cagr": 1.66017,
+        "max_drawdown": -0.239094,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.591562,
+        "cagr": 0.724021,
+        "max_drawdown": -0.135332,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.546319,
+        "cagr": 1.252381,
+        "max_drawdown": -0.157058,
+        "n_days": 132
+      }
+    ],
+    "quality_momentum": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.483164,
+        "cagr": -0.070549,
+        "max_drawdown": -0.084153,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.60058,
+        "cagr": 0.194474,
+        "max_drawdown": -0.210488,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.342891,
+        "cagr": 0.079998,
+        "max_drawdown": -0.278185,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.145824,
+        "cagr": 0.41159,
+        "max_drawdown": -0.201103,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 2.244609,
+        "cagr": 0.798604,
+        "max_drawdown": -0.107206,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.394792,
+        "cagr": 0.857741,
+        "max_drawdown": -0.105395,
+        "n_days": 132
+      }
+    ],
+    "quality_low_vol": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.717068,
+        "cagr": -0.082641,
+        "max_drawdown": -0.069892,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.677026,
+        "cagr": 0.194495,
+        "max_drawdown": -0.16941,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.62076,
+        "cagr": 0.168893,
+        "max_drawdown": -0.182671,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 0.903238,
+        "cagr": 0.224351,
+        "max_drawdown": -0.161442,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 2.420256,
+        "cagr": 0.486717,
+        "max_drawdown": -0.056614,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.285247,
+        "cagr": 0.488075,
+        "max_drawdown": -0.053176,
+        "n_days": 132
+      }
+    ],
+    "composite_factor_score": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.0,
+        "cagr": 0.0,
+        "max_drawdown": 0.0,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.554412,
+        "cagr": -0.075349,
+        "max_drawdown": -0.078607,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": 0.511921,
+        "cagr": 0.14973,
+        "max_drawdown": -0.201865,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.5381,
+        "cagr": 0.164906,
+        "max_drawdown": -0.244,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.130414,
+        "cagr": 0.382941,
+        "max_drawdown": -0.198437,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 2.310608,
+        "cagr": 0.724016,
+        "max_drawdown": -0.094189,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.303836,
+        "cagr": 0.729396,
+        "max_drawdown": -0.086358,
+        "n_days": 132
+      }
+    ],
+    "volatility_targeting": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 1.481085,
+        "cagr": 0.107461,
+        "max_drawdown": -0.02556,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.445029,
+        "cagr": 0.068261,
+        "max_drawdown": -0.088464,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.430621,
+        "cagr": -0.025509,
+        "max_drawdown": -0.03541,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": -0.530624,
+        "cagr": -0.052381,
+        "max_drawdown": -0.095948,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": -0.35868,
+        "cagr": -0.025649,
+        "max_drawdown": -0.080778,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.707729,
+        "cagr": 0.184795,
+        "max_drawdown": -0.046553,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.259787,
+        "cagr": 0.145718,
+        "max_drawdown": -0.037722,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.473481,
+        "cagr": 0.301328,
+        "max_drawdown": -0.043948,
+        "n_days": 132
+      }
+    ],
+    "earnings_surprise_momentum": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 1.326867,
+        "cagr": 0.172212,
+        "max_drawdown": -0.070894,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 0.804413,
+        "cagr": 0.122028,
+        "max_drawdown": -0.077623,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": 0.362039,
+        "cagr": 0.059231,
+        "max_drawdown": -0.033508,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": -1.300496,
+        "cagr": -0.208071,
+        "max_drawdown": -0.151004,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.056098,
+        "cagr": 0.016106,
+        "max_drawdown": -0.121239,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.799085,
+        "cagr": 0.26715,
+        "max_drawdown": -0.07476,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.115917,
+        "cagr": 0.126997,
+        "max_drawdown": -0.029964,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 1.694645,
+        "cagr": 0.174361,
+        "max_drawdown": -0.040272,
+        "n_days": 132
+      }
+    ],
+    "benchmark": [
+      {
+        "period": 1,
+        "start": "2014-01-02",
+        "end": "2014-07-01",
+        "sharpe": 1.626598,
+        "cagr": 0.217888,
+        "max_drawdown": -0.052506,
+        "n_days": 125
+      },
+      {
+        "period": 2,
+        "start": "2014-07-02",
+        "end": "2014-12-29",
+        "sharpe": 1.069765,
+        "cagr": 0.153174,
+        "max_drawdown": -0.082358,
+        "n_days": 125
+      },
+      {
+        "period": 3,
+        "start": "2014-12-30",
+        "end": "2015-06-29",
+        "sharpe": -0.196245,
+        "cagr": -0.011011,
+        "max_drawdown": -0.039337,
+        "n_days": 125
+      },
+      {
+        "period": 4,
+        "start": "2015-06-30",
+        "end": "2015-12-24",
+        "sharpe": -0.194006,
+        "cagr": -0.030651,
+        "max_drawdown": -0.110569,
+        "n_days": 125
+      },
+      {
+        "period": 5,
+        "start": "2015-12-28",
+        "end": "2016-06-24",
+        "sharpe": 0.182885,
+        "cagr": 0.037442,
+        "max_drawdown": -0.129743,
+        "n_days": 125
+      },
+      {
+        "period": 6,
+        "start": "2016-06-27",
+        "end": "2016-12-21",
+        "sharpe": 1.857246,
+        "cagr": 0.263316,
+        "max_drawdown": -0.052542,
+        "n_days": 125
+      },
+      {
+        "period": 7,
+        "start": "2016-12-22",
+        "end": "2017-06-22",
+        "sharpe": 1.344244,
+        "cagr": 0.128105,
+        "max_drawdown": -0.027851,
+        "n_days": 125
+      },
+      {
+        "period": 8,
+        "start": "2017-06-23",
+        "end": "2017-12-29",
+        "sharpe": 2.224812,
+        "cagr": 0.183626,
+        "max_drawdown": -0.033386,
+        "n_days": 132
+      }
+    ]
+  },
+  "period_summary": [
+    {
+      "period": 1,
+      "start": "2014-01-02",
+      "end": "2014-07-01",
+      "avg_sharpe_across_strategies": 0.450842,
+      "pct_strategies_positive": 0.285714,
+      "min_strategy_sharpe": 0.0,
+      "max_strategy_sharpe": 2.307117
+    },
+    {
+      "period": 2,
+      "start": "2014-07-02",
+      "end": "2014-12-29",
+      "avg_sharpe_across_strategies": 0.537635,
+      "pct_strategies_positive": 0.428571,
+      "min_strategy_sharpe": 0.0,
+      "max_strategy_sharpe": 1.768116
+    },
+    {
+      "period": 3,
+      "start": "2014-12-30",
+      "end": "2015-06-29",
+      "avg_sharpe_across_strategies": -0.307822,
+      "pct_strategies_positive": 0.214286,
+      "min_strategy_sharpe": -1.459598,
+      "max_strategy_sharpe": 0.39728
+    },
+    {
+      "period": 4,
+      "start": "2015-06-30",
+      "end": "2015-12-24",
+      "avg_sharpe_across_strategies": 0.057141,
+      "pct_strategies_positive": 0.642857,
+      "min_strategy_sharpe": -1.300496,
+      "max_strategy_sharpe": 1.034901
+    },
+    {
+      "period": 5,
+      "start": "2015-12-28",
+      "end": "2016-06-24",
+      "avg_sharpe_across_strategies": 0.238024,
+      "pct_strategies_positive": 0.785714,
+      "min_strategy_sharpe": -0.361794,
+      "max_strategy_sharpe": 0.62076
+    },
+    {
+      "period": 6,
+      "start": "2016-06-27",
+      "end": "2016-12-21",
+      "avg_sharpe_across_strategies": 1.46863,
+      "pct_strategies_positive": 0.928571,
+      "min_strategy_sharpe": 0.0,
+      "max_strategy_sharpe": 2.567131
+    },
+    {
+      "period": 7,
+      "start": "2016-12-22",
+      "end": "2017-06-22",
+      "avg_sharpe_across_strategies": 1.692062,
+      "pct_strategies_positive": 1.0,
+      "min_strategy_sharpe": 0.531889,
+      "max_strategy_sharpe": 2.492081
+    },
+    {
+      "period": 8,
+      "start": "2017-06-23",
+      "end": "2017-12-29",
+      "avg_sharpe_across_strategies": 2.3167,
+      "pct_strategies_positive": 1.0,
+      "min_strategy_sharpe": 1.694645,
+      "max_strategy_sharpe": 2.646814
+    }
+  ],
+  "best_worst_periods": {
+    "large_cap_momentum": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.388048,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.388048
+    },
+    "52_week_high_breakout": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.646814,
+      "worst_period": 1,
+      "worst_start": "2014-01-02",
+      "worst_end": "2014-07-01",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.646814
+    },
+    "deep_value_all_cap": {
+      "best_period": 6,
+      "best_start": "2016-06-27",
+      "best_end": "2016-12-21",
+      "best_sharpe": 2.567131,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.567131
+    },
+    "high_quality_roic": {
+      "best_period": 7,
+      "best_start": "2016-12-22",
+      "best_end": "2017-06-22",
+      "best_sharpe": 2.492081,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.492081
+    },
+    "low_volatility_shield": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.44307,
+      "worst_period": 3,
+      "worst_start": "2014-12-30",
+      "worst_end": "2015-06-29",
+      "worst_sharpe": -0.461798,
+      "sharpe_range": 2.904868
+    },
+    "dividend_aristocrats": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.213065,
+      "worst_period": 6,
+      "worst_start": "2016-06-27",
+      "worst_end": "2016-12-21",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.213065
+    },
+    "moving_average_trend": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.43646,
+      "worst_period": 1,
+      "worst_start": "2014-01-02",
+      "worst_end": "2014-07-01",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.43646
+    },
+    "rsi_mean_reversion": {
+      "best_period": 1,
+      "best_start": "2014-01-02",
+      "best_end": "2014-07-01",
+      "best_sharpe": 2.307117,
+      "worst_period": 4,
+      "worst_start": "2015-06-30",
+      "worst_end": "2015-12-24",
+      "worst_sharpe": -0.478191,
+      "sharpe_range": 2.785308
+    },
+    "value_momentum_blend": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.546319,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.546319
+    },
+    "quality_momentum": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.394792,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.394792
+    },
+    "quality_low_vol": {
+      "best_period": 7,
+      "best_start": "2016-12-22",
+      "best_end": "2017-06-22",
+      "best_sharpe": 2.420256,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.420256
+    },
+    "composite_factor_score": {
+      "best_period": 7,
+      "best_start": "2016-12-22",
+      "best_end": "2017-06-22",
+      "best_sharpe": 2.310608,
+      "worst_period": 2,
+      "worst_start": "2014-07-02",
+      "worst_end": "2014-12-29",
+      "worst_sharpe": 0.0,
+      "sharpe_range": 2.310608
+    },
+    "volatility_targeting": {
+      "best_period": 8,
+      "best_start": "2017-06-23",
+      "best_end": "2017-12-29",
+      "best_sharpe": 2.473481,
+      "worst_period": 4,
+      "worst_start": "2015-06-30",
+      "worst_end": "2015-12-24",
+      "worst_sharpe": -0.530624,
+      "sharpe_range": 3.004105
+    },
+    "earnings_surprise_momentum": {
+      "best_period": 6,
+      "best_start": "2016-06-27",
+      "best_end": "2016-12-21",
+      "best_sharpe": 1.799085,
+      "worst_period": 4,
+      "worst_start": "2015-06-30",
+      "worst_end": "2015-12-24",
+      "worst_sharpe": -1.300496,
+      "sharpe_range": 3.099581
+    }
+  },
+  "rank_stability": {
+    "avg_rank_correlation": 0.74851,
+    "n_monthly_periods": 42,
+    "interpretation": "STABLE (top strategies stay on top)"
+  },
+  "rolling_avg_correlation_stats": {
+    "mean": 0.896119,
+    "min": -0.076085,
+    "max": 0.975419,
+    "std": 0.142552
+  }
+}

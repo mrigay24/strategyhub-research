@@ -1,0 +1,1915 @@
+{
+  "generated_at": "2026-04-09T20:05:50.348780",
+  "signal_date": "2026-04-09",
+  "data_source": "Yahoo Finance",
+  "lookback_period": "2y",
+  "n_symbols": 501,
+  "strategies": {
+    "large_cap_momentum": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 80,
+      "holdings": [
+        {
+          "symbol": "AJG",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ALB",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "AMAT",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "AMD",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ANET",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "APH",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "APP",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AVGO",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "AXON",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "BA",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "CAH",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "CAT",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "CBRE",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "CEG",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "CHRW",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "CHTR",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "CIEN",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "CME",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "COF",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "COHR",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "COIN",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "CRWD",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "CVNA",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "DASH",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "DG",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "EA",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "EME",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "EXPE",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "FFIV",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "52_week_high_breakout": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 340,
+      "holdings": [
+        {
+          "symbol": "AAPL",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ACGL",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ACN",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ADI",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ADM",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ADP",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "AIG",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "AIZ",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "AJG",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "ALB",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "ALL",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "ALLE",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "AMAT",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "AMP",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "AMZN",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "AON",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "AOS",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "APD",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "APH",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "ARES",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "AVGO",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "AXON",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "AXP",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "AZO",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "BA",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "BAC",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "deep_value_all_cap": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 184,
+      "holdings": [
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ACN",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ADBE",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ADP",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ADSK",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "AJG",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "APO",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ARE",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "ARES",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "AXON",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "BAX",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "BLDR",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "BR",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "BRO",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "BSX",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "BX",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "BXP",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "CAG",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "CDW",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "CHTR",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "CMG",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "COIN",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "CPB",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "CPRT",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "CRM",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "CSGP",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "CTAS",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "CTSH",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "DASH",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "DPZ",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "high_quality_roic": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 92,
+      "holdings": [
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "AME",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "BK",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "CASY",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "CB",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "CBOE",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "CME",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "CMS",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "CNP",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "D",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "DTE",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "DUK",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "ETR",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "EVRG",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "FE",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "GD",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "HIG",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "JNJ",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "KMI",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "KO",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "L",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "LHX",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "LNT",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "MO",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "NI",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "O",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "PNW",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "PPL",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "low_volatility_shield": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 270,
+      "holdings": [
+        {
+          "symbol": "EA",
+          "weight": 0.0655,
+          "rank": 1
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0372,
+          "rank": 2
+        },
+        {
+          "symbol": "DUK",
+          "weight": 0.0362,
+          "rank": 3
+        },
+        {
+          "symbol": "WEC",
+          "weight": 0.0355,
+          "rank": 4
+        },
+        {
+          "symbol": "FE",
+          "weight": 0.0346,
+          "rank": 5
+        },
+        {
+          "symbol": "L",
+          "weight": 0.0343,
+          "rank": 6
+        },
+        {
+          "symbol": "CMS",
+          "weight": 0.0339,
+          "rank": 7
+        },
+        {
+          "symbol": "REG",
+          "weight": 0.0334,
+          "rank": 8
+        },
+        {
+          "symbol": "CNP",
+          "weight": 0.0331,
+          "rank": 9
+        },
+        {
+          "symbol": "WBD",
+          "weight": 0.0329,
+          "rank": 10
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0329,
+          "rank": 11
+        },
+        {
+          "symbol": "JNJ",
+          "weight": 0.0328,
+          "rank": 12
+        },
+        {
+          "symbol": "LHX",
+          "weight": 0.0328,
+          "rank": 13
+        },
+        {
+          "symbol": "LNT",
+          "weight": 0.0323,
+          "rank": 14
+        },
+        {
+          "symbol": "MCD",
+          "weight": 0.0322,
+          "rank": 15
+        },
+        {
+          "symbol": "O",
+          "weight": 0.0321,
+          "rank": 16
+        },
+        {
+          "symbol": "EVRG",
+          "weight": 0.0319,
+          "rank": 17
+        },
+        {
+          "symbol": "PNW",
+          "weight": 0.0318,
+          "rank": 18
+        },
+        {
+          "symbol": "DTE",
+          "weight": 0.0316,
+          "rank": 19
+        },
+        {
+          "symbol": "ED",
+          "weight": 0.0313,
+          "rank": 20
+        },
+        {
+          "symbol": "NI",
+          "weight": 0.0309,
+          "rank": 21
+        },
+        {
+          "symbol": "FRT",
+          "weight": 0.0308,
+          "rank": 22
+        },
+        {
+          "symbol": "HRL",
+          "weight": 0.0305,
+          "rank": 23
+        },
+        {
+          "symbol": "KO",
+          "weight": 0.0305,
+          "rank": 24
+        },
+        {
+          "symbol": "BRK-B",
+          "weight": 0.0303,
+          "rank": 25
+        },
+        {
+          "symbol": "D",
+          "weight": 0.0301,
+          "rank": 26
+        },
+        {
+          "symbol": "FOXA",
+          "weight": 0.0297,
+          "rank": 27
+        },
+        {
+          "symbol": "XEL",
+          "weight": 0.0297,
+          "rank": 28
+        },
+        {
+          "symbol": "RSG",
+          "weight": 0.0296,
+          "rank": 29
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0295,
+          "rank": 30
+        }
+      ]
+    },
+    "dividend_aristocrats": {
+      "error": "All recent signal rows are empty/zero"
+    },
+    "moving_average_trend": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 494,
+      "holdings": [
+        {
+          "symbol": "CPRT",
+          "weight": 0.0466,
+          "rank": 1
+        },
+        {
+          "symbol": "BAX",
+          "weight": 0.0387,
+          "rank": 2
+        },
+        {
+          "symbol": "ESS",
+          "weight": 0.0387,
+          "rank": 3
+        },
+        {
+          "symbol": "FISV",
+          "weight": 0.0387,
+          "rank": 4
+        },
+        {
+          "symbol": "IP",
+          "weight": 0.0387,
+          "rank": 5
+        },
+        {
+          "symbol": "ABBV",
+          "weight": 0.0357,
+          "rank": 6
+        },
+        {
+          "symbol": "EXE",
+          "weight": 0.0357,
+          "rank": 7
+        },
+        {
+          "symbol": "OMC",
+          "weight": 0.0357,
+          "rank": 8
+        },
+        {
+          "symbol": "PM",
+          "weight": 0.0357,
+          "rank": 9
+        },
+        {
+          "symbol": "AON",
+          "weight": 0.033,
+          "rank": 10
+        },
+        {
+          "symbol": "FDS",
+          "weight": 0.033,
+          "rank": 11
+        },
+        {
+          "symbol": "GDDY",
+          "weight": 0.033,
+          "rank": 12
+        },
+        {
+          "symbol": "KMB",
+          "weight": 0.033,
+          "rank": 13
+        },
+        {
+          "symbol": "MAA",
+          "weight": 0.033,
+          "rank": 14
+        },
+        {
+          "symbol": "MRSH",
+          "weight": 0.033,
+          "rank": 15
+        },
+        {
+          "symbol": "AAPL",
+          "weight": 0.0305,
+          "rank": 16
+        },
+        {
+          "symbol": "ABNB",
+          "weight": 0.0305,
+          "rank": 17
+        },
+        {
+          "symbol": "ACGL",
+          "weight": 0.0305,
+          "rank": 18
+        },
+        {
+          "symbol": "ADI",
+          "weight": 0.0305,
+          "rank": 19
+        },
+        {
+          "symbol": "ADM",
+          "weight": 0.0305,
+          "rank": 20
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0305,
+          "rank": 21
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0305,
+          "rank": 22
+        },
+        {
+          "symbol": "AES",
+          "weight": 0.0305,
+          "rank": 23
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0305,
+          "rank": 24
+        },
+        {
+          "symbol": "AIZ",
+          "weight": 0.0305,
+          "rank": 25
+        },
+        {
+          "symbol": "AKAM",
+          "weight": 0.0305,
+          "rank": 26
+        },
+        {
+          "symbol": "ALB",
+          "weight": 0.0305,
+          "rank": 27
+        },
+        {
+          "symbol": "ALGN",
+          "weight": 0.0305,
+          "rank": 28
+        },
+        {
+          "symbol": "ALL",
+          "weight": 0.0305,
+          "rank": 29
+        },
+        {
+          "symbol": "AMAT",
+          "weight": 0.0305,
+          "rank": 30
+        }
+      ]
+    },
+    "rsi_mean_reversion": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 197,
+      "holdings": [
+        {
+          "symbol": "CHD",
+          "weight": 0.0551,
+          "rank": 1
+        },
+        {
+          "symbol": "BMY",
+          "weight": 0.0482,
+          "rank": 2
+        },
+        {
+          "symbol": "EXE",
+          "weight": 0.0482,
+          "rank": 3
+        },
+        {
+          "symbol": "VRTX",
+          "weight": 0.0428,
+          "rank": 4
+        },
+        {
+          "symbol": "FDX",
+          "weight": 0.0385,
+          "rank": 5
+        },
+        {
+          "symbol": "MCK",
+          "weight": 0.0385,
+          "rank": 6
+        },
+        {
+          "symbol": "AON",
+          "weight": 0.035,
+          "rank": 7
+        },
+        {
+          "symbol": "PKG",
+          "weight": 0.035,
+          "rank": 8
+        },
+        {
+          "symbol": "TGT",
+          "weight": 0.035,
+          "rank": 9
+        },
+        {
+          "symbol": "WST",
+          "weight": 0.035,
+          "rank": 10
+        },
+        {
+          "symbol": "ALB",
+          "weight": 0.0321,
+          "rank": 11
+        },
+        {
+          "symbol": "CRWD",
+          "weight": 0.0321,
+          "rank": 12
+        },
+        {
+          "symbol": "DAL",
+          "weight": 0.0321,
+          "rank": 13
+        },
+        {
+          "symbol": "SMCI",
+          "weight": 0.0321,
+          "rank": 14
+        },
+        {
+          "symbol": "UAL",
+          "weight": 0.0321,
+          "rank": 15
+        },
+        {
+          "symbol": "BF-B",
+          "weight": 0.0297,
+          "rank": 16
+        },
+        {
+          "symbol": "CLX",
+          "weight": 0.0297,
+          "rank": 17
+        },
+        {
+          "symbol": "CRL",
+          "weight": 0.0297,
+          "rank": 18
+        },
+        {
+          "symbol": "FICO",
+          "weight": 0.0297,
+          "rank": 19
+        },
+        {
+          "symbol": "IBM",
+          "weight": 0.0297,
+          "rank": 20
+        },
+        {
+          "symbol": "MCD",
+          "weight": 0.0297,
+          "rank": 21
+        },
+        {
+          "symbol": "NCLH",
+          "weight": 0.0297,
+          "rank": 22
+        },
+        {
+          "symbol": "APA",
+          "weight": 0.0275,
+          "rank": 23
+        },
+        {
+          "symbol": "BA",
+          "weight": 0.0275,
+          "rank": 24
+        },
+        {
+          "symbol": "BALL",
+          "weight": 0.0275,
+          "rank": 25
+        },
+        {
+          "symbol": "FAST",
+          "weight": 0.0275,
+          "rank": 26
+        },
+        {
+          "symbol": "GEN",
+          "weight": 0.0275,
+          "rank": 27
+        },
+        {
+          "symbol": "GPN",
+          "weight": 0.0275,
+          "rank": 28
+        },
+        {
+          "symbol": "HAL",
+          "weight": 0.0275,
+          "rank": 29
+        },
+        {
+          "symbol": "OXY",
+          "weight": 0.0275,
+          "rank": 30
+        }
+      ]
+    },
+    "value_momentum_blend": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 417,
+      "holdings": [
+        {
+          "symbol": "AAPL",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ABBV",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ABNB",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ACN",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ADM",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ADP",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ADSK",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "AES",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "AIG",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "AJG",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "AKAM",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "ALGN",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "ALL",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "ALLE",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "AMD",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "AMGN",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "AMP",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "AMT",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "ANET",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "AON",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "AOS",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "APD",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "APH",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "APP",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "APTV",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "ARE",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "quality_momentum": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 267,
+      "holdings": [
+        {
+          "symbol": "ABBV",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ADI",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ADM",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ADP",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ADSK",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "ALB",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "ALLE",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "AMAT",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "AMD",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "AME",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "AMGN",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "APA",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "APH",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "APP",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "AVGO",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "AWK",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "AXON",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "AZO",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "BAC",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "BEN",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "BG",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "BK",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "BKNG",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "BKR",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "BLK",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "quality_low_vol": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 184,
+      "holdings": [
+        {
+          "symbol": "AAPL",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ABBV",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ACGL",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "AIG",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AIZ",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "ALL",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "ALLE",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "AME",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "AZO",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "BAC",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "BK",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "BR",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "BRK-B",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "BSX",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "CAH",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "CASY",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "CB",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "CBOE",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "CHD",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "CINF",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "CL",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "CLX",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "CME",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "CMS",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "CNP",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "composite_factor_score": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 252,
+      "holdings": [
+        {
+          "symbol": "ABBV",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ADM",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ADP",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ADSK",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AIG",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "AIZ",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "AJG",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "ALL",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "ALLE",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "AME",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "AMGN",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "AMT",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "AON",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "APH",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "APTV",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "ATO",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "AVB",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "AWK",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "AZO",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "BA",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "BAC",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "BALL",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "BEN",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "BG",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "BK",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "BKNG",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "volatility_targeting": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 501,
+      "holdings": [
+        {
+          "symbol": "A",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "AAPL",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ABBV",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ABNB",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ABT",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ACGL",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ACN",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ADBE",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "ADI",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "ADM",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "ADP",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "ADSK",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "AEE",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "AEP",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "AES",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "AFL",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "AIG",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "AIZ",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "AJG",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "AKAM",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "ALB",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "ALGN",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "ALL",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "ALLE",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "AMAT",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "AMCR",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "AMD",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "AME",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "AMGN",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "AMP",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "earnings_surprise_momentum": {
+      "signal_date": "2026-04-09",
+      "n_holdings": 5,
+      "holdings": [
+        {
+          "symbol": "AMZN",
+          "weight": 0.2,
+          "rank": 1
+        },
+        {
+          "symbol": "BF-B",
+          "weight": 0.2,
+          "rank": 2
+        },
+        {
+          "symbol": "FOX",
+          "weight": 0.2,
+          "rank": 3
+        },
+        {
+          "symbol": "FOXA",
+          "weight": 0.2,
+          "rank": 4
+        },
+        {
+          "symbol": "STZ",
+          "weight": 0.2,
+          "rank": 5
+        }
+      ]
+    }
+  }
+}

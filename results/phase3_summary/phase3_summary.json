@@ -1,0 +1,19 @@
+{
+  "benchmark_sharpe": 0.693717,
+  "benchmark_mdd": -0.546425,
+  "avg_strategy_sharpe": 0.5801935714285714,
+  "best_sharpe": 0.65902,
+  "worst_sharpe": 0.53137,
+  "strategies_beat_bm": 0,
+  "mc_significant_3star": 12,
+  "mc_significant_2star": 14,
+  "mc_not_significant": 0,
+  "wfe_excellent": 13,
+  "avg_inter_strat_corr": 0.9507,
+  "diversification_ratio": 1.0236,
+  "tier_counts": {
+    "Tier 3 \u2014 Confirmed but Weak": 6,
+    "Tier 2 \u2014 Solid": 6,
+    "Tier 1 \u2014 Most Robust": 2
+  }
+}

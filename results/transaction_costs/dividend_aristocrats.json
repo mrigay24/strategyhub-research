@@ -1,0 +1,86 @@
+{
+  "strategy": "dividend_aristocrats",
+  "resilience": "BULLETPROOF",
+  "sensitivity": {
+    "sharpe_at_zero": 0.526392,
+    "sharpe_at_reference": 0.518177,
+    "sharpe_per_10bps": -0.005584,
+    "breakeven_cost_bps": null,
+    "cost_drag_pct": 0.007276,
+    "annual_turnover": 0.174367,
+    "return_at_zero": 0.037342,
+    "return_at_reference": 0.037071
+  },
+  "cost_curve": {
+    "0": {
+      "sharpe": 0.526392,
+      "annual_return": 0.037342,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.157777
+    },
+    "2": {
+      "sharpe": 0.525301,
+      "annual_return": 0.037306,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.157616
+    },
+    "5": {
+      "sharpe": 0.523661,
+      "annual_return": 0.037252,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.157374
+    },
+    "10": {
+      "sharpe": 0.520923,
+      "annual_return": 0.037161,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.15697
+    },
+    "15": {
+      "sharpe": 0.518177,
+      "annual_return": 0.037071,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.156566
+    },
+    "20": {
+      "sharpe": 0.515423,
+      "annual_return": 0.03698,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.156163
+    },
+    "30": {
+      "sharpe": 0.509895,
+      "annual_return": 0.036799,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.155355
+    },
+    "50": {
+      "sharpe": 0.498758,
+      "annual_return": 0.036436,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.153742
+    },
+    "75": {
+      "sharpe": 0.484695,
+      "annual_return": 0.035983,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.151727
+    },
+    "100": {
+      "sharpe": 0.470492,
+      "annual_return": 0.035529,
+      "annual_turnover": 0.174367,
+      "max_drawdown": -0.028709,
+      "total_return": 0.149713
+    }
+  }
+}

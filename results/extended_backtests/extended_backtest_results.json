@@ -1,0 +1,224 @@
+{
+  "large_cap_momentum": {
+    "metrics": {
+      "sharpe": 0.55697,
+      "cagr": 0.116815,
+      "total_return": 14.748745,
+      "ann_volatility": 0.197646,
+      "max_drawdown": -0.560885,
+      "calmar": 0.208269,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6015
+  },
+  "52_week_high_breakout": {
+    "metrics": {
+      "sharpe": 0.592673,
+      "cagr": 0.121867,
+      "total_return": 16.626022,
+      "ann_volatility": 0.191261,
+      "max_drawdown": -0.554647,
+      "calmar": 0.21972,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6162
+  },
+  "deep_value_all_cap": {
+    "metrics": {
+      "sharpe": 0.53137,
+      "cagr": 0.11224,
+      "total_return": 13.215373,
+      "ann_volatility": 0.200462,
+      "max_drawdown": -0.553772,
+      "calmar": 0.202682,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 5974
+  },
+  "high_quality_roic": {
+    "metrics": {
+      "sharpe": 0.577382,
+      "cagr": 0.111727,
+      "total_return": 13.052921,
+      "ann_volatility": 0.175607,
+      "max_drawdown": -0.545127,
+      "calmar": 0.204957,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 5974
+  },
+  "low_volatility_shield": {
+    "metrics": {
+      "sharpe": 0.65902,
+      "cagr": 0.127023,
+      "total_return": 18.762572,
+      "ann_volatility": 0.174225,
+      "max_drawdown": -0.520869,
+      "calmar": 0.243867,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6206
+  },
+  "dividend_aristocrats": {
+    "metrics": {
+      "sharpe": 0.552152,
+      "cagr": 0.100177,
+      "total_return": 9.829148,
+      "ann_volatility": 0.159938,
+      "max_drawdown": -0.528135,
+      "calmar": 0.189681,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 5475
+  },
+  "moving_average_trend": {
+    "metrics": {
+      "sharpe": 0.564026,
+      "cagr": 0.112813,
+      "total_return": 13.399454,
+      "ann_volatility": 0.184283,
+      "max_drawdown": -0.542493,
+      "calmar": 0.207953,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6077
+  },
+  "rsi_mean_reversion": {
+    "metrics": {
+      "sharpe": 0.641091,
+      "cagr": 0.132766,
+      "total_return": 21.435181,
+      "ann_volatility": 0.192158,
+      "max_drawdown": -0.544165,
+      "calmar": 0.243982,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6274
+  },
+  "value_momentum_blend": {
+    "metrics": {
+      "sharpe": 0.553707,
+      "cagr": 0.113848,
+      "total_return": 13.737393,
+      "ann_volatility": 0.192021,
+      "max_drawdown": -0.557442,
+      "calmar": 0.204233,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6015
+  },
+  "quality_momentum": {
+    "metrics": {
+      "sharpe": 0.588241,
+      "cagr": 0.120019,
+      "total_return": 15.915679,
+      "ann_volatility": 0.189249,
+      "max_drawdown": -0.55867,
+      "calmar": 0.214829,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6015
+  },
+  "quality_low_vol": {
+    "metrics": {
+      "sharpe": 0.570434,
+      "cagr": 0.111662,
+      "total_return": 13.032325,
+      "ann_volatility": 0.178561,
+      "max_drawdown": -0.540742,
+      "calmar": 0.206498,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6015
+  },
+  "composite_factor_score": {
+    "metrics": {
+      "sharpe": 0.590773,
+      "cagr": 0.120101,
+      "total_return": 15.946623,
+      "ann_volatility": 0.188237,
+      "max_drawdown": -0.554925,
+      "calmar": 0.216427,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6015
+  },
+  "volatility_targeting": {
+    "metrics": {
+      "sharpe": 0.599279,
+      "cagr": 0.124058,
+      "total_return": 17.505365,
+      "ann_volatility": 0.192949,
+      "max_drawdown": -0.552208,
+      "calmar": 0.224658,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6220
+  },
+  "earnings_surprise_momentum": {
+    "metrics": {
+      "sharpe": 0.545592,
+      "cagr": 0.113986,
+      "total_return": 13.782879,
+      "ann_volatility": 0.196758,
+      "max_drawdown": -0.495231,
+      "calmar": 0.230167,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    },
+    "returns_start": "2000-01-03",
+    "returns_end": "2024-12-30",
+    "n_nonzero": 6263
+  },
+  "benchmark": {
+    "metrics": {
+      "sharpe": 0.693717,
+      "cagr": 0.149737,
+      "total_return": 31.514625,
+      "ann_volatility": 0.201829,
+      "max_drawdown": -0.546425,
+      "calmar": 0.274031,
+      "n_trading_days": 6288,
+      "n_years": 24.952381
+    }
+  }
+}

@@ -1,0 +1,16 @@
+strategy,Bull_sharpe,Bull_ann_return,Bear_sharpe,Bear_ann_return,High-Vol_sharpe,High-Vol_ann_return,Sideways_sharpe,Sideways_ann_return,regime_spread,best_regime,worst_regime
+large_cap_momentum,2.5988,0.3314,-1.4054,-0.5231,1.9161,0.4466,-0.4949,-0.0538,4.0042,Bull,Bear
+52_week_high_breakout,2.8468,0.3472,-1.455,-0.5237,1.819,0.4145,-0.4515,-0.0451,4.3018,Bull,Bear
+deep_value_all_cap,2.5024,0.3255,-1.6065,-0.5966,1.8436,0.4594,-0.3819,-0.0363,4.1089,Bull,Bear
+high_quality_roic,2.7363,0.2938,-1.3721,-0.4627,1.8111,0.3802,-0.3013,-0.019,4.1084,Bull,Bear
+low_volatility_shield,2.8369,0.3132,-1.4215,-0.4665,1.8371,0.3824,-0.1506,0.0002,4.2584,Bull,Bear
+dividend_aristocrats,2.47,0.2516,-1.2962,-0.3967,1.6892,0.3112,-0.1106,0.0065,3.7662,Bull,Bear
+moving_average_trend,2.7679,0.3384,-1.5654,-0.5372,1.8292,0.392,-0.466,-0.0466,4.3333,Bull,Bear
+rsi_mean_reversion,2.8628,0.35,-1.5138,-0.5403,2.0073,0.4561,-0.4733,-0.0474,4.3766,Bull,Bear
+value_momentum_blend,2.6581,0.3237,-1.4838,-0.539,1.9219,0.4421,-0.4726,-0.0474,4.1419,Bull,Bear
+quality_momentum,2.7981,0.3322,-1.4277,-0.5133,1.8819,0.4242,-0.4386,-0.0418,4.2258,Bull,Bear
+quality_low_vol,2.7293,0.3009,-1.366,-0.4661,1.8089,0.3862,-0.3703,-0.029,4.0953,Bull,Bear
+composite_factor_score,2.7811,0.3266,-1.4176,-0.5077,1.8846,0.4239,-0.4074,-0.0369,4.1987,Bull,Bear
+volatility_targeting,2.8145,0.3482,-1.4947,-0.5378,1.9122,0.4467,-0.4968,-0.0518,4.3092,Bull,Bear
+earnings_surprise_momentum,2.5187,0.3659,-1.6781,-0.5586,1.6239,0.3802,-0.5791,-0.0708,4.1968,Bull,Bear
+benchmark,2.9809,0.3811,-1.4577,-0.5493,2.1012,0.5023,-0.4683,-0.0505,4.4386,Bull,Bear

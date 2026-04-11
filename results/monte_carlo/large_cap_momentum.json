@@ -1,0 +1,50 @@
+{
+  "strategy": "large_cap_momentum",
+  "n_returns": 1007,
+  "iid_bootstrap": {
+    "method": "iid_bootstrap",
+    "n_samples": 10000,
+    "observed_sharpe": 0.899987,
+    "mean_bootstrap_sharpe": 0.903781,
+    "std_bootstrap_sharpe": 0.510612,
+    "ci_lower": -0.087107,
+    "ci_upper": 1.924768,
+    "ci_width": 2.011875,
+    "p_value": 0.0374,
+    "significant_at_5pct": true,
+    "significant_at_1pct": false
+  },
+  "block_bootstrap": {
+    "method": "block_bootstrap",
+    "block_size": 20,
+    "n_samples": 10000,
+    "observed_sharpe": 0.899987,
+    "mean_bootstrap_sharpe": 0.892029,
+    "std_bootstrap_sharpe": 0.44265,
+    "ci_lower": 0.028634,
+    "ci_upper": 1.762305,
+    "ci_width": 1.733671,
+    "p_value": 0.022,
+    "significant_at_5pct": true,
+    "significant_at_1pct": false
+  },
+  "random_sign_test": {
+    "method": "random_sign_test",
+    "n_permutations": 10000,
+    "observed_sharpe": 0.899987,
+    "mean_random_sharpe": -0.05135,
+    "std_random_sharpe": 0.502711,
+    "p_value": 0.0285,
+    "percentile_rank": 97.15,
+    "significant_at_5pct": true,
+    "significant_at_1pct": false
+  },
+  "additional_metrics": {
+    "n_observations": 1007,
+    "se_sharpe_lo2002": 0.592955,
+    "t_statistic": 1.517799,
+    "skewness": -0.427595,
+    "excess_kurtosis": 4.168347,
+    "adjusted_sharpe_pezier_white": 0.806776
+  }
+}

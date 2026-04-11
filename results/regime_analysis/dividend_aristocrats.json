@@ -1,0 +1,80 @@
+{
+  "regime_performance": {
+    "Bull": {
+      "n_days": 257,
+      "sharpe": 0.29589839998065154,
+      "ann_return": 0.02947293115909639,
+      "ann_vol": 0.03201413444518732,
+      "max_drawdown": -0.01533945746218035,
+      "win_rate": 0.06614785992217899,
+      "avg_daily_return": 0.00011695607602816027,
+      "market_ann_return": 0.33611874085048804,
+      "excess_return": -0.30664580969139166,
+      "sortino": 0.2664194240117393,
+      "worst_day": -0.00732079513771685,
+      "best_day": 0.015198311509058992
+    },
+    "Bear": {
+      "n_days": 70,
+      "sharpe": 0.0,
+      "ann_return": 0.0,
+      "ann_vol": 0.0,
+      "max_drawdown": 0.0,
+      "win_rate": 0.0,
+      "avg_daily_return": 0.0,
+      "market_ann_return": -0.26336640851683935,
+      "excess_return": 0.26336640851683935,
+      "sortino": 0.0,
+      "worst_day": 0.0,
+      "best_day": 0.0
+    },
+    "High-Vol": {
+      "n_days": 58,
+      "sharpe": 0.0,
+      "ann_return": 0.0,
+      "ann_vol": 0.0,
+      "max_drawdown": 0.0,
+      "win_rate": 0.0,
+      "avg_daily_return": 0.0,
+      "market_ann_return": 0.4725157415879081,
+      "excess_return": -0.4725157415879081,
+      "sortino": 0.0,
+      "worst_day": 0.0,
+      "best_day": 0.0
+    },
+    "Sideways": {
+      "n_days": 559,
+      "sharpe": 0.8655019069110668,
+      "ann_return": 0.05298640936489169,
+      "ann_vol": 0.03811246295530249,
+      "max_drawdown": -0.028708589896218828,
+      "win_rate": 0.16815742397137745,
+      "avg_daily_return": 0.00021026352922576068,
+      "market_ann_return": 0.012586873480560801,
+      "excess_return": 0.04039953588433089,
+      "sortino": 0.7240679932786178,
+      "worst_day": -0.015516088534964766,
+      "best_day": 0.011337402791053811
+    },
+    "Overall": {
+      "n_days": 944,
+      "sharpe": 0.5748078729934992,
+      "ann_return": 0.039400366676760834,
+      "ann_vol": 0.03375104550278183
+    }
+  },
+  "edge_score": {
+    "overall_sharpe": 0.5748078729934992,
+    "best_regime": "Sideways",
+    "best_regime_sharpe": 0.8655019069110668,
+    "worst_regime": "Bear",
+    "worst_regime_sharpe": 0.0,
+    "regime_spread": 0.8655019069110668,
+    "regime_sharpes": {
+      "Bull": 0.29589839998065154,
+      "Bear": 0.0,
+      "High-Vol": 0.0,
+      "Sideways": 0.8655019069110668
+    }
+  }
+}

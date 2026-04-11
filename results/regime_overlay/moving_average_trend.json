@@ -1,0 +1,60 @@
+{
+  "strategy": "moving_average_trend",
+  "baseline": {
+    "sharpe": 0.666278,
+    "annual_return": 0.135265,
+    "max_drawdown": -0.263066,
+    "sharpe_bull": 3.360333,
+    "sharpe_bear": -0.892788,
+    "sharpe_highvol": 3.974048,
+    "sharpe_sideways": -0.192782
+  },
+  "bear_only": {
+    "sharpe": 0.501714,
+    "annual_return": 0.084931,
+    "max_drawdown": -0.240601,
+    "sharpe_bull": 3.360333,
+    "sharpe_bear": -4.498498,
+    "sharpe_highvol": 2.208291,
+    "sharpe_sideways": -0.393382
+  },
+  "aggressive": {
+    "sharpe": 0.373182,
+    "annual_return": 0.055291,
+    "max_drawdown": -0.159124,
+    "sharpe_bull": 2.791544,
+    "sharpe_bear": -4.765261,
+    "sharpe_highvol": 2.208291,
+    "sharpe_sideways": -0.992726
+  },
+  "trend_only": {
+    "sharpe": 0.110961,
+    "annual_return": 0.026443,
+    "max_drawdown": -0.251123,
+    "sharpe_bull": 3.360333,
+    "sharpe_bear": 0.0,
+    "sharpe_highvol": 0.253974,
+    "sharpe_sideways": -1.358921
+  },
+  "improvement_bear_only": {
+    "sharpe_delta": -0.164564,
+    "bear_sharpe_delta": -3.60571,
+    "mdd_delta": 0.022465,
+    "bull_cost": 0.0,
+    "protection_score": -3.493387
+  },
+  "improvement_aggressive": {
+    "sharpe_delta": -0.293096,
+    "bear_sharpe_delta": -3.872473,
+    "mdd_delta": 0.103942,
+    "bull_cost": -0.568789,
+    "protection_score": -3.352762
+  },
+  "improvement_trend_only": {
+    "sharpe_delta": -0.555317,
+    "bear_sharpe_delta": 0.892788,
+    "mdd_delta": 0.011943,
+    "bull_cost": 0.0,
+    "protection_score": 0.952506
+  }
+}

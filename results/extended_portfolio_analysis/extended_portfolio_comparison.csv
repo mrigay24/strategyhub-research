@@ -1,0 +1,7 @@
+portfolio,sharpe,cagr,max_drawdown,ann_volatility
+Equal-weight all 14,0.5935,0.118,-0.542,0.1824
+Tier 1 equal-wt (Ph3 top5),0.6218,0.1256,-0.5453,0.186
+Risk-parity all 14,0.594,0.1178,-0.5417,0.1817
+Risk-parity Tier 1 (Ph3),0.6226,0.1256,-0.5448,0.1857
+Benchmark (equal-wt idx),0.6936,0.1497,-0.5464,0.2018
+"Min-corr top 3 (earnings, dividend, deep_val)",0.5759,0.1111,-0.5197,0.1749

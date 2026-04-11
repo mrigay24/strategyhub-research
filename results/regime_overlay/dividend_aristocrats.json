@@ -1,0 +1,60 @@
+{
+  "strategy": "dividend_aristocrats",
+  "baseline": {
+    "sharpe": 0.518177,
+    "annual_return": 0.037071,
+    "max_drawdown": -0.028709,
+    "sharpe_bull": 0.295898,
+    "sharpe_bear": 0.0,
+    "sharpe_highvol": 0.0,
+    "sharpe_sideways": 0.764206
+  },
+  "bear_only": {
+    "sharpe": 0.518177,
+    "annual_return": 0.037071,
+    "max_drawdown": -0.028709,
+    "sharpe_bull": 0.295898,
+    "sharpe_bear": 0.0,
+    "sharpe_highvol": 0.0,
+    "sharpe_sideways": 0.764206
+  },
+  "aggressive": {
+    "sharpe": 0.087397,
+    "annual_return": 0.021872,
+    "max_drawdown": -0.015339,
+    "sharpe_bull": 0.30526,
+    "sharpe_bear": 0.0,
+    "sharpe_highvol": 0.0,
+    "sharpe_sideways": 0.17474
+  },
+  "trend_only": {
+    "sharpe": 0.290253,
+    "annual_return": 0.029267,
+    "max_drawdown": -0.04292,
+    "sharpe_bull": 0.295898,
+    "sharpe_bear": 0.0,
+    "sharpe_highvol": 0.0,
+    "sharpe_sideways": 0.432233
+  },
+  "improvement_bear_only": {
+    "sharpe_delta": 0.0,
+    "bear_sharpe_delta": 0.0,
+    "mdd_delta": 0.0,
+    "bull_cost": 0.0,
+    "protection_score": 0.0
+  },
+  "improvement_aggressive": {
+    "sharpe_delta": -0.430779,
+    "bear_sharpe_delta": 0.0,
+    "mdd_delta": 0.013369,
+    "bull_cost": 0.009361,
+    "protection_score": 0.066846
+  },
+  "improvement_trend_only": {
+    "sharpe_delta": -0.227924,
+    "bear_sharpe_delta": 0.0,
+    "mdd_delta": -0.014211,
+    "bull_cost": 0.0,
+    "protection_score": -0.071055
+  }
+}

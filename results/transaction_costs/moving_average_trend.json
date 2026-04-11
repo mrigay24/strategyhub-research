@@ -1,0 +1,86 @@
+{
+  "strategy": "moving_average_trend",
+  "resilience": "BULLETPROOF",
+  "sensitivity": {
+    "sharpe_at_zero": 0.672977,
+    "sharpe_at_reference": 0.666278,
+    "sharpe_per_10bps": -0.004479,
+    "breakeven_cost_bps": null,
+    "cost_drag_pct": 0.010434,
+    "annual_turnover": 0.838523,
+    "return_at_zero": 0.136691,
+    "return_at_reference": 0.135265
+  },
+  "cost_curve": {
+    "0": {
+      "sharpe": 0.672977,
+      "annual_return": 0.136691,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.262774,
+      "total_return": 0.668589
+    },
+    "2": {
+      "sharpe": 0.672084,
+      "annual_return": 0.136501,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.262813,
+      "total_return": 0.667474
+    },
+    "5": {
+      "sharpe": 0.670745,
+      "annual_return": 0.136216,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.262871,
+      "total_return": 0.665802
+    },
+    "10": {
+      "sharpe": 0.668512,
+      "annual_return": 0.13574,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.262969,
+      "total_return": 0.663018
+    },
+    "15": {
+      "sharpe": 0.666278,
+      "annual_return": 0.135265,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.263066,
+      "total_return": 0.660239
+    },
+    "20": {
+      "sharpe": 0.664043,
+      "annual_return": 0.13479,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.263163,
+      "total_return": 0.657464
+    },
+    "30": {
+      "sharpe": 0.659571,
+      "annual_return": 0.13384,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.263358,
+      "total_return": 0.651928
+    },
+    "50": {
+      "sharpe": 0.650617,
+      "annual_return": 0.131943,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.263748,
+      "total_return": 0.640908
+    },
+    "75": {
+      "sharpe": 0.639407,
+      "annual_return": 0.129574,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.264235,
+      "total_return": 0.62723
+    },
+    "100": {
+      "sharpe": 0.628177,
+      "annual_return": 0.127209,
+      "annual_turnover": 0.838523,
+      "max_drawdown": -0.264721,
+      "total_return": 0.613659
+    }
+  }
+}
