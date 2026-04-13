@@ -10,12 +10,14 @@ __pycache__/
 # Large data files (>100MB — too large for GitHub)
 data_raw/
 data_processed/
-data/
+# data/ is allowed — only contains strategyhub.db (2.2MB, needed for Railway)
 
 # SQLite database (auto-generated)
 *.db
 *.sqlite
 *.sqlite3
+# Exception: production database (needed for Railway deployment)
+!data/strategyhub.db
 
 # Environment variables
 .env
