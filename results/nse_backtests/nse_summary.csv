@@ -1,0 +1,15 @@
+strategy,market,sharpe,cagr_pct,max_dd_pct,status
+large_cap_momentum,NSE,0.8120588384533591,17.49,-70.22,success
+52_week_high_breakout,NSE,1.0578207730159384,22.83,-63.99,success
+deep_value_all_cap,NSE,0.9756869712427791,21.2,-64.93,success
+high_quality_roic,NSE,0.9908811518208216,18.88,-52.54,success
+low_volatility_shield,NSE,0.9841268347214408,15.97,-40.83,success
+dividend_aristocrats,NSE,1.0473485113888088,16.55,-34.76,success
+moving_average_trend,NSE,1.0733721674119499,22.97,-62.93,success
+rsi_mean_reversion,NSE,1.1096982266976818,24.92,-66.03,success
+value_momentum_blend,NSE,0.9952715428095659,21.58,-64.87,success
+quality_momentum,NSE,0.9850562694756185,21.23,-64.94,success
+quality_low_vol,NSE,1.0424283395762164,20.49,-57.26,success
+composite_factor_score,NSE,1.0050173707159997,21.35,-64.15,success
+volatility_targeting,NSE,1.106720864807158,14.3,-30.5,success
+earnings_surprise_momentum,NSE,0.0,,,success

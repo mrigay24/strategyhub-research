@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-04-16T19:38:26.213037",
+  "market": "NSE",
+  "n_symbols": 328,
+  "date_range": [
+    "2005-01-03",
+    "2026-04-15"
+  ],
+  "benchmark": {
+    "name": "Equal-weight NSE 500",
+    "sharpe": null,
+    "cagr": null
+  },
+  "strategies": {
+    "large_cap_momentum": {
+      "strategy": "large_cap_momentum",
+      "market": "NSE",
+      "sharpe": 0.8120588384533591,
+      "cagr": 0.17492763551025625,
+      "max_dd": -0.7021698036393466,
+      "volatility": 0.1983724044681197,
+      "total_return": 27.855719661865137,
+      "win_rate": 0.5821945337620579,
+      "status": "success"
+    },
+    "52_week_high_breakout": {
+      "strategy": "52_week_high_breakout",
+      "market": "NSE",
+      "sharpe": 1.0578207730159384,
+      "cagr": 0.22834487118119196,
+      "max_dd": -0.6398889468492768,
+      "volatility": 0.193413887835295,
+      "total_return": 71.94014260196244,
+      "win_rate": 0.5883274578926753,
+      "status": "success"
+    },
+    "deep_value_all_cap": {
+      "strategy": "deep_value_all_cap",
+      "market": "NSE",
+      "sharpe": 0.9756869712427791,
+      "cagr": 0.2120038800498958,
+      "max_dd": -0.6492624229021169,
+      "volatility": 0.19661519513460055,
+      "total_return": 54.16391353599005,
+      "win_rate": 0.5871281117182756,
+      "status": "success"
+    },
+    "high_quality_roic": {
+      "strategy": "high_quality_roic",
+      "market": "NSE",
+      "sharpe": 0.9908811518208216,
+      "cagr": 0.1888233693971273,
+      "max_dd": -0.5254079040735692,
+      "volatility": 0.16890500413475545,
+      "total_return": 35.87507901985178,
+      "win_rate": 0.5841945288753799,
+      "status": "success"
+    },
+    "low_volatility_shield": {
+      "strategy": "low_volatility_shield",
+      "market": "NSE",
+      "sharpe": 0.9841268347214408,
+      "cagr": 0.1596730155477355,
+      "max_dd": -0.4083019256148045,
+      "volatility": 0.14033462366311766,
+      "total_return": 20.971301922014877,
+      "win_rate": 0.5894288577154309,
+      "status": "success"
+    },
+    "dividend_aristocrats": {
+      "strategy": "dividend_aristocrats",
+      "market": "NSE",
+      "sharpe": 1.0473485113888088,
+      "cagr": 0.1655029956196088,
+      "max_dd": -0.3475960194026726,
+      "volatility": 0.1360539008721154,
+      "total_return": 23.393794597458275,
+      "win_rate": 0.5747126436781609,
+      "status": "success"
+    },
+    "moving_average_trend": {
+      "strategy": "moving_average_trend",
+      "market": "NSE",
+      "sharpe": 1.0733721674119499,
+      "cagr": 0.22971381330227558,
+      "max_dd": -0.6293018443594444,
+      "volatility": 0.19126927955554612,
+      "total_return": 73.65448959990307,
+      "win_rate": 0.5909181043029943,
+      "status": "success"
+    },
+    "rsi_mean_reversion": {
+      "strategy": "rsi_mean_reversion",
+      "market": "NSE",
+      "sharpe": 1.1096982266976818,
+      "cagr": 0.24920173466275242,
+      "max_dd": -0.6603078997573599,
+      "volatility": 0.20090647535498082,
+      "total_return": 102.62856805291037,
+      "win_rate": 0.5899198167239404,
+      "status": "success"
+    },
+    "value_momentum_blend": {
+      "strategy": "value_momentum_blend",
+      "market": "NSE",
+      "sharpe": 0.9952715428095659,
+      "cagr": 0.21579659182296096,
+      "max_dd": -0.6487093043807336,
+      "volatility": 0.19569955229155117,
+      "total_return": 57.87844954383251,
+      "win_rate": 0.5896046558298214,
+      "status": "success"
+    },
+    "quality_momentum": {
+      "strategy": "quality_momentum",
+      "market": "NSE",
+      "sharpe": 0.9850562694756185,
+      "cagr": 0.2122769489613825,
+      "max_dd": -0.6493687353388737,
+      "volatility": 0.19454809708304344,
+      "total_return": 54.42371997789291,
+      "win_rate": 0.5886012442303833,
+      "status": "success"
+    },
+    "quality_low_vol": {
+      "strategy": "quality_low_vol",
+      "market": "NSE",
+      "sharpe": 1.0424283395762164,
+      "cagr": 0.20485461640163738,
+      "max_dd": -0.5725622713816511,
+      "volatility": 0.17433803329743475,
+      "total_return": 47.76019947348002,
+      "win_rate": 0.588801926550271,
+      "status": "success"
+    },
+    "composite_factor_score": {
+      "strategy": "composite_factor_score",
+      "market": "NSE",
+      "sharpe": 1.0050173707159997,
+      "cagr": 0.2135269141334286,
+      "max_dd": -0.6415154980655582,
+      "volatility": 0.19102437116358736,
+      "total_return": 55.627919857772554,
+      "win_rate": 0.5890026088701585,
+      "status": "success"
+    },
+    "volatility_targeting": {
+      "strategy": "volatility_targeting",
+      "market": "NSE",
+      "sharpe": 1.106720864807158,
+      "cagr": 0.14295219333788745,
+      "max_dd": -0.3050279063337593,
+      "volatility": 0.10797654457901343,
+      "total_return": 15.22929481367957,
+      "win_rate": 0.5928640308582449,
+      "status": "success"
+    },
+    "earnings_surprise_momentum": {
+      "strategy": "earnings_surprise_momentum",
+      "market": "NSE",
+      "sharpe": 0.0,
+      "cagr": 0.0,
+      "max_dd": 0.0,
+      "volatility": 0.0,
+      "total_return": 0.0,
+      "win_rate": 0.0,
+      "status": "success"
+    }
+  }
+}
