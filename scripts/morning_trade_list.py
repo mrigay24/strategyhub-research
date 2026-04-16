@@ -41,9 +41,10 @@ log = logging.getLogger(__name__)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-SIGNALS_PATH    = Path("results/live_signals/current_signals.json")
-OUTPUT_DIR      = Path("results/live_signals")
-DEFAULT_ACCOUNT = 10_000
+SIGNALS_PATH_SPX = Path("results/live_signals/current_signals.json")
+SIGNALS_PATH_NSE = Path("results/live_signals/nse_signals.json")
+OUTPUT_DIR       = Path("results/live_signals")
+DEFAULT_ACCOUNT  = 10_000
 
 TIER1 = {"low_volatility_shield", "rsi_mean_reversion"}
 TIER2 = {
@@ -386,15 +387,21 @@ def main():
     parser.add_argument("--strategies", nargs="+",  default=None)
     parser.add_argument("--refresh",    action="store_true",
                         help="Pull fresh Yahoo Finance data before building list")
+    parser.add_argument("--market",     type=str, default="spx",
+                        choices=["spx", "nse"],
+                        help="Market universe: spx (S&P 500) or nse (NIFTY 500)")
     args = parser.parse_args()
+
+    signals_path = SIGNALS_PATH_NSE if args.market == "nse" else SIGNALS_PATH_SPX
 
     if args.refresh:
         log.info("Refreshing live signals...")
         import subprocess
-        subprocess.run([sys.executable, "scripts/generate_live_signals.py"], check=True)
+        script = "scripts/generate_nse_signals.py" if args.market == "nse" else "scripts/generate_live_signals.py"
+        subprocess.run([sys.executable, script], check=True)
 
     # ── Load & score ──
-    data     = load_signals(SIGNALS_PATH)
+    data     = load_signals(signals_path)
     df       = build_consensus_scores(data, args.strategies)
     df_sized = add_position_sizing(df, args.account, top_n=args.top)
     risk     = prop_firm_checklist(df_sized)
