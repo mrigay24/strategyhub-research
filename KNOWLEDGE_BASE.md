@@ -4270,5 +4270,110 @@ Managed via `loadingStage` state + `setTimeout` cleared on response.
 
 ---
 
-*Last updated: 2026-03-12*
+## Part 34: Deployment + Prop Trading Setup (April 2026)
+
+### 34.1 Platform Deployment
+
+**Frontend (Vercel):**
+- Root Directory must be set to `frontend` in Vercel project settings
+- Framework Preset: Next.js
+- `export const dynamic = 'force-dynamic'` required in `app/strategy/[slug]/page.tsx` — Next.js 14 App Router requires explicit dynamic opt-in for routes using `useParams()` without `generateStaticParams`
+
+**Backend (Render):**
+- Free tier, spins down after 15min inactivity (~30s cold start)
+- Build command: `pip install -r requirements-server.txt` (slim deps, no jupyter/matplotlib)
+- Start command: `uvicorn src.api.main:app --host 0.0.0.0 --port $PORT`
+- `.python-version` file pins Python 3.11.8 (pandas 2.0.3 incompatible with Python 3.14)
+- Database committed at `data/strategyhub.db` (2.2MB, `!data/strategyhub.db` exception in `.gitignore`)
+- `NEXT_PUBLIC_API_URL=https://strategyhub-research.onrender.com/api/v1` set as Vercel env var
+
+### 34.2 Morning Trade List
+
+`scripts/morning_trade_list.py` — run each morning before 9:30am ET.
+
+**Consensus scoring:**
+- Tier 1 strategies (Low Vol Shield, RSI): 3 pts per appearance
+- Tier 2 strategies (LCM, 52wk, QualMom, CompFactor, ValMom, QualLowVol): 2 pts
+- Other strategies: 1 pt
+- Weight bonus: +0 to +1 proportional to position weight within strategy
+
+**Three enrichment layers (run in parallel via ThreadPoolExecutor):**
+1. **Earnings filter**: `yf.Ticker(sym).calendar` — blacklists stocks reporting in next 3 days. Critical for prop trading (binary event = instant daily loss violation)
+2. **Sector concentration**: `yf.Ticker(sym).info["sector"]` — warns if any sector >40% of portfolio
+3. **News sentiment**: `yf.Ticker(sym).news` — keyword scoring on recent headlines
+
+**Position sizing:** Score-proportional, capped 10% per stock, 80% deployment (20% cash buffer)
+
+**Prop firm compliance:**
+- FTMO: 5% daily loss limit
+- Apex: 3% daily loss limit
+- TopStep: 2% daily loss limit
+- Estimated max daily loss = (total_allocated% × 2%) — based on 2% avg stock move
+
+**Flags:** `--market nse` routes to `nse_signals.json` and NSE sector/earnings data
+
+### 34.3 Market Sentiment Tracker
+
+`scripts/market_sentiment.py` — daily regime context before acting on trade list.
+
+**Indicators:**
+- VIX: `^VIX` — <15 complacency, 15-20 low fear, 20-25 moderate, >30 extreme fear
+- Market breadth: % of S&P 500 sample above 50-day and 200-day MA
+- SPY momentum: 1M/3M/6M/12M returns
+- Sector rotation: 11 sector ETFs (XLK, XLV, XLF, etc.), 1M return ranked
+
+**Regime classification:**
+- BULL: ≥3 bullish signals → full allocation
+- BEAR: ≥3 bearish signals → skip today
+- HIGH-VOL: VIX ≥30 → 50% size reduction
+- SIDEWAYS: mixed → top-10 positions only
+
+**Key insight from April 16 run:** SPY showing BULLISH momentum but breadth BEARISH (40% above 50-day MA) — narrow tech-driven rally, fragile. Classic divergence warning.
+
+### 34.4 Indian Market Extension (NSE 500)
+
+**Data:** 328 NIFTY 500 stocks via `yfinance` `.NS` suffix, 2005–2026, 1.63M rows
+- `scripts/download_nse_data.py` — downloads and cleans NSE data
+- Saved to `data_processed/nse_prices_clean.parquet`
+
+**Results (all 14 strategies):**
+
+| Strategy | US Sharpe | NSE Sharpe | NSE CAGR |
+|---|---|---|---|
+| RSI Mean Reversion | 0.641 | **1.110** | 24.9% |
+| Volatility Targeting | 0.59 | **1.107** | 14.3% |
+| Moving Avg Trend | 0.58 | **1.073** | 23.0% |
+| 52-Week High Breakout | 0.59 | **1.058** | 22.8% |
+| Dividend Aristocrats | 0.57 | **1.047** | 16.6% |
+
+**Key finding: 13/14 strategies have higher Sharpe on NSE than S&P 500.**
+
+**Why:** Indian markets are less efficient (fewer quant funds, more retail participation, stronger behavioral biases → factor premia persist longer)
+
+**Caveat:** Survivorship bias present — NSE data uses current NIFTY 500 composition, not point-in-time. True alpha is somewhat lower. Qualitative conclusion still holds.
+
+**Earnings Surprise Momentum fails (Sharpe 0.00)** — requires analyst consensus estimates not available for NSE via yfinance.
+
+**Live NSE signals:** `scripts/generate_nse_signals.py` — mirrors US signal generation with `.NS` suffix
+
+### 34.5 Daily Automation
+
+`scripts/setup_daily_refresh.sh` — installs macOS launchd job:
+- Runs 6:00 AM weekdays only (weekend check via `date +%u`)
+- Refreshes both SPX and NSE signals
+- Generates both trade lists
+- Runs sentiment tracker
+- Logs to `logs/daily_refresh.log`
+
+### 34.6 Blog Series
+
+4 posts written in `blogs/`:
+1. `01_14_strategies_25_years.md` — "None Beat the S&P 500"
+2. `02_ai_strategy_builder.md` — AI Builder architecture
+3. `03_prop_trading_with_factor_strategies.md` — prop trading use case
+4. `04_indian_market_factor_research.md` — NSE vs S&P 500 comparison
+
+---
+
+*Last updated: 2026-04-16*
 *Session: Live signals (Path 1) + AI generate-and-backtest (Path 2) frontend complete. TypeScript clean compile confirmed.*

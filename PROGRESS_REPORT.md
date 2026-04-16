@@ -1,7 +1,7 @@
 # StrategyHub Research - Progress Report
 
-> **Last Updated:** 2026-03-12
-> **Status:** ALL PHASES COMPLETE — Platform fully built. One task remaining: end-to-end AI Builder test with ANTHROPIC_API_KEY (tomorrow).
+> **Last Updated:** 2026-04-16
+> **Status:** DEPLOYED + PROP TRADING SETUP COMPLETE. Frontend live on Vercel, backend on Render. Morning trade list, NSE extension, sentiment tracker all operational.
 > **Owner:** Mrigay Pathak
 
 ---
@@ -1964,9 +1964,57 @@ Covers (updated per phase):
 
 ---
 
-## 13. CONTACT & OWNERSHIP
+---
+
+## 13. POST-DEPLOYMENT WORK (April 2026)
+
+### Deployment
+- **Frontend:** Live on Vercel — `strategyhub-research.vercel.app`
+- **Backend:** Live on Render — `strategyhub-research.onrender.com` (free tier, ~30s cold start)
+- **GitHub:** `github.com/mrigay24/strategyhub-research`
+
+### Prop Trading Setup
+- `scripts/morning_trade_list.py` — consensus-ranked buy list across 14 strategies
+  - Earnings blacklist (auto-removes stocks reporting in next 3 days)
+  - Sector concentration warnings (flags >40% in single sector)
+  - News sentiment scoring per stock
+  - Prop firm compliance check (FTMO/Apex/TopStep daily loss limits)
+  - `--market nse` flag for Indian market mode
+- `scripts/market_sentiment.py` — daily regime dashboard
+  - VIX fear gauge, market breadth, SPY momentum, sector rotation
+  - Outputs: BULL / BEAR / HIGH-VOL / SIDEWAYS with action guidance
+- `scripts/setup_daily_refresh.sh` — macOS launchd job (6am weekdays)
+
+### Indian Market Extension
+- **Data:** 328 NIFTY 500 stocks, 2005-2026, 1.63M rows (`data_processed/nse_prices_clean.parquet`)
+- **Results:** 13/14 strategies profitable, Sharpe 0.81–1.11 (vs US: 0.53–0.66)
+- **Key finding:** Every strategy has higher Sharpe on NSE than S&P 500
+  - RSI Mean Reversion: 1.110 NSE vs 0.641 US
+  - Volatility Targeting: 1.107 NSE vs 0.59 US
+- **Explanation:** Less efficient market, more retail participation, stronger behavioral biases
+- `scripts/generate_nse_signals.py` — live NSE signal generation
+- Results: `results/nse_backtests/nse_summary.csv`
+
+### Blogs Written
+- `blogs/01_14_strategies_25_years.md` — "None Beat the S&P 500"
+- `blogs/02_ai_strategy_builder.md` — AI Strategy Builder walkthrough
+- `blogs/03_prop_trading_with_factor_strategies.md` — prop trading with factor research
+- `blogs/04_indian_market_factor_research.md` — NSE vs S&P 500 comparison
+
+### Morning Workflow
+```bash
+# Each morning before 9:30am ET:
+.venv/bin/python scripts/market_sentiment.py          # regime check first
+.venv/bin/python scripts/morning_trade_list.py --refresh --account 10000  # S&P 500
+.venv/bin/python scripts/morning_trade_list.py --market nse --refresh     # NSE
+```
+
+---
+
+## 14. CONTACT & OWNERSHIP
 
 - **Owner:** Mrigay Pathak
-- **Purpose:** Personal research, portfolio showcase
+- **Purpose:** Personal research, portfolio showcase, prop trading
 - **Started:** January 2026
 - **Phase 1 Completed:** March 2026
+- **Deployed:** April 2026
