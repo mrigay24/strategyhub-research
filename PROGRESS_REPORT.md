@@ -2065,6 +2065,45 @@ We replaced this with a purpose-built **dollar-neutral long-short backtester** (
 
 ---
 
+## 16. PHASE 5B — MULTI-FACTOR L/S PORTFOLIO + RENDER DEPLOYMENT
+
+*Completed: 2026-04-21*
+
+### Multi-Factor Portfolio Analysis
+
+**Key finding**: L/S strategies have avg pairwise correlation of **0.139** vs **0.951** for long-only — 7× more diversifiable. Max-Sharpe MVO combination reaches **SR = 0.754**, above any individual strategy (best individual = 0.674).
+
+| Portfolio | Sharpe | CAGR | Max DD |
+|-----------|--------|------|--------|
+| Equal-Weight (7 pos-SR) | 0.697 | 10.8% | -44.9% |
+| Risk-Parity (7 pos-SR) | 0.648 | 8.3% | -31.8% |
+| Max-Sharpe MVO (7 pos-SR) | **0.754** | 12.7% | -50.0% |
+
+Best triplet: Div Aristocrats + Quality Momentum + MA Trend, SR = 0.752, avg_corr = 0.281.
+
+Standout regime result: dot-com bust SR = **1.148** (factor correctly shorted overvalued tech).
+
+### Files Added/Modified
+
+| File | Change |
+|------|--------|
+| `scripts/ls_portfolio_analysis.py` | NEW — correlation, equal-weight, risk-parity, max-Sharpe, best pairs, regime |
+| `results/ls_portfolio/ls_portfolio_results.json` | NEW — full results |
+| `src/api/routes/research.py` | Added `GET /research/longshort/portfolio` endpoint |
+| `frontend/src/lib/api.ts` | Added `LSPortfolioData` type + `fetchLSPortfolio()` |
+| `frontend/src/app/factor-portfolio/page.tsx` | NEW — full interactive portfolio page |
+| `frontend/src/components/TopNav.tsx` | Added "Factor Portfolio" nav link |
+| `render.yaml` | NEW — Render web service config (Python 3.11, auto-deploy) |
+| `src/api/main.py` | CORS: env-var-driven origins, removed invalid allow_credentials+wildcard combo |
+
+### Render Deployment (ready to execute)
+1. render.com → New Web Service → `mrigay24/strategyhub-research` (reads render.yaml)
+2. Set `ANTHROPIC_API_KEY` in Render dashboard
+3. Set `NEXT_PUBLIC_API_URL=https://<render-url>/api/v1` in Vercel → Redeploy
+4. Optional: set `ALLOWED_ORIGINS=https://<vercel-url>` in Render
+
+---
+
 ## 15. CONTACT & OWNERSHIP
 
 - **Owner:** Mrigay Pathak

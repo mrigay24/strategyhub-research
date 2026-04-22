@@ -21,6 +21,7 @@ SCORECARD_CSV = RESULTS_DIR / "phase3_summary" / "master_scorecard.csv"
 ROLLING_FILE = RESULTS_DIR / "extended_rolling_performance" / "extended_rolling_results.json"
 ALPHA_FILE = RESULTS_DIR / "factor_alpha" / "factor_alpha.json"
 LS_FILE = RESULTS_DIR / "longshort" / "longshort_results.json"
+LS_PORTFOLIO_FILE = RESULTS_DIR / "ls_portfolio" / "ls_portfolio_results.json"
 PORTFOLIO_FILE = RESULTS_DIR / "extended_portfolio_analysis" / "extended_portfolio_results.json"
 CORR_MATRIX_CSV = RESULTS_DIR / "extended_portfolio_analysis" / "extended_correlation_matrix.csv"
 
@@ -343,6 +344,20 @@ async def get_longshort_strategy(strategy_name: str):
         "start_date":   s.get("start_date"),
         "end_date":     s.get("end_date"),
     }
+
+
+@router.get("/longshort/portfolio")
+async def get_longshort_portfolio():
+    """
+    Multi-factor L/S portfolio construction results.
+
+    Returns correlation stats, equal-weight / risk-parity / max-Sharpe
+    portfolio metrics + equity curves, best pairs, and regime breakdown.
+    """
+    data = _load_json(LS_PORTFOLIO_FILE)
+    if not data:
+        raise HTTPException(status_code=404, detail="L/S portfolio results not yet computed. Run scripts/ls_portfolio_analysis.py")
+    return data
 
 
 @router.get("/sensitivity/{strategy_name}")

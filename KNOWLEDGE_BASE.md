@@ -4494,5 +4494,98 @@ Data source: `results/longshort/longshort_results.json` (same pattern as `factor
 
 ---
 
+---
+
+## §36 — Multi-Factor L/S Portfolio Construction
+
+*Added: 2026-04-21*
+
+### 36.1 The Diversification Premium
+
+Long-only strategies are essentially parallel bets on the same thing — the market going up.
+Strip the market beta via L/S construction and the picture changes completely:
+
+| Metric | Long-Only | L/S |
+|--------|-----------|-----|
+| Avg pairwise correlation | 0.951 | **0.139** |
+| Diversification Ratio | 1.024 | ~1.6–2.0 |
+| Best individual Sharpe | 0.659 (Low Vol) | 0.674 (Div Aristocrats) |
+| Best combined Sharpe | ~0.70 (Risk-Parity) | **0.754 (Max-Sharpe MVO)** |
+
+The L/S universe is **7× more diversifiable** than the long-only universe.
+
+### 36.2 Portfolio Construction Methods
+
+Three methods, all restricted to the 7 positive-Sharpe L/S strategies:
+
+**Equal-Weight** — simplest, hardest to overfit. SR = 0.697, CAGR = 10.8%, MDD = -44.9%
+
+**Risk-Parity** — allocate inversely by volatility. Lower drawdown (-31.8%) but lower CAGR (8.3%). SR = 0.648. Better for drawdown-constrained accounts (FTMO-style).
+
+**Max-Sharpe MVO** — mean-variance optimization via scipy.optimize. SR = 0.754, CAGR = 12.7%, MDD = -50.0%. Highest return but most concentrated (optimizer piles into DivAristocrats + QualMom).
+
+### 36.3 Best Combinations
+
+**Best pair**: Dividend Aristocrats + Quality Momentum — SR = 0.741, avg_corr = 0.575
+
+**Best triplet**: Dividend Aristocrats + Quality Momentum + MA Trend — SR = 0.752, avg_corr = 0.281
+
+Adding MA Trend (SPY corr = 0.002) to the top pair reduces average correlation from 0.575 to 0.281 — almost halved. This is the diversification value of a truly market-neutral factor.
+
+### 36.4 Regime Performance (Max-Sharpe Portfolio)
+
+| Environment | Sharpe | CAGR | MDD |
+|-------------|--------|------|-----|
+| Bull markets (221 months) | 1.320 | +18.4% | -20.5% |
+| Bear markets (55 months) | -0.276 | -5.2% | -52.3% |
+| Dot-com bust (2000–02) | **1.148** | +20.0% | — |
+| GFC (2007–09) | -1.608 | -33.9% | — |
+| COVID crash (2020) | — | — | — |
+| Rate hike 2022 | 0.000 | -10.3% | — |
+
+**Key insight — dot-com**: SR 1.148 during the crash. Momentum + quality correctly shorted overvalued tech stocks while being long stable businesses. This is factor investing working exactly as intended.
+
+**Key insight — GFC**: SR -1.608. The 2008 crisis was a liquidity/credit event, not a factor event. All correlations went to 1 ("everything sold"). Factor strategies that short individual stocks face forced covering during liquidity crises. This is the fundamental risk of any equity L/S book.
+
+### 36.5 New Page: `/factor-portfolio`
+
+Full interactive page showing:
+- Correlation insight banner (0.139 vs 0.951)
+- Portfolio selector: Max-Sharpe / Equal-Weight / Risk-Parity
+- Weight bar chart + equity curve per portfolio
+- Best pair and triplet tables
+- Regime performance breakdown
+- Individual strategy contribution table
+
+Script: `scripts/ls_portfolio_analysis.py`
+Data: `results/ls_portfolio/ls_portfolio_results.json`
+API: `GET /api/v1/research/longshort/portfolio`
+
+---
+
+## §37 — Render Deployment (Backend)
+
+*Added: 2026-04-21*
+
+`render.yaml` added to repo root. Configuration:
+- Runtime: Python 3.11
+- Build: `pip install -r requirements-server.txt`
+- Start: `uvicorn src.api.main:app --host 0.0.0.0 --port $PORT`
+- Health check: `GET /health`
+- ANTHROPIC_API_KEY: set manually in Render dashboard (never committed)
+- ALLOWED_ORIGINS: set to Vercel URL after deploy
+
+**CORS change**: Switched to env-var-driven `ALLOWED_ORIGINS` (fallback `*`). Removed `allow_credentials=True` (incompatible with wildcard origins, and this API uses no cookies).
+
+**Deployment steps (one-time, 20 minutes)**:
+1. Push to GitHub (already done)
+2. render.com → New Web Service → connect `mrigay24/strategyhub-research`
+3. Render reads `render.yaml` automatically
+4. In Render dashboard → Environment → add `ANTHROPIC_API_KEY`
+5. After deploy: copy Render URL → Vercel dashboard → `NEXT_PUBLIC_API_URL=https://<url>/api/v1` → Redeploy
+6. Optional: add `ALLOWED_ORIGINS=https://<your-vercel-url>.vercel.app` in Render
+
+---
+
 *Last updated: 2026-04-21*
-*Session: Beta-neutral long-short engine built + all 14 strategies backtested + API endpoints + frontend updated.*
+*Session: Multi-factor L/S portfolio analysis + Render deployment config complete.*

@@ -499,3 +499,63 @@ export async function fetchAvailableStrategies() {
 
   return response.json();
 }
+
+// ── L/S Portfolio types ────────────────────────────────────────────────────
+
+interface PortfolioMetrics {
+  label: string;
+  sharpe: number | null;
+  cagr: number | null;
+  max_drawdown: number | null;
+  volatility: number | null;
+  win_rate: number | null;
+  n_months: number;
+  weights: Record<string, number>;
+  equity_curve: { date: string; value: number }[];
+}
+
+export interface LSPortfolioData {
+  generated_at: string;
+  data_period: string;
+  correlation_stats: {
+    avg: number;
+    max: number;
+    min: number;
+    longonly_avg: number;
+    improvement_factor: number;
+  };
+  individual_strategies: Record<string, {
+    sharpe: number | null;
+    cagr: number | null;
+    max_drawdown: number | null;
+    equity_curve: { date: string; value: number }[];
+  }>;
+  portfolios: {
+    equal_weight_pos: PortfolioMetrics;
+    risk_parity_pos: PortfolioMetrics;
+    max_sharpe_pos: PortfolioMetrics;
+  };
+  best_pairs: {
+    n: number;
+    strategies: string[];
+    sharpe: number;
+    cagr: number | null;
+    max_drawdown: number | null;
+    avg_correlation: number;
+  }[];
+  regime_metrics: {
+    max_sharpe_portfolio: {
+      bull: { sharpe: number | null; cagr: number | null; max_drawdown: number | null; n_months: number } | null;
+      bear: { sharpe: number | null; cagr: number | null; max_drawdown: number | null; n_months: number } | null;
+      crises: Record<string, { sharpe: number | null; cagr: number | null; n_months: number }>;
+    };
+  };
+  rolling_sharpe_36m: { date: string; sharpe: number | null }[];
+  max_sharpe_weights: Record<string, number>;
+}
+
+export async function fetchLSPortfolio(): Promise<LSPortfolioData> {
+  const response = await fetch(`${API_BASE_URL}/research/longshort/portfolio`);
+  if (!response.ok) throw new Error(`Failed to fetch L/S portfolio: ${response.statusText}`);
+  return response.json();
+}
