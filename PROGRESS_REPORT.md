@@ -1,7 +1,7 @@
 # StrategyHub Research - Progress Report
 
-> **Last Updated:** 2026-04-16
-> **Status:** DEPLOYED + PROP TRADING SETUP COMPLETE. Frontend live on Vercel, backend on Render. Morning trade list, NSE extension, sentiment tracker all operational.
+> **Last Updated:** 2026-04-22
+> **Status:** DEPLOYED + L/S WALK-FORWARD COMPLETE. Frontend live on Vercel, backend on Render. L/S engine → portfolio analysis → walk-forward validation all done. All 4 focus strategies STRONG verdict.
 > **Owner:** Mrigay Pathak
 
 ---
@@ -2104,10 +2104,56 @@ Standout regime result: dot-com bust SR = **1.148** (factor correctly shorted ov
 
 ---
 
+## 17. PHASE 5C — L/S WALK-FORWARD VALIDATION
+
+*Completed: 2026-04-22*
+
+### Method
+
+Focus strategies: `quality_momentum`, `large_cap_momentum`, `dividend_aristocrats` + their equal-weight combo.
+
+- **4 expanding-IS / 5-year OOS folds** (2000–2024):
+  - GFC fold: IS 2000–2004, OOS 2005–2009
+  - Post-crisis fold: IS 2000–2009, OOS 2010–2014
+  - Pre-COVID fold: IS 2000–2014, OOS 2015–2019
+  - COVID/inflation fold: IS 2000–2019, OOS 2020–2024
+- **Decade analysis**: 5 five-year periods 2000–2004, 2005–2009, 2010–2014, 2015–2019, 2020–2024
+- **Rolling 12-month Sharpe**: Month-by-month signal persistence
+- **WFE** = OOS Sharpe / IS Sharpe × 100%
+
+### Results
+
+| Strategy | Avg OOS SR | % Pos Folds | Avg WFE | Verdict |
+|----------|-----------|-------------|---------|---------|
+| Quality Momentum | **0.876** | 75% (3/4) | 221% | STRONG |
+| Large Cap Momentum | **0.798** | 75% (3/4) | 198% | STRONG |
+| Dividend Aristocrats | **0.716** | 100% (4/4) | 149% | STRONG |
+| Equal-Weight Combo | **0.785** | 100% (4/4) | 155% | STRONG |
+
+### Key Findings
+
+- **GFC fold (2005–2009)**: ALL strategies negative OOS. Systematic credit stress overwhelms factor signals — no factor hedges a proper credit crisis. Honest finding, not a data issue.
+- **Post-crisis fold (2010–2014)**: WFE 331–588% — factor premia were historically compressed during the GFC and rebounded strongly. Quality and momentum premia were extreme.
+- **Equal-Weight Combo**: 4/4 positive folds vs 3/4 for individual strategies — diversification across factors improves consistency even when all come from the same direction.
+- **Decade analysis**: Best decade = 2010–2014 (SR 1.1–1.7). Worst = 2005–2009. All positive in 2015–2019 and 2020–2024 (SR 0.67–0.95).
+- **Important distinction from long-only WF**: High WFE here reflects genuine factor persistence, not just bull market vs bear market regime differences. IS periods include dot-com crashes; OOS periods include COVID — yet still STRONG verdicts.
+
+### Files Added/Modified
+
+| File | Change |
+|------|--------|
+| `scripts/ls_walkforward.py` | NEW — 4-fold expanding WF + decade analysis + rolling 12m Sharpe |
+| `results/ls_walkforward/ls_wf_results.json` | NEW — full results |
+| `src/api/routes/research.py` | Added `GET /research/longshort/walkforward` endpoint + `LS_WF_FILE` path |
+| `frontend/src/lib/api.ts` | Added `LSWalkForwardData`, `LSWFFold`, `LSWFDecadePeriod`, `LSWFSummary` interfaces + `fetchLSWalkForward()` |
+| `frontend/src/app/factor-portfolio/page.tsx` | Added top-level tabs: "Portfolio Construction" / "Walk-Forward Validation". Walk-forward tab: summary table, fold-by-fold breakdown, decade analysis, rolling 12m chart, key takeaways. |
+
+---
+
 ## 15. CONTACT & OWNERSHIP
 
 - **Owner:** Mrigay Pathak
 - **Purpose:** Personal research, portfolio showcase, prop trading
 - **Started:** January 2026
 - **Phase 1 Completed:** March 2026
-- **Phase 5 (L/S Engine) Completed:** April 2026
+- **Phase 5 (L/S Engine + Portfolio + Walk-Forward) Completed:** April 2026

@@ -559,3 +559,72 @@ export async function fetchLSPortfolio(): Promise<LSPortfolioData> {
   if (!response.ok) throw new Error(`Failed to fetch L/S portfolio: ${response.statusText}`);
   return response.json();
 }
+
+// ── L/S Walk-Forward ──────────────────────────────────────────────────────────
+
+export interface LSWFStrategyFold {
+  is_sharpe: number | null;
+  oos_sharpe: number | null;
+  wfe_pct: number | null;
+  oos_stats: {
+    sharpe: number | null;
+    cagr: number | null;
+    max_drawdown: number | null;
+    win_rate: number | null;
+    n_months: number;
+  };
+  oos_equity: { date: string; value: number }[];
+}
+
+export interface LSWFFold {
+  label: string;
+  is_period: string;
+  oos_period: string;
+  strategies: Record<string, LSWFStrategyFold>;
+}
+
+export interface LSWFDecadePeriod {
+  label: string;
+  period: string;
+  strategies: Record<string, {
+    sharpe: number | null;
+    cagr: number | null;
+    max_drawdown: number | null;
+    win_rate: number | null;
+    n_months: number;
+    equity_curve: { date: string; value: number }[];
+  }>;
+}
+
+export interface LSWFSummary {
+  full_period: {
+    sharpe: number | null;
+    cagr: number | null;
+    max_drawdown: number | null;
+    win_rate: number | null;
+    n_months: number;
+  };
+  avg_oos_sharpe: number | null;
+  pct_folds_positive: number;
+  avg_wfe_pct: number | null;
+  n_folds: number;
+  verdict: 'STRONG' | 'CONSISTENT' | 'MIXED' | 'WEAK';
+}
+
+export interface LSWalkForwardData {
+  generated_at: string;
+  method: string;
+  focus_strategies: string[];
+  n_folds: number;
+  data_period: string;
+  summary: Record<string, LSWFSummary>;
+  folds: LSWFFold[];
+  decade_analysis: LSWFDecadePeriod[];
+  rolling_12m_sharpe: Record<string, { date: string; sharpe: number | null }[]>;
+}
+
+export async function fetchLSWalkForward(): Promise<LSWalkForwardData> {
+  const response = await fetch(`${API_BASE_URL}/research/longshort/walkforward`);
+  if (!response.ok) throw new Error(`Failed to fetch L/S walk-forward: ${response.statusText}`);
+  return response.json();
+}

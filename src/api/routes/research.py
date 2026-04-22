@@ -22,6 +22,7 @@ ROLLING_FILE = RESULTS_DIR / "extended_rolling_performance" / "extended_rolling_
 ALPHA_FILE = RESULTS_DIR / "factor_alpha" / "factor_alpha.json"
 LS_FILE = RESULTS_DIR / "longshort" / "longshort_results.json"
 LS_PORTFOLIO_FILE = RESULTS_DIR / "ls_portfolio" / "ls_portfolio_results.json"
+LS_WF_FILE = RESULTS_DIR / "ls_walkforward" / "ls_wf_results.json"
 PORTFOLIO_FILE = RESULTS_DIR / "extended_portfolio_analysis" / "extended_portfolio_results.json"
 CORR_MATRIX_CSV = RESULTS_DIR / "extended_portfolio_analysis" / "extended_correlation_matrix.csv"
 
@@ -357,6 +358,21 @@ async def get_longshort_portfolio():
     data = _load_json(LS_PORTFOLIO_FILE)
     if not data:
         raise HTTPException(status_code=404, detail="L/S portfolio results not yet computed. Run scripts/ls_portfolio_analysis.py")
+    return data
+
+
+@router.get("/longshort/walkforward")
+async def get_longshort_walkforward():
+    """
+    L/S walk-forward validation results.
+
+    Returns fold-by-fold IS/OOS Sharpe + WFE, decade analysis,
+    rolling 12-month Sharpe, and per-strategy verdict summaries.
+    Focus strategies: quality_momentum, large_cap_momentum, dividend_aristocrats + equal-weight combo.
+    """
+    data = _load_json(LS_WF_FILE)
+    if not data:
+        raise HTTPException(status_code=404, detail="L/S walk-forward results not yet computed. Run scripts/ls_walkforward.py")
     return data
 
 
