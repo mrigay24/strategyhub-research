@@ -401,6 +401,9 @@ export interface EnrichedStrategy {
   // Phase 3 research data (from scorecard)
   tier: string | null;
   phase3Sharpe: number | null;
+  // Long-short pure factor Sharpe (from quintile backtest)
+  lsSharpe: number | null;
+  lsSpyCorr: number | null;
 }
 
 export interface UseDashboardDataResult {
@@ -414,7 +417,8 @@ export interface UseDashboardDataResult {
 function enrichStrategy(
   strategy: StrategyBacktest,
   benchmarkEquity: { date: string; equity: number }[],
-  scorecard: Record<string, { tier: string; sharpe: number | null }> = {}
+  scorecard: Record<string, { tier: string; sharpe: number | null }> = {},
+  lsScorecard: Record<string, { ls_sharpe: number | null; spy_corr: number | null }> = {}
 ): EnrichedStrategy {
   const displayInfo = STRATEGY_DISPLAY_INFO[strategy.name] || {
     ...DEFAULT_DISPLAY_INFO,
@@ -476,6 +480,8 @@ function enrichStrategy(
     implemented: true,
     tier: scorecard[strategy.name]?.tier ?? null,
     phase3Sharpe: scorecard[strategy.name]?.sharpe ?? null,
+    lsSharpe: lsScorecard[strategy.name]?.ls_sharpe ?? null,
+    lsSpyCorr: lsScorecard[strategy.name]?.spy_corr ?? null,
   };
 }
 
@@ -490,17 +496,24 @@ export function useDashboardData(): UseDashboardDataResult {
     setError(null);
 
     try {
-      // Fetch dashboard data and Phase 3 scorecard in parallel
-      const [data, scorecardRes] = await Promise.all([
+      // Fetch dashboard data, Phase 3 scorecard, and L/S scorecard in parallel
+      const [data, scorecardRes, lsRes] = await Promise.all([
         fetchDashboardData(),
         fetch(`${API_BASE_URL}/research/scorecard`).then(r => r.ok ? r.json() : { scorecard: {} }),
+        fetch(`${API_BASE_URL}/research/longshort/scorecard`).then(r => r.ok ? r.json() : { strategies: [] }),
       ]);
 
       const scorecard = scorecardRes.scorecard || {};
 
+      // Build name → {ls_sharpe, spy_corr} lookup
+      const lsScorecard: Record<string, { ls_sharpe: number | null; spy_corr: number | null }> = {};
+      for (const s of (lsRes.strategies || [])) {
+        lsScorecard[s.strategy_name] = { ls_sharpe: s.ls_sharpe ?? null, spy_corr: s.spy_correlation ?? null };
+      }
+
       // Enrich strategies with display info, benchmark data, and Phase 3 tier
       const benchmarkEquity = data.benchmark?.equity_curve || [];
-      const enrichedStrategies = data.strategies.map(s => enrichStrategy(s, benchmarkEquity, scorecard));
+      const enrichedStrategies = data.strategies.map(s => enrichStrategy(s, benchmarkEquity, scorecard, lsScorecard));
 
       setStrategies(enrichedStrategies);
       setBenchmark(data.benchmark);

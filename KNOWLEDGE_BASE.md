@@ -4375,5 +4375,124 @@ Managed via `loadingStage` state + `setTimeout` cleared on response.
 
 ---
 
-*Last updated: 2026-04-16*
-*Session: Live signals (Path 1) + AI generate-and-backtest (Path 2) frontend complete. TypeScript clean compile confirmed.*
+## §35 — Beta-Neutral Long-Short Portfolios (Phase 5)
+
+*Added: 2026-04-21*
+
+### 35.1 The Problem with CAPM-Derived "L/S"
+
+The old `factor_alpha.json` computed long-short equity as:
+
+```
+ls_return(t) = strategy_return(t) - benchmark_return(t)
+```
+
+This is NOT a factor premium. It measures "does the strategy beat the market?" — but the strategy already has β ≈ 0.54–1.18 exposure to the market. When the market goes up, both sides move. The difference just reflects active management, not the cross-sectional spread of the factor.
+
+### 35.2 The Correct Construction
+
+A **dollar-neutral long-short portfolio**:
+
+```
+Long leg:   top quintile (20%) of stocks by factor score → equal-weighted, weights sum = +1.0
+Short leg:  bottom quintile (20%) of stocks by factor score → equal-weighted, weights sum = +1.0 (sign applied)
+Net weight: $1 long + $1 short = $0 net capital → dollar-neutral
+```
+
+Since you're long and short equal dollar amounts:
+- **Market beta ≈ 0** (both legs have similar β, so they cancel)
+- **SPY correlation ≈ 0** for well-constructed factors
+- **Pure factor premium** = does the factor rank stocks correctly, independent of direction?
+
+This is what hedge funds mean by "factor alpha." If this Sharpe ratio is positive, the factor is genuinely predictive.
+
+### 35.3 Engine Design: `src/backtesting/long_short_engine.py`
+
+Key decisions:
+- **Sparse factor scores**: strategies only score stocks at rebalancing dates (NaN elsewhere). Engine detects rebalancing from non-NaN rows.
+- **Forward fill weights**: weights hold from rebalancing date until next rebalancing, shifted by 1 day (no look-ahead)
+- **Transaction costs**: 15bps round-trip commission applied on turnover (weight changes / 2)
+- **Borrow cost**: 50bps/year applied daily on active short leg only
+- **Return clip**: L/S returns clipped at ±50% to prevent cumprod zeroing
+
+Formula per day:
+```python
+long_ret  = sum(w_long_i × r_i) - turnover_cost
+short_ret = -sum(w_short_i × r_i) - turnover_cost - borrow_cost_daily
+ls_ret = long_ret + short_ret
+```
+
+### 35.4 Per-Strategy Factor Score Functions
+
+Each strategy has a dedicated `score_*()` function that computes raw factor scores for ALL 653 stocks at each rebalancing date. The engine then picks top 20% for long, bottom 20% for short.
+
+| Strategy | Factor Score Used | Rebal |
+|----------|------------------|-------|
+| large_cap_momentum | 12M-1M momentum, large-cap filter (top 50%) | Monthly |
+| 52_week_high | price / 52-week high | Monthly |
+| deep_value | -(price / 200MA) | Quarterly |
+| high_quality_roic | rolling Sharpe ratio (quality proxy) | Monthly |
+| low_volatility_shield | -annualized 63-day vol | Monthly |
+| dividend_aristocrats | % months with positive return (36M) | Quarterly |
+| moving_average_trend | (50MA - 200MA) / 200MA | Weekly |
+| rsi_mean_reversion | -RSI (oversold = high score) | Weekly |
+| value_momentum_blend | 50% deep_value rank + 50% momentum rank | Monthly |
+| quality_momentum | 50% quality rank + 50% momentum rank | Monthly |
+| quality_low_vol | 50% quality rank + 50% low_vol rank | Monthly |
+| composite_factor_score | 30% mom + 20% val + 30% qual + 20% low_vol | Monthly |
+| volatility_targeting | -vol (same as low_vol analog) | Monthly |
+| earnings_surprise | 5-day return z-score | Weekly |
+
+### 35.5 Results (2000–2024, 25 years)
+
+Ranked by Pure Factor Sharpe (L/S):
+
+| Rank | Strategy | L/S Sharpe | SPY Corr | Assessment |
+|------|----------|-----------|---------|-----------|
+| 1 | quality_momentum | **+0.634** | +0.559 | STRONG — factor works |
+| 2 | large_cap_momentum | **+0.618** | +0.636 | STRONG — momentum premium confirmed |
+| 3 | dividend_aristocrats | **+0.603** | +0.859 | STRONG but market-exposed |
+| 4 | composite_factor_score | +0.490 | +0.277 | GOOD, market-independent |
+| 5 | value_momentum_blend | +0.391 | +0.808 | MODEST, market-exposed |
+| 6 | 52_week_high_breakout | +0.269 | +0.290 | MODEST, market-independent |
+| 7 | moving_average_trend | +0.226 | **+0.002** | WEAK but most market-independent! |
+| 8 | high_quality_roic | -0.044 | -0.211 | NEUTRAL |
+| 9 | low_volatility_shield | -0.535 | -0.675 | INVERSE — defensive factor inverted |
+| 10 | volatility_targeting | -0.535 | -0.675 | Same as low_vol |
+| 11 | quality_low_vol | -0.567 | -0.674 | Dragged down by low_vol component |
+| 12 | deep_value_all_cap | -0.588 | +0.375 | VALUE TRAP — cheap stays cheap |
+| 13 | rsi_mean_reversion | -0.608 | +0.011 | Mean reversion fails cross-sectionally |
+| 14 | earnings_surprise | -1.780 | +0.034 | PEAD proxy doesn't work on full universe |
+
+### 35.6 The Low Volatility Paradox
+
+Low volatility has a **negative L/S Sharpe** (-0.535) and **negative SPY correlation** (-0.675). This seems counterintuitive, but it makes sense:
+
+- **Long leg** (low-vol stocks): defensive, low beta → underperforms in bull markets
+- **Short leg** (high-vol stocks): aggressive, high beta → outperforms in bull markets
+
+Over 25 years, the US market was mostly bullish. So the "short high-vol" leg was systematically wrong. The strategy only works as a long-only defensive play (reduce downside in crashes), NOT as a cross-sectional factor premium.
+
+**Key insight**: The L/S construction reveals that "Low Volatility Anomaly" in academic literature is really a long-only beta-reduction story, not a factor premium.
+
+### 35.7 Moving Average Trend: The Hidden Gem
+
+MA Trend has:
+- L/S Sharpe only +0.226 (modest)
+- SPY Correlation = **+0.002** (essentially zero market exposure!)
+
+This is the only strategy where the long-short portfolio is completely market-neutral. The cross-sectional "who has a better trend?" signal has marginal predictive power on a relative basis, but absolutely no systematic market exposure. This is valuable for combining with other factors.
+
+### 35.8 New API Endpoints
+
+```
+GET /api/v1/research/longshort/scorecard   → all 14 strategies sorted by L/S Sharpe
+GET /api/v1/research/longshort/{name}       → full L/S backtest + equity curve for one strategy
+```
+
+Data source: `results/longshort/longshort_results.json` (same pattern as `factor_alpha.json`).
+
+---
+
+*Last updated: 2026-04-21*
+*Session: Beta-neutral long-short engine built + all 14 strategies backtested + API endpoints + frontend updated.*

@@ -32,6 +32,7 @@ import {
   fetchStrategyParameters,
   fetchSensitivityData,
   fetchFactorAlpha,
+  fetchLongShort,
   fetchRollingMetrics,
   fetchCorrelationData,
   fetchLiveSignals,
@@ -40,6 +41,7 @@ import {
   type StrategyParameter,
   type SensitivityData,
   type FactorAlpha,
+  type LongShortData,
   type RollingMetrics,
   type CorrelationData,
   type LiveSignals,
@@ -121,6 +123,7 @@ export default function StrategyDetailPage() {
   const [researchLoading, setResearchLoading] = useState(false)
   const [researchError, setResearchError] = useState<string | null>(null)
   const [factorAlpha, setFactorAlpha] = useState<FactorAlpha | null>(null)
+  const [longShortData, setLongShortData] = useState<LongShortData | null>(null)
 
   // Parameters tab state
   const [paramDefs, setParamDefs] = useState<StrategyParameter[]>([])
@@ -177,7 +180,7 @@ export default function StrategyDetailPage() {
       .finally(() => setLiveSignalsLoading(false))
   }, [activeTab, strategyName, liveSignals, liveSignalsLoading, liveSignalsUnavailable])
 
-  // Fetch research data + factor alpha when tab is first opened
+  // Fetch research data + factor alpha + long-short when tab is first opened
   useEffect(() => {
     if (activeTab !== 'research' || research || researchLoading) return
     setResearchLoading(true)
@@ -185,10 +188,12 @@ export default function StrategyDetailPage() {
     Promise.all([
       fetchResearchData(strategyName),
       fetchFactorAlpha(strategyName).catch(() => null),
+      fetchLongShort(strategyName).catch(() => null),
     ])
-      .then(([researchData, alphaData]) => {
+      .then(([researchData, alphaData, lsData]) => {
         setResearch(researchData)
         if (alphaData) setFactorAlpha(alphaData)
+        if (lsData) setLongShortData(lsData)
       })
       .catch(e => setResearchError(e.message))
       .finally(() => setResearchLoading(false))
@@ -958,49 +963,88 @@ export default function StrategyDetailPage() {
                   </div>
                 )}
 
-                {/* ── Long-Short Equity Curve ── */}
-                {factorAlpha && factorAlpha.longshort.equity_curve?.length > 0 && (
+                {/* ── Dollar-Neutral Long-Short Portfolio (proper quintile backtest) ── */}
+                {longShortData && longShortData.equity_curve?.length > 0 && (
                   <div className="bg-white rounded-lg border overflow-hidden">
                     <div className="p-5 border-b">
-                      <h3 className="font-semibold text-gray-900">Dollar-Neutral Long-Short Portfolio</h3>
-                      <p className="text-xs text-gray-500 mt-1">
-                        Long top-quintile stocks, short bottom-quintile — market beta removed.
-                        This isolates the pure factor return, stripped of systematic market exposure.
-                      </p>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h3 className="font-semibold text-gray-900">Dollar-Neutral Long-Short Portfolio</h3>
+                          <p className="text-xs text-gray-500 mt-1">
+                            Long top-quintile, short bottom-quintile by factor score — market beta removed.
+                            Pure cross-sectional factor premium, 25-year backtest. 15bps commission + 50bps borrow cost.
+                          </p>
+                        </div>
+                        <span className={cn(
+                          'px-3 py-1 rounded-full text-sm font-semibold shrink-0',
+                          (longShortData.metrics.sharpe_ratio ?? 0) > 0.4 ? 'bg-emerald-100 text-emerald-800' :
+                          (longShortData.metrics.sharpe_ratio ?? 0) > 0 ? 'bg-yellow-100 text-yellow-800' :
+                          'bg-red-100 text-red-800'
+                        )}>
+                          Pure Factor SR: {longShortData.metrics.sharpe_ratio?.toFixed(2) ?? 'N/A'}
+                        </span>
+                      </div>
                     </div>
                     <div className="p-5">
-                      {/* Metrics row */}
-                      <div className="grid grid-cols-4 gap-4 mb-5">
+                      {/* 6 KPI tiles */}
+                      <div className="grid grid-cols-3 gap-3 mb-5 sm:grid-cols-6">
                         {[
-                          { label: 'CAGR', value: factorAlpha.longshort.cagr !== null ? `${(factorAlpha.longshort.cagr * 100).toFixed(1)}%` : 'N/A', positive: (factorAlpha.longshort.cagr ?? 0) > 0 },
-                          { label: 'Sharpe', value: factorAlpha.longshort.sharpe_ratio?.toFixed(2) ?? 'N/A', positive: (factorAlpha.longshort.sharpe_ratio ?? 0) > 0 },
-                          { label: 'Max DD', value: factorAlpha.longshort.max_drawdown !== null ? `${(factorAlpha.longshort.max_drawdown * 100).toFixed(1)}%` : 'N/A', positive: false },
-                          { label: 'Market Corr', value: factorAlpha.longshort.market_correlation?.toFixed(2) ?? 'N/A', positive: Math.abs(factorAlpha.longshort.market_correlation ?? 1) < 0.3 },
+                          { label: 'L/S Sharpe',   value: longShortData.metrics.sharpe_ratio?.toFixed(2) ?? 'N/A',
+                            positive: (longShortData.metrics.sharpe_ratio ?? 0) > 0 },
+                          { label: 'CAGR',          value: longShortData.metrics.cagr != null ? `${(longShortData.metrics.cagr * 100).toFixed(1)}%` : 'N/A',
+                            positive: (longShortData.metrics.cagr ?? 0) > 0 },
+                          { label: 'Max DD',        value: longShortData.metrics.max_drawdown != null ? `${(longShortData.metrics.max_drawdown * 100).toFixed(1)}%` : 'N/A',
+                            positive: false, isDD: true },
+                          { label: 'SPY Corr',      value: longShortData.metrics.spy_correlation?.toFixed(2) ?? 'N/A',
+                            positive: Math.abs(longShortData.metrics.spy_correlation ?? 1) < 0.3 },
+                          { label: 'Win Rate',      value: longShortData.metrics.win_rate != null ? `${(longShortData.metrics.win_rate * 100).toFixed(0)}%` : 'N/A',
+                            positive: (longShortData.metrics.win_rate ?? 0) > 0.5 },
+                          { label: 'vs Long-Only',  value: longShortData.metrics.sharpe_vs_longonly != null ? (longShortData.metrics.sharpe_vs_longonly > 0 ? `+${longShortData.metrics.sharpe_vs_longonly.toFixed(2)}` : longShortData.metrics.sharpe_vs_longonly.toFixed(2)) : 'N/A',
+                            positive: (longShortData.metrics.sharpe_vs_longonly ?? 0) > 0 },
                         ].map(m => (
                           <div key={m.label} className="text-center bg-gray-50 rounded-lg p-3">
                             <p className="text-xs text-gray-500 mb-1">{m.label}</p>
-                            <p className={cn('text-lg font-bold', m.positive ? 'text-emerald-600' : m.label === 'Max DD' ? 'text-red-600' : 'text-gray-800')}>
+                            <p className={cn('text-base font-bold',
+                              m.isDD ? 'text-red-600' :
+                              m.positive ? 'text-emerald-600' :
+                              'text-red-600'
+                            )}>
                               {m.value}
                             </p>
                           </div>
                         ))}
                       </div>
+                      {/* Leg comparison */}
+                      <div className="grid grid-cols-2 gap-3 mb-5 text-sm">
+                        <div className="bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+                          <p className="font-medium text-emerald-800 mb-1">Long Leg (top {Math.round((longShortData.meta.quintile_pct ?? 0.2) * 100)}%)</p>
+                          <p className="text-gray-600">Sharpe: <span className="font-semibold">{longShortData.metrics.long_sharpe?.toFixed(2) ?? 'N/A'}</span></p>
+                          <p className="text-gray-600">CAGR: <span className="font-semibold">{longShortData.metrics.long_cagr != null ? `${(longShortData.metrics.long_cagr * 100).toFixed(1)}%` : 'N/A'}</span></p>
+                          <p className="text-gray-600">Avg positions: <span className="font-semibold">{longShortData.metrics.n_avg_long ?? 'N/A'}</span></p>
+                        </div>
+                        <div className="bg-red-50 rounded-lg p-3 border border-red-100">
+                          <p className="font-medium text-red-800 mb-1">Short Leg (bottom {Math.round((longShortData.meta.quintile_pct ?? 0.2) * 100)}%)</p>
+                          <p className="text-gray-600">Sharpe: <span className="font-semibold">{longShortData.metrics.short_sharpe?.toFixed(2) ?? 'N/A'}</span></p>
+                          <p className="text-gray-600">CAGR: <span className="font-semibold">{longShortData.metrics.short_cagr != null ? `${(longShortData.metrics.short_cagr * 100).toFixed(1)}%` : 'N/A'}</span></p>
+                          <p className="text-gray-600">Avg positions: <span className="font-semibold">{longShortData.metrics.n_avg_short ?? 'N/A'}</span></p>
+                        </div>
+                      </div>
                       {/* Equity curve */}
                       <EquityCurveChart
-                        data={factorAlpha.longshort.equity_curve.map(p => ({
+                        data={longShortData.equity_curve.map(p => ({
                           date: p.date,
                           strategy: p.value * 1_000_000,
                         }))}
                       />
                       <p className="text-xs text-gray-400 mt-2 text-center">
-                        Normalized to $1M start. Monthly rebalancing. 2000–2025. Transaction costs included.
+                        Normalized to $1M start · Monthly rebalancing · 2000–2024 · 15bps commission + 50bps/yr borrow cost
                       </p>
                       <div className="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-100">
                         <p className="text-xs text-gray-600 leading-relaxed">
-                          <strong>Why this matters:</strong> When all 14 long-only strategies "lag the benchmark," it's because
-                          the benchmark itself has high beta (β≈1). The long-short portfolio strips that market component out —
-                          what remains is the pure factor premium. A positive Sharpe here means the factor generates real alpha
-                          independent of whether markets are rising or falling.
+                          <strong>Why this matters:</strong> All 14 long-only strategies lag the market benchmark because
+                          beta ≈ 1 dominates returns. The dollar-neutral L/S portfolio removes that market exposure completely —
+                          SPY correlation near 0 means these returns are independent of market direction. A positive Sharpe here
+                          is the only true test of whether the factor has predictive power.
                         </p>
                       </div>
                     </div>

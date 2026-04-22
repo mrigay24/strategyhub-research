@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Info, Loader2, RefreshCw, AlertCircle, ArrowUpDown } from 'lucide-react'
+import Link from 'next/link'
+import { Info, Loader2, RefreshCw, AlertCircle, ArrowUpDown, ChevronDown, ChevronUp } from 'lucide-react'
 import { FilterSidebar } from '@/components/FilterSidebar'
 import { KpiTiles } from '@/components/KpiTiles'
 import { StrategyCard } from '@/components/StrategyCard'
@@ -17,7 +18,8 @@ export default function DashboardPage() {
   const [selectedRisk, setSelectedRisk] = useState<string[]>([])
   const [selectedMarketCaps, setSelectedMarketCaps] = useState<string[]>([])
   const [selectedDateRange, setSelectedDateRange] = useState('2000-2024')
-  const [sortBy, setSortBy] = useState<'tier' | 'sharpe4yr' | 'sharpe25yr' | 'cagr' | 'maxdd'>('tier')
+  const [sortBy, setSortBy] = useState<'tier' | 'sharpe4yr' | 'sharpe25yr' | 'cagr' | 'maxdd' | 'lsSharpe'>('tier')
+  const [showFactorPremiTable, setShowFactorPremiTable] = useState(false)
   const [selectedTier, setSelectedTier] = useState<string[]>([])
 
   // Filtered + sorted strategies
@@ -64,6 +66,7 @@ export default function DashboardPage() {
         }
         if (sortBy === 'sharpe4yr') return (b.metrics.sharpeRatio ?? 0) - (a.metrics.sharpeRatio ?? 0)
         if (sortBy === 'sharpe25yr') return (b.phase3Sharpe ?? 0) - (a.phase3Sharpe ?? 0)
+        if (sortBy === 'lsSharpe') return (b.lsSharpe ?? -99) - (a.lsSharpe ?? -99)
         if (sortBy === 'cagr') return (b.metrics.cagr ?? 0) - (a.metrics.cagr ?? 0)
         if (sortBy === 'maxdd') return (a.metrics.maxDrawdown ?? 0) - (b.metrics.maxDrawdown ?? 0) // least negative first
         return 0
@@ -189,6 +192,7 @@ export default function DashboardPage() {
             >
               <option value="tier">Phase 3 Tier</option>
               <option value="sharpe25yr">Sharpe (25yr)</option>
+              <option value="lsSharpe">Pure Factor Sharpe (L/S)</option>
               <option value="sharpe4yr">Sharpe (4yr)</option>
               <option value="cagr">CAGR</option>
               <option value="maxdd">Min Drawdown</option>
@@ -251,6 +255,101 @@ export default function DashboardPage() {
             <p className="text-sm text-gray-400 mt-2">
               Run the backtest script to generate strategy results.
             </p>
+          </div>
+        )}
+
+        {/* ── Factor Premia Comparison Table ── */}
+        {strategies.some(s => s.lsSharpe !== null) && (
+          <div className="mt-8 bg-white rounded-lg border overflow-hidden">
+            <button
+              onClick={() => setShowFactorPremiTable(v => !v)}
+              className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
+            >
+              <div>
+                <h2 className="text-base font-semibold text-gray-900">Factor Premia Comparison</h2>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  Dollar-neutral long-short quintile backtest · 25yr (2000–2024) · market beta removed
+                </p>
+              </div>
+              {showFactorPremiTable ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
+            </button>
+            {showFactorPremiTable && (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50 border-y">
+                    <tr>
+                      <th className="text-left px-4 py-2.5 font-medium text-gray-600 w-8">#</th>
+                      <th className="text-left px-4 py-2.5 font-medium text-gray-600">Strategy</th>
+                      <th className="text-right px-4 py-2.5 font-medium text-gray-600">L/S Sharpe</th>
+                      <th className="text-right px-4 py-2.5 font-medium text-gray-600">L/O Sharpe</th>
+                      <th className="text-right px-4 py-2.5 font-medium text-gray-600">Delta</th>
+                      <th className="text-right px-4 py-2.5 font-medium text-gray-600">SPY Corr</th>
+                      <th className="text-right px-4 py-2.5 font-medium text-gray-600">Tier</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    {[...strategies]
+                      .sort((a, b) => (b.lsSharpe ?? -99) - (a.lsSharpe ?? -99))
+                      .map((s, i) => {
+                        const delta = s.lsSharpe !== null && s.phase3Sharpe !== null
+                          ? s.lsSharpe - s.phase3Sharpe : null
+                        return (
+                          <tr key={s.slug} className="hover:bg-gray-50">
+                            <td className="px-4 py-2.5 text-gray-400">{i + 1}</td>
+                            <td className="px-4 py-2.5">
+                              <Link href={`/strategy/${s.slug}`} className="font-medium text-gray-900 hover:text-blue-600">
+                                {s.displayName}
+                              </Link>
+                            </td>
+                            <td className="px-4 py-2.5 text-right font-semibold">
+                              <span className={
+                                s.lsSharpe === null ? 'text-gray-400' :
+                                s.lsSharpe > 0.4 ? 'text-emerald-600' :
+                                s.lsSharpe > 0 ? 'text-yellow-600' :
+                                'text-red-600'
+                              }>
+                                {s.lsSharpe?.toFixed(2) ?? '—'}
+                              </span>
+                            </td>
+                            <td className="px-4 py-2.5 text-right text-gray-600">
+                              {s.phase3Sharpe?.toFixed(2) ?? '—'}
+                            </td>
+                            <td className="px-4 py-2.5 text-right font-medium">
+                              {delta !== null ? (
+                                <span className={delta > 0 ? 'text-emerald-600' : 'text-red-500'}>
+                                  {delta > 0 ? '+' : ''}{delta.toFixed(2)}
+                                </span>
+                              ) : '—'}
+                            </td>
+                            <td className="px-4 py-2.5 text-right">
+                              {s.lsSpyCorr !== null ? (
+                                <span className={Math.abs(s.lsSpyCorr) < 0.3 ? 'text-emerald-600 font-medium' : 'text-gray-600'}>
+                                  {s.lsSpyCorr.toFixed(2)}
+                                </span>
+                              ) : '—'}
+                            </td>
+                            <td className="px-4 py-2.5 text-right">
+                              {s.tier && (
+                                <span className={`px-2 py-0.5 text-xs font-medium rounded ${
+                                  s.tier.includes('Tier 1') ? 'bg-emerald-100 text-emerald-700' :
+                                  s.tier.includes('Tier 2') ? 'bg-blue-100 text-blue-700' :
+                                  'bg-gray-100 text-gray-600'
+                                }`}>
+                                  {s.tier.split(' — ')[0]}
+                                </span>
+                              )}
+                            </td>
+                          </tr>
+                        )
+                      })}
+                  </tbody>
+                </table>
+                <p className="text-xs text-gray-400 px-4 py-3 border-t bg-gray-50">
+                  L/S Sharpe = dollar-neutral top-quintile long + bottom-quintile short. SPY Corr near 0 = market-independent.
+                  Delta = L/S Sharpe minus Long-Only Sharpe. 15bps commission + 50bps/yr borrow cost included.
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>

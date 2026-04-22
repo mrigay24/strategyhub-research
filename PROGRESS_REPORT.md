@@ -2011,10 +2011,64 @@ Covers (updated per phase):
 
 ---
 
-## 14. CONTACT & OWNERSHIP
+## 14. PHASE 5 — BETA-NEUTRAL LONG-SHORT ENGINE
+
+*Completed: 2026-04-21*
+
+### What We Built
+
+The platform previously showed a "Long-Short Portfolio" section in the Research tab that was **not a real factor premium** — it was just `strategy_return - benchmark_return`, which is contaminated by market beta.
+
+We replaced this with a purpose-built **dollar-neutral long-short backtester** (`src/backtesting/long_short_engine.py`) that:
+
+1. At each rebalancing date, ranks ALL 653 stocks by the strategy's factor score
+2. Goes LONG top 20% (quintile) with equal weight (weights sum = +1.0)
+3. Goes SHORT bottom 20% (quintile) with equal weight (weights sum = +1.0 in magnitude)
+4. Net = $0 exposure → market beta removed
+5. Charges 15bps commission + 50bps/yr borrow cost
+
+### Results (14/14 Strategies, 2000–2024)
+
+| Strategy | L/S Sharpe | SPY Corr | Assessment |
+|----------|-----------|----------|-----------|
+| quality_momentum | **+0.634** | +0.559 | Factor works |
+| large_cap_momentum | **+0.618** | +0.636 | Momentum premium confirmed |
+| dividend_aristocrats | **+0.603** | +0.859 | Works, market-exposed |
+| composite_factor_score | +0.490 | +0.277 | Good, market-independent |
+| value_momentum_blend | +0.391 | +0.808 | Modest |
+| 52_week_high_breakout | +0.269 | +0.290 | Modest |
+| moving_average_trend | +0.226 | **+0.002** | Most market-neutral! |
+| high_quality_roic | -0.044 | -0.211 | Neutral |
+| low_volatility_shield | -0.535 | -0.675 | Inverted in bull markets |
+| volatility_targeting | -0.535 | -0.675 | Same as low_vol |
+| quality_low_vol | -0.567 | -0.674 | Dragged down by low_vol |
+| deep_value_all_cap | -0.588 | +0.375 | Value trap |
+| rsi_mean_reversion | -0.608 | +0.011 | Fails cross-sectionally |
+| earnings_surprise | -1.780 | +0.034 | PEAD proxy doesn't work on full universe |
+
+**Key insight:** 7/14 strategies have positive L/S Sharpe. The top 3 (Quality Momentum, Large Cap Momentum, Dividend Aristocrats) have SR > 0.60 — genuine factor premia. Moving Average Trend has near-zero SPY correlation — the most truly market-neutral factor of all 14.
+
+### Files Added/Modified
+
+| File | Change |
+|------|--------|
+| `src/backtesting/long_short_engine.py` | NEW — purpose-built dollar-neutral backtester |
+| `scripts/run_longshort_backtests.py` | NEW — per-strategy score functions + runner |
+| `results/longshort/longshort_results.json` | NEW — 14 strategy L/S results + equity curves |
+| `results/longshort/comparison.csv` | NEW — comparison table |
+| `src/api/routes/research.py` | Added `/longshort/scorecard` + `/longshort/{name}` endpoints |
+| `frontend/src/lib/api.ts` | Added `LongShortData`, `LongShortScorecard` types + fetch functions |
+| `frontend/src/hooks/useDashboardData.ts` | Added `lsSharpe`, `lsSpyCorr` to `EnrichedStrategy` |
+| `frontend/src/components/StrategyCard.tsx` | Shows Pure Factor SR (L/S) |
+| `frontend/src/app/page.tsx` | Factor Premia comparison table (collapsible) + L/S sort option |
+| `frontend/src/app/strategy/[slug]/page.tsx` | Replaced CAPM L/S with proper quintile backtest + 6 KPI tiles + leg breakdown |
+
+---
+
+## 15. CONTACT & OWNERSHIP
 
 - **Owner:** Mrigay Pathak
 - **Purpose:** Personal research, portfolio showcase, prop trading
 - **Started:** January 2026
 - **Phase 1 Completed:** March 2026
-- **Deployed:** April 2026
+- **Phase 5 (L/S Engine) Completed:** April 2026

@@ -20,6 +20,7 @@ REGIME_FILE = RESULTS_DIR / "extended_regime_analysis" / "extended_regime_result
 SCORECARD_CSV = RESULTS_DIR / "phase3_summary" / "master_scorecard.csv"
 ROLLING_FILE = RESULTS_DIR / "extended_rolling_performance" / "extended_rolling_results.json"
 ALPHA_FILE = RESULTS_DIR / "factor_alpha" / "factor_alpha.json"
+LS_FILE = RESULTS_DIR / "longshort" / "longshort_results.json"
 PORTFOLIO_FILE = RESULTS_DIR / "extended_portfolio_analysis" / "extended_portfolio_results.json"
 CORR_MATRIX_CSV = RESULTS_DIR / "extended_portfolio_analysis" / "extended_correlation_matrix.csv"
 
@@ -263,6 +264,84 @@ async def get_factor_alpha(strategy_name: str):
         "longshort": r.get("longshort", {}),
         "longonly": r.get("longonly", {}),
         "benchmark": bench,
+    }
+
+
+@router.get("/longshort/scorecard")
+async def get_longshort_scorecard():
+    """
+    Returns all 14 strategies sorted by pure-factor (L/S) Sharpe ratio.
+    Used by the Dashboard Factor Premia comparison view.
+    """
+    data = _load_json(LS_FILE)
+    strategies = data.get("strategies", {})
+    rows = []
+    for name, s in strategies.items():
+        if "error" in s:
+            continue
+        rows.append({
+            "strategy_name":     name,
+            "ls_sharpe":         s.get("sharpe_ratio"),
+            "longonly_sharpe":   s.get("longonly_sharpe"),
+            "sharpe_vs_longonly": s.get("sharpe_vs_longonly"),
+            "spy_correlation":   s.get("spy_correlation"),
+            "cagr":              s.get("cagr"),
+            "max_drawdown":      s.get("max_drawdown"),
+            "win_rate":          s.get("win_rate"),
+            "n_avg_long":        s.get("n_avg_long"),
+            "n_avg_short":       s.get("n_avg_short"),
+        })
+    rows.sort(key=lambda x: (x["ls_sharpe"] or -99), reverse=True)
+    return {
+        "generated_at":   data.get("generated_at"),
+        "data_period":    data.get("data_period"),
+        "quintile_pct":   data.get("quintile_pct"),
+        "strategies":     rows,
+    }
+
+
+@router.get("/longshort/{strategy_name}")
+async def get_longshort_strategy(strategy_name: str):
+    """
+    Full long-short backtest result for one strategy, including equity curve.
+    Replaces the CAPM-derived approximation in the Research tab.
+    """
+    data = _load_json(LS_FILE)
+    strategies = data.get("strategies", {})
+    if strategy_name not in strategies:
+        raise HTTPException(status_code=404, detail=f"No L/S data for: {strategy_name}")
+    s = strategies[strategy_name]
+    if "error" in s:
+        raise HTTPException(status_code=404, detail=s["error"])
+    return {
+        "strategy_name":      strategy_name,
+        "meta": {
+            "data_period":    data.get("data_period"),
+            "quintile_pct":   data.get("quintile_pct"),
+            "commission_bps": data.get("commission_bps"),
+            "borrow_cost_bps": data.get("borrow_cost_bps"),
+        },
+        "metrics": {
+            "sharpe_ratio":        s.get("sharpe_ratio"),
+            "cagr":                s.get("cagr"),
+            "max_drawdown":        s.get("max_drawdown"),
+            "volatility":          s.get("volatility"),
+            "sortino_ratio":       s.get("sortino_ratio"),
+            "calmar_ratio":        s.get("calmar_ratio"),
+            "win_rate":            s.get("win_rate"),
+            "spy_correlation":     s.get("spy_correlation"),
+            "long_sharpe":         s.get("long_sharpe"),
+            "short_sharpe":        s.get("short_sharpe"),
+            "long_cagr":           s.get("long_cagr"),
+            "short_cagr":          s.get("short_cagr"),
+            "longonly_sharpe":     s.get("longonly_sharpe"),
+            "sharpe_vs_longonly":  s.get("sharpe_vs_longonly"),
+            "n_avg_long":          s.get("n_avg_long"),
+            "n_avg_short":         s.get("n_avg_short"),
+        },
+        "equity_curve": s.get("equity_curve", []),
+        "start_date":   s.get("start_date"),
+        "end_date":     s.get("end_date"),
     }
 
 

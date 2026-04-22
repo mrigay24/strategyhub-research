@@ -120,9 +120,18 @@ export function StrategyCard({ strategy }: StrategyCardProps) {
           </p>
         </div>
         <div>
-          <p className="text-xs text-gray-500">Win Rate</p>
-          <p className="text-sm font-semibold text-gray-900">
-            {formatPercent(strategy.metrics.winRate)}
+          <p className="text-xs text-gray-500">
+            Pure Factor SR
+            <span className="ml-1 text-gray-400 font-normal">(L/S)</span>
+          </p>
+          <p className={cn(
+            'text-sm font-semibold',
+            strategy.lsSharpe === null ? 'text-gray-400' :
+            strategy.lsSharpe > 0.4 ? 'text-emerald-600' :
+            strategy.lsSharpe > 0 ? 'text-yellow-600' :
+            'text-red-600'
+          )}>
+            {strategy.lsSharpe !== null ? formatNumber(strategy.lsSharpe) : 'N/A'}
           </p>
         </div>
       </div>

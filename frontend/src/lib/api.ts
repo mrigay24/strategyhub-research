@@ -266,6 +266,67 @@ export async function fetchSensitivityData(strategyName: string): Promise<Sensit
   return response.json();
 }
 
+export interface LongShortData {
+  strategy_name: string;
+  meta: {
+    data_period: string | null;
+    quintile_pct: number | null;
+    commission_bps: number | null;
+    borrow_cost_bps: number | null;
+  };
+  metrics: {
+    sharpe_ratio: number | null;
+    cagr: number | null;
+    max_drawdown: number | null;
+    volatility: number | null;
+    sortino_ratio: number | null;
+    calmar_ratio: number | null;
+    win_rate: number | null;
+    spy_correlation: number | null;
+    long_sharpe: number | null;
+    short_sharpe: number | null;
+    long_cagr: number | null;
+    short_cagr: number | null;
+    longonly_sharpe: number | null;
+    sharpe_vs_longonly: number | null;
+    n_avg_long: number | null;
+    n_avg_short: number | null;
+  };
+  equity_curve: { date: string; value: number }[];
+  start_date: string | null;
+  end_date: string | null;
+}
+
+export async function fetchLongShort(strategyName: string): Promise<LongShortData> {
+  const response = await fetch(`${API_BASE_URL}/research/longshort/${strategyName}`);
+  if (!response.ok) throw new Error(`Failed to fetch L/S data: ${response.statusText}`);
+  return response.json();
+}
+
+export interface LongShortScorecard {
+  generated_at: string | null;
+  data_period: string | null;
+  quintile_pct: number | null;
+  strategies: {
+    strategy_name: string;
+    ls_sharpe: number | null;
+    longonly_sharpe: number | null;
+    sharpe_vs_longonly: number | null;
+    spy_correlation: number | null;
+    cagr: number | null;
+    max_drawdown: number | null;
+    win_rate: number | null;
+    n_avg_long: number | null;
+    n_avg_short: number | null;
+  }[];
+}
+
+export async function fetchLongShortScorecard(): Promise<LongShortScorecard> {
+  const response = await fetch(`${API_BASE_URL}/research/longshort/scorecard`);
+  if (!response.ok) throw new Error(`Failed to fetch L/S scorecard: ${response.statusText}`);
+  return response.json();
+}
+
 export interface RollingMetrics {
   strategy_name: string;
   data_period: string | null;
