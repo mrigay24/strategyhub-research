@@ -4,6 +4,7 @@ FastAPI Main Application
 REST API for the StrategyHub trading research platform.
 """
 
+import os
 import sys
 from pathlib import Path
 from contextlib import asynccontextmanager
@@ -70,12 +71,16 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Add CORS middleware for frontend access
+# CORS — allow Vercel frontend + localhost dev.
+# Set ALLOWED_ORIGINS env var in Render to your Vercel URL (comma-separated).
+_raw_origins = os.environ.get("ALLOWED_ORIGINS", "")
+ALLOWED_ORIGINS = [o.strip() for o in _raw_origins.split(",") if o.strip()] or ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure for production
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=False,   # no cookies in this API
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 

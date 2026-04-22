@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: strategyhub-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements-server.txt
+    startCommand: uvicorn src.api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: ANTHROPIC_API_KEY
+        sync: false          # set manually in Render dashboard — never commit API keys
+      - key: DATABASE_URL
+        value: sqlite:///data/strategyhub.db
+    healthCheckPath: /health
+    autoDeploy: true
