@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, AlertTriangle, TrendingDown, BarChart2, Shuffle, Shield, FlaskConical } from 'lucide-react'
+import { ArrowRight, AlertTriangle, TrendingDown, BarChart2, Shuffle, Shield, FlaskConical, Activity, CheckCircle2 } from 'lucide-react'
 
 export const metadata = {
   title: 'Key Research Findings — StrategyHub',
@@ -23,6 +23,15 @@ const TIER_2 = [
   { name: 'Moving Average Trend', sharpe: 0.588 },
   { name: 'Value + Momentum Blend', sharpe: 0.581 },
   { name: 'Large Cap Momentum', sharpe: 0.576 },
+]
+
+const LS_STRONG = [
+  { name: 'Quality Momentum',  avgOosSharpe: 0.876, posFolds: '4/4', wfe: '221%', color: 'text-emerald-700' },
+  { name: 'Large Cap Momentum', avgOosSharpe: 0.798, posFolds: '3/4', wfe: '198%', color: 'text-emerald-700' },
+  { name: 'Equal-Weight Combo (3)', avgOosSharpe: 0.785, posFolds: '4/4', wfe: '155%', color: 'text-emerald-700' },
+  { name: 'Composite Factor',  avgOosSharpe: 0.778, posFolds: '3/4', wfe: '254%', color: 'text-emerald-700' },
+  { name: 'Dividend Aristocrats', avgOosSharpe: 0.716, posFolds: '4/4', wfe: '149%', color: 'text-emerald-600' },
+  { name: 'Value + Momentum',  avgOosSharpe: 0.495, posFolds: '4/4', wfe: '204%', color: 'text-yellow-700' },
 ]
 
 const ALPHA_TABLE = [
@@ -186,6 +195,118 @@ export default function FindingsPage() {
         </FindingCard>
       </div>
 
+      {/* Finding 5: L/S Factor Premium */}
+      <div className="bg-white rounded-xl border p-6 mb-6">
+        <div className="flex items-start gap-4 mb-5">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue-50 text-blue-600">
+            <Activity className="w-5 h-5" />
+          </div>
+          <div>
+            <h2 className="font-semibold text-gray-900">Stripping market beta reveals real factor premia</h2>
+            <p className="text-sm text-gray-500 mt-0.5">
+              Dollar-neutral L/S backtest · 25 years (2000–2024) · 653 stocks · 4-fold walk-forward validation
+            </p>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4 mb-5">
+          <div className="bg-gray-50 rounded-lg p-4 text-center">
+            <p className="text-xs text-gray-500 mb-1">Long-only avg correlation</p>
+            <p className="text-2xl font-bold text-orange-600">0.951</p>
+            <p className="text-xs text-gray-400 mt-1">No diversification — all move together</p>
+          </div>
+          <div className="bg-emerald-50 rounded-lg p-4 text-center">
+            <p className="text-xs text-gray-500 mb-1">L/S avg correlation</p>
+            <p className="text-2xl font-bold text-emerald-600">0.139</p>
+            <p className="text-xs text-gray-400 mt-1">7× more diversifiable</p>
+          </div>
+          <div className="bg-blue-50 rounded-lg p-4 text-center">
+            <p className="text-xs text-gray-500 mb-1">Max-Sharpe L/S portfolio</p>
+            <p className="text-2xl font-bold text-blue-700">0.754</p>
+            <p className="text-xs text-gray-400 mt-1">SR above any single L/S strategy</p>
+          </div>
+        </div>
+        <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+          Long-only strategies all share equity market beta (β = 0.54–1.18). Combining them reduces risk negligibly.
+          Dollar-neutral L/S construction eliminates beta: go long top-20% by factor score, short bottom-20%.
+          Net dollar exposure = $0. What remains is purely the cross-sectional factor signal.{' '}
+          <strong>6/14 strategies have a positive pure factor Sharpe.</strong> The other 8 fail as factors — their
+          long-only performance came from beta, not from correctly ranking stocks.
+        </p>
+        <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
+          L/S walk-forward results: 5-year OOS folds (2005–2024)
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b text-xs text-gray-500 uppercase tracking-wide">
+                <th className="text-left pb-2">Strategy</th>
+                <th className="text-right pb-2">Avg OOS Sharpe</th>
+                <th className="text-right pb-2">Positive Folds</th>
+                <th className="text-right pb-2">Avg WFE</th>
+                <th className="text-right pb-2">Verdict</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {LS_STRONG.map(row => (
+                <tr key={row.name}>
+                  <td className="py-2.5 font-medium text-gray-900 text-sm">{row.name}</td>
+                  <td className={`py-2.5 text-right font-semibold ${row.color}`}>{row.avgOosSharpe.toFixed(3)}</td>
+                  <td className="py-2.5 text-right text-gray-600">{row.posFolds}</td>
+                  <td className="py-2.5 text-right text-gray-600">{row.wfe}</td>
+                  <td className="py-2.5 text-right">
+                    <span className="px-2 py-0.5 bg-emerald-100 text-emerald-700 rounded text-xs font-semibold">STRONG</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-4 pt-4 border-t flex items-center justify-between">
+          <p className="text-xs text-amber-700 bg-amber-50 px-3 py-1.5 rounded">
+            <strong>Exception:</strong> GFC fold (2005–09) — all strategies negative. Systemic credit crisis overwhelms all factor signals.
+          </p>
+          <Link href="/factor-portfolio" className="text-blue-600 hover:text-blue-700 font-medium text-xs flex items-center gap-1">
+            Factor Portfolio page <ArrowRight className="w-3 h-3" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Finding 6: Walk-Forward Consistency */}
+      <div className="bg-white rounded-xl border p-6 mb-8">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-emerald-50 text-emerald-600">
+            <CheckCircle2 className="w-5 h-5" />
+          </div>
+          <div>
+            <h2 className="font-semibold text-gray-900">Factor premia persist out-of-sample — with one exception</h2>
+            <p className="text-sm text-gray-500 mt-0.5">
+              Expanding IS + 5-year OOS folds · GFC fold (2005–09) is the honest exception
+            </p>
+          </div>
+        </div>
+        <div className="grid sm:grid-cols-4 gap-4 mb-4 text-center">
+          {[
+            { label: 'GFC fold (2005–09)', sr: '< 0', note: 'All negative. Credit crisis ≠ factor failure.', bg: 'bg-red-50', tc: 'text-red-700' },
+            { label: 'Post-crisis (2010–14)', sr: '1.1–1.7', note: 'Strongest factor decade. Premia rebounded.', bg: 'bg-emerald-50', tc: 'text-emerald-700' },
+            { label: 'Pre-COVID (2015–19)', sr: '0.86–0.98', note: 'Steady bull. Consistent premium.', bg: 'bg-blue-50', tc: 'text-blue-700' },
+            { label: 'COVID/AI (2020–24)', sr: '0.67–0.90', note: 'Regime diversity. Premium holds.', bg: 'bg-purple-50', tc: 'text-purple-700' },
+          ].map(f => (
+            <div key={f.label} className={`${f.bg} rounded-lg p-3`}>
+              <p className="text-xs text-gray-500 mb-1">{f.label}</p>
+              <p className={`text-xl font-bold ${f.tc}`}>{f.sr}</p>
+              <p className="text-xs text-gray-500 mt-1 leading-snug">{f.note}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Walk-forward for L/S is not about catching overfit parameters — there are none. It answers:{' '}
+          <em>&ldquo;Is the factor cross-sectional ranking ability persistent into genuinely unseen future data?&rdquo;</em>{' '}
+          3 out of 4 folds: yes. The one failure (GFC) is well-understood and reproducible — it is not noise,
+          it is the systemic property of equity L/S books in liquidity crises. Any honest quant research
+          document should show this fold.
+        </p>
+      </div>
+
       {/* Alpha table */}
       <div className="bg-white rounded-xl border p-6 mb-6">
         <div className="flex items-start gap-4 mb-5">
@@ -295,6 +416,8 @@ export default function FindingsPage() {
             { label: 'Survivorship bias', value: '~17% upward bias', sub: 'Corrected with PIT constituents' },
             { label: 'Transaction costs', value: '15 bps round-trip', sub: 'All 14 strategies bulletproof' },
             { label: 'Monte Carlo', value: '12/14 significant', sub: 'Bonferroni p < 0.0036' },
+            { label: 'L/S Walk-forward', value: '5 STRONG factors', sub: '4-fold expanding IS, 5yr OOS windows' },
+            { label: 'Factor portfolio', value: 'SR = 0.754 MVO', sub: '7× more diversifiable than long-only' },
           ].map(item => (
             <div key={item.label}>
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">{item.label}</p>

@@ -628,3 +628,40 @@ export async function fetchLSWalkForward(): Promise<LSWalkForwardData> {
   if (!response.ok) throw new Error(`Failed to fetch L/S walk-forward: ${response.statusText}`);
   return response.json();
 }
+
+// ── L/S Walk-Forward (all 14 strategies) ─────────────────────────────────────
+
+export interface LSWFStrategyAll {
+  display_name: string;
+  avg_oos_sharpe: number | null;
+  pct_folds_positive: number;
+  avg_wfe_pct: number | null;
+  n_folds: number;
+  verdict: 'STRONG' | 'CONSISTENT' | 'MIXED' | 'WEAK';
+  full_period: { sharpe: number | null; cagr: number | null; max_drawdown: number | null; n_months: number };
+  folds: {
+    label: string;
+    is_period: string;
+    oos_period: string;
+    is_sharpe: number | null;
+    oos_sharpe: number | null;
+    wfe_pct: number | null;
+    oos_cagr: number | null;
+    oos_n_months: number;
+  }[];
+}
+
+export interface LSWFAllData {
+  generated_at: string;
+  method: string;
+  n_strategies: number;
+  data_period: string;
+  strategies: Record<string, LSWFStrategyAll>;
+  ranked_by_avg_oos_sharpe: string[];
+}
+
+export async function fetchLSWalkForwardAll(): Promise<LSWFAllData> {
+  const response = await fetch(`${API_BASE_URL}/research/longshort/walkforward/all`);
+  if (!response.ok) throw new Error(`Failed to fetch L/S walk-forward (all): ${response.statusText}`);
+  return response.json();
+}

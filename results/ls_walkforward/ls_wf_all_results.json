@@ -1,0 +1,822 @@
+{
+  "generated_at": "2026-04-24T05:34:32.942137",
+  "method": "Expanding IS window + 5-year OOS folds (4 folds)",
+  "n_strategies": 14,
+  "data_period": "2000-02-29 \u2013 2024-12-31",
+  "strategies": {
+    "large_cap_momentum": {
+      "display_name": "Large Cap Momentum",
+      "avg_oos_sharpe": 0.798,
+      "pct_folds_positive": 75.0,
+      "avg_wfe_pct": 198.0781,
+      "n_folds": 4,
+      "verdict": "STRONG",
+      "full_period": {
+        "sharpe": 0.648,
+        "cagr": 0.1269,
+        "max_drawdown": -0.5068,
+        "win_rate": 0.6411,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.6321,
+          "oos_sharpe": -0.1167,
+          "wfe_pct": -18.4594,
+          "oos_cagr": -0.0255,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.3071,
+          "oos_sharpe": 1.6614,
+          "wfe_pct": 541.0169,
+          "oos_cagr": 0.2502,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.5983,
+          "oos_sharpe": 0.859,
+          "wfe_pct": 143.5749,
+          "oos_cagr": 0.1088,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.6248,
+          "oos_sharpe": 0.7883,
+          "wfe_pct": 126.1802,
+          "oos_cagr": 0.1594,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "52_week_high_breakout": {
+      "display_name": "52-Week High Breakout",
+      "avg_oos_sharpe": -0.2021,
+      "pct_folds_positive": 50.0,
+      "avg_wfe_pct": -58.8863,
+      "n_folds": 4,
+      "verdict": "MIXED",
+      "full_period": {
+        "sharpe": 0.2788,
+        "cagr": 0.0426,
+        "max_drawdown": -0.2223,
+        "win_rate": 0.6054,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.679,
+          "oos_sharpe": 0.2373,
+          "wfe_pct": 34.9454,
+          "oos_cagr": 0.0328,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.5265,
+          "oos_sharpe": 0.1394,
+          "wfe_pct": 26.4777,
+          "oos_cagr": 0.0236,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.4352,
+          "oos_sharpe": -0.7734,
+          "wfe_pct": -177.6908,
+          "oos_cagr": 0.0053,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.3451,
+          "oos_sharpe": -0.4116,
+          "wfe_pct": -119.2774,
+          "oos_cagr": 0.0075,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "deep_value_all_cap": {
+      "display_name": "Deep Value All-Cap",
+      "avg_oos_sharpe": -1.438,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": 1315.6986,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -0.4721,
+        "cagr": -0.0168,
+        "max_drawdown": -0.4754,
+        "win_rate": 0.4354,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": -0.0294,
+          "oos_sharpe": -1.2031,
+          "wfe_pct": 4094.351,
+          "oos_cagr": -0.06,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": -0.3828,
+          "oos_sharpe": -0.7674,
+          "wfe_pct": 200.4806,
+          "oos_cagr": 0.0042,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": -0.3657,
+          "oos_sharpe": -2.2448,
+          "wfe_pct": 613.8363,
+          "oos_cagr": -0.017,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": -0.434,
+          "oos_sharpe": -1.5368,
+          "wfe_pct": 354.1266,
+          "oos_cagr": -0.012,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "high_quality_roic": {
+      "display_name": "High Quality ROIC",
+      "avg_oos_sharpe": -0.9209,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": -931.6966,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -0.0176,
+        "cagr": 0.0141,
+        "max_drawdown": -0.1995,
+        "win_rate": 0.5017,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.3117,
+          "oos_sharpe": -0.1699,
+          "wfe_pct": -54.5242,
+          "oos_cagr": 0.012,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.2066,
+          "oos_sharpe": -1.3865,
+          "wfe_pct": -671.1596,
+          "oos_cagr": -0.0001,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.113,
+          "oos_sharpe": -1.3737,
+          "wfe_pct": -1215.6422,
+          "oos_cagr": -0.0038,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.0422,
+          "oos_sharpe": -0.7536,
+          "wfe_pct": -1785.4605,
+          "oos_cagr": -0.0048,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "low_volatility_shield": {
+      "display_name": "Low Volatility Shield",
+      "avg_oos_sharpe": -0.8745,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": 171.2783,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -0.5174,
+        "cagr": -0.1096,
+        "max_drawdown": -0.9775,
+        "win_rate": 0.396,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.1881,
+          "oos_sharpe": -0.737,
+          "wfe_pct": -391.8632,
+          "oos_cagr": -0.1408,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": -0.1695,
+          "oos_sharpe": -1.2056,
+          "wfe_pct": 711.1911,
+          "oos_cagr": -0.1601,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": -0.4008,
+          "oos_sharpe": -0.7685,
+          "wfe_pct": 191.7358,
+          "oos_cagr": -0.0962,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": -0.4521,
+          "oos_sharpe": -0.7869,
+          "wfe_pct": 174.0495,
+          "oos_cagr": -0.1503,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "dividend_aristocrats": {
+      "display_name": "Dividend Aristocrats",
+      "avg_oos_sharpe": 0.7156,
+      "pct_folds_positive": 100.0,
+      "avg_wfe_pct": 148.9912,
+      "n_folds": 4,
+      "verdict": "STRONG",
+      "full_period": {
+        "sharpe": 0.6742,
+        "cagr": 0.1983,
+        "max_drawdown": -0.8493,
+        "win_rate": 0.663,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 1.1095,
+          "oos_sharpe": 0.1288,
+          "wfe_pct": 11.6118,
+          "oos_cagr": -0.03,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.3282,
+          "oos_sharpe": 1.088,
+          "wfe_pct": 331.4604,
+          "oos_cagr": 0.4424,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.6268,
+          "oos_sharpe": 0.9781,
+          "wfe_pct": 156.0546,
+          "oos_cagr": 0.2556,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.6893,
+          "oos_sharpe": 0.6675,
+          "wfe_pct": 96.838,
+          "oos_cagr": 0.1939,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "moving_average_trend": {
+      "display_name": "MA Trend",
+      "avg_oos_sharpe": -0.903,
+      "pct_folds_positive": 25.0,
+      "avg_wfe_pct": -218.8536,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": 0.2081,
+        "cagr": 0.0319,
+        "max_drawdown": -0.1997,
+        "win_rate": 0.5743,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.7694,
+          "oos_sharpe": 0.3981,
+          "wfe_pct": 51.7395,
+          "oos_cagr": 0.0331,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.6031,
+          "oos_sharpe": -1.8328,
+          "wfe_pct": -303.8995,
+          "oos_cagr": -0.0001,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.4087,
+          "oos_sharpe": -1.0393,
+          "wfe_pct": -254.2747,
+          "oos_cagr": 0.0063,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.3084,
+          "oos_sharpe": -1.138,
+          "wfe_pct": -368.9798,
+          "oos_cagr": -0.0013,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "rsi_mean_reversion": {
+      "display_name": "RSI Mean Reversion",
+      "avg_oos_sharpe": -4.2757,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": 1736.3897,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -0.4924,
+        "cagr": -0.0073,
+        "max_drawdown": -0.2231,
+        "win_rate": 0.3512,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": -0.1319,
+          "oos_sharpe": -4.5448,
+          "wfe_pct": 3445.9739,
+          "oos_cagr": -0.014,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": -0.3039,
+          "oos_sharpe": -4.4663,
+          "wfe_pct": 1469.5556,
+          "oos_cagr": -0.0039,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": -0.3654,
+          "oos_sharpe": -3.8516,
+          "wfe_pct": 1054.1942,
+          "oos_cagr": -0.008,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": -0.4345,
+          "oos_sharpe": -4.2399,
+          "wfe_pct": 975.8352,
+          "oos_cagr": -0.0071,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "value_momentum_blend": {
+      "display_name": "Value + Momentum",
+      "avg_oos_sharpe": 0.4948,
+      "pct_folds_positive": 100.0,
+      "avg_wfe_pct": 204.0933,
+      "n_folds": 4,
+      "verdict": "STRONG",
+      "full_period": {
+        "sharpe": 0.4336,
+        "cagr": 0.0781,
+        "max_drawdown": -0.5538,
+        "win_rate": 0.6028,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.4928,
+          "oos_sharpe": 0.0744,
+          "wfe_pct": 15.0909,
+          "oos_cagr": 0.0084,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.183,
+          "oos_sharpe": 1.1275,
+          "wfe_pct": 616.0094,
+          "oos_cagr": 0.1664,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.4466,
+          "oos_sharpe": 0.2464,
+          "wfe_pct": 55.1704,
+          "oos_cagr": 0.0418,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.4082,
+          "oos_sharpe": 0.531,
+          "wfe_pct": 130.1023,
+          "oos_cagr": 0.1054,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "quality_momentum": {
+      "display_name": "Quality Momentum",
+      "avg_oos_sharpe": 0.8762,
+      "pct_folds_positive": 75.0,
+      "avg_wfe_pct": 221.3319,
+      "n_folds": 4,
+      "verdict": "STRONG",
+      "full_period": {
+        "sharpe": 0.6458,
+        "cagr": 0.1302,
+        "max_drawdown": -0.5232,
+        "win_rate": 0.6272,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.5167,
+          "oos_sharpe": -0.086,
+          "wfe_pct": -16.6455,
+          "oos_cagr": -0.014,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.2963,
+          "oos_sharpe": 1.7415,
+          "wfe_pct": 587.7657,
+          "oos_cagr": 0.2547,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.5721,
+          "oos_sharpe": 0.9491,
+          "wfe_pct": 165.9091,
+          "oos_cagr": 0.1144,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.6069,
+          "oos_sharpe": 0.9,
+          "wfe_pct": 148.2983,
+          "oos_cagr": 0.1701,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "quality_low_vol": {
+      "display_name": "Quality + Low Vol",
+      "avg_oos_sharpe": -0.9824,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": 427.5026,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -0.5079,
+        "cagr": -0.0841,
+        "max_drawdown": -0.9321,
+        "win_rate": 0.3932,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": -0.0863,
+          "oos_sharpe": -0.6639,
+          "wfe_pct": 769.1155,
+          "oos_cagr": -0.0982,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": -0.273,
+          "oos_sharpe": -1.4424,
+          "wfe_pct": 528.3271,
+          "oos_cagr": -0.1027,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": -0.4213,
+          "oos_sharpe": -1.0258,
+          "wfe_pct": 243.4886,
+          "oos_cagr": -0.0734,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": -0.4716,
+          "oos_sharpe": -0.7974,
+          "wfe_pct": 169.0793,
+          "oos_cagr": -0.0831,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "composite_factor_score": {
+      "display_name": "Composite Factor",
+      "avg_oos_sharpe": 0.7783,
+      "pct_folds_positive": 75.0,
+      "avg_wfe_pct": 253.9242,
+      "n_folds": 4,
+      "verdict": "STRONG",
+      "full_period": {
+        "sharpe": 0.4764,
+        "cagr": 0.0904,
+        "max_drawdown": -0.5077,
+        "win_rate": 0.6132,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.4863,
+          "oos_sharpe": -0.4097,
+          "wfe_pct": -84.2451,
+          "oos_cagr": -0.0296,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": 0.2538,
+          "oos_sharpe": 1.8231,
+          "wfe_pct": 718.1936,
+          "oos_cagr": 0.1962,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": 0.4531,
+          "oos_sharpe": 0.6447,
+          "wfe_pct": 142.2658,
+          "oos_cagr": 0.0559,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": 0.4406,
+          "oos_sharpe": 1.0553,
+          "wfe_pct": 239.4824,
+          "oos_cagr": 0.1113,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "volatility_targeting": {
+      "display_name": "Volatility Targeting",
+      "avg_oos_sharpe": -0.8745,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": 171.2783,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -0.5174,
+        "cagr": -0.1096,
+        "max_drawdown": -0.9775,
+        "win_rate": 0.396,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": 0.1881,
+          "oos_sharpe": -0.737,
+          "wfe_pct": -391.8632,
+          "oos_cagr": -0.1408,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": -0.1695,
+          "oos_sharpe": -1.2056,
+          "wfe_pct": 711.1911,
+          "oos_cagr": -0.1601,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": -0.4008,
+          "oos_sharpe": -0.7685,
+          "wfe_pct": 191.7358,
+          "oos_cagr": -0.0962,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": -0.4521,
+          "oos_sharpe": -0.7869,
+          "wfe_pct": 174.0495,
+          "oos_cagr": -0.1503,
+          "oos_n_months": 59
+        }
+      ]
+    },
+    "earnings_surprise_momentum": {
+      "display_name": "Earnings Surprise",
+      "avg_oos_sharpe": -5.8895,
+      "pct_folds_positive": 0.0,
+      "avg_wfe_pct": 501.2618,
+      "n_folds": 4,
+      "verdict": "WEAK",
+      "full_period": {
+        "sharpe": -1.5578,
+        "cagr": -0.0082,
+        "max_drawdown": -0.2257,
+        "win_rate": 0.2274,
+        "n_months": 299
+      },
+      "folds": [
+        {
+          "label": "GFC fold",
+          "is_period": "2000-02\u20132004-12",
+          "oos_period": "2005-01\u20132009-12",
+          "is_sharpe": -0.9784,
+          "oos_sharpe": -5.0275,
+          "wfe_pct": 513.8511,
+          "oos_cagr": -0.0046,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Post-crisis fold",
+          "is_period": "2000-02\u20132009-12",
+          "oos_period": "2010-01\u20132014-12",
+          "is_sharpe": -1.1337,
+          "oos_sharpe": -6.9203,
+          "wfe_pct": 610.4392,
+          "oos_cagr": -0.004,
+          "oos_n_months": 59
+        },
+        {
+          "label": "Pre-COVID fold",
+          "is_period": "2000-02\u20132014-12",
+          "oos_period": "2015-01\u20132019-12",
+          "is_sharpe": -1.2752,
+          "oos_sharpe": -8.3593,
+          "wfe_pct": 655.5284,
+          "oos_cagr": -0.0069,
+          "oos_n_months": 59
+        },
+        {
+          "label": "COVID/inflation fold",
+          "is_period": "2000-02\u20132019-12",
+          "oos_period": "2020-01\u20132024-12",
+          "is_sharpe": -1.4434,
+          "oos_sharpe": -3.251,
+          "wfe_pct": 225.2283,
+          "oos_cagr": -0.006,
+          "oos_n_months": 59
+        }
+      ]
+    }
+  },
+  "ranked_by_avg_oos_sharpe": [
+    "quality_momentum",
+    "large_cap_momentum",
+    "composite_factor_score",
+    "dividend_aristocrats",
+    "value_momentum_blend",
+    "52_week_high_breakout",
+    "low_volatility_shield",
+    "volatility_targeting",
+    "moving_average_trend",
+    "high_quality_roic",
+    "quality_low_vol",
+    "deep_value_all_cap",
+    "rsi_mean_reversion",
+    "earnings_surprise_momentum"
+  ]
+}

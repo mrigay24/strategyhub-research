@@ -22,7 +22,8 @@ ROLLING_FILE = RESULTS_DIR / "extended_rolling_performance" / "extended_rolling_
 ALPHA_FILE = RESULTS_DIR / "factor_alpha" / "factor_alpha.json"
 LS_FILE = RESULTS_DIR / "longshort" / "longshort_results.json"
 LS_PORTFOLIO_FILE = RESULTS_DIR / "ls_portfolio" / "ls_portfolio_results.json"
-LS_WF_FILE = RESULTS_DIR / "ls_walkforward" / "ls_wf_results.json"
+LS_WF_FILE     = RESULTS_DIR / "ls_walkforward" / "ls_wf_results.json"
+LS_WF_ALL_FILE = RESULTS_DIR / "ls_walkforward" / "ls_wf_all_results.json"
 PORTFOLIO_FILE = RESULTS_DIR / "extended_portfolio_analysis" / "extended_portfolio_results.json"
 CORR_MATRIX_CSV = RESULTS_DIR / "extended_portfolio_analysis" / "extended_correlation_matrix.csv"
 
@@ -373,6 +374,20 @@ async def get_longshort_walkforward():
     data = _load_json(LS_WF_FILE)
     if not data:
         raise HTTPException(status_code=404, detail="L/S walk-forward results not yet computed. Run scripts/ls_walkforward.py")
+    return data
+
+
+@router.get("/longshort/walkforward/all")
+async def get_longshort_walkforward_all():
+    """
+    L/S walk-forward validation results for all 14 strategies.
+
+    Returns per-strategy fold-by-fold WFE, avg OOS Sharpe, and verdict (STRONG/CONSISTENT/MIXED/WEAK).
+    Used to show a WFE badge on each strategy's Research tab.
+    """
+    data = _load_json(LS_WF_ALL_FILE)
+    if not data:
+        raise HTTPException(status_code=404, detail="L/S walk-forward (all) results not yet computed. Run scripts/ls_walkforward_all.py")
     return data
 
 
