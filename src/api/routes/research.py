@@ -270,6 +270,84 @@ async def get_factor_alpha(strategy_name: str):
     }
 
 
+@router.get("/scorecard/unified")
+async def get_unified_scorecard():
+    """
+    Unified research scorecard — all 8 validation layers, all 14 strategies.
+
+    Merges: long-only Phase 3 metrics, CAPM attribution, L/S Sharpe,
+    L/S walk-forward verdict, Monte Carlo significance, regime performance.
+    This is the executive summary of all research done on the platform.
+    """
+    import csv
+
+    sc: dict = {}
+
+    # ── Long-only master scorecard ────────────────────────────────────────────
+    if SCORECARD_CSV.exists():
+        with open(SCORECARD_CSV) as f:
+            for row in csv.DictReader(f):
+                name = row.get("strategy", "")
+                sc[name] = {
+                    "strategy":          name,
+                    "display_name":      row.get("display", name),
+                    "tier":              row.get("tier", ""),
+                    # long-only
+                    "lo_sharpe":         _safe_float(row.get("sharpe")),
+                    "lo_adj_sharpe":     _safe_float(row.get("adj_sharpe")),
+                    "lo_cagr":           _safe_float(row.get("cagr")),
+                    "lo_max_drawdown":   _safe_float(row.get("mdd")),
+                    "lo_pct_pos_years":  _safe_float(row.get("pct_pos_years")),
+                    "lo_bear_sharpe":    _safe_float(row.get("bear_sharpe")),
+                    "lo_bull_sharpe":    _safe_float(row.get("bull_sharpe")),
+                    # walk-forward (long-only)
+                    "lo_wfe":            _safe_float(row.get("wfe")),
+                    "lo_wf_verdict":     row.get("wf_verdict", ""),
+                    "lo_oos_sharpe":     _safe_float(row.get("oos_sharpe")),
+                    # monte carlo
+                    "mc_verdict":        row.get("mc_verdict", ""),
+                    "mc_iid_p":          _safe_float(row.get("iid_p")),
+                    # capm, ls — filled below
+                    "capm_alpha":        None,
+                    "capm_beta":         None,
+                    "ls_sharpe":         None,
+                    "ls_spy_corr":       None,
+                    "ls_wf_verdict":     None,
+                    "ls_avg_oos_sharpe": None,
+                    "ls_pct_pos_folds":  None,
+                }
+
+    # ── CAPM attribution ─────────────────────────────────────────────────────
+    alpha_data = _load_json(ALPHA_FILE)
+    for name, row in alpha_data.items():
+        if name.startswith("_") or name not in sc:
+            continue
+        capm = row.get("capm", {})
+        sc[name]["capm_alpha"] = capm.get("alpha_annual")
+        sc[name]["capm_beta"]  = capm.get("beta")
+
+    # ── L/S Sharpe ───────────────────────────────────────────────────────────
+    ls_data = _load_json(LS_FILE)
+    for name, row in ls_data.get("strategies", {}).items():
+        if name not in sc:
+            continue
+        sc[name]["ls_sharpe"]   = row.get("sharpe_ratio")
+        sc[name]["ls_spy_corr"] = row.get("spy_correlation")
+
+    # ── L/S walk-forward verdict ──────────────────────────────────────────────
+    wf_all = _load_json(LS_WF_ALL_FILE)
+    for name, row in wf_all.get("strategies", {}).items():
+        if name not in sc:
+            continue
+        sc[name]["ls_wf_verdict"]     = row.get("verdict")
+        sc[name]["ls_avg_oos_sharpe"] = row.get("avg_oos_sharpe")
+        sc[name]["ls_pct_pos_folds"]  = row.get("pct_folds_positive")
+
+    # ── Sort by long-only Sharpe desc ────────────────────────────────────────
+    rows = sorted(sc.values(), key=lambda x: x.get("lo_sharpe") or 0, reverse=True)
+    return {"strategies": rows, "n_strategies": len(rows)}
+
+
 @router.get("/longshort/scorecard")
 async def get_longshort_scorecard():
     """

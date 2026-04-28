@@ -21,6 +21,7 @@ from src.api.routes.strategies import router as strategies_router
 from src.api.routes.backtests import router as backtests_router
 from src.api.routes.research import router as research_router
 from src.api.routes.ai_builder import router as ai_builder_router
+from src.api.routes.signals import router as signals_router
 from src.database.connection import init_db, close_db
 
 
@@ -101,6 +102,7 @@ app.include_router(strategies_router, prefix="/api/v1")
 app.include_router(backtests_router, prefix="/api/v1")
 app.include_router(research_router, prefix="/api/v1")
 app.include_router(ai_builder_router, prefix="/api/v1")
+app.include_router(signals_router, prefix="/api/v1")
 
 
 # Root endpoint

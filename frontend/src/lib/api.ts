@@ -665,3 +665,87 @@ export async function fetchLSWalkForwardAll(): Promise<LSWFAllData> {
   if (!response.ok) throw new Error(`Failed to fetch L/S walk-forward (all): ${response.statusText}`);
   return response.json();
 }
+
+// ── Unified Scorecard ─────────────────────────────────────────────────────────
+
+export interface ScorecardRow {
+  strategy: string;
+  display_name: string;
+  tier: string;
+  // long-only
+  lo_sharpe: number | null;
+  lo_adj_sharpe: number | null;
+  lo_cagr: number | null;
+  lo_max_drawdown: number | null;
+  lo_pct_pos_years: number | null;
+  lo_bear_sharpe: number | null;
+  lo_bull_sharpe: number | null;
+  lo_wfe: number | null;
+  lo_wf_verdict: string;
+  lo_oos_sharpe: number | null;
+  // monte carlo
+  mc_verdict: string;
+  mc_iid_p: number | null;
+  // capm
+  capm_alpha: number | null;
+  capm_beta: number | null;
+  // L/S
+  ls_sharpe: number | null;
+  ls_spy_corr: number | null;
+  ls_wf_verdict: string | null;
+  ls_avg_oos_sharpe: number | null;
+  ls_pct_pos_folds: number | null;
+}
+
+export interface UnifiedScorecardData {
+  strategies: ScorecardRow[];
+  n_strategies: number;
+}
+
+export async function fetchUnifiedScorecard(): Promise<UnifiedScorecardData> {
+  const response = await fetch(`${API_BASE_URL}/research/scorecard/unified`);
+  if (!response.ok) throw new Error(`Failed to fetch unified scorecard: ${response.statusText}`);
+  return response.json();
+}
+
+// ── Live Signals ──────────────────────────────────────────────────────────────
+
+export interface TradeListEntry {
+  rank: number;
+  symbol: string;
+  consensus_score: number;
+  n_strategies: number;
+  strategies: string;
+  avg_weight: number;
+  allocation_pct: number;
+  allocation_dollar: number;
+  sector: string;
+  sentiment: number;
+  earnings_warning: boolean;
+}
+
+export interface MorningTradeList {
+  generated_at: string;
+  signal_date: string;
+  account_size: number;
+  risk_metrics: {
+    n_positions: number;
+    total_allocated_pct: number;
+    cash_buffer_pct: number;
+    max_single_pos_pct: number;
+    est_max_daily_loss: number;
+    ftmo_safe: boolean;
+    apex_safe: boolean;
+    topstep_safe: boolean;
+  };
+  sector_breakdown: Record<string, number>;
+  sector_warnings: string[];
+  earnings_warning: string[];
+  trade_list: TradeListEntry[];
+}
+
+export async function fetchMorningTradeList(): Promise<MorningTradeList> {
+  const response = await fetch(`${API_BASE_URL}/signals/morning-trade-list`);
+  if (!response.ok) throw new Error(`Failed to fetch morning trade list: ${response.statusText}`);
+  return response.json();
+}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BarChart3, Sparkles, User, BookOpen, TrendingUp } from 'lucide-react'
+import { BarChart3, Sparkles, User, BookOpen, TrendingUp, Table2, Radio } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function TopNav() {
@@ -11,8 +11,10 @@ export function TopNav() {
   const navItems = [
     { href: '/', label: 'Dashboard', icon: BarChart3 },
     { href: '/findings', label: 'Key Findings', icon: BookOpen },
+    { href: '/scorecard', label: 'Scorecard', icon: Table2 },
     { href: '/factor-portfolio', label: 'Factor Portfolio', icon: TrendingUp },
-    { href: '/ai-strategy-builder', label: 'AI Strategy Builder', icon: Sparkles },
+    { href: '/signals', label: 'Live Signals', icon: Radio },
+    { href: '/ai-strategy-builder', label: 'AI Builder', icon: Sparkles },
   ]
 
   return (
