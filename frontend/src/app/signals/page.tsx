@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Loader2, AlertCircle, CheckCircle2, AlertTriangle, Shield, TrendingUp, Info } from 'lucide-react'
 import { fetchMorningTradeList, type MorningTradeList, type TradeListEntry } from '@/lib/api'
@@ -235,9 +235,8 @@ export default function SignalsPage() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {trade_list.map((t: TradeListEntry) => (
-                <>
+                <Fragment key={t.rank}>
                   <tr
-                    key={t.rank}
                     className={cn('cursor-pointer transition-colors', expandedRow === t.rank ? 'bg-blue-50' : 'hover:bg-gray-50')}
                     onClick={() => setExpandedRow(expandedRow === t.rank ? null : t.rank)}
                   >
@@ -267,7 +266,7 @@ export default function SignalsPage() {
                     <td className="px-4 py-3 text-right font-medium text-gray-900 tabular-nums">${t.allocation_dollar}</td>
                   </tr>
                   {expandedRow === t.rank && (
-                    <tr key={`${t.rank}-exp`} className="bg-blue-50">
+                    <tr className="bg-blue-50">
                       <td colSpan={7} className="px-4 pb-3 pt-1">
                         <p className="text-xs text-gray-500 mb-1.5">Strategies holding {t.symbol}:</p>
                         <div className="flex flex-wrap gap-1">
@@ -278,7 +277,7 @@ export default function SignalsPage() {
                       </td>
                     </tr>
                   )}
-                </>
+                </Fragment>
               ))}
             </tbody>
           </table>
