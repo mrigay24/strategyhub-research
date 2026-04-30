@@ -24,6 +24,7 @@ LS_FILE = RESULTS_DIR / "longshort" / "longshort_results.json"
 LS_PORTFOLIO_FILE = RESULTS_DIR / "ls_portfolio" / "ls_portfolio_results.json"
 LS_WF_FILE     = RESULTS_DIR / "ls_walkforward" / "ls_wf_results.json"
 LS_WF_ALL_FILE = RESULTS_DIR / "ls_walkforward" / "ls_wf_all_results.json"
+FACTOR_ROTATION_FILE = RESULTS_DIR / "factor_rotation" / "factor_rotation.json"
 PORTFOLIO_FILE = RESULTS_DIR / "extended_portfolio_analysis" / "extended_portfolio_results.json"
 CORR_MATRIX_CSV = RESULTS_DIR / "extended_portfolio_analysis" / "extended_correlation_matrix.csv"
 
@@ -466,6 +467,27 @@ async def get_longshort_walkforward_all():
     data = _load_json(LS_WF_ALL_FILE)
     if not data:
         raise HTTPException(status_code=404, detail="L/S walk-forward (all) results not yet computed. Run scripts/ls_walkforward_all.py")
+    return data
+
+
+@router.get("/factor-rotation")
+async def get_factor_rotation():
+    """
+    Factor rotation model.
+
+    Returns:
+    - Current market regime (detected from live SPY or cached)
+    - Regime × strategy Sharpe matrix (14 strategies × 4 regimes)
+    - Recommended strategy weights for current regime
+    - Annual leadership calendar (who led each year 2000-2024)
+    - Pre-computed weights for each regime (for what-if analysis)
+    """
+    data = _load_json(FACTOR_ROTATION_FILE)
+    if not data:
+        raise HTTPException(
+            status_code=404,
+            detail="Factor rotation data not found. Run scripts/factor_rotation.py"
+        )
     return data
 
 

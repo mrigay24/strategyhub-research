@@ -749,3 +749,61 @@ export async function fetchMorningTradeList(): Promise<MorningTradeList> {
   if (!response.ok) throw new Error(`Failed to fetch morning trade list: ${response.statusText}`);
   return response.json();
 }
+
+// ── Factor Rotation types ──────────────────────────────────────────────────
+
+export interface FactorRotationStrategy {
+  name: string;
+  display_name: string;
+  regime_sharpes: Record<string, number | null>;
+  regime_ranks: Record<string, number>;
+  best_regime: string;
+  worst_regime: string;
+  wf_verdict: string | null;
+  recommended_weight_pct: number;
+}
+
+export interface FactorRotationAnnualLeader {
+  year: number;
+  leader: string | null;
+  leader_sr: number | null;
+  second: string | null;
+  second_sr: number | null;
+  third: string | null;
+  third_sr: number | null;
+  laggard: string | null;
+  laggard_sr: number | null;
+  benchmark_sr: number | null;
+  all_sharpes: Record<string, number>;
+}
+
+export interface FactorRotationData {
+  generated_at: string;
+  data_source: string;
+  current_regime: string;
+  current_regime_metrics: {
+    trend_63d?: number;
+    vol_63d_ann?: number;
+    spy_price?: number;
+    as_of?: string;
+  };
+  regime_descriptions: Record<string, string>;
+  regime_stats: Record<string, {
+    pct_of_time: number;
+    ann_market_return: number;
+    ann_market_vol: number;
+  }>;
+  regime_matrix: Record<string, Record<string, number | null>>;
+  regime_ranks: Record<string, Record<string, number>>;
+  all_regime_weights: Record<string, Record<string, number>>;
+  recommended_weights: Record<string, number>;
+  strategy_summaries: FactorRotationStrategy[];
+  annual_leaders: FactorRotationAnnualLeader[];
+  insights: Record<string, string>;
+}
+
+export async function fetchFactorRotation(): Promise<FactorRotationData> {
+  const response = await fetch(`${API_BASE_URL}/research/factor-rotation`);
+  if (!response.ok) throw new Error(`Failed to fetch factor rotation: ${response.statusText}`);
+  return response.json();
+}

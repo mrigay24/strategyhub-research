@@ -33,6 +33,7 @@ import {
   fetchSensitivityData,
   fetchFactorAlpha,
   fetchLongShort,
+  fetchLSWalkForwardAll,
   fetchRollingMetrics,
   fetchCorrelationData,
   fetchLiveSignals,
@@ -42,6 +43,7 @@ import {
   type SensitivityData,
   type FactorAlpha,
   type LongShortData,
+  type LSWFStrategyAll,
   type RollingMetrics,
   type CorrelationData,
   type LiveSignals,
@@ -124,6 +126,7 @@ export default function StrategyDetailPage() {
   const [researchError, setResearchError] = useState<string | null>(null)
   const [factorAlpha, setFactorAlpha] = useState<FactorAlpha | null>(null)
   const [longShortData, setLongShortData] = useState<LongShortData | null>(null)
+  const [lsWfStrategy, setLsWfStrategy] = useState<LSWFStrategyAll | null>(null)
 
   // Parameters tab state
   const [paramDefs, setParamDefs] = useState<StrategyParameter[]>([])
@@ -189,11 +192,15 @@ export default function StrategyDetailPage() {
       fetchResearchData(strategyName),
       fetchFactorAlpha(strategyName).catch(() => null),
       fetchLongShort(strategyName).catch(() => null),
+      fetchLSWalkForwardAll().catch(() => null),
     ])
-      .then(([researchData, alphaData, lsData]) => {
+      .then(([researchData, alphaData, lsData, lsWfAll]) => {
         setResearch(researchData)
         if (alphaData) setFactorAlpha(alphaData)
         if (lsData) setLongShortData(lsData)
+        if (lsWfAll?.strategies?.[strategyName]) {
+          setLsWfStrategy(lsWfAll.strategies[strategyName])
+        }
       })
       .catch(e => setResearchError(e.message))
       .finally(() => setResearchLoading(false))
@@ -975,14 +982,27 @@ export default function StrategyDetailPage() {
                             Pure cross-sectional factor premium, 25-year backtest. 15bps commission + 50bps borrow cost.
                           </p>
                         </div>
-                        <span className={cn(
-                          'px-3 py-1 rounded-full text-sm font-semibold shrink-0',
-                          (longShortData.metrics.sharpe_ratio ?? 0) > 0.4 ? 'bg-emerald-100 text-emerald-800' :
-                          (longShortData.metrics.sharpe_ratio ?? 0) > 0 ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-red-100 text-red-800'
-                        )}>
-                          Pure Factor SR: {longShortData.metrics.sharpe_ratio?.toFixed(2) ?? 'N/A'}
-                        </span>
+                        <div className="flex items-center gap-2 shrink-0">
+                          {lsWfStrategy && (
+                            <span className={cn(
+                              'px-2.5 py-1 rounded-full text-xs font-semibold',
+                              lsWfStrategy.verdict === 'STRONG'     ? 'bg-emerald-100 text-emerald-800' :
+                              lsWfStrategy.verdict === 'CONSISTENT' ? 'bg-blue-100 text-blue-800' :
+                              lsWfStrategy.verdict === 'MIXED'      ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-gray-100 text-gray-600'
+                            )}>
+                              L/S WF: {lsWfStrategy.verdict}
+                            </span>
+                          )}
+                          <span className={cn(
+                            'px-3 py-1 rounded-full text-sm font-semibold',
+                            (longShortData.metrics.sharpe_ratio ?? 0) > 0.4 ? 'bg-emerald-100 text-emerald-800' :
+                            (longShortData.metrics.sharpe_ratio ?? 0) > 0 ? 'bg-yellow-100 text-yellow-800' :
+                            'bg-red-100 text-red-800'
+                          )}>
+                            Pure Factor SR: {longShortData.metrics.sharpe_ratio?.toFixed(2) ?? 'N/A'}
+                          </span>
+                        </div>
                       </div>
                     </div>
                     <div className="p-5">
@@ -1039,6 +1059,40 @@ export default function StrategyDetailPage() {
                       <p className="text-xs text-gray-400 mt-2 text-center">
                         Normalized to $1M start · Monthly rebalancing · 2000–2024 · 15bps commission + 50bps/yr borrow cost
                       </p>
+                      {lsWfStrategy && (
+                        <div className="mt-3 p-3 bg-gray-50 rounded-lg border text-xs">
+                          <div className="flex items-center gap-3 flex-wrap">
+                            <span className="font-medium text-gray-700">L/S Walk-Forward:</span>
+                            <span className={cn(
+                              'px-2 py-0.5 rounded font-semibold',
+                              lsWfStrategy.verdict === 'STRONG'     ? 'bg-emerald-100 text-emerald-800' :
+                              lsWfStrategy.verdict === 'CONSISTENT' ? 'bg-blue-100 text-blue-800' :
+                              lsWfStrategy.verdict === 'MIXED'      ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-gray-100 text-gray-600'
+                            )}>{lsWfStrategy.verdict}</span>
+                            <span className="text-gray-500">
+                              Avg OOS SR: <strong className="text-gray-700">{lsWfStrategy.avg_oos_sharpe?.toFixed(2) ?? '—'}</strong>
+                            </span>
+                            <span className="text-gray-500">
+                              Pos folds: <strong className="text-gray-700">{lsWfStrategy.pct_folds_positive != null ? `${(lsWfStrategy.pct_folds_positive * 100).toFixed(0)}%` : '—'}</strong>
+                            </span>
+                            {lsWfStrategy.folds && (
+                              <div className="flex gap-1 ml-auto">
+                                {lsWfStrategy.folds.map((f, i) => (
+                                  <span key={i} className={cn(
+                                    'px-1.5 py-0.5 rounded text-xs font-medium',
+                                    (f.oos_sharpe ?? 0) > 0.3 ? 'bg-emerald-100 text-emerald-800' :
+                                    (f.oos_sharpe ?? 0) > 0   ? 'bg-yellow-100 text-yellow-800' :
+                                    'bg-red-100 text-red-700'
+                                  )}>
+                                    F{i + 1}: {f.oos_sharpe?.toFixed(2) ?? '—'}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
                       <div className="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-100">
                         <p className="text-xs text-gray-600 leading-relaxed">
                           <strong>Why this matters:</strong> All 14 long-only strategies lag the market benchmark because
