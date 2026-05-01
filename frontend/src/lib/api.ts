@@ -807,3 +807,42 @@ export async function fetchFactorRotation(): Promise<FactorRotationData> {
   if (!response.ok) throw new Error(`Failed to fetch factor rotation: ${response.statusText}`);
   return response.json();
 }
+
+// ── NSE Signals types ──────────────────────────────────────────────────────
+
+export interface NSEConsensusEntry {
+  rank: number;
+  symbol: string;
+  consensus_score: number;
+  n_strategies: number;
+  allocation_pct: number;
+}
+
+export interface NSEStrategyHolding {
+  symbol: string;
+  weight: number;
+  rank: number;
+}
+
+export interface NSEStrategyResult {
+  signal_date?: string;
+  n_holdings?: number;
+  holdings?: NSEStrategyHolding[];
+  error?: string;
+}
+
+export interface NSESignalsData {
+  signal_date: string;
+  generated_at: string;
+  market: string;
+  n_symbols: number;
+  n_strategies_ok: number;
+  consensus_trade_list: NSEConsensusEntry[];
+  strategies: Record<string, NSEStrategyResult>;
+}
+
+export async function fetchNSESignals(): Promise<NSESignalsData> {
+  const response = await fetch(`${API_BASE_URL}/signals/nse`);
+  if (!response.ok) throw new Error(`Failed to fetch NSE signals: ${response.statusText}`);
+  return response.json();
+}

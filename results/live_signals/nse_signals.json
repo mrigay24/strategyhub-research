@@ -1,0 +1,1925 @@
+{
+  "generated_at": "2026-04-30T20:39:45.357669",
+  "signal_date": "2026-04-30",
+  "market": "NSE",
+  "data_source": "Yahoo Finance (.NS)",
+  "n_symbols": 491,
+  "strategies": {
+    "large_cap_momentum": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 84,
+      "holdings": [
+        {
+          "symbol": "ADANIENSOL",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "AETHER",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "AMBER",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ANURAS",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "APARINDS",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ASAHIINDIA",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ASTRAZEN",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AUBANK",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "AVANTIFEED",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "BAJAJHLDNG",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "BAJFINANCE",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "BDL",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "BHARATFORG",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "BSE",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "CANFINHOME",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "CAPLIPOINT",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "CCL",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "CDSL",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "CEATLTD",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "CHENNPETRO",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "CHOLAFIN",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "CHOLAHLDNG",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "COFORGE",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "COROMANDEL",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "CRAFTSMAN",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "CREDITACC",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "CUMMINSIND",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "DATAPATTNS",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "DEEPAKFERT",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "52_week_high_breakout": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 288,
+      "holdings": [
+        {
+          "symbol": "ATUL",
+          "weight": 0.0342,
+          "rank": 1
+        },
+        {
+          "symbol": "BBTC",
+          "weight": 0.0342,
+          "rank": 2
+        },
+        {
+          "symbol": "EPL",
+          "weight": 0.0342,
+          "rank": 3
+        },
+        {
+          "symbol": "INDIGOPNTS",
+          "weight": 0.0342,
+          "rank": 4
+        },
+        {
+          "symbol": "POLYMED",
+          "weight": 0.0342,
+          "rank": 5
+        },
+        {
+          "symbol": "PPLPHARMA",
+          "weight": 0.0342,
+          "rank": 6
+        },
+        {
+          "symbol": "RAINBOW",
+          "weight": 0.0342,
+          "rank": 7
+        },
+        {
+          "symbol": "TATACHEM",
+          "weight": 0.0342,
+          "rank": 8
+        },
+        {
+          "symbol": "CDSL",
+          "weight": 0.0335,
+          "rank": 9
+        },
+        {
+          "symbol": "DIXON",
+          "weight": 0.0335,
+          "rank": 10
+        },
+        {
+          "symbol": "JUBLPHARMA",
+          "weight": 0.0335,
+          "rank": 11
+        },
+        {
+          "symbol": "MANYAVAR",
+          "weight": 0.0335,
+          "rank": 12
+        },
+        {
+          "symbol": "MASTEK",
+          "weight": 0.0335,
+          "rank": 13
+        },
+        {
+          "symbol": "SAFARI",
+          "weight": 0.0335,
+          "rank": 14
+        },
+        {
+          "symbol": "SYNGENE",
+          "weight": 0.0335,
+          "rank": 15
+        },
+        {
+          "symbol": "360ONE",
+          "weight": 0.0328,
+          "rank": 16
+        },
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0328,
+          "rank": 17
+        },
+        {
+          "symbol": "AARTIIND",
+          "weight": 0.0328,
+          "rank": 18
+        },
+        {
+          "symbol": "AAVAS",
+          "weight": 0.0328,
+          "rank": 19
+        },
+        {
+          "symbol": "ABB",
+          "weight": 0.0328,
+          "rank": 20
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0328,
+          "rank": 21
+        },
+        {
+          "symbol": "ABCAPITAL",
+          "weight": 0.0328,
+          "rank": 22
+        },
+        {
+          "symbol": "ACE",
+          "weight": 0.0328,
+          "rank": 23
+        },
+        {
+          "symbol": "ACI",
+          "weight": 0.0328,
+          "rank": 24
+        },
+        {
+          "symbol": "ADANIENSOL",
+          "weight": 0.0328,
+          "rank": 25
+        },
+        {
+          "symbol": "ADANIGREEN",
+          "weight": 0.0328,
+          "rank": 26
+        },
+        {
+          "symbol": "ADANIPORTS",
+          "weight": 0.0328,
+          "rank": 27
+        },
+        {
+          "symbol": "ADANIPOWER",
+          "weight": 0.0328,
+          "rank": 28
+        },
+        {
+          "symbol": "AETHER",
+          "weight": 0.0328,
+          "rank": 29
+        },
+        {
+          "symbol": "AFFLE",
+          "weight": 0.0328,
+          "rank": 30
+        }
+      ]
+    },
+    "deep_value_all_cap": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 192,
+      "holdings": [
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "AARTIIND",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ABB",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "ADANIGREEN",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "AIAENG",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ASTRAL",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "BALKRISIND",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "BALRAMCHIN",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "BSOFT",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "CENTRALBK",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "CONCOR",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "ELGIEQUIP",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "EQUITASBNK",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "EXIDEIND",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "GAEL",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "GRINDWELL",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "HSCL",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "IDEA",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "INDUSINDBK",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "IOB",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "IRB",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "JBMA",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "JKPAPER",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "JSWENERGY",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "MAHLIFE",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "NATCOPHARM",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "OLECTRA",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "PVRINOX",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "RATNAMANI",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "RECLTD",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "high_quality_roic": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 90,
+      "holdings": [
+        {
+          "symbol": "ADANIPORTS",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "ANURAS",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "APLAPOLLO",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "APOLLOHOSP",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "AUBANK",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "AXISBANK",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "BEL",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "BHARTIARTL",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "BRITANNIA",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "CANFINHOME",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "COALINDIA",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "DIVISLAB",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "DRREDDY",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "EICHERMOT",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "FEDERALBNK",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "FORTIS",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "GRASIM",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "HINDALCO",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "JBCHEPHARM",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "JINDALSTEL",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "JSWSTEEL",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "LAURUSLABS",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "LT",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "LUPIN",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "MARICO",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "MFSL",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "NESTLEIND",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "NTPC",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "NYKAA",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "low_volatility_shield": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 289,
+      "holdings": [
+        {
+          "symbol": "CASTROLIND",
+          "weight": 0.0539,
+          "rank": 1
+        },
+        {
+          "symbol": "RBA",
+          "weight": 0.0433,
+          "rank": 2
+        },
+        {
+          "symbol": "LUPIN",
+          "weight": 0.0399,
+          "rank": 3
+        },
+        {
+          "symbol": "MARICO",
+          "weight": 0.034,
+          "rank": 4
+        },
+        {
+          "symbol": "CIPLA",
+          "weight": 0.0339,
+          "rank": 5
+        },
+        {
+          "symbol": "BHARTIARTL",
+          "weight": 0.0338,
+          "rank": 6
+        },
+        {
+          "symbol": "ICICIGI",
+          "weight": 0.0336,
+          "rank": 7
+        },
+        {
+          "symbol": "SBIN",
+          "weight": 0.0336,
+          "rank": 8
+        },
+        {
+          "symbol": "APOLLOHOSP",
+          "weight": 0.0336,
+          "rank": 9
+        },
+        {
+          "symbol": "PRSMJOHNSN",
+          "weight": 0.0332,
+          "rank": 10
+        },
+        {
+          "symbol": "TORNTPHARM",
+          "weight": 0.0331,
+          "rank": 11
+        },
+        {
+          "symbol": "JBCHEPHARM",
+          "weight": 0.0326,
+          "rank": 12
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0323,
+          "rank": 13
+        },
+        {
+          "symbol": "PATANJALI",
+          "weight": 0.0322,
+          "rank": 14
+        },
+        {
+          "symbol": "SANOFI",
+          "weight": 0.0319,
+          "rank": 15
+        },
+        {
+          "symbol": "ARE&M",
+          "weight": 0.0319,
+          "rank": 16
+        },
+        {
+          "symbol": "ULTRACEMCO",
+          "weight": 0.0318,
+          "rank": 17
+        },
+        {
+          "symbol": "INDIAMART",
+          "weight": 0.0318,
+          "rank": 18
+        },
+        {
+          "symbol": "BRITANNIA",
+          "weight": 0.0316,
+          "rank": 19
+        },
+        {
+          "symbol": "SJVN",
+          "weight": 0.0314,
+          "rank": 20
+        },
+        {
+          "symbol": "AWL",
+          "weight": 0.0314,
+          "rank": 21
+        },
+        {
+          "symbol": "LINDEINDIA",
+          "weight": 0.0311,
+          "rank": 22
+        },
+        {
+          "symbol": "LALPATHLAB",
+          "weight": 0.0308,
+          "rank": 23
+        },
+        {
+          "symbol": "NTPC",
+          "weight": 0.0308,
+          "rank": 24
+        },
+        {
+          "symbol": "MAPMYINDIA",
+          "weight": 0.0307,
+          "rank": 25
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0306,
+          "rank": 26
+        },
+        {
+          "symbol": "ITC",
+          "weight": 0.0304,
+          "rank": 27
+        },
+        {
+          "symbol": "MRF",
+          "weight": 0.0304,
+          "rank": 28
+        },
+        {
+          "symbol": "ONGC",
+          "weight": 0.0303,
+          "rank": 29
+        },
+        {
+          "symbol": "LICI",
+          "weight": 0.0298,
+          "rank": 30
+        }
+      ]
+    },
+    "dividend_aristocrats": {
+      "error": "All recent rows empty"
+    },
+    "moving_average_trend": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 445,
+      "holdings": [
+        {
+          "symbol": "SAMMAANCAP",
+          "weight": 0.0615,
+          "rank": 1
+        },
+        {
+          "symbol": "VEDL",
+          "weight": 0.0615,
+          "rank": 2
+        },
+        {
+          "symbol": "PCBL",
+          "weight": 0.0447,
+          "rank": 3
+        },
+        {
+          "symbol": "PPLPHARMA",
+          "weight": 0.0447,
+          "rank": 4
+        },
+        {
+          "symbol": "POLYMED",
+          "weight": 0.0316,
+          "rank": 5
+        },
+        {
+          "symbol": "UBL",
+          "weight": 0.0316,
+          "rank": 6
+        },
+        {
+          "symbol": "APOLLOTYRE",
+          "weight": 0.0303,
+          "rank": 7
+        },
+        {
+          "symbol": "BHARTIARTL",
+          "weight": 0.0303,
+          "rank": 8
+        },
+        {
+          "symbol": "BOSCHLTD",
+          "weight": 0.0303,
+          "rank": 9
+        },
+        {
+          "symbol": "BSOFT",
+          "weight": 0.0303,
+          "rank": 10
+        },
+        {
+          "symbol": "CEATLTD",
+          "weight": 0.0303,
+          "rank": 11
+        },
+        {
+          "symbol": "CREDITACC",
+          "weight": 0.0303,
+          "rank": 12
+        },
+        {
+          "symbol": "CSBBANK",
+          "weight": 0.0303,
+          "rank": 13
+        },
+        {
+          "symbol": "ECLERX",
+          "weight": 0.0303,
+          "rank": 14
+        },
+        {
+          "symbol": "HCLTECH",
+          "weight": 0.0303,
+          "rank": 15
+        },
+        {
+          "symbol": "IDFCFIRSTB",
+          "weight": 0.0303,
+          "rank": 16
+        },
+        {
+          "symbol": "IIFL",
+          "weight": 0.0303,
+          "rank": 17
+        },
+        {
+          "symbol": "INFY",
+          "weight": 0.0303,
+          "rank": 18
+        },
+        {
+          "symbol": "M&M",
+          "weight": 0.0303,
+          "rank": 19
+        },
+        {
+          "symbol": "MAHLIFE",
+          "weight": 0.0303,
+          "rank": 20
+        },
+        {
+          "symbol": "MPHASIS",
+          "weight": 0.0303,
+          "rank": 21
+        },
+        {
+          "symbol": "PAYTM",
+          "weight": 0.0303,
+          "rank": 22
+        },
+        {
+          "symbol": "PERSISTENT",
+          "weight": 0.0303,
+          "rank": 23
+        },
+        {
+          "symbol": "TECHM",
+          "weight": 0.0303,
+          "rank": 24
+        },
+        {
+          "symbol": "UNOMINDA",
+          "weight": 0.0303,
+          "rank": 25
+        },
+        {
+          "symbol": "UPL",
+          "weight": 0.0303,
+          "rank": 26
+        },
+        {
+          "symbol": "VARROC",
+          "weight": 0.0303,
+          "rank": 27
+        },
+        {
+          "symbol": "YESBANK",
+          "weight": 0.0303,
+          "rank": 28
+        },
+        {
+          "symbol": "ASAHIINDIA",
+          "weight": 0.0286,
+          "rank": 29
+        },
+        {
+          "symbol": "BAJFINANCE",
+          "weight": 0.0286,
+          "rank": 30
+        }
+      ]
+    },
+    "rsi_mean_reversion": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 171,
+      "holdings": [
+        {
+          "symbol": "HCLTECH",
+          "weight": 0.09,
+          "rank": 1
+        },
+        {
+          "symbol": "INFY",
+          "weight": 0.09,
+          "rank": 2
+        },
+        {
+          "symbol": "VEDL",
+          "weight": 0.09,
+          "rank": 3
+        },
+        {
+          "symbol": "DABUR",
+          "weight": 0.0386,
+          "rank": 4
+        },
+        {
+          "symbol": "BLUESTARCO",
+          "weight": 0.0337,
+          "rank": 5
+        },
+        {
+          "symbol": "JINDALSAW",
+          "weight": 0.0337,
+          "rank": 6
+        },
+        {
+          "symbol": "POLYMED",
+          "weight": 0.0337,
+          "rank": 7
+        },
+        {
+          "symbol": "RKFORGE",
+          "weight": 0.03,
+          "rank": 8
+        },
+        {
+          "symbol": "BSOFT",
+          "weight": 0.027,
+          "rank": 9
+        },
+        {
+          "symbol": "FSL",
+          "weight": 0.027,
+          "rank": 10
+        },
+        {
+          "symbol": "ICICIPRULI",
+          "weight": 0.027,
+          "rank": 11
+        },
+        {
+          "symbol": "INDIGOPNTS",
+          "weight": 0.027,
+          "rank": 12
+        },
+        {
+          "symbol": "KPITTECH",
+          "weight": 0.027,
+          "rank": 13
+        },
+        {
+          "symbol": "MAPMYINDIA",
+          "weight": 0.027,
+          "rank": 14
+        },
+        {
+          "symbol": "MHRIL",
+          "weight": 0.027,
+          "rank": 15
+        },
+        {
+          "symbol": "NAUKRI",
+          "weight": 0.027,
+          "rank": 16
+        },
+        {
+          "symbol": "SANOFI",
+          "weight": 0.027,
+          "rank": 17
+        },
+        {
+          "symbol": "SYNGENE",
+          "weight": 0.027,
+          "rank": 18
+        },
+        {
+          "symbol": "ASTERDM",
+          "weight": 0.0245,
+          "rank": 19
+        },
+        {
+          "symbol": "BAYERCROP",
+          "weight": 0.0245,
+          "rank": 20
+        },
+        {
+          "symbol": "CONCORDBIO",
+          "weight": 0.0245,
+          "rank": 21
+        },
+        {
+          "symbol": "IEX",
+          "weight": 0.0245,
+          "rank": 22
+        },
+        {
+          "symbol": "JUSTDIAL",
+          "weight": 0.0245,
+          "rank": 23
+        },
+        {
+          "symbol": "KIMS",
+          "weight": 0.0245,
+          "rank": 24
+        },
+        {
+          "symbol": "MANKIND",
+          "weight": 0.0245,
+          "rank": 25
+        },
+        {
+          "symbol": "SRF",
+          "weight": 0.0245,
+          "rank": 26
+        },
+        {
+          "symbol": "STARHEALTH",
+          "weight": 0.0245,
+          "rank": 27
+        },
+        {
+          "symbol": "UNITDSPR",
+          "weight": 0.0245,
+          "rank": 28
+        },
+        {
+          "symbol": "AVANTIFEED",
+          "weight": 0.0225,
+          "rank": 29
+        },
+        {
+          "symbol": "QUESS",
+          "weight": 0.0225,
+          "rank": 30
+        }
+      ]
+    },
+    "value_momentum_blend": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 395,
+      "holdings": [
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0335,
+          "rank": 1
+        },
+        {
+          "symbol": "ABFRL",
+          "weight": 0.0335,
+          "rank": 2
+        },
+        {
+          "symbol": "GLENMARK",
+          "weight": 0.0335,
+          "rank": 3
+        },
+        {
+          "symbol": "JSWENERGY",
+          "weight": 0.0335,
+          "rank": 4
+        },
+        {
+          "symbol": "JUSTDIAL",
+          "weight": 0.0335,
+          "rank": 5
+        },
+        {
+          "symbol": "KNRCON",
+          "weight": 0.0335,
+          "rank": 6
+        },
+        {
+          "symbol": "MANYAVAR",
+          "weight": 0.0335,
+          "rank": 7
+        },
+        {
+          "symbol": "NATCOPHARM",
+          "weight": 0.0335,
+          "rank": 8
+        },
+        {
+          "symbol": "OIL",
+          "weight": 0.0335,
+          "rank": 9
+        },
+        {
+          "symbol": "ONGC",
+          "weight": 0.0335,
+          "rank": 10
+        },
+        {
+          "symbol": "PHOENIXLTD",
+          "weight": 0.0335,
+          "rank": 11
+        },
+        {
+          "symbol": "POWERGRID",
+          "weight": 0.0335,
+          "rank": 12
+        },
+        {
+          "symbol": "PRAJIND",
+          "weight": 0.0335,
+          "rank": 13
+        },
+        {
+          "symbol": "RAYMOND",
+          "weight": 0.0335,
+          "rank": 14
+        },
+        {
+          "symbol": "SONATSOFTW",
+          "weight": 0.0335,
+          "rank": 15
+        },
+        {
+          "symbol": "TORNTPHARM",
+          "weight": 0.0335,
+          "rank": 16
+        },
+        {
+          "symbol": "WELSPUNLIV",
+          "weight": 0.0335,
+          "rank": 17
+        },
+        {
+          "symbol": "WHIRLPOOL",
+          "weight": 0.0335,
+          "rank": 18
+        },
+        {
+          "symbol": "360ONE",
+          "weight": 0.0331,
+          "rank": 19
+        },
+        {
+          "symbol": "AARTIIND",
+          "weight": 0.0331,
+          "rank": 20
+        },
+        {
+          "symbol": "AAVAS",
+          "weight": 0.0331,
+          "rank": 21
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0331,
+          "rank": 22
+        },
+        {
+          "symbol": "ABCAPITAL",
+          "weight": 0.0331,
+          "rank": 23
+        },
+        {
+          "symbol": "ABREL",
+          "weight": 0.0331,
+          "rank": 24
+        },
+        {
+          "symbol": "ACE",
+          "weight": 0.0331,
+          "rank": 25
+        },
+        {
+          "symbol": "ACI",
+          "weight": 0.0331,
+          "rank": 26
+        },
+        {
+          "symbol": "ADANIENSOL",
+          "weight": 0.0331,
+          "rank": 27
+        },
+        {
+          "symbol": "ADANIENT",
+          "weight": 0.0331,
+          "rank": 28
+        },
+        {
+          "symbol": "ADANIGREEN",
+          "weight": 0.0331,
+          "rank": 29
+        },
+        {
+          "symbol": "AEGISLOG",
+          "weight": 0.0331,
+          "rank": 30
+        }
+      ]
+    },
+    "quality_momentum": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 242,
+      "holdings": [
+        {
+          "symbol": "AVANTIFEED",
+          "weight": 0.0336,
+          "rank": 1
+        },
+        {
+          "symbol": "CHAMBLFERT",
+          "weight": 0.0336,
+          "rank": 2
+        },
+        {
+          "symbol": "DOMS",
+          "weight": 0.0336,
+          "rank": 3
+        },
+        {
+          "symbol": "HOMEFIRST",
+          "weight": 0.0336,
+          "rank": 4
+        },
+        {
+          "symbol": "IEX",
+          "weight": 0.0336,
+          "rank": 5
+        },
+        {
+          "symbol": "KAYNES",
+          "weight": 0.0336,
+          "rank": 6
+        },
+        {
+          "symbol": "POLYMED",
+          "weight": 0.0336,
+          "rank": 7
+        },
+        {
+          "symbol": "UBL",
+          "weight": 0.0336,
+          "rank": 8
+        },
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0332,
+          "rank": 9
+        },
+        {
+          "symbol": "AAVAS",
+          "weight": 0.0332,
+          "rank": 10
+        },
+        {
+          "symbol": "ABB",
+          "weight": 0.0332,
+          "rank": 11
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0332,
+          "rank": 12
+        },
+        {
+          "symbol": "ABCAPITAL",
+          "weight": 0.0332,
+          "rank": 13
+        },
+        {
+          "symbol": "ADANIENSOL",
+          "weight": 0.0332,
+          "rank": 14
+        },
+        {
+          "symbol": "ADANIPORTS",
+          "weight": 0.0332,
+          "rank": 15
+        },
+        {
+          "symbol": "ADANIPOWER",
+          "weight": 0.0332,
+          "rank": 16
+        },
+        {
+          "symbol": "AETHER",
+          "weight": 0.0332,
+          "rank": 17
+        },
+        {
+          "symbol": "AFFLE",
+          "weight": 0.0332,
+          "rank": 18
+        },
+        {
+          "symbol": "AIAENG",
+          "weight": 0.0332,
+          "rank": 19
+        },
+        {
+          "symbol": "ALKEM",
+          "weight": 0.0332,
+          "rank": 20
+        },
+        {
+          "symbol": "AMBER",
+          "weight": 0.0332,
+          "rank": 21
+        },
+        {
+          "symbol": "AMBUJACEM",
+          "weight": 0.0332,
+          "rank": 22
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0332,
+          "rank": 23
+        },
+        {
+          "symbol": "ANURAS",
+          "weight": 0.0332,
+          "rank": 24
+        },
+        {
+          "symbol": "APARINDS",
+          "weight": 0.0332,
+          "rank": 25
+        },
+        {
+          "symbol": "APLAPOLLO",
+          "weight": 0.0332,
+          "rank": 26
+        },
+        {
+          "symbol": "APOLLOHOSP",
+          "weight": 0.0332,
+          "rank": 27
+        },
+        {
+          "symbol": "APOLLOTYRE",
+          "weight": 0.0332,
+          "rank": 28
+        },
+        {
+          "symbol": "APTUS",
+          "weight": 0.0332,
+          "rank": 29
+        },
+        {
+          "symbol": "ASAHIINDIA",
+          "weight": 0.0332,
+          "rank": 30
+        }
+      ]
+    },
+    "quality_low_vol": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 177,
+      "holdings": [
+        {
+          "symbol": "AIAENG",
+          "weight": 0.0336,
+          "rank": 1
+        },
+        {
+          "symbol": "BATAINDIA",
+          "weight": 0.0336,
+          "rank": 2
+        },
+        {
+          "symbol": "KRBL",
+          "weight": 0.0336,
+          "rank": 3
+        },
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "AAVAS",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ABCAPITAL",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ADANIPORTS",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "AJANTPHARM",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "ALKEM",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "AMBUJACEM",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "ANURAS",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "APLAPOLLO",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "APOLLOHOSP",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "APTUS",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "ASHOKLEY",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "ASIANPAINT",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "ASTERDM",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "ASTRAZEN",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "ATUL",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "AUBANK",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "AUROPHARMA",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "AXISBANK",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "BAJAJ-AUTO",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "BAJAJFINSV",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "BAJFINANCE",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "BAYERCROP",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "BEL",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "BERGEPAINT",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "composite_factor_score": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 231,
+      "holdings": [
+        {
+          "symbol": "DIXON",
+          "weight": 0.0336,
+          "rank": 1
+        },
+        {
+          "symbol": "DOMS",
+          "weight": 0.0336,
+          "rank": 2
+        },
+        {
+          "symbol": "FLUOROCHEM",
+          "weight": 0.0336,
+          "rank": 3
+        },
+        {
+          "symbol": "HOMEFIRST",
+          "weight": 0.0336,
+          "rank": 4
+        },
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "AAVAS",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ABB",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "ABCAPITAL",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "ADANIPORTS",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "AETHER",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "AFFLE",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "AIAENG",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "AJANTPHARM",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "ALKEM",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "AMBUJACEM",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "ANURAS",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "APLAPOLLO",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "APOLLOHOSP",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "APOLLOTYRE",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "APTUS",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "ASAHIINDIA",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "ASHOKLEY",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "ASIANPAINT",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "ASTERDM",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "ASTRAL",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "ASTRAZEN",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "ATUL",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "AUBANK",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "volatility_targeting": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 491,
+      "holdings": [
+        {
+          "symbol": "360ONE",
+          "weight": 0.0333,
+          "rank": 1
+        },
+        {
+          "symbol": "3MINDIA",
+          "weight": 0.0333,
+          "rank": 2
+        },
+        {
+          "symbol": "AARTIIND",
+          "weight": 0.0333,
+          "rank": 3
+        },
+        {
+          "symbol": "AAVAS",
+          "weight": 0.0333,
+          "rank": 4
+        },
+        {
+          "symbol": "ABB",
+          "weight": 0.0333,
+          "rank": 5
+        },
+        {
+          "symbol": "ABBOTINDIA",
+          "weight": 0.0333,
+          "rank": 6
+        },
+        {
+          "symbol": "ABCAPITAL",
+          "weight": 0.0333,
+          "rank": 7
+        },
+        {
+          "symbol": "ABFRL",
+          "weight": 0.0333,
+          "rank": 8
+        },
+        {
+          "symbol": "ABREL",
+          "weight": 0.0333,
+          "rank": 9
+        },
+        {
+          "symbol": "ACC",
+          "weight": 0.0333,
+          "rank": 10
+        },
+        {
+          "symbol": "ACE",
+          "weight": 0.0333,
+          "rank": 11
+        },
+        {
+          "symbol": "ACI",
+          "weight": 0.0333,
+          "rank": 12
+        },
+        {
+          "symbol": "ADANIENSOL",
+          "weight": 0.0333,
+          "rank": 13
+        },
+        {
+          "symbol": "ADANIENT",
+          "weight": 0.0333,
+          "rank": 14
+        },
+        {
+          "symbol": "ADANIGREEN",
+          "weight": 0.0333,
+          "rank": 15
+        },
+        {
+          "symbol": "ADANIPORTS",
+          "weight": 0.0333,
+          "rank": 16
+        },
+        {
+          "symbol": "ADANIPOWER",
+          "weight": 0.0333,
+          "rank": 17
+        },
+        {
+          "symbol": "AEGISLOG",
+          "weight": 0.0333,
+          "rank": 18
+        },
+        {
+          "symbol": "AETHER",
+          "weight": 0.0333,
+          "rank": 19
+        },
+        {
+          "symbol": "AFFLE",
+          "weight": 0.0333,
+          "rank": 20
+        },
+        {
+          "symbol": "AIAENG",
+          "weight": 0.0333,
+          "rank": 21
+        },
+        {
+          "symbol": "AJANTPHARM",
+          "weight": 0.0333,
+          "rank": 22
+        },
+        {
+          "symbol": "ALKEM",
+          "weight": 0.0333,
+          "rank": 23
+        },
+        {
+          "symbol": "ALKYLAMINE",
+          "weight": 0.0333,
+          "rank": 24
+        },
+        {
+          "symbol": "ALLCARGO",
+          "weight": 0.0333,
+          "rank": 25
+        },
+        {
+          "symbol": "ALOKINDS",
+          "weight": 0.0333,
+          "rank": 26
+        },
+        {
+          "symbol": "AMBER",
+          "weight": 0.0333,
+          "rank": 27
+        },
+        {
+          "symbol": "AMBUJACEM",
+          "weight": 0.0333,
+          "rank": 28
+        },
+        {
+          "symbol": "ANANDRATHI",
+          "weight": 0.0333,
+          "rank": 29
+        },
+        {
+          "symbol": "ANGELONE",
+          "weight": 0.0333,
+          "rank": 30
+        }
+      ]
+    },
+    "earnings_surprise_momentum": {
+      "signal_date": "2026-04-30",
+      "n_holdings": 7,
+      "holdings": [
+        {
+          "symbol": "ANURAS",
+          "weight": 0.1429,
+          "rank": 1
+        },
+        {
+          "symbol": "BAJAJ-AUTO",
+          "weight": 0.1429,
+          "rank": 2
+        },
+        {
+          "symbol": "DCMSHRIRAM",
+          "weight": 0.1429,
+          "rank": 3
+        },
+        {
+          "symbol": "FLUOROCHEM",
+          "weight": 0.1429,
+          "rank": 4
+        },
+        {
+          "symbol": "HFCL",
+          "weight": 0.1429,
+          "rank": 5
+        },
+        {
+          "symbol": "MTARTECH",
+          "weight": 0.1429,
+          "rank": 6
+        },
+        {
+          "symbol": "SYNGENE",
+          "weight": 0.1429,
+          "rank": 7
+        }
+      ]
+    }
+  }
+}
