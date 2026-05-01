@@ -25,6 +25,8 @@ LS_PORTFOLIO_FILE = RESULTS_DIR / "ls_portfolio" / "ls_portfolio_results.json"
 LS_WF_FILE     = RESULTS_DIR / "ls_walkforward" / "ls_wf_results.json"
 LS_WF_ALL_FILE = RESULTS_DIR / "ls_walkforward" / "ls_wf_all_results.json"
 FACTOR_ROTATION_FILE = RESULTS_DIR / "factor_rotation" / "factor_rotation.json"
+NSE_FILE             = RESULTS_DIR / "nse_backtests" / "nse_results.json"
+SCORECARD_US_CSV     = RESULTS_DIR / "phase3_summary" / "master_scorecard.csv"
 PORTFOLIO_FILE = RESULTS_DIR / "extended_portfolio_analysis" / "extended_portfolio_results.json"
 CORR_MATRIX_CSV = RESULTS_DIR / "extended_portfolio_analysis" / "extended_correlation_matrix.csv"
 
@@ -468,6 +470,84 @@ async def get_longshort_walkforward_all():
     if not data:
         raise HTTPException(status_code=404, detail="L/S walk-forward (all) results not yet computed. Run scripts/ls_walkforward_all.py")
     return data
+
+
+@router.get("/nse")
+async def get_nse_results():
+    """
+    NSE (Indian markets) backtest results — all 14 strategies on 328 NSE 500 stocks, 2005-2026.
+    Merges NSE data with US 25-year Sharpe for side-by-side comparison.
+    """
+    nse_data = _load_json(NSE_FILE)
+    if not nse_data:
+        raise HTTPException(status_code=404, detail="NSE results not found. Run scripts/run_nse_backtests.py")
+
+    # Load US Sharpe from master scorecard
+    us_sharpes: dict = {}
+    if SCORECARD_US_CSV.exists():
+        with open(SCORECARD_US_CSV) as f:
+            import csv
+            for row in csv.DictReader(f):
+                us_sharpes[row.get("strategy", "")] = _safe_float(row.get("sharpe"))
+
+    DISPLAY = {
+        "large_cap_momentum":         "Large Cap Momentum",
+        "52_week_high_breakout":      "52-Week High Breakout",
+        "deep_value_all_cap":         "Deep Value All-Cap",
+        "high_quality_roic":          "High Quality ROIC",
+        "low_volatility_shield":      "Low Volatility Shield",
+        "dividend_aristocrats":       "Dividend Aristocrats",
+        "moving_average_trend":       "MA Trend",
+        "rsi_mean_reversion":         "RSI Mean Reversion",
+        "value_momentum_blend":       "Value+Momentum",
+        "quality_momentum":           "Quality+Momentum",
+        "quality_low_vol":            "Quality+Low Vol",
+        "composite_factor_score":     "Composite Factor",
+        "volatility_targeting":       "Volatility Targeting",
+        "earnings_surprise_momentum": "Earnings Surprise",
+    }
+
+    strategies_out = []
+    for name, v in nse_data.get("strategies", {}).items():
+        nse_sr   = _safe_float(v.get("sharpe"))
+        us_sr    = us_sharpes.get(name)
+        delta    = (nse_sr - us_sr) if (nse_sr is not None and us_sr is not None) else None
+        strategies_out.append({
+            "name":         name,
+            "display_name": DISPLAY.get(name, name),
+            "status":       v.get("status", "unknown"),
+            "nse_sharpe":   nse_sr,
+            "us_sharpe":    us_sr,
+            "delta_sharpe": delta,
+            "nse_cagr":     _safe_float(v.get("cagr")),
+            "nse_max_dd":   _safe_float(v.get("max_dd")),
+            "nse_volatility": _safe_float(v.get("volatility")),
+            "nse_win_rate":   _safe_float(v.get("win_rate")),
+            "nse_total_return": _safe_float(v.get("total_return")),
+        })
+
+    # Sort by NSE Sharpe desc (exclude 0-sharpe earnings_surprise)
+    strategies_out.sort(key=lambda x: x["nse_sharpe"] or 0, reverse=True)
+
+    valid = [s for s in strategies_out if (s["nse_sharpe"] or 0) > 0]
+    avg_nse_sr  = sum(s["nse_sharpe"] for s in valid) / len(valid) if valid else None
+    avg_us_sr   = sum(s["us_sharpe"] for s in valid if s["us_sharpe"] is not None) / len([s for s in valid if s["us_sharpe"] is not None])
+    avg_delta   = (avg_nse_sr - avg_us_sr) if (avg_nse_sr is not None and avg_us_sr is not None) else None
+
+    return {
+        "market":       nse_data.get("market", "NSE"),
+        "n_symbols":    nse_data.get("n_symbols"),
+        "date_range":   nse_data.get("date_range"),
+        "generated_at": nse_data.get("generated_at"),
+        "summary": {
+            "avg_nse_sharpe": round(avg_nse_sr, 4) if avg_nse_sr else None,
+            "avg_us_sharpe":  round(avg_us_sr, 4) if avg_us_sr else None,
+            "avg_delta":      round(avg_delta, 4) if avg_delta else None,
+            "n_beat_us":      sum(1 for s in valid if (s["delta_sharpe"] or 0) > 0),
+            "n_strategies":   len(valid),
+        },
+        "strategies": strategies_out,
+    }
 
 
 @router.get("/factor-rotation")

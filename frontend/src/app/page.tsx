@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Info, Loader2, RefreshCw, AlertCircle, ArrowUpDown, ChevronDown, ChevronUp } from 'lucide-react'
+import { Info, Loader2, RefreshCw, AlertCircle, ArrowUpDown, ChevronDown, ChevronUp, Table2, TrendingUp, Radio, Globe, BookOpen } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { FilterSidebar } from '@/components/FilterSidebar'
 import { KpiTiles } from '@/components/KpiTiles'
 import { StrategyCard } from '@/components/StrategyCard'
@@ -257,6 +258,34 @@ export default function DashboardPage() {
             </p>
           </div>
         )}
+
+        {/* ── Quick Links ── */}
+        <div className="mt-8">
+          <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-3">Research Tools</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {[
+              { href: '/findings',        icon: BookOpen,     label: 'Key Findings',    color: 'text-blue-600',   bg: 'bg-blue-50',    desc: '25yr insights' },
+              { href: '/scorecard',       icon: Table2,       label: 'Scorecard',       color: 'text-purple-600', bg: 'bg-purple-50',  desc: '8 validation layers' },
+              { href: '/factor-portfolio', icon: TrendingUp,  label: 'L/S Portfolio',   color: 'text-emerald-600', bg: 'bg-emerald-50', desc: 'Pure factor premia' },
+              { href: '/factor-rotation', icon: RefreshCw,     label: 'Factor Rotation', color: 'text-orange-600', bg: 'bg-orange-50',  desc: 'Live regime model' },
+              { href: '/signals',         icon: Radio,        label: 'Live Signals',    color: 'text-red-600',    bg: 'bg-red-50',     desc: 'Morning trade list' },
+              { href: '/indian-markets',  icon: Globe,        label: 'India NSE',       color: 'text-amber-600',  bg: 'bg-amber-50',   desc: '+0.43 Sharpe edge' },
+            ].map(item => {
+              const Icon = item.icon
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn('flex flex-col items-start gap-1.5 p-3 rounded-xl border hover:shadow-sm transition-all', item.bg, 'border-transparent hover:border-gray-200')}
+                >
+                  <Icon className={cn('w-5 h-5', item.color)} />
+                  <span className="text-sm font-semibold text-gray-900">{item.label}</span>
+                  <span className="text-xs text-gray-500">{item.desc}</span>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
 
         {/* ── Factor Premia Comparison Table ── */}
         {strategies.some(s => s.lsSharpe !== null) && (

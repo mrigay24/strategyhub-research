@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BarChart3, Sparkles, User, BookOpen, TrendingUp, Table2, Radio, RefreshCw } from 'lucide-react'
+import { BarChart3, Sparkles, User, BookOpen, TrendingUp, Table2, Radio, RefreshCw, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function TopNav() {
@@ -15,6 +15,7 @@ export function TopNav() {
     { href: '/factor-portfolio', label: 'Factor Portfolio', icon: TrendingUp },
     { href: '/factor-rotation', label: 'Factor Rotation', icon: RefreshCw },
     { href: '/signals', label: 'Live Signals', icon: Radio },
+    { href: '/indian-markets', label: 'India NSE', icon: Globe },
     { href: '/ai-strategy-builder', label: 'AI Builder', icon: Sparkles },
   ]
 
