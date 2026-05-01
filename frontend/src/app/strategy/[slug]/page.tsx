@@ -48,6 +48,8 @@ import {
   type CorrelationData,
   type LiveSignals,
 } from '@/lib/api'
+
+const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000/api/v1'
 import { SensitivityHeatmap } from '@/components/charts/SensitivityHeatmap'
 
 type TabId = 'overview' | 'rules' | 'performance' | 'research' | 'parameters' | 'rolling' | 'correlation'
@@ -127,6 +129,7 @@ export default function StrategyDetailPage() {
   const [factorAlpha, setFactorAlpha] = useState<FactorAlpha | null>(null)
   const [longShortData, setLongShortData] = useState<LongShortData | null>(null)
   const [lsWfStrategy, setLsWfStrategy] = useState<LSWFStrategyAll | null>(null)
+  const [nseData, setNseData] = useState<{ nse_sharpe: number | null; us_sharpe: number | null; delta_sharpe: number | null; nse_cagr: number | null; nse_max_dd: number | null } | null>(null)
 
   // Parameters tab state
   const [paramDefs, setParamDefs] = useState<StrategyParameter[]>([])
@@ -193,13 +196,18 @@ export default function StrategyDetailPage() {
       fetchFactorAlpha(strategyName).catch(() => null),
       fetchLongShort(strategyName).catch(() => null),
       fetchLSWalkForwardAll().catch(() => null),
+      fetch(`${API_BASE}/research/nse`).then(r => r.ok ? r.json() : null).catch(() => null),
     ])
-      .then(([researchData, alphaData, lsData, lsWfAll]) => {
+      .then(([researchData, alphaData, lsData, lsWfAll, nseAll]) => {
         setResearch(researchData)
         if (alphaData) setFactorAlpha(alphaData)
         if (lsData) setLongShortData(lsData)
         if (lsWfAll?.strategies?.[strategyName]) {
           setLsWfStrategy(lsWfAll.strategies[strategyName])
+        }
+        if (nseAll?.strategies) {
+          const nseStrat = nseAll.strategies.find((s: { name: string }) => s.name === strategyName)
+          if (nseStrat) setNseData(nseStrat)
         }
       })
       .catch(e => setResearchError(e.message))
@@ -966,6 +974,34 @@ export default function StrategyDetailPage() {
                           </div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* ── NSE India Performance ── */}
+                {nseData && (nseData.nse_sharpe ?? 0) > 0 && (
+                  <div className="bg-white rounded-lg border p-5">
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <h3 className="font-semibold text-gray-900">India NSE Performance</h3>
+                        <p className="text-xs text-gray-500 mt-0.5">328 NSE 500 stocks · 2005–2026 · Yahoo Finance · no transaction costs</p>
+                      </div>
+                      <a href="/indian-markets" className="text-xs text-blue-600 hover:underline">View all NSE →</a>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      {[
+                        { label: 'NSE Sharpe', value: nseData.nse_sharpe?.toFixed(2) ?? '—', positive: (nseData.nse_sharpe ?? 0) >= 1.0 },
+                        { label: 'vs US Sharpe', value: nseData.delta_sharpe != null ? (nseData.delta_sharpe > 0 ? `+${nseData.delta_sharpe.toFixed(3)}` : nseData.delta_sharpe.toFixed(3)) : '—', positive: (nseData.delta_sharpe ?? 0) > 0 },
+                        { label: 'NSE CAGR', value: nseData.nse_cagr != null ? `${(nseData.nse_cagr * 100).toFixed(1)}%` : '—', positive: (nseData.nse_cagr ?? 0) > 0 },
+                        { label: 'NSE Max DD', value: nseData.nse_max_dd != null ? `${(nseData.nse_max_dd * 100).toFixed(1)}%` : '—', positive: false },
+                      ].map(m => (
+                        <div key={m.label} className="text-center bg-orange-50 rounded-lg p-3 border border-orange-100">
+                          <p className="text-xs text-gray-500 mb-1">{m.label}</p>
+                          <p className={cn('text-base font-bold', m.label === 'NSE Max DD' ? 'text-red-600' : m.positive ? 'text-emerald-600' : 'text-gray-700')}>
+                            {m.value}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
