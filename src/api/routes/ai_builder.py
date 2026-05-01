@@ -12,16 +12,44 @@ Requires ANTHROPIC_API_KEY environment variable.
 import json
 import os
 import re
+import time
+import threading
+from collections import defaultdict
 from pathlib import Path
 from typing import List, Optional
 
 import anthropic
 import numpy as np
 import pandas as pd
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
 
 router = APIRouter(prefix="/ai-builder", tags=["ai-builder"])
+
+# ── In-memory IP rate limiter ──────────────────────────────────────────────────
+# Configurable via env vars: RATE_LIMIT_REQUESTS (default 5) per RATE_LIMIT_WINDOW_HOURS (default 24).
+_RATE_WINDOW = int(os.environ.get("RATE_LIMIT_WINDOW_HOURS", "24")) * 3600
+_RATE_MAX    = int(os.environ.get("RATE_LIMIT_REQUESTS", "5"))
+_ip_calls: dict[str, list[float]] = defaultdict(list)
+_ip_lock = threading.Lock()
+
+
+def _check_rate_limit(request: Request) -> None:
+    ip = request.headers.get("x-forwarded-for", request.client.host if request.client else "unknown")
+    ip = ip.split(",")[0].strip()
+    now = time.time()
+    cutoff = now - _RATE_WINDOW
+    with _ip_lock:
+        calls = [t for t in _ip_calls[ip] if t > cutoff]
+        if len(calls) >= _RATE_MAX:
+            reset_in = int(calls[0] + _RATE_WINDOW - now)
+            raise HTTPException(
+                status_code=429,
+                detail=f"Rate limit: {_RATE_MAX} AI Builder calls per {_RATE_WINDOW // 3600}h. "
+                       f"Resets in {reset_in // 60}m {reset_in % 60}s.",
+            )
+        calls.append(now)
+        _ip_calls[ip] = calls
 
 RESULTS_DIR = Path("results")
 SCORECARD_CSV = RESULTS_DIR / "phase3_summary" / "master_scorecard.csv"
@@ -543,7 +571,7 @@ async def get_factor_library():
 
 
 @router.post("/generate")
-async def generate_strategy(request: GenerateRequest):
+async def generate_strategy(body: GenerateRequest, request: Request):
     """
     Process a user's strategy description via Claude API (claude-opus-4-6).
 
@@ -553,6 +581,7 @@ async def generate_strategy(request: GenerateRequest):
     - validation_gates: 7-gate pipeline results using 25-year pre-computed data
     - n_passed / n_failed / n_caveat: Gate summary counts
     """
+    _check_rate_limit(request)
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise HTTPException(
@@ -565,7 +594,7 @@ async def generate_strategy(request: GenerateRequest):
 
     claude_messages = [
         {"role": msg.role, "content": msg.content}
-        for msg in request.messages
+        for msg in body.messages
     ]
 
     try:
@@ -718,7 +747,7 @@ def _run_custom_backtest(factor_code: str) -> dict:
 
 
 @router.post("/generate-and-backtest")
-async def generate_and_backtest(request: GenerateRequest):
+async def generate_and_backtest(body: GenerateRequest, request: Request):
     """
     Extended AI Builder endpoint: runs Claude to generate factor_code,
     then backtests the custom strategy on the full 25-year dataset.
@@ -727,6 +756,7 @@ async def generate_and_backtest(request: GenerateRequest):
     - custom_backtest: Sharpe, CAGR, MDD from the generated factor code
     - factor_code: the generated Python scoring function body
     """
+    _check_rate_limit(request)
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise HTTPException(
@@ -737,7 +767,7 @@ async def generate_and_backtest(request: GenerateRequest):
     client = anthropic.Anthropic(api_key=api_key)
     claude_messages = [
         {"role": msg.role, "content": msg.content}
-        for msg in request.messages
+        for msg in body.messages
     ]
 
     # Call Claude

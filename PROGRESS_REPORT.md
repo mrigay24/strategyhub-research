@@ -1,7 +1,7 @@
 # StrategyHub Research - Progress Report
 
-> **Last Updated:** 2026-04-22
-> **Status:** DEPLOYED + L/S WALK-FORWARD COMPLETE. Frontend live on Vercel, backend on Render. L/S engine → portfolio analysis → walk-forward validation all done. All 4 focus strategies STRONG verdict.
+> **Last Updated:** 2026-04-30
+> **Status:** PHASE 5D COMPLETE. Factor Rotation (live regime model), Indian Markets NSE page, per-strategy L/S WFE badges, AI Builder rate limiting, and dashboard quick-links all shipped.
 > **Owner:** Mrigay Pathak
 
 ---
@@ -2150,6 +2150,77 @@ Focus strategies: `quality_momentum`, `large_cap_momentum`, `dividend_aristocrat
 
 ---
 
+## 18. PHASE 5D — FACTOR ROTATION + INDIAN MARKETS + PLATFORM POLISH
+
+*Completed: 2026-04-30*
+
+### Factor Rotation Model (Task 3)
+
+Regime-adaptive strategy selection using live SPY data:
+
+- **Regime detection**: SPY 63-day total return + 63-day annualised vol
+  - Bull: trend ≥ +5%, vol < 20%
+  - Bear: trend ≤ −5%, vol < 20%
+  - High-Vol: ann. vol ≥ 20%
+  - Sideways: everything else (current as of 2026-04-30: +4.14%, 15.15%)
+- **Regime × strategy Sharpe matrix**: 14 strategies × 4 regimes, colour-coded heatmap
+- **Recommended weights**: proportional to shifted-positive Sharpe in active regime
+- **Annual leadership calendar**: 2000–2024 — who led, who lagged, SPY benchmark each year
+  - Key pattern: Dividend Aristocrats leads 7/25 years; Low Vol Shield dominates crashes (2000, 2008)
+  - RSI Mean Reversion / Earnings Surprise lead recovery years (2003, 2009, 2013)
+- All strategies have Bull as best regime; differentiation shows in Sideways and relative Bear resilience
+
+| File | Change |
+|------|--------|
+| `scripts/factor_rotation.py` | NEW — regime detection + matrix + annual leaders |
+| `results/factor_rotation/factor_rotation.json` | NEW — full rotation model output |
+| `GET /api/v1/research/factor-rotation` | NEW endpoint |
+| `frontend/src/app/factor-rotation/page.tsx` | NEW page with regime cards + heatmap + calendar |
+
+### Per-Strategy L/S WFE Badge (Task 4)
+
+Every `/strategy/[slug]` Research tab now shows:
+- L/S walk-forward verdict badge (`STRONG` / `CONSISTENT` / `MIXED` / `WEAK`) next to Pure Factor SR
+- Fold-by-fold OOS Sharpe strip (F1–F5) colour-coded green/yellow/red
+- Average OOS Sharpe + % positive folds inline stats
+- Data source: `GET /research/longshort/walkforward/all` (already existed)
+
+### Indian Markets — NSE Page (Task 5)
+
+All 14 strategies backtested on 328 NSE 500 stocks, 2005–2026:
+
+| Metric | Value |
+|--------|-------|
+| Avg NSE Sharpe | **1.014** |
+| Avg S&P 500 Sharpe | 0.583 |
+| Avg delta | **+0.431** |
+| Strategies beating US | 13/13 (Earnings Surprise excluded — no NSE data) |
+| Top NSE strategy | RSI Mean Reversion (SR 1.110) |
+
+**Why NSE outperforms**: Less efficient market → factors take longer to be arbitraged away. Higher structural vol amplifies factor edge. Earnings Surprise fails (no IBES/Compustat data for NSE).
+
+**Caveat**: No survivorship bias correction for NSE delistings; no transaction costs in NSE results.
+
+| File | Change |
+|------|--------|
+| `GET /api/v1/research/nse` | NEW endpoint |
+| `frontend/src/app/indian-markets/page.tsx` | NEW page |
+
+### AI Builder Rate Limiting
+
+Added IP-based rate limiter to both POST endpoints (`/generate`, `/generate-and-backtest`):
+- Default: 5 calls per IP per 24h
+- Configurable via `RATE_LIMIT_REQUESTS` and `RATE_LIMIT_WINDOW_HOURS` env vars
+- Returns 429 with reset time on breach
+- Enables safe public deployment without uncapped API cost
+
+### Dashboard Quick Links
+
+Added 6-card Research Tools row on the dashboard:
+Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · India NSE
+
+---
+
 ## 15. CONTACT & OWNERSHIP
 
 - **Owner:** Mrigay Pathak
@@ -2157,3 +2228,4 @@ Focus strategies: `quality_momentum`, `large_cap_momentum`, `dividend_aristocrat
 - **Started:** January 2026
 - **Phase 1 Completed:** March 2026
 - **Phase 5 (L/S Engine + Portfolio + Walk-Forward) Completed:** April 2026
+- **Phase 5D (Factor Rotation + NSE + Polish) Completed:** April 2026

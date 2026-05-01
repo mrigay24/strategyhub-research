@@ -1,0 +1,21 @@
+rank,symbol,consensus_score,n_strategies,strategies,avg_weight,allocation_pct,allocation_dollar,sector,sentiment,earnings_warning
+1,AEE,24.16,9,"52_week_high_breakout, composite_factor_score, high_quality_roic, low_volatility_shield, moving_average_trend, quality_low_vol, quality_momentum, value_momentum_blend, volatility_targeting",0.0329,6.0,598,Utilities,0.0,False
+2,AEP,20.65,8,"52_week_high_breakout, composite_factor_score, high_quality_roic, moving_average_trend, quality_low_vol, quality_momentum, value_momentum_blend, volatility_targeting",0.033,5.1,511,Utilities,0.0,False
+3,ATO,20.57,7,"52_week_high_breakout, composite_factor_score, high_quality_roic, large_cap_momentum, low_volatility_shield, quality_low_vol, quality_momentum",0.0339,5.1,509,Utilities,0.0,False
+4,AFL,19.1,7,"composite_factor_score, low_volatility_shield, moving_average_trend, quality_low_vol, quality_momentum, value_momentum_blend, volatility_targeting",0.0324,4.7,473,Financial Services,0.0,False
+5,ABT,19.0,7,"52_week_high_breakout, composite_factor_score, deep_value_all_cap, quality_low_vol, quality_momentum, value_momentum_blend, volatility_targeting",0.0333,4.7,470,Healthcare,0.0,False
+6,ALLE,17.0,6,"52_week_high_breakout, composite_factor_score, quality_low_vol, quality_momentum, value_momentum_blend, volatility_targeting",0.0333,4.2,421,Industrials,0.0,False
+7,ALB,16.24,6,"52_week_high_breakout, large_cap_momentum, moving_average_trend, quality_momentum, rsi_mean_reversion, volatility_targeting",0.0326,4.0,402,Basic Materials,0.0,False
+8,AJG,16.0,6,"52_week_high_breakout, composite_factor_score, deep_value_all_cap, large_cap_momentum, value_momentum_blend, volatility_targeting",0.0333,4.0,396,Financial Services,0.0,True
+9,ADP,16.0,6,"52_week_high_breakout, composite_factor_score, deep_value_all_cap, quality_momentum, value_momentum_blend, volatility_targeting",0.0333,4.0,396,Technology,0.0,False
+10,ABBV,15.77,6,"composite_factor_score, moving_average_trend, quality_low_vol, quality_momentum, value_momentum_blend, volatility_targeting",0.0337,3.9,390,Healthcare,0.0,False
+11,ADM,15.65,6,"52_week_high_breakout, composite_factor_score, moving_average_trend, quality_momentum, value_momentum_blend, volatility_targeting",0.0328,3.9,388,Consumer Defensive,0.0,False
+12,ALL,15.65,6,"52_week_high_breakout, composite_factor_score, moving_average_trend, quality_low_vol, value_momentum_blend, volatility_targeting",0.0328,3.9,388,Financial Services,0.0,False
+13,APH,15.0,5,"52_week_high_breakout, composite_factor_score, large_cap_momentum, quality_momentum, value_momentum_blend",0.0333,3.7,371,Technology,0.0,False
+14,AON,14.34,5,"52_week_high_breakout, composite_factor_score, moving_average_trend, rsi_mean_reversion, value_momentum_blend",0.0336,3.6,355,Financial Services,0.0,True
+15,AIG,14.0,5,"52_week_high_breakout, composite_factor_score, quality_low_vol, value_momentum_blend, volatility_targeting",0.0333,3.5,347,Financial Services,0.0,True
+16,AME,13.0,5,"composite_factor_score, high_quality_roic, quality_low_vol, quality_momentum, volatility_targeting",0.0333,3.2,322,Industrials,0.0,True
+17,ADSK,13.0,5,"composite_factor_score, deep_value_all_cap, quality_momentum, value_momentum_blend, volatility_targeting",0.0333,3.2,322,Technology,0.0,False
+18,AMAT,12.65,5,"52_week_high_breakout, large_cap_momentum, moving_average_trend, quality_momentum, volatility_targeting",0.0327,3.1,313,Technology,0.0,False
+19,AAPL,12.65,5,"52_week_high_breakout, moving_average_trend, quality_low_vol, value_momentum_blend, volatility_targeting",0.0327,3.1,313,Technology,0.0,True
+20,AIZ,12.65,5,"52_week_high_breakout, composite_factor_score, moving_average_trend, quality_low_vol, volatility_targeting",0.0327,3.1,313,Financial Services,0.0,False

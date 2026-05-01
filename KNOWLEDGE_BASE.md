@@ -4676,5 +4676,78 @@ Frontend: `/factor-portfolio` → "Walk-Forward Validation" tab
 
 ---
 
-*Last updated: 2026-04-22*
-*Session: L/S walk-forward validation complete. All 4 focus strategies STRONG verdict (avg OOS SR 0.72–0.88 across 25 years, 4 folds).*
+## §39 — Factor Rotation: Regime-Adaptive Strategy Selection
+
+### Theory
+
+Factor premia are not constant — they ebb and flow with the market regime. Momentum crushes in bull markets but is the worst strategy to hold through a credit crisis. Low volatility and dividend stocks provide relative cushion in bear/sideways markets. The question is: can we predict which regime we're in, and tilt accordingly?
+
+### Regime Classification (same as Phase 3)
+
+Using SPY rolling 63-day windows:
+
+| Regime | Condition | Freq (2000–2024) | SPY return |
+|--------|-----------|-------------------|------------|
+| Bull | trend ≥ +5%, vol < 20% | 40% | +38%/yr |
+| High-Vol | ann. vol ≥ 20% | 17.5% | +50%/yr (recovery) |
+| Sideways | −5% < trend < +5%, vol < 20% | 30.5% | −5%/yr |
+| Bear | trend ≤ −5%, vol < 20% | 12% | −55%/yr |
+
+### Rotation Model
+
+For each regime, strategies are ranked by historical Sharpe and given proportional weights (shifted to remove negatives, then normalized). Current regime detected live from Yahoo Finance SPY data.
+
+**Current regime as of 2026-04-30: Sideways** (+4.14% trend, 15.15% vol)
+**Recommended tilt**: Dividend Aristocrats (18.6%), Low Vol Shield (17.1%), High Quality ROIC (11.1%)
+
+### Key Data Point: Annual Leadership Rotation
+
+No single strategy leads consistently. Over 25 years:
+- Dividend Aristocrats: 7 wins
+- Low Vol Shield: 4 wins (but ALWAYS in crash years — 2000, 2008, 2016, 2019)
+- RSI Mean Reversion leads recovery years: 2003, 2013
+- Earnings Surprise leads earnings-driven years: 2009, 2013, 2018
+- Leadership rank stability: **UNSTABLE** (from Phase 3: −0.123 correlation year-over-year)
+
+### Important Caveat
+
+**All strategies fail in Bear regime** (Sharpe −1.3 to −1.7). The regime model helps you tilt defensively *within* long-only but does NOT hedge the bear market loss — you need to go to cash or use L/S for that. Regime overlay analysis (Phase 3.8) showed that 63-day signals miss fast crashes (COVID crashed in 23 days vs 63-day detection lag).
+
+---
+
+## §40 — Indian Markets (NSE): Factor Efficiency Premium
+
+### Why Study NSE?
+
+If a factor strategy earns SR 0.58 in the US (world's most efficient market), what does it earn in India — a developing market with less analyst coverage, lower liquidity, and slower information dissemination?
+
+### Results: 14 Strategies on NSE 500 (2005–2026)
+
+| Stat | Value |
+|------|-------|
+| NSE universe | 328 liquid symbols from NSE 500 |
+| Date range | 2005-01-03 to 2026-04-15 (~21 years) |
+| Avg NSE Sharpe (13 strategies) | **1.014** |
+| Avg S&P 500 Sharpe | 0.583 |
+| Average edge | **+0.431 Sharpe** |
+
+### Why the +0.43 Edge?
+
+1. **Information inefficiency**: Indian mid/small caps are under-researched. Factor signals persist longer before being arbitraged.
+2. **Higher vol amplifies factor capture**: NSE ann. vol 18–22% vs S&P 500 15–17%. Factor strategies with good win rates earn more per unit of capital in higher-vol environments.
+3. **Less institutional factor rotation**: In the US, quant funds rotate into and out of factors quickly. In India, fewer systematic players means factors stay "on" longer.
+
+### Exception: Earnings Surprise (Sharpe = 0)
+
+NSE does not have standardized earnings revision data (IBES/Compustat format). The strategy generates no signal on NSE. This is a data problem, not a strategy problem.
+
+### Important Caveats
+
+- **No survivorship bias correction**: NSE delistings are NOT included. US backtests do include delisted S&P 500 stocks. This biases NSE results upward (unknown magnitude, likely 50–150bps/yr).
+- **No transaction costs in NSE results**: Indian STT + brokerage ~20–40bps round-trip. Adjust NSE CAGR estimates downward by ~1–3%/yr for live trading.
+- **Current constituents only**: NSE universe uses current NIFTY 500 membership, not point-in-time. US uses point-in-time constituents.
+
+---
+
+*Last updated: 2026-04-30*
+*Session: Factor Rotation model, Indian Markets NSE page, L/S WFE badges, AI Builder rate limiting. Phase 5D complete.*
