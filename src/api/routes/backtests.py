@@ -4,6 +4,7 @@ Backtest API Routes
 Endpoints for running backtests and querying results.
 """
 
+from pathlib import Path
 from typing import Optional, List
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Query, BackgroundTasks
@@ -38,7 +39,15 @@ def _get_price_data() -> pd.DataFrame:
     """Load and cache price data."""
     global _price_data_cache
     if _price_data_cache is None:
-        _price_data_cache = pd.read_parquet('data_processed/extended_prices_clean.parquet')
+        parquet_path = Path('data_processed/extended_prices_clean.parquet')
+        if not parquet_path.exists():
+            raise HTTPException(
+                status_code=503,
+                detail="Price data file not available on this deployment. "
+                       "Live backtests require the local data_processed/ directory. "
+                       "Pre-computed results are available via /research/* endpoints."
+            )
+        _price_data_cache = pd.read_parquet(str(parquet_path))
     return _price_data_cache
 
 

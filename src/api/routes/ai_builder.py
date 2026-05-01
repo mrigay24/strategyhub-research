@@ -677,9 +677,10 @@ def _load_prices() -> pd.DataFrame:
     global _PRICES_CACHE
     if _PRICES_CACHE is None:
         if not EXTENDED_PRICES.exists():
-            raise FileNotFoundError(
-                f"Extended price data not found: {EXTENDED_PRICES}. "
-                "Run Phase 3 data pipeline to generate it."
+            raise HTTPException(
+                status_code=503,
+                detail="Price data file not available on this deployment. "
+                       "Live backtests require the local data_processed/ directory."
             )
         long_df = pd.read_parquet(EXTENDED_PRICES)
         # Pivot to wide format: date × symbol
