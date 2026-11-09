@@ -29,8 +29,8 @@ does something that can't be rebuilt disappear with it? (Mrigay calls this the "
 ## Ground rules
 
 - Git: commit locally as often as useful; push only at the end of a phase or at the end
-  of the session, never after every commit. The repo is PUBLIC on GitHub: do not push
-  anything under `docs/entropy_research/` unless Mrigay has said in chat that it's fine.
+  of the session, never after every commit. The repo is PUBLIC on GitHub. Mrigay
+  approved pushing the pilot work; push at the end of each phase as usual.
 - Never touch CI or GitHub Actions.
 - Keep the existing data conventions: trade/measure on t+1, `pct_change(fill_method=None)`,
   $1 price floor before any return filter. For crash/event studies use the RAW file
@@ -104,5 +104,4 @@ results support, mark gaps as TODO) and `docs/entropy_research/ONE_PAGER.md` (on
 plain English, one table, for emailing a professor).
 
 Finish by updating the note, running kbpr, committing, and giving Mrigay a plain-language
-summary of what was found and what's still open. Push only if he has said the public repo
-is fine for this work.
+summary of what was found and what's still open. Push before stopping.
