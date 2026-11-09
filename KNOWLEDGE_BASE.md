@@ -4751,3 +4751,24 @@ NSE does not have standardized earnings revision data (IBES/Compustat format). T
 
 *Last updated: 2026-04-30*
 *Session: Factor Rotation model, Indian Markets NSE page, L/S WFE badges, AI Builder rate limiting. Phase 5D complete.*
+
+---
+
+## §41 — Entropy, Replaceability and the "Death Test" (pilot, 2026-11-09)
+
+Full note: `docs/entropy_research/RESEARCH_NOTE.md`. Code: `scripts/entropy_research.py`. Results: `results/entropy_research/`.
+
+**Idea:** Shannon entropy of a share distribution (H = −Σ w ln w; HHI = Σ w²; effective N = 1/HHI) measures how much one firm's identity matters. The deeper variable is *replaceability*: when a firm is hit, do rivals absorb it or share its fate?
+
+**Pilot findings:**
+1. **Portfolio entropy (random N-stock portfolios, 5 windows 2000–24):** the expected ending wealth is the same for every N by construction. Diversification raises the *median* (9.8%/yr for 1 stock vs 11.6% for 50) and cuts the chance of lagging the universe by more than 3 pp/yr from 46% to 5%. The cause is skew: only 39–47% of stocks beat the universe, and the top 10% made 27–77% of net gains.
+2. **Emergent concentration:** a buy-and-hold equal-weight portfolio's effective N falls 17–40% in 5 years with no trading.
+3. **Co-movement entropy (eigenvalue entropy of the 1-year correlation matrix):** low entropy marks crises and is followed by rebounds. Controlling for current volatility, *higher* entropy preceded deeper drawdowns in the US (t ≈ −2.1; India not significant). "Low entropy = fragile" fails as stated; this is the volatility paradox.
+4. **Death-test pilot (538 isolated crashes):** same-sector peers fall −0.50% on the same day (t −7.8, 67% of events), so contagion beats the competitive effect. It is strongest in Financials (−1.19%, 82%) and near zero in Materials, Staples and Industrials. Sector HHI does not organise the response.
+
+**Methodology lessons:**
+- Event studies of crashes must use the RAW price file with the $1 floor. The clean file's 20% filter deletes real crashes.
+- A peer falling on day 0 mixes "importance" with "industry information". Separate the two with no-news shocks (disasters, fraud) and with customer/supplier links (Barrot & Sauvagnat 2016).
+- The Desktop is iCloud-synced: "dataless" stub files hang on read (check with `ls -lO`).
+
+*Last updated: 2026-11-09*
