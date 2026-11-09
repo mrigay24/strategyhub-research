@@ -4772,3 +4772,28 @@ Full note: `docs/entropy_research/RESEARCH_NOTE.md`. Code: `scripts/entropy_rese
 - The Desktop is iCloud-synced: "dataless" stub files hang on read (check with `ls -lO`).
 
 *Last updated: 2026-11-09*
+
+### §41b — Death test v2 and case studies (2026-11-09, evening)
+
+Code: `scripts/death_test.py`. Results: `results/death_test/`. Paper question decided: *when a company suffers its own crash, do rivals gain or lose, and does market share explain which?*
+
+- **US, GICS sub-industry peers, 266 crashes:**
+  - Peers fall −1.20% on day 0 (t −7.6; 71% of events), but only −0.29% (t −0.6) after 20 days.
+  - Large-share firms drag peers more on day 0 (−1.77% vs −0.77%), but not over 20 days.
+  - Adjusted R² of the day-0 reaction: share + HHI 0.8%, sector 8%, sub-industry 14%.
+  - The day-0 pattern by industry is stable across 2000–12 and 2012–24 (Spearman 0.79, 7 sub-industries).
+- **8 cases:** damage spread only where peers shared a critical dependency with the failed firm:
+  - Adani group firms −42% while sector rivals gained +7.7%, all 5 up;
+  - IL&FS: wholesale-funded NBFCs crashed while strong lenders did not;
+  - Yes Bank: weak banks crashed, HDFC Bank rose;
+  - SVB: regional banks −24.5%;
+  - PG&E: California utilities −6.7%.
+  
+  Where output was replaceable, rivals gained or were unaffected: Satyam's IT rivals +12.6% (Infosys +28%); IndiGo +14.8% *before* Jet's shutdown.
+- **Thesis:** importance comes from what others depend on through the firm, not from market share. The 8 cases were chosen ex post, so a pre-registered out-of-sample test comes next.
+
+**Data issues found:**
+- `nse_survivorship_free.parquet` misses some split/bonus adjustments (CHOLAFIN −80% on 2019-06-14; INFY −50% on its bonus days in 2014, 2015 and 2018).
+- It has no INFY before 2012 and no SPICEJET before 2020.
+- `run_nse_longshort.py` clips returns at [−95%, +200%], so these artifacts may have entered the India market-neutral results. **Needs a check.**
+- In the US raw data, the ticker "SBNY" from 2024 is a different company (Signature Bank is not in the data).

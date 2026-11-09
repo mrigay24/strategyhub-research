@@ -1,6 +1,6 @@
 # Entropy, Replaceability and the "Death Test": Research Note
 
-**Started:** 9 November 2026 · **Author:** Mrigay Pathak · **Status:** pilot done, paper not started
+**Started:** 9 November 2026 · **Author:** Mrigay Pathak · **Status:** pilot + death test v2 + 8 case studies done; paper question decided (§6); drafting next
 **Code:** `scripts/entropy_research.py` · **Outputs:** `results/entropy_research/`
 **Next session prompt:** `docs/entropy_research/NEXT_SESSION_PROMPT.md`
 
@@ -204,8 +204,90 @@ design of Barrot & Sauvagnat (2016).
 | A high-entropy portfolio is best for an investor without skill | **Supported, with a correction** | Same average return, much better median and tail (Test 1) |
 | Concentration emerges on its own | **Supported** | Effective N falls 17–40% in 5 years with no trading (Test 1) |
 | Low entropy = fragile market | **Not supported as stated** | Low co-movement entropy is a symptom of crises, not a warning. Calm periods hide the risk (Test 2) |
-| Market share ≠ importance | **Early hint, not proof** | Sector HHI doesn't explain peer reactions; sector type does (Test 3) |
+| Market share ≠ importance | **Supported, with a correction** | Share matters for the day-0 hit, not for lasting damage. Industry identity explains ~10× more (§4b). Satyam (big, absorbed) vs IL&FS (spread) |
+| Importance = shared dependency | **New hypothesis, consistent with all 8 cases** | Not yet tested out of sample; that is the next step (§4b) |
 | Some firms are replaceable, others structurally important | **Measurable** | Peer reactions differ sharply by sector (Financials vs Industrials) (Test 3) |
+
+## 4b. Death test v2 and eight case studies (9 Nov, evening)
+
+**Code:** `scripts/death_test.py` · **Outputs:** `results/death_test/`
+
+### Part A: US, peers = GICS sub-industry
+
+**Sample:** 266 isolated crashes in 37 sub-industries.
+
+| | Peers, same day | Peers, days 0–20 | % of events where peers fell on day 0 |
+|---|---|---|---|
+| All crashes | **−1.20% (t −7.6)** | −0.29% (t −0.6) | 71% |
+| Crashing firm has a small share of its sub-industry | −0.77% | −0.56% | 63% |
+| Mid share | −1.07% | −0.29% | 70% |
+| **Large share** | **−1.77%** | −0.01% | **81%** |
+
+**Does market share explain the peer reaction?** Compare how much of the same-day
+reaction each set of variables explains (adjusted R²):
+
+| Explanatory variables | Adjusted R² |
+|---|---|
+| Firm's share + sub-industry HHI | **0.8%** |
+| Which sector it is | 8% |
+| Which sub-industry it is | **14%** |
+
+**Is it a stable trait of an industry?** Rank the industries by their average same-day
+peer reaction in 2000–12 and again in 2012–24, then compare the two rankings:
+- sub-industries: Spearman **0.79** (only 7 qualify);
+- sectors: 0.90 (5 qualify).
+- The 20-day reaction is *not* stable (≈0).
+
+**What it means:**
+1. Peers do share the crash on day 0, and more so when the crashing firm is big. So
+   market share matters for the **first reaction**.
+2. Within a month the damage has mostly **faded**. For the typical crash, nothing the
+   rivals depended on was destroyed.
+3. *Which industry* it is explains about 10× more than market share or HHI, and that
+   industry pattern repeats across decades.
+
+### Part B: eight famous collapses
+
+**Method:**
+- Day 0 = the first trading day after the news.
+- Peers are measured against the market.
+- 20-day = buy-and-hold over days 0–20.
+- India uses adjusted Yahoo closes where they exist, and the bhavcopy panel for delisted
+  firms.
+
+| Case | Shock | Peer group | Peers over 20 days | Peers up | Reading |
+|---|---|---|---|---|---|
+| **Satyam 2009** | Fraud at India's #4 IT firm (stock −78% on day 0) | 6 IT rivals | **+12.6%** (t 1.4) | 5 of 6 (Infosys +28%, TCS +18%) | **Replaceable:** rivals took its clients |
+| **Jet Airways 2019** | Airline shuts down (−31%) | IndiGo | ~0 on and after the event, but **+14.8% in the 20 days before** | — | **Replaceable**, and priced in early (collapse was expected) |
+| **Adani 2023** | Hindenburg report (Adani Ent −56% over 20 days) | 6 Adani-group firms | **−42%** (t −9.6) | 0 of 6 | **Shared fate through ownership and funding** |
+| | | 5 sector rivals (UltraTech, Tata Power, NTPC, Power Grid, Pipavav) | **+7.7%** (t 2.0) | **5 of 5** | **The businesses were replaceable**; the group was the weak point |
+| **IL&FS 2018** | Unlisted lender defaults; NBFC panic | 9 NBFC / housing-finance lenders | **−14.8%** (t −4.7) | 2 of 9 | Split by **funding model**: wholesale-funded lenders crashed (DHFL −53%, PNB Housing −27%, Edelweiss −26%); strong ones did not (Bajaj Fin −2%, M&M Fin +2%, LIC HF +5%) |
+| **DHFL 2019** | Misses bond payments | 8 lenders | −0.8% | 3 of 8 | By then already priced; **no further spread** |
+| **Yes Bank 2020** | RBI moratorium (−56%) | 9 private banks | **−19.5%** (t −6.7) | 1 of 9 (HDFC Bank +2.5%) | Shared fate among **weak-deposit** banks (IndusInd −38%, RBL −35%); flight to quality. Note the COVID crash happened at the same time |
+| **PG&E 2019** (US) | Wildfire bankruptcy (−52%) | Edison, Sempra | −6.7% | 0 of 2 | Shared **liability / regulatory** risk |
+| **SVB 2023** (US) | Bank collapse | 9 regional banks | **−24.5%** (t −4.6) | 0 of 9 | Shared fate: **deposit runs** |
+
+**The pattern across all eight:**
+- A firm's death **spreads** when others share a **critical dependency** with it:
+  - the same funding market;
+  - the same depositors' confidence;
+  - the same owner;
+  - the same liability or regulator.
+- It is **absorbed** when what the firm *produced* can be supplied by rivals: IT
+  services, airline seats, cement, power.
+- **Size is not the driver.** Satyam was India's #4 IT firm and was absorbed. IL&FS's
+  shock hit small housing-finance firms hard.
+
+This sharpens your thesis:
+
+> **A firm's importance comes from what others depend on through it, not from its
+> market share.**
+
+**Honest limits of Part B:**
+- These are 8 famous cases chosen *after the fact*, so the "shared dependency"
+  classification risks story-fitting.
+- The fix: write a selection rule and a classification rule *first*, then test a fresh
+  set of collapses. This is the next session's main job.
 
 ## 5. Is this new? Literature map
 
@@ -221,6 +303,10 @@ Check every entry in Phase 1 before citing it in the paper.
 | Firm death and peers | Lang & Stulz (1992), *Journal of Financial Economics* | Bankruptcies usually hurt rivals (contagion), but in concentrated industries rivals can gain (competitive effect) | The template for Test 3 |
 | Systemic importance | Adrian & Brunnermeier (2016), *AER*, "CoVaR" | How much one institution's distress raises system-wide tail risk | The death test for banks, already formalised |
 | Co-movement as fragility | Kritzman, Li, Page & Rigobon (2011), *Journal of Portfolio Management* | Sharp rises in the "absorption ratio" preceded drawdowns | Test 2 should test *changes*, not levels |
+| Credit contagion vs competition | Jorion & Zhang (2007), *Journal of Financial Economics* | Contagion or competitive effect depends on the type of bankruptcy and the industry | Directly on the death test. Check |
+| Supply-chain distress | Hertzel, Li, Officer & Rodgers (2008), *Journal of Financial Economics* | Distress hurts suppliers and customers, not only rivals | The "dependency" channel |
+| Intra-industry information transfer | Foster (1981), *Journal of Accounting and Economics* | One firm's earnings news moves its peers | The "information" confound in Part A |
+| Customer–supplier links and returns | Cohen & Frazzini (2008), *Journal of Finance* | Customers' news reaches suppliers' prices slowly | Dependency is priced with a lag |
 | Product uniqueness from text | Hoberg & Phillips (2016), *Journal of Political Economy* | Measure how similar firms' products are from 10-K text (free data) | A direct measure of "nobody else does this" |
 | Skewed stock returns | Bessembinder (2018), *Journal of Financial Economics* | A small share of stocks created all net wealth; most stocks lag T-bills | Explains Test 1 |
 | Capability complexity | Hidalgo & Hausmann (2009), *PNAS* | Countries differ by how rare and complex their capabilities are | Capability entropy at country level |
@@ -235,12 +321,33 @@ and famous natural experiments, and almost no work of this kind.
 
 ## 6. The paper: one narrow question
 
-**Working title:** *Market Share Is Not Importance: A Market-Implied Measure of Firm
-Replaceability in the US and India*
+**Working title:** *Market Share Is Not Importance: What Happens to Rivals When a Firm
+Dies (US and India)*
 
-**Question:** does a firm's replaceability (how its peers and customers react when it
-alone is hit) tell us something that its market share and industry HHI don't, about
-risk, returns and resilience?
+**Question (decided 9 Nov):** when a company suffers its own crash, do its rivals gain or
+lose, and does its market share explain which?
+
+**Thesis the evidence currently supports:**
+- Rivals share the first-day hit (more so for big firms), but the damage lasts only when
+  they share a **critical dependency** with the failed firm (funding, deposits,
+  ownership, liability).
+- Industry identity explains about 10× more than market share or HHI.
+
+**Scope decision for a 2–3 day working paper:**
+- **Cut:** the firm-level return-prediction score.
+- **Shrink to a "future work" section:** the AI section.
+- **Move to an appendix or motivation:** Tests 1–2 (portfolio and market entropy).
+
+**Paper structure:**
+1. Framework
+2. US large sample (Part A)
+3. Case studies (Part B)
+4. Pre-registered out-of-sample cases
+5. Implications for investors
+6. Limitations
+
+*Original, broader question, kept for reference:* does a firm's replaceability carry
+information beyond market share and HHI about risk, returns and resilience?
 
 **Design:**
 1. **Better peer groups:** GICS sub-industry, or Hoberg–Phillips text-based peers.

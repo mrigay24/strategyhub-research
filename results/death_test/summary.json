@@ -1,0 +1,1291 @@
+{
+  "part_a": {
+    "n_events": 266,
+    "all": {
+      "n_events": 266.0,
+      "own_ab_d0": -0.1907544921990156,
+      "peer_car_d0": -0.012048452760560314,
+      "t_peer_car_d0": -7.5791035265046744,
+      "peer_car_0_5": -0.00707316642021239,
+      "t_peer_car_0_5": -2.011710033520681,
+      "peer_car_0_20": -0.002853786216216521,
+      "t_peer_car_0_20": -0.6153169750356644,
+      "pct_peers_down_d0": 0.7142857142857143,
+      "pct_peers_up_0_20": 0.4548872180451128
+    },
+    "by_sector": {
+      "Utilities": {
+        "n_events": 13.0,
+        "own_ab_d0": -0.2089465000064597,
+        "peer_car_d0": -0.010590683598319653,
+        "t_peer_car_d0": -1.445757602113963,
+        "peer_car_0_5": -0.02914791889052043,
+        "t_peer_car_0_5": -1.9708402805700056,
+        "peer_car_0_20": -0.031000042691939515,
+        "t_peer_car_0_20": -1.5087635936867996,
+        "pct_peers_down_d0": 0.5384615384615384,
+        "pct_peers_up_0_20": 0.23076923076923078
+      },
+      "Consumer Discretionary": {
+        "n_events": 25.0,
+        "own_ab_d0": -0.18026174836087552,
+        "peer_car_d0": -0.015604681852548328,
+        "t_peer_car_d0": -3.7983847917914986,
+        "peer_car_0_5": -0.03788819747977747,
+        "t_peer_car_0_5": -3.470182808398894,
+        "peer_car_0_20": -0.020694344989911344,
+        "t_peer_car_0_20": -1.895893494718563,
+        "pct_peers_down_d0": 0.88,
+        "pct_peers_up_0_20": 0.32
+      },
+      "Health Care": {
+        "n_events": 82.0,
+        "own_ab_d0": -0.2034252155954779,
+        "peer_car_d0": -0.006664366059458051,
+        "t_peer_car_d0": -3.2394897456032234,
+        "peer_car_0_5": -0.0051322095536098546,
+        "t_peer_car_0_5": -1.2924474453281636,
+        "peer_car_0_20": -0.010711890410225333,
+        "t_peer_car_0_20": -1.578968238154751,
+        "pct_peers_down_d0": 0.6341463414634146,
+        "pct_peers_up_0_20": 0.3780487804878049
+      },
+      "Industrials": {
+        "n_events": 20.0,
+        "own_ab_d0": -0.16574878077970995,
+        "peer_car_d0": -0.001864855881886604,
+        "t_peer_car_d0": -0.6266828422622142,
+        "peer_car_0_5": 0.0032308279623557102,
+        "t_peer_car_0_5": 0.5056681463991346,
+        "peer_car_0_20": -0.005924630225078659,
+        "t_peer_car_0_20": -0.5234141085187297,
+        "pct_peers_down_d0": 0.5,
+        "pct_peers_up_0_20": 0.4
+      },
+      "Materials": {
+        "n_events": 11.0,
+        "own_ab_d0": -0.17059747954401616,
+        "peer_car_d0": -0.0041772565776558935,
+        "t_peer_car_d0": -1.7185228239969095,
+        "peer_car_0_5": 0.01639172337544298,
+        "t_peer_car_0_5": 1.2268790778243615,
+        "peer_car_0_20": -0.002593555157846833,
+        "t_peer_car_0_20": -0.20859436924658784,
+        "pct_peers_down_d0": 0.7272727272727273,
+        "pct_peers_up_0_20": 0.5454545454545454
+      },
+      "Consumer Staples": {
+        "n_events": 13.0,
+        "own_ab_d0": -0.18338745254977662,
+        "peer_car_d0": -0.009412471982975217,
+        "t_peer_car_d0": -1.1084420236279824,
+        "peer_car_0_5": -0.02394835930621847,
+        "t_peer_car_0_5": -2.191168780143653,
+        "peer_car_0_20": 0.00034609454842990595,
+        "t_peer_car_0_20": 0.022423543790058675,
+        "pct_peers_down_d0": 0.6153846153846154,
+        "pct_peers_up_0_20": 0.5384615384615384
+      },
+      "Information Technology": {
+        "n_events": 66.0,
+        "own_ab_d0": -0.18251861571400743,
+        "peer_car_d0": -0.012137887461739017,
+        "t_peer_car_d0": -5.192682684522257,
+        "peer_car_0_5": -0.0021924127466068748,
+        "t_peer_car_0_5": -0.43765058189535205,
+        "peer_car_0_20": 0.009060263133925358,
+        "t_peer_car_0_20": 1.1666907336146664,
+        "pct_peers_down_d0": 0.7727272727272727,
+        "pct_peers_up_0_20": 0.5606060606060606
+      },
+      "Financials": {
+        "n_events": 35.0,
+        "own_ab_d0": -0.20190295389801705,
+        "peer_car_d0": -0.031875649643878824,
+        "t_peer_car_d0": -4.056338590298727,
+        "peer_car_0_5": -0.003501820290356549,
+        "t_peer_car_0_5": -0.1880233280547697,
+        "peer_car_0_20": 0.011036630749693225,
+        "t_peer_car_0_20": 0.47906472822268137,
+        "pct_peers_down_d0": 0.8857142857142857,
+        "pct_peers_up_0_20": 0.5714285714285714
+      },
+      "Energy": {
+        "n_events": 1.0,
+        "own_ab_d0": -0.14856223972253962,
+        "peer_car_d0": -0.008257098560460835,
+        "t_peer_car_d0": NaN,
+        "peer_car_0_5": 0.19917290423310058,
+        "t_peer_car_0_5": NaN,
+        "peer_car_0_20": 0.19789009889784287,
+        "t_peer_car_0_20": NaN,
+        "pct_peers_down_d0": 1.0,
+        "pct_peers_up_0_20": 1.0
+      }
+    },
+    "replaceability_map": {
+      "Biotechnology": {
+        "n_events": 9.0,
+        "own_ab_d0": -0.20815209832106035,
+        "peer_car_d0": -0.00960511714167463,
+        "t_peer_car_d0": -1.5388430427316013,
+        "peer_car_0_5": -0.010503677201715014,
+        "t_peer_car_0_5": -1.1011078126903218,
+        "peer_car_0_20": -0.04820769002204561,
+        "t_peer_car_0_20": -3.400323860779971,
+        "pct_peers_down_d0": 0.6666666666666666,
+        "pct_peers_up_0_20": 0.2222222222222222,
+        "sector": "Health Care"
+      },
+      "Life & Health Insurance": {
+        "n_events": 8.0,
+        "own_ab_d0": -0.22743031753796655,
+        "peer_car_d0": -0.036613085969385874,
+        "t_peer_car_d0": -2.3341089164278013,
+        "peer_car_0_5": 0.025957700571373286,
+        "t_peer_car_0_5": 1.0086506002804283,
+        "peer_car_0_20": -0.025486760385622427,
+        "t_peer_car_0_20": -0.42620507245270006,
+        "pct_peers_down_d0": 0.875,
+        "pct_peers_up_0_20": 0.625,
+        "sector": "Financials"
+      },
+      "Aerospace & Defense": {
+        "n_events": 11.0,
+        "own_ab_d0": -0.17833903530054526,
+        "peer_car_d0": 0.0014477577348919314,
+        "t_peer_car_d0": 0.42743769363211737,
+        "peer_car_0_5": -1.589363078147481e-05,
+        "t_peer_car_0_5": -0.0021864138748977804,
+        "peer_car_0_20": -0.020861729766685533,
+        "t_peer_car_0_20": -1.579117268425074,
+        "pct_peers_down_d0": 0.36363636363636365,
+        "pct_peers_up_0_20": 0.36363636363636365,
+        "sector": "Industrials"
+      },
+      "Health Care Equipment": {
+        "n_events": 29.0,
+        "own_ab_d0": -0.1960062276977656,
+        "peer_car_d0": -0.007194529003736633,
+        "t_peer_car_d0": -3.844081425645476,
+        "peer_car_0_5": -0.014960486238007631,
+        "t_peer_car_0_5": -2.774219335694158,
+        "peer_car_0_20": -0.01662940254466437,
+        "t_peer_car_0_20": -1.921221467056052,
+        "pct_peers_down_d0": 0.6551724137931034,
+        "pct_peers_up_0_20": 0.3103448275862069,
+        "sector": "Health Care"
+      },
+      "Multi-Utilities": {
+        "n_events": 9.0,
+        "own_ab_d0": -0.2121384418927321,
+        "peer_car_d0": -0.007783242535562422,
+        "t_peer_car_d0": -0.8707149984697076,
+        "peer_car_0_5": -0.02531141975114045,
+        "t_peer_car_0_5": -1.4585292340181846,
+        "peer_car_0_20": -0.00989383830267024,
+        "t_peer_car_0_20": -0.42694438775082527,
+        "pct_peers_down_d0": 0.4444444444444444,
+        "pct_peers_up_0_20": 0.3333333333333333,
+        "sector": "Utilities"
+      },
+      "Specialty Chemicals": {
+        "n_events": 10.0,
+        "own_ab_d0": -0.17403971044334737,
+        "peer_car_d0": -0.004349593485257744,
+        "t_peer_car_d0": -1.6226767968858038,
+        "peer_car_0_5": 0.004599562778164782,
+        "t_peer_car_0_5": 0.6624129536979539,
+        "peer_car_0_20": -0.009682462869722647,
+        "t_peer_car_0_20": -0.8574079386314765,
+        "pct_peers_down_d0": 0.7,
+        "pct_peers_up_0_20": 0.5,
+        "sector": "Materials"
+      },
+      "Consumer Staples Merchandise Retail": {
+        "n_events": 8.0,
+        "own_ab_d0": -0.1853741006296309,
+        "peer_car_d0": -0.022457548453341275,
+        "t_peer_car_d0": -2.417284938552035,
+        "peer_car_0_5": -0.024918984998138646,
+        "t_peer_car_0_5": -1.6077052526668971,
+        "peer_car_0_20": -0.009412301581346238,
+        "t_peer_car_0_20": -0.43376375500145437,
+        "pct_peers_down_d0": 0.75,
+        "pct_peers_up_0_20": 0.375,
+        "sector": "Consumer Staples"
+      },
+      "Technology Hardware, Storage & Peripherals": {
+        "n_events": 14.0,
+        "own_ab_d0": -0.1818199977922095,
+        "peer_car_d0": -0.008602256125010794,
+        "t_peer_car_d0": -2.598026586527862,
+        "peer_car_0_5": -0.005734181568756001,
+        "t_peer_car_0_5": -0.7449374755114313,
+        "peer_car_0_20": -0.005977697337162829,
+        "t_peer_car_0_20": -0.4006525080012642,
+        "pct_peers_down_d0": 0.7142857142857143,
+        "pct_peers_up_0_20": 0.5714285714285714,
+        "sector": "Information Technology"
+      },
+      "Pharmaceuticals": {
+        "n_events": 13.0,
+        "own_ab_d0": -0.20704750900543212,
+        "peer_car_d0": 0.001548466722489693,
+        "t_peer_car_d0": 0.36154798346590916,
+        "peer_car_0_5": 0.008666886688366323,
+        "t_peer_car_0_5": 0.8653682289738575,
+        "peer_car_0_20": 0.0002073601484358885,
+        "t_peer_car_0_20": 0.011358481540688527,
+        "pct_peers_down_d0": 0.5384615384615384,
+        "pct_peers_up_0_20": 0.38461538461538464,
+        "sector": "Health Care"
+      },
+      "Hotels, Resorts & Cruise Lines": {
+        "n_events": 17.0,
+        "own_ab_d0": -0.181085928477633,
+        "peer_car_d0": -0.01539965197911386,
+        "t_peer_car_d0": -2.5965003490667664,
+        "peer_car_0_5": -0.03870591515913234,
+        "t_peer_car_0_5": -2.4550113477038233,
+        "peer_car_0_20": 0.00045350272465487435,
+        "t_peer_car_0_20": 0.043393480806828234,
+        "pct_peers_down_d0": 0.8235294117647058,
+        "pct_peers_up_0_20": 0.4117647058823529,
+        "sector": "Consumer Discretionary"
+      },
+      "Life Sciences Tools & Services": {
+        "n_events": 12.0,
+        "own_ab_d0": -0.20171847520196354,
+        "peer_car_d0": -0.00237065916419035,
+        "t_peer_car_d0": -0.3506138146420458,
+        "peer_car_0_5": -0.013727750037078773,
+        "t_peer_car_0_5": -1.7309428324437872,
+        "peer_car_0_20": 0.0017018381535742512,
+        "t_peer_car_0_20": 0.10588946160776254,
+        "pct_peers_down_d0": 0.75,
+        "pct_peers_up_0_20": 0.5833333333333334,
+        "sector": "Health Care"
+      },
+      "Health Care Services": {
+        "n_events": 15.0,
+        "own_ab_d0": -0.22236160799805976,
+        "peer_car_d0": -0.005230368332889696,
+        "t_peer_car_d0": -1.1752710042716668,
+        "peer_car_0_5": 0.01704791145346093,
+        "t_peer_car_0_5": 1.6308205687314887,
+        "peer_car_0_20": 0.005200285307711837,
+        "t_peer_car_0_20": 0.23853027515024539,
+        "pct_peers_down_d0": 0.5333333333333333,
+        "pct_peers_up_0_20": 0.4,
+        "sector": "Health Care"
+      },
+      "Application Software": {
+        "n_events": 15.0,
+        "own_ab_d0": -0.17258236222155357,
+        "peer_car_d0": -0.02263495147788889,
+        "t_peer_car_d0": -4.237219834885711,
+        "peer_car_0_5": 0.004082073727726478,
+        "t_peer_car_0_5": 0.3087029492986902,
+        "peer_car_0_20": 0.013004722860996971,
+        "t_peer_car_0_20": 0.8338685974217066,
+        "pct_peers_down_d0": 0.9333333333333333,
+        "pct_peers_up_0_20": 0.5333333333333333,
+        "sector": "Information Technology"
+      },
+      "Semiconductors": {
+        "n_events": 28.0,
+        "own_ab_d0": -0.18348027893871818,
+        "peer_car_d0": -0.010095742805004701,
+        "t_peer_car_d0": -2.697976184140018,
+        "peer_car_0_5": -0.0014540823476011937,
+        "t_peer_car_0_5": -0.16735505951192373,
+        "peer_car_0_20": 0.021606066706889082,
+        "t_peer_car_0_20": 1.6088108824459577,
+        "pct_peers_down_d0": 0.75,
+        "pct_peers_up_0_20": 0.6785714285714286,
+        "sector": "Information Technology"
+      },
+      "Property & Casualty Insurance": {
+        "n_events": 8.0,
+        "own_ab_d0": -0.21830174233928407,
+        "peer_car_d0": -0.003812015752891222,
+        "t_peer_car_d0": -0.29230172669765264,
+        "peer_car_0_5": 0.030225717413668154,
+        "t_peer_car_0_5": 1.1995188638101177,
+        "peer_car_0_20": 0.022315874804578268,
+        "t_peer_car_0_20": 0.5525631884799845,
+        "pct_peers_down_d0": 0.75,
+        "pct_peers_up_0_20": 0.625,
+        "sector": "Financials"
+      },
+      "Diversified Banks": {
+        "n_events": 8.0,
+        "own_ab_d0": -0.14908384036775096,
+        "peer_car_d0": -0.03463361495599629,
+        "t_peer_car_d0": -3.3837817131262637,
+        "peer_car_0_5": -0.048105320231469254,
+        "t_peer_car_0_5": -0.7764825349923178,
+        "peer_car_0_20": 0.03899443821275429,
+        "t_peer_car_0_20": 0.6900463989681753,
+        "pct_peers_down_d0": 1.0,
+        "pct_peers_up_0_20": 0.5,
+        "sector": "Financials"
+      }
+    },
+    "regressions": {
+      "peer_car_d0": {
+        "share_hhi": {
+          "n": 266,
+          "k": 4,
+          "r2": 0.019472,
+          "adj_r2": 0.008245,
+          "coef": {
+            "const": -0.012456,
+            "firm_share": -0.027616,
+            "sub_hhi": 0.003433,
+            "own_ab_d0": -0.019628
+          },
+          "t": {
+            "const": -1.932719,
+            "firm_share": -2.215479,
+            "sub_hhi": 0.413811,
+            "own_ab_d0": -0.738971
+          }
+        },
+        "share_hhi_leader": {
+          "n": 266,
+          "k": 5,
+          "r2": 0.028041,
+          "adj_r2": 0.013145,
+          "coef": {
+            "const": -0.010543,
+            "firm_share": -0.044555,
+            "sub_hhi": 0.003945,
+            "own_ab_d0": -0.016465,
+            "leader": 0.010041
+          },
+          "t": {
+            "const": -1.676179,
+            "firm_share": -2.399412,
+            "sub_hhi": 0.474024,
+            "own_ab_d0": -0.629895,
+            "leader": 1.134986
+          }
+        },
+        "sector_only": {
+          "n": 266,
+          "k": 10,
+          "r2": 0.111893,
+          "adj_r2": 0.08067,
+          "coef": {
+            "const": -0.020033,
+            "own_ab_d0": -0.024564
+          },
+          "t": {
+            "const": -3.037145,
+            "own_ab_d0": -0.93205
+          }
+        },
+        "subind_only": {
+          "n": 266,
+          "k": 21,
+          "r2": 0.207173,
+          "adj_r2": 0.142452,
+          "coef": {
+            "const": 0.001586,
+            "own_ab_d0": 0.000773
+          },
+          "t": {
+            "const": 0.274139,
+            "own_ab_d0": 0.030273
+          }
+        },
+        "share_hhi_plus_sector": {
+          "n": 266,
+          "k": 12,
+          "r2": 0.117118,
+          "adj_r2": 0.078883,
+          "coef": {
+            "const": -0.019342,
+            "firm_share": -0.014663,
+            "sub_hhi": 0.006479,
+            "own_ab_d0": -0.025299
+          },
+          "t": {
+            "const": -2.617847,
+            "firm_share": -1.482276,
+            "sub_hhi": 0.687067,
+            "own_ab_d0": -0.961531
+          }
+        }
+      },
+      "peer_car_0_20": {
+        "share_hhi": {
+          "n": 266,
+          "k": 4,
+          "r2": 0.002322,
+          "adj_r2": -0.009102,
+          "coef": {
+            "const": -0.004914,
+            "firm_share": -0.010292,
+            "sub_hhi": 0.022894,
+            "own_ab_d0": 0.013518
+          },
+          "t": {
+            "const": -0.259358,
+            "firm_share": -0.330572,
+            "sub_hhi": 0.83339,
+            "own_ab_d0": 0.151098
+          }
+        },
+        "share_hhi_leader": {
+          "n": 266,
+          "k": 5,
+          "r2": 0.002728,
+          "adj_r2": -0.012556,
+          "coef": {
+            "const": -0.006129,
+            "firm_share": 0.000467,
+            "sub_hhi": 0.022569,
+            "own_ab_d0": 0.011509,
+            "leader": -0.006377
+          },
+          "t": {
+            "const": -0.312264,
+            "firm_share": 0.009566,
+            "sub_hhi": 0.819673,
+            "own_ab_d0": 0.12775,
+            "leader": -0.28573
+          }
+        },
+        "sector_only": {
+          "n": 266,
+          "k": 10,
+          "r2": 0.052803,
+          "adj_r2": 0.019504,
+          "coef": {
+            "const": -0.020967,
+            "own_ab_d0": -0.001514
+          },
+          "t": {
+            "const": -1.131588,
+            "own_ab_d0": -0.017661
+          }
+        },
+        "subind_only": {
+          "n": 266,
+          "k": 21,
+          "r2": 0.064049,
+          "adj_r2": -0.012356,
+          "coef": {
+            "const": -0.022684,
+            "own_ab_d0": -0.010218
+          },
+          "t": {
+            "const": -1.122716,
+            "own_ab_d0": -0.116265
+          }
+        },
+        "share_hhi_plus_sector": {
+          "n": 266,
+          "k": 12,
+          "r2": 0.053498,
+          "adj_r2": 0.012508,
+          "coef": {
+            "const": -0.016716,
+            "firm_share": -0.01341,
+            "sub_hhi": -0.008218,
+            "own_ab_d0": -0.003493
+          },
+          "t": {
+            "const": -0.818508,
+            "firm_share": -0.411867,
+            "sub_hhi": -0.245197,
+            "own_ab_d0": -0.040596
+          }
+        }
+      }
+    },
+    "by_share_tercile": {
+      "small share": {
+        "n_events": 89.0,
+        "own_ab_d0": -0.18807208684667315,
+        "peer_car_d0": -0.0077061802544837335,
+        "t_peer_car_d0": -4.809156797081681,
+        "peer_car_0_5": -0.005454479983248196,
+        "t_peer_car_0_5": -1.2688934359004438,
+        "peer_car_0_20": -0.005552907563188966,
+        "t_peer_car_0_20": -0.7802266753865897,
+        "pct_peers_down_d0": 0.6292134831460674,
+        "pct_peers_up_0_20": 0.4044943820224719
+      },
+      "mid share": {
+        "n_events": 88.0,
+        "own_ab_d0": -0.19172679618243763,
+        "peer_car_d0": -0.010700404188002293,
+        "t_peer_car_d0": -4.034484218281929,
+        "peer_car_0_5": -0.011319081384637171,
+        "t_peer_car_0_5": -1.7038547153550216,
+        "peer_car_0_20": -0.002864770804255377,
+        "t_peer_car_0_20": -0.36422405235440947,
+        "pct_peers_down_d0": 0.7045454545454546,
+        "pct_peers_up_0_20": 0.48863636363636365
+      },
+      "large share": {
+        "n_events": 89.0,
+        "own_ab_d0": -0.1924755183317948,
+        "peer_car_d0": -0.017723627226020108,
+        "t_peer_car_d0": -4.973341954016002,
+        "peer_car_0_5": -0.004493644802464443,
+        "t_peer_car_0_5": -0.6397554487207034,
+        "peer_car_0_20": -0.0001438037035427368,
+        "t_peer_car_0_20": -0.01585105039948771,
+        "pct_peers_down_d0": 0.8089887640449438,
+        "pct_peers_up_0_20": 0.47191011235955055
+      }
+    },
+    "persistence": {
+      "sector:peer_car_d0": {
+        "n_groups": 5,
+        "pearson": 0.921086,
+        "spearman": 0.9
+      },
+      "sector:peer_car_0_20": {
+        "n_groups": 5,
+        "pearson": -0.364554,
+        "spearman": 0.0
+      },
+      "sub_industry:peer_car_d0": {
+        "n_groups": 7,
+        "pearson": 0.684308,
+        "spearman": 0.785714
+      },
+      "sub_industry:peer_car_0_20": {
+        "n_groups": 7,
+        "pearson": -0.000619,
+        "spearman": -0.142857
+      }
+    },
+    "delisted_within_60d": {
+      "n_events": 0
+    }
+  },
+  "part_b": {
+    "cases": [
+      {
+        "case": "satyam",
+        "market": "India",
+        "shock": "Accounting fraud confession by the chairman",
+        "firm": "SATYAMCOMP",
+        "news_date": "2009-01-07",
+        "day0": "2009-01-07",
+        "peer_group": "IT services rivals",
+        "n_peers": 6,
+        "peers_used": "INFY TCS WIPRO HCLTECH TECHM MPHASIS",
+        "peers_missing": "",
+        "firm_ret_d0": -0.7750768371053367,
+        "firm_bhar_0_20": -0.5575820367648685,
+        "peer_car_0_0": 0.024745041304878156,
+        "t_0_0": 1.0622898795393645,
+        "peer_car_0_5": 0.096939401522433,
+        "t_0_5": 1.6989459787851526,
+        "peer_car_0_20": 0.14530374622524866,
+        "t_0_20": 1.3612002649335448,
+        "peer_car_-20_-1": -0.10677746247474243,
+        "t_-20_-1": -1.0249895999665228,
+        "peer_bhar_0_20": 0.126335414874325,
+        "pct_peers_up_0_20": 0.8333333333333334
+      },
+      {
+        "case": "jet_airways",
+        "market": "India",
+        "shock": "Airline suspends all flights (cash runs out)",
+        "firm": "JETAIRWAYS",
+        "news_date": "2019-04-17",
+        "day0": "2019-04-18",
+        "peer_group": "Airline rivals",
+        "n_peers": 1,
+        "peers_used": "INDIGO",
+        "peers_missing": "SPICEJET",
+        "firm_ret_d0": -0.31455301455301454,
+        "firm_bhar_0_20": -0.30738965017076414,
+        "peer_car_0_0": -0.005218339519397949,
+        "t_0_0": -0.20664509344513296,
+        "peer_car_0_5": -0.03421738345819606,
+        "t_0_5": -0.5531767741583336,
+        "peer_car_0_20": 0.004241985735804421,
+        "t_0_20": 0.036656611968293715,
+        "peer_car_-20_-1": 0.1482077302819047,
+        "t_-20_-1": 1.3123468234073612,
+        "peer_bhar_0_20": -0.0009056318339104585,
+        "pct_peers_up_0_20": 0.0
+      },
+      {
+        "case": "ilfs",
+        "market": "India",
+        "shock": "NBFC panic after IL&FS defaults (IL&FS itself unlisted; day 0 = panic day)",
+        "firm": null,
+        "news_date": "2018-09-21",
+        "day0": "2018-09-21",
+        "peer_group": "NBFC / housing-finance lenders",
+        "n_peers": 9,
+        "peers_used": "DHFL LICHSGFIN PNBHOUSING BAJFINANCE CHOLAFIN M&MFIN EDELWEISS REPCOHOME CANFINHOME",
+        "peers_missing": "SRTRANSFIN",
+        "firm_ret_d0": NaN,
+        "firm_bhar_0_20": NaN,
+        "peer_car_0_0": -0.062067068345193724,
+        "t_0_0": -7.104395348085969,
+        "peer_car_0_5": -0.11550537346558268,
+        "t_0_5": -5.397497528522061,
+        "peer_car_0_20": -0.18781842710485486,
+        "t_0_20": -4.691313333556934,
+        "peer_car_-20_-1": -0.08674524356464414,
+        "t_-20_-1": -2.2202228174253444,
+        "peer_bhar_0_20": -0.14827416534887686,
+        "pct_peers_up_0_20": 0.2222222222222222
+      },
+      {
+        "case": "dhfl",
+        "market": "India",
+        "shock": "DHFL misses bond payments",
+        "firm": "DHFL",
+        "news_date": "2019-06-04",
+        "day0": "2019-06-04",
+        "peer_group": "NBFC / housing-finance lenders",
+        "n_peers": 8,
+        "peers_used": "LICHSGFIN PNBHOUSING BAJFINANCE CHOLAFIN M&MFIN EDELWEISS REPCOHOME CANFINHOME",
+        "peers_missing": "SRTRANSFIN",
+        "firm_ret_d0": -0.012809187279151923,
+        "firm_bhar_0_20": -0.22497078210814558,
+        "peer_car_0_0": 0.003696195042480883,
+        "t_0_0": 0.3256811044104437,
+        "peer_car_0_5": -0.010077648329034832,
+        "t_0_5": -0.3625110555062764,
+        "peer_car_0_20": -0.008885111391454741,
+        "t_0_20": -0.17084053052314244,
+        "peer_car_-20_-1": 0.12435801040615323,
+        "t_-20_-1": 2.450171304455289,
+        "peer_bhar_0_20": -0.008310277382484146,
+        "pct_peers_up_0_20": 0.375
+      },
+      {
+        "case": "yes_bank",
+        "market": "India",
+        "shock": "RBI moratorium on Yes Bank (COVID crash under way: read with care)",
+        "firm": "YESBANK",
+        "news_date": "2020-03-06",
+        "day0": "2020-03-06",
+        "peer_group": "Private-bank rivals",
+        "n_peers": 9,
+        "peers_used": "ICICIBANK AXISBANK KOTAKBANK INDUSINDBK RBLBANK HDFCBANK FEDERALBNK IDFCFIRSTB BANDHANBNK",
+        "peers_missing": "",
+        "firm_ret_d0": -0.5611413056154106,
+        "firm_bhar_0_20": -0.07466539850409804,
+        "peer_car_0_0": -0.018875005154345592,
+        "t_0_0": -2.2851325626895425,
+        "peer_car_0_5": -0.09720825198537136,
+        "t_0_5": -4.804540166936483,
+        "peer_car_0_20": -0.25305156739598844,
+        "t_0_20": -6.68534315653431,
+        "peer_car_-20_-1": 0.009978154732110443,
+        "t_-20_-1": 0.2701217511668561,
+        "peer_bhar_0_20": -0.19532763931166647,
+        "pct_peers_up_0_20": 0.1111111111111111
+      },
+      {
+        "case": "adani",
+        "market": "India",
+        "shock": "Hindenburg short-seller report on the Adani group",
+        "firm": "ADANIENT",
+        "news_date": "2023-01-25",
+        "day0": "2023-01-25",
+        "peer_group": "Adani group companies",
+        "n_peers": 6,
+        "peers_used": "ADANIPORTS ADANIPOWER ADANIGREEN ADANIENSOL ACC AMBUJACEM",
+        "peers_missing": "",
+        "firm_ret_d0": -0.015412541083003828,
+        "firm_bhar_0_20": -0.5576243777114054,
+        "peer_car_0_0": -0.04954338524181822,
+        "t_0_0": -3.570474717069814,
+        "peer_car_0_5": -0.3722132554209367,
+        "t_0_5": -10.951068466527591,
+        "peer_car_0_20": -0.6129298702019353,
+        "t_0_20": -9.63920958478053,
+        "peer_car_-20_-1": -0.016729648496936478,
+        "t_-20_-1": -0.26959516700223274,
+        "peer_bhar_0_20": -0.41925582124486976,
+        "pct_peers_up_0_20": 0.0
+      },
+      {
+        "case": "adani",
+        "market": "India",
+        "shock": "Hindenburg short-seller report on the Adani group",
+        "firm": "ADANIENT",
+        "news_date": "2023-01-25",
+        "day0": "2023-01-25",
+        "peer_group": "Sector rivals (cement, power, ports)",
+        "n_peers": 5,
+        "peers_used": "ULTRACEMCO TATAPOWER NTPC POWERGRID GPPL",
+        "peers_missing": "",
+        "firm_ret_d0": -0.015412541083003828,
+        "firm_bhar_0_20": -0.5576243777114054,
+        "peer_car_0_0": 0.0010304628888657998,
+        "t_0_0": 0.11942043723621375,
+        "peer_car_0_5": 0.023043101808099625,
+        "t_0_5": 1.0902136484071434,
+        "peer_car_0_20": 0.07781507428912185,
+        "t_0_20": 1.9678880581499145,
+        "peer_car_-20_-1": 0.006585972167833593,
+        "t_-20_-1": 0.17066764447461583,
+        "peer_bhar_0_20": 0.07677005149650576,
+        "pct_peers_up_0_20": 1.0
+      },
+      {
+        "case": "pge",
+        "market": "US",
+        "shock": "PG&E announces bankruptcy over wildfire liabilities",
+        "firm": "PCG",
+        "news_date": "2019-01-14",
+        "day0": "2019-01-14",
+        "peer_group": "California utilities (same regulator, same fire risk)",
+        "n_peers": 2,
+        "peers_used": "EIX SRE",
+        "peers_missing": "",
+        "firm_ret_d0": -0.5235929834660666,
+        "firm_bhar_0_20": -0.19600452584304007,
+        "peer_car_0_0": -0.015446973306320999,
+        "t_0_0": -0.9815728370552835,
+        "peer_car_0_5": -0.06784149824553362,
+        "t_0_5": -1.759944372267274,
+        "peer_car_0_20": -0.06220666771434836,
+        "t_0_20": -0.8625939861097606,
+        "peer_car_-20_-1": 0.006128131350111026,
+        "t_-20_-1": 0.08707474337733602,
+        "peer_bhar_0_20": -0.06662265964532754,
+        "pct_peers_up_0_20": 0.0
+      },
+      {
+        "case": "svb",
+        "market": "US",
+        "shock": "SVB collapse (SVB/Signature not in the data; day 0 = SVB's crash day)",
+        "firm": null,
+        "news_date": "2023-03-09",
+        "day0": "2023-03-09",
+        "peer_group": "Regional-bank peers",
+        "n_peers": 9,
+        "peers_used": "ZION KEY CMA FITB RF HBAN TFC CFG MTB",
+        "peers_missing": "",
+        "firm_ret_d0": NaN,
+        "firm_bhar_0_20": NaN,
+        "peer_car_0_0": -0.044470617316139965,
+        "t_0_0": -3.641417758715794,
+        "peer_car_0_5": -0.18883071808187402,
+        "t_0_5": -6.312397907986414,
+        "peer_car_0_20": -0.25549328174995956,
+        "t_0_20": -4.565277541169624,
+        "peer_car_-20_-1": -0.07973814504242316,
+        "t_-20_-1": -1.4599852840377927,
+        "peer_bhar_0_20": -0.24541942680779869,
+        "pct_peers_up_0_20": 0.0
+      }
+    ],
+    "peers": [
+      {
+        "case": "satyam",
+        "peer_group": "IT services rivals",
+        "peer": "INFY",
+        "car_0_0": 0.09739495355933774,
+        "car_0_5": 0.23369634250690452,
+        "bhar_0_20": 0.27997119439917595,
+        "car_pre_20": -0.16840794808073722
+      },
+      {
+        "case": "satyam",
+        "peer_group": "IT services rivals",
+        "peer": "TCS",
+        "car_0_0": 0.07797594141842783,
+        "car_0_5": 0.1728261697202369,
+        "bhar_0_20": 0.17587577781084396,
+        "car_pre_20": -0.21773152329367434
+      },
+      {
+        "case": "satyam",
+        "peer_group": "IT services rivals",
+        "peer": "WIPRO",
+        "car_0_0": 0.08917061807032849,
+        "car_0_5": 0.13592525507445197,
+        "bhar_0_20": 0.10096109460163027,
+        "car_pre_20": -0.09677728227171005
+      },
+      {
+        "case": "satyam",
+        "peer_group": "IT services rivals",
+        "peer": "HCLTECH",
+        "car_0_0": -0.07436038307023392,
+        "car_0_5": 0.0009798224695718588,
+        "bhar_0_20": 0.15568967984345494,
+        "car_pre_20": -0.041171556489809046
+      },
+      {
+        "case": "satyam",
+        "peer_group": "IT services rivals",
+        "peer": "TECHM",
+        "car_0_0": -0.06259482381957245,
+        "car_0_5": -0.024032821798440893,
+        "bhar_0_20": -0.03470798292819344,
+        "car_pre_20": -0.010851642676894813
+      },
+      {
+        "case": "satyam",
+        "peer_group": "IT services rivals",
+        "peer": "MPHASIS",
+        "car_0_0": 0.020883941670981218,
+        "car_0_5": 0.062241641161873695,
+        "bhar_0_20": 0.08022272551903831,
+        "car_pre_20": -0.13009865244563865
+      },
+      {
+        "case": "jet_airways",
+        "peer_group": "Airline rivals",
+        "peer": "INDIGO",
+        "car_0_0": -0.005218339519397949,
+        "car_0_5": -0.03421738345819606,
+        "bhar_0_20": -0.0009056318339104585,
+        "car_pre_20": 0.1482077302819047
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "DHFL",
+        "car_0_0": -0.39713419908123393,
+        "car_0_5": -0.5145710378782459,
+        "bhar_0_20": -0.5322550120331465,
+        "car_pre_20": -0.06327774720314673
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "LICHSGFIN",
+        "car_0_0": -0.017870855261947337,
+        "car_0_5": 0.011623525061493362,
+        "bhar_0_20": 0.05267785369203226,
+        "car_pre_20": -0.14616907018529485
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "PNBHOUSING",
+        "car_0_0": -0.006913194040626201,
+        "car_0_5": -0.210202286219079,
+        "bhar_0_20": -0.26860169474773765,
+        "car_pre_20": -0.07335254629591102
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "BAJFINANCE",
+        "car_0_0": -0.01935720038465496,
+        "car_0_5": -0.028495039437363173,
+        "bhar_0_20": -0.014709574729636743,
+        "car_pre_20": -0.09240769900572408
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "CHOLAFIN",
+        "car_0_0": -0.004448996129519454,
+        "car_0_5": -0.008170622827627233,
+        "bhar_0_20": -0.005549927719042502,
+        "car_pre_20": -0.07267719946083508
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "M&MFIN",
+        "car_0_0": -0.02239625255010593,
+        "car_0_5": 0.03556377854595885,
+        "bhar_0_20": 0.0155520435048917,
+        "car_pre_20": -0.06394065006424955
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "EDELWEISS",
+        "car_0_0": -0.004683446134486145,
+        "car_0_5": -0.13223707482373592,
+        "bhar_0_20": -0.2612297688911127,
+        "car_pre_20": -0.13331646779763462
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "REPCOHOME",
+        "car_0_0": -0.06173450985876729,
+        "car_0_5": -0.05230858922800539,
+        "bhar_0_20": -0.19175673197457654,
+        "car_pre_20": -0.11526234041851437
+      },
+      {
+        "case": "ilfs",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "CANFINHOME",
+        "car_0_0": -0.024064961665402305,
+        "car_0_5": -0.14075101438363966,
+        "bhar_0_20": -0.12859467524156298,
+        "car_pre_20": -0.02030347165048684
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "LICHSGFIN",
+        "car_0_0": 0.015254187846434583,
+        "car_0_5": 0.006152507179166052,
+        "bhar_0_20": 0.05730127576916133,
+        "car_pre_20": 0.11352677778890785
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "PNBHOUSING",
+        "car_0_0": 0.015800485007014215,
+        "car_0_5": 0.005244652943319776,
+        "bhar_0_20": -0.027900293719956726,
+        "car_pre_20": 0.1672958245445513
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "BAJFINANCE",
+        "car_0_0": 0.008458762157017427,
+        "car_0_5": 0.03221759816030678,
+        "bhar_0_20": 0.09869061676153135,
+        "car_pre_20": 0.11936280498232078
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "CHOLAFIN",
+        "car_0_0": -0.003269682731854832,
+        "car_0_5": 0.0012124175301414554,
+        "bhar_0_20": -0.008389223180718108,
+        "car_pre_20": 0.14312586857752044
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "M&MFIN",
+        "car_0_0": -0.0022034448079015037,
+        "car_0_5": -0.00042142596683103235,
+        "bhar_0_20": -0.05378171500107942,
+        "car_pre_20": 0.06908413999164388
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "EDELWEISS",
+        "car_0_0": -0.02088989085498753,
+        "car_0_5": -0.0889484068822256,
+        "bhar_0_20": -0.13608229004533723,
+        "car_pre_20": 0.36957205224120165
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "REPCOHOME",
+        "car_0_0": 0.0038594961076466503,
+        "car_0_5": -0.026055347738587302,
+        "bhar_0_20": -0.027536927716636073,
+        "car_pre_20": -0.075351397020462
+      },
+      {
+        "case": "dhfl",
+        "peer_group": "NBFC / housing-finance lenders",
+        "peer": "CANFINHOME",
+        "car_0_0": 0.012559647616478061,
+        "car_0_5": -0.010023181857568779,
+        "bhar_0_20": 0.03121633807316171,
+        "car_pre_20": 0.08824801214354194
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "ICICIBANK",
+        "car_0_0": -0.00898946327835282,
+        "car_0_5": -0.001222173933825177,
+        "bhar_0_20": -0.11500967909227533,
+        "car_pre_20": 0.012841215220731422
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "AXISBANK",
+        "car_0_0": -0.002884891563999851,
+        "car_0_5": -0.059499476549689345,
+        "bhar_0_20": -0.16992225776650327,
+        "car_pre_20": 0.013744515105715914
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "KOTAKBANK",
+        "car_0_0": 0.014693717801123937,
+        "car_0_5": 0.039468402473150976,
+        "bhar_0_20": -0.02802036799748775,
+        "car_pre_20": 0.05598461179882082
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "INDUSINDBK",
+        "car_0_0": -0.029013206990722632,
+        "car_0_5": -0.24036805003770978,
+        "bhar_0_20": -0.3759173860606226,
+        "car_pre_20": -0.08559714961750556
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "RBLBANK",
+        "car_0_0": -0.11402189877891544,
+        "car_0_5": -0.3381150643015898,
+        "bhar_0_20": -0.3454281212556996,
+        "car_pre_20": 0.031448064648586925
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "HDFCBANK",
+        "car_0_0": 0.01269902727024241,
+        "car_0_5": 0.07662435365790154,
+        "bhar_0_20": 0.02483046389063115,
+        "car_pre_20": -6.922433942094805e-05
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "FEDERALBNK",
+        "car_0_0": -0.010873624391226858,
+        "car_0_5": -0.04664043216326497,
+        "bhar_0_20": -0.256234106961562,
+        "car_pre_20": -0.005569089965790456
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "IDFCFIRSTB",
+        "car_0_0": -0.012748371706577503,
+        "car_0_5": -0.1085119707690152,
+        "bhar_0_20": -0.20284889934646377,
+        "car_pre_20": -0.0030188759817166063
+      },
+      {
+        "case": "yes_bank",
+        "peer_group": "Private-bank rivals",
+        "peer": "BANDHANBNK",
+        "car_0_0": -0.018736334750681597,
+        "car_0_5": -0.1966098562443006,
+        "bhar_0_20": -0.289398399215015,
+        "car_pre_20": 0.07003932571957247
+      },
+      {
+        "case": "adani",
+        "peer_group": "Adani group companies",
+        "peer": "ADANIPORTS",
+        "car_0_0": -0.04891203461814572,
+        "car_0_5": -0.43371237635321425,
+        "bhar_0_20": -0.23435043070179573,
+        "car_pre_20": -0.06909516030930093
+      },
+      {
+        "case": "adani",
+        "peer_group": "Adani group companies",
+        "peer": "ADANIPOWER",
+        "car_0_0": -0.03548757909798836,
+        "car_0_5": -0.2753784786741785,
+        "bhar_0_20": -0.3973359829320877,
+        "car_pre_20": -0.04656049446397701
+      },
+      {
+        "case": "adani",
+        "peer_group": "Adani group companies",
+        "peer": "ADANIGREEN",
+        "car_0_0": -0.01656843745818223,
+        "car_0_5": -0.5335189535893794,
+        "bhar_0_20": -0.6921599564235954,
+        "car_pre_20": 0.01401063135303832
+      },
+      {
+        "case": "adani",
+        "peer_group": "Adani group companies",
+        "peer": "ADANIENSOL",
+        "car_0_0": -0.0742697686113569,
+        "car_0_5": -0.5064669009434457,
+        "bhar_0_20": -0.6878868746422886,
+        "car_pre_20": 0.10381947893303292
+      },
+      {
+        "case": "adani",
+        "peer_group": "Adani group companies",
+        "peer": "ACC",
+        "car_0_0": -0.058571385522791924,
+        "car_0_5": -0.19898858254055843,
+        "bhar_0_20": -0.21969558001041412,
+        "car_pre_20": -0.05722342919060481
+      },
+      {
+        "case": "adani",
+        "peer_group": "Adani group companies",
+        "peer": "AMBUJACEM",
+        "car_0_0": -0.06345110614244417,
+        "car_0_5": -0.2852142404248442,
+        "bhar_0_20": -0.2841061027590366,
+        "car_pre_20": -0.045328917303807253
+      },
+      {
+        "case": "adani",
+        "peer_group": "Sector rivals (cement, power, ports)",
+        "peer": "ULTRACEMCO",
+        "car_0_0": -0.0011484293605687722,
+        "car_0_5": 0.07599839445068272,
+        "bhar_0_20": 0.09460643299340221,
+        "car_pre_20": -0.0399731638770495
+      },
+      {
+        "case": "adani",
+        "peer_group": "Sector rivals (cement, power, ports)",
+        "peer": "TATAPOWER",
+        "car_0_0": -0.007162853817062467,
+        "car_0_5": 0.027771490897714066,
+        "bhar_0_20": 0.018572531375317447,
+        "car_pre_20": -0.007521184170917378
+      },
+      {
+        "case": "adani",
+        "peer_group": "Sector rivals (cement, power, ports)",
+        "peer": "NTPC",
+        "car_0_0": 0.013308514888449117,
+        "car_0_5": 0.02939130219540035,
+        "bhar_0_20": 0.08874341204151959,
+        "car_pre_20": 0.006741200788210423
+      },
+      {
+        "case": "adani",
+        "peer_group": "Sector rivals (cement, power, ports)",
+        "peer": "POWERGRID",
+        "car_0_0": 0.0071968864897971364,
+        "car_0_5": -0.013150287562019044,
+        "bhar_0_20": 0.028605665283576887,
+        "car_pre_20": 0.040081188936205304
+      },
+      {
+        "case": "adani",
+        "peer_group": "Sector rivals (cement, power, ports)",
+        "peer": "GPPL",
+        "car_0_0": -0.007041803756286016,
+        "car_0_5": -0.004795390941279971,
+        "bhar_0_20": 0.15332221578871263,
+        "car_pre_20": 0.03360181916271911
+      },
+      {
+        "case": "pge",
+        "peer_group": "California utilities (same regulator, same fire risk)",
+        "peer": "EIX",
+        "car_0_0": -0.01522641834886218,
+        "car_0_5": -0.1044038816106386,
+        "bhar_0_20": -0.06056411745622592,
+        "car_pre_20": 0.017103609818949594
+      },
+      {
+        "case": "pge",
+        "peer_group": "California utilities (same regulator, same fire risk)",
+        "peer": "SRE",
+        "car_0_0": -0.015667528263779817,
+        "car_0_5": -0.03127911488042863,
+        "bhar_0_20": -0.07268120183442917,
+        "car_pre_20": -0.004847347118727539
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "ZION",
+        "car_0_0": -0.09470500145496234,
+        "car_0_5": -0.2910405302520489,
+        "bhar_0_20": -0.3615330175732461,
+        "car_pre_20": -0.1089169259442058
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "KEY",
+        "car_0_0": -0.05237274918011585,
+        "car_0_5": -0.2569807961543561,
+        "bhar_0_20": -0.3030971992574488,
+        "car_pre_20": -0.09174090806989091
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "CMA",
+        "car_0_0": -0.06082683128637016,
+        "car_0_5": -0.2408451887579333,
+        "bhar_0_20": -0.3673547946301512,
+        "car_pre_20": -0.0913484572523732
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "FITB",
+        "car_0_0": -0.04010230021496579,
+        "car_0_5": -0.19371399651577845,
+        "bhar_0_20": -0.2074541193056516,
+        "car_pre_20": -0.07289044859984753
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "RF",
+        "car_0_0": -0.02248153281204261,
+        "car_0_5": -0.10605619369594252,
+        "bhar_0_20": -0.13956164811102756,
+        "car_pre_20": -0.05043980327558918
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "HBAN",
+        "car_0_0": -0.029213986287551046,
+        "car_0_5": -0.20882033465921043,
+        "bhar_0_20": -0.20526363864625508,
+        "car_pre_20": -0.03333103052650123
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "TFC",
+        "car_0_0": -0.029858083228302672,
+        "car_0_5": -0.23048025932572178,
+        "bhar_0_20": -0.24313779206595076,
+        "car_pre_20": -0.08057299141497523
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "CFG",
+        "car_0_0": -0.041924782637024746,
+        "car_0_5": -0.11158471781005297,
+        "bhar_0_20": -0.2277461031362249,
+        "car_pre_20": -0.10819685485215905
+      },
+      {
+        "case": "svb",
+        "peer_group": "Regional-bank peers",
+        "peer": "MTB",
+        "car_0_0": -0.028750288743924417,
+        "car_0_5": -0.059954445565821614,
+        "bhar_0_20": -0.15362652854423242,
+        "car_pre_20": -0.0802058854462663
+      }
+    ]
+  }
+}
