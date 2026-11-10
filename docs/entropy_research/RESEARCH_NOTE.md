@@ -1,8 +1,8 @@
 # Entropy, Replaceability and the "Death Test": Research Note
 
-**Started:** 9 November 2026 · **Author:** Mrigay Pathak · **Status:** pilot + death test v2 + 8 case studies done; paper question decided (§6); drafting next
-**Code:** `scripts/entropy_research.py` · **Outputs:** `results/entropy_research/`
-**Next session prompt:** `docs/entropy_research/NEXT_SESSION_PROMPT.md`
+**Started:** 9 November 2026 · **Author:** Mrigay Pathak · **Status:** pilot + death test v2 + 8 case studies done; paper question decided (§6) and red-teamed (§4c); literature checked (§5); out-of-sample test pre-registered, not yet run
+**Code:** `scripts/entropy_research.py`, `scripts/death_test.py` · **Outputs:** `results/entropy_research/`, `results/death_test/`
+**Pre-registration:** `docs/entropy_research/PREREGISTRATION.md` · **Next session prompt:** `docs/entropy_research/NEXT_SESSION_PROMPT.md`
 
 ---
 
@@ -205,7 +205,7 @@ design of Barrot & Sauvagnat (2016).
 | Concentration emerges on its own | **Supported** | Effective N falls 17–40% in 5 years with no trading (Test 1) |
 | Low entropy = fragile market | **Not supported as stated** | Low co-movement entropy is a symptom of crises, not a warning. Calm periods hide the risk (Test 2) |
 | Market share ≠ importance | **Supported, with a correction** | Share matters for the day-0 hit, not for lasting damage. Industry identity explains ~10× more (§4b). Satyam (big, absorbed) vs IL&FS (spread) |
-| Importance = shared dependency | **New hypothesis, consistent with all 8 cases** | Not yet tested out of sample; that is the next step (§4b) |
+| Importance = shared dependency | **Hypothesis, consistent with all 8 cases; not new for banks** | Not yet tested out of sample. Rules fixed in `PREREGISTRATION.md`; for banks the idea goes back to Aharony & Swary 1983 (§5) |
 | Some firms are replaceable, others structurally important | **Measurable** | Peer reactions differ sharply by sector (Financials vs Industrials) (Test 3) |
 
 ## 4b. Death test v2 and eight case studies (9 Nov, evening)
@@ -289,35 +289,173 @@ This sharpens your thesis:
 - The fix: write a selection rule and a classification rule *first*, then test a fresh
   set of collapses. This is the next session's main job.
 
+## 4c. Red-team pass (10 Nov): can the paper's question survive a finance professor?
+
+Before the out-of-sample test, the question itself was attacked once. **Verdict: no
+objection is fatal, so the question in §6 stays as decided.** Each objection does force a
+change in wording or in the design of the test.
+
+### The three strongest objections
+
+**1. "You are measuring a common shock, not the firm's importance." (identification)**
+
+- When rivals fall after a collapse, two different things could be happening:
+  - the collapse *damaged* them (contagion);
+  - the collapse *revealed* a weakness they already shared (information).
+- Price data cannot separate the two. Lang & Stulz (1992) said so, and Helwege & Zhang
+  (2016) built a whole paper on the split.
+- Worse, "shared dependency" can become circular. If SVB fails because of something every
+  regional bank has, then "banks that have it fall" is close to true by definition.
+- **Fatal?** No. The question (do rivals gain or lose, and does share explain which?) is
+  descriptive and can be answered. What cannot be defended is the causal sentence "a
+  firm's importance comes from what others depend on *through it*".
+- **What changes:**
+  - The claim becomes a *prediction* claim: the kind of link rivals have to the failed
+    firm predicts the sign of their return; market share does not.
+  - The test drops collapses whose trigger hit the whole industry at once (a new law, a
+    pandemic). Only firm-specific triggers count.
+  - The cleanest evidence is a contrast inside one event: the same collapse, group
+    affiliates against same-industry rivals.
+
+**2. "'Shared dependency' is just another word for 'bank'." (confound)**
+
+- Of the six peer groups read as "shared dependency" in §4b, four are lenders (IL&FS,
+  DHFL, Yes Bank, SVB). All three read as "replaceable" (Satyam's rivals, Jet's rival,
+  Adani's sector rivals) are non-financial.
+- Bank contagion has been documented for forty years: Aharony & Swary (1983), Iyer &
+  Peydró (2011), Choi, Goldsmith-Pinkham & Yorulmazer (2023) for SVB.
+- If the label only works because it marks financial firms, the paper adds nothing to
+  "banks are special".
+- **Fatal?** No, but this objection decides whether the hypothesis is new.
+- **What changes:** the pre-registration splits every result into financial and
+  non-financial, tests the label *inside* each half, and runs a horse race against the
+  dumb rule "financial firm ⇒ rivals fall".
+
+**3. "Your 'market share' is not market share, and nothing in your sample died."
+(measurement and sample)**
+
+- "Share" here is a firm's share of *trading value* among S&P 500 members in its
+  sub-industry. It ignores revenue, private firms, foreign firms and smaller listed firms.
+- Ali, Klasa & Yeung (2009) show that even concentration built from all listed firms'
+  sales has a correlation of only 13% with the Census measure. A noisy variable will
+  always "explain little".
+- Lang & Stulz (1992) found that concentration *does* flip the sign (rivals gain in
+  concentrated, low-debt industries). Contradicting a classic needs a better measure than
+  ours.
+- Part A has 266 crashes at firms that are still in the index today. None was followed by
+  a delisting within 60 days, and 148 of the 266 are in Health Care and IT, which mostly
+  means earnings news. That is not "death".
+- "Industry explains 10× more" compares two noisy variables with twenty dummies, and HHI
+  hardly varies inside a sub-industry.
+- **Fatal?** No, but the claims must shrink.
+- **What changes:**
+  - Say "we find no evidence that share, as we can measure it, explains the 20-day
+    reaction", not "share does not matter".
+  - Use "collapses", not "dies", for Part A.
+  - The out-of-sample test also records each failed firm's industry rank as reported in
+    the news, so share is tested with a second, independent measure.
+  - Phase 3 adds delisted firms.
+
+**Smaller points that also shaped the pre-registration:**
+- The person or model writing the labels already knows how the famous cases ended. The
+  rule is therefore a checklist of facts visible on day 0, and a blind second coder
+  re-labels anonymised descriptions.
+- Collapses cluster in crashes (2008, March 2020), when bank stocks fall more than the
+  market anyway. Results are reported with and without a beta adjustment and with crisis
+  windows removed.
+- With perhaps 30–60 events the test can only detect a large difference (about 10
+  percentage points). A null result will not rule out a small effect.
+
+### Sharpened framing (question unchanged)
+
+> **The sign of the rival reaction is predicted by the kind of link rivals have to the
+> failed firm, not by its market share.** Rivals who only sell the same product are
+> unharmed or gain. Rivals who share its funding market, its legal liability or its owner
+> fall.
+
+- This is a claim about *prediction from facts known on day 0*. It does not say whether
+  the collapse caused the damage or revealed it. For an investor asking "what happens to
+  the others?", the answer is the same either way.
+- Suggested title change, one word: *…When a Firm **Collapses***. Part A contains no
+  deaths.
+
 ## 5. Is this new? Literature map
 
-Check every entry in Phase 1 before citing it in the paper.
+**Checked 10 November 2026** by web search (publisher, RePEc, NBER and SSRN listings).
+Full texts could not be opened in that session, so findings are from abstracts. Entries
+marked † still need a look at the paper itself before they are quoted.
 
-| Area | Key reference | One-line finding | How it relates to your idea |
+### References from the pilot (corrected)
+
+| Area | Reference | Finding, as the abstract states it | How it relates |
 |---|---|---|---|
-| Concentration and returns | Hou & Robinson (2006), *Journal of Finance* | Firms in concentrated industries earn *lower* average returns | Tests your "own low-entropy businesses" paradox directly |
-| Rising concentration | Grullon, Larkin & Michaely (2019), *Review of Finance* | Most US industries have become more concentrated since the late 1990s | The "concentration emerges" claim |
-| Big firms move the economy | Gabaix (2011), *Econometrica*, "Granular Origins" | Shocks to the largest firms explain a large share of GDP swings | A low-entropy economy means firm shocks don't average out |
-| Network position | Acemoglu, Carvalho, Ozdaglar & Tahbaz-Salehi (2012), *Econometrica* | Shocks to central sectors spread through the input–output network | Importance = network position, not size |
-| **Replaceability, measured** | **Barrot & Sauvagnat (2016), *QJE*** | When a natural disaster hits a supplier, its customers suffer **only if the input is specific** (hard to replace) | **Closest existing work to your death test.** Read this first |
-| Firm death and peers | Lang & Stulz (1992), *Journal of Financial Economics* | Bankruptcies usually hurt rivals (contagion), but in concentrated industries rivals can gain (competitive effect) | The template for Test 3 |
-| Systemic importance | Adrian & Brunnermeier (2016), *AER*, "CoVaR" | How much one institution's distress raises system-wide tail risk | The death test for banks, already formalised |
-| Co-movement as fragility | Kritzman, Li, Page & Rigobon (2011), *Journal of Portfolio Management* | Sharp rises in the "absorption ratio" preceded drawdowns | Test 2 should test *changes*, not levels |
-| Credit contagion vs competition | Jorion & Zhang (2007), *Journal of Financial Economics* | Contagion or competitive effect depends on the type of bankruptcy and the industry | Directly on the death test. Check |
-| Supply-chain distress | Hertzel, Li, Officer & Rodgers (2008), *Journal of Financial Economics* | Distress hurts suppliers and customers, not only rivals | The "dependency" channel |
-| Intra-industry information transfer | Foster (1981), *Journal of Accounting and Economics* | One firm's earnings news moves its peers | The "information" confound in Part A |
-| Customer–supplier links and returns | Cohen & Frazzini (2008), *Journal of Finance* | Customers' news reaches suppliers' prices slowly | Dependency is priced with a lag |
-| Product uniqueness from text | Hoberg & Phillips (2016), *Journal of Political Economy* | Measure how similar firms' products are from 10-K text (free data) | A direct measure of "nobody else does this" |
-| Skewed stock returns | Bessembinder (2018), *Journal of Financial Economics* | A small share of stocks created all net wealth; most stocks lag T-bills | Explains Test 1 |
-| Capability complexity | Hidalgo & Hausmann (2009), *PNAS* | Countries differ by how rare and complex their capabilities are | Capability entropy at country level |
-| Efficiency vs resilience | Goerner, Lietaer & Ulanowicz (2009), *Ecological Economics* | Economies, like ecosystems, need a balance between streamlined efficiency and redundancy ("window of vitality") | **Your sustainability bridge.** The same entropy maths, from ecology |
-| Calm before the storm | Brunnermeier & Sannikov (2014), *AER* | Risk builds up when measured volatility is low | Explains the Test 2 result |
+| Concentration and returns | Hou & Robinson (2006), "Industry Concentration and Average Stock Returns", *Journal of Finance* 61(4), 1927–1956 | Firms in more concentrated industries earn lower returns, after controlling for size, book-to-market and momentum | Tests the "own low-entropy businesses" paradox |
+| Rising concentration | Grullon, Larkin & Michaely (2019), "Are US Industries Becoming More Concentrated?", *Review of Finance* 23(4), 697–743 | More than three-quarters of US industries became more concentrated over two decades | The "concentration emerges" claim |
+| Big firms move the economy | Gabaix (2011), "The Granular Origins of Aggregate Fluctuations", *Econometrica* 79(3), 733–772 | Shocks to the 100 largest US firms explain **about one-third** of output swings (was: "a large share") | A low-entropy economy means firm shocks don't average out |
+| Network position | Acemoglu, Carvalho, Ozdaglar & Tahbaz-Salehi (2012), "The Network Origins of Aggregate Fluctuations", *Econometrica* 80(5), 1977–2016 | Sector shocks can add up to aggregate swings when a few sectors supply many others (strong asymmetry in the input–output network) | Importance = network position, not size |
+| **Replaceability, measured** | **Barrot & Sauvagnat (2016), "Input Specificity and the Propagation of Idiosyncratic Shocks in Production Networks", *QJE* 131(3), 1543–1592** | A natural disaster at a supplier causes large losses at its customers, **especially when** the input is specific (was: "only if") † | Closest existing work to the death test |
+| Firm death and peers | Lang & Stulz (1992), "Contagion and Competitive Intra-Industry Effects of Bankruptcy Announcements", *JFE* 32(1), 45–60 | A bankruptcy announcement lowers rivals' value by about 1% on average. The drop is larger in highly indebted industries. Rivals **gain** only in industries that are both highly concentrated **and** low in debt (the old entry left out debt) | The template for the death test, and the classic that says concentration *does* matter |
+| Systemic importance | Adrian & Brunnermeier (2016), "CoVaR", *AER* 106(7), 1705–1741 | Measures how much the system's tail risk rises when one institution is in distress | The death test for banks, already formalised |
+| Co-movement as fragility | Kritzman, Li, Page & Rigobon (2011), "Principal Components as a Measure of Systemic Risk", *Journal of Portfolio Management* 37(4), 112–126 | The "absorption ratio" (share of variance explained by a few factors) is proposed as an early-warning signal; the authors report that its spikes preceded most large US drawdowns † | Test 2 should test *changes*, not levels |
+| Credit contagion vs competition | Jorion & Zhang (2007), "Good and Bad Credit Contagion: Evidence from Credit Default Swaps", *JFE* 84(3), 860–883 | Chapter 11 filings (reorganisation) spread to rivals; Chapter 7 filings (liquidation) help rivals. Measured mainly in CDS spreads (the old entry said "type of bankruptcy and the industry") | The firm that survives in bankruptcy stays a competitor; the one that is liquidated does not |
+| Supply-chain distress | Hertzel, Li, Officer & Rodgers (2008), "Inter-Firm Linkages and the Wealth Effects of Financial Distress along the Supply Chain", *JFE* 87(2), 374–387 | Distress spills beyond rivals to suppliers and customers, mainly when the filing firm's industry is also hurt † | The "dependency" channel outside the industry |
+| Information transfer | Foster (1981), "Intra-Industry Information Transfers Associated with Earnings Releases", *Journal of Accounting and Economics* 3(3), 201–232 | One firm's earnings release moves the prices of other firms in its industry | The "information" confound in Part A |
+| Customer–supplier links | Cohen & Frazzini (2008), "Economic Links and Predictable Returns", *Journal of Finance* 63(4), 1977–2011 | News about a customer reaches its supplier's price slowly | Dependency is priced with a lag |
+| Product uniqueness from text | Hoberg & Phillips (2016), "Text-Based Network Industries and Endogenous Product Differentiation", *JPE* 124(5), 1423–1465 | Builds industries and product similarity from 10-K text (the data are posted free on the authors' site) | A direct measure of "nobody else does this" |
+| Skewed stock returns | Bessembinder (2018), "Do Stocks Outperform Treasury Bills?", *JFE* 129(3), 440–457 | The best 4% of stocks account for all US net wealth creation since 1926; only 42.6% of stocks beat one-month T-bills | Explains Test 1 |
+| Capability complexity | Hidalgo & Hausmann (2009), "The Building Blocks of Economic Complexity", *PNAS* 106(26), 10570–10575 | Measures a country's complexity from how diverse and how rare its exports are; capabilities are inferred, not observed | Capability entropy at country level |
+| Efficiency vs resilience | Goerner, Lietaer & Ulanowicz (2009), "Quantifying Economic Sustainability: Implications for Free-Enterprise Theory, Policy and Practice", *Ecological Economics* 69(1), 76–81 | Sustainable systems need a balance of efficiency and resilience (Ulanowicz's "window of vitality") † | The sustainability bridge |
+| Calm before the storm | Brunnermeier & Sannikov (2014), "A Macroeconomic Model with a Financial Sector", *AER* 104(2), 379–421 | The "volatility paradox": low outside risk invites more borrowing, so the system's own risk stays high | Explains the Test 2 result |
 
-**Where the gap probably is** (to confirm in Phase 1): a **firm-level, market-implied
-replaceability score**, estimated from how peers and customers' prices react to that
-firm's own shocks. It would be compared directly with market share and HHI, tested for
-what it says about risk and returns, and applied to **India**. India has business groups
-and famous natural experiments, and almost no work of this kind.
+### Added in Phase 1: contagion through shared dependencies
+
+| Channel | Reference | Finding | What it means for this paper |
+|---|---|---|---|
+| Bank failures: fraud vs common problems | Aharony & Swary (1983), "Contagion Effects of Bank Failures: Evidence from Capital Markets", *Journal of Business* 56(3), 305–322 | When a large bank fails for reasons specific to it, such as fraud, other banks' shares do **not** fall | **The closest ancestor of our hypothesis**, for banks only, 43 years ago |
+| Counterparty vs information contagion | Helwege & Zhang (2016), "Financial Firm Bankruptcy and Contagion", *Review of Finance* 20(4), 1321–1362 | Both channels exist for US financial firms 1980–2010, and neither is very large. Information spillovers hit rivals in the same place or business line | Our "dependency" label mixes these two; say so |
+| Interbank exposure | Iyer & Peydró (2011), "Interbank Contagion at Work: Evidence from a Natural Experiment", *Review of Financial Studies* 24(4), 1337–1377 | After a large bank failure in India, banks with more exposure to it lost more deposits, more so if they were weak | Dependency measured with real exposures, in India |
+| Depositor runs | Iyer & Puri (2012), "Understanding Bank Runs: The Importance of Depositor-Bank Relationships and Networks", *AER* 102(4), 1414–1445 | In a run on a solvent bank in Gujarat after a fraud at another bank, uninsured and newer depositors ran first | The "same depositors' confidence" channel |
+| SVB | Choi, Goldsmith-Pinkham & Yorulmazer (2023), "Contagion Effects of the Silicon Valley Bank Run", NBER Working Paper 31772 | Banks relying more on uninsured deposits fell more after SVB | Our SVB case, done properly, with a measured dependency |
+| Collateral | Benmelech & Bergman (2011), "Bankruptcy and the Collateral Channel", *Journal of Finance* 66(2), 337–378 | An airline's bankruptcy raises other airlines' borrowing costs, more where their aircraft overlap | A shared dependency in a **non-financial** industry. It cuts against our "airline seats are replaceable" reading of Jet Airways |
+| Accounting news | Gleason, Jenkins & Johnson (2008), "The Contagion Effects of Accounting Restatements", *The Accounting Review* 83(1), 83–110 | A restatement lowers the share prices of other firms in the industry, more for those with aggressive accounting | **A warning for our rule:** fraud news can hurt rivals. Satyam's rivals gaining is not guaranteed to repeat |
+| Business groups: tunnelling | Bertrand, Mehta & Mullainathan (2002), "Ferreting Out Tunneling: An Application to Indian Business Groups", *QJE* 117(1), 121–148 | Owners of Indian groups move profits between group firms | Why a shared owner is a real dependency |
+| Business groups: support | Gopalan, Nanda & Seru (2007), "Affiliated Firms and Financial Support: Evidence from Indian Business Groups", *JFE* 86(3), 759–795 | Groups lend to weak member firms, plausibly to stop a default from spilling onto the rest of the group | Group spillovers in India are an established idea |
+| Group spillovers in prices | Korean chaebol studies (credit downgrades, forced exits, crash risk); found via search, not yet read † | Bad news at one affiliate lowers the value of the others | The "owner" channel has been tested in Korea; I found no Indian equivalent |
+| Measuring concentration | Ali, Klasa & Yeung (2009), "The Limitations of Industry Concentration Measures Constructed with Compustat Data", *Review of Financial Studies* 22(10), 3839–3871 | Concentration built from listed firms only has a correlation of 13% with the Census measure | Our trading-value share is weaker still (objection 3 in §4c) |
+
+**Indian studies of IL&FS, Yes Bank and Adani.** What the searches found:
+- **Adani–Hindenburg:** several event studies, almost all of the Adani companies
+  themselves; one or two add bank or sector indices. None compares group affiliates with
+  same-industry rivals for the same event.
+- **IL&FS:** case studies and policy papers that describe the funding squeeze on NBFCs and
+  housing-finance companies. No study that sorts lenders by funding model and measures
+  abnormal returns.
+- **Yes Bank:** case studies (including the Yale *Journal of Financial Crises*) and press
+  accounts of the falls at IndusInd and RBL. No formal event study of peer banks.
+- These were web searches, not a database search (Scopus, SSRN full text). "I did not find
+  it" is weaker than "it does not exist".
+
+### Is this new? The honest paragraph
+
+Most of the pieces exist. Rivals lose about 1% on average when a firm goes bankrupt, and
+the sign depends on industry structure (Lang & Stulz 1992; Jorion & Zhang 2007). Bank
+failures spread through deposits and exposures, and do not spread when the cause is
+fraud at one bank (Aharony & Swary 1983; Iyer & Peydró 2011; Choi et al. 2023). Distress
+in a business group threatens the other members (Gopalan, Nanda & Seru 2007). So the
+*channels* in this paper are not new, and for banks the core idea is forty years old.
+What this paper can add is narrower:
+
+1. **One rule across industries.** A single checklist, applied on day 0, that says for
+   any collapse whether rivals should fall. It covers funding, liability and ownership
+   together, and it is set against the textbook alternative, market share.
+2. **A test that could fail.** The cases and labels are fixed in git before any rival
+   return is computed. Event studies in this literature are almost never pre-registered.
+3. **India, with a contrast inside each event.** Group affiliates against same-industry
+   rivals of the same failed firm. I found no Indian study that does this.
+
+The paper is therefore a **synthesis and a clean test**, not a new mechanism. That is a
+reasonable claim for a working paper. If the test shows the rule works only for banks,
+the honest headline becomes "Aharony & Swary's result still holds, in India too".
 
 ## 6. The paper: one narrow question
 
@@ -327,11 +465,18 @@ Dies (US and India)*
 **Question (decided 9 Nov):** when a company suffers its own crash, do its rivals gain or
 lose, and does its market share explain which?
 
-**Thesis the evidence currently supports:**
+**Thesis the evidence currently supports** (wording tightened after the red-team pass,
+§4c):
 - Rivals share the first-day hit (more so for big firms), but the damage lasts only when
   they share a **critical dependency** with the failed firm (funding, deposits,
   ownership, liability).
-- Industry identity explains about 10× more than market share or HHI.
+- This is a claim about *prediction*: the kind of link predicts the sign of the rivals'
+  return. It does not separate "the collapse damaged them" from "the collapse revealed a
+  weakness they shared".
+- Market share, as we can measure it (share of trading value among index members), and
+  HHI explain under 1% of the first-day reaction and nothing at 20 days. Stable
+  differences between industries explain about ten times more. The measure is crude, so
+  this is "no evidence that share matters", not proof that it does not.
 
 **Scope decision for a 2–3 day working paper:**
 - **Cut:** the firm-level return-prediction score.
@@ -398,9 +543,18 @@ Where AI equity research is weak today:
 This is the same philosophy as your AI Strategy Builder's 7-gate validation: **AI
 proposes, data verifies.**
 
-Related work: Kim, Muhn & Nikolaev (2024), "Financial Statement Analysis with Large
-Language Models"; Lopez-Lira & Tang (2023), "Can ChatGPT Forecast Stock Price
-Movements?".
+Related work (checked 10 Nov; see §5 for how):
+- Glasserman & Lin (2024), "Assessing Look-Ahead Bias in Stock Return Predictions
+  Generated by GPT Sentiment Analysis", *Journal of Financial Data Science* 6(1), 25–42.
+  The 2023 date above is the preprint. The finding is subtler than "look-ahead inflates
+  backtests": hiding company names removes look-ahead but also removes a "distraction"
+  effect, and the two pull in opposite directions.
+- Kim, Muhn & Nikolaev (2024), "Financial Statement Analysis with Large Language
+  Models", working paper (Chicago Booth). Not published in a journal as far as the
+  search could tell; re-check its status before citing.
+- Lopez-Lira & Tang, "Can ChatGPT Forecast Stock Price Movements? Return Predictability
+  and Large Language Models". A RePEc listing shows it as published in the *Journal of
+  Financial Economics* (vol. 184, 2026); confirm on the journal's site before citing.
 
 ## 8. Who to talk to, and with what angle
 
@@ -416,13 +570,19 @@ separate, how would you do it?"
 
 ## 9. Next steps
 
-See `NEXT_SESSION_PROMPT.md`. In order:
-1. Literature check
-2. Sub-industry death test
-3. India cases
-4. Firm-level score
-5. AI death-test design
-6. Paper skeleton and one-pager
+See `NEXT_SESSION_PROMPT.md` for the phases. Status on 10 November 2026:
+1. ~~Literature check~~ done (§5).
+2. ~~Red-team the question~~ done (§4c).
+3. **Out-of-sample test, Stage 1:** rules committed in `PREREGISTRATION.md`.
+4. **Stage 2 (next):** run the screen on the price panels (the failed firms' own returns
+   only), write up each shock, label it, and commit the case list. This needs
+   `data_processed/`, which exists only on Mrigay's Mac.
+5. **Stage 3:** only then compute rival returns and run the test.
+6. Then robustness of Part A, figures, and the paper.
+
+Also still open from the data ground rules: switch `death_test.py`'s bhavcopy fallback to
+`nse_survivorship_free_adj.parquet` and re-run it. Not done on 10 November because the
+price files were not available in that session.
 
 ## Limitations of the pilot (keep this list honest)
 

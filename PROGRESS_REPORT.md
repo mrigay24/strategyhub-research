@@ -2240,3 +2240,11 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
 - Caveat: the unselected all-14-sleeve composite earns 6.4–6.7%/yr (t 4.2–4.6); the 15% figure includes in-sample sleeve selection.
 - New scripts: `nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_corrected.py`, `india_ca_robustness.py`, `nse_prevclose_probe.py`. New outputs: `results/nse_data_audit/`, `results/nse_longshort_ca/`, `results/composites_ca/`. Old result folders untouched.
 - Not done: rebuilding the universe from the raw panel (fixes the 2011-H2 hole and ISIN-change exits); re-running `death_test.py` / `entropy_research.py` on the corrected panels.
+
+## ENTROPY PAPER — RED-TEAM, LITERATURE CHECK, PRE-REGISTRATION (2026-11-10)
+
+- Session ran in a cloud container without `data_processed/` or `data_raw/`, so nothing that needs prices was run.
+- **Red-team of the paper question:** three objections (common shock vs importance; "shared dependency" = "bank"; trading-value share is not market share and Part A has no deaths). None is fatal. Question unchanged; thesis reworded as a prediction claim; "collapses" suggested in place of "dies". `RESEARCH_NOTE.md` §4c.
+- **Phase 1, literature:** all 20 references checked against abstracts; 14 corrected or hedged; 11 references added on shared-dependency contagion (bank runs, interbank exposure, collateral, business groups, restatements). Honest "Is this new?" paragraph written. `RESEARCH_NOTE.md` §5, KNOWLEDGE_BASE §43.
+- **Phase 2, Stage 1:** `docs/entropy_research/PREREGISTRATION.md` holds the selection rule, the classification checklist, the financial / non-financial split, the predictions and the tests.
+- Not done, needs the price files: the `_adj` loader switch and re-run of `death_test.py`; Stage 2 (screen, shock write-ups, labels, committed before any rival return is computed); Stage 3 (the test).

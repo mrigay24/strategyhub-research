@@ -4830,3 +4830,29 @@ Code: `scripts/nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_co
 - Still open: 459 level breaks across universe-membership holes, sub-40% actions in names Yahoo does not cover, the ISIN-change exit (CHOLAFIN is out of the universe 2019-06-17 → 2019-12-31), and the 2011-H2 hole itself. `death_test.py`, `entropy_research.py` and anything else reading `nse_survivorship_free*.parquet` should switch to the `_adj_nohole` panels (rebuild with `build_nse_adjusted_panels.py`).
 
 *Last updated: 2026-11-09*
+
+### §43 — Red-team of the paper question + literature check (2026-11-10)
+
+Full text: `docs/entropy_research/RESEARCH_NOTE.md` §4c (red-team) and §5 (literature). No code was run; the price files were not available in this session.
+
+**Red-team verdict: no fatal flaw; the paper question is unchanged.** Three objections a finance professor would raise, and what each one changes:
+
+1. **Common shock vs importance.** Rivals falling after a collapse can mean "the collapse damaged them" or "it revealed a weakness they shared". Prices cannot separate the two (Lang & Stulz 1992; Helwege & Zhang 2016). The claim is now a *prediction* claim (the kind of link predicts the sign), and the test drops industry-wide triggers so that "shared dependency" is not true by definition.
+2. **"Shared dependency" may just mean "bank".** Four of the six in-sample shared-dependency groups are lenders, and bank contagion is old news (Aharony & Swary 1983). The test is split into financial and non-financial and run against the dumb rule "financial ⇒ rivals fall".
+3. **Measurement.** "Market share" is share of trading value among S&P 500 members, and Part A has no deaths (0 of 266 crashes were followed by a delisting). Claims shrink to "no evidence that share, as measured, matters"; "collapses", not "dies".
+
+**Literature check (§5 table).** 14 of 20 entries needed a correction or a hedge. The ones that matter:
+- Lang & Stulz (1992): rivals gain only in industries that are highly concentrated **and** low in debt. The old entry left out debt. This is the classic result that concentration *does* matter.
+- Barrot & Sauvagnat (2016): losses are larger "especially when" the input is specific, not "only if".
+- Gabaix (2011): "about one-third", not "a large share".
+- Jorion & Zhang (2007): Chapter 11 spreads, Chapter 7 helps rivals; evidence is mostly CDS spreads.
+- Glasserman & Lin is 2024 (*J. Financial Data Science*), and its finding is subtler than "look-ahead inflates backtests".
+
+**Is it new?** The channels are not. For banks the core idea is Aharony & Swary (1983): a failure caused by fraud at one bank does not spread. Shared-owner spillovers in India are in Gopalan, Nanda & Seru (2007). Two papers cut against our in-sample reading: Benmelech & Bergman (2011, airline bankruptcies raise other airlines' borrowing costs) and Gleason, Jenkins & Johnson (2008, restatements hurt industry peers). What the paper can add: one day-0 rule across industries, a pre-registered test against market share, and the India contrast between group affiliates and same-industry rivals. No Indian study doing that contrast turned up in web searches (a weaker statement than "none exists").
+
+**Methodology lessons:**
+- Attack the question before the expensive test, and write down which claims shrink.
+- A classification rule that a reader could call circular needs an exclusion (here: industry-wide triggers) and a dumb benchmark (here: the financial dummy).
+- A reference table written from memory is wrong in small ways about two-thirds of the time. Check abstracts before citing.
+
+*Last updated: 2026-11-10*
