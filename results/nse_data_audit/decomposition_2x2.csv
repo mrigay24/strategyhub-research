@@ -1,0 +1,9 @@
+panel,sleeve_pnl,benchmark,alpha_pct,t,mean_beta
+top500,raw,raw,10.49,4.7,-0.377
+top500,raw,adj_nohole,12.3,5.49,-0.375
+top500,adj_nohole,raw,14.58,6.06,-0.336
+top500,adj_nohole,adj_nohole,16.07,6.52,-0.327
+top150,raw,raw,13.2,3.13,-1.115
+top150,raw,adj_nohole,18.85,4.35,-1.098
+top150,adj_nohole,raw,19.57,4.07,-0.96
+top150,adj_nohole,adj_nohole,24.74,5.2,-0.964

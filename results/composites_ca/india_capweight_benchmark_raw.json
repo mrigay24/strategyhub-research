@@ -1,0 +1,414 @@
+{
+  "clean top-500": {
+    "equal_weight": {
+      "benchmark": "equal-weight",
+      "benchmark_sharpe": 0.339,
+      "n_sig": 6,
+      "sig_sleeves": [
+        "52_week_high_breakout",
+        "high_quality_roic",
+        "low_volatility_shield",
+        "moving_average_trend",
+        "quality_low_vol",
+        "volatility_targeting"
+      ],
+      "composite_sharpe": 0.85,
+      "composite_alpha": 0.1049,
+      "composite_alpha_tstat": 4.7,
+      "composite_vol": 0.0999,
+      "composite_corr_bench": 0.0,
+      "per_sleeve": [
+        {
+          "sleeve": "large_cap_momentum",
+          "beta": 0.205,
+          "ann_alpha": -0.021,
+          "alpha_tstat": -0.53
+        },
+        {
+          "sleeve": "52_week_high_breakout",
+          "beta": 0.439,
+          "ann_alpha": 0.0698,
+          "alpha_tstat": 2.272
+        },
+        {
+          "sleeve": "deep_value_all_cap",
+          "beta": -0.161,
+          "ann_alpha": -0.0311,
+          "alpha_tstat": -1.268
+        },
+        {
+          "sleeve": "high_quality_roic",
+          "beta": -0.17,
+          "ann_alpha": 0.0766,
+          "alpha_tstat": 2.546
+        },
+        {
+          "sleeve": "low_volatility_shield",
+          "beta": -0.963,
+          "ann_alpha": 0.1506,
+          "alpha_tstat": 4.472
+        },
+        {
+          "sleeve": "dividend_aristocrats",
+          "beta": 0.593,
+          "ann_alpha": -0.0055,
+          "alpha_tstat": -0.33
+        },
+        {
+          "sleeve": "moving_average_trend",
+          "beta": 0.053,
+          "ann_alpha": 0.0473,
+          "alpha_tstat": 2.106
+        },
+        {
+          "sleeve": "rsi_mean_reversion",
+          "beta": 0.096,
+          "ann_alpha": -0.0553,
+          "alpha_tstat": -4.883
+        },
+        {
+          "sleeve": "value_momentum_blend",
+          "beta": 0.825,
+          "ann_alpha": -0.1034,
+          "alpha_tstat": -3.095
+        },
+        {
+          "sleeve": "quality_momentum",
+          "beta": 0.228,
+          "ann_alpha": -0.0252,
+          "alpha_tstat": -0.65
+        },
+        {
+          "sleeve": "quality_low_vol",
+          "beta": -0.657,
+          "ann_alpha": 0.1343,
+          "alpha_tstat": 3.895
+        },
+        {
+          "sleeve": "composite_factor_score",
+          "beta": -0.059,
+          "ann_alpha": 0.0089,
+          "alpha_tstat": 0.248
+        },
+        {
+          "sleeve": "volatility_targeting",
+          "beta": -0.963,
+          "ann_alpha": 0.1506,
+          "alpha_tstat": 4.472
+        },
+        {
+          "sleeve": "earnings_surprise_momentum",
+          "beta": 0.074,
+          "ann_alpha": -0.0338,
+          "alpha_tstat": -3.22
+        }
+      ]
+    },
+    "cap_weight": {
+      "benchmark": "cap-weight Nifty500",
+      "benchmark_sharpe": 0.56,
+      "n_sig": 4,
+      "sig_sleeves": [
+        "high_quality_roic",
+        "low_volatility_shield",
+        "quality_low_vol",
+        "volatility_targeting"
+      ],
+      "composite_sharpe": 0.877,
+      "composite_alpha": 0.1646,
+      "composite_alpha_tstat": 4.352,
+      "composite_vol": 0.1648,
+      "composite_corr_bench": -0.0,
+      "per_sleeve": [
+        {
+          "sleeve": "large_cap_momentum",
+          "beta": 0.266,
+          "ann_alpha": -0.0344,
+          "alpha_tstat": -0.827
+        },
+        {
+          "sleeve": "52_week_high_breakout",
+          "beta": 0.645,
+          "ann_alpha": 0.0356,
+          "alpha_tstat": 1.222
+        },
+        {
+          "sleeve": "deep_value_all_cap",
+          "beta": -0.266,
+          "ann_alpha": -0.0144,
+          "alpha_tstat": -0.596
+        },
+        {
+          "sleeve": "high_quality_roic",
+          "beta": -0.141,
+          "ann_alpha": 0.0761,
+          "alpha_tstat": 2.332
+        },
+        {
+          "sleeve": "low_volatility_shield",
+          "beta": -1.132,
+          "ann_alpha": 0.2085,
+          "alpha_tstat": 4.566
+        },
+        {
+          "sleeve": "dividend_aristocrats",
+          "beta": 0.733,
+          "ann_alpha": -0.0369,
+          "alpha_tstat": -1.569
+        },
+        {
+          "sleeve": "moving_average_trend",
+          "beta": 0.123,
+          "ann_alpha": 0.0386,
+          "alpha_tstat": 1.687
+        },
+        {
+          "sleeve": "rsi_mean_reversion",
+          "beta": 0.118,
+          "ann_alpha": -0.051,
+          "alpha_tstat": -4.885
+        },
+        {
+          "sleeve": "value_momentum_blend",
+          "beta": 0.968,
+          "ann_alpha": -0.1428,
+          "alpha_tstat": -3.213
+        },
+        {
+          "sleeve": "quality_momentum",
+          "beta": 0.317,
+          "ann_alpha": -0.0431,
+          "alpha_tstat": -1.069
+        },
+        {
+          "sleeve": "quality_low_vol",
+          "beta": -0.701,
+          "ann_alpha": 0.1652,
+          "alpha_tstat": 3.724
+        },
+        {
+          "sleeve": "composite_factor_score",
+          "beta": -0.024,
+          "ann_alpha": 0.0053,
+          "alpha_tstat": 0.139
+        },
+        {
+          "sleeve": "volatility_targeting",
+          "beta": -1.132,
+          "ann_alpha": 0.2085,
+          "alpha_tstat": 4.566
+        },
+        {
+          "sleeve": "earnings_surprise_momentum",
+          "beta": 0.078,
+          "ann_alpha": -0.0338,
+          "alpha_tstat": -3.087
+        }
+      ]
+    }
+  },
+  "clean top-150": {
+    "equal_weight": {
+      "benchmark": "equal-weight",
+      "benchmark_sharpe": 0.298,
+      "n_sig": 3,
+      "sig_sleeves": [
+        "low_volatility_shield",
+        "quality_low_vol",
+        "volatility_targeting"
+      ],
+      "composite_sharpe": 0.592,
+      "composite_alpha": 0.132,
+      "composite_alpha_tstat": 3.126,
+      "composite_vol": 0.1892,
+      "composite_corr_bench": -0.0,
+      "per_sleeve": [
+        {
+          "sleeve": "large_cap_momentum",
+          "beta": 0.233,
+          "ann_alpha": -0.0956,
+          "alpha_tstat": -1.86
+        },
+        {
+          "sleeve": "52_week_high_breakout",
+          "beta": 0.32,
+          "ann_alpha": 0.0718,
+          "alpha_tstat": 1.862
+        },
+        {
+          "sleeve": "deep_value_all_cap",
+          "beta": -0.072,
+          "ann_alpha": -0.0126,
+          "alpha_tstat": -0.385
+        },
+        {
+          "sleeve": "high_quality_roic",
+          "beta": -0.089,
+          "ann_alpha": 0.0624,
+          "alpha_tstat": 1.829
+        },
+        {
+          "sleeve": "low_volatility_shield",
+          "beta": -1.227,
+          "ann_alpha": 0.13,
+          "alpha_tstat": 2.831
+        },
+        {
+          "sleeve": "dividend_aristocrats",
+          "beta": 0.524,
+          "ann_alpha": -0.0124,
+          "alpha_tstat": -0.751
+        },
+        {
+          "sleeve": "moving_average_trend",
+          "beta": 0.088,
+          "ann_alpha": 0.0285,
+          "alpha_tstat": 1.013
+        },
+        {
+          "sleeve": "rsi_mean_reversion",
+          "beta": 0.085,
+          "ann_alpha": -0.0405,
+          "alpha_tstat": -3.439
+        },
+        {
+          "sleeve": "value_momentum_blend",
+          "beta": 0.334,
+          "ann_alpha": 0.0041,
+          "alpha_tstat": 0.084
+        },
+        {
+          "sleeve": "quality_momentum",
+          "beta": 0.291,
+          "ann_alpha": -0.057,
+          "alpha_tstat": -1.035
+        },
+        {
+          "sleeve": "quality_low_vol",
+          "beta": -0.891,
+          "ann_alpha": 0.1359,
+          "alpha_tstat": 3.209
+        },
+        {
+          "sleeve": "composite_factor_score",
+          "beta": -0.194,
+          "ann_alpha": -0.0375,
+          "alpha_tstat": -0.758
+        },
+        {
+          "sleeve": "volatility_targeting",
+          "beta": -1.227,
+          "ann_alpha": 0.13,
+          "alpha_tstat": 2.831
+        },
+        {
+          "sleeve": "earnings_surprise_momentum",
+          "beta": 0.052,
+          "ann_alpha": -0.0187,
+          "alpha_tstat": -1.421
+        }
+      ]
+    },
+    "cap_weight": {
+      "benchmark": "cap-weight Nifty500",
+      "benchmark_sharpe": 0.56,
+      "n_sig": 3,
+      "sig_sleeves": [
+        "low_volatility_shield",
+        "quality_low_vol",
+        "volatility_targeting"
+      ],
+      "composite_sharpe": 0.849,
+      "composite_alpha": 0.214,
+      "composite_alpha_tstat": 4.081,
+      "composite_vol": 0.2285,
+      "composite_corr_bench": -0.0,
+      "per_sleeve": [
+        {
+          "sleeve": "large_cap_momentum",
+          "beta": 0.273,
+          "ann_alpha": -0.1128,
+          "alpha_tstat": -2.086
+        },
+        {
+          "sleeve": "52_week_high_breakout",
+          "beta": 0.413,
+          "ann_alpha": 0.053,
+          "alpha_tstat": 1.324
+        },
+        {
+          "sleeve": "deep_value_all_cap",
+          "beta": -0.08,
+          "ann_alpha": -0.0102,
+          "alpha_tstat": -0.296
+        },
+        {
+          "sleeve": "high_quality_roic",
+          "beta": -0.102,
+          "ann_alpha": 0.0658,
+          "alpha_tstat": 1.86
+        },
+        {
+          "sleeve": "low_volatility_shield",
+          "beta": -1.432,
+          "ann_alpha": 0.2211,
+          "alpha_tstat": 3.898
+        },
+        {
+          "sleeve": "dividend_aristocrats",
+          "beta": 0.621,
+          "ann_alpha": -0.0452,
+          "alpha_tstat": -2.109
+        },
+        {
+          "sleeve": "moving_average_trend",
+          "beta": 0.105,
+          "ann_alpha": 0.023,
+          "alpha_tstat": 0.789
+        },
+        {
+          "sleeve": "rsi_mean_reversion",
+          "beta": 0.103,
+          "ann_alpha": -0.0454,
+          "alpha_tstat": -4.004
+        },
+        {
+          "sleeve": "value_momentum_blend",
+          "beta": 0.372,
+          "ann_alpha": -0.0128,
+          "alpha_tstat": -0.245
+        },
+        {
+          "sleeve": "quality_momentum",
+          "beta": 0.356,
+          "ann_alpha": -0.0784,
+          "alpha_tstat": -1.355
+        },
+        {
+          "sleeve": "quality_low_vol",
+          "beta": -1.031,
+          "ann_alpha": 0.1999,
+          "alpha_tstat": 3.967
+        },
+        {
+          "sleeve": "composite_factor_score",
+          "beta": -0.238,
+          "ann_alpha": -0.0257,
+          "alpha_tstat": -0.495
+        },
+        {
+          "sleeve": "volatility_targeting",
+          "beta": -1.432,
+          "ann_alpha": 0.2211,
+          "alpha_tstat": 3.898
+        },
+        {
+          "sleeve": "earnings_surprise_momentum",
+          "beta": 0.055,
+          "ann_alpha": -0.0165,
+          "alpha_tstat": -1.248
+        }
+      ]
+    }
+  }
+}

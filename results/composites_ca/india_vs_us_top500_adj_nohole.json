@@ -1,0 +1,292 @@
+{
+  "us": {
+    "market": "US / S&P",
+    "n_sleeves": 14,
+    "period": [
+      "2000-02-29",
+      "2024-12-31"
+    ],
+    "benchmark_sharpe": 0.7915,
+    "n_significant_positive_alpha": 5,
+    "significant_sleeves": [
+      "moving_average_trend",
+      "composite_factor_score",
+      "52_week_high_breakout",
+      "high_quality_roic",
+      "quality_momentum"
+    ],
+    "per_sleeve": [
+      {
+        "sleeve": "moving_average_trend",
+        "beta": -0.0364,
+        "raw_sharpe": 0.2081,
+        "ann_alpha": 0.0394,
+        "alpha_tstat": 2.8918,
+        "neutral_sharpe": 0.2957
+      },
+      {
+        "sleeve": "composite_factor_score",
+        "beta": 0.0251,
+        "raw_sharpe": 0.4764,
+        "ann_alpha": 0.0972,
+        "alpha_tstat": 2.7527,
+        "neutral_sharpe": 0.4536
+      },
+      {
+        "sleeve": "52_week_high_breakout",
+        "beta": 0.0066,
+        "raw_sharpe": 0.2788,
+        "ann_alpha": 0.0452,
+        "alpha_tstat": 2.3161,
+        "neutral_sharpe": 0.2677
+      },
+      {
+        "sleeve": "high_quality_roic",
+        "beta": -0.1354,
+        "raw_sharpe": -0.0176,
+        "ann_alpha": 0.0395,
+        "alpha_tstat": 2.1103,
+        "neutral_sharpe": 0.2163
+      },
+      {
+        "sleeve": "quality_momentum",
+        "beta": 0.4492,
+        "raw_sharpe": 0.6458,
+        "ann_alpha": 0.0701,
+        "alpha_tstat": 1.994,
+        "neutral_sharpe": 0.2957
+      },
+      {
+        "sleeve": "low_volatility_shield",
+        "beta": -0.9091,
+        "raw_sharpe": -0.5174,
+        "ann_alpha": 0.0497,
+        "alpha_tstat": 1.5914,
+        "neutral_sharpe": 0.1973
+      },
+      {
+        "sleeve": "volatility_targeting",
+        "beta": -0.9091,
+        "raw_sharpe": -0.5174,
+        "ann_alpha": 0.0497,
+        "alpha_tstat": 1.5914,
+        "neutral_sharpe": 0.1973
+      },
+      {
+        "sleeve": "quality_low_vol",
+        "beta": -0.729,
+        "raw_sharpe": -0.5079,
+        "ann_alpha": 0.0425,
+        "alpha_tstat": 1.587,
+        "neutral_sharpe": 0.1743
+      },
+      {
+        "sleeve": "large_cap_momentum",
+        "beta": 0.5635,
+        "raw_sharpe": 0.648,
+        "ann_alpha": 0.0482,
+        "alpha_tstat": 1.539,
+        "neutral_sharpe": 0.1867
+      },
+      {
+        "sleeve": "dividend_aristocrats",
+        "beta": 1.6682,
+        "raw_sharpe": 0.6742,
+        "ann_alpha": -0.0247,
+        "alpha_tstat": -0.8384,
+        "neutral_sharpe": -0.3148
+      },
+      {
+        "sleeve": "rsi_mean_reversion",
+        "beta": 0.0312,
+        "raw_sharpe": -0.4924,
+        "ann_alpha": -0.0109,
+        "alpha_tstat": -0.9967,
+        "neutral_sharpe": -0.5879
+      },
+      {
+        "sleeve": "earnings_surprise_momentum",
+        "beta": -0.0041,
+        "raw_sharpe": -1.5578,
+        "ann_alpha": -0.0074,
+        "alpha_tstat": -1.9805,
+        "neutral_sharpe": -1.5233
+      },
+      {
+        "sleeve": "value_momentum_blend",
+        "beta": 0.7848,
+        "raw_sharpe": 0.4336,
+        "ann_alpha": -0.0346,
+        "alpha_tstat": -2.0833,
+        "neutral_sharpe": -0.6823
+      },
+      {
+        "sleeve": "deep_value_all_cap",
+        "beta": 0.1353,
+        "raw_sharpe": -0.4721,
+        "ann_alpha": -0.0355,
+        "alpha_tstat": -2.4815,
+        "neutral_sharpe": -0.8049
+      }
+    ],
+    "composite": {
+      "neutral_sharpe": 0.3802,
+      "bootstrap_p": 0.0276,
+      "ann_alpha": 0.0583,
+      "alpha_tstat": 2.7899,
+      "ann_vol": 0.1007,
+      "mdd": -0.2528,
+      "corr_to_benchmark": 0.0,
+      "blend_benchmark_w": 0.5491,
+      "blend_composite_w": 0.4509,
+      "blend_sharpe": 0.8781
+    }
+  },
+  "india": {
+    "market": "India top500 adj_nohole",
+    "n_sleeves": 14,
+    "period": [
+      "2005-02-28",
+      "2025-06-30"
+    ],
+    "benchmark_sharpe": 0.5097,
+    "n_significant_positive_alpha": 7,
+    "significant_sleeves": [
+      "low_volatility_shield",
+      "volatility_targeting",
+      "quality_low_vol",
+      "52_week_high_breakout",
+      "high_quality_roic",
+      "moving_average_trend",
+      "composite_factor_score"
+    ],
+    "per_sleeve": [
+      {
+        "sleeve": "low_volatility_shield",
+        "beta": -0.7907,
+        "raw_sharpe": 0.1664,
+        "ann_alpha": 0.2012,
+        "alpha_tstat": 5.6774,
+        "neutral_sharpe": 1.1497
+      },
+      {
+        "sleeve": "volatility_targeting",
+        "beta": -0.7907,
+        "raw_sharpe": 0.1664,
+        "ann_alpha": 0.2012,
+        "alpha_tstat": 5.6774,
+        "neutral_sharpe": 1.1497
+      },
+      {
+        "sleeve": "quality_low_vol",
+        "beta": -0.5431,
+        "raw_sharpe": 0.4196,
+        "ann_alpha": 0.2085,
+        "alpha_tstat": 5.6517,
+        "neutral_sharpe": 1.1488
+      },
+      {
+        "sleeve": "52_week_high_breakout",
+        "beta": 0.3241,
+        "raw_sharpe": 1.017,
+        "ann_alpha": 0.1445,
+        "alpha_tstat": 4.3243,
+        "neutral_sharpe": 0.8378
+      },
+      {
+        "sleeve": "high_quality_roic",
+        "beta": -0.1967,
+        "raw_sharpe": 0.487,
+        "ann_alpha": 0.1251,
+        "alpha_tstat": 4.1138,
+        "neutral_sharpe": 0.7771
+      },
+      {
+        "sleeve": "moving_average_trend",
+        "beta": 0.0355,
+        "raw_sharpe": 0.6356,
+        "ann_alpha": 0.0838,
+        "alpha_tstat": 3.4077,
+        "neutral_sharpe": 0.5833
+      },
+      {
+        "sleeve": "composite_factor_score",
+        "beta": 0.2865,
+        "raw_sharpe": 0.8018,
+        "ann_alpha": 0.117,
+        "alpha_tstat": 3.2322,
+        "neutral_sharpe": 0.6025
+      },
+      {
+        "sleeve": "large_cap_momentum",
+        "beta": 0.5326,
+        "raw_sharpe": 0.5645,
+        "ann_alpha": 0.0603,
+        "alpha_tstat": 1.5705,
+        "neutral_sharpe": 0.236
+      },
+      {
+        "sleeve": "quality_momentum",
+        "beta": 0.4845,
+        "raw_sharpe": 0.5326,
+        "ann_alpha": 0.0578,
+        "alpha_tstat": 1.47,
+        "neutral_sharpe": 0.2161
+      },
+      {
+        "sleeve": "dividend_aristocrats",
+        "beta": 0.5858,
+        "raw_sharpe": 0.3605,
+        "ann_alpha": -0.0116,
+        "alpha_tstat": -0.6768,
+        "neutral_sharpe": -0.4141
+      },
+      {
+        "sleeve": "earnings_surprise_momentum",
+        "beta": 0.0763,
+        "raw_sharpe": -0.6786,
+        "ann_alpha": -0.0275,
+        "alpha_tstat": -2.6785,
+        "neutral_sharpe": -1.0406
+      },
+      {
+        "sleeve": "deep_value_all_cap",
+        "beta": -0.07,
+        "raw_sharpe": -0.851,
+        "ann_alpha": -0.0745,
+        "alpha_tstat": -2.6868,
+        "neutral_sharpe": -0.7663
+      },
+      {
+        "sleeve": "value_momentum_blend",
+        "beta": 0.5622,
+        "raw_sharpe": -0.081,
+        "ann_alpha": -0.0933,
+        "alpha_tstat": -2.9329,
+        "neutral_sharpe": -0.8009
+      },
+      {
+        "sleeve": "rsi_mean_reversion",
+        "beta": 0.0928,
+        "raw_sharpe": -1.1243,
+        "ann_alpha": -0.0596,
+        "alpha_tstat": -5.3285,
+        "neutral_sharpe": -1.6002
+      }
+    ],
+    "composite": {
+      "neutral_sharpe": 1.3015,
+      "bootstrap_p": 0.0,
+      "ann_alpha": 0.1545,
+      "alpha_tstat": 6.6494,
+      "ann_vol": 0.1033,
+      "mdd": -0.2213,
+      "corr_to_benchmark": 0.0,
+      "blend_benchmark_w": 0.1208,
+      "blend_composite_w": 0.8792,
+      "blend_sharpe": 1.3977
+    }
+  },
+  "alpha_ratio_india_over_us": 2.6501,
+  "verdict": "INEFFICIENCY THESIS CONFIRMED \u2014 India market-neutral alpha far exceeds US"
+}
