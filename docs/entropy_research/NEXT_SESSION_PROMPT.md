@@ -15,7 +15,9 @@ Read first, in order:
 3. `results/death_test/` (`run.log`, `cases.csv`, `cases_peers.csv`,
    `us_replaceability_map.csv`, `summary.json`).
 4. `scripts/entropy_research.py` and `results/entropy_research/`: the earlier pilot,
-   which becomes appendix material.
+   which becomes appendix material. For India Test 2 numbers, use the rerun on corrected
+   prices in `results/entropy_research_ca/` (see its README and KNOWLEDGE_BASE §42), not
+   the original India figures.
 
 ## The paper (decided — do not reopen the question)
 
