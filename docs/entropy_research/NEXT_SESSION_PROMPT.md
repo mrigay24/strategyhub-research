@@ -7,6 +7,20 @@ You are continuing a research paper project in `~/Desktop/trading app/strategyhu
 finished **10–15 page working paper** within 2–3 days, good enough to send to professors.
 It is not a journal submission.
 
+**Status on 10 November 2026 (read this before the phases below):**
+- The question was red-teamed and stands (`RESEARCH_NOTE.md` §4c). Use the sharpened
+  wording there: a *prediction* claim, "collapses" not "dies".
+- **Phase 1 is done** (`RESEARCH_NOTE.md` §5).
+- **Phase 2, Stage 1 is done:** `docs/entropy_research/PREREGISTRATION.md` is committed.
+  **It replaces the Phase 2 sketch (a)–(d) below.** Follow its §13 "Order of work".
+  Do not edit that file.
+- Stage 2 (screen, shock write-ups, labels, rival lists) must be committed **before** any
+  rival return is computed. Labelling is judgement work: use the stronger model, or have
+  it review the labels before the Stage 2 commit.
+- The 10 November session ran in a cloud container with no `data_processed/` or
+  `data_raw/`. Everything from here needs those files, so run on the Mac (or attach its
+  folder). The `_adj` loader switch and re-run of `death_test.py` are still open.
+
 Read first, in order:
 1. `docs/entropy_research/RESEARCH_NOTE.md`. Sections §4b and §6 hold the decided paper
    question and the current results. Everything before them is background.

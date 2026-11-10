@@ -4855,4 +4855,12 @@ Full text: `docs/entropy_research/RESEARCH_NOTE.md` §4c (red-team) and §5 (lit
 - A classification rule that a reader could call circular needs an exclusion (here: industry-wide triggers) and a dumb benchmark (here: the financial dummy).
 - A reference table written from memory is wrong in small ways about two-thirds of the time. Check abstracts before citing.
 
+**Pre-registration (Stage 1), `docs/entropy_research/PREREGISTRATION.md`:**
+- Selection is a mechanical screen on the failed firm's own return (20-day buy-and-hold abnormal return ≤ −50%, or an exit after a −30% slide), India top-300 and S&P 500 members, capped at 30 events per country, largest first.
+- Industry-wide triggers are excluded, so "shared dependency" is not true by definition.
+- The label comes from a day-0 checklist: SD-funding (a financial intermediary with a reported funding failure), SD-liability (a legal or regulatory event with rivals in scope), otherwise output-replaceable. Group affiliates are a separate peer set, always SD-owner.
+- Financial vs non-financial: 2×2 table, tests inside each half, a stratified permutation test, and a horse race against the rule "financial ⇒ rivals fall".
+- Verdict wording is fixed in advance and uses the less favourable of market-adjusted and beta-adjusted results.
+- Lesson: when the data are not at hand, pre-register in two commits (rules, then cases) and make the script refuse to compute outcomes until both are committed.
+
 *Last updated: 2026-11-10*
