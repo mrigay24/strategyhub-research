@@ -47,10 +47,14 @@ could be story-fitting.
 - **Data:**
   - US crashes: use the RAW `data_processed/extended_prices.parquet` with the $1 floor.
     The clean file's 20% filter deletes real crashes.
-  - India: `nse_survivorship_free.parquet` is missing some split/bonus adjustments
-    (CHOLAFIN 2019 shows −80%, INFY bonuses show −50%). It also lacks INFY before 2012
-    and SPICEJET before 2020. Use the combined loader in `death_test.py`: adjusted Yahoo
-    closes first, bhavcopy as the fallback. Drop peer moves beyond ±45% and log them.
+  - India: the original `nse_survivorship_free.parquet` is missing split/bonus
+    adjustments (CHOLAFIN 2019 shows −80%, INFY bonuses show −50%). A corrected panel now
+    exists: `data_processed/nse_survivorship_free_adj.parquet` (built by
+    `scripts/build_nse_adjusted_panels.py`; see KNOWLEDGE_BASE §42). First switch the
+    bhavcopy fallback in `death_test.py`'s combined loader to the `_adj` file, re-run
+    `death_test.py`, and note any change in the 8 India/US case numbers. Keep the loader
+    order (adjusted Yahoo closes first, bhavcopy as the fallback) and the ±45% peer filter
+    with logging. INFY is still missing before 2012 and SPICEJET before 2020.
   - Day 0 = the first trading day after the news is public, never "the worst day nearby".
 - **iCloud:** the Desktop is iCloud-synced, and some files are cloud-only stubs that hang
   when read (check with `ls -lO | grep dataless`). Avoid
