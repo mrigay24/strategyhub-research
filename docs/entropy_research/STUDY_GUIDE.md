@@ -225,6 +225,21 @@ free.
 | **Lang & Stulz (1992), "Contagion and Competitive Intra-Industry Effects of Bankruptcy Announcements," *Journal of Financial Economics*** | Abstract, intro, the main results table, conclusion (≈ 45 min) | On average rivals lose (contagion). In **concentrated** industries with **low-debt** rivals, rivals can gain. Their explanation is concentration and leverage; yours is dependency. This is the paper you are extending. |
 | **Barrot & Sauvagnat (2016), "Input Specificity and the Propagation of Idiosyncratic Shocks in Production Networks," *Quarterly Journal of Economics*** | Abstract, intro, how they define "specific" inputs (≈ 45 min) | Natural disasters at suppliers hurt customers **only when the input is hard to replace**. That is your replaceability idea, already proven for supply chains. You extend it to rivals, finance and ownership. |
 
+**Shortcuts if you don't want to read the full papers.** There are no videos of these
+three papers. Instead:
+- Barrot wrote a 5-minute plain-English column on his paper, "How do financial shocks
+  spread between companies?" (World Economic Forum, Feb 2015). Read that instead of the
+  QJE paper.
+- For Lang & Stulz, read only the abstract and introduction (≈ 15 min).
+- Or ask the paper session in Phase 1 to put a half-page plain summary of each paper into
+  RESEARCH_NOTE.md.
+- For the statistics, StatQuest on YouTube (p-values, hypothesis testing) is the best
+  explainer.
+
+**The non-negotiable minimum** is about 30 minutes. You need to be able to say, in your
+own words, what Lang & Stulz and Barrot & Sauvagnat found and how your paper differs. A
+professor will ask.
+
 ### Tier 2 — skim the abstracts and intros (≈ 45 min total)
 
 | Paper | Why it matters to you |
