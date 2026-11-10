@@ -2229,3 +2229,14 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
 - **Phase 1 Completed:** March 2026
 - **Phase 5 (L/S Engine + Portfolio + Walk-Forward) Completed:** April 2026
 - **Phase 5D (Factor Rotation + NSE + Polish) Completed:** April 2026
+
+---
+
+## INDIA CORPORATE-ACTION AUDIT (2026-11-09)
+
+- Question: did unadjusted splits/bonuses in `nse_survivorship_free*.parquet` distort the India market-neutral alpha? Full write-up: `results/nse_data_audit/README.md`; knowledge-base entry KNOWLEDGE_BASE §42.
+- Found 571 corporate actions (528 one-day drops of 40–99% in the top-500 panel). Root cause: NSE's PREVCLOSE on an ex-date is the raw prior close (15/15 sampled), so `back_adjust` never fired. Second defect: a 130-day data hole in 2011-H2 (the ISIN column appears on 2011-06-22 and breaks the ISIN-keyed universe).
+- **Headline survives and gets stronger**: α 10.5% (t 4.70) → 15.2% (t 6.39) for top-500 and 13.2% (3.13) → 19.7% (5.37) for top-150. The artefacts understated alpha (long legs hit by phantom drops; equal-weight benchmark dragged ≈ 4–5%/yr). Against the real cap-weighted Nifty 500 the alpha is roughly unchanged in level and more significant (16.5% t 4.35 → 14.7% t 5.47).
+- Caveat: the unselected all-14-sleeve composite earns 6.4–6.7%/yr (t 4.2–4.6); the 15% figure includes in-sample sleeve selection.
+- New scripts: `nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_corrected.py`, `india_ca_robustness.py`, `nse_prevclose_probe.py`. New outputs: `results/nse_data_audit/`, `results/nse_longshort_ca/`, `results/composites_ca/`. Old result folders untouched.
+- Not done: rebuilding the universe from the raw panel (fixes the 2011-H2 hole and ISIN-change exits); re-running `death_test.py` / `entropy_research.py` on the corrected panels.

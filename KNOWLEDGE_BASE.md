@@ -4795,5 +4795,37 @@ Code: `scripts/death_test.py`. Results: `results/death_test/`. Paper question de
 **Data issues found:**
 - `nse_survivorship_free.parquet` misses some split/bonus adjustments (CHOLAFIN −80% on 2019-06-14; INFY −50% on its bonus days in 2014, 2015 and 2018).
 - It has no INFY before 2012 and no SPICEJET before 2020.
-- `run_nse_longshort.py` clips returns at [−95%, +200%], so these artifacts may have entered the India market-neutral results. **Needs a check.**
+- `run_nse_longshort.py` clips returns at [−95%, +200%], so these artifacts may have entered the India market-neutral results. **Checked 2026-11-09: see §42 (they understated the alpha).**
 - In the US raw data, the ticker "SBNY" from 2024 is a different company (Signature Bank is not in the data).
+
+### §42 — NSE corporate-action audit: did unadjusted splits/bonuses distort the India alpha? (2026-11-09)
+
+Code: `scripts/nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_corrected.py`, `india_ca_robustness.py`, `nse_prevclose_probe.py`. Results and the full write-up: `results/nse_data_audit/README.md`. New outputs: `results/nse_longshort_ca/`, `results/composites_ca/` (old folders untouched).
+
+**What was wrong.**
+- The top-500 panel has 528 one-day drops of 40–99% (172 in top-150); 553 of the 1,024 ±40% moves are booked by the engine as daily returns. 571 are corporate actions (197 at ratio 0.5, 128 at 0.2, 58 at 0.1, plus 2:3, 3:2, 1:2 bonus …), found with a clean-ratio test, persistence, traded-value continuity and Yahoo's split-adjusted closes.
+- **Root cause:** `nse_bhavcopy_pipeline.py` and `build_nse_universe.back_adjust` assumed NSE's PREVCLOSE on an ex-date is the *adjusted* prior close. It is the raw prior close (15 of 15 sampled ex-dates, 2005–2025, old and UDiFF formats), so the detector's ratio is always 1.0 and `back_adjust` does nothing. The self-test passed only because its synthetic input had an adjusted `prevclose` built in. Also: face-value splits get a new ISIN a day or two later, and `MAX_GAP_DAYS = 5` skips events next to a missing day.
+- **Second defect:** NSE files only gain an `ISIN` column on 2011-06-22. The ISIN-keyed point-in-time ranking then drops 2011-06-22 → 2011-12-30 (≈130 days) and halves the 2012 universe (236 names, not ≈480). On 2012-01-02 every stock's "daily" return is a 195-day return. Neutralised in the `_nohole` variants, not repaired.
+
+**Result: the headline survives and gets stronger** (composite of beta-neutral sleeves with in-sample alpha t > 1.96, equal-weight benchmark, same code):
+
+| | published | corporate actions fixed | + 2011 hole neutralised |
+|---|---|---|---|
+| top-500 α / t / Sharpe | 10.5% / 4.70 / 0.85 | 15.2% / 6.39 / 1.25 | 15.5% / 6.65 / 1.30 |
+| top-150 α / t / Sharpe | 13.2% / 3.13 / 0.59 | 19.7% / 5.37 / 1.08 | 18.1% / 5.48 / 1.10 |
+| hedge β of selected sleeves (top-500 / top-150) | −0.38 / −1.12 | −0.26 / −0.55 | −0.24 / −0.44 |
+
+- The artefacts *understated* alpha: phantom −50…−80% days hit the long legs (long-leg CAGR of low-vol/quality sleeves 13–16% → 29–31%) and dragged the equal-weight benchmark from 7.9% to 13.2% CAGR. The zero-every-±40%-move bracket gives 14.2–14.8% (top-500) and 17.6–18.6% (top-150).
+- Decomposition (published 6 sleeves, top-500): sleeve P&L +4.1 pp, benchmark repair +1.8 pp. The benchmark part is mechanical: for a negative-beta sleeve, α = mean(y) − β·mean(x) rises when the benchmark's drift is repaired.
+- Independent check against the real cap-weighted Nifty 500, which the fix cannot touch: re-selected composite 16.5% (t 4.35) → 14.7% (t 5.47) for top-500, 21.4% (4.08) → 19.9% (4.65) for top-150; holding the published sleeves fixed, 16.5% → 18.0% and 21.4% → 25.8%.
+- **Honest caveat that predates this fix:** the headline picks sleeves by in-sample t > 1.96. The *unselected* all-14-sleeve composite is 6.4–6.7%/yr (t 4.2–4.6) corrected, against 2.6% (t 1.95) before. `volatility_targeting` and `low_volatility_shield` give identical L/S streams in the India runs, so the composites hold fewer distinct sleeves than they appear to.
+- Validation: against Yahoo's split-adjusted closes (324 shared names, 1.05 M name-days), days differing by more than 25 pp fall 294 → 55 → 18; return correlation 0.926 → 0.985 → 0.992. The leftovers are mostly Yahoo's own unadjusted events.
+
+**Lessons.**
+- Never trust NSE's PREVCLOSE for adjustment; adjust from the price path and check against an independent adjusted series (Yahoo has its own artefacts too).
+- A self-test whose synthetic data builds in the assumption proves nothing; test on one real known event (CHOLAFIN, INFY).
+- Look at the panel's date index for holes: a single date where hundreds of names share the same large `gap_days` is a data hole, not a market move.
+- A data fix can move the benchmark as well as the strategy. When comparing before/after, hold the sleeve selection fixed and cross-check against a benchmark the fix cannot touch.
+- Still open: 459 level breaks across universe-membership holes, sub-40% actions in names Yahoo does not cover, the ISIN-change exit (CHOLAFIN is out of the universe 2019-06-17 → 2019-12-31), and the 2011-H2 hole itself. `death_test.py`, `entropy_research.py` and anything else reading `nse_survivorship_free*.parquet` should switch to the `_adj_nohole` panels (rebuild with `build_nse_adjusted_panels.py`).
+
+*Last updated: 2026-11-09*
