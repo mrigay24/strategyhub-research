@@ -4826,6 +4826,7 @@ Code: `scripts/nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_co
 - A self-test whose synthetic data builds in the assumption proves nothing; test on one real known event (CHOLAFIN, INFY).
 - Look at the panel's date index for holes: a single date where hundreds of names share the same large `gap_days` is a data hole, not a market move.
 - A data fix can move the benchmark as well as the strategy. When comparing before/after, hold the sleeve selection fixed and cross-check against a benchmark the fix cannot touch.
+- Entropy side (`scripts/entropy_india_rerun.py`, `results/entropy_research_ca/`): the India co-movement-entropy dip in 2012 (0.73 → 0.635 → 0.76) was the 195-day return on 2012-01-02 inflating the first eigenvalue. Corrected, 2012 reads 0.71–0.74, every other year moves ≤ 0.005, the trading-value measures are unchanged, and the null result (India entropy does not predict volatility, drawdown or return beyond trailing volatility) stands. The death-test India cases were never affected: `death_test.py` uses Yahoo-adjusted prices where available.
 - Still open: 459 level breaks across universe-membership holes, sub-40% actions in names Yahoo does not cover, the ISIN-change exit (CHOLAFIN is out of the universe 2019-06-17 → 2019-12-31), and the 2011-H2 hole itself. `death_test.py`, `entropy_research.py` and anything else reading `nse_survivorship_free*.parquet` should switch to the `_adj_nohole` panels (rebuild with `build_nse_adjusted_panels.py`).
 
 *Last updated: 2026-11-09*

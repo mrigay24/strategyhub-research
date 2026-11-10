@@ -1,0 +1,213 @@
+{
+  "label": "India",
+  "months": 208,
+  "start": "2006-01-31",
+  "end": "2024-11-29",
+  "quintiles": [
+    {
+      "eig_q": "Q1 low",
+      "eig_entropy_norm": 0.6507330050829617,
+      "trail_vol_63": 0.32000529910255837,
+      "fwd_vol_63": 0.27077413241553344,
+      "fwd_ret_63": 0.11320645628933164,
+      "fwd_mdd_126": -0.20978037641204064
+    },
+    {
+      "eig_q": "Q2",
+      "eig_entropy_norm": 0.7138618634982559,
+      "trail_vol_63": 0.21253099503183093,
+      "fwd_vol_63": 0.17345995707970185,
+      "fwd_ret_63": 0.059690434742715945,
+      "fwd_mdd_126": -0.14044132358908304
+    },
+    {
+      "eig_q": "Q3",
+      "eig_entropy_norm": 0.7504092442135892,
+      "trail_vol_63": 0.20159312922456835,
+      "fwd_vol_63": 0.20101213426024267,
+      "fwd_ret_63": 0.020942866233024233,
+      "fwd_mdd_126": -0.18124468802688684
+    },
+    {
+      "eig_q": "Q4",
+      "eig_entropy_norm": 0.765784774744113,
+      "trail_vol_63": 0.16498900047139697,
+      "fwd_vol_63": 0.19787565167636748,
+      "fwd_ret_63": 0.019814192419820242,
+      "fwd_mdd_126": -0.1929540604117289
+    },
+    {
+      "eig_q": "Q5 high",
+      "eig_entropy_norm": 0.783841099431176,
+      "trail_vol_63": 0.15122095654785714,
+      "fwd_vol_63": 0.21872014656298835,
+      "fwd_ret_63": 0.0070876290683319675,
+      "fwd_mdd_126": -0.18344529905621174
+    }
+  ],
+  "regressions": {
+    "fwd_vol_63": {
+      "coef_entropy_z": -0.000336,
+      "t_entropy": -0.026103,
+      "coef_trail_vol": 0.391646,
+      "t_trail_vol": 3.390969,
+      "r2_with_entropy": 0.152846,
+      "r2_vol_only": 0.15284,
+      "n": 208
+    },
+    "fwd_mdd_126": {
+      "coef_entropy_z": -0.020734,
+      "t_entropy": -1.080259,
+      "coef_trail_vol": -0.446787,
+      "t_trail_vol": -2.25268,
+      "r2_with_entropy": 0.065917,
+      "r2_vol_only": 0.050723,
+      "n": 208
+    },
+    "fwd_ret_63": {
+      "coef_entropy_z": -0.046256,
+      "t_entropy": -1.549032,
+      "coef_trail_vol": -0.132609,
+      "t_trail_vol": -0.535141,
+      "r2_with_entropy": 0.0478,
+      "r2_vol_only": 0.013725,
+      "n": 208
+    }
+  },
+  "yearly": [
+    {
+      "year": 2006,
+      "eig_entropy_norm": 0.7233720543486996,
+      "dv_entropy_norm": 0.8196409529536105,
+      "dv_effective_n": 50.91692549602925,
+      "n": 278.6666666666667
+    },
+    {
+      "year": 2007,
+      "eig_entropy_norm": 0.7290767499120111,
+      "dv_entropy_norm": 0.8342412318695057,
+      "dv_effective_n": 55.72047021912898,
+      "n": 247.58333333333334
+    },
+    {
+      "year": 2008,
+      "eig_entropy_norm": 0.6451732174424685,
+      "dv_entropy_norm": 0.7929095639340201,
+      "dv_effective_n": 44.06903209638396,
+      "n": 249.33333333333334
+    },
+    {
+      "year": 2009,
+      "eig_entropy_norm": 0.6303198697532564,
+      "dv_entropy_norm": 0.8124845612270769,
+      "dv_effective_n": 55.68679240713999,
+      "n": 268.25
+    },
+    {
+      "year": 2010,
+      "eig_entropy_norm": 0.71967880985328,
+      "dv_entropy_norm": 0.8713654480920359,
+      "dv_effective_n": 79.12501983073786,
+      "n": 279.8333333333333
+    },
+    {
+      "year": 2011,
+      "eig_entropy_norm": 0.7344180275977598,
+      "dv_entropy_norm": 0.8563719787934814,
+      "dv_effective_n": 65.0106373913309,
+      "n": 267.4
+    },
+    {
+      "year": 2012,
+      "eig_entropy_norm": NaN,
+      "dv_entropy_norm": NaN,
+      "dv_effective_n": NaN,
+      "n": NaN
+    },
+    {
+      "year": 2013,
+      "eig_entropy_norm": 0.7539204897846377,
+      "dv_entropy_norm": 0.8623122746393053,
+      "dv_effective_n": 65.1636783797294,
+      "n": 211.25
+    },
+    {
+      "year": 2014,
+      "eig_entropy_norm": 0.7605443297822417,
+      "dv_entropy_norm": 0.8780565600361179,
+      "dv_effective_n": 92.33504761933808,
+      "n": 280.3333333333333
+    },
+    {
+      "year": 2015,
+      "eig_entropy_norm": 0.7636173633979677,
+      "dv_entropy_norm": 0.8941558336320274,
+      "dv_effective_n": 96.2357889246829,
+      "n": 267.8333333333333
+    },
+    {
+      "year": 2016,
+      "eig_entropy_norm": 0.73247180697462,
+      "dv_entropy_norm": 0.887419265709969,
+      "dv_effective_n": 91.5564842557937,
+      "n": 267.9166666666667
+    },
+    {
+      "year": 2017,
+      "eig_entropy_norm": 0.7726653121573431,
+      "dv_entropy_norm": 0.9080087790991639,
+      "dv_effective_n": 107.333807086199,
+      "n": 266.5833333333333
+    },
+    {
+      "year": 2018,
+      "eig_entropy_norm": 0.7758235418196898,
+      "dv_entropy_norm": 0.9039120694129884,
+      "dv_effective_n": 105.03469219768823,
+      "n": 268.1666666666667
+    },
+    {
+      "year": 2019,
+      "eig_entropy_norm": 0.7647605546567412,
+      "dv_entropy_norm": 0.8645784151089099,
+      "dv_effective_n": 78.40465171615193,
+      "n": 275.75
+    },
+    {
+      "year": 2020,
+      "eig_entropy_norm": 0.6836714664836689,
+      "dv_entropy_norm": 0.8439839960495736,
+      "dv_effective_n": 62.54307805814884,
+      "n": 277.0833333333333
+    },
+    {
+      "year": 2021,
+      "eig_entropy_norm": 0.7516217586405424,
+      "dv_entropy_norm": 0.8922490108540138,
+      "dv_effective_n": 94.67866995826837,
+      "n": 277.5833333333333
+    },
+    {
+      "year": 2022,
+      "eig_entropy_norm": 0.7202072763879334,
+      "dv_entropy_norm": 0.9078894107542914,
+      "dv_effective_n": 103.06788220889531,
+      "n": 271.25
+    },
+    {
+      "year": 2023,
+      "eig_entropy_norm": 0.766667951656412,
+      "dv_entropy_norm": 0.9046261521416253,
+      "dv_effective_n": 89.95805096397261,
+      "n": 271.4166666666667
+    },
+    {
+      "year": 2024,
+      "eig_entropy_norm": 0.7672374581722454,
+      "dv_entropy_norm": 0.9298526611748557,
+      "dv_effective_n": 117.67401809060176,
+      "n": 265.54545454545456
+    }
+  ],
+  "corr_eig_vs_dv_entropy": 0.684573
+}
