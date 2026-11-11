@@ -23,9 +23,15 @@ from its market share.
    - On the day of a firm's crash, its closest rivals (same GICS sub-industry) fall
      **−1.2%** (t −7.6). That happens in 71% of events.
    - Bigger firms drag rivals down more (−1.8% vs −0.8%).
-   - Within 20 days the damage has mostly gone (−0.3%, t −0.6).
-   - Market share and HHI together explain **0.8%** of the variation in rivals' reaction.
-     The sub-industry name alone explains **14%**.
+   - Within 20 days the damage is small or zero (−0.3%; the 95% interval runs from −1.2%
+     to +0.6%).
+   - **Market share has no out-of-sample predictive power** for how rivals react. Which
+     sub-industry it is predicts a little: about 6–7% out of sample in the larger
+     samples.
+   - *Corrected on 11 Nov:* the earlier "industry explains 10× more" came from in-sample
+     R², and most of it was over-fitting (see §2.8).
+   - The day-0 hit survives without Financials (−0.9%) and without the 2008–09 and 2020
+     crises.
 2. **Eight famous collapses.**
    - Damage **spread** when rivals shared a critical dependency with the failed firm:
      - the same funding market (IL&FS);
@@ -38,10 +44,30 @@ from its market share.
 **Weakness.** You picked the 8 cases after you knew how they ended. The pre-registered
 test (Phase 2) is what turns a story into evidence.
 
-**One-sentence pitch to a professor:** "Market share barely explains whether a firm's
-collapse hurts its rivals. What predicts lasting damage is whether the rivals shared a
-dependency with it, like funding, depositors or an owner. I test that on India and US
-collapses, with a pre-registered out-of-sample check."
+**One-sentence pitch to a professor:** "Market share doesn't predict whether a firm's
+collapse hurts its rivals. I test a rule you can apply from the news alone: whether the
+rivals shared a dependency with it, like funding, depositors or an owner. The test is
+pre-registered, out of sample, on India and US collapses."
+
+**The value proposition (why anyone should care).** On the day a company collapses,
+investors, lenders and regulators all need the same answer: will the damage spread to
+its rivals, or will the rivals absorb it?
+- The tool they usually reach for, market share or concentration (HHI), turns out to
+  have no predictive power for this.
+- This paper offers a rule you can apply on day 0 from the news alone, and tests it
+  honestly.
+
+Who uses it:
+- **Investors and risk managers:** which rivals to hedge, and which to buy, after a
+  collapse.
+- **Regulators and antitrust:** a firm matters because others *depend on it*, not
+  because it is *big*. "Too connected", not "too big".
+- **Researchers:** one rule that links three literatures usually studied apart (bank
+  contagion, supply chains, business groups), with India evidence and the first
+  pre-registered test of this kind the literature check found.
+
+The strength of that pitch depends on the pre-registered result. Part 6 says what each
+outcome means.
 
 ---
 
@@ -139,8 +165,18 @@ crashes are fear or information, not dependency.
 - R² is the share of the variation in the rivals' reaction that the variables explain.
 - *Adjusted* R² penalises you for adding variables, so a model with 37 sub-industry
   labels doesn't win just by having more knobs.
-- Your result: share + HHI = 0.8%, sector = 8%, sub-industry = 14%. Even after that
-  penalty, *which industry* it is beats *how big the firm is* by roughly 10×.
+- Your in-sample result: share + HHI = 0.8%, sector = 8%, sub-industry = 14%. That
+  looked like "industry beats size by 10×".
+- **The lesson: in-sample R² can fool you.** The paper session ran a fairer test,
+  5-fold cross-validation: fit on 80% of events, predict the other 20%, repeat.
+  - In the baseline 266 events, *neither* variable predicts out of sample. The 14% was
+    mostly over-fitting: 37 labels memorising noise.
+  - With more events (the −10% and −20% thresholds), sub-industry predicts about 6–7%
+    out of sample. Share never predicts anything.
+- The honest claim: **industry identity carries some out-of-sample information; market
+  share carries none.**
+- This correction is good for you. A professor will trust a paper that caught its own
+  over-fitting.
 
 ### 2.9 Persistence (Spearman rank correlation)
 
@@ -358,9 +394,12 @@ you would give the same label from the description alone. If you disagree, say s
 
 **Move 4 — framing (Phase 5):**
 
-> Lead the abstract with two results: market share explains 0.8% of the rival reaction
-> vs 14% for sub-industry, and the out-of-sample hit rate. Keep Zero to One to two
-> sentences in the intro.
+> Lead the abstract with the decision problem and two results: market share has no
+> out-of-sample predictive power for the rival reaction, and the pre-registered hit
+> rate. Keep Zero to One to two sentences in the intro.
+
+(Already sent to the paper session on 11 Nov, together with the value proposition, a
+referee-report pass and number traceability.)
 
 **Moves to resist (scope creep that would kill the 2–3 day timeline):**
 - adding a return-prediction strategy or a firm-level score;
@@ -406,9 +445,12 @@ Red flags:
 
 **1. "How is this different from Lang & Stulz?"**
 They explain rivals' reactions with concentration and leverage, using US bankruptcies
-from the 1970s–80s. You show that share and concentration explain under 1%, propose
-*shared dependency* instead, test it out of sample, and add India, where business groups
-create ownership dependency.
+from the 1970s–80s. You test the failed firm's *own* market share directly, and it has
+no out-of-sample predictive power. You propose *shared dependency* instead, test it with
+a pre-registered out-of-sample design, and add India, where business groups create
+ownership dependency. Aharony & Swary (1983) found something similar for banks: a fraud
+at one bank doesn't spread, a shared weakness does. Your rule extends that idea beyond
+banks.
 
 **2. "Isn't shared dependency just 'banks are contagious'?"**
 Answer with Move 1's result. Either it holds outside financials (Adani: ownership;
