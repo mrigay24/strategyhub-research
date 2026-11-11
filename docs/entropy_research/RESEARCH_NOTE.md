@@ -358,6 +358,67 @@ So this route cannot bring true deaths into Part A, and Part A is unchanged. The
 CRSP/Compustat historical industry codes (WRDS). Lookup:
 `results/death_test/yfinance_delisted_lookup.csv`.
 
+## 4d. The pre-registered out-of-sample test (11 Nov, Phase 2 results)
+
+**Rules:** `PREREGISTRATION.md` §1–§10, committed before any rival return was computed.
+**Full results tables:** `PREREGISTRATION.md` §11. **Code:** `scripts/death_test_oos.py run`
+(as committed) and `scripts/death_test_oos_sensitivity.py` (the one check that is *not*
+pre-registered). **Outputs:** `results/death_test_oos/`.
+
+**What we did.** We took 40 collapses we had never studied, chosen by a fixed rule. For
+each, we labelled the case from the day-0 news alone: "shared dependency" (SD: the rivals
+share the failed firm's funding market, depositors or legal liability) or
+"output-replaceable" (OR: they don't). Only then did we compute how the rivals' stocks did
+over the next 20 trading days. The registered sample is 26 cases; the full population,
+after deviation D1, is 40.
+
+**What came out, in plain words.**
+
+1. **The rule finds very few shared-dependency collapses.** Only 4 of 40 (Citi, Bank of
+   America, Lakshmi Vilas Bank, DHFL 2019). Most firms that collapse on their own news do
+   so for their own reasons: fraud, governance, their own losses.
+2. **Where the rule says "shared dependency", rivals did fall, but mostly in 2008–09.**
+   Rivals of Citi fell 13.5% against the market and rivals of BofA 22.6%. The two Indian
+   SD cases barely moved: −0.6% and −0.4%. Without the 2008–09 and 2020 crisis months, SD
+   rivals did slightly *better* than OR rivals (−0.5% vs −1.7%). So the SD effect we see
+   is the 2008 bank crisis, not a general law.
+3. **H1 cannot be tested.** The rule fixed in advance needs at least 5 SD cases, and both
+   versions have fewer. The verdict is **"too few cases to test"**. For description only:
+   SD minus OR is −14.3 pp (registered) and −5.9 pp (full, permutation *p* 0.15).
+4. **The "replaceable rivals do not lose" half of the rule failed.** Rivals of OR firms
+   fell in 55% of cases, by about 3.5% on average (median −0.8%). The hit rate was 44–46%,
+   no better than a coin. Under the pre-registered T3 reading, the rule works neither
+   inside nor outside finance: **"the rule fails out of sample."** That part of our Part B
+   story (Satyam's rivals gained) does not generalise. Most rivals of a failed firm drift
+   a little lower, rather than gaining.
+5. **Market share does not predict the rival reaction.** In the regression of the outcome
+   on the label and share, share has *t* ≈ −1 in both versions, and the Spearman
+   correlation is −0.1. This agrees with §4c: share carries no out-of-sample information.
+   The share result is the robust finding.
+6. **Day-0 contagion again.** On the collapse day, rivals fell in about 3 of 4 cases
+   whatever the label, as in the large sample.
+7. **Business groups.** All 3 Indian group sets fell (mean −28%), as predicted. With 3
+   sets, though, the best possible *p* is 0.125.
+
+**The one check that is not pre-registered.** Some cases overlap: Regions, Fifth Third and
+Huntington failed within two days of each other and are each other's rivals. Dropping the
+later case of each such pair (Fifth Third, Huntington, DHFL 2019) widens the full-sample
+gap to −10.2 pp (*p* 0.050). This check was chosen after the results were seen and rests on
+3 SD cases. It does not change any verdict, and the paper must not use it as support.
+
+**What this does to the thesis.**
+- **Held up:** market share does not predict how rivals fare (in the large sample and out
+  of sample). Rivals share the first-day hit. Group firms fall together.
+- **Not established:** that a shared dependency, read from the news, predicts which rivals
+  lose. It is promising (the two large bank rescues), but rare, and untestable with 4
+  cases.
+- **Failed:** that rivals of a "replaceable" firm hold up. On average, they drift down a
+  little.
+
+**Honest framing for the paper:** "Market share does not predict how rivals fare. Industry
+identity predicts a little. A dependency rule applied from the news is promising but not
+established out of sample, and its 'replaceable rivals are safe' half failed."
+
 ## 5. Is this new? Literature map (verified 11 Nov 2026)
 
 Every entry below was checked against a journal page or a reliable index (RePEc/IDEAS,

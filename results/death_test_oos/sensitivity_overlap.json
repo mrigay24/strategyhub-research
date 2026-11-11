@@ -1,0 +1,276 @@
+{
+  "rule": "NOT PRE-REGISTERED: drop the later case of each overlapping rival pair (day 0 within 20 trading days).",
+  "dropped": [
+    "IN-DHFL19",
+    "US-FITB",
+    "US-HBAN09"
+  ],
+  "registered": {
+    "T1_T2": {
+      "n": 25,
+      "n_SD": 2,
+      "n_OR": 23,
+      "mean_SD": -0.18034993195002255,
+      "mean_OR": -0.02793756791881394,
+      "hit_rate": 0.52,
+      "hit_rate_SD": 1.0,
+      "hit_rate_OR": 0.4782608695652174
+    },
+    "verdict_H1": "too few cases to test",
+    "T3_financial": {
+      "n": 10,
+      "n_SD": 2,
+      "n_OR": 8,
+      "mean_SD": -0.18034993195002255,
+      "mean_OR": -0.03993249672062531,
+      "hit_rate": 0.6,
+      "hit_rate_SD": 1.0,
+      "hit_rate_OR": 0.5
+    },
+    "T3_nonfinancial": {
+      "n": 15,
+      "n_SD": 0,
+      "n_OR": 15,
+      "mean_SD": NaN,
+      "mean_OR": -0.021540272557847885,
+      "hit_rate": 0.4666666666666667,
+      "hit_rate_SD": NaN,
+      "hit_rate_OR": 0.4666666666666667
+    },
+    "T3_meaning": "rule fails out of sample",
+    "T4_group": {
+      "n": 3,
+      "mean": -0.2795491679064514,
+      "n_neg": 3,
+      "sign_p": 0.125
+    },
+    "T5_share": {
+      "n": 25,
+      "spearman_share": -0.08461538461538462,
+      "spearman_p": 0.6875813739255663,
+      "coef_SD": -0.1441428065631868,
+      "t_SD": -3.24365397897687,
+      "coef_share": -0.10815430468011858,
+      "t_share": -0.6917489430085294
+    },
+    "robustness": {
+      "bhar_mm_0_20": {
+        "n": 25,
+        "n_SD": 2,
+        "n_OR": 23,
+        "mean_SD": -0.1785606303328711,
+        "mean_OR": -0.023957110471987227,
+        "hit_rate": 0.52,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.4782608695652174
+      },
+      "median_bhar_0_20": {
+        "n": 25,
+        "n_SD": 2,
+        "n_OR": 23,
+        "mean_SD": -0.2019841126439038,
+        "mean_OR": -0.03135443408510584,
+        "hit_rate": 0.4,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.34782608695652173
+      },
+      "car_0_0": {
+        "n": 25,
+        "n_SD": 2,
+        "n_OR": 23,
+        "mean_SD": -0.056391241472452544,
+        "mean_OR": -0.014480628592835025,
+        "hit_rate": 0.32,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.2608695652173913
+      },
+      "car_0_5": {
+        "n": 25,
+        "n_SD": 2,
+        "n_OR": 23,
+        "mean_SD": -0.07041374178759689,
+        "mean_OR": -0.00883000542708103,
+        "hit_rate": 0.56,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.5217391304347826
+      },
+      "ex_crises": {
+        "n": 15,
+        "n_SD": 0,
+        "n_OR": 15,
+        "mean_SD": NaN,
+        "mean_OR": -0.01878284248473882,
+        "hit_rate": 0.4666666666666667,
+        "hit_rate_SD": NaN,
+        "hit_rate_OR": 0.4666666666666667
+      },
+      "US_only": {
+        "n": 13,
+        "n_SD": 2,
+        "n_OR": 11,
+        "mean_SD": -0.18034993195002255,
+        "mean_OR": -0.026430538578949014,
+        "hit_rate": 0.6153846153846154,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.5454545454545454
+      },
+      "India_only": {
+        "n": 12,
+        "n_SD": 0,
+        "n_OR": 12,
+        "mean_SD": NaN,
+        "mean_OR": -0.029319011480356802,
+        "hit_rate": 0.4166666666666667,
+        "hit_rate_SD": NaN,
+        "hit_rate_OR": 0.4166666666666667
+      },
+      "industry_shocks": {
+        "n": 4,
+        "mean_bhar_0_20": -0.03448310114136705
+      }
+    }
+  },
+  "full_population": {
+    "T1_T2": {
+      "n": 37,
+      "n_SD": 3,
+      "n_OR": 34,
+      "mean_SD": -0.1222137881050671,
+      "mean_OR": -0.020241116387762197,
+      "hit_rate": 0.5135135135135135,
+      "hit_rate_SD": 1.0,
+      "hit_rate_OR": 0.47058823529411764,
+      "diff": -0.1019726717173049,
+      "perm_p": 0.04995,
+      "fisher_p": 0.17117117117117114
+    },
+    "verdict_H1": "too few cases to test",
+    "T3_financial": {
+      "n": 15,
+      "n_SD": 3,
+      "n_OR": 12,
+      "mean_SD": -0.1222137881050671,
+      "mean_OR": -0.02746762972256908,
+      "hit_rate": 0.6,
+      "hit_rate_SD": 1.0,
+      "hit_rate_OR": 0.5,
+      "diff": -0.09474615838249802,
+      "perm_p": 0.1356,
+      "fisher_p": 0.1846153846153846
+    },
+    "T3_nonfinancial": {
+      "n": 22,
+      "n_SD": 0,
+      "n_OR": 22,
+      "mean_SD": NaN,
+      "mean_OR": -0.016299381841503893,
+      "hit_rate": 0.45454545454545453,
+      "hit_rate_SD": NaN,
+      "hit_rate_OR": 0.45454545454545453
+    },
+    "T3_meaning": "rule fails out of sample",
+    "T4_group": {
+      "n": 3,
+      "mean": -0.2795491679064514,
+      "n_neg": 3,
+      "sign_p": 0.125
+    },
+    "T5_share": {
+      "n": 37,
+      "spearman_share": -0.05926979611190136,
+      "spearman_p": 0.7274973200630807,
+      "coef_SD": -0.10272181284691695,
+      "t_SD": -2.0806773000652883,
+      "coef_share": -0.11720472197252464,
+      "t_share": -0.8667703844127471
+    },
+    "robustness": {
+      "bhar_mm_0_20": {
+        "n": 37,
+        "n_SD": 3,
+        "n_OR": 34,
+        "mean_SD": -0.12146788983841443,
+        "mean_OR": -0.016583779991870877,
+        "hit_rate": 0.5135135135135135,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.47058823529411764,
+        "diff": -0.10488410984654356,
+        "perm_p": 0.0325,
+        "fisher_p": 0.17117117117117114
+      },
+      "median_bhar_0_20": {
+        "n": 37,
+        "n_SD": 3,
+        "n_OR": 34,
+        "mean_SD": -0.1425428697924003,
+        "mean_OR": -0.02258095942626234,
+        "hit_rate": 0.40540540540540543,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.35294117647058826,
+        "diff": -0.11996191036613796,
+        "perm_p": 0.0228,
+        "fisher_p": 0.29601029601029605
+      },
+      "car_0_0": {
+        "n": 37,
+        "n_SD": 3,
+        "n_OR": 34,
+        "mean_SD": -0.048266419443266824,
+        "mean_OR": -0.01555757286010823,
+        "hit_rate": 0.2972972972972973,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.23529411764705882,
+        "diff": -0.03270884658315859,
+        "perm_p": 0.0385,
+        "fisher_p": 0.47027027027027024
+      },
+      "car_0_5": {
+        "n": 37,
+        "n_SD": 3,
+        "n_OR": 34,
+        "mean_SD": -0.05139263956390646,
+        "mean_OR": -0.013222127210675247,
+        "hit_rate": 0.5135135135135135,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.47058823529411764,
+        "diff": -0.03817051235323121,
+        "perm_p": 0.1413,
+        "fisher_p": 0.17117117117117114
+      },
+      "ex_crises": {
+        "n": 26,
+        "n_SD": 1,
+        "n_OR": 25,
+        "mean_SD": -0.0059415004151562,
+        "mean_OR": -0.01701146357142994,
+        "hit_rate": 0.46153846153846156,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.44
+      },
+      "US_only": {
+        "n": 18,
+        "n_SD": 2,
+        "n_OR": 16,
+        "mean_SD": -0.18034993195002255,
+        "mean_OR": -0.023068812358219483,
+        "hit_rate": 0.5555555555555556,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.5
+      },
+      "India_only": {
+        "n": 19,
+        "n_SD": 1,
+        "n_OR": 18,
+        "mean_SD": -0.0059415004151562,
+        "mean_OR": -0.017727608858466835,
+        "hit_rate": 0.47368421052631576,
+        "hit_rate_SD": 1.0,
+        "hit_rate_OR": 0.4444444444444444
+      },
+      "industry_shocks": {
+        "n": 8,
+        "mean_bhar_0_20": -0.09044800533872722
+      }
+    }
+  }
+}

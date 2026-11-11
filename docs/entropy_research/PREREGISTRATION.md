@@ -612,3 +612,146 @@ Labels were not flipped to reach 5.
   the extension.
 - **Verdict:** the §7 verdict rules are applied to both versions. Where the two differ,
   the paper says so.
+
+## 11. Results (run 11 November 2026, after the Part 2 commit)
+
+*The analysis ran once, exactly as committed in c57c331 (`scripts/death_test_oos.py run`),
+with no change to the code, the labels or the rules. Outputs: `results/death_test_oos/`
+(`outcomes.csv`, `outcomes_peers.csv`, `tests.json`, `run.log`). Every number below comes
+from `tests.json` or `outcomes.csv` unless it is marked otherwise.*
+
+**How to read the numbers.** For each case, the outcome is the average rival's 20-day
+abnormal return (BHAR, days 0–20): the rival's compounded return minus the market's. −10%
+means the typical rival did 10 percentage points worse than the market over the month
+after the collapse. A "hit" is a case whose sign matches the prediction: SD rivals below
+zero, OR rivals at or above zero. A coin would score about 50%.
+
+### 11a. The pre-registered tests
+
+| | **Registered sample (primary)** | **Full population (deviation D1)** |
+|---|---|---|
+| Cases (SD / OR) | 26 (2 / 24) | 40 (4 / 36) |
+| Mean outcome, SD cases | **−18.0%** (Citi −13.5%, BofA −22.6%) | **−9.3%** (adds Lakshmi Vilas −0.6%, DHFL 2019 −0.4%) |
+| Mean outcome, OR cases (median) | **−3.7%** (−0.8%) | **−3.4%** (−0.8%) |
+| T1: SD minus OR | −14.3 pp, description only (SD < 3, no *p* computed) | −5.9 pp, permutation *p* = 0.152 (description only) |
+| T2: hit rate, all cases | 13 / 26 = **50%** | 20 / 40 = **50%** |
+| T2: hit rate, SD / OR | 2/2 = 100% / 11/24 = **46%** | 4/4 = 100% / 16/36 = **44%** |
+| T2: Fisher exact *p* | not computed (SD < 3) | 0.116 |
+| **H1 verdict (§7)** | **Too few cases to test** | **Too few cases to test** |
+
+Under the rule fixed in Part 1, H1 cannot be tested: each version has fewer than 5 SD
+cases. The verdict is the same in both versions, so there is no disagreement to report.
+
+**T3 (H2): financial versus non-financial failed firms.**
+
+| | Registered | Full population |
+|---|---|---|
+| Financial: cases (SD / OR) | 11 (2 / 9) | 18 (4 / 14) |
+| Financial: hit rate SD / OR | 100% / 44% | 100% / 43% |
+| Financial: SD − OR, perm *p* | −11.7 pp, not computed (SD < 3) | −3.1 pp, *p* = 0.348 |
+| Non-financial: cases (SD / OR) | 15 (0 / 15) | 22 (0 / 22) |
+| Non-financial: hit rate OR | 7/15 = 47% | 10/22 = 45% |
+| "Works" (§7)? | neither subgroup | neither subgroup |
+| **Pre-registered meaning** | **"Works in neither: the rule fails out of sample."** | **Same** |
+
+*Why "fails".* With fewer than 3 cases in one label, §7 requires the other label's hit
+rate to be at least 2/3. Outside finance there are no SD cases, and OR rivals lost in
+more than half the cases (hit 45–47%). Inside finance, the full population has 4 SD
+cases, but the OR hit rate is 43%, below the 50% that §7 requires. So, by the rule
+written in advance, the classification rule fails out of sample. The failure is in the
+OR half: rivals of "output-replaceable" failed firms did **not** reliably hold up.
+
+**T4 (H3): business-group sets (India).** 3 group sets (RCom's ADAG group, Reliance
+Capital's ADAG group, Indiabulls Housing's group). All 3 fell: −37.5%, −9.9%, −36.5%; mean
+**−28.0%**. Sign test *p* = 0.125, the smallest *p* possible with 3 sets. The direction is
+as predicted, but 3 sets cannot be significant. (The RCom group set holds Reliance Power
+and Reliance Infrastructure, which fell the same day on the same pledge sales.)
+
+**T5 (H4): market share.** Share = the failed firm's 63-day traded value over the total for
+it and its rivals.
+
+| | Registered (26) | Full population (40) |
+|---|---|---|
+| Spearman (share, outcome) | −0.14 (*p* 0.51) | −0.09 (*p* 0.58) |
+| OLS: SD dummy | −13.2 pp (*t* −2.96) | −6.3 pp (*t* −1.42) |
+| OLS: share | −0.15 (*t* −0.99) | −0.14 (*t* −1.01) |
+| Prediction (SD \|*t*\| ≥ 2 and share \|*t*\| < 2) | met (but the SD dummy is 2 cases) | SD part not met; share part met |
+
+A share coefficient of −0.15 means a failed firm with 30% of its group's trading rather
+than 10% goes with rivals about 3 pp worse, and that estimate is not distinguishable from
+zero. **H4 holds in both versions: share does not predict the 20-day rival reaction.**
+
+### 11b. Robustness checks (§8; they do not change the verdict)
+
+| Check | Registered: SD / OR mean (OR hit) | Full: SD / OR mean (OR hit); perm *p* |
+|---|---|---|
+| Market-model (beta-adjusted) BHAR | −17.9% / −3.2% (46%) | −9.7% / −2.8% (44%); *p* 0.097 |
+| Median rival instead of mean | −20.2% / −4.1% (33%) | −10.0% / −3.6% (33%); *p* 0.124 |
+| Day 0 only | −5.6% / −1.8% (25%) | −3.2% / −2.0% (22%); *p* 0.210 |
+| Days 0–5 | −7.0% / −1.0% (50%) | −4.6% / −1.5% (44%); *p* 0.140 |
+| Excluding 2008–09 and Feb–Apr 2020 | no SD left / −1.9% (47%), 15 cases | **−0.5% / −1.7%** (44%), 27 cases |
+| US only | −18.0% / −4.5% (50%), 14 cases | −18.0% / −5.0% (44%), 20 cases |
+| India only | no SD / −2.9% (42%), 12 cases | **−0.5% / −1.8%** (44%), 20 cases |
+| Industry shocks (described only) | 4 cases, mean −3.4% | 8 cases, mean −9.0% |
+
+What the checks say:
+- **The SD–OR gap comes entirely from Citi and Bank of America in the 2008–09 crisis.**
+  Without the crisis months, and in India alone, SD rivals did slightly *better* than OR
+  rivals (−0.5% against −1.7% or −1.8%): the opposite of H1. Lakshmi Vilas and DHFL 2019
+  count as SD "hits" only because −0.6% and −0.4% are below zero. For DHFL 2019 the median
+  rival rose 2.8% and only 4 of 10 rivals fell.
+- **On day 0, rivals fell in about 3 of every 4 OR cases** (OR day-0 hit rate 22–25%).
+  This matches the large-sample result (§4c): rivals share the first-day hit, whatever
+  the label.
+- The beta-adjusted version gives the strongest gap (−6.9 pp, *p* 0.097), still above 0.05.
+
+### 11c. Descriptive facts that are not tests (not pre-registered)
+
+- OR mean, 95% interval (mean ± 1.96 standard errors): registered −3.7% [−8.1%, +0.7%];
+  full −3.4% [−6.8%, +0.0%]. Small and negative, and not clearly different from zero.
+- The 10 OR cases from September 2008 to March 2009 average −8.1% (Regions −29%,
+  Huntington −28%, Fifth Third −25%, Aflac −22%). The other 26 OR cases average −1.6%
+  (median −0.2%, 14 of 26 negative).
+- **Rival return filter (disclosure).** The pre-registered ±45% filter removed 13 rival
+  daily returns (`run.log`). Some were real moves, not corporate actions: Citi +58% on 24
+  November 2008 (rescue day), KeyCorp and Huntington +50–54% on 14 October 2008, Fifth Third
+  +60% and Regions +48% on 6 February 2009, Occidental −52% on 9 March 2020. The 6 February
+  2009 removals fall inside the 20-day windows of Regions, Fifth Third and Huntington, three
+  OR cases, and make their rival outcomes more negative. That works against the OR
+  prediction. The rule was fixed in advance and was not changed.
+
+### 11d. Sensitivity check promised in §9a (NOT pre-registered)
+
+*Written after the pre-registered run. Code: `scripts/death_test_oos_sensitivity.py`;
+output: `results/death_test_oos/sensitivity_overlap.json` and `.log`.*
+
+Rule: if two cases' failed firms are in each other's rival sets and their day 0s are
+within 20 trading days, drop the later case. Pairs found: Regions/Fifth Third (2 days),
+Regions/Huntington (2 days), Fifth Third/Huntington (same day), Indiabulls Housing/DHFL
+2019 (16 days). Dropped: **Fifth Third, Huntington, DHFL 2019**.
+
+| | Registered (25: 2 SD / 23 OR) | Full (37: 3 SD / 34 OR) |
+|---|---|---|
+| SD / OR mean | −18.0% / −2.8% | −12.2% / −2.0% |
+| Hit rate SD / OR | 100% / 48% | 100% / 47% |
+| SD − OR, perm *p* | not computed | −10.2 pp, *p* = 0.050 |
+| Verdict / T3 meaning | too few cases / rule fails | too few cases / rule fails |
+| T5: SD *t* / share *t* | −3.24 / −0.69 | −2.08 / −0.87 |
+
+Removing the double-counted bank cases sharpens the gap, but the verdicts do not move: SD
+stays below 5 cases, and the OR hit rate stays below 50%. The *p* of 0.050 comes from a
+check chosen after the data were seen, rests on 3 SD cases (two of them Citi and BofA),
+and must not be read as support for H1.
+
+### 11e. What the pre-registered test says, in one paragraph
+
+Applied from the news alone, the rule labels **few collapses as shared dependency** (4 of
+40). Those few, Citi and Bank of America above all, did see their rivals fall hard, so the
+direction is as predicted. There are too few of them to test H1, though, and the gap
+disappears outside the 2008–09 crisis. The other half of the rule, that rivals of
+"replaceable" firms do not lose, **failed**: in 55% of those cases rivals fell, by about
+3–4% on average, and the pre-registered T3 reading is "the rule fails out of sample".
+**Market share did not predict rivals' reactions** in either version (|*t*| ≈ 1), which
+agrees with the large-sample result. Group firms in India fell in all 3 cases. The
+evidence supports "share is not the answer" more firmly than it supports "shared
+dependency is the answer".
