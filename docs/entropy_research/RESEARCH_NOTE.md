@@ -243,8 +243,10 @@ peer reaction in 2000–12 and again in 2012–24, then compare the two rankings
    market share matters for the **first reaction**.
 2. Within a month the damage has mostly **faded**. For the typical crash, nothing the
    rivals depended on was destroyed.
-3. *Which industry* it is explains about 10× more than market share or HHI, and that
-   industry pattern repeats across decades.
+3. *Which industry* it is explains about 10× more than market share or HHI *in sample*,
+   and that industry pattern repeats across decades. **Superseded by §4c:** out of sample
+   the gap is much smaller (share never predicts; sub-industry predicts 6–7% only at the
+   −10% and −20% thresholds).
 
 ### Part B: eight famous collapses
 
@@ -337,8 +339,8 @@ Within a sub-industry, the share coefficient on day 0 is negative but not signif
    at a small lasting drag. The paper should say "small or zero", not "fully absorbed".
 4. **Correction to our own headline.** "Industry explains 10× more than share" came from
    *in-sample* R². Out of sample, in the baseline sample, *neither* predicts: the 14% was
-   mostly over-fitting. With more events (−10% or −20% thresholds), sub-industry
-   identity predicts about 6–7% out of sample, and share never predicts anything. The
+   mostly over-fitting. With other crash thresholds (−10%: 830 events; −20%: 117 events),
+   sub-industry identity predicts about 6–7% out of sample, and share never predicts anything. The
    honest claim: **industry identity carries some out-of-sample information about the
    rival reaction; market share carries none.**
 5. **Peer definition matters.** Whole-sector peers dilute the effect (−0.50%) and the
@@ -546,10 +548,14 @@ Dies (US and India)*
 lose, and does its market share explain which?
 
 **Thesis the evidence currently supports:**
-- Rivals share the first-day hit (more so for big firms), but the damage lasts only when
-  they share a **critical dependency** with the failed firm (funding, deposits,
-  ownership, liability).
-- Industry identity explains about 10× more than market share or HHI.
+- *(Updated 11 Nov after the pre-registered test, §4d.)* Rivals share the first-day hit
+  (more so for big firms). Market share does not predict the rival reaction out of
+  sample, and industry identity predicts a little (6–7% CV R² at some thresholds).
+- A shared **critical dependency** (funding, deposits, ownership, liability) is the most
+  promising predictor of lasting damage, but it is **not established**: only 4 of 40
+  out-of-sample collapses qualified, the effect came from the 2008–09 bank rescues, and
+  the "replaceable rivals hold up" half failed.
+- The old "industry explains 10× more than share" claim was in-sample and is withdrawn.
 
 **Scope decision for a 2–3 day working paper:**
 - **Cut:** the firm-level return-prediction score.
