@@ -293,6 +293,71 @@ through the market benchmark, and no reading changed. Part A is unchanged (266 e
 - The fix: write a selection rule and a classification rule *first*, then test a fresh
   set of collapses. This is the next session's main job.
 
+## 4c. Robustness of Part A (11 Nov, Phase 3)
+
+**Code:** `scripts/death_test_robustness.py` · **Output:** `results/death_test/robustness.csv`
+
+Each row is a variant of the US event study. "CI" is a 95% confidence interval from a
+bootstrap that resamples event *dates*, so crashes on the same day are not treated as
+independent. "Clustered t" also groups by date.
+
+| Variant | Events | Day 0 (clustered t) | Days 0–20 [95% CI] | Large − small share, day 0 [CI] |
+|---|---|---|---|---|
+| Baseline (sub-industry, −15%) | 266 | **−1.20%** (−6.8) | −0.29% [−1.24, +0.62] | **−1.00 pp** [−1.79, −0.26] |
+| Crash threshold −10% | 830 | −0.72% (−7.1) | −0.49% [−1.01, +0.01] | −0.62 pp [−0.97, −0.28] |
+| Crash threshold −20% | 117 | −1.65% (−7.4) | −0.87% [−2.48, +0.81] | −1.03 pp [−1.87, −0.13] |
+| Excluding 2008–09 and 2020 | 199 | −1.20% (−9.2) | −0.73% [−1.60, +0.12] | −0.92 pp [−1.57, −0.29] |
+| **Excluding Financials** | 231 | **−0.90%** (−6.4) | −0.50% [−1.32, +0.28] | −0.69 pp [−1.26, −0.11] |
+| Sector-level peers | 513 | −0.50% (−7.1) | −0.22% [−0.67, +0.23] | −0.15 pp [−0.51, +0.18] |
+
+**Does market share explain the reaction? A fairer race.** In-sample adjusted R² flatters
+models with many dummies, so we also report a 5-fold cross-validated R²: fit on 80% of
+events, predict the other 20%, and repeat. Negative means worse than predicting the
+average.
+
+| Day-0 reaction | In-sample adj. R²: share + HHI | In-sample: sub-industry | **Out-of-sample R²: share + HHI** | **Out-of-sample: sub-industry** |
+|---|---|---|---|---|
+| Baseline (266 events) | 0.8% | 14.2% | −0.6% | **−1.3%** |
+| Threshold −10% (830) | 0.1% | 12.2% | −0.5% | **+7.2%** |
+| Threshold −20% (117) | 0.9% | 18.2% | −3.0% | **+6.1%** |
+| Excluding Financials | 0.1% | 6.5% | −1.5% | −2.6% |
+
+Within a sub-industry, the share coefficient on day 0 is negative but not significant
+(baseline clustered t = −1.8).
+
+**What this means, in plain words:**
+1. **The day-0 hit is real and robust.** Rivals fall on the crash day in every variant,
+   including without Financials (−0.90%) and without the 2008–09 and 2020 crises. So
+   day-0 contagion is not just a banking story.
+2. **Large firms do drag rivals more on day 0.** The gap is about 1 percentage point and
+   significant in every sub-industry variant. Market share is not irrelevant; it sizes
+   the *first* reaction.
+3. **The 20-day effect is small, not zero.** The baseline interval [−1.2%, +0.6%] rules
+   out a large lasting loss. The bigger −10% sample gives −0.5% (t ≈ −1.9), which hints
+   at a small lasting drag. The paper should say "small or zero", not "fully absorbed".
+4. **Correction to our own headline.** "Industry explains 10× more than share" came from
+   *in-sample* R². Out of sample, in the baseline sample, *neither* predicts: the 14% was
+   mostly over-fitting. With more events (−10% or −20% thresholds), sub-industry
+   identity predicts about 6–7% out of sample, and share never predicts anything. The
+   honest claim: **industry identity carries some out-of-sample information about the
+   rival reaction; market share carries none.**
+5. **Peer definition matters.** Whole-sector peers dilute the effect (−0.50%) and the
+   share gap disappears. The narrower the peer group, the clearer the spillover.
+
+**Adding delisted firms (yfinance), honestly reported.** 171 tickers that were once in
+the S&P 500 are missing from the current sub-industry file. yfinance returned an industry
+for 131, but:
+- these are mostly firms that left the index and still trade, labelled with Yahoo's
+  industry names rather than GICS;
+- some tickers have been reused by other companies (MMI is now Marcus & Millichap, not
+  Motorola Mobility);
+- the 40 with no data include exactly the true deaths: Sears, RadioShack, Countrywide,
+  Tellabs.
+
+So this route cannot bring true deaths into Part A, and Part A is unchanged. The fix is
+CRSP/Compustat historical industry codes (WRDS). Lookup:
+`results/death_test/yfinance_delisted_lookup.csv`.
+
 ## 5. Is this new? Literature map (verified 11 Nov 2026)
 
 Every entry below was checked against a journal page or a reliable index (RePEc/IDEAS,
