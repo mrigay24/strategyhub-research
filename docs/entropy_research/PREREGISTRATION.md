@@ -258,6 +258,8 @@ zero, and a sign test.
 
 ## 9. Case list (Part 2)
 
+**Status: FINAL.** Mrigay approved all 40 labels (§9b and §9f) in chat on 11 November 2026, before any rival return was computed. Nothing in §1–§9 changes after this commit; any later change goes in §10.
+
 *Written 11 November 2026 from news only, before any rival return was computed. The
 machine-readable list is `docs/entropy_research/oos_cases.csv`. The news checks behind
 the paragraphs are summarised here; facts marked "(memory)" in the checks were not
