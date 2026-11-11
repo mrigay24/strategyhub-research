@@ -1,0 +1,31 @@
+case_id,market,symbol,status,day0,financial,label,channel,rivals,group,note
+IN-MAYTAS,India,MAYTASINFR,case,2008-12-17,N,OR,-,LT JPASSOCIAT PUNJLLOYD IVRCLINFRA HCC NAGARCONST GAMMONIND PATELENG,,Satyam confession (7 Jan 2009) falls inside the 20-day window
+IN-THINKSOFT,India,THINKSOFT,case,2010-02-16,N,OR,-,TCS WIPRO MPHASIS HCLTECH ROLTA TECHM OFSS POLARIS PATNI 3IINFOTECH,,exchange circular date not found; day 0 = first day of the fall the reports tie to it
+IN-COREEDU,India,COREEDUTEC,case,2013-02-25,N,OR,-,EDUCOMP EVERONN APTECHT,,same day as IN-SUDAR and IN-DRDATSONS (pledged-share panic)
+IN-SUDAR,India,SUDAR,case,2013-02-25,N,OR,-,RAYMOND ARVIND ALOKTEXT BOMDYEING SKUMARSYNF,,same day as IN-COREEDU and IN-DRDATSONS
+IN-DRDATSONS,India,DRDATSONS,case,2013-02-25,N,OR,-,CIPLA DRREDDY STAR SUNPHARMA AUROPHARMA LUPIN GLENMARK RANBAXY DIVISLAB AJANTPHARM,,same day as IN-COREEDU and IN-SUDAR
+IN-GITANJALI18,India,GITANJALI,case,2018-02-14,N,OR,-,PCJEWELLER TITAN RAJESHEXPO,,lender named (PNB) but no evidence rivals depend on it
+IN-RCOM,India,RCOM,case,2019-02-04,N,OR,-,BHARTIARTL IDEA TATACOMM,RELCAPITAL RELINFRA RPOWER,
+IN-RELCAP,India,RELCAPITAL,case,2019-06-12,Y,OR,-,SAMMAANCAP BAJFINANCE DHFL BAJAJFINSV SHRIRAMFIN LTF LICHSGFIN M&MFIN MUTHOOTFIN PNBHOUSING,RCOM RELINFRA RPOWER NAM-INDIA,BORDERLINE label (auditor resignation; no funding failure found on day 0); DHFL default (4 Jun) just before
+IN-CGPOWER,India,CGPOWER,case,2019-08-20,N,OR,-,BHEL SIEMENS ABB,,
+IN-IBHFL,India,SAMMAANCAP,case,2019-09-06,Y,OR,-,HDFC DHFL LICHSGFIN PNBHOUSING CANFINHOME AAVAS REPCOHOME,EMBDL DHANI,BORDERLINE label (fraud allegation; no funding failure on day 0)
+IN-FRETAIL,India,FRETAIL,case,2020-03-06,N,OR,-,DMART TRENT ABFRL,,COVID crash inside the window
+IN-OMAXE,India,OMAXE,case,2020-06-29,N,OR,-,DLF GODREJPROP OBEROIRLTY PRESTIGE,,
+US-XRX,US,XRX,case,2000-10-03,N,OR,-,HPQ NTAP WDC,,sub-industry assigned by hand: Technology Hardware Storage & Peripherals
+US-XEL,US,XEL,case,2002-07-26,N,OR,-,AEE CNP CMS ED D DTE NEE NI PCG PNW SRE,,unexplained -23% on 23 Jul before day 0; CNP (a rival) also fell that day
+US-C,US,C,case,2008-11-19,Y,SD,F,BAC JPM PNC TFC USB WFC,,BORDERLINE timing: rescue need explicit by 21 Nov (rescue 23 Nov)
+US-HIG,US,HIG,case,2008-10-30,Y,OR,-,ALL CINF PGR TRV,,
+US-CI,US,CI,case,2008-10-30,Y,OR,-,CVS DVA LH DGX,,current map puts Cigna in Health Care Services
+US-BAC,US,BAC,case,2009-01-16,Y,SD,F,C JPM PNC TFC USB WFC,,
+US-STT,US,STT,case,2009-01-20,Y,OR,-,AMP BEN IVZ NTRS TROW,,BORDERLINE label (capital fear; rivals mostly asset managers); broad bank sell-off same day
+US-RF,US,RF,case,2009-01-20,Y,OR,-,FITB HBAN KEY MTB,,broad bank sell-off same day; FITB (rival) is also a case two days later
+US-FITB,US,FITB,case,2009-01-22,Y,OR,-,HBAN KEY MTB RF,,RF (rival) is also a case two days earlier
+US-AFL,US,AFL,case,2009-01-22,Y,OR,-,GL MET PFG PRU,,
+US-TXT,US,TXT,case,2009-01-29,N,OR,-,BA GE GD LHX LMT NOC RTX,,our data -32% on the day; one report says -8%
+US-EPAM,US,EPAM,case,2022-02-24,N,OR,-,ACN CTSH IT IBM,,sub-industry assigned by hand: IT Consulting & Other Services
+US-GL,US,GL,case,2024-04-11,Y,OR,-,AFL MET PFG PRU,,
+US-SMCI,US,SMCI,case,2024-10-30,N,OR,-,AAPL DELL HPE HPQ NTAP STX WDC,,
+US-PCG01,US,PCG,industry_shock,2001-01-04,N,,,AEE CNP CMS ED D DTE NEE NI PNW SRE XEL,,California energy crisis: regulatory regime covering all California utilities
+US-TLAB01,US,TLAB,industry_shock,2001-06-20,N,,,CIEN CSCO MSI,,telecom carriers cut spending (industry demand collapse)
+US-GNW08,US,GNW,industry_shock,2008-09-29,Y,,,AFL GL MET PFG PRU,,market-wide panic day (House rejects rescue bill)
+IN-GITANJALI13,India,GITANJALI,industry_shock,2013-06-24,N,,,TITAN PCJEWELLER TBZ,,gold import curbs covering all jewellers
