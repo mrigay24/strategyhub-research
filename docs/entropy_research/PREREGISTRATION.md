@@ -512,4 +512,15 @@ prediction (rivals do not lose) and H4 (market share).
 
 ## 10. Deviation log
 
-*Empty at Part 1.*
+**D1 (11 Nov 2026, before any rival return was computed): the size cap is lifted.**
+- **Why:** under the strict rule the registered sample of 26 cases has only 2
+  shared-dependency cases, below the 5 that T1 needs. That count was known from the
+  labels. No rival outcome was known.
+- **Decision (Mrigay, in chat):** news-check every remaining candidate with the same rules.
+  That is the 40 Indian and 29 US candidates the random draw left out that had a real own
+  fall. The 6 unsampled Indian rally names with no fall are dropped by rule 2, as before.
+- **Reporting:** both versions are reported, in the same tables: (i) the registered
+  sample, exactly as in §9, and (ii) the full population, i.e. the registered sample plus
+  the extension.
+- **Verdict:** the §7 verdict rules are applied to both versions. Where the two differ,
+  the paper says so.
