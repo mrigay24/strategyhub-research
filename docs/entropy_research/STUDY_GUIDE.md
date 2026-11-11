@@ -1,73 +1,109 @@
-# Study Guide: what to read and know while the paper is being written
+# Study Guide: the death-test paper
 
-This guide is for you, Mrigay. It covers four things:
-- what to read, in what order;
-- the ideas you need to own;
-- what to check while the paper session works;
-- the moves you can suggest to it.
-
-Total reading time is about 3–4 hours. Do Part 1 now, and the rest while the session runs.
+This guide is for you, Mrigay. Part 1 is the finished paper's result and pitch. Parts 2–3
+cover the ideas you need to own and what to read. Part 7 has the questions a professor
+will ask, and Part 8 the steps from here. Parts 4–6 record how the paper was built and
+checked.
 
 ---
 
 ## Part 1 — The paper in 60 seconds (memorise this)
 
+**Status (11 Nov 2026): the paper is finished.** The files are in `docs/entropy_research/`:
+- `PAPER_DRAFT.md` and `.docx`;
+- `ONE_PAGER.md`;
+- `EMAIL_DRAFTS.md` (nothing has been sent);
+- `REFEREE_REPORT.md`.
+
 **Question.** When a company suffers its own crash, do its rivals gain or lose? And does
 the company's market share explain which?
 
-**Claim.** A firm's importance comes from what other firms **depend on through it**, not
-from its market share.
+**What the paper claims (final):**
 
-**Evidence so far.**
-1. **US, 266 company-specific crashes.**
-   - On the day of a firm's crash, its closest rivals (same GICS sub-industry) fall
-     **−1.2%** (t −7.6). That happens in 71% of events.
-   - Bigger firms drag rivals down more (−1.8% vs −0.8%).
-   - Within 20 days the damage is small or zero (−0.3%; the 95% interval runs from −1.2%
-     to +0.6%).
-   - **Market share has no out-of-sample predictive power** for how rivals react. Which
-     sub-industry it is predicts a little: about 6–7% out of sample in the larger
-     samples.
-   - *Corrected on 11 Nov:* the earlier "industry explains 10× more" came from in-sample
-     R², and most of it was over-fitting (see §2.8).
-   - The day-0 hit survives without Financials (−0.9%) and without the 2008–09 and 2020
-     crises.
-2. **Eight famous collapses.**
-   - Damage **spread** when rivals shared a critical dependency with the failed firm:
-     - the same funding market (IL&FS);
-     - the same depositors' confidence (Yes Bank, SVB);
-     - the same owner (Adani group);
-     - the same liability or regulator (PG&E).
-   - Rivals **gained** or were unaffected when what the firm produced could be replaced:
-     Satyam (rivals +12.6%), Jet Airways, and Adani's non-group rivals (+7.7%).
+> Market share is a poor measure of a firm's importance to its rivals. What rivals
+> *share* with a failed firm (funding, depositors, an owner) is a candidate worth a
+> properly powered test, not an established answer.
 
-**Weakness.** You picked the 8 cases after you knew how they ended. The pre-registered
-test (Phase 2) is what turns a story into evidence.
+This is weaker than where you started ("importance = shared dependency"). The
+pre-registered test is why.
 
-**One-sentence pitch to a professor:** "Market share doesn't predict whether a firm's
-collapse hurts its rivals. I test a rule you can apply from the news alone: whether the
-rivals shared a dependency with it, like funding, depositors or an owner. The test is
-pre-registered, out of sample, on India and US collapses."
+**Evidence.**
 
-**The value proposition (why anyone should care).** On the day a company collapses,
-investors, lenders and regulators all need the same answer: will the damage spread to
-its rivals, or will the rivals absorb it?
-- The tool they usually reach for, market share or concentration (HHI), turns out to
-  have no predictive power for this.
-- This paper offers a rule you can apply on day 0 from the news alone, and tests it
-  honestly.
+1. **US, 266 large one-day crashes of S&P 500 firms (2000–2024).**
+   - On the crash day, rivals in the same GICS sub-industry fall **−1.2%** against the
+     market. That is about 1 point more when the crashing firm is in the top third by
+     share.
+   - After 20 days the damage is small or zero: −0.3%, with a 95% interval of −1.2% to
+     +0.6%.
+   - **Market share has no out-of-sample predictive power** for the rivals' reaction.
+     Sub-industry identity does little better: −5% to +7% on day 0, negative at 20 days.
+   - The day-0 hit survives without Financials (−0.9%) and without the crises.
+   - None of these firms was delisted within 60 days. So this part measures how bad news
+     spreads, not deaths.
+2. **Eight famous collapses (chosen after the fact, so they are motivation, not proof).**
+   - Damage spread where rivals shared a dependency: IL&FS, Yes Bank, SVB, the Adani
+     group, PG&E.
+   - Rivals gained where the output was replaceable: Satyam's rivals +12.6%, Adani's
+     outside rivals +7.7%.
+3. **A pre-registered test on 40 new US and Indian collapses.** 26 were registered and 14
+   were added in a disclosed extension. You approved the labels before any return was
+   computed.
+   - **Applied strictly, the rule found only 4 of 40 "shared dependency" cases:**
+     Citigroup and Bank of America (2008–09), Lakshmi Vilas Bank and DHFL (2019).
+     - Most firms collapse for reasons of their own: fraud, governance, auditor
+       resignations, pledged shares.
+   - Those 4 cases' rivals lost **−9.3%** over 20 days, against **−3.4%** for the other 36.
+     - The gap is 5.9 points, with p = 0.15, so not significant.
+     - Almost all of the gap comes from the two US bank rescues.
+     - Within the 2008–09 crisis the label did **not** sort outcomes. The biggest losses
+       were regional banks labelled "replaceable".
+   - **The verdict fixed in advance: "too few cases to test."**
+   - **The "replaceable" half failed its own test.** Those rivals did not gain: mean
+     −3.4%, median −0.8%, down in 20 of 36. Strictly, they "didn't gain"; they didn't
+     clearly lose either, since neither mean is distinguishable from zero.
+   - **Market share again predicted nothing** (t ≈ −1).
+   - **Indian business groups:** all 3 group sets fell (average −28%). With only 3 sets the
+     best possible p is 0.125, so this is consistent with the owner channel, not evidence
+     for it.
+   - **Power was low by design.** The test could detect only gaps of about 14 points.
+     Confirming a 6-point gap would need about **23** shared-dependency cases.
+   - **An AI labeller** given the same rule agreed on 37–38 of 40 labels. Hiding the
+     names did not stop it from recognising the firms, so hindsight can't be ruled out.
 
-Who uses it:
-- **Investors and risk managers:** which rivals to hedge, and which to buy, after a
-  collapse.
-- **Regulators and antitrust:** a firm matters because others *depend on it*, not
-  because it is *big*. "Too connected", not "too big".
-- **Researchers:** one rule that links three literatures usually studied apart (bank
-  contagion, supply chains, business groups), with India evidence and the first
-  pre-registered test of this kind the literature check found.
+**One-sentence pitch to a professor (honest version):** "I tested whether a failed
+firm's market share predicts how its rivals react. In 266 US crashes and a
+pre-registered test on 40 US and Indian collapses, it doesn't. My alternative, shared
+dependency, couldn't be confirmed, because strict rules found only 4 cases. How would you
+get enough cases to test it properly?"
 
-The strength of that pitch depends on the pre-registered result. Part 6 says what each
-outcome means.
+**The value proposition now.** Three things are solid and useful:
+1. **A finding:** market share is not a good guide to how much a failure hurts rivals.
+   - Rivals usually share the first-day fall rather than gain.
+   - Investors shouldn't size a hedge on rivals by the failed firm's share beyond day 1.
+2. **A method:** the literature check found no other pre-registered event study of
+   contagion after failures.
+   - Yours is public (rules, case list, code), and it reports its own failure.
+   - It also caught its own over-fitting, the withdrawn "10×" claim.
+   - That is a credibility signal professors notice.
+3. **A clear next step that needs them:** the dependency rule needs about 20–25 cases.
+   That means a longer sample (CRSP back to 1926 through WRDS) or more emerging markets.
+   This is the natural ask in your emails. You are not asking them to admire a result;
+   you are offering a tested protocol and asking how to scale it.
+
+**Why a negative result is still worth sending:**
+- It is honest.
+- The market-share null is a real finding.
+- It shows you can run research properly: pre-register, report failure, correct
+  yourself.
+
+For a student approaching professors, that last point counts more than a flashy
+result.
+
+**Before sending anything, two fixes:**
+1. **Length.** About 10,900 words, roughly 25 pages, against the 10–15 page target. A
+   professor is more likely to read a shorter version.
+2. **Read `REFEREE_REPORT.md`.** It lists the 8 strongest objections and how each was
+   answered. These are the questions you will get.
 
 ---
 
@@ -439,50 +475,92 @@ Red flags:
 | **Mixed:** direction right but p > 0.05 | "Suggestive out-of-sample support". The main contribution is Part A + the framework + the cases. Still worth sending. |
 | **Fails:** no difference, or the wrong direction | An honest paper: "Market share explains little, industry identity explains more, and the dependency explanation did not survive out of sample." Professors respect this. **Do not relabel to rescue it.** |
 
+**What actually happened (11 Nov).** The main hypothesis got the verdict fixed in
+advance, "too few cases to test" (4 shared-dependency cases of 40). The "replaceable"
+half failed its sign test, and the market-share null held.
+- That is closest to **Fails**, and the paper was written that way: "a careful
+  negative".
+- No label was changed after the results.
+- Moves 1, 3 and 4 were all used. Move 1 (the financial vs non-financial split) gave
+  the pre-registered reading "the rule fails out of sample".
+
 ---
 
 ## Part 7 — Questions a professor will ask (and your answers)
 
 **1. "How is this different from Lang & Stulz?"**
-They explain rivals' reactions with concentration and leverage, using US bankruptcies
-from the 1970s–80s. You test the failed firm's *own* market share directly, and it has
-no out-of-sample predictive power. You propose *shared dependency* instead, test it with
-a pre-registered out-of-sample design, and add India, where business groups create
-ownership dependency. Aharony & Swary (1983) found something similar for banks: a fraud
-at one bank doesn't spread, a shared weakness does. Your rule extends that idea beyond
-banks.
+- They explain rivals' reactions with *industry* concentration and leverage, using US
+  bankruptcies from the 1970s–80s.
+- You test the failed firm's *own* market share directly, out of sample, and it has no
+  predictive power.
+- You also wrote down an alternative rule in advance and tested it on new cases from
+  the US and India.
 
-**2. "Isn't shared dependency just 'banks are contagious'?"**
-Answer with Move 1's result. Either it holds outside financials (Adani: ownership;
-PG&E: liability), or you narrow the claim honestly.
+**2. "So you found nothing?"**
+You found four things:
+1. Market share doesn't predict the spillover, in 266 + 40 cases.
+2. Rivals usually share the first-day fall rather than gain, even when the failed firm's
+   output is easy to replace.
+3. Strict rules find shared-dependency collapses rarely.
+4. Testing the idea properly needs about 20–25 cases.
 
-**3. "How do you measure market share without revenue?"**
-Through a 63-day dollar-volume share. It is a proxy, and it tracks firm size closely.
-The fix is Compustat revenue through WRDS. Ask whether IU has access. This is a good
-question to *ask them*.
+A clean negative with a public protocol is a result.
 
-**4. "Why do rivals fall on day 0 if the damage fades?"**
-Because of fear and information (§2.7). The fade is the point: only dependency causes
-*lasting* damage.
+**3. "Why only 4 shared-dependency cases?"**
+- Most firms collapse for their own reasons: fraud, governance, auditor resignations,
+  pledged shares.
+- A rule applied strictly from day-0 news rarely finds a shared funding failure.
+- More cases need a longer sample (CRSP from 1926) or more emerging markets. Ask them
+  how they would get there.
 
-**5. "Your 8 cases are cherry-picked."**
-Yes, that's why there is a pre-registered out-of-sample test, with a git timestamp as
-proof.
+**4. "Isn't shared dependency just 'banks are contagious'?"**
+In your data, mostly yes:
+- All 4 shared-dependency cases were financial firms.
+- The rule labelled no non-financial collapse as shared dependency.
+- But the day-0 spillover in the large sample is *not* only banks: it survives without
+  Financials (−0.9%).
 
-**6. "What about survivorship bias? Dead firms are the whole point."**
-- The US sub-industry map covers current members, so Phase 3 tries to add delisted firms.
-- The India data is survivorship-free.
-- You found and fixed a split-adjustment problem in it, and the results got *stronger*.
+**5. "Why do rivals fall on day 0 if the damage fades?"**
+- Mostly information and fear (§2.7): the crash tells the market something about the
+  industry.
+- Your hypothesis was that only a shared dependency causes *lasting* damage. The
+  out-of-sample test couldn't confirm it.
+
+**6. "Your 8 cases are cherry-picked."**
+- Yes. That's why you ran a pre-registered test on 40 new cases.
+- It did not confirm the pattern, and the paper says so.
+
+**7. "How do you measure market share without revenue?"**
+- Through each firm's share of 63-day trading value among index members. It is a proxy.
+- A noisy measure pushes its coefficient toward zero. So the right claim is "this
+  measure of share has no predictive power", not "true market share never matters".
+- The fix is Compustat revenue through WRDS. Ask whether IU has access.
+
+**8. "What about survivorship bias? Dead firms are the whole point."**
+- The US peer groups come from today's GICS file, so they are survivors. True deaths
+  need CRSP/Compustat historical codes.
+- The India data is survivorship-free. You found and fixed a split-adjustment problem in
+  it.
+
+**9. "Did an AI do this?"** Answer plainly:
+- You chose the question and the framework.
+- You approved every case label before results existed.
+- You used Claude as a research assistant for code, data work and drafting.
+- The paper says this in its limitations.
+
+Never hide it. Professors respect a clear, honest answer.
 
 ---
 
-## Part 8 — Schedule (2–3 days)
+## Part 8 — From here (paper finished, 11 Nov)
 
-| When | Session does | You do |
+| Step | What | Time |
 |---|---|---|
-| **Day 1** | Phases 1–2 (literature, pre-registration, OOS test) | Send Moves 1–2 immediately. Read Tier 0 + MacKinlay. Do the Move 3 checkpoint. Read the OOS result. |
-| **Day 2** | Phases 3–5 (robustness, figures, draft, one-pager, email drafts) | Read Lang & Stulz + Barrot & Sauvagnat. Skim Tier 2. Read the draft and mark what you can't explain. |
-| **Day 3** | Fixes from your read-through; Phase 6 only if time remains | Rehearse Part 7 out loud. Edit the email drafts in your own voice. Send only when *you* are ready. Nothing is sent automatically. |
+| 1 | Read the paper's abstract, §6.3 (the pre-registered result), §9 (limitations) and §10 (conclusion), plus `REFEREE_REPORT.md` | ≈ 1 h |
+| 2 | Read Lang & Stulz and Barrot & Sauvagnat, or the shortcuts in Part 3 | 30 min – 2 h |
+| 3 | Decide how to trim the paper to about 15 pages. Appendices can carry the detail | your call |
+| 4 | Rewrite `EMAIL_DRAFTS.md` in your own voice. Lead with the market-share finding and end with the ask: how to get 20–25 cases | ≈ 1 h |
+| 5 | Rehearse Part 7 out loud, then send when *you* are ready. Nothing is sent automatically | — |
 
 ---
 
