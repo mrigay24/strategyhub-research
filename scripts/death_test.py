@@ -336,11 +336,13 @@ def main() -> None:
     us = (rets, dv, mask)
 
     log("Loading India (NSE survivorship-free bhavcopy + adjusted Yahoo closes)")
-    rin, dvin = load(DATA / "nse_survivorship_free.parquet", None)
-    # The bhavcopy panel misses some split/bonus adjustments (CHOLAFIN 2019, INFY
-    # bonuses) and lacks INFY before 2012 and SPICEJET before 2020. Prefer the
-    # adjusted Yahoo closes where a stock has them; fall back to bhavcopy for
-    # delisted firms (Satyam, Jet Airways, DHFL ...). Universe/size from bhavcopy.
+    rin, dvin = load(DATA / "nse_survivorship_free_adj.parquet", None)
+    # Fallback = the corporate-action-corrected bhavcopy panel (_adj, built by
+    # build_nse_adjusted_panels.py, KNOWLEDGE_BASE §42; switched 2026-11-11). The
+    # original panel missed split/bonus adjustments (CHOLAFIN 2019, INFY bonuses).
+    # Both lack INFY before 2012 and SPICEJET before 2020. Prefer the adjusted
+    # Yahoo closes where a stock has them; fall back to bhavcopy for delisted
+    # firms (Satyam, Jet Airways, DHFL ...). Universe/size from bhavcopy.
     ry, _ = load(DATA / "nse_prices_clean.parquet", None)
     cols = rin.columns.union(ry.columns)
     rin = ry.reindex(index=rin.index, columns=cols).combine_first(rin.reindex(columns=cols))
