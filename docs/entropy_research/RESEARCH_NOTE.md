@@ -421,6 +421,57 @@ gap to −10.2 pp (*p* 0.050). This check was chosen after the results were seen
 identity predicts a little. A dependency rule applied from the news is promising but not
 established out of sample, and its 'replaceable rivals are safe' half failed."
 
+## 4e. Referee pass and the AI labeller (11 Nov, Phases 5–6)
+
+**Paper:** `PAPER_DRAFT.md` / `.docx` · **Referee report and response:** `REFEREE_REPORT.md` ·
+**Diagnostics (not pre-registered):** `scripts/death_test_referee_checks.py` →
+`results/death_test_oos/referee_checks.json` · **Traceability:**
+`scripts/death_test_paper_check.py` (59/59 headline numbers trace to `results/`).
+
+**What the referee (a fresh AI subagent shown only the draft and `results/`) caught**, all
+now fixed in the text:
+- **Part A has no deaths.** 0 of 266 events were delisted within 60 days. It is about
+  large bad-news drops of surviving firms (information transfer), not failures.
+- **"Share carries none" was too strong.** In sample, share is significant on day 0
+  (*t* −2.2). Out of sample the share coefficient's interval is −0.42 to +0.13, so the null
+  cannot rule out small effects. New wording: share's power is "small, confined to day 0
+  and undetectable out of sample".
+- **The industry 6–7% was cherry-picked.** It is positive only at the −10% and −20%
+  thresholds; elsewhere and at 20 days it is negative (down to −17.7%). The random CV folds
+  also leak across crises.
+- **The cases are not independent.** They form 24 episodes, and the 4 SD cases come from 3.
+  An episode-stratified permutation gives *p* = 0.155.
+- **Two sentences were wrong.** The largest out-of-sample losses were OR regional banks
+  (Regions −29%, Huntington −28%, Fifth Third −25%), not the SD cases. In Bank of America's
+  weeks, OR rivals lost 17.7% against BofA's 22.6%.
+- **"OR fails" is close to automatic under a sign count** if the true effect is zero. The
+  correct reading is "replaceable rivals did not gain", not "they lost". The design could
+  detect only gaps of about 14 pp, and the observed 5.9 pp would need about 23 SD cases.
+- **Three cases overlap the case studies** (Adani Total Gas, DHFL 2019, Maytas). Dropping
+  them gives SD −12.2% and OR −3.6%; nothing changes.
+- **Missing literature:** Benmelech & Bergman (2011, collateral channel), Hertzel & Officer
+  (2012), Kolay, Lemmon & Tashjian (2016), Jacobson & von Schedvin (2015), Thomas & Zhang
+  (2008), and JAR's registered reports. The novelty is the protocol, not the rule.
+
+**The AI labeller (Phase 6, not pre-registered; `results/ai_death_test/`).** A fresh
+Claude Sonnet got only the §5 rule and the 40 paragraphs, shuffled, with labels and
+outcomes removed. It ran twice: once named, once with names masked by another instance.
+- **Agreement:** 37/40 (named, κ 0.38) and 38/40 (masked, κ 0.64). κ is low because SD is
+  rare.
+- **Every disagreement went the same way.** It moved our SD cases to OR (Citi and Lakshmi
+  Vilas in both runs, BofA as well in the named run) and never the reverse. Read strictly,
+  "solvency failure" in the day-0 news is not met for Citi or BofA. Our four SD labels were
+  the generous reading.
+- **Masking does not stop look-ahead.** In the masked run it named 35 of 40 firms and was
+  right for 32. In the named run it said it remembered the rivals' aftermath for 16.
+- **No sign that hindsight steered its labels.** Hindsight would have made the big losers SD;
+  it did the opposite.
+
+**What this means for Mrigay.** The paper's defensible core is the negative result: share
+does not predict, and a strictly applied dependency rule finds too few cases to test. The
+labelling question (is Citi on 19 Nov 2008 a "solvency failure"?) is exactly where a human
+expert, such as a Kelley professor, should be asked.
+
 ## 5. Is this new? Literature map (verified 11 Nov 2026)
 
 Every entry below was checked against a journal page or a reliable index (RePEc/IDEAS,

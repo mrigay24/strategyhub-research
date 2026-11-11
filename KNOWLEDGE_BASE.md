@@ -4844,4 +4844,23 @@ Paper: *Market Share Is Not Importance: What Happens to Rivals When a Firm Dies 
 
 **Data.** `death_test.py`'s India fallback now reads `nse_survivorship_free_adj.parquet`; the 8 cases moved by ≤ 0.2 pp. The project `.venv/` is iCloud-evicted (thousands of dataless files make `import pandas` hang); a copy with the same versions lives at `~/.venvs/strategyhub` (Python 3.9.6, pandas 2.0.3, numpy 1.24.3, pyarrow 12.0.1).
 
+**Pre-registered out-of-sample test: results (PREREGISTRATION §11, RESEARCH_NOTE §4d).** It ran once, unchanged (`death_test_oos.py run`, code as of c57c331).
+- Registered sample: 26 cases (2 SD / 24 OR). SD rivals −18.0%, OR rivals −3.7% (20-day BHAR); hit rate 50%.
+- Full population: 40 cases (4 SD / 36 OR). SD −9.3%, OR −3.4%; gap −5.9 pp, permutation *p* 0.152; hit rate 50%.
+- **Verdicts:** H1 "too few cases to test" in both versions. T3: "the rule fails out of sample" in both (the OR hit rate is 43–47%, below the 50% or 2/3 required). H4 holds: share *t* ≈ −1. T4: 3 Indian group sets all fell, mean −28%, *p* 0.125.
+- Outside 2008–09/2020, and in India, SD rivals did *better* than OR (−0.5% vs −1.7%). The SD gap is the Citi and BofA rescues.
+- One check that was not pre-registered (§9a): dropping the later case of overlapping rival pairs (FITB, HBAN09, DHFL19) gives a gap of −10.2 pp, *p* 0.050. Verdicts are unchanged, and it must not be used as support.
+- The pre-registered ±45% rival-return filter removed some real 2008–09 moves (e.g. FITB +60% on 6 Feb 2009). Disclosed, not changed.
+
+**Paper (Phases 5–6).** `PAPER_DRAFT.md` + `.docx` (built by `scripts/md_to_docx.py`, python-docx; no pandoc or LibreOffice on this Mac), `ONE_PAGER.md`, `EMAIL_DRAFTS.md` (not sent) and `REFEREE_REPORT.md` (referee report + response table). `scripts/death_test_paper_check.py` checks 59 headline numbers against `results/`; it searches only the text above Appendix C, so that the table does not match itself. Fig 4: `results/death_test_oos/fig4_oos_outcomes.png`.
+- **Referee lessons (methodology):**
+  1. A sample built from current GICS has no deaths (0/266 delisted within 60 days), so it is information transfer.
+  2. A negative CV R² is not proof of zero; report the coefficient's CI.
+  3. Random CV folds leak across crisis episodes.
+  4. Event cases cluster (24 episodes from 40 cases), so use episode-stratified permutation (*p* 0.155).
+  5. A sign-count criterion for a "no effect" prediction fails about half the time even when it is true; register an equivalence test instead.
+  6. Compute the minimum detectable effect in advance: about 14 pp with 4 vs 36 cases; about 23 SD cases would be needed for a 5.9 pp gap.
+- **AI labeller (Phase 6, `scripts/ai_death_test.py`, `results/ai_death_test/`).** A fresh Sonnet applying the §5 rule agreed on 37/40 (named, κ 0.38) and 38/40 (masked, κ 0.64). It moved only our SD cases to OR (Citi, Lakshmi Vilas; BofA when named), so our SD labels were the generous reading. Masking failed to hide identity: it named 32 of 40 masked firms correctly. Look-ahead cannot be removed by masking.
+- **Framing that survives:** market share is a poor guide to rival spillovers (it sizes only the day-0 hit). A shared-dependency rule is a candidate worth a properly powered test (about 20–25 SD cases, inference by episode), not an established answer.
+
 *Last updated: 2026-11-11*

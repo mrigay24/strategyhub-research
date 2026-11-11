@@ -1,0 +1,41 @@
+code,case_id,guessed_firm,guess_correct
+K01,US-AFL,Aflac,correct
+K02,IN-RCOM,Reliance Communications,correct
+K03,IN-GITANJALI18,Gitanjali Gems,correct
+K04,US-EPAM,EPAM Systems,correct
+K05,US-XEL,Allegheny Energy,wrong
+K06,IN-RELINFRA,Reliance Infrastructure,correct
+K07,IN-THINKSOFT,no,no guess
+K08,IN-COREEDU,Educomp Solutions,wrong
+K09,US-STT,State Street,correct
+K10,US-TXT,Textron,correct
+K11,IN-AMTEK,Amtek Auto,correct
+K12,IN-RPOWER,Reliance Power,correct
+K13,US-SMCI,Super Micro Computer,correct
+K14,US-FITB,Fifth Third,correct
+K15,IN-RELCAP,Reliance Capital,correct
+K16,US-RF,Regions Financial,correct
+K17,IN-MAYTAS,Maytas Infrastructure,correct
+K18,IN-ATGL,Adani Total Gas,correct
+K19,US-CI02,Cigna,correct
+K20,IN-LVB,Lakshmi Vilas Bank,correct
+K21,IN-OMAXE,no,no guess
+K22,IN-FRETAIL,Future Retail,correct
+K23,US-C,Citigroup,correct
+K24,IN-IBHFL,DHFL,wrong
+K25,US-HBAN09,Huntington Bancshares,correct
+K26,US-GL,Globe Life,correct
+K27,IN-WOCKHARDT,Wockhardt,correct
+K28,US-PSKY21,ViacomCBS,correct
+K29,US-UNM03,UnumProvident,correct
+K30,US-XRX,Xerox,correct
+K31,US-MBI07,MBIA,correct
+K32,IN-DHFL19,Dewan Housing Finance,correct
+K33,US-LNC08,Lincoln National,correct
+K34,IN-DRDATSONS,no,no guess
+K35,US-CI,Cigna,correct
+K36,IN-SUDAR,no,no guess
+K37,US-HIG,Hartford,correct
+K38,IN-ATLANTA,no,no guess
+K39,US-BAC,Bank of America,correct
+K40,IN-CGPOWER,CG Power,correct

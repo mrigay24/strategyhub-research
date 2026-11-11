@@ -86,7 +86,9 @@ The other half of the rule, that rivals of "output-replaceable" firms hold up, w
 borne out. Those rivals did not gain: they fell in 55% of cases, by 3.4% on average, and the
 pre-registered reading of the split by financial and non-financial firms is "the rule fails
 out of sample". Outside finance the drift is small and not distinguishable from zero.
-Market share did not predict the out-of-sample reaction either.
+Market share did not predict the out-of-sample reaction either. An LLM given the same rule and
+paragraphs agreed with our labels on 37–38 of 40 cases. Where it disagreed, it was
+stricter: it found even fewer shared-dependency cases.
 
 The paper's claim is therefore narrower than the one we started with. **The failed firm's
 market share sizes the first-day spillover but does not predict how rivals fare after it.
@@ -560,6 +562,44 @@ small effects. (Source: `results/death_test_oos/referee_checks.json`.)
 
 ---
 
+### 6.4 An AI labeller (not pre-registered)
+
+To test how reliable the labels are, we gave a fresh LLM (Claude Sonnet) the §5 rule and
+the 40 day-0 paragraphs, with our labels and all outcomes removed and the cases shuffled
+under neutral codes. It ran twice, as separate instances: once with names, and once with
+every firm, person and group name masked and dates cut to the year.
+
+**Table 4b. An LLM applying the same rule**
+
+| | Named paragraphs | Masked paragraphs |
+|---|---|---|
+| Agreement with our labels | 37 / 40 (κ = 0.38) | 38 / 40 (κ = 0.64) |
+| Cases it labels SD | 1 (DHFL 2019) | 2 (Bank of America, DHFL 2019) |
+| Our SD cases it moves to OR | Citi, Bank of America, Lakshmi Vilas | Citi, Lakshmi Vilas |
+| Our OR cases it moves to SD | none | none |
+| Mean rival BHAR, its SD / its OR | −0.4% / −4.1% | −11.5% / −3.6% |
+
+*Source: `results/ai_death_test/` (inputs `input_named.md` and `input_anon.md`; labels
+`labels_named.csv` and `labels_anon.csv`; scores `scores_named.json` and `scores_anon.json`;
+masked-name guesses `anon_guess_check.csv`).*
+
+Three points stand out.
+- **Every disagreement is about an SD case, and goes the same way.** Read strictly, the
+  rule needs a "funding or solvency failure" in the day-0 news. The LLM read Citi's balance
+  sheet move and Lakshmi Vilas's regulatory curbs as capital worries, not failures. In the
+  named run it read Bank of America's government support the same way. Our four SD labels
+  were thus the generous reading. A stricter labeller finds even fewer SD cases, and the
+  test has even less to work with.
+- **Masking names did not hide the firms.** In the masked run the LLM named 35 of the 40
+  firms and was right for 32. Masking therefore does not remove look-ahead: the model may
+  know what happened next. In the named run it said it remembered the rivals' aftermath in
+  16 cases.
+- **There is no sign that look-ahead pushed the labels toward the outcomes.** A labeller
+  steering by hindsight would have marked the big losers (Citi, Bank of America, the
+  regional banks) as SD. The LLM did the opposite: it moved Citi and Bank of America to OR.
+  This does not prove the labels are free of hindsight, but it is the wrong direction for
+  hindsight.
+
 ## 7. Robustness
 
 **Large US sample.** Table 5 repeats the Part A event study under alternative choices.
@@ -687,8 +727,9 @@ should be expected to share the first-day fall rather than to gain.
   rivals from one that reveals their shared weakness. We do not try.
 - **One labeller, with possible hindsight.** The paragraphs and labels were written by one
   team (an AI assistant drafted them; the author approved them), and both knew how the
-  crises unfolded. Independent coders with masked names would test the labels'
-  reliability.
+  crises unfolded. An LLM given the same rule agreed on 37–38 of 40 cases and was
+  stricter on SD (Section 6.4). It also recognised most masked firms, so masking alone
+  does not fix look-ahead. Independent human coders are still needed.
 - **A filter fixed in advance removed some real returns** (Section 7).
 - **Overlapping cases** count some rival moves more than once. The sensitivity check in
   Section 7 handles this, but it was not pre-registered.
@@ -866,6 +907,9 @@ number below from the files and check it against the text (it prints PASS/FAIL p
 | OR non-financial 95% interval | −4.2% to +0.9% | `results/death_test_oos/referee_checks.json` |
 | Share coefficient 95% interval (full) | −0.42 to +0.13 | `results/death_test_oos/referee_checks.json` |
 | Dropping case-study overlaps: SD / OR mean | −12.2% / −3.6% | `results/death_test_oos/referee_checks.json` |
+| AI labeller agreement, named / masked | 37 / 40 / 38 / 40 | `results/ai_death_test/scores_named.json, scores_anon.json` |
+| AI labeller kappa, named / masked | κ = 0.38 / κ = 0.64 | `results/ai_death_test/scores_named.json, scores_anon.json` |
+| Masked firms correctly identified | right for 32 | `results/ai_death_test/anon_guess_check.csv` |
 | Test 1 median return, N = 1 / 50 | 9.8% / 11.6% | `results/entropy_research/test1_summary_by_N.csv` |
 | Test 1 chance of lagging by >3 pp, N = 1 / 50 | 46% / 5% | `results/entropy_research/test1_summary_by_N.csv` |
 

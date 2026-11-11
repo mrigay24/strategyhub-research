@@ -140,6 +140,16 @@ def rows() -> list[tuple[str, str, str]]:
          f"{num(rc['M2_share_ci']['full_population']['ci95'][0])} to {num(rc['M2_share_ci']['full_population']['ci95'][1], 2, True)}", f_rc),
         ("Dropping case-study overlaps: SD / OR mean",
          f"{pct(rc['M7a_drop_case_study_overlaps']['mean_SD'])} / {pct(rc['M7a_drop_case_study_overlaps']['mean_OR'])}", f_rc),
+        # Phase 6: AI labeller (not pre-registered)
+        ("AI labeller agreement, named / masked",
+         " / ".join(f"{round(json.load(open(R / 'ai_death_test' / f'scores_{v}.json'))['agreement'] * 40)} / 40"
+                    for v in ["named", "anon"]), "results/ai_death_test/scores_named.json, scores_anon.json"),
+        ("AI labeller kappa, named / masked",
+         " / ".join(f"κ = {json.load(open(R / 'ai_death_test' / f'scores_{v}.json'))['kappa']:.2f}" for v in ["named", "anon"]),
+         "results/ai_death_test/scores_named.json, scores_anon.json"),
+        ("Masked firms correctly identified",
+         f"right for {int((pd.read_csv(R / 'ai_death_test' / 'anon_guess_check.csv')['guess_correct'] == 'correct').sum())}",
+         "results/ai_death_test/anon_guess_check.csv"),
         # Appendix A
         ("Test 1 median return, N = 1 / 50",
          f"{pct(t1.loc[1, 'median_ann_return'])} / {pct(t1.loc[50, 'median_ann_return'])}",

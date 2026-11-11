@@ -1,0 +1,41 @@
+code,label,channel,recalls_aftermath,reason
+K01,OR,-,no,Analyst capital question; one-notch cut stays investment grade; no funding failure
+K02,OR,-,yes,Non-financial; lenders unnamed; own insolvency filing
+K03,OR,-,yes,Fraud at group; own misconduct; no shared basis
+K04,OR,-,no,Own delivery centres at risk; firm-specific exposure
+K05,OR,-,no,Non-financial; no specific lender named; own subsidiary downgrade
+K06,OR,-,yes,Group promoter share sales; own firm trigger
+K07,OR,-,no,Surveillance action on this stock only
+K08,OR,-,no,Pledged share selling in own stock
+K09,OR,-,no,Profit fall and capital fears; no clear funding failure or withdrawals
+K10,OR,-,no,Own finance arm write-downs; non-financial firm
+K11,OR,-,no,Own derivatives exclusion and loss
+K12,OR,-,yes,Group pledged share sales; no missed payment
+K13,OR,-,yes,Auditor resignation; own governance event
+K14,OR,-,no,Own loss; no funding failure
+K15,OR,-,yes,Auditor resignation; no missed payment or cut reported
+K16,OR,-,no,Own goodwill write-down loss; no funding failure
+K17,OR,-,yes,Governance event; related-party deal; own firm
+K18,OR,-,yes,Short-seller report on group; non-financial
+K19,OR,-,no,Own reinsurance charge and earnings warning
+K20,OR,-,no,Curbs and merger doubts; withdrawal limit not clearly established
+K21,OR,-,no,Own board meeting postponement; pledged shares
+K22,OR,-,no,Own promoter pledge disclosure
+K23,OR,-,yes,Capital doubts only; no missed payment or inability to pay stated
+K24,OR,-,yes,Allegations denied; no missed payment
+K25,OR,-,no,Own loss; insured deposits; no funding failure
+K26,OR,-,yes,Short-seller report on own agency force
+K27,OR,-,no,FDA bans on own plants; own misconduct
+K28,OR,-,yes,Fund margin call share sales; no shared dependency
+K29,OR,-,no,Moody's report only; no downgrade or missed payment
+K30,OR,-,no,Non-financial; no specific lender named
+K31,OR,-,yes,Outlook negative only; not cut below investment grade
+K32,SD,F,yes,Housing-finance firm in default; rivals fund via same CP and mutual funds
+K33,OR,-,no,TARP application; capital said adequate; no funding failure
+K34,OR,-,no,Pledged share selling in own stock
+K35,OR,-,no,Own run-off losses and outlook cut
+K36,OR,-,no,Pledged share selling in own stock
+K37,OR,-,yes,Own loss and capital speculation; no clear funding failure
+K38,OR,-,no,SEBI order against this firm; own misconduct
+K39,OR,-,yes,Own loss; government support; no funding failure
+K40,OR,-,no,Own unauthorised transactions; internal review

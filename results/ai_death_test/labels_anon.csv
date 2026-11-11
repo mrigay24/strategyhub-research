@@ -1,0 +1,41 @@
+code,label,channel,guessed_firm,reason
+K01,OR,-,Aflac,Capital questioned; one-notch cut to AA- stays investment grade; no funding failure
+K02,OR,-,Reliance Communications,Non-financial; insolvency filing; no named lender shared with rivals
+K03,OR,-,Gitanjali Gems,Own fraud/bank LoU case; penalty for own misconduct
+K04,OR,-,EPAM Systems,Own delivery centres at risk; non-financial; no shared lender or liability
+K05,OR,-,Allegheny Energy,Own merchant unit junk cut; no specific shared lender named
+K06,OR,-,Reliance Infrastructure,Non-financial; pledged-share sales; no named shared lender
+K07,OR,-,no,Exchange surveillance move against own stock; own conduct; no shared legal basis
+K08,OR,-,Educomp Solutions,Pledged share selling; own situation; non-financial
+K09,OR,-,State Street,Profit fall and capital fears; no funding failure; rivals mostly asset managers
+K10,OR,-,Textron,Own finance-arm write-downs; non-financial parent; no shared lender
+K11,OR,-,Amtek Auto,Derivatives-segment exclusion after loss; non-financial; no named lender
+K12,OR,-,Reliance Power,No missed payment; non-financial; group pledged-share sales only
+K13,OR,-,Super Micro Computer,Auditor resignation and short report; own accounting issue
+K14,OR,-,Fifth Third,Goodwill write-down and reserves; not funding failure
+K15,OR,-,Reliance Capital,Auditor resignation; no missed payment or rating cut; not clearly funding failure
+K16,OR,-,Regions Financial,Goodwill write-down loss; not funding or solvency failure
+K17,OR,-,Maytas Infrastructure,Governance event; related-party deal withdrawn
+K18,OR,-,Adani Total Gas,Short-seller report on own group
+K19,OR,-,Cigna,Earnings warning; reinsurance charge; own issue
+K20,OR,-,Lakshmi Vilas Bank,PCA and merger doubts; no withdrawal limit or moratorium clearly established
+K21,OR,-,no,Postponed results; pledged shares; own issue
+K22,OR,-,Future Retail,Pledged shares for group debentures; non-financial; no named lender
+K23,OR,-,Citigroup,Balance-sheet takeover of SIV assets; capital doubts; not clear funding failure
+K24,OR,-,DHFL,Petition alleging fund diversion; no missed payment; own misconduct
+K25,OR,-,Huntington Bancshares,Quarterly loss on credit losses; insured deposits; no run
+K26,OR,-,Globe Life,Short-seller misconduct allegation about own subsidiary
+K27,OR,-,Wockhardt,Regulator bans at own plants; penalty for own misconduct
+K28,OR,-,ViacomCBS,Margin-call block sales by banks for client fund; non-financial
+K29,OR,-,UnumProvident,Rating agency report only; no downgrade or missed payment
+K30,OR,-,Xerox,Own sales and billing problems; non-financial; no named lender
+K31,OR,-,MBIA,Outlook negative only; no cut; no funding failure that day
+K32,SD,F,Dewan Housing Finance,Financial firm in default; rivals fund via CP and debt funds
+K33,OR,-,Lincoln National,Investment losses and TARP application; capital said adequate
+K34,OR,-,no,Pledged-share selling; non-financial; own situation
+K35,OR,-,Cigna,Run-off reinsurance losses; own issue
+K36,OR,-,no,Pledged-share selling; non-financial
+K37,OR,-,Hartford,Investment loss and capital need speculation; no clear funding failure
+K38,OR,-,no,Regulator order against own firm and promoters; own conduct
+K39,SD,F,Bank of America,Second government rescue injection and asset guarantee; rivals fund same market
+K40,OR,-,CG Power,Own unauthorised transactions; internal review finding

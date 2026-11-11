@@ -1,0 +1,91 @@
+{
+  "n": 40,
+  "agreement": 0.925,
+  "kappa": 0.37500000000000094,
+  "confusion_ours_by_llm": {
+    "OR": {
+      "OR": 36,
+      "SD": 3
+    },
+    "SD": {
+      "OR": 0,
+      "SD": 1
+    }
+  },
+  "disagreements": [
+    {
+      "case_id": "IN-LVB",
+      "ours": "SD",
+      "label": "OR",
+      "reason": "Curbs and merger doubts; withdrawal limit not clearly established"
+    },
+    {
+      "case_id": "US-C",
+      "ours": "SD",
+      "label": "OR",
+      "reason": "Capital doubts only; no missed payment or inability to pay stated"
+    },
+    {
+      "case_id": "US-BAC",
+      "ours": "SD",
+      "label": "OR",
+      "reason": "Own loss; government support; no funding failure"
+    }
+  ],
+  "outcomes_by_llm_label": {
+    "OR": {
+      "n": 39,
+      "mean_bhar_0_20": -0.04072185503997224,
+      "hit_rate": 0.41025641025641024,
+      "cases": [
+        "US-AFL",
+        "IN-RCOM",
+        "IN-GITANJALI18",
+        "US-EPAM",
+        "US-XEL",
+        "IN-RELINFRA",
+        "IN-THINKSOFT",
+        "IN-COREEDU",
+        "US-STT",
+        "US-TXT",
+        "IN-AMTEK",
+        "IN-RPOWER",
+        "US-SMCI",
+        "US-FITB",
+        "IN-RELCAP",
+        "US-RF",
+        "IN-MAYTAS",
+        "IN-ATGL",
+        "US-CI02",
+        "IN-LVB",
+        "IN-OMAXE",
+        "IN-FRETAIL",
+        "US-C",
+        "IN-IBHFL",
+        "US-HBAN09",
+        "US-GL",
+        "IN-WOCKHARDT",
+        "US-PSKY21",
+        "US-UNM03",
+        "US-XRX",
+        "US-MBI07",
+        "US-LNC08",
+        "IN-DRDATSONS",
+        "US-CI",
+        "IN-SUDAR",
+        "US-HIG",
+        "IN-ATLANTA",
+        "US-BAC",
+        "IN-CGPOWER"
+      ]
+    },
+    "SD": {
+      "n": 1,
+      "mean_bhar_0_20": -0.0035392208622108,
+      "hit_rate": 1.0,
+      "cases": [
+        "IN-DHFL19"
+      ]
+    }
+  }
+}

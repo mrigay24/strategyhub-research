@@ -1,0 +1,85 @@
+{
+  "n": 40,
+  "agreement": 0.95,
+  "kappa": 0.6428571428571426,
+  "confusion_ours_by_llm": {
+    "OR": {
+      "OR": 36,
+      "SD": 2
+    },
+    "SD": {
+      "OR": 0,
+      "SD": 2
+    }
+  },
+  "disagreements": [
+    {
+      "case_id": "IN-LVB",
+      "ours": "SD",
+      "label": "OR",
+      "reason": "PCA and merger doubts; no withdrawal limit or moratorium clearly established"
+    },
+    {
+      "case_id": "US-C",
+      "ours": "SD",
+      "label": "OR",
+      "reason": "Balance-sheet takeover of SIV assets; capital doubts; not clear funding failure"
+    }
+  ],
+  "outcomes_by_llm_label": {
+    "OR": {
+      "n": 38,
+      "mean_bhar_0_20": -0.03585887780130158,
+      "hit_rate": 0.42105263157894735,
+      "cases": [
+        "US-AFL",
+        "IN-RCOM",
+        "IN-GITANJALI18",
+        "US-EPAM",
+        "US-XEL",
+        "IN-RELINFRA",
+        "IN-THINKSOFT",
+        "IN-COREEDU",
+        "US-STT",
+        "US-TXT",
+        "IN-AMTEK",
+        "IN-RPOWER",
+        "US-SMCI",
+        "US-FITB",
+        "IN-RELCAP",
+        "US-RF",
+        "IN-MAYTAS",
+        "IN-ATGL",
+        "US-CI02",
+        "IN-LVB",
+        "IN-OMAXE",
+        "IN-FRETAIL",
+        "US-C",
+        "IN-IBHFL",
+        "US-HBAN09",
+        "US-GL",
+        "IN-WOCKHARDT",
+        "US-PSKY21",
+        "US-UNM03",
+        "US-XRX",
+        "US-MBI07",
+        "US-LNC08",
+        "IN-DRDATSONS",
+        "US-CI",
+        "IN-SUDAR",
+        "US-HIG",
+        "IN-ATLANTA",
+        "IN-CGPOWER"
+      ]
+    },
+    "SD": {
+      "n": 2,
+      "mean_bhar_0_20": -0.11452710548583421,
+      "hit_rate": 1.0,
+      "cases": [
+        "IN-DHFL19",
+        "US-BAC"
+      ]
+    }
+  }
+}
