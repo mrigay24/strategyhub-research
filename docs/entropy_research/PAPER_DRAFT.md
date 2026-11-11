@@ -2,9 +2,9 @@
 
 **Mrigay Pathak** · Indiana University Bloomington · Working paper draft, November 2026
 
-*Pre-registration, code and data outputs: `docs/entropy_research/PREREGISTRATION.md`,
-`scripts/death_test*.py`, `results/death_test/`, `results/death_test_oos/`. Every number
-in this draft traces to a file listed in Appendix C.*
+*Pre-registration, code and data outputs: `docs/entropy_research/PREREGISTRATION.md`, the
+death-test scripts in `scripts/`, `results/death_test/` and `results/death_test_oos/`. Every
+number in this draft traces to a file listed in Appendix C.*
 
 ---
 
