@@ -88,11 +88,18 @@ def summ(g: pd.DataFrame) -> pd.Series:
 # ----------------------------------------------------------------------------
 # Part A — US large-sample death test at sub-industry level
 # ----------------------------------------------------------------------------
-def part_a(rets: pd.DataFrame, mask: pd.DataFrame, dv: pd.DataFrame) -> dict:
-    log("Part A: US death test at GICS sub-industry level")
+def gics_maps() -> tuple[dict, dict]:
     gm = pd.read_csv(ROOT / "data_raw" / "sp500_constituents" / "sp500_subindustry.csv")
-    sub_of = dict(zip(gm["ticker"], gm["sub_industry"]))
-    sector_of = dict(zip(gm["ticker"], gm["sector"]))
+    return dict(zip(gm["ticker"], gm["sub_industry"])), dict(zip(gm["ticker"], gm["sector"]))
+
+
+def build_events(rets: pd.DataFrame, mask: pd.DataFrame, dv: pd.DataFrame, sub_of: dict,
+                 sector_of: dict, own_thr: float = -0.15, ab_thr: float = -0.12) -> pd.DataFrame:
+    """Isolated idiosyncratic crashes; peers = all members of the firm's group in `sub_of`.
+
+    `sub_of` maps ticker -> peer group (GICS sub-industry by default; pass the
+    sector map for sector-level peers). Column "sub_industry" holds that group.
+    """
     cols = [c for c in rets.columns if c in sub_of]
     log(f"  {len(cols)} of {rets.shape[1]} symbols have a current sub-industry")
     R = rets[cols]
@@ -116,7 +123,7 @@ def part_a(rets: pd.DataFrame, mask: pd.DataFrame, dv: pd.DataFrame) -> dict:
         peer = (gsum[:, k] - Rz[:, j] * M[:, j]) / np.maximum(n_peers, 1)
         own_ab = Rz[:, j] - peer
         peer_ab = peer - mkt_ex[:, k]
-        hit = np.where(M[:, j] & (Rz[:, j] < -0.15) & (own_ab < -0.12) & (n_peers >= 3))[0]
+        hit = np.where(M[:, j] & (Rz[:, j] < own_thr) & (own_ab < ab_thr) & (n_peers >= 3))[0]
         last = -999
         lv = R.index.get_loc(last_valid[c])
         for t in hit:
@@ -145,7 +152,13 @@ def part_a(rets: pd.DataFrame, mask: pd.DataFrame, dv: pd.DataFrame) -> dict:
             })
     ev = pd.DataFrame(events)
     ev["cluster"] = ev.groupby(["sub_industry", "date"])["symbol"].transform("count")
-    ev = ev[ev["cluster"] == 1].drop(columns="cluster").reset_index(drop=True)
+    return ev[ev["cluster"] == 1].drop(columns="cluster").reset_index(drop=True)
+
+
+def part_a(rets: pd.DataFrame, mask: pd.DataFrame, dv: pd.DataFrame) -> dict:
+    log("Part A: US death test at GICS sub-industry level")
+    sub_of, sector_of = gics_maps()
+    ev = build_events(rets, mask, dv, sub_of, sector_of)
     ev.to_csv(OUT / "us_events.csv", index=False)
     log(f"  {len(ev)} isolated crash events, {ev['sub_industry'].nunique()} sub-industries")
 
