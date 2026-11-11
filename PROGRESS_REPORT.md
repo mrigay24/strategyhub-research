@@ -2240,3 +2240,11 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
 - Caveat: the unselected all-14-sleeve composite earns 6.4–6.7%/yr (t 4.2–4.6); the 15% figure includes in-sample sleeve selection.
 - New scripts: `nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_corrected.py`, `india_ca_robustness.py`, `nse_prevclose_probe.py`. New outputs: `results/nse_data_audit/`, `results/nse_longshort_ca/`, `results/composites_ca/`. Old result folders untouched.
 - Not done: rebuilding the universe from the raw panel (fixes the 2011-H2 hole and ISIN-change exits); re-running `death_test.py` / `entropy_research.py` on the corrected panels.
+
+---
+
+## DEATH-TEST PAPER SESSION (2026-11-11)
+
+- **Red-team pass** (RESEARCH_NOTE §6a): three strongest objections (information vs importance; "shared dependency" = Financials dummy; weak share proxy). None fatal; question unchanged; thesis sharpened to "what rivals share with the failed firm predicts whether they lose; market share predicts only the first-day hit".
+- **Phase 1 literature check** (RESEARCH_NOTE §5): 20 references verified and corrected; ~25 new references added; honest "Is this new?" paragraph (new: direct test of the failed firm's share, one rule across finance and non-finance, pre-registration, India rival evidence).
+- **Data:** `death_test.py` India fallback switched to the corporate-action-corrected panel; the 8 case numbers move ≤ 0.2 pp. Local venv copy at `~/.venvs/strategyhub` because `.venv/` is iCloud-evicted.

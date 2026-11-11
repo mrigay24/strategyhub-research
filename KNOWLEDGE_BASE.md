@@ -4830,3 +4830,18 @@ Code: `scripts/nse_ca_audit.py`, `build_nse_adjusted_panels.py`, `rerun_india_co
 - Still open: 459 level breaks across universe-membership holes, sub-40% actions in names Yahoo does not cover, the ISIN-change exit (CHOLAFIN is out of the universe 2019-06-17 → 2019-12-31), and the 2011-H2 hole itself. `death_test.py`, `entropy_research.py` and anything else reading `nse_survivorship_free*.parquet` should switch to the `_adj_nohole` panels (rebuild with `build_nse_adjusted_panels.py`).
 
 *Last updated: 2026-11-09*
+
+### §43 — Death-test paper: red team, literature check, pre-registered test (2026-11-11)
+
+Paper: *Market Share Is Not Importance: What Happens to Rivals When a Firm Dies (US and India)*. Note: `docs/entropy_research/RESEARCH_NOTE.md` (§5, §6a).
+
+**Red-team pass (§6a).** The three strongest objections, none fatal:
+1. **Information, not importance.** Rivals may fall because the crash *reveals* a weakness they share (SVB), not because they *depended on* the firm. Prices cannot separate transmission from revelation; the paper says so and uses "spillover" in technical claims. The pre-registered test answers the circularity charge: a label written from news before seeing rival returns can fail.
+2. **"Shared dependency" may be a Financials dummy.** 4 of 6 shared-dependency readings are lenders or banks. Fix: pre-registered split by financial vs non-financial failed firm; Part A re-run without Financials.
+3. **The share proxy is weak.** Trading-value share within current-GICS S&P members is noisy (attenuation bias), and share *does* matter on day 0 (−0.77% → −1.77%). The claim narrows to "share predicts the first-day hit, not whether damage lasts".
+
+**Literature check (§5).** All 20 references in the old table are real; corrections: Lang & Stulz's competitive effect is in *concentrated, low-leverage* industries; Jorion & Zhang (2007) is Chapter 11 (contagion) vs Chapter 7 (competition) in CDS; Glasserman & Lin (2023) is an arXiv paper and was overstated; Kim et al. and Lopez-Lira & Tang are working papers; Goerner et al.'s phrase is "window of viability". Most useful new references: Aharony & Swary (1983, bank failures from fraud do not spread), Helwege & Zhang (2016), Iyer & Peydró (2011) and Iyer & Puri (2012) (India), Anshuman & Sharma (IIMB WP 604, NBFC funding from liquid mutual funds), Ganguly, Mishra & Platt (2025, Adani). No paper was found that regresses rival reactions on the *failed firm's* share, and no pre-registered corporate-finance event study.
+
+**Data.** `death_test.py`'s India fallback now reads `nse_survivorship_free_adj.parquet`; the 8 cases moved by ≤ 0.2 pp. The project `.venv/` is iCloud-evicted (thousands of dataless files make `import pandas` hang); a copy with the same versions lives at `~/.venvs/strategyhub` (Python 3.9.6, pandas 2.0.3, numpy 1.24.3, pyarrow 12.0.1).
+
+*Last updated: 2026-11-11*
