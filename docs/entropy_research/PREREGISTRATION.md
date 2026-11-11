@@ -510,6 +510,92 @@ losses. That is itself a finding about how rare true shared-dependency failures 
 also means the out-of-sample evidence will mainly test the **OR half** of the
 prediction (rivals do not lose) and H4 (market share).
 
+### 9f. Extension under deviation D1 (14 cases: 2 SD, 12 OR)
+
+*The same rules, applied to the 69 candidates the random draw left out. 34 were real; the
+rest are artefacts (Adani Enterprises 2015 and Aditya Birla Real Estate 2019 are demergers)
+or have no news. The paragraphs use day-0 facts only.*
+
+27. **IN-ATLANTA: Atlanta Ltd, 23 Feb 2007. OR.** A road and infrastructure builder. On 22
+    February, SEBI issued an interim order barring the company and its promoters from
+    dealing in the shares and opened an investigation into the price rise and promoter
+    buying. The regulator acted against its own trading conduct. *Rivals:* IVRCL, L&T,
+    Jaiprakash, Nagarjuna, Gammon, Patel, Simplex.
+28. **IN-WOCKHARDT: Wockhardt, 27 May 2014. OR.** A generic drug maker. Its results, released
+    after the close on 26 May, showed profit down about 78% because US FDA import bans on
+    several of its plants cut US sales, and fresh FDA concerns about another plant followed.
+    These are findings about its own plants. *Rivals:* the 10 largest pharma firms in the
+    universe.
+29. **IN-AMTEK: Amtek Auto, 19 Aug 2015. OR.** A heavily indebted maker of forgings and
+    castings. NSE said on 18 August that it would drop the stock from the derivatives
+    segment, after a quarterly loss. It concerns the firm's own stock and debt, and no
+    lender is named as at risk. *Rivals:* Bharat Forge, Bosch, Exide.
+30. **IN-RPOWER: Reliance Power, 4 Feb 2019. OR.** An ADAG power producer. After RCom's
+    insolvency announcement, lenders to the promoter group sold pledged shares. This is
+    promoter-group pledge stress; Reliance Power itself did not miss a payment. *Rivals:* NTPC,
+    Adani Power, Tata Power, Torrent Power, CESC, NHPC.
+31. **IN-RELINFRA: Reliance Infrastructure, 4 Feb 2019. OR.** An ADAG EPC, roads and
+    Delhi-distribution company, hit by the same pledge sales. *Rivals:* L&T, NCC, Tata Power,
+    Torrent, CESC, IRB, Jaiprakash, HCC, KEC, Adani Energy Solutions. (The ADAG group set is
+    counted once, under IN-RCOM.)
+32. **IN-LVB: Lakshmi Vilas Bank, 30 Sep 2019. SD (funding), borderline.** A small private
+    bank funded mainly by retail deposits. RBI had put it under prompt corrective action
+    because its capital was below the minimum and its bad loans were high. It depended on a
+    pending rescue merger with Indiabulls Housing, and on 30 September it fell amid reports
+    of RBI curbs and doubts about that merger. Reading: needing a rescue to stay solvent is
+    a solvency failure (as for Citi and BofA), and its rivals are deposit-funded banks. (The
+    helper proposed OR, treating it as "capital worries only".) *Rivals:* the 10 largest
+    private banks in the universe.
+33. **IN-DHFL19: DHFL, 1 Oct 2019. SD (funding).** A housing-finance company funded by bank
+    loans, debentures, commercial paper held largely by mutual funds, public deposits and
+    securitisation. It had been in default since June. On 1 October it fell 20% on its
+    exposure to HDIL and the failing PMC Bank. A lender already in default, whose rivals are
+    funded in the same bond, CP and mutual-fund market. *Rivals:* the 10 largest HFCs and
+    NBFCs in the universe.
+34. **IN-ATGL: Adani Total Gas, 25 Jan 2023. OR.** A city-gas distributor (an Adani and
+    TotalEnergies joint venture). On 24 January, after the Indian close, Hindenburg
+    published its report on the Adani group. The report concerns its group. *Rivals:* IGL,
+    Gujarat Gas, Mahanagar Gas. This is the same episode as the in-sample Adani case, so it
+    has no group set (those firms were already used); the rivals are new evidence.
+35. **US-CI02: Cigna, 25 Oct 2002. OR.** A health insurer with a run-off reinsurance book.
+    After a reinsurance charge on 18 October, it warned after the close on 24 October that
+    Q3 and full-year earnings would miss guidance. This is its own earnings and reserve
+    problem. *Rivals (current file):* CVS, DaVita, LabCorp, Quest.
+36. **US-UNM03: UnumProvident, 10 Mar 2003. OR.** A disability and life insurer. A Moody's
+    report questioned how its low-rated securities and claims affected its capital, with no
+    downgrade or missed payment on day 0. *Rivals:* Aflac, Torchmark, MetLife, Principal,
+    Prudential.
+37. **US-MBI07: MBIA, 20 Dec 2007. OR, borderline.** A bond insurer whose business rests on
+    its AAA rating. On 19 December, S&P moved its outlook to negative, and MBIA disclosed
+    $8.1 billion of CDO-squared exposure. The rating was at risk but not cut. *Rivals
+    (assigned: P&C insurance):* Allstate, Cincinnati, Hartford, Progressive, Travelers.
+38. **US-LNC08: Lincoln National, 17 Nov 2008. OR, borderline.** A life and annuity insurer.
+    Hit by investment losses, it applied for TARP capital and to become a savings-and-loan
+    holding company, while saying its capital was adequate. Applying for TARP is not by
+    itself an inability to pay; many healthy firms applied. *Rivals:* Aflac, Torchmark,
+    MetLife, Principal, Prudential.
+39. **US-HBAN09: Huntington Bancshares, 22 Jan 2009. OR.** A Midwest regional bank funded
+    mainly by insured deposits. It reported a Q4 2008 loss on rising credit losses, with no
+    run or funding failure. *Rivals:* Fifth Third, KeyCorp, M&T, Regions (Fifth Third
+    reported the same day).
+40. **US-PSKY21: ViacomCBS, 26 Mar 2021. OR.** A media group (CBS, Paramount). Banks dumped
+    large blocks of its shares for a client that had missed a margin call (Archegos). This
+    is forced selling by one holder, not a corporate event. *Rivals (assigned: Movies &
+    Entertainment):* Live Nation, Netflix, Disney.
+
+**Industry shocks in the extension (outcomes described only):** CreditAccess Grameen and
+Aditya Birla Fashion (India COVID lockdown, 24 Mar 2020), Norwegian Cruise (US travel ban,
+12 Mar 2020), APA (oil price war, 9 Mar 2020). Without an outcome: Sallie Mae 2009
+(federal student-loan policy; 2 rivals), Micron 2008 (no date), NetApp 2000 (no rivals).
+
+**Dropped for fewer than 3 rivals:** Shilpi Cable, Jain Irrigation, Indiabulls Ventures,
+Paytm, Opto Circuits, Vakrangee, Infibeam, Advance Auto Parts, Best Buy, VeriSign,
+Williams, Quanta, ONEOK.
+
+**Full population: 40 cases, 4 SD (Citi, BofA, Lakshmi Vilas, DHFL 2019) and 36 OR.**
+This is still fewer than 5 SD, so under §7 T1 is "too few cases to test" in both versions.
+Labels were not flipped to reach 5.
+
 ## 10. Deviation log
 
 **D1 (11 Nov 2026, before any rival return was computed): the size cap is lifted.**

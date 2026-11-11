@@ -307,34 +307,9 @@ def works(t: dict) -> bool:
     return False
 
 
-def run(case_file: Path = CASE_FILE, out_dir: Path = OUT) -> None:
-    import json
+def analyze(out: pd.DataFrame) -> dict:
+    """PREREGISTRATION §7-§8 tests on one version of the sample."""
     from scipy import stats
-    cases = pd.read_csv(case_file, dtype=str).fillna("")
-    logs: list = []
-    rin, dvin, uni_in = load_india()
-    rus, dvus = load(DATA / "extended_prices.parquet", 1.0)
-    mask = us_pit_mask(rus)
-    data = {"India": (rin, uni_in, dvin.rolling(63, min_periods=20).mean().shift(1)),
-            "US": (rus, mask, dvus.rolling(63, min_periods=20).mean().shift(1))}
-    rows, peer_rows = [], []
-    for _, c in cases[cases["status"].isin(["case", "industry_shock"])].iterrows():
-        R, U, dvb = data[c["market"]]
-        d0 = int(R.index.searchsorted(pd.Timestamp(c["day0"])))
-        rivals, group = c["rivals"].split(), c["group"].split()
-        excl = set(rivals) | set(group)
-        for kind, peers in [("rivals", rivals), ("group", group)]:
-            if not peers:
-                continue
-            res, pr = outcome(R, U, dvb, d0, c["symbol"], peers, excl, f"{c['case_id']}:{kind}", logs)
-            rows.append({**{k: c[k] for k in ["case_id", "market", "symbol", "status", "day0", "financial",
-                                               "label", "channel"]},
-                         "peer_set": kind, "day0_used": str(R.index[d0].date()), **res})
-            peer_rows += [{"case_id": c["case_id"], "peer_set": kind, **p} for p in pr]
-    out = pd.DataFrame(rows)
-    out.to_csv(out_dir / "outcomes.csv", index=False)
-    pd.DataFrame(peer_rows).to_csv(out_dir / "outcomes_peers.csv", index=False)
-
     main_set = out[(out["status"] == "case") & (out["peer_set"] == "rivals") & (out["n_peers"] >= 3)].copy()
     res = {"T1_T2": tests(main_set)}
     res["verdict_H1"] = verdict(res["T1_T2"])
@@ -375,6 +350,40 @@ def run(case_file: Path = CASE_FILE, out_dir: Path = OUT) -> None:
     ind = out[(out["status"] == "industry_shock") & (out["peer_set"] == "rivals")]
     rob["industry_shocks"] = {"n": len(ind), "mean_bhar_0_20": float(ind["bhar_0_20"].mean()) if len(ind) else None}
     res["robustness"] = rob
+    return res
+
+
+def run(case_file: Path = CASE_FILE, out_dir: Path = OUT) -> None:
+    import json
+    from scipy import stats
+    cases = pd.read_csv(case_file, dtype=str).fillna("")
+    logs: list = []
+    rin, dvin, uni_in = load_india()
+    rus, dvus = load(DATA / "extended_prices.parquet", 1.0)
+    mask = us_pit_mask(rus)
+    data = {"India": (rin, uni_in, dvin.rolling(63, min_periods=20).mean().shift(1)),
+            "US": (rus, mask, dvus.rolling(63, min_periods=20).mean().shift(1))}
+    rows, peer_rows = [], []
+    for _, c in cases[cases["status"].isin(["case", "industry_shock"])].iterrows():
+        R, U, dvb = data[c["market"]]
+        d0 = int(R.index.searchsorted(pd.Timestamp(c["day0"])))
+        rivals, group = c["rivals"].split(), c["group"].split()
+        excl = set(rivals) | set(group)
+        for kind, peers in [("rivals", rivals), ("group", group)]:
+            if not peers:
+                continue
+            res, pr = outcome(R, U, dvb, d0, c["symbol"], peers, excl, f"{c['case_id']}:{kind}", logs)
+            rows.append({**{k: c[k] for k in ["case_id", "market", "symbol", "status", "day0", "financial",
+                                               "label", "channel"]}, "sample": c.get("sample") or "registered",
+                         "peer_set": kind, "day0_used": str(R.index[d0].date()), **res})
+            peer_rows += [{"case_id": c["case_id"], "peer_set": kind, **p} for p in pr]
+    out = pd.DataFrame(rows)
+    out.to_csv(out_dir / "outcomes.csv", index=False)
+    pd.DataFrame(peer_rows).to_csv(out_dir / "outcomes_peers.csv", index=False)
+
+    res = {name: analyze(out[keep]) for name, keep in [
+        ("registered", out["sample"] == "registered"),
+        ("full_population", out["sample"].isin(["registered", "extension"]))]}  # deviation D1
     with open(out_dir / "tests.json", "w") as f:
         json.dump(res, f, indent=2, default=float)
     (out_dir / "run.log").write_text("\n".join(logs) + "\n")
