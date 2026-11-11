@@ -11,23 +11,26 @@ number in this draft traces to a file listed in Appendix C.*
 ## Abstract
 
 When a firm collapses, investors, lenders and regulators must judge on the day whether the
-damage will spread to its rivals or be absorbed by them. The usual proxy is size: the
-failed firm's market share, or its industry's concentration. We test that proxy, and an
-alternative rule written down before the test. In 266 isolated crashes of S&P 500 firms
-(2000–2024), rivals fall 1.2% against the market on the crash day, and more when the
-failed firm is large. But the failed firm's share has no out-of-sample power to predict
-the rivals' reaction (cross-validated R² below zero in every sample), while sub-industry
-identity predicts 6–7% when the crash threshold is set at −10% or −20%. The alternative rule labels a collapse
-**"shared dependency"** when, from the day-0 news alone, the rivals share the failed
-firm's funding market, depositor base or legal liability. In a pre-registered test on 40
-new US and Indian collapses, only 4 qualify. Over the next 20 trading days their rivals
-lost 9.3% against the market, against 3.4% for the other 36 cases (difference −5.9
-percentage points, permutation *p* = 0.15). The predicted sign was right in 50% of cases.
-Under the pre-registered rules, the main hypothesis has **too few cases to test**, and the
-prediction that rivals of "replaceable" firms hold up **fails**. Market share again does
-not predict the reaction (*t* ≈ −1). The firm result is negative: market share is not a
-measure of a firm's importance to its rivals. Shared dependency is a promising
-replacement, but it is not established.
+damage will spread to its rivals. The usual proxy is size: the failed firm's market share,
+or its industry's concentration. We test that proxy, and an alternative rule written down
+before the test. In 266 large idiosyncratic one-day drops of S&P 500 firms (2000–2024),
+rivals fall 1.2% against the market on the day, and about 1 point more when the dropping
+firm is in the top third by share. But share adds no out-of-sample predictive power for the
+rivals' reaction (cross-validated R² below zero in every variant), and sub-industry
+identity does little better (−5% to +7% on day 0, negative at 20 days). The alternative
+rule labels a collapse **"shared dependency"** when, from the day-0 news alone, the rivals
+share the failed firm's funding market, depositor base or legal liability. In a
+pre-registered test on 26 new US and Indian collapses (40 after a disclosed extension),
+only 2 (4) qualify. Over the next 20 trading days their rivals lost 18.0% (9.3%) against
+the market, against 3.7% (3.4%) for the other cases. The predicted sign was right in 50% of
+cases, and in the extended sample the gap has a permutation *p* of 0.15. Under the
+pre-registered rules, the main hypothesis has **too few cases to test**, and the
+prediction that rivals of "replaceable" firms hold up **fails**: those rivals did not gain.
+The cases cluster in time (the four shared-dependency cases come from three episodes),
+and the design could detect only gaps of about 14 percentage points. Market share again
+does not predict the reaction (*t* ≈ −1, with a wide interval). The result is a careful
+negative: market share is a poor guide to how much a failure hurts rivals, and a
+shared-dependency rule is not yet established.
 
 ---
 
@@ -48,13 +51,15 @@ and Stulz (1992), who found that rivals lose about 1% on average when a firm fil
 bankruptcy, with competitive gains only in concentrated, low-leverage industries. We test
 two answers to it.
 
-The first is the size answer. In 266 isolated crashes of S&P 500 firms, rivals in the
-same GICS sub-industry fall 1.2% against the market on the crash day, and 1.8% when the
-failed firm is in the top third by share. Share therefore sizes the *first-day* hit. It
-does not predict what follows. In a fair race, judged out of sample with five-fold
-cross-validation, the failed firm's share and the industry's concentration have
-*negative* predictive R² in every sample. Sub-industry identity alone predicts about 6–7%
-of the variation when the crash threshold is −10% or −20%. Twenty days after the crash, the average rival
+The first is the size answer. In 266 large idiosyncratic one-day drops of S&P 500 firms,
+rivals in the same GICS sub-industry fall 1.2% against the market on the crash day, and 1.8% when the
+failed firm is in the top third by share. Share therefore sizes the *first-day* hit
+(in-sample *t* = −2.2). It adds nothing out of sample. Judged by five-fold
+cross-validation, the failed firm's share and the industry's concentration have *negative*
+predictive R² in every variant. Sub-industry identity does little better: −5% to +7% on
+day 0, depending on the variant, and negative at 20 days. These events are large drops,
+not deaths. None of the 266 firms was delisted within 60 days, so this part of the paper
+measures how bad news about one firm spreads to its industry. Twenty days after the crash, the average rival
 is within about 1 percentage point of where it started relative to the market (−0.3%,
 95% interval −1.2% to +0.6%).
 
@@ -72,19 +77,23 @@ repository before computing any rival return, and labelled 40 new collapses from
 day-0 news alone.
 
 The pre-registered test does not establish the rule. Applied strictly, the rule finds a
-shared dependency in only 4 of 40 collapses. Citi's and Bank of America's rivals fell 13.5%
-and 22.6% in late 2008 and early 2009, as predicted, but the two Indian cases barely moved.
-With fewer than five such cases, the rule we fixed in advance says the main hypothesis
-cannot be tested. The other half of the rule, that rivals of "output-replaceable" firms do
-not lose, failed outright. Those rivals fell in 55% of cases, by 3.4% on average, and the
-pre-registered reading of the split by financial and non-financial firms is "the rule
-fails out of sample". Market share did not predict the out-of-sample reaction either.
+shared dependency in only 2 of the 26 registered collapses, and 4 of 40 after the
+extension. Citi's and Bank of America's rivals fell 13.5% and 22.6% in late 2008 and early
+2009, as predicted. But in the same weeks, rivals of regional banks that the rule labelled
+"replaceable" fell almost as much, and the two Indian cases barely moved. With fewer than
+five such cases, the rule we fixed in advance says the main hypothesis cannot be tested.
+The other half of the rule, that rivals of "output-replaceable" firms hold up, was not
+borne out. Those rivals did not gain: they fell in 55% of cases, by 3.4% on average, and the
+pre-registered reading of the split by financial and non-financial firms is "the rule fails
+out of sample". Outside finance the drift is small and not distinguishable from zero.
+Market share did not predict the out-of-sample reaction either.
 
-The paper's claim is therefore narrower than the one we started with. **Market share does
-not predict how rivals fare after a collapse. Industry identity predicts a little. A
-dependency rule read from the news is promising, because the large shared-funding cases
-behave as it says, but it is rare and not established, and its "replaceable rivals are
-safe" half is wrong.** On average, rivals of a failed firm drift a little lower.
+The paper's claim is therefore narrower than the one we started with. **The failed firm's
+market share sizes the first-day spillover but does not predict how rivals fare after it.
+Industry identity predicts little. A dependency rule read from the news is not
+established: such collapses are rare, the test had little power, and within the 2008–09
+crisis the label did not sort the outcomes.** Rivals of a failed firm do not, on average,
+gain; they drift slightly lower.
 
 ### Contribution
 
@@ -95,21 +104,30 @@ this paper adds, relative to the four closest papers:
   Stulz 1992). Lang and Stulz explain the sign of rival reactions by *industry*
   concentration and leverage. In our search we found no paper that regresses rival
   reactions on the *failed firm's own* share and compares it with industry identity out of
-  sample. We find that share sizes the day-0 hit but has no out-of-sample predictive
-  power, in either the large US sample or the pre-registered cases.
+  sample. We find that share sizes the day-0 hit, as the information-transfer literature
+  would predict (Foster 1981; Thomas and Zhang 2008). Its incremental out-of-sample power
+  is nil at our precision, in both the large US sample and the pre-registered cases.
 - **One ex-ante rule across finance and non-finance, tested by pre-registration** (versus
   Aharony and Swary 1983 and Jorion and Zhang 2007). Aharony and Swary show that bank
   failures caused by bank-specific problems such as fraud do not hit other banks. Jorion
   and Zhang show, using CDS spreads, that Chapter 11 filings bring contagion and Chapter 7
   liquidations a competitive effect. Both classify the *type* of event within one setting.
   We write a single rule (shared funding, depositors, owner or liability) and apply it to
-  banks, insurers, lenders and non-financial firms alike. We fixed it in advance and
-  labelled the cases blind to outcomes. In our search we found no pre-registered
-  corporate-finance event study. The test also reports its own failure.
-- **The horizontal version of input specificity, with Indian evidence** (versus Barrot and
+  banks, insurers, lenders and non-financial firms alike. The rule's ingredients are not
+  new: it codes the Lang–Stulz competitive/contagion split, the Jorion–Zhang and
+  Helwege–Zhang channels, and the collateral channel of Benmelech and Bergman (2011). The
+  novelty is the protocol: one rule fixed in advance, with cases labelled from the news
+  before outcomes were seen. Registered reports exist in accounting (the *Journal of
+  Accounting Research* 2017 conference; Bloomfield, Rennekamp and Steenhoven 2018), but we
+  found no pre-registered event study of contagion after failures. The test also reports
+  its own failure.
+- **Competitors rather than trading partners, with Indian evidence** (versus Barrot and
   Sauvagnat 2016). Barrot and Sauvagnat show that a supplier's disaster hurts its
-  customers only when the input is specific. That is a *vertical* dependency. We ask the
-  *horizontal* question: do rivals gain when what the failed firm produced is replaceable?
+  customers only when the input is specific, and that the shock also reaches the
+  customers' other suppliers. Related supply-chain work finds that a bankrupt customer's
+  suppliers lose more when it is costly to replace (Hertzel et al. 2008; Kolay, Lemmon and
+  Tashjian 2016; Jacobson and von Schedvin 2015). We ask the question about competitors:
+  do rivals gain when what the failed firm produced is replaceable?
   We add India, where business groups and short-term NBFC funding create shared
   dependencies that are rare in the US. Rival-level evidence for Satyam, IL&FS, DHFL and
   Yes Bank has, as far as we found, not been published. The horizontal answer is mostly
@@ -120,10 +138,10 @@ this paper adds, relative to the four closest papers:
 **Investors and risk managers.** After a collapse, the question is which rivals to hedge
 and which, if any, to buy. The evidence says three things. Do not size the hedge by the
 failed firm's market share beyond the first day. Expect most rivals to share the day-0
-fall (rivals fell on day 0 in about three of four cases) and much of it to persist, rather
-than expecting replaceable rivals to gain. And treat a shared funding market as the
-warning sign: the largest out-of-sample losses came where rivals were funded in the same
-markets as a bank that needed a rescue.
+fall (rivals fell on day 0 in about three of four cases), rather than expecting
+replaceable rivals to gain. And watch the funding market rather than the single failed
+firm: the five largest out-of-sample losses were all US banks and insurers in the 2008–09
+crisis, whatever their label.
 
 **Regulators and competition authorities.** The policy question is "too big" versus "too
 connected". Our evidence is against using share as the measure of how much a failure
@@ -136,7 +154,7 @@ rivals can absorb even a large firm's collapse when its output is replaceable.
 study one kind of shared dependency. This paper offers one ex-ante rule that spans them,
 a pre-registered protocol (rules, case list and code are public), and Indian cases. The
 rule's failure on its "replaceable" half is itself informative: information spillovers
-(Foster 1981) appear to dominate competitive gains for most collapses.
+(Foster 1981) appear to outweigh competitive gains for most collapses.
 
 The rest of the paper sets out the framework (Section 2), the data (Section 3), the
 large US sample (Section 4), the eight case studies (Section 5), the pre-registered test
@@ -189,8 +207,8 @@ Li, Officer and Rodgers 2008). Indian NBFCs relied on short-term money from liqu
 mutual funds, a shared funding market (Anshuman and Sharma 2020). Indian business groups
 move resources between affiliates (Bertrand, Mehta and Mullainathan 2002), and intragroup
 loans flow to weaker affiliates (Gopalan, Nanda and Seru 2007), so group firms are
-financially linked. After the Hindenburg report on the Adani group, Indian firms with
-pledged shares fell more (Ganguly, Mishra and Platt 2025). The rule in this paper puts
+financially linked. Ganguly, Mishra and Platt (2025) study how Indian companies reacted to
+the Hindenburg report on the Adani group. The rule in this paper puts
 these channels under one test.
 
 **Transmission or revelation?** A rival's price can fall because the failure damages it
@@ -217,8 +235,9 @@ firm's share of its sub-industry's trading value.
 
 **India.** The NSE bhavcopy survivorship-free panel, which includes delisted firms,
 corrected for splits and bonuses, with adjusted Yahoo closes used where a stock has them.
-The universe is the top 300 stocks by 63-day traded value, lagged one day. A data hole
-from 22 June to 30 December 2011 is skipped.
+The universe is the top 300 stocks by 63-day traded value, lagged one day. The panel has a
+hole from 22 June to 30 December 2011, so any window touching 22 June 2011 – 31 January
+2012 is skipped.
 
 **Abnormal returns.** In the large US sample (Section 4), the rival reaction is the
 equal-weighted sub-industry peer return minus the market return excluding that
@@ -229,13 +248,17 @@ market return, excluding the failed firm, its rivals and its group.
 
 ---
 
-## 4. US evidence: 266 isolated crashes
+## 4. US evidence: 266 large idiosyncratic drops
 
 **Events.** An event is a day on which an S&P 500 member falls more than 15% *and* at least
 12 percentage points more than its sub-industry peers. It must be the only such firm in
 its sub-industry that day, have at least 3 peers, and not reverse by more than 25% the next
 day (a likely bad print). Each stock can have one event per 20 trading days. This gives
-266 events in 37 sub-industries.
+266 events in 37 sub-industries, with an average own abnormal drop of −19.1%. **None of the
+266 firms was delisted within 60 days.** Because peers and events need a sub-industry in
+the current GICS file, firms that later failed cannot enter. These are large bad-news
+drops of surviving firms, so Part A measures intra-industry information transfer (Foster
+1981; Thomas and Zhang 2008). Deaths enter only in Sections 5 and 6.
 
 **Table 1. Rival reaction to an isolated crash, by the failed firm's share of its
 sub-industry**
@@ -267,6 +290,10 @@ firms do no worse than rivals of the smallest.
 **Does share predict? A fair race.** In-sample R² flatters models with many dummies, so we
 compare models by five-fold cross-validated R²: fit on 80% of events, predict the other
 20%, and repeat. A negative value means the model predicts worse than the sample average.
+Both models include the failed firm's own day-0 abnormal drop. Sub-industries with fewer
+than 5 events are pooled. The folds are random, so events from the same crisis can fall
+in both the fitting and the test folds. That flatters the sub-industry model, so
+leave-one-year-out folds would be stricter.
 
 **Table 2. What predicts the day-0 rival reaction? In-sample versus out-of-sample R²**
 
@@ -276,18 +303,26 @@ compare models by five-fold cross-validated R²: fit on 80% of events, predict t
 | Crash threshold −10% | 830 | 0.1% | 12.2% | **−0.5%** | **+7.2%** |
 | Crash threshold −20% | 117 | 0.9% | 18.2% | **−3.0%** | **+6.1%** |
 | Excluding Financials | 231 | 0.1% | 6.5% | **−1.5%** | −2.6% |
+| Excluding 2008–09 and 2020 | 199 | — | — | −1.4% | −0.7% |
+| Sector-level peers | 513 | — | — | −0.5% | −5.1% |
+| *20-day reaction, baseline* | 266 | — | — | −2.3% | −17.7% |
 
-*Source: `results/death_test/robustness.csv` (columns `d0_adjR2_*`, `d0_cvR2_*`).*
+*Source: `results/death_test/robustness.csv` (columns starting `d0_adjR2`, `d0_cvR2` and
+`0_20_cvR2`); all variants and both horizons in `results/death_test_oos/referee_checks.json`
+(`M3_cv_r2`). At 20 days, sub-industry's out-of-sample R² is negative in every variant
+(−4.7% to −17.7%).*
 
 In sample, sub-industry identity appears to explain about 14% of the day-0 reaction and
 share plus HHI less than 1%. That contrast was this project's original headline ("industry
 explains ten times more than share"), and **it was over-fitted**. Out of sample, in the
-baseline sample, *neither* predicts. With other crash thresholds (−10%, 830 events; −20%,
-117 events), sub-industry identity predicts 6–7% of the variation out of sample. Share and HHI never
-predict anything. Within a sub-industry, the share coefficient on the day-0 reaction is
-negative but not significant (clustered *t* = −1.8). The fair statement is that **industry
-identity carries some out-of-sample information about how rivals react, and the failed
-firm's market share carries none.**
+baseline sample, *neither* predicts. Sub-industry identity predicts 6–7% of the day-0
+variation only at the −10% and −20% crash thresholds. It is negative in the other four
+variants and at the 20-day horizon. Share and HHI never predict out of sample. In sample,
+share is significant on day 0 in the pooled regression (*t* = −2.2), but not within a
+sub-industry (clustered *t* = −1.8). A small true effect can still produce a negative
+cross-validated R², so this is not proof that share is irrelevant. The fair statement is
+that **share's incremental predictive power is small, confined to day 0 and undetectable
+out of sample, and industry identity adds little more.**
 
 ![Figure 2. Replaceability map: rival reaction by sub-industry](../../results/death_test/figures/fig2_replaceability_map.png)
 
@@ -322,8 +357,10 @@ first trading day after the news. Rivals are chosen by line of business, and ret
 | PG&E (2019) | Wildfire-liability bankruptcy | Edison, Sempra | −6.7% | 0 of 2 | Shared liability regime |
 | SVB (2023) | Deposit run | 9 regional banks | **−24.5%** (*t* −4.6) | 0 of 9 | Shared depositor confidence |
 
-*t-statistics are for the cumulative abnormal return across rivals. Source:
-`results/death_test/summary.json` (`part_b.cases`).*
+*t-statistics are for the cumulative abnormal return (CAR) across rivals, not the BHAR
+shown, and use estimation-window volatility. Event-induced variance would make them
+smaller (Boehmer, Musumeci and Poulsen 1991). Source: `results/death_test/summary.json`
+(`part_b.cases`).*
 
 ![Figure 3. Rival paths around the eight collapses](../../results/death_test/figures/fig1_case_paths.png)
 
@@ -346,23 +383,54 @@ works when that is impossible.
 The full protocol is in `PREREGISTRATION.md`. It was committed in two parts. The rules
 (hypotheses, data, selection, labelling, outcomes, tests and verdict criteria) were
 committed before the selection code ran. The case list, with each case's news paragraph,
-label and rival set, was committed after Mrigay Pathak checked the labels and **before any
-rival return was computed**. The git timestamps are the record.
+label and rival set, was committed after the author checked the labels and **before any
+rival return was computed**. The record is the commit history of a public GitHub
+repository. Commit times can be set by an author; GitHub's push records give a
+server-side check, and the next round will be deposited with a registry such as OSF.
 
 **Selection.** A stock qualifies if its 20-day abnormal return falls below −50% (route 1),
 or it stops trading after a 60-day abnormal fall of more than 30% and the news shows a
 default, insolvency, suspension or forced delisting (route 2). Windows start from 2006
 (India) or 2000 (US). We exclude the eight case-study episodes. After the exclusions, 106
 Indian and 89 US candidates remained, and a random sample of 60 was drawn in each market
-(seed 20261111). A news search then dropped data artefacts (splits, bonuses, demergers),
-falls with no news to date them, industry-wide shocks, and cases with fewer than 3 rivals.
-That left **26 cases: the registered sample**. Because only 2 of them were labelled shared
+(seed 20261111). A stock could start at most one episode per 250 trading days. A news
+search then dropped data artefacts (splits, bonuses, demergers), falls with no news to
+date them, industry-wide shocks, and cases with fewer than 3 rivals. That left **26
+cases: the registered sample** (Table 4a). Because only 2 of them were labelled shared
 dependency, below the 5 the main test needs, we lifted the sample cap before computing any
 returns (deviation D1) and news-checked every remaining candidate under the same rules.
-That added 14 cases, for a **full population of 40**. Both versions are reported.
+That added 14 cases, for a **full population of 40**. Both versions are reported; the
+registered sample is primary.
+
+**Table 4a. From candidates to cases**
+
+| Step | India | US |
+|---|---|---|
+| Candidates after excluding the eight case studies | 106 | 89 |
+| Random sample news-checked (registered) | 60 | 60 |
+| − no own fall to explain (2009 rally) | 11 | 0 |
+| − data artefacts | 9 | 10 |
+| − no news, or no datable day 0 | 16 | 14 |
+| − fewer than 3 rivals | 7 | 17 |
+| − industry-wide shocks (outcomes described, 4 of 10) | 5 | 5 |
+| **Registered cases** | **12** | **14** |
+| Extension (D1): remaining candidates with a real own fall | 69 in total; 34 real after the news check | |
+| − fewer than 3 rivals / industry shocks | 13 / 7 | |
+| **Extension cases** | **8** | **6** |
+
+*Source: PREREGISTRATION §9a, §9d, §9f; candidate lists in `results/death_test_oos/candidates_india.csv` and `candidates_us.csv`.*
+
+**Overlap with the case studies.** Episodes were excluded by ticker within 60 trading days of
+a case study's day 0. Three cases still overlap a case-study episode: Adani Total Gas
+(the Adani–Hindenburg day), DHFL in October 2019 (four months after the DHFL case) and
+Maytas Infra (three weeks before Satyam). Dropping them (a check that is not
+pre-registered) leaves the SD mean at −12.2% and the OR mean at −3.6%.
 
 **Labels.** For each case we wrote one paragraph describing the shock as known on day 0,
-with no information about rival prices or later events. The label follows from that
+with no information about rival prices or later events. The labeller (an AI assistant,
+with the author checking) knew how the 2008–09 and 2019 crises unfolded, so hindsight
+cannot be ruled out. Independent coders, working with names and dates masked, would be
+the fix. The label follows from that
 paragraph by the rule in Section 2, with ties going to OR. Rivals are the S&P 500 members
 of the failed firm's sub-industry (US) or up to 10 hand-picked firms selling the same
 product to the same customers (India). Group firms are excluded from rival sets and
@@ -431,17 +499,27 @@ February–April 2020.*
 verdict we fixed in advance is that H1 cannot be tested. For description: the four SD
 cases have rivals 5.9 pp worse than the OR cases (*p* = 0.15). The gap comes from the two
 US bank rescues. Citi's rivals lost 13.5% and Bank of America's 22.6%, while Lakshmi Vilas's
-lost 0.6% and DHFL's 0.4%. For DHFL in October 2019 the median rival rose and only 4 of
+lost 0.6% and DHFL's 0.4%. **Within the crisis, the label does not sort the outcomes.** The
+three largest out-of-sample losses are OR cases: Regions (−29.3%), Huntington (−28.1%) and
+Fifth Third (−25.3%). Bank of America ranks fourth and Citi seventh. In the Bank of America
+episode (16–29 January 2009), the six OR cases' rivals lost 17.7%, against 22.6% for Bank
+of America's. Only in the Citi episode (October–November 2008) is the gap large: Citi's
+rivals lost 13.5%, while the three OR insurers' rivals gained 11.3%. Part of that gap
+comes from rival sets drawn from today's sub-industries (Cigna's "rivals" are CVS,
+DaVita, LabCorp and Quest). For DHFL in October 2019 the median rival rose and only 4 of
 10 fell, consistent with the case-study reading that DHFL's stress was already priced.
 
-**The OR half fails.** The rule predicts that rivals of replaceable firms do not lose.
-They did lose in 20 of 36 cases, with a mean of −3.4% and a median of −0.8%. Under the
-pre-registered T3 reading, the rule works neither inside finance (OR hit rate 43%, below
-the 50% required) nor outside it (45%, below the 2/3 required when there are no SD cases).
-So **the rule fails out of sample** by its own criteria. The failure is not concentrated in
-one kind of firm. Non-financial OR rivals averaged −1.6% and financial OR rivals −6.2%.
-The negative drift is real enough to defeat a sign prediction, but small: the 95% interval
-for the OR mean is −6.8% to 0.0% (descriptive, not a pre-registered test).
+**The OR half fails, in a specific sense.** The rule predicts that rivals of replaceable
+firms do not lose. They fell in 20 of 36 cases, with a mean of −3.4% and a median of
+−0.8%. Under the pre-registered T3 reading, the rule works neither inside finance (OR hit
+rate 43%, below the 50% required) nor outside it (45%, below the 2/3 required when there
+are no SD cases). So **the rule fails out of sample** by its own criteria. That verdict
+needs a careful reading. If rivals of OR firms truly moved by zero on average, a sign
+count would land near 50%, so the criterion fails about half the time even then. The
+evidence shows that **replaceable rivals did not gain, not that they lost**. Non-financial
+OR rivals averaged −1.6% (95% interval −4.2% to +0.9%) and financial OR rivals −6.2% (−14.0%
+to +1.7%). Neither mean is distinguishable from zero. The next registration should test
+equivalence for OR cases, not a sign count.
 
 **Business groups (H3).** All three Indian group sets fell: the Anil Ambani group firms
 after Reliance Communications' insolvency filing (−37.5%), the same group after Reliance
@@ -458,6 +536,27 @@ the full population the SD coefficient is no longer significant (*t* = −1.42).
 
 **Day 0.** On the collapse day, rivals fell in about three of every four OR cases (OR mean
 −2.0%), as in the large sample. The first-day spillover does not depend on the label.
+
+**Dependence and power (referee-requested, not pre-registered).** The permutation tests
+treat the 40 cases as exchangeable, but they are not independent.
+- They form 24 episodes (cases in one market within 30 days of each other). 21 cases sit
+  in 5 multi-case episodes: seven US financial firms between 16 and 29 January 2009, three
+  Indian firms on 25 February 2013 in one pledged-share panic, and three Anil Ambani group
+  firms on 4 February 2019.
+- Reliance Power and Reliance Infrastructure appear twice: as OR cases, and as group firms
+  in Reliance Communications' group set.
+- The four SD cases come from three episodes.
+- Permuting labels only within the three episodes that contain both labels gives
+  within-episode gaps of +5.3, −24.8 and −4.8 pp (mean −8.1 pp) and a one-sided *p* of
+  0.155.
+
+Power was low by design. With the spread of case outcomes (standard deviation 10.6%), the
+smallest SD–OR gap this design could detect (one-sided 5%, 80% power) is 13.8 pp with 4
+vs 36 cases, and 12.6 pp with 5 vs 35. Detecting the observed 5.9 pp gap at the sample's
+9-to-1 ratio would need about 23 SD cases. For share, the 95% interval for the coefficient
+is −0.42 to +0.13. A 20-point difference in share is compatible with rivals doing
+anywhere from 8.3 pp worse to 2.7 pp better, so the share null is uninformative about
+small effects. (Source: `results/death_test_oos/referee_checks.json`.)
 
 ---
 
@@ -522,7 +621,8 @@ do not count it as support. (Source: `results/death_test_oos/sensitivity_overlap
 actions, the rules drop rival daily returns beyond ±45%. In 2008–09 this removed some real
 moves: Fifth Third's +60% and Regions' +48% on 6 February 2009 fall inside three OR cases'
 windows (`results/death_test_oos/run.log`). Removing them makes those OR outcomes more
-negative, which works against the OR prediction. We left the rule as written.
+negative, which works against the OR prediction. We left the rule as written. Missing
+rival returns also count as zero, as the rules say.
 
 ---
 
@@ -541,9 +641,9 @@ relative to the market:
   the same (−0.5% and −1.7%).
 
 These are descriptions of the pre-registered numbers, not a trading strategy. No new
-test is involved. The magnitudes say that the shared-dependency label, when it applies,
-flagged the largest losses in this sample, but those were two bank rescues in one crisis.
-The "replaceable" label did not flag safety: the typical rival lost a little.
+test is involved. The shared-dependency label, when it applied, flagged large losses. It
+did not flag the largest: OR-labelled regional banks in the same crisis weeks lost more.
+The "replaceable" label did not flag gains either; the typical rival lost a little.
 
 **For portfolios.** The project began from the intuition that one should own hard-to-replace
 ("low-entropy") businesses in a well-diversified ("high-entropy") portfolio. The diversified
@@ -557,12 +657,19 @@ should be expected to share the first-day fall rather than to gain.
 
 ## 9. Limitations
 
-- **Too few shared-dependency cases.** A rule applied strictly from day-0 news finds 4 of
-  40. A real test of H1 needs perhaps 20–30 such cases. That means a larger, longer sample
+- **No deaths in the large sample.** None of the 266 Part A firms was delisted within 60
+  days, so Part A is about large bad-news drops of survivors. Historical industry codes and
+  CRSP delisting returns would bring true deaths in.
+- **Too few shared-dependency cases, and low power.** A rule applied strictly from day-0
+  news finds 4 of 40, from 3 episodes. The design could detect only gaps of about 14 pp,
+  and the observed gap would need about 23 SD cases. That means a larger, longer sample
   (CRSP from 1926, more emerging markets) or a design targeted at financial distress.
-- **Crisis clustering.** 11 of the 20 US out-of-sample cases fall between September 2008
-  and March 2009, when bank stocks fell together for reasons broader than any one failure. The
-  rule calls a single firm's crash firm-specific even when its whole sector is under stress.
+- **Crisis clustering and dependence.** 11 of the 20 US out-of-sample cases fall between
+  September 2008 and March 2009, when bank stocks fell together. On 20–22 January 2009,
+  rivals' day-0 abnormal returns of −5% to −9% suggest sector-wide shocks. The step-1
+  screen was applied to the trigger, not to the market context, so it treated these
+  differently from Genworth on 29 September 2008. Inference that treats cases as
+  independent overstates precision (Section 6.3).
 - **Peer groups.** US peers come from the *current* GICS file, so they are survivors, and
   many 2000s collapses were dropped for having fewer than 3 such peers. Indian rivals were
   picked by hand (before outcomes were known, but by one team). Text-based peers (Hoberg
@@ -571,11 +678,17 @@ should be expected to share the first-day fall rather than to gain.
   noisy measure biases its coefficient toward zero. Revenue shares from Compustat are the
   fix. In the meantime the right claim is "this share proxy has no predictive power", not
   "true market share never matters".
+- **Channels the rule does not cover.** ViacomCBS (March 2021) fell because one holder's
+  positions were liquidated (Archegos), a common-holder channel (Coval and Stafford 2007).
+- **Part A inference.** Returns are market-adjusted only (no beta). Clustering is by date
+  (241 dates for 266 events), close to assuming independence; month or sub-industry
+  clusters would be stricter.
 - **Transmission versus revelation.** Prices cannot distinguish a failure that damages
   rivals from one that reveals their shared weakness. We do not try.
-- **One labeller.** The paragraphs and labels were written by one research team (an AI
-  assistant drafted them; the author approved them). An independent labeller, or an LLM
-  given the same rule (planned), would test the labels' reliability.
+- **One labeller, with possible hindsight.** The paragraphs and labels were written by one
+  team (an AI assistant drafted them; the author approved them), and both knew how the
+  crises unfolded. Independent coders with masked names would test the labels'
+  reliability.
 - **A filter fixed in advance removed some real returns** (Section 7).
 - **Overlapping cases** count some rival moves more than once. The sensitivity check in
   Section 7 handles this, but it was not pre-registered.
@@ -588,14 +701,15 @@ We asked whether a failed firm's market share explains whether its rivals gain o
 It does not. In a large US sample, share sizes the first-day spillover but has no
 out-of-sample power to predict the reaction, while industry identity predicts a little.
 In a pre-registered test on 40 new collapses, share again predicts nothing. The paper's
-alternative, a shared-dependency rule read from the news, behaved as predicted in the
-large bank rescues of 2008–09, where rivals lost 13–23% in a month. But it applied to too
-few collapses to be tested, it did not work outside the 2008–09 crisis, and its claim that
-rivals of replaceable firms hold up failed. The honest summary is that **market share is
-not importance**, and that **what rivals share with a failed firm is the most promising
-candidate to replace it, but it is not yet established.** A pre-registered test with more
-shared-dependency cases is the obvious next step. We have published the protocol so that
-others can run it.
+alternative, a shared-dependency rule read from the news, saw rivals of the two large
+bank rescues of 2008–09 lose 13–23% in a month. But it applied to too few collapses to be
+tested. It did not sort outcomes within the crisis, did not work outside it, and its claim
+that rivals of replaceable firms hold up was not borne out. The honest summary is that
+**market share is a poor measure of a firm's importance to its rivals**, and that **what
+rivals share with a failed firm is a candidate worth a properly powered test, not an
+established answer.** That test needs about 20–25 shared-dependency cases, inference by
+episode, and an equivalence test for the replaceable cases. We have published the protocol
+so that others can run it.
 
 ---
 
@@ -613,10 +727,11 @@ and compared each with holding all members.
 | 1 | 9.8% | 46% | −13.4% |
 | 10 | 11.1% | 25% | +5.0% |
 | 50 | 11.6% | 5% | +8.8% |
-| All (~390) | 11.7% | — | — |
+| All members (310–463 per window) | 11.7% | — | — |
 
 Diversification does not raise expected wealth (by construction, a random pick has the
-same expected value at every N). It raises the *typical* outcome and removes the left
+same expected value at every N). The *annualised* mean return still rises with N (from
+8.7% to 11.7%), because compounding penalises the more volatile small portfolios. It raises the *typical* outcome and removes the left
 tail, because only 39–47% of stocks beat the all-members portfolio in each window
 (Bessembinder 2018). A buy-and-hold equal-weighted portfolio also concentrates by itself:
 its effective number of stocks falls 17–40% over 5 years.
@@ -737,6 +852,20 @@ number below from the files and check it against the text (it prints PASS/FAIL p
 | OR median, full | −0.8% | `results/death_test_oos/outcomes.csv` |
 | Not pre-registered: overlap check SD − OR, p (full) | −10.2 pp, 0.050 | `results/death_test_oos/sensitivity_overlap.json` |
 | $10m rival basket: SD / OR loss | $0.93 million / $0.34 million | `results/death_test_oos/tests.json` |
+| Firms delisted within 60 days (Part A) | 0 | `results/death_test/summary.json` |
+| Mean own abnormal drop, Part A | −19.1% | `results/death_test/summary.json` |
+| Pooled in-sample share t, day 0 | −2.2 | `results/death_test/summary.json` |
+| CV R², sub-industry, 20-day baseline | −17.7% | `results/death_test/robustness.csv` |
+| Episodes / cases in multi-case episodes / SD episodes | 24 / 21 / 3 | `results/death_test_oos/referee_checks.json` |
+| Within-episode gaps (pp) | +5.3, −24.8, −4.8 | `results/death_test_oos/referee_checks.json` |
+| Episode-stratified mean gap, p | −8.1 pp, 0.155 | `results/death_test_oos/referee_checks.json` |
+| BAC episode: OR rivals mean | −17.7% | `results/death_test_oos/referee_checks.json` |
+| Citi episode: OR rivals mean | 11.3% | `results/death_test_oos/referee_checks.json` |
+| Minimum detectable gap, 4 vs 36 / 5 vs 35 | 13.8 pp / 12.6 pp | `results/death_test_oos/referee_checks.json` |
+| SD cases needed for the observed gap | 23 | `results/death_test_oos/referee_checks.json` |
+| OR non-financial 95% interval | −4.2% to +0.9% | `results/death_test_oos/referee_checks.json` |
+| Share coefficient 95% interval (full) | −0.42 to +0.13 | `results/death_test_oos/referee_checks.json` |
+| Dropping case-study overlaps: SD / OR mean | −12.2% / −3.6% | `results/death_test_oos/referee_checks.json` |
 | Test 1 median return, N = 1 / 50 | 9.8% / 11.6% | `results/entropy_research/test1_summary_by_N.csv` |
 | Test 1 chance of lagging by >3 pp, N = 1 / 50 | 46% / 5% | `results/entropy_research/test1_summary_by_N.csv` |
 
@@ -748,15 +877,26 @@ number below from the files and check it against the text (it prints PASS/FAIL p
   capital markets. *Journal of Business* 56(3), 305–322.
 - Anshuman, V. R. and R. Sharma (2020). Financial fragility in retail-NBFCs. IIM Bangalore
   Working Paper No. 604.
+- Benmelech, E. and N. K. Bergman (2011). Bankruptcy and the collateral channel.
+  *Journal of Finance* 66(2), 337–378.
 - Barrot, J.-N. and J. Sauvagnat (2016). Input specificity and the propagation of
   idiosyncratic shocks in production networks. *Quarterly Journal of Economics* 131(3),
   1543–1592.
+- Bloomfield, R., K. Rennekamp and B. Steenhoven (2018). No system is perfect:
+  Understanding how registration-based editorial processes affect reproducibility and
+  investment in research quality. *Journal of Accounting Research* 56(2).
+- Boehmer, E., J. Musumeci and A. B. Poulsen (1991). Event-study methodology under
+  conditions of event-induced variance. *Journal of Financial Economics* 30(2), 253–272.
 - Bertrand, M., P. Mehta and S. Mullainathan (2002). Ferreting out tunneling: An
   application to Indian business groups. *Quarterly Journal of Economics* 117(1), 121–148.
 - Bessembinder, H. (2018). Do stocks outperform Treasury bills? *Journal of Financial
   Economics* 129(3), 440–457.
 - Brunnermeier, M. K. and Y. Sannikov (2014). A macroeconomic model with a financial
   sector. *American Economic Review* 104(2), 379–421.
+- Cheng, L. T. W. and J. E. McDonald (1996). Industry structure and ripple effects of
+  bankruptcy announcements. *Financial Review* 31(4), 783–807.
+- Coval, J. and E. Stafford (2007). Asset fire sales (and purchases) in equity markets.
+  *Journal of Financial Economics* 86(2), 479–512.
 - Diamond, D. W. and P. H. Dybvig (1983). Bank runs, deposit insurance, and liquidity.
   *Journal of Political Economy* 91(3), 401–419.
 - Ferris, S. P., N. Jayaraman and A. K. Makhija (1997). The response of competitors to
@@ -764,9 +904,8 @@ number below from the files and check it against the text (it prints PASS/FAIL p
   effects. *Journal of Corporate Finance* 3(4), 367–395.
 - Foster, G. (1981). Intra-industry information transfers associated with earnings
   releases. *Journal of Accounting and Economics* 3(3), 201–232.
-- Ganguly, S., S. Mishra and H. Platt (2025). [Adani–Hindenburg spillovers to Indian
-  firms.] *Applied Economics Letters*. (Full title and pages to be added from the journal
-  page before circulation.)
+- Ganguly, K., A. K. Mishra and K. Platt (2025). Market perceptions and reactions: The
+  ripple effect of the Hindenburg report on Indian companies. *Applied Economics Letters*.
 - Gopalan, R., V. Nanda and A. Seru (2007). Affiliated firms and financial support:
   Evidence from Indian business groups. *Journal of Financial Economics* 86(3), 759–795.
 - Helwege, J. and G. Zhang (2016). Financial firm bankruptcy and contagion. *Review of
@@ -774,14 +913,23 @@ number below from the files and check it against the text (it prints PASS/FAIL p
 - Hertzel, M. G., Z. Li, M. S. Officer and K. J. Rodgers (2008). Inter-firm linkages and
   the wealth effects of financial distress along the supply chain. *Journal of Financial
   Economics* 87(2), 374–387.
+- Hertzel, M. G. and M. S. Officer (2012). Industry contagion in loan spreads. *Journal of
+  Financial Economics* 103(3), 493–506.
 - Hoberg, G. and G. Phillips (2016). Text-based network industries and endogenous product
   differentiation. *Journal of Political Economy* 124(5), 1423–1465.
 - Iyer, R. and J.-L. Peydró (2011). Interbank contagion at work: Evidence from a natural
   experiment. *Review of Financial Studies* 24(4), 1337–1377.
 - Iyer, R. and M. Puri (2012). Understanding bank runs: The importance of
   depositor-bank relationships and networks. *American Economic Review* 102(4), 1414–1445.
+- Jacobson, T. and E. von Schedvin (2015). Trade credit and the propagation of corporate
+  failure: An empirical analysis. *Econometrica* 83(4), 1315–1371.
 - Jorion, P. and G. Zhang (2007). Good and bad credit contagion: Evidence from credit
   default swaps. *Journal of Financial Economics* 84(3), 860–883.
+- Kolay, M., M. Lemmon and E. Tashjian (2016). Spreading the misery? Sources of bankruptcy
+  spillover in the supply chain. *Journal of Financial and Quantitative Analysis* 51(6),
+  1955–1990.
 - Lang, L. H. P. and R. M. Stulz (1992). Contagion and competitive intra-industry effects
   of bankruptcy announcements: An empirical analysis. *Journal of Financial Economics*
   32(1), 45–60.
+- Thomas, J. and F. Zhang (2008). Overreaction to intra-industry information transfers?
+  *Journal of Accounting Research* 46(4), 909–940.

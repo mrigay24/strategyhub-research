@@ -49,6 +49,9 @@ def rows() -> list[tuple[str, str, str]]:
     sens = json.load(open(R / "death_test_oos" / "sensitivity_overlap.json"))
     out = pd.read_csv(R / "death_test_oos" / "outcomes.csv")
     t1 = pd.read_csv(R / "entropy_research" / "test1_summary_by_N.csv").set_index("N")
+    rc = json.load(open(R / "death_test_oos" / "referee_checks.json"))
+    f_rc = "results/death_test_oos/referee_checks.json"
+    st = rc["M4_episodes"]["stratified"]
     f_rob, f_t, f_ev, f_sum = ("results/death_test/robustness.csv", "results/death_test_oos/tests.json",
                                "results/death_test/us_events.csv", "results/death_test/summary.json")
     orc = out[(out.status == "case") & (out.peer_set == "rivals") & (out.label == "OR")]
@@ -113,6 +116,30 @@ def rows() -> list[tuple[str, str, str]]:
          "results/death_test_oos/sensitivity_overlap.json"),
         ("$10m rival basket: SD / OR loss",
          f"${abs(full['T1_T2']['mean_SD']) * 10:.2f} million / ${abs(full['T1_T2']['mean_OR']) * 10:.2f} million", f_t),
+        # Part A extras
+        ("Firms delisted within 60 days (Part A)", str(summ["part_a"]["delisted_within_60d"]["n_events"]), f_sum),
+        ("Mean own abnormal drop, Part A", pct(summ["part_a"]["all"]["own_ab_d0"]), f_sum),
+        ("Pooled in-sample share t, day 0",
+         num(summ["part_a"]["regressions"]["peer_car_d0"]["share_hhi"]["t"]["firm_share"], 1), f_sum),
+        ("CV R², sub-industry, 20-day baseline", pct(base["0_20_cvR2_subind"]), f_rob),
+        # Referee-requested diagnostics (not pre-registered)
+        ("Episodes / cases in multi-case episodes / SD episodes",
+         f"{rc['M4_episodes']['n_episodes']} / {rc['M4_episodes']['cases_in_multi_case_episodes']} / "
+         f"{rc['M4_episodes']['n_SD_episodes']}", f_rc),
+        ("Within-episode gaps (pp)", ", ".join(num(g * 100, 1, True) for g in st["within_episode_gaps"]), f_rc),
+        ("Episode-stratified mean gap, p", f"{pp(st['mean_gap'])}, {st['perm_p_one_sided']:.3f}", f_rc),
+        ("BAC episode: OR rivals mean", pct(rc["M5_within_crisis"]["US-BAC"]["OR_mean"]), f_rc),
+        ("Citi episode: OR rivals mean", pct(rc["M5_within_crisis"]["US-C"]["OR_mean"], 1), f_rc),
+        ("Minimum detectable gap, 4 vs 36 / 5 vs 35",
+         f"{rc['M6_power']['mde_4_vs_36'] * 100:.1f} pp / {rc['M6_power']['mde_5_vs_35'] * 100:.1f} pp", f_rc),
+        ("SD cases needed for the observed gap", str(rc["M6_power"]["sd_cases_needed_for_observed_gap_at_9to1"]), f_rc),
+        ("OR non-financial 95% interval",
+         f"{pct(rc['M6_power']['OR_subgroups']['non_financial']['ci95'][0])} to "
+         f"{pct(rc['M6_power']['OR_subgroups']['non_financial']['ci95'][1], 1, True)}", f_rc),
+        ("Share coefficient 95% interval (full)",
+         f"{num(rc['M2_share_ci']['full_population']['ci95'][0])} to {num(rc['M2_share_ci']['full_population']['ci95'][1], 2, True)}", f_rc),
+        ("Dropping case-study overlaps: SD / OR mean",
+         f"{pct(rc['M7a_drop_case_study_overlaps']['mean_SD'])} / {pct(rc['M7a_drop_case_study_overlaps']['mean_OR'])}", f_rc),
         # Appendix A
         ("Test 1 median return, N = 1 / 50",
          f"{pct(t1.loc[1, 'median_ann_return'])} / {pct(t1.loc[50, 'median_ann_return'])}",
@@ -124,7 +151,8 @@ def rows() -> list[tuple[str, str, str]]:
 
 
 def main() -> None:
-    text = " ".join(PAPER.read_text().split())  # ignore line wrapping
+    body = PAPER.read_text().split("## Appendix C")[0]  # the table itself must not count
+    text = " ".join(body.split())  # ignore line wrapping
     rs = rows()
     if "--table" in sys.argv:
         print("| Headline number | Value | Source |\n|---|---|---|")

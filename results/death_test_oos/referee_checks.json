@@ -1,0 +1,184 @@
+{
+  "note": "NOT pre-registered; referee-requested diagnostics",
+  "M4_episodes": {
+    "n_cases": 40,
+    "n_episodes": 24,
+    "cases_in_multi_case_episodes": 21,
+    "multi_case_episodes": 5,
+    "n_SD_episodes": 3,
+    "stratified": {
+      "episodes_with_both_labels": 3,
+      "episode_cases": [
+        [
+          "IN-CGPOWER",
+          "IN-IBHFL",
+          "IN-LVB",
+          "IN-DHFL19"
+        ],
+        [
+          "US-C",
+          "US-HIG",
+          "US-CI",
+          "US-LNC08"
+        ],
+        [
+          "US-BAC",
+          "US-STT",
+          "US-RF",
+          "US-FITB",
+          "US-AFL",
+          "US-TXT",
+          "US-HBAN09"
+        ]
+      ],
+      "within_episode_gaps": [
+        0.052984781182664496,
+        -0.24838692878662522,
+        -0.048185213343253375
+      ],
+      "mean_gap": -0.08119578698240469,
+      "perm_p_one_sided": 0.1551
+    }
+  },
+  "M5_within_crisis": {
+    "US-C": {
+      "SD_bhar": -0.1351848737905875,
+      "OR_cases": [
+        "US-HIG",
+        "US-CI",
+        "US-LNC08"
+      ],
+      "OR_mean": 0.11320205499603771
+    },
+    "US-BAC": {
+      "SD_bhar": -0.2255149901094576,
+      "OR_cases": [
+        "US-STT",
+        "US-RF",
+        "US-FITB",
+        "US-AFL",
+        "US-TXT",
+        "US-HBAN09"
+      ],
+      "OR_mean": -0.17732977676620423
+    },
+    "largest_losses_rank": [
+      "US-RF OR -0.293",
+      "US-HBAN09 OR -0.281",
+      "US-FITB OR -0.253",
+      "US-BAC SD -0.226",
+      "US-AFL OR -0.221",
+      "IN-COREEDU OR -0.164",
+      "US-C SD -0.135"
+    ]
+  },
+  "M6_power": {
+    "sd_of_case_outcomes": 0.10559331506090523,
+    "mde_4_vs_36": 0.1383787001826145,
+    "mde_5_vs_35": 0.125525357976537,
+    "mde_2_vs_24": 0.19323533862947614,
+    "observed_gap_full": -0.05861428567647206,
+    "sd_cases_needed_for_observed_gap_at_9to1": 23,
+    "OR_subgroups": {
+      "financial": {
+        "n": 14,
+        "mean": -0.06163747012361647,
+        "ci95": [
+          -0.14019837296397614,
+          0.0169234327167432
+        ],
+        "hits": 6,
+        "binom_p_hit_gt_half": 0.78802490234375,
+        "t_mean_vs_0": -1.5377807162906478
+      },
+      "non_financial": {
+        "n": 22,
+        "mean": -0.016299381841503893,
+        "ci95": [
+          -0.04169725851678952,
+          0.009098494833781737
+        ],
+        "hits": 10,
+        "binom_p_hit_gt_half": 0.7382664680480957,
+        "t_mean_vs_0": -1.2578527259499084
+      }
+    }
+  },
+  "M7a_drop_case_study_overlaps": {
+    "n": 37,
+    "n_SD": 3,
+    "n_OR": 34,
+    "mean_SD": -0.1222137881050671,
+    "mean_OR": -0.035948726075259695,
+    "hit_rate": 0.4864864864864865,
+    "hit_rate_SD": 1.0,
+    "hit_rate_OR": 0.4411764705882353,
+    "diff": -0.08626506202980741,
+    "perm_p": 0.0967,
+    "fisher_p": 0.19819819819819823
+  },
+  "M2_share_ci": {
+    "registered": {
+      "coef": -0.15440906647001873,
+      "se": 0.15619877380207736,
+      "ci95": [
+        -0.4605586631220904,
+        0.1517405301820529
+      ],
+      "effect_of_20pp_share_ci": [
+        -0.09211173262441807,
+        0.030348106036410583
+      ]
+    },
+    "full_population": {
+      "coef": -0.14110176028876262,
+      "se": 0.14013918538929931,
+      "ci95": [
+        -0.4157745636517892,
+        0.133571043074264
+      ],
+      "effect_of_20pp_share_ci": [
+        -0.08315491273035786,
+        0.026714208614852804
+      ]
+    }
+  },
+  "M3_cv_r2": {
+    "baseline (sub-industry, -15%/-12%)": {
+      "d0_share_hhi": -0.005791228848632,
+      "d0_subind": -0.0133163762692076,
+      "20d_share_hhi": -0.0227134605773715,
+      "20d_subind": -0.1771473488469357
+    },
+    "crash threshold -10%/-8%": {
+      "d0_share_hhi": -0.004714340808912,
+      "d0_subind": 0.0715823432377883,
+      "20d_share_hhi": -0.0066924107263055,
+      "20d_subind": -0.0469309811644923
+    },
+    "crash threshold -20%/-16%": {
+      "d0_share_hhi": -0.0295479600254818,
+      "d0_subind": 0.0613389924729114,
+      "20d_share_hhi": -0.0376577754485863,
+      "20d_subind": -0.1272541896574795
+    },
+    "excluding 2008-09 and 2020": {
+      "d0_share_hhi": -0.0141107915848056,
+      "d0_subind": -0.007313350820745,
+      "20d_share_hhi": -0.0127861255508106,
+      "20d_subind": -0.1025869930583309
+    },
+    "excluding Financials": {
+      "d0_share_hhi": -0.015132057184757,
+      "d0_subind": -0.025942892505388,
+      "20d_share_hhi": -0.009947893864041,
+      "20d_subind": -0.0680361682244938
+    },
+    "sector-level peers": {
+      "d0_share_hhi": -0.0050605261500387,
+      "d0_subind": -0.0513520760779755,
+      "20d_share_hhi": -0.0078276158231805,
+      "20d_subind": -0.0967034472336809
+    }
+  }
+}

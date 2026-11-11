@@ -42,8 +42,8 @@ rivals. I wrote a rule in advance: rivals should lose when they share a critical
 dependency with the failed firm, such as the same funding market, depositors or owner. I
 then tested it on 40 new US and Indian collapses. The surprise was how *rare* such cases
 are. Labelled strictly from day-0 news, only 4 of 40 qualified, which was too few to test
-the rule. The two US bank rescues in 2008–09 behaved as predicted; the two Indian cases
-barely moved. In India, firms in the failed firm's business group fell in all three cases.
+the rule. Rivals of the two US bank rescues in 2008–09 fell hard, but so did rivals of
+other banks in the same weeks, and the two Indian cases barely moved. In India, firms in the failed firm's business group fell in all three cases.
 
 **Is there a Chinese setting you would suggest where shared-funding failures are frequent
 enough to run the same pre-registered test properly? I was wondering about the 2020–21
