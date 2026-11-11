@@ -346,6 +346,84 @@ lose, and does its market share explain which?
 5. Implications for investors
 6. Limitations
 
+### 6a. Red-team pass (11 Nov, before the literature check)
+
+The one time the question itself is allowed to be challenged. These are the three
+strongest objections a finance professor would raise, and whether any is fatal.
+
+**Objection 1: "You are measuring information, not importance."**
+- A rival's price falls when a crash *tells investors something* about the rival's own
+  cash flows (Foster 1981; Lang & Stulz 1992).
+- The regional banks did not *depend on* SVB. SVB's collapse showed that they had the
+  same weakness: uninsured deposits and unrealised bond losses. PG&E's bankruptcy showed
+  that California's wildfire-liability rule also applied to Edison.
+- So "shared dependency" could just mean "the shock revealed a common exposure". Put
+  that way, "rivals fall when the shock hits something they share" sounds circular.
+- **Verdict: not fatal, but the wording must change.**
+  - The question was never "how important was the firm in some deep sense". It is "do
+    rivals gain or lose, and does market share explain which?" That question has an
+    answer whatever the channel is.
+  - The circularity charge is exactly what the pre-registered test answers. If a label
+    written from a news paragraph, *before* anyone looks at rival returns, predicts the
+    sign of the rival reaction, it is a useful rule, not a circle. A circular rule could
+    not fail; this one can.
+  - Prices cannot tell apart **transmission** (the failure itself damages rivals: IL&FS
+    froze the funding market other lenders used) and **revelation** (the failure shows
+    rivals have the same weakness: SVB). The paper will say so plainly. Both mean rivals
+    lose, and neither has anything to do with market share.
+  - In the technical sections, use "spillover" instead of "importance". Keep
+    "importance" for the motivation and the title.
+  - The classification rule must be about **structure**: what the rivals share with the
+    failed firm (a funding market, a depositor base, an owner, a liability rule that
+    legally applies to them too). It must not be about whether rivals "seemed affected".
+
+**Objection 2: "Your 'shared dependency' label is just a Financials dummy, and bank
+contagion has been known for 40 years."**
+- Four of the six shared-dependency readings are lenders or banks (IL&FS, DHFL, Yes
+  Bank, SVB). Bank-failure contagion is old news (Aharony & Swary 1983).
+- If the rule only works inside finance, the general claim shrinks to "bank runs
+  spread".
+- **Verdict: not fatal, but it is the biggest risk to the *general* claim.** The fix is
+  a pre-registered split: hit rate and mean difference reported separately for
+  financial and non-financial failed firms, with the meaning of each outcome written
+  down in advance. Part A is also re-run excluding Financials (Phase 3). India's business
+  groups (the "owner" channel) and liability events outside finance are where the
+  general claim gets its real test.
+
+**Objection 3: "Your 'market share' is a weak proxy, so of course it explains little."**
+- "Share" here is the firm's share of 63-day *trading value* among S&P 500 members of
+  its *current* GICS sub-industry. It is not revenue share or market cap. It ignores
+  private, foreign and non-index rivals.
+- A noisy measure explains less than the true variable would (attenuation bias). Three
+  noisy variables against about 25 sub-industry dummies is not a fair race.
+- Our own tercile table shows that share *does* matter on day 0 (−0.77% for small-share
+  firms, −1.77% for large-share firms).
+- The "fades by day 20" result has low power: t = −0.6 is not the same as "zero".
+- **Verdict: not fatal, but the claim must be narrower.** The paper will say: "share
+  predicts the size of the *first-day* hit, not whether the damage *lasts*; industry
+  identity explains far more than our share proxy." It will not say "share doesn't
+  matter". Phase 3 adds a fairer race (out-of-sample R², share within sub-industry) and
+  confidence intervals for the 20-day effect, and the paper names revenue shares from
+  CRSP/Compustat as the fix.
+
+**Smaller objections, handled in the design:**
+- Eight cases picked after the fact: the pre-registered test.
+- Confounding events: Yes Bank fell during the COVID crash; SVB came with Credit Suisse.
+  These are flagged case by case.
+- Market-adjusted returns ignore beta. High-beta bank stocks look worse in a falling
+  market for no special reason, so the out-of-sample test adds a market-model
+  (beta-adjusted) version.
+- Peers come from today's GICS list, so they are survivors.
+
+**Is any objection fatal? No.** The question stays as decided. The thesis is sharpened
+to:
+
+> When a firm collapses, whether its rivals lose or gain is predicted by **what they
+> share with it** (a funding market, a depositor base, an owner, or a legal liability),
+> not by its market share. Market share predicts only how big the first-day hit is. We
+> do not claim to separate "the failure damaged rivals" from "the failure revealed that
+> rivals had the same weakness"; both mean rivals lose.
+
 *Original, broader question, kept for reference:* does a firm's replaceability carry
 information beyond market share and HHI about risk, returns and resilience?
 
