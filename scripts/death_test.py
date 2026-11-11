@@ -327,14 +327,8 @@ def part_b(us: tuple, india: tuple) -> dict:
     return {"cases": df.to_dict("records"), "peers": pdf.to_dict("records")}
 
 
-def main() -> None:
-    summary = {}
-    log("Loading US (raw, $1 floor)")
-    rets, dv = load(DATA / "extended_prices.parquet", 1.0)
-    mask = us_pit_mask(rets)
-    summary["part_a"] = part_a(rets, mask, dv)
-    us = (rets, dv, mask)
-
+def load_india():
+    """India returns, traded value and top-300 universe (combined loader)."""
     log("Loading India (NSE survivorship-free bhavcopy + adjusted Yahoo closes)")
     rin, dvin = load(DATA / "nse_survivorship_free_adj.parquet", None)
     # Fallback = the corporate-action-corrected bhavcopy panel (_adj, built by
@@ -350,7 +344,17 @@ def main() -> None:
     dvbar = dvin.rolling(63, min_periods=20).mean().shift(1)
     top = dvbar.rank(axis=1, ascending=False) <= 300
     uni_in = top & rin.notna()
-    summary["part_b"] = part_b(us, (rin, dvin, uni_in))
+    return rin, dvin, uni_in
+
+
+def main() -> None:
+    summary = {}
+    log("Loading US (raw, $1 floor)")
+    rets, dv = load(DATA / "extended_prices.parquet", 1.0)
+    mask = us_pit_mask(rets)
+    summary["part_a"] = part_a(rets, mask, dv)
+    us = (rets, dv, mask)
+    summary["part_b"] = part_b(us, load_india())
 
     with open(OUT / "summary.json", "w") as f:
         json.dump(summary, f, indent=2,
