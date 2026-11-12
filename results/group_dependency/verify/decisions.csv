@@ -1,0 +1,96 @@
+symbol,action,group,group_type,start,end,reason,source_url,filing_date
+GTOFFSHORE,split,Great Offshore (Vijay Sheth),Family,2005-01-01,2009-12-31,Vijay Sheth was still the promoter in Oct-Nov 2008; Bharati Shipyard only took the pledged 14.89% in May 2009 and control after its 2009 open offer (end date approximate),https://business-standard.com/article/companies/great-offshore-promoters-pledge-more-shares-to-bharati-arm-109010601103_1.html,2009-01
+GTOFFSHORE,split,Bharati Shipyard (PC Kapoor & Vijay Kumar),Family,2010-01-01,2025-06-30,Bharati Shipyard controlled Great Offshore after its 2009 open offer (start date approximate),https://business-standard.com/article/companies/great-offshore-promoters-pledge-more-shares-to-bharati-arm-109010601103_1.html,2009-01
+BHARTISHIP,relabel,Bharati Shipyard (PC Kapoor & Vijay Kumar),Family,,,founders and promoters are PC Kapoor and Vijay Kumar; Vijay Sheth was Great Offshore's promoter (v1 merged two groups),https://bseindia.com/bseplus/AnnualReport/532609/5326090311.pdf,2014-15
+BHARATIDIL,relabel,Bharati Shipyard (PC Kapoor & Vijay Kumar),Family,,,same company as BHARTISHIP (renamed Bharati Defence and Infrastructure),https://bseindia.com/bseplus/AnnualReport/532609/5326090311.pdf,2014-15
+AVAYAGCL,relabel,Avaya,MNC,,,Avaya International took 59.1% of Tata Telecom in 2004 (renamed Avaya GlobalConnect); not Tata after 2004,https://www.business-standard.com/amp/article/companies/tata-telecom-renamed-avaya-global-connect-104080501063_1.html,2004-08
+MANGCHEFER,split,UB (Vijay Mallya),Family,2011-01-01,2014-12-31,UB held 16% of the 22% promoter stake and Mallya chaired the board until Dec 2014; Zuari (Adventz) took control later,https://www.thenewsminute.com/news/failing-retain-control-vijay-mallya-quits-mcf-board-21189,2014-12
+SAMMAANCAP,split,Sammaan Capital,Professional,2023-03-01,2025-06-30,Sameer Gehlaut cut his stake to 9.8% in Dec 2021 and was formally declassified as promoter in Feb 2023,https://www.sammaancapital.com/media/uploads/downloads/sclclarificationstoequityshareholders_27408.pdf,2023-02
+JINDRILL,relabel,DP Jindal,Family,,,"promoters (Jindal Global Finance and Investment, Sudha Apparels, Crishpark) are DP Jindal group entities shared with Maharashtra Seamless",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740816_17102026042125_WEB.xml,2026-09-30
+MAHSEAMLES,relabel,DP Jindal,Family,,,Maharashtra Seamless is a DP Jindal group firm (v1 'Saraf family' was wrong); shares promoter entities with Jindal Drilling,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740816_17102026042125_WEB.xml,2026-09-30
+CONSOFINVT,relabel,BC Jindal,Family,,,"promoters (Concatenate Advest, Futuristic Trust of Shyam Sunder Jindal) are BC Jindal group, 10 names shared with Jindal Poly Films",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743005_21102026042911_WEB.xml,2026-09-30
+MANGLMCEM,relabel,BK Birla,Family,,,"promoters Vidula Consultancy, Rambara Trading and Aditya Birla Real Estate (ex Century Textiles) are BK Birla family entities, not CK Birla",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740185_16102026053518_WEB.xml,2026-09-30
+AVADHSUGAR,relabel,Nopany (CS Nopany),Family,,,"promoters Ganges Securities, New India Retailing, SCM Investment are the Nopany branch's entities, shared with Sutlej Textiles",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1736689_13102026125219_WEB.xml,2026-09-30
+HERCULES,relabel,Bajaj (Rahul Bajaj family),Family,,,"promoters are Bajaj Holdings and Investment, Jamnalal Sons, Bajaj Sevashram",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1554645_21102025113749_WEB.xml,2025-09-30
+YAARI,relabel,Indiabulls (Sameer Gehlaut),Family,,,Sameer Gehlaut and his entities are the promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743350_21102026062019_WEB.xml,2026-09-30
+SONATSOFTW,relabel,Rajan Raheja,Family,,,"promoters are Rajan B Raheja and family (Rajan Raheja group, with Hathway until 2019 and Prism Johnson)",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739667_16102026010813_WEB.xml,2026-09-30
+NUVAMA,relabel,PAG,PE,,,Nuvama listed in 2023 with PAG (PAGAC Ecstasy) as promoter; Edelweiss had sold control before listing,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739231_15102026061138_WEB.xml,2026-09-30
+MUTHOOTMF,relabel,Muthoot Pappachan (Thomas John Muthoot),Family,,,"promoters Muthoot Fincorp and Thomas John Muthoot family: the Muthoot Pappachan group, not Muthoot Finance's George family",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1733665_07102026120429_WEB.xml,2026-09-30
+VIPCLOTHNG,relabel,VIP Clothing (Pathare family),Family,,,"promoters are the Pathare family (Maxwell Industries), not Dilip Piramal's VIP Industries",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737342_14102026094939_WEB.xml,2026-09-30
+ORIENTCEM,split,Adani,Family,2025-04-01,2025-06-30,promoters now Ambuja Cements and Holderind (Adani); Adani took control in 2025 (start date approximate),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1735358_10102026022305_WEB.xml,2026-09-30
+RNAVAL,split,Swan Energy (Mehta / Merchant),Family,2024-01-01,2025-06-30,promoter now Hazel Infra (Swan group) after the insolvency resolution (start date approximate),https://nsearchives.nseindia.com/corporate/xbrl/SHP_193491_1283102_21102024053135_WEB.xml,2024-09-30
+RELIGARE,split,Dabur (Burman family),Family,2025-02-01,2025-06-30,Burman family entities are now promoters after their 2024-25 open offer (start date approximate),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742587_21102026123731_WEB.xml,2026-09-30
+IDEA,note,,,,,"joint promoters: Vodafone and Aditya Birla entities (Grasim, Euro Pacific, Oriana) since 2018; v1 single label Vodafone kept",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741899_19102026063613_WEB.xml,2026-09-30
+SUPPETRO,note,,,,,joint venture: Supreme Industries (Taparia) and Rajan Raheja entities; label kept,https://nsearchives.nseindia.com/corporate/xbrl/SHP_168279_646558_21042022064438_WEB.xml,2022-03-31
+SWSOLAR,note,,,,,joint promoters Reliance New Energy and Shapoorji Pallonji since 2022; label kept,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743443_21102026070608_WEB.xml,2026-09-30
+UBL,note,,,,,Heineken and Vijay Mallya both in the promoter group; label kept,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1736891_13102026033642_WEB.xml,2026-09-30
+UNITDSPR,note,,,,,Diageo with residual UB entities in the promoter group; label kept,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740305_16102026062518_WEB.xml,2026-09-30
+JINDALSAW,note,,,,,promoter group includes OP Jindal family entities shared with JSW; branch label kept by rule,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742735_21102026023519_WEB.xml,2026-09-30
+JINDALSTEL,note,,,,,promoter group includes OP Jindal family entities shared with JSW; branch label kept by rule,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742806_21102026030632_WEB.xml,2026-09-30
+CENTENKA,note,,,,,"promoters now Aditya Birla / BK Birla family holding entities; branch boundary unclear, label kept",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740656_17102026012617_WEB.xml,2026-09-30
+WHEELS,note,,,,,"promoters TSF Investments and Trichur Sundaram Santhanam family; TVS branch label uncertain, kept",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1736046_12102026032248_WEB.xml,2026-09-30
+IDFC,confirm,,,,,"promoter is the President of India (GoI) holding IDFC Ltd, parent of IDFC First Bank; corporate label consistent",https://nsearchives.nseindia.com/corporate/xbrl/SHP_189983_1191166_18072024021823_WEB.xml,2024-06-30
+BALLARPUR,confirm,,,,,Avantha Realty is a promoter; the flagged overlap with Future is spurious,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741945_19102026070151_WEB.xml,2026-09-30
+VIDEOIND,confirm,,,,,Videocon Realty and Dhoot entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_175568_782777_01022023030123_WEB.xml,2022-09-30
+ANSALHSG,confirm,,,,,Ansal family promoters; HDFC holds a promoter-classified stake,https://nsearchives.nseindia.com/corporate/xbrl/SHP_171407_729507_17102022045545_WEB.xml,2022-09-30
+AFCONS,confirm,,,,,Shapoorji Pallonji and Goswami Infratech are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742713_21102026021326_WEB.xml,2026-09-30
+SWSOLAR,confirm,,,,,Reliance New Energy is a promoter since 2022 (joint with Shapoorji Pallonji),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743443_21102026070608_WEB.xml,2026-09-30
+EMAMILTD,confirm,,,,,Agarwal and Goenka family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737769_14102026041654_WEB.xml,2026-09-30
+SPIC,confirm,,,,,AM International (Ashwin Muthiah) is a promoter; TIDCO shared with Titan only as a state co-promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743233_21102026060311_WEB.xml,2026-09-30
+TV18BRDCST,confirm,,,,,Network18 (Reliance-controlled since 2014) is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_190410_1195655_19072024063446_WEB.xml,2024-06-30
+MCLEODRUSS,confirm,,,,,Khaitan family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1736824_13102026030012_WEB.xml,2026-09-30
+CHAMBLFERT,confirm,,,,,"Zuari, SIL Investments and KK Birla family entities are promoters",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737347_14102026100243_WEB.xml,2026-09-30
+EVEREADY,confirm,,,,,"Burman entities (Puran Associates, VIC Enterprises) are promoters since 2023",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734597_08102026081814_WEB.xml,2026-09-30
+MCDHOLDING,confirm,,,,,UB Holdings and Vijay Mallya are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1560758_29102025095832_WEB.xml,2025-09-30
+HINDZINC,confirm,,,,,Vedanta Limited is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737993_14102026055738_WEB.xml,2026-09-30
+HATHWAY,confirm,,,,,Jio entities are promoters since 2019,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734689_09102026121855_WEB.xml,2026-09-30
+ISEC,confirm,,,,,ICICI Bank is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_193983_1339265_08012025011259_WEB.xml,2024-12-31
+NAHARINDUS,confirm,,,,,Nahar family investment entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737654_14102026030937_WEB.xml,2026-09-30
+HFCL,confirm,,,,,MN Ventures (Mahendra Nahata) is a promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739523_16102026112900_WEB.xml,2026-09-30
+JINDALPOLY,confirm,,,,,BC Jindal family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739890_16102026034644_WEB.xml,2026-09-30
+ALLCARGO,confirm,,,,,Shashi Kiran Shetty and family are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742994_21102026042544_WEB.xml,2026-09-30
+BINANIIND,confirm,,,,,Binani family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742615_21102026125113_WEB.xml,2026-09-30
+DCAL,confirm,,,,,Vyas family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743212_21102026055831_WEB.xml,2026-09-30
+EDELWEISS,confirm,,,,,Rashesh Shah and family are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741511_19102026035835_WEB.xml,2026-09-30
+GOLDTECH,confirm,,,,,promoters as per filing; group of one,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734632_09102026103644_WEB.xml,2026-09-30
+GESHIP,confirm,,,,,Sheth family trusts are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1753477_05112026030726_WEB.xml,2026-11-02
+ASHOKLEY,confirm,,,,,Hinduja Automotive is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742256_20102026024923_WEB.xml,2026-09-30
+GULFOILLUB,confirm,,,,,Gulf Oil International (Hinduja) is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737052_13102026050222_WEB.xml,2026-09-30
+NOIDATOLL,confirm,,,,,IL&FS Transportation is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734143_08102026123244_WEB.xml,2026-09-30
+IVRCLINFRA,confirm,,,,,E Sudhir Reddy and family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_197034_1413565_14042025115539_WEB.xml,2025-03-31
+INTELLECT,confirm,,,,,Arun Jain and Polaris Banyan are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1737801_14102026043150_WEB.xml,2026-09-30
+KPITTECH,confirm,,,,,Kishor Patil and partners are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739221_15102026060712_WEB.xml,2026-09-30
+MBECL,confirm,,,,,Mandal Vyapaar (Khaitan group) is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1738990_15102026044337_WEB.xml,2026-09-30
+KIRLOSENG,confirm,,,,,Kirloskar family members are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743494_21102026073729_WEB.xml,2026-09-30
+SPICEMOBIL,confirm,,,,,Dilip Modi and Modi family entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1751019_02112026025752_WEB.xml,2026-09-30
+MUTHOOTFIN,confirm,,,,,George Muthoot family members are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742333_20102026052323_WEB.xml,2026-09-30
+NIITLTD,confirm,,,,,Pawar and Thadani family trusts are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734787_09102026023747_WEB.xml,2026-09-30
+PRICOLLTD,confirm,,,,,Vijay Mohan family are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734677_09102026120055_WEB.xml,2026-09-30
+PRIMESECU,confirm,,,,,promoters as per filing,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741056_18102026122919_WEB.xml,2026-09-30
+FSL,confirm,,,,,RPSG Ventures (RP-Sanjiv Goenka) is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1736948_13102026041109_WEB.xml,2026-09-30
+SHYAMTEL,confirm,,,,,promoters as per filing,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1738515_15102026115823_WEB.xml,2026-09-30
+SUNTV,confirm,,,,,Kalanithi Maran is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739912_16102026035750_WEB.xml,2026-09-30
+SUVEN,confirm,,,,,Jasti family trust is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739733_16102026022427_WEB.xml,2026-09-30
+VIPIND,confirm,,,,,DGP Securities (Dilip Piramal) is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1738055_14102026062619_WEB.xml,2026-09-30
+SUTLEJTEX,confirm,,,,,Nopany branch entities are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741985_19102026072605_WEB.xml,2026-09-30
+UNITDSPR,confirm,,,,,Diageo is the promoter (with residual UB entities),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740305_16102026062518_WEB.xml,2026-09-30
+MCDOWELL-N,confirm,,,,,same company as UNITDSPR; Diageo is the promoter,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740305_16102026062518_WEB.xml,2026-09-30
+AWL,confirm,,,,,Wilmar is the promoter in 2026 after Adani's 2025 exit; Adani label holds for the map period to June 2025,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734273_08102026033216_WEB.xml,2026-09-30
+RNAVAL,confirm,,,,,ADAG period confirmed by history; Swan from 2024,https://nsearchives.nseindia.com/corporate/xbrl/SHP_193491_1283102_21102024053135_WEB.xml,2024-09-30
+RELIGARE,confirm,,,,,Burman entities are promoters from 2025,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1742587_21102026123731_WEB.xml,2026-09-30
+POONAWALLA,confirm,,,,,"Rising Sun (Poonawalla) is the promoter since 2021, matching v1's split",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1734248_08102026030556_WEB.xml,2026-09-30
+IDEA,confirm,,,,,Vodafone is a promoter (jointly with Aditya Birla entities),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1741899_19102026063613_WEB.xml,2026-09-30
+RTNPOWER,confirm,,,,,Rajiv Rattan and RattanIndia Enterprises are promoters (RattanIndia period),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739137_15102026053946_WEB.xml,2026-09-30
+IBPOW,confirm,,,,,same company as RTNPOWER; RattanIndia promoters in the filing window,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739137_15102026053946_WEB.xml,2026-09-30
+SEQUENT,relabel,Strides (Arun Kumar),Family,,,the 2021 filing lists Arun Kumar / Strides family entities as promoters (shares 20 names with Strides); Carlyle took control later,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740391_16102026071226_WEB.xml,2026-09-30
+SEQUENT,split,Carlyle,PE,2020-09-01,2025-06-30,"Carlyle entities (CA Hull, CA Harbor Investments) are the promoters in later filings (start date approximate)",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740391_16102026071226_WEB.xml,2026-09-30
+OLECTRA,confirm,,,,,"Goldstone names in early filings and MEIL Holdings later, matching v1's 2018 switch",https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739053_15102026050851_WEB.xml,2026-09-30
+SUBEXLTD,confirm,,,,,Subash Menon and family are promoters,https://nsearchives.nseindia.com/corporate/xbrl/SHP_162310_536519_18102021061146_WEB.xml,2021-09-30
+ACLGATI,note,,,,,Allcargo took control of Gati in 2020; v1 GATI/ACLGATI labels not split by date (left as is),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1549753_16102025120227_WEB.xml,2025-09-30
+GATI,note,,,,,see ACLGATI,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1549753_16102025120227_WEB.xml,2025-09-30
+COHANCE,note,,,,,Advent-controlled (ex Suven Pharmaceuticals); residual Jasti names in early filings,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1739335_15102026071315_WEB.xml,2026-09-30
+EMBDL,note,,,,,Embassy (Virwani) became promoter after the 2025 merger with Indiabulls Real Estate; earlier period not re-labelled,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1754112_05112026074242_WEB.xml,2026-10-30
+IBREALEST,note,,,,,see EMBDL,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1754112_05112026074242_WEB.xml,2026-10-30
+INDOSOLAR,note,,,,,Waaree took over in insolvency (2021-22); not re-labelled (outside its traded years),https://nsearchives.nseindia.com/corporate/xbrl/SHP_1743571_21102026083137_WEB.xml,2026-09-30
+SHALPAINTS,note,,,,,promoters now Infra.Market and Jindal-family entities; history not resolved,https://nsearchives.nseindia.com/corporate/xbrl/SHP_1740044_16102026043835_WEB.xml,2026-09-30
+PIPAVAVYD,note,,,,,same company as RNAVAL; Swan from 2024,https://nsearchives.nseindia.com/corporate/xbrl/SHP_193491_1283102_21102024053135_WEB.xml,2024-09-30

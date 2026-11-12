@@ -95,3 +95,22 @@ telecom towers are Telecom Services; BPO is IT Services & Software; rail freight
 and logistics are Shipping & Logistics; ports, airports and toll-road operators are
 Transport Infrastructure; road and building contractors are Construction & Engineering.
 An industry is assigned by the firm's main business over its time in the panel.
+
+## Version 2 (12 Nov 2026): verified against filings
+
+`group_map_v2.csv` keeps every v1 column and adds `source_url`, `filing_date`, `verified`
+(yes / changed / unverifiable / not checked), `verified_scope` and `notes_v2`. Built by
+`scripts/group_dependency_build_map_v2.py` from:
+
+- **NSE shareholding-pattern XBRL filings, 2020/21 onward.** These cover 750 priority symbols:
+  every firm in the pilot's 74 S-class events, every member of a multi-company group, and
+  every low-confidence row. Fetched by `group_dependency_fetch_shp.py`, with promoter names
+  in `shp_promoters.csv` and filing lists in `shp_filings.csv`. Name-consistency flags are
+  in `shp_check.csv`, from `group_dependency_verify.py`.
+- **A source check of the 135 event firms at their event dates** (`verify/p1_history.csv`).
+- **Reviewed decisions with sources** (`verify/decisions.csv`): relabel, split a control
+  period, confirm, or note.
+- **The change log v1 → v2:** `group_map_v2_changes.csv`.
+
+Confidence in v2 is "high" only where a document supports the label for the dates that
+matter. See PREREGISTRATION §10 D1.

@@ -228,7 +228,38 @@ returns. Results go to `results/group_dependency/` and the write-up to `NOTE.md`
 
 ## 10. Deviation log
 
-*(empty)*
+**D1 (12 Nov 2026): re-run on a filing-verified group map (v2). Committed together with
+`group_map_v2.csv`, before any return is computed on v2.**
+
+- **Why.** v1 was labelled by an AI from memory. With high-confidence labels only (R6),
+  β_S weakened to *t* −1.67, so the map is the weak link. Mrigay asked for the map to be
+  verified against filings.
+- **What changes:** only the input map. The registered test is re-run **unchanged** on
+  `results/group_dependency/group_map_v2.csv`: the same event rules (§3), classes, outcomes
+  (§4), control (§5), regression, permutation and go/no-go rule (§6), tail measure (§7) and
+  robustness list (§8). The script runs with `--map v2` and writes to
+  `results/group_dependency/v2/`.
+- **Changes forced by the new map:**
+  - Events are re-selected under v2, because trigger eligibility depends on group labels.
+  - R7 reuses the v1 news labels for v2 events with the same trigger and day 0. There are
+    no new news checks.
+  - R6 uses v2's `confidence`. It is "high" where a document supports the label for the
+    dates that matter (event dates for priority-1 firms, the 2020+ filing window
+    otherwise). Rows backed only by an undated group list, with no confirming filing,
+    become "medium". Checked rows with no support drop from "high" to "medium". Rows not
+    checked keep their v1 confidence.
+- **How v2 was built:**
+  - `group_dependency_fetch_shp.py` read NSE shareholding-pattern XBRL filings, 2020/21
+    onward, for 750 priority symbols.
+  - `group_dependency_verify.py` checked promoter-name consistency.
+  - A Sonnet subagent checked the 135 trigger and sibling firms of the 74 S-class events
+    at their event dates, using news, annual reports and group lists
+    (`verify/p1_history.csv`).
+  - Reviewed decisions are in `verify/decisions.csv`.
+  - `group_dependency_build_map_v2.py` applied them, and the change log is
+    `group_map_v2_changes.csv`.
+- **Reporting.** **v1 remains the registered result.** v2 is reported side by side,
+  including R2 and R6, with the same go/no-go rule applied to it.
 
 ## 11. Part 2 record: the event list (committed before any comparison stock's return)
 

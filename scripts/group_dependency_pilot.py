@@ -29,6 +29,10 @@ DATA = ROOT / "data_processed"
 PANEL = DATA / "nse_survivorship_free_adj.parquet"
 OUT = ROOT / "results" / "group_dependency"
 OUT.mkdir(parents=True, exist_ok=True)
+# --map v1 (default, the registered run) or v2 (the verified map; PREREGISTRATION §10 D1).
+# Only the input map and the output folder change; every rule is the same.
+MAP_PATH = OUT / "group_map.csv"
+RUN = OUT
 CA_SUSPECTS = ROOT / "results" / "nse_data_audit" / "corporate_action_suspects.csv"
 
 TOP_N = 500
@@ -96,7 +100,7 @@ def build_universe() -> pd.DataFrame:
 # Shared loaders (PREREGISTRATION §2)
 # ----------------------------------------------------------------------------
 def etf_symbols() -> set:
-    gm = pd.read_csv(OUT / "group_map.csv", dtype=str).fillna("")
+    gm = pd.read_csv(MAP_PATH, dtype=str).fillna("")
     return set(gm.loc[gm["group"] == "ETF (not a company)", "symbol"])
 
 
@@ -118,7 +122,7 @@ class Panel:
         big = rets.abs() > MAX_ABS
         removed = rets[big].stack().rename("ret").reset_index()
         removed.columns = ["date", "symbol", "ret"]
-        removed.to_csv(OUT / "removed_returns.csv", index=False)
+        removed.to_csv(RUN / "removed_returns.csv", index=False)
         log(f"  removed {len(removed)} one-day returns beyond ±45% (removed_returns.csv)")
         self.rets = rets.where(~big)
         self.tv = (close * vol).where(close.notna())
@@ -134,7 +138,7 @@ class Panel:
 
 class GroupMap:
     def __init__(self, syms) -> None:
-        gm = pd.read_csv(OUT / "group_map.csv", dtype=str).fillna("")
+        gm = pd.read_csv(MAP_PATH, dtype=str).fillna("")
         gm["start"] = pd.to_datetime(gm["start"])
         gm["end"] = pd.to_datetime(gm["end"])
         self.gm = gm
@@ -242,7 +246,7 @@ def select_events() -> pd.DataFrame:
     ev = pd.DataFrame(keep).sort_values("pos").reset_index(drop=True)
     ev.insert(0, "event_id", [f"E{k:04d}" for k in range(1, len(ev) + 1)])
     ev["date"] = pd.to_datetime(ev["date"]).dt.date
-    ev.to_csv(OUT / "events.csv", index=False)
+    ev.to_csv(RUN / "events.csv", index=False)
     log(f"  events: {len(ev)} from {ev['group'].nunique()} groups "
         f"(same-day co-qualifiers folded in: {n_same_day}; later days inside an episode: {n_in_episode})")
     rng = np.random.default_rng(SEED)
@@ -250,8 +254,14 @@ def select_events() -> pd.DataFrame:
     ns = take[["event_id", "date", "symbol", "group", "industry", "own_ret_d0"]].copy()
     for c in ["news_label", "news_summary", "news_source"]:
         ns[c] = ""
-    ns.to_csv(OUT / "news_sample.csv", index=False)
-    with open(OUT / "events_summary.json", "w") as f:
+    if RUN != OUT:   # v2: reuse the v1 news labels where trigger and day 0 match
+        v1 = pd.read_csv(OUT / "news_sample.csv", dtype=str)
+        ev2 = ev[["event_id", "date", "symbol", "group", "industry", "own_ret_d0"]].copy()
+        ev2["date"] = ev2["date"].astype(str)
+        ns = ev2.merge(v1.drop(columns=["event_id", "group", "industry", "own_ret_d0"]),
+                       on=["date", "symbol"], how="inner")
+    ns.to_csv(RUN / "news_sample.csv", index=False)
+    with open(RUN / "events_summary.json", "w") as f:
         json.dump({"n_candidate_stock_days": int(len(cand)), "dropped": drop,
                    "n_qualifying_days": int(len(q)), "n_same_day_folded": n_same_day,
                    "n_inside_episode": n_in_episode, "n_events": int(len(ev)),
@@ -539,7 +549,7 @@ def tail_dependence(P: Panel, G: GroupMap, n_perm: int = 1000) -> dict:
     summ = df.groupby("cls").agg(n_pairs=("excess", "size"), mean_excess=("excess", "mean"),
                                  median_excess=("excess", "median"),
                                  mean_joint=("joint_tail", "mean"), mean_rho=("rho_calm", "mean"))
-    summ.to_csv(OUT / "tail_pairs_summary.csv")
+    summ.to_csv(RUN / "tail_pairs_summary.csv")
     Xr = np.column_stack([np.ones(len(df)), (df["cls"] == "same_group").astype(float),
                           (df["cls"] == "same_industry").astype(float),
                           (df["cls"] == "both").astype(float), df["rho_calm"].values])
@@ -585,11 +595,11 @@ def run_tests() -> dict:
     log("Loading panel")
     P = Panel()
     G = GroupMap(P.syms)
-    ev = pd.read_csv(OUT / "events.csv")
+    ev = pd.read_csv(RUN / "events.csv")
     ev["date"] = pd.to_datetime(ev["date"])
     log(f"  {len(ev)} events")
     d = build_pairs(P, G, ev)
-    d.to_parquet(OUT / "pairs.parquet", index=False)
+    d.to_parquet(RUN / "pairs.parquet", index=False)
     has_sib = d[d["cls"].isin(["S", "SI"])]["event_id"].unique()
     d = d[d["event_id"].isin(has_sib)].reset_index(drop=True)
     d = add_dummies(d)
@@ -640,7 +650,7 @@ def run_tests() -> dict:
     rob["R5_clusterings"] = {k: main["t"][k] for k in main["t"]}
     hc = d[(d["conf_trigger"] == "high") & (d["conf_stock"] == "high")]
     rob["R6_high_confidence"] = ols_fe(hc, "bhar_0_20", XS, clusters_of(hc))
-    ns = pd.read_csv(OUT / "news_sample.csv")
+    ns = pd.read_csv(RUN / "news_sample.csv")
     clean = ns[ns["news_label"].astype(str).str.strip().str.lower().str[:1] != "b"]["event_id"]
     d7 = d[d["event_id"].isin(clean)]
     rob["R7_news_checked_clean"] = (ols_fe(d7, "bhar_0_20", XS, clusters_of(d7))
@@ -655,7 +665,7 @@ def run_tests() -> dict:
     res["robustness"] = rob
     log("  tail dependence (§7) ...")
     res["tail_dependence"] = tail_dependence(P, G)
-    with open(OUT / "tests.json", "w") as f:
+    with open(RUN / "tests.json", "w") as f:
         json.dump(res, f, indent=2, default=lambda o: safe(o) if isinstance(o, (np.integer, np.floating)) else str(o))
     log("Done. results/group_dependency/tests.json")
     return res
@@ -664,7 +674,13 @@ def run_tests() -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("step", choices=["universe", "events", "run"])
+    ap.add_argument("--map", choices=["v1", "v2"], default="v1")
     a = ap.parse_args()
+    global MAP_PATH, RUN
+    if a.map == "v2":
+        MAP_PATH = OUT / "group_map_v2.csv"
+        RUN = OUT / "v2"
+        RUN.mkdir(exist_ok=True)
     {"universe": build_universe, "events": select_events, "run": run_tests}[a.step]()
 
 

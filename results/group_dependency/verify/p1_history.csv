@@ -1,0 +1,136 @@
+symbol,verified,group_at_events_v2,change_start,change_end,source_url,source_type,evidence_date,notes
+ACC,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2022,Adani acquired ACC/Ambuja from Holcim in May 2022; ACC date not stated on page
+ADANIENSOL,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+ADANIENT,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+ADANIGREEN,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+ADANIPORTS,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+ADANIPOWER,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+AMBUJACEM,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2022-05-15,Acquired from Holcim 15 May 2022 per affiliates table
+ATGL,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2019-10,TotalEnergies bought 37.4% Oct 2019 with joint control; Adani still group company
+AWL,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Adani Wilmar listed as group JV; Wilmar co-promoter; page gives no ownership detail
+MUNDRAPORT,yes,Adani,,,https://en.wikipedia.org/wiki/Adani_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+ABIRLANUVO,yes,Aditya Birla,,,https://en.wikipedia.org/wiki/Aditya_Birla_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+ABREL,yes,Aditya Birla,,,https://en.wikipedia.org/wiki/Aditya_Birla_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+CENTURYTEX,unverifiable,Aditya Birla,,,,,,Page does not mention Century Textiles; no source for 2010 control
+GRASIM,yes,Aditya Birla,,,https://en.wikipedia.org/wiki/Aditya_Birla_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+HINDALCO,yes,Aditya Birla,,,https://en.wikipedia.org/wiki/Aditya_Birla_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+IDEA,yes,Aditya Birla,,,https://en.wikipedia.org/wiki/Aditya_Birla_Group,wikipedia,2018,Idea described as group telecom arm; page silent on 2018 merger and Vodafone
+ULTRACEMCO,yes,Aditya Birla,,,https://en.wikipedia.org/wiki/Aditya_Birla_Group,wikipedia,2024,Listed as group company; stake and dated shareholding not stated
+BILT,yes,Avantha (Gautam Thapar),,,https://en.wikipedia.org/wiki/Avantha_Group,wikipedia,2007,Ballarpur Industries listed as Avantha company; BILT acquired Sabah Forest 2007
+CROMPGREAV,unverifiable,Avantha (Gautam Thapar),,,,,,Avantha page does not list CG Power; no source for 2006 control
+BAJAJ-AUTO,yes,Bajaj (Rahul Bajaj family),,,https://en.wikipedia.org/wiki/Bajaj_Group,wikipedia,2024,Listed under Bajaj family owner; no dated shareholding or change of control shown
+BAJAJFINSV,yes,Bajaj (Rahul Bajaj family),,,https://en.wikipedia.org/wiki/Bajaj_Group,wikipedia,2024,Listed under Bajaj family owner; no dated shareholding or change of control shown
+BAJAJHLDNG,yes,Bajaj (Rahul Bajaj family),,,https://en.wikipedia.org/wiki/Bajaj_Group,wikipedia,2024,Listed under Bajaj family owner; no dated shareholding or change of control shown
+BAJFINANCE,yes,Bajaj (Rahul Bajaj family),,,https://en.wikipedia.org/wiki/Bajaj_Group,wikipedia,2024,Listed under Bajaj family owner; no dated shareholding or change of control shown
+BHARTISHIP,yes,Bharati (Vijay Kumar - PC Kapoor),,,https://bseindia.com/bseplus/AnnualReport/532609/5326090311.pdf,annual report,2014-15,Founders PC Kapoor and Vijay Kumar; label name Vijay Sheth belongs to Great Offshore promoter; control same group in 2008
+GTOFFSHORE,changed,Sheth (Vijay Sheth - Great Offshore),,2009-05,https://business-standard.com/article/companies/great-offshore-promoters-pledge-more-shares-to-bharati-arm-109010601103_1.html,news,2009-01,Vijay Sheth still promoter Oct-Nov 2008; Bharati got pledged 14.89% May 2009. Not Bharati nor Great Eastern's KM Sheth branch
+DABUR,yes,Dabur (Burman family),,,https://en.wikipedia.org/wiki/Dabur,wikipedia,2021,Burman family owner 66.24% (Mar 2021); ownership separated from management 1998
+DABURPHARM,yes,Dabur (Burman family),,,https://en.wikipedia.org/wiki/Dabur,wikipedia,2008,Fresenius bought 73% in 2008 after the Jan 2007 event
+ESSAROIL,yes,Essar (Ruia),,,https://en.wikipedia.org/wiki/Essar_Group,wikipedia,2017,Ruia-founded; control changed only 2017 (Rosneft consortium)
+ESTL,yes,Essar (Ruia),,,https://en.wikipedia.org/wiki/Essar_Group,wikipedia,2019,Ruia-founded; control changed only 2019 (ArcelorMittal)
+FCONSUMER,yes,Future (Kishore Biyani),,,https://en.wikipedia.org/wiki/Future_Group,wikipedia,2020-2021,Reliance deal Aug 2020 never completed; Biyani remained promoter
+FRETAIL,yes,Future (Kishore Biyani),,,https://en.wikipedia.org/wiki/Future_Group,wikipedia,2020-2021,Reliance deal Aug 2020 never completed; Biyani remained promoter
+GRUH,yes,HDFC,,,https://www.bloombergquint.com/amp/business/gruh-finance-to-merge-with-bandhan-bank,news,2018-09,HDFC held about 57.8% of Gruh at Jan 2019 Bandhan merger announcement
+HDFC,unverifiable,HDFC,,,,,,No source found; HDFC Ltd may have had no promoter category at all
+HDFCBANK,yes,HDFC,,,https://en.wikipedia.org/wiki/HDFC_Bank,wikipedia,1994,Incorporated as HDFC Ltd subsidiary; page gives no 2019 stake; promoter status inferred
+HDFCLIFE,unverifiable,HDFC,,,,,,No source opened stating HDFC Ltd promoter stake in 2019
+ASHOKLEY,yes,Hinduja,,,https://en.wikipedia.org/wiki/Hinduja_Group,wikipedia,2024,Listed as Hinduja Group company; no stakes or dates given
+INDUSINDBK,yes,Hinduja,,,https://en.wikipedia.org/wiki/Hinduja_Group,wikipedia,2024,Listed as Hinduja Group company; no stakes or dates given
+IVRCLINFRA,yes,IVRCL (E Sudhir Reddy),,,https://groups.google.com/group/dpstock/attach/9743b3487017f676/IVRC-20080415-MOSL-CU-PG006.pdf?part=0.1,news,2008-04,Broker note: promoted by E Sudhir Reddy; FY12 report lists him chairman
+IVRPRIME,unverifiable,IVRCL (E Sudhir Reddy),,,,,,IVRCL Assets & Holdings: no source opened on its promoters
+DHANI,yes,Indiabulls (Sameer Gehlaut),,,https://www.sammaancapital.com/media/uploads/downloads/sclclarificationstoequityshareholders_27408.pdf,filing,2023,Gehlaut remained promoter until de-promoterisation approved Feb 2023; CEO of Dhani
+EMBDL,yes,Indiabulls (Sameer Gehlaut),,,https://www.business-standard.com/amp/article/markets/indiabulls-real-estate-surges-7-as-embassy-group-signs-merger-agreement-120081900258_1.html,news,2020-08,Embassy took 14% June 2019 but Gehlaut stayed promoter until merger completed after Aug 2020 agreement
+IBREALEST,yes,Indiabulls (Sameer Gehlaut),,,https://en.wikipedia.org/wiki/Indiabulls,wikipedia,2006,Real Estate demerged 2006; Gehlaut kept it in 2014 split; page lacks 2009 holding table
+IBSEC,yes,Indiabulls (Sameer Gehlaut),,,https://en.wikipedia.org/wiki/Indiabulls,wikipedia,2008,Securities demerged 2008; Gehlaut kept it in 2014 split
+INDIABULLS,yes,Indiabulls (Sameer Gehlaut),,,https://en.wikipedia.org/wiki/Indiabulls,wikipedia,2000-2014,Founded by Gehlaut with Rattan and Mittal; split 2014 (Rattan Mittal took power); 2009 same promoters
+SAMMAANCAP,yes,Indiabulls (Sameer Gehlaut),,,https://www.sammaancapital.com/media/uploads/downloads/sclclarificationstoequityshareholders_27408.pdf,filing,2021-2023,Gehlaut sold to 9.8% Dec 2021; formally promoter until Feb 2023; influence arguably ended early 2022
+SORILINFRA,unverifiable,Indiabulls (Sameer Gehlaut),,,,,,Soril Infra promoters not stated in any source opened
+INOXLEISUR,yes,Inox (Siddharth Jain),,,https://en.wikipedia.org/wiki/Inox_Group,wikipedia,2021,Pavan Jain branch run by Siddharth Jain; family split 2021 after the 2017 event
+INOXWIND,yes,Inox (Siddharth Jain),,,https://en.wikipedia.org/wiki/Inox_Group,wikipedia,2021,Inox Wind launched 2009 under Devansh Jain; Jain family control; label person differs but same Inox family
+JKINDUSTRY,unverifiable,JK Organisation (Hari Shankar Singhania family),,,,,,JK page gives no company-to-branch mapping; three Singhania branches
+JKPAPER,unverifiable,JK Organisation (Hari Shankar Singhania family),,,,,,JK page lists JK Paper but not which Singhania branch controls it
+JPASSOCIAT,yes,Jaypee,,,https://en.wikipedia.org/wiki/Jaypee_Group,wikipedia,2024-2025,Gaur family controlled until 2024 insolvency; no earlier change shown
+JPHYDRO,unverifiable,Jaypee,,,,,,Page does not discuss Jaiprakash Power Ventures promoter control
+JPINFRATEC,yes,Jaypee,,,https://en.wikipedia.org/wiki/Jaypee_Group,wikipedia,2020,Listed as Jaypee group company; no change of control before 2016 trade end
+JPPOWER,unverifiable,Jaypee,,,,,,Page does not discuss Jaiprakash Power Ventures promoter control
+CHAMBLFERT,yes,KK Birla (Adventz),,,https://www.5paisa.com/group-stocks/adventz-shares,news,2024,Poddar co-chairman since 1995; one source says KK Birla heirs (Bhartia Nopany) share inheritance; secondary sources
+PARADEEP,yes,KK Birla (Adventz),,,https://www.5paisa.com/group-stocks/adventz-shares,news,2024,Listed Adventz group company; chaired by Poddar since 2014 per profile
+TEXRAIL,yes,KK Birla (Adventz),,,https://www.5paisa.com/group-stocks/adventz-shares,news,2024,Texmaco Rail is Adventz main engineering company; Poddar family on board
+BFINVEST,yes,Kalyani,,,https://en.wikipedia.org/wiki/Kalyani_Group,wikipedia,2024,Listed as Kalyani Group company; Kalyani family promoters; page gives no dated stakes
+BFUTILITIE,yes,Kalyani,,,https://en.wikipedia.org/wiki/Kalyani_Group,wikipedia,2024,Listed as Kalyani Group company; Kalyani family promoters; page gives no dated stakes
+BHARATFORG,yes,Kalyani,,,https://en.wikipedia.org/wiki/Kalyani_Group,wikipedia,2024,Listed as Kalyani Group company; Kalyani family promoters; page gives no dated stakes
+HEG,unverifiable,LNJ Bhilwara (Shekhar Agarwal),,,,,,LNJ Bhilwara Wikipedia page missing; no other source opened
+RAJASSPG,unverifiable,LNJ Bhilwara (Shekhar Agarwal),,,,,,LNJ Bhilwara Wikipedia page missing; no other source opened
+GESCOCORP,unverifiable,Mahindra,,,,,,Page does not mention Mahindra Gesco name
+M&M,yes,Mahindra,,,https://en.wikipedia.org/wiki/Mahindra_Group,wikipedia,2024,Listed as Mahindra affiliate; no stakes or dates stated
+M&MFIN,yes,Mahindra,,,https://en.wikipedia.org/wiki/Mahindra_Group,wikipedia,2024,Listed as Mahindra affiliate; no stakes or dates stated
+MAHINDUGIN,yes,Mahindra,,,https://en.wikipedia.org/wiki/Mahindra_Group,wikipedia,1981,Mahindra Ugine Steel referred to as group company since 1981; no stake given
+TECHM,yes,Mahindra,,,https://en.wikipedia.org/wiki/Mahindra_Group,wikipedia,2024,Listed as Mahindra affiliate; no stakes or dates stated
+NIITLTD,unverifiable,NIIT (Rajendra Pawar),,,,,,No source opened on NIIT Ltd promoters in 2007
+NIITTECH,unverifiable,NIIT (Rajendra Pawar),,,,,,2019 promoters were NIIT Ltd plus Pawar and Thadani families; 2007 not covered
+CESC,yes,RP-Sanjiv Goenka,,,https://www.business-standard.com/article/companies/cesc-to-acquire-34-5-stake-in-firstsource-112102500177_1.html,news,2012,Described as RP-Sanjiv Goenka Group flagship
+FSL,yes,RP-Sanjiv Goenka,,,https://www.business-standard.com/article/companies/cesc-to-acquire-34-5-stake-in-firstsource-112102500177_1.html,news,2012-10,CESC took 49.5% Oct 2012 from ICICI and others; consistent with v1 change in 2012
+SAREGAMA,unverifiable,RP-Sanjiv Goenka,,,,,,No source opened for Saregama promoters
+CEAT,yes,RPG (Harsh Goenka),,,https://en.wikipedia.org/wiki/RPG_Group,wikipedia,2024,Listed as RPG Group company; Harsh Goenka chairman; no dated stakes
+CEATLTD,yes,RPG (Harsh Goenka),,,https://en.wikipedia.org/wiki/RPG_Group,wikipedia,2024,Listed as RPG Group company; Harsh Goenka chairman; no dated stakes
+HARRMALAYA,yes,RPG (Harsh Goenka),,,https://en.wikipedia.org/wiki/RPG_Group,wikipedia,2024,Listed as RPG Group company; Harsh Goenka chairman; no dated stakes
+KEC,yes,RPG (Harsh Goenka),,,https://en.wikipedia.org/wiki/RPG_Group,wikipedia,2024,Listed as RPG Group company; Harsh Goenka chairman; no dated stakes
+KECINTL,unverifiable,RPG (Harsh Goenka),,,,,,Summit Securities not on page; ticker name mismatch with KEC International
+ZENSARTECH,yes,RPG (Harsh Goenka),,,https://en.wikipedia.org/wiki/RPG_Group,wikipedia,2024,Listed as RPG Group company; Harsh Goenka chairman; no dated stakes
+ALOKINDS,yes,Reliance (Mukesh Ambani),,,https://business-standard.com/article/pti-stories/nclt-approves-ril-jm-financial-arc-plan-to-acquire-alok-industries-119031300916_1.html,news,2019-03,NCLT approved RIL-JM Financial ARC plan Mar 2019; RIL 40% JM ARC 35% as joint promoters
+JUSTDIAL,yes,Reliance (Mukesh Ambani),,,https://techcrunch.com/2021/07/16/reliance-retail-acquires-majority-stake-in-just-dial-for-469-million,news,2021-07,Reliance Retail to hold 40.95% and majority voting control after Jul 2021 deal
+NETWORK18,yes,Reliance (Mukesh Ambani),,,https://www.business-standard.com/article/companies/ril-to-acquire-control-of-network18-114052901661_1.html,news,2014-05,RIL via Independent Media Trust took control; completed Jul 2014
+RELIANCE,yes,Reliance (Mukesh Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-12,RIL split between brothers Dec 2005; Mukesh kept Reliance Industries
+RIIL,unverifiable,Reliance (Mukesh Ambani),,,,,,No source opened for Reliance Industrial Infrastructure promoters
+RPL,unverifiable,Reliance (Mukesh Ambani),,,,,,No source opened for Reliance Petroleum promoters
+TV18BRDCST,yes,Reliance (Mukesh Ambani),,,https://www.business-standard.com/article/companies/ril-to-acquire-control-of-network18-114052901661_1.html,news,2014-05,IMT and RIL became promoters of TV18 after Jul 2014 purchase
+ADLABSFILM,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-07,Group bought 51% of Adlabs-linked cinema business Jul 2005; Adlabs Films not named
+NAM-INDIA,yes,Reliance ADAG (Anil Ambani),,,https://www.business-standard.com/amp/article/companies/japan-s-nippon-life-becomes-sole-sponsor-of-rnam-raises-stake-to-75-119092701367_1.html,news,2019-09,Reliance Capital and Nippon Life 42.88% each until Sep 2019; Reliance joint promoter on all four events
+RCOM,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-12,Anil received Reliance Infocomm in split
+REL,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-12,Anil received Reliance Energy in split
+RELCAPITAL,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-12,Anil received Reliance Capital in split
+RELINFRA,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-12,Reliance Infrastructure (ex Reliance Energy) is ADAG company
+RELMEDIA,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2005-07,ADAG Reliance Entertainment/Adlabs lineage; MediaWorks only in navbox; weak
+RNAVAL,yes,Reliance ADAG (Anil Ambani),,,https://m.tribuneindia.com/news/archive/business/reliance-infra-buys-pipavav-for-rs-819-cr-49698,news,2015-03,Reliance Infra bought 17.66% of Pipavav 5 Mar 2015 plus open offer; Anil chairman; SKIL before
+RNRL,unverifiable,Reliance ADAG (Anil Ambani),,,,,,Reliance Natural Resources only appears in navbox; no dated source
+RPOWER,yes,Reliance ADAG (Anil Ambani),,,https://en.wikipedia.org/wiki/Reliance_ADA_Group,wikipedia,2010,Group power entry vehicle; Reliance Infrastructure held about 24% in 2023 filings
+AVAYAGCL,changed,Avaya,2004-06,2004-09,https://www.business-standard.com/amp/article/companies/tata-telecom-renamed-avaya-global-connect-104080501063_1.html,news,2004-08,Avaya International took 59.1% of Tata Telecom (renamed Avaya GlobalConnect) in 2004; not Tata by Jun 2006
+CMC,yes,Tata,,,https://domain-b.com/companies/companies_t/tata_group/20020213_new_era_2.html,news,2001-2004,Tata Sons bought 51% Oct 2001; transferred to TCS Mar 2004; merged into TCS 2015
+INDHOTEL,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group company; page summary lacks dated stake
+NELCO,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Power holds 50.04% (current table); 2008 not covered
+RALLIS,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Listed as Tata Chemicals subsidiary; no stake or date
+TATACHEM,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Chemicals group-held 31.90% (current); earlier years not covered
+TATACOFFEE,unverifiable,Tata,,,,,,Tata Coffee not covered by sources opened
+TATACOMM,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Communications group-held 31.90% (current table); earlier years not covered
+TATACONSUM,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group holds 29.39%; Tata Global Beverages not mentioned
+TATAELXSI,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group holds 42.22% (current)
+TATAINVEST,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group holds 68.51% (current)
+TATAMETALI,unverifiable,Tata,,,,,,Tata Metaliks not covered by any source opened
+TATAMOTORS,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Group flagship; no change of control shown
+TATAMTRDVR,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,DVR shares of Tata Motors; same issuer
+TATAPOWER,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group holds 45.21% (current table)
+TATASPONGE,unverifiable,Tata,,,,,,Not covered by sources opened
+TATASTEEL,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Group flagship; no change of control shown
+TATASTLBSL,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2018-05,Bhushan Steel acquired May 2018; event 2019-02 post-acquisition
+TATASTLLP,unverifiable,Tata,,,,,,Not covered by sources opened
+TATATEA,unverifiable,Tata,,,,,,Tata Tea/Global Beverages not covered by sources opened
+TCS,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Sons flagship; no change of control shown
+TINPLATE,unverifiable,Tata,,,,,,Not covered by sources opened
+TITAN,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group holds 25.02% (current)
+TRENT,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata group holds 32.45% (current)
+TTML,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Tata Teleservices listed under group; table shows 19.58% (current)
+VOLTAS,yes,Tata,,,https://en.wikipedia.org/wiki/Tata_Group,wikipedia,2024,Voltas listed as Tata group; 26.64% in table
+VSNL,unverifiable,Tata,,,,,,Sources opened do not mention VSNL or 2002 government sale
+TORNTPHARM,yes,Torrent,,,https://en.wikipedia.org/wiki/Torrent_Group,wikipedia,2024,Run by Sudhir and Samir Mehta; Torrent Group listed parent; no stakes given
+TORNTPOWER,yes,Torrent,,,https://en.wikipedia.org/wiki/Torrent_Group,wikipedia,2024,Run by Sudhir and Samir Mehta; Torrent Group listed parent; no stakes given
+AIRDECCAN,unverifiable,UB (Vijay Mallya),,,,,,Air Deccan page silent on control in Jan 2008; UB stake date not sourced
+MANGCHEFER,yes,UB (Vijay Mallya),,,https://www.thenewsminute.com/news/failing-retain-control-vijay-mallya-quits-mcf-board-21189,news,2013-2014,UB held 16% of 22% promoter stake with Mallya chairman till Dec 2014; Zuari took over later. v1 KK Birla from 2011 looks early
+MCDHOLDING,unverifiable,UB (Vijay Mallya),,,,,,McDowell Holdings not covered by sources opened
+MCDOWELL-N,yes,UB (Vijay Mallya),,,https://www.nishithdesai.com/fileadmin/user_upload/pdfs/Ma%20Lab/USL-Diageo_Deal_Dissected.pdf,filing,2013-07,Diageo got 25% Jul 2013; before that UB Group under Mallya promoted USL
+UJJIVAN,unverifiable,Ujjivan (Samit Ghosh),,,,,,Holding company UFSL listed; its own promoter status not sourced; Ghosh left earlier
+UJJIVANSFB,yes,Ujjivan (Samit Ghosh),,,https://www.ujjivansfb.in/sites/default/files/2023-08/Annual_Report_for_the_FY_2020_21_September_03_2021_Signed_0.pdf,annual report,2021,UFSL holds 83.32% as promoter; promoter is holding company not Ghosh personally
+BOMDYEING,yes,Wadia,,,https://en.wikipedia.org/wiki/Wadia_Group,wikipedia,2024,Listed Wadia Group company; Nusli Wadia chairman; no stakes given
+BRITANNIA,yes,Wadia,,,https://en.wikipedia.org/wiki/Wadia_Group,wikipedia,2024,Listed Wadia Group company; Nusli Wadia chairman; no stakes given
+WELCORP,yes,Welspun (BK Goenka),,,https://en.wikipedia.org/wiki/Welspun_Group,wikipedia,2024,Group company founded by BK Goenka; control stake not stated on page
+WELENT,yes,Welspun (BK Goenka),,,https://en.wikipedia.org/wiki/Welspun_Group,wikipedia,2024,Group company founded by BK Goenka; control stake not stated on page
+WELSPUNLIV,yes,Welspun (BK Goenka),,,https://en.wikipedia.org/wiki/Welspun_Group,wikipedia,2024,Group company founded by BK Goenka; control stake not stated on page

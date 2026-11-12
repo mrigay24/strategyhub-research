@@ -11,6 +11,7 @@ Run:  ~/.venvs/strategyhub/bin/python scripts/group_dependency_diagnostics.py
 """
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -27,6 +28,11 @@ XS = ["S", "SI", "R", "rho", "log_size", "log_amihud"]
 
 
 def main() -> None:
+    global OUT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--map", choices=["v1", "v2"], default="v1")
+    if ap.parse_args().map == "v2":
+        OUT = gp.OUT / "v2"
     d = pd.read_parquet(OUT / "pairs.parquet")
     keep = d[d["cls"].isin(["S", "SI"])]["event_id"].unique()
     d = gp.add_dummies(d[d["event_id"].isin(keep)].reset_index(drop=True))
