@@ -45,6 +45,15 @@ FUNDS += [
     ("SBI", "SBI Midcap Fund", "Mid cap", SBF, "SMIDCAP", "2026-10", SBU),
 ]
 
+DSU = "https://www.dspim.com/media/pages/mandatory-disclosures/portfolio-disclosures/7064cd3e18-1794228730/dsp-monthend-portfolio-as-on-31-october-2026.zip"
+DSF = "dsp/ext/DSP Equity FOF ISIN Portfolio as on 31 Oct 2026.xlsx"  # extracted from the zip above
+FUNDS += [
+    ("DSP", "DSP Small Cap Fund", "Small cap", DSF, "SMALLCAP", "2026-10", DSU),
+    ("DSP", "DSP Flexi Cap Fund", "Flexi cap", DSF, "FLEXICAP", "2026-10", DSU),
+    ("DSP", "DSP Large Cap Fund", "Large cap", DSF, "LARGE", "2026-10", DSU),
+    ("DSP", "DSP Mid Cap Fund", "Mid cap", DSF, "MIDCAP", "2026-10", DSU),
+]
+
 
 def parse_fund(path, sheet):
     book = read_xlsx(path)
