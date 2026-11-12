@@ -4864,3 +4864,39 @@ Paper: *Market Share Is Not Importance: What Happens to Rivals When a Firm Dies 
 - **Framing that survives:** market share is a poor guide to rival spillovers (it sizes only the day-0 hit). A shared-dependency rule is a candidate worth a properly powered test (about 20–25 SD cases, inference by episode), not an established answer.
 
 *Last updated: 2026-11-11*
+
+### §44 — Paper 2 pilot: do business-group siblings crash together beyond correlation? (2026-11-11)
+
+Docs: `docs/group_dependency/` (`PILOT_PLAN.md`, `NOTE.md`, `PREREGISTRATION.md`, `PREREGISTRATION_2_DRAFT.md`). Code: `scripts/group_dependency_pilot.py` (`universe` → `events` → `run`), `group_dependency_build_map.py`, `group_dependency_diagnostics.py`. Results: `results/group_dependency/`.
+
+**Question.** After a group firm's own crash (day-0 return ≤ −15%, ≥ 12 pts below the market and its non-group industry), do its siblings in *other* industries lose more than unrelated stocks with the same calm-period (days −261…−10) abnormal-return correlation, and at least as much as industry rivals?
+
+**Protocol (commit order is the proof).** Literature + traded-value universe 3e6155f → group map 5d74939 → rules 133c5c9 → event list + news labels be33f0c → single run 8b08f04.
+
+**Literature (NOTE §2).** Closest: Kwon, Jung, Sunwoo & Yim (2019, EMFT; Korean chaebol crash-risk spillovers, firm-year measures), Kim, Kim & Lee (2015, PBFJ; group comovement beyond industry, Korea), Cumming, Jain & Jindal (WP; Indian equity-issue contagion within groups), Antón & Polk (2014; shared fund owners predict correlation), Faccio, Morck & Yavuz (2021). Gopalan, Nanda & Seru (2007) abstract confirms that a group's first bankruptcy hurts the other members (settles paper 1's "check before citing"). No paper runs the event-level siblings-vs-rivals test with a calm-correlation control: new in combination, not in parts.
+
+**Group map.** 1,609 symbols (top 500 by 63-day traded value at any month-end 2005–2025), labelled by a Sonnet subagent from NSE's public lists (`EQUITY_L`, `namechange`, `symbolchange`, `delisted` on nsearchives) plus knowledge. 14 spot-check fixes are logged. Result: 110 Family/Corporate groups with ≥ 2 distinct companies (379 companies); 209 of 1,695 rows are low confidence.
+
+**Result (registered).** 115 events / 50 groups; 74 events with an other-industry sibling (30 groups); 40,258 pairs.
+- β_S = −4.5 pp BHAR 0–20 (*t* −2.64, month clusters), β_R = −0.4 pp, β_S − β_R *t* −2.17, permutation *p* < 0.0005. Crash day: β_S −2.2 pp (*t* −3.5). **Verdict: GO.**
+- Weak spots:
+  - without paper 1's 7 episode events, −1.9 pp (*t* −1.83);
+  - high-confidence labels only, *t* −1.67;
+  - clustering by group, *t* −1.97;
+  - only 57% of events are negative.
+- Diagnostics (not registered):
+  - the worst 10 of 74 events give 93% of the total;
+  - Adani, Indiabulls, Anil Ambani and Future siblings lose 6–17 pp, Tata ≈ 0;
+  - the crash-day effect survives without paper 1's episodes (*t* −2.57).
+- Tails: same-group/other-industry pairs show excess joint-worst-5% frequency of 0.219% of days, against 0.155% for unrelated pairs and 0.207% for same-industry pairs (placebo *p* < 0.001).
+
+**Lessons.**
+1. A robustness check must be able to change the answer. "Widen the group definition" at the pair level was vacuous, because events were selected only from Family/Corporate groups (R4 identical to primary).
+2. An average driven by a few stressed episodes needs event-level and leave-episode-out checks registered up front. Both were, and both are what narrowed the reading.
+3. Calm correlation explains only about 1 of 5.6 pp of the sibling loss. Siblings normally co-move *more* than rivals (ρ 0.15 vs 0.06), so the control matters but does not absorb the effect.
+4. The mechanical crash selection lets in about 27% market-crash days and about 7% corporate-action artefacts (30-event news check).
+5. The project `.venv` can hang on `import pandas` (iCloud); use `~/.venvs/strategyhub/bin/python`. Do not combine `python -I -` with a heredoc.
+
+**Next.** Phase 5 is design only (`PREREGISTRATION_2_DRAFT.md`): matched-twin portfolios (same industries and Meucci ENB, fewer groups), six crisis windows, placebo-group inference, a pre-stated exclusion of the known episodes. It awaits Mrigay's approval, and the multi-company groups need source-verified checking first.
+
+*Last updated: 2026-11-11*

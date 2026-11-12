@@ -2254,3 +2254,16 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
 - **Referee pass:** 8 major comments, all addressed in the text (no deaths in Part A; share claim softened with CI; all CV variants reported; episode clustering, *p* 0.155; two wrong sentences fixed; OR verdict read as "did not gain"; power, MDE ≈ 14 pp; leaked overlaps; missing literature). Saved with a response table: `REFEREE_REPORT.md`.
 - **AI death test (Phase 6):** an LLM applying the same rule agreed 37–38/40 and was stricter on SD; masked names were still identified (32/40), so look-ahead cannot be masked away.
 - Not done (needs new data): historical industry codes / CRSP deaths, Compustat revenue shares, leave-one-year-out CV, independent human coders, OSF deposit.
+
+---
+
+## PAPER 2 PILOT: BUSINESS GROUPS AND HIDDEN CONCENTRATION (2026-11-11)
+
+- Followed `docs/group_dependency/PILOT_PLAN.md` end to end. Write-up: `docs/group_dependency/NOTE.md`; KNOWLEDGE_BASE §44.
+- **Literature (Phase 1):** the closest work is on Korean chaebol crash-risk spillovers (Kwon et al. 2019), group comovement beyond industry (Kim, Kim & Lee 2015) and Indian equity-issue contagion (Cumming, Jain & Jindal WP). No exact match, so continue.
+- **Group map (Phase 2):** 1,609 NSE symbols labelled with promoter group (dated) and one of 41 industries. 110 Family/Corporate groups have ≥ 2 companies. Committed (5d74939) before any return was computed.
+- **Pre-registration (Phase 3):** rules 133c5c9; event list + news labels be33f0c (115 events, 50 groups).
+- **Run (Phase 4, 8b08f04): GO.** Siblings in other industries lose 4.5 pp more over 21 days than equally correlated unrelated stocks (*t* −2.64, permutation *p* < 0.0005). Rivals lose 0.4 pp; on the crash day siblings lose 2.2 pp (*t* −3.5).
+- **Narrow reading:** the 21-day effect comes mostly from stressed groups (Adani 2023, Indiabulls, Anil Ambani, Future; Tata ≈ 0). It is not significant without paper 1's episodes (*t* −1.83) or with high-confidence labels only (*t* −1.67). The crash-day effect survives both.
+- **Phase 5:** portfolio-test design drafted (`PREREGISTRATION_2_DRAFT.md`), design only, awaiting Mrigay's approval.
+- Not done: source-verified checking of the group map; promoter-pledge (stress) data; an out-of-sample market (Korea).

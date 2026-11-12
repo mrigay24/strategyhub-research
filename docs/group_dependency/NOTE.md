@@ -1,7 +1,7 @@
 # Paper 2 pilot note: business groups and hidden concentration (India)
 
-*Started 11 Nov 2026. Plan: `PILOT_PLAN.md`. Rules: `PREREGISTRATION.md`. This note is
-filled in phase by phase; sections marked "(pending)" are not written yet.*
+*11 Nov 2026. Plan: `PILOT_PLAN.md`. Rules: `PREREGISTRATION.md`. Phase 5 design (draft):
+`PREREGISTRATION_2_DRAFT.md`. Verdict: **GO** (§6), with a narrow reading.*
 
 ## 1. The idea
 
@@ -187,7 +187,8 @@ The order of commits is the proof that the rules came first:
 | 3e6155f | Literature check and universe (traded value only) |
 | 5d74939 | The group map |
 | 133c5c9 | The rules and the go/no-go test (pre-registration Part 1) |
-| (Part 2) | The event list and the news labels, before any comparison stock's return |
+| be33f0c | The event list and the news labels, before any comparison stock's return (Part 2) |
+| 8b08f04 | The single registered run, plus diagnostics labelled as not pre-registered |
 
 **In plain words.**
 1. **Find the crashes.** A *trigger* is a group firm that falls at least 15% in one day.
@@ -216,8 +217,162 @@ The order of commits is the proof that the rules came first:
    Fewer than 30 events with a sibling, or fewer than 10 groups, means "too few to test",
    which is a STOP.
 
-## 5. Result (pending)
+## 5. Result (registered run, 11 Nov 2026, commit 8b08f04)
 
-## 6. Go / no-go decision (pending)
+Sources: `results/group_dependency/tests.json` (registered) and
+`diagnostics_not_preregistered.json` (labelled as not registered).
 
-## 7. Limitations (pending)
+### 5a. What went in
+
+- 115 events from 50 groups. 98 have at least one sibling with enough data, and **74 have
+  a sibling in another industry (S), from 30 groups**. That clears the "too few" bar of
+  30 events and 10 groups.
+- 40,258 stock pairs:
+
+  | Class | Pairs |
+  |---|---|
+  | B (unrelated) | 38,601 |
+  | R (industry rivals) | 1,388 |
+  | S (siblings, other industry) | 228 |
+  | SI (siblings, same industry) | 41 |
+
+### 5b. Raw averages (before any control)
+
+| Class | Calm correlation with the crashing firm | Crash-day abnormal return | 21-day BHAR (mean / median) |
+|---|---|---|---|
+| B: unrelated stocks | −0.01 | +0.1% | −0.1% / −0.7% |
+| R: industry rivals | 0.06 | −0.3% | −1.0% / −1.4% |
+| **S: siblings, other industry** | **0.15** | **−2.7%** | **−5.2% / −3.1%** |
+| SI: siblings, same industry | 0.28 | −3.5% | −5.8% / −0.6% |
+
+Siblings normally move *more* closely with the crashing firm than its industry rivals do
+(0.15 against 0.06). That is why the correlation control matters.
+
+### 5c. The registered test (BHAR 0–20, event fixed effects, clusters by month)
+
+| | Coefficient | *t* |
+|---|---|---|
+| **β_S, sibling in another industry** | **−4.5 pp** | **−2.64** |
+| β_SI, sibling in the same industry | −3.7 pp | −1.29 |
+| β_R, industry rival | −0.4 pp | −0.44 |
+| calm correlation (per unit) | −6.9 pp | −2.78 |
+| **β_S − β_R** | **−4.1 pp** | **−2.17** |
+
+- **Permutation by event:** none of 2,000 placebo draws was as negative as the real β_S
+  (*p* < 0.0005). Placebo β_S has mean 0.0 pp, standard deviation 0.9 pp and 5th
+  percentile −1.5 pp.
+- **Without the correlation control:** β_S = −5.6 pp (*t* −3.12). The control explains
+  about 1 pp of the sibling effect, not most of it.
+
+In plain words: a firm in an *unrelated* industry that shares an owner with the crashing
+firm loses about 4½% more over the next month than an unrelated stock that normally moves
+just as closely with the crashing firm. Industry rivals lose almost nothing extra.
+
+### 5d. Robustness (registered; none changes the verdict)
+
+| Check | β_S | *t* | Reading |
+|---|---|---|---|
+| R1: no 2008–09, no Feb–Apr 2020 (69 events) | −4.7 pp | −2.13 | holds |
+| **R2: no paper-1 episodes (7 events dropped)** | **−1.9 pp** | **−1.83** | **weakens below 1.96** |
+| R3: crash-day AR | −2.2 pp | −3.51 | holds (S − R *t* −3.26) |
+| R3: CAR 0–20 | −5.3 pp | −2.25 | holds |
+| R3: + calm-implied move (BHAR / day 0) | −4.1 / −2.2 pp | −2.67 / −3.52 | holds |
+| R4: widened groups | identical to primary | | **not informative** (see §7) |
+| R5: clusters by event / date / trigger group | | −2.61 / −2.60 / −1.97 | borderline by group |
+| **R6: high-confidence labels only (78 events)** | **−3.5 pp** | **−1.67** | **weakens below 1.96** |
+| R7: news-checked, no artefacts (26 events) | −11.0 pp | −2.01 | holds (few events) |
+| R8: each event weighted equally (74) | mean −4.4 pp, median −2.9 pp | −2.77 | **only 57% of events negative (sign *p* 0.15)** |
+| R9: correlation as ten decile dummies | −4.9 pp | −2.90 | holds |
+
+### 5e. Tails (H3, registered, no verdict)
+
+- 195,898 pairs with at least 750 overlapping days.
+- **Excess joint-crash frequency** is how often both stocks are in their worst 5% on the
+  same day, minus what a normal model with their calm correlation predicts:
+
+  | Pair type | Excess joint-crash frequency |
+  |---|---|
+  | Unrelated | 0.155% of days |
+  | Same industry | 0.207% |
+  | **Same group, other industry** | **0.219%** (placebo-group *p* < 0.001) |
+  | Same group and same industry | 0.277% (43 pairs) |
+
+- In the tails, sharing an owner adds about as much joint-crash risk as sharing an
+  industry, beyond what calm correlation shows.
+
+### 5f. What drives it (NOT pre-registered diagnostics)
+
+- **No single group drives it.** Dropping any one of the 30 groups leaves β_S between
+  −3.1 pp (without Adani) and −6.8 pp (without Tata), and significant every time.
+- **But a minority of events does.** The 10 worst of 74 events give 93% of the total
+  sibling loss, and the 5 worst give 54%. Without the worst 5, the mean is −2.2 pp. The
+  worst are:
+  - Adani after Hindenburg (Jan 2023);
+  - Future Consumer (Feb 2020);
+  - IndusInd (Mar 2020);
+  - Reliance Petroleum (Nov 2007);
+  - Indiabulls (2009 and 2019);
+  - Anil Ambani firms (Feb 2019).
+- **Groups differ.** Average sibling residual by group:
+
+  | Group | Events | Average sibling residual |
+  |---|---|---|
+  | Tata | 6 (78 sibling pairs) | −0.3 pp, nothing |
+  | Aditya Birla | 3 | +0.9 pp |
+  | Anil Ambani | 10 | −6.2 pp |
+  | Adani | 6 | −17 pp |
+  | Indiabulls | 7 | −17 pp |
+
+  Contagion shows up in stressed, leveraged, pledge-heavy groups, not in strong ones.
+- **The crash-day effect survives without paper 1's episodes:** β_S −1.4 pp (*t* −2.57),
+  β_S − β_R *t* −2.19. The 21-day effect without them is −1.9 pp (*t* −1.83).
+
+## 6. Go / no-go decision
+
+**GO, by the rule registered before the run.** All three conditions hold:
+- β_S < 0 with *t* ≤ −1.96 (−2.64);
+- permutation *p* < 0.05 (< 0.0005);
+- β_S ≤ β_R (−4.5 against −0.4 pp).
+
+**The honest reading is narrower than the headline:**
+1. **Solid:** on the crash day, siblings in unrelated industries fall about 2 pp more than
+   their normal correlation predicts. This survives every check, including dropping
+   paper 1's episodes.
+2. **Real but concentrated:** over the next month the average is −4.5 pp, but it comes from
+   a handful of episodes in stressed groups. It is not significant without paper 1's
+   episodes or with high-confidence labels only. "Count groups, not stocks" matters most
+   when the group itself is fragile.
+3. Phase 5 is written to test exactly that: crisis drawdowns, the known episodes excluded
+   as a pre-stated check, and promoter stress as the next data task. See
+   `PREREGISTRATION_2_DRAFT.md`, **design only and awaiting Mrigay's approval**.
+
+## 7. Limitations
+
+- **The map was built by an AI labeller.** Most source URLs were written from memory,
+  and 209 of 1,695 rows are low confidence. With high-confidence labels only, β_S weakens
+  to *t* −1.67. The map needs source-verified checking before any paper.
+- **R4 was mis-specified.** Events are selected only from Family/Corporate groups, so
+  widening the group definition at the pair level cannot change any trigger's siblings.
+  The registered R4 is therefore identical to the primary result and tells us nothing
+  about MNC, State or PE groups. This is our design error, disclosed rather than
+  re-run.
+- **Overlap with paper 1.** 7 events (Adani 2023, Anil Ambani 2019 ×2, Indiabulls 2019)
+  are episodes already used in paper 1. Without them the 21-day result is not significant.
+- **Dependence.** Events cluster in a few groups. Clustering by trigger group gives
+  *t* −1.97, and the event-level sign test is not significant (57% negative).
+- **Event quality.** In the news-checked sample, about 7% of events are corporate-action
+  artefacts and about 27% are market-wide crash days. Both add noise, not bias toward
+  finding an effect.
+- **Transmission or revelation?** When news is about the whole group (Hindenburg), all
+  its firms fall together because the news is about all of them. The test shows that
+  owner-level risk exists and that correlation misses it. It cannot say whether one
+  firm's crash *causes* the others' fall.
+- **Day 0 is the crash day.** The plan defines day 0 as the first trading day after the
+  news; for mechanically selected crashes, the crash day is the market's reaction day.
+  - Adani: the report came out on 24 Jan 2023, but day 0 is 27 Jan, the first −15% day.
+  - Siblings' losses on 25 Jan are therefore not counted, which understates the effect
+    there.
+- **Universe.** Top-500 stocks only, so siblings outside the top 500 are not seen.
+- **Calm correlation is a noisy one-year estimate.** That weakens the control. Controlling
+  for the calm-implied move instead, or entering correlation as deciles, does not change
+  the result.
