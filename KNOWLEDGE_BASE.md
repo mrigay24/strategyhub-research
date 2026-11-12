@@ -4948,6 +4948,32 @@ Docs: `docs/group_dependency/` (`PILOT_PLAN.md`, `NOTE.md`, `PREREGISTRATION.md`
 
 *Last updated: 2026-11-12*
 
+**Phase 5, 2026-11-12: portfolio test (PREREGISTRATION_2; code `scripts/group_dependency_phase5.py`; results `results/group_dependency/phase5/`).**
+- **Design.** Matched twins at formation, 126 days before six crisis windows. Base: 30 or
+  60 random top-500 stocks.
+  - The concentrated twin swaps in same-industry stocks of groups already held.
+  - The dispersed twin swaps the *same* stocks for same-industry stocks of new groups.
+  - Equal affiliated weight; Meucci ENB and trailing volatility matched within ±5%.
+  - Inference by placebo group-label reshuffles (200).
+- **Result: H-P1 not supported.**
+  - T1 (concentrated minus dispersed drawdown) −0.30 pp, placebo *p* 0.125, 4/6 windows
+    (GFC −0.74, COVID −1.13; Hindenburg +0.46).
+  - T1-x −0.41 pp (*p* 0.125); T1-hc −0.23 pp (*p* 0.22); T1b −0.33 pp (*p* 0.075).
+  - Detectable effect only ~0.5–0.75 pp.
+- **H-P2 not supported.** Across 60,012 random portfolios, the group effective-N
+  coefficient is −0.0006 (*p* 0.35), and adding it lowers out-of-sample R². Trailing
+  volatility dominates.
+- **Lessons:**
+  1. A single-stock spillover, even a real one, need not aggregate into portfolio crisis
+     risk once covariance and volatility are matched.
+  2. The dispersed twin is the right control: concentrated-vs-base mixes concentration
+     with affiliation.
+  3. A construction-only timing run under-predicts total runtime when outcomes and
+     parallel placebos are added (26 s timed against 2.5 h actual).
+  4. A pledge moderator needs filings dated near each formation date; the cache had none.
+
+*Last updated: 2026-11-12 (Phase 5)*
+
 ### §45 — "Count groups, not stocks": market- and fund-level owner concentration (2026-11-12)
 
 **What it is:** the descriptive side of paper 2. How many independent *owner groups* does

@@ -3,12 +3,16 @@
 *11 Nov 2026. Plan: `PILOT_PLAN.md`. Rules: `PREREGISTRATION.md`. Phase 5 design (draft):
 `PREREGISTRATION_2_DRAFT.md`. Verdict: **GO** (§6), with a narrow reading.*
 
-> **Status, 12 Nov 2026.**
-> - The group map has been checked against NSE filings (v2, §8): 500 symbols confirmed,
->   21 changed, 230 could not be checked against a filing, and 858 were not checked.
-> - The registered test was re-run unchanged on v2, and **GO holds**.
-> - Not done: Phase 5 (it waits for Mrigay's approval) and verification of the 858
->   unchecked symbols (mostly standalone firms).
+> **Status, 12 Nov 2026 (evening).**
+> - Map verified against NSE filings (v2, §8). The registered single-stock test, re-run
+>   unchanged on v2, still gives **GO**.
+> - **Phase 5 portfolio test (§9): not supported.** Portfolios concentrated in fewer
+>   business groups lost only 0.3 pp more in crises than matched dispersed ones (placebo
+>   *p* 0.125). Group effective N adds nothing beyond stock, industry and covariance
+>   measures.
+> - So the owner channel is real for single stocks in stressed groups (the crash-day
+>   spillover), but it does not show up as a portfolio-level crisis risk at the
+>   concentration levels tested.
 
 ## 1. The idea
 
@@ -472,3 +476,79 @@ just as closely with the crashing firm. Industry rivals lose almost nothing extr
   1.3–2.2 pp more than their normal correlation predicts, in every version.
 - **Promoter pledges** are now saved for later (`promoter_pledges.csv`, from the same
   filings, no analysis). They are the natural "fragile group" variable for Phase 5.
+
+## 9. Phase 5: does group concentration predict crisis losses in portfolios? (12 Nov 2026)
+
+Rules: `PREREGISTRATION_2.md`, committed with the code (e571bc9) before any outcome. Single
+run: 6eea02f. Results are in `results/group_dependency/phase5/`.
+
+**The design in plain words.**
+- At six dates, each six months before a crisis, we draw a random portfolio of 30 or 60
+  top-500 stocks (B).
+- We then make two twins by swapping the same few stocks for same-industry stocks:
+  - the **concentrated twin (C)** swaps in stocks from business groups *already in* the
+    portfolio, so it piles into fewer owners;
+  - the **dispersed twin (D)** swaps in stocks from groups *not yet in* it.
+- Both twins hold the same share of group-affiliated stocks. Both match the base on
+  Meucci's covariance-based diversification and trailing volatility to within 5%. So the
+  only thing that differs is how many owners the money is spread across.
+- 500 matched draws per window and size; 6,000 in all.
+- On average the concentrated twin has 31 effective groups against 43 for the dispersed one
+  (B: 41). Affiliated weight is 0.38 in both; ENB is 1.17–1.18 in all three.
+
+**Results** (maximum drawdown inside each crisis window; negative = more loss):
+
+| | Concentrated minus dispersed (T1) | Placebo *p* | Windows with C worse |
+|---|---|---|---|
+| **Primary (all windows, v2 labels)** | **−0.30 pp** | **0.125** | **4 of 6** |
+| Concentrated minus base (T1b) | −0.33 pp | 0.075 | |
+| Without the Hindenburg window and the pilot's groups (T1-x) | −0.41 pp | 0.125 | 3 of 5 |
+| High-confidence labels only (T1-hc) | −0.23 pp | 0.22 | 4 of 6 |
+| Same comparison on window excess return | −0.34 pp | | |
+
+| Window (market fall) | T1 |
+|---|---|
+| Financial crisis 2008–09 (−76%) | −0.74 pp |
+| Taper tantrum 2013 (−26%) | −0.02 pp |
+| IL&FS 2018 (−21%) | +0.01 pp |
+| COVID 2020 (−44%) | −1.13 pp |
+| Hindenburg 2023 (−9%) | +0.46 pp |
+| Small-cap fall 2024–25 (−23%) | −0.39 pp |
+
+- **Pair level:** the concentrated twin lost more in 55% of draws (median −0.16 pp).
+- **Placebo:** T1 values with reshuffled group labels have mean 0.0 pp, standard deviation
+  0.30 pp and 5th percentile −0.42 pp. So this design could detect only differences of
+  roughly 0.5–0.75 pp.
+- **T2** (60,012 random portfolios):
+  - The coefficient on log group effective N is −0.0006, the wrong sign and essentially
+    zero (placebo *p* 0.35).
+  - Adding it *lowers* out-of-sample R² (0.074 against 0.076).
+  - Trailing volatility is what predicts the drawdown.
+- **Verdicts by the registered rules:** **H-P1 not supported. H-P2 not supported.**
+- Notes:
+  - In T1-hc, Taper at *N* = 60 found only 6 acceptable draws (the 40× retry cap), as the
+    rules allow.
+  - The run took 2.5 hours, against the 26 s per run timed for construction. Outcomes and
+    parallel placebos were slower than timed. No rule changed.
+  - The pledge moderator was skipped: there were no pledge figures near any formation date.
+  - The Nippon fund illustration is deferred (public monthly files not fetched).
+
+**What it means, in plain words.**
+- The direction is the predicted one in the two big crashes. In 2008–09 and COVID, the
+  concentrated twin lost about 0.7–1.1 pp more. But the effect is small: it is half a
+  point to a point on a 30–75% fall, and it is not distinguishable from chance by the
+  rule we fixed in advance.
+- Removing the stressed groups that drove the pilot does not change the picture.
+  Neither does keeping only the best-documented labels.
+- Together with the pilot, the honest summary is:
+  - **For single stocks**, sharing an owner is a real channel that correlation misses.
+    On the crash day, siblings in unrelated industries fall about 1.3–2.2 pp more. Over
+    the next month they fall more, but mostly in a few stressed groups.
+  - **For diversified portfolios** of 30–60 stocks, concentrating in fewer owners, at
+    the degree achievable here (about 25% fewer effective groups), did **not** cause
+    materially deeper crisis losses. Group effective N does not beat the standard
+    measures.
+- **"Count groups, not stocks"** is therefore not established as a portfolio risk rule.
+  It may matter for portfolios far more concentrated in one owner than our twins, or in
+  owner-specific crises; Hindenburg was too mild a market fall to tell. That is a
+  hypothesis for later, not a result.

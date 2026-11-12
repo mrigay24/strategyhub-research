@@ -2287,3 +2287,10 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
   don't hide much group concentration and the fund-level hook is dropped.
 - **Paper 1:** `PAPER_SHORT` (about 7,000 words) for circulation.
 - **Privacy:** outreach drafts are kept local in `docs/outreach/` (git-excluded).
+- **2026-11-12, Phase 5 portfolio test** (PREREGISTRATION_2, prefix `phase5:`): matched
+  concentrated vs dispersed twins over six crisis windows.
+  - **H-P1 not supported:** −0.30 pp drawdown, placebo *p* 0.125. The direction is right
+    in GFC and COVID but small.
+  - **H-P2 not supported:** group effective N adds nothing beyond stock, industry and
+    covariance measures.
+  - Write-up: `docs/group_dependency/NOTE.md` §9.
