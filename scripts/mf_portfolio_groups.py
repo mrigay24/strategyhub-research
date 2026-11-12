@@ -29,7 +29,21 @@ FUNDS = [
     ("PPFAS", "Parag Parikh Flexi Cap Fund", "Flexi cap", "ppfas/PPFCF_Oct_2026.xlsx", None, "2026-10",
      PP + "PPFCF_PPFAS_Monthly_Portfolio_Report_October_31_2026.xlsx"),
 ]
-# Extra funds are appended by FUNDS_EXTRA in mf_portfolio_sources.py-style entries below (same tuple shape).
+
+AXU = "https://www.axismf.com/1/5/464/560/3622/4645/Monthly_Portfolio_31_10_2026_fc300a7239.xlsx"
+AXF = "axis/Axis_Monthly_Portfolio_31_10_2026.xlsx"
+SBU = "https://www.sbimf.com/docs/default-source/scheme-portfolios/all-schemes-monthly-portfolio---as-on-31st-october-2026.xlsx"
+SBF = "sbi/SBI_all_schemes_monthly_31_Oct_2026.xlsx"
+FUNDS += [
+    ("Axis", "Axis Small Cap Fund", "Small cap", AXF, "AXISSCF", "2026-10", AXU),
+    ("Axis", "Axis Large Cap Fund", "Large cap", AXF, "AXISEQF", "2026-10", AXU),
+    ("Axis", "Axis Flexi Cap Fund", "Flexi cap", AXF, "AXISMLF", "2026-10", AXU),
+    ("Axis", "Axis Midcap Fund", "Mid cap", AXF, "AXISMCF", "2026-10", AXU),
+    ("SBI", "SBI Small Cap Fund", "Small cap", SBF, "SSCF", "2026-10", SBU),
+    ("SBI", "SBI Large Cap Fund (formerly Bluechip)", "Large cap", SBF, "SBLUECHIP", "2026-10", SBU),
+    ("SBI", "SBI Flexicap Fund", "Flexi cap", SBF, "SFLEXI", "2026-10", SBU),
+    ("SBI", "SBI Midcap Fund", "Mid cap", SBF, "SMIDCAP", "2026-10", SBU),
+]
 
 
 def parse_fund(path, sheet):
