@@ -3,7 +3,27 @@
 *Started 11 Nov 2026. Plan: `PILOT_PLAN.md`. Rules: `PREREGISTRATION.md`. This note is
 filled in phase by phase; sections marked "(pending)" are not written yet.*
 
-## 1. The idea (pending)
+## 1. The idea
+
+Paper 1 found that a failed firm's market share does not predict how its rivals react, and
+that the one channel that kept showing up was **shared ownership**: in all three Indian
+business-group sets, the group's other firms fell together after one of them collapsed.
+Three sets prove nothing, so this pilot asks the question properly.
+
+The hypothesis is **"count groups, not stocks"**:
+- Firms that share a promoter group crash together *more than their normal (calm-period)
+  price correlation predicts*.
+- If so, a portfolio's risk is concentrated in a way that correlation-based tools miss in
+  calm markets. An entropy measure built from *who owns what* (the effective number of
+  groups, exp(H) with H = −Σ w ln w over group weights) would show it.
+
+A real example: the Nippon India Small Cap Fund holds about 186 "effective" stocks, but only
+about 53 effective industries. If business groups add a hidden common shock on top, its true
+diversification is lower still.
+
+**The go / no-go question.** Do same-group stocks share crashes more than same-industry
+stocks that are not in the group, after controlling for their calm-period correlation? If
+yes, design a portfolio-level test (Phase 5). If no, write this note and stop.
 
 ## 2. Is this new? Literature check (Phase 1, 11 Nov 2026)
 
@@ -108,7 +128,55 @@ Sources (searched 11 Nov 2026):
 [Meucci 2009](https://risk.net/node/1500233) ·
 [Ganguly, Mishra & Platt 2025](https://research.jgu.edu.in/market-perceptions-and-reactions-the-ripple-effect-of-the-hindenburg-report-on-indian-companies/)
 
-## 3. Data and the group map (pending)
+## 3. Data and the group map (Phase 2, 11 Nov 2026)
+
+**Prices.** The corrected survivorship-free NSE panel
+(`data_processed/nse_survivorship_free_adj.parquet`: 1,620 symbols, Jan 2005 – Jun 2025,
+splits and bonuses fixed, delisted firms included).
+
+**Universe.** Every symbol that was in the top 500 by 63-day traded value at any month-end
+2005–2025: **1,609 symbols** (`results/group_dependency/universe.csv`). This list was built
+from traded value alone, before any return was computed.
+
+**The group map** (`results/group_dependency/group_map.csv`, rules in
+`GROUP_MAP_README.md`).
+- **Labels.** Each symbol is labelled with its controlling promoter group, with dates for
+  changes of control, plus one of 41 industries.
+- **Who labelled it.** A Sonnet subagent, working from NSE's public symbol lists, its own
+  knowledge and a few web searches. Its raw output is kept in `map_raw/`.
+- **Spot checks** found 14 problems, each fixed and logged in `group_map_fixes.csv`.
+  Examples: the JK Organisation firms had been split across three brothers' names; one ETF
+  was linked to Nippon Life AMC; three pairs of separate companies that later merged had
+  been marked "same company".
+- **Result.** 1,695 rows. By group type:
+
+  | Family | MNC | State | Professional | Unknown (mostly ETFs) | PE | Corporate |
+  |---|---|---|---|---|---|---|
+  | 1,329 | 131 | 117 | 46 | 28 | 22 | 22 |
+
+- **Groups.** **110 Family/Corporate groups have two or more distinct listed companies**
+  (379 companies). The largest:
+
+  | Group | Listings |
+  |---|---|
+  | Tata | 33 |
+  | Aditya Birla | 15 |
+  | Anil Ambani (ADAG) | 12 |
+  | Adani | 11 (ACC and Ambuja from Sep 2022) |
+  | Mukesh Ambani | 11 |
+  | Mahindra | 11 |
+  | Murugappa | 11 |
+  | Indiabulls | 11 |
+
+- **Confidence.** 1,017 rows are high, 469 medium and 209 low. Low rows are mostly obscure
+  small firms whose "group" is just their own promoters. Robustness R6 drops every pair
+  that touches a medium or low label.
+- **Known weaknesses.**
+  - Most source URLs were written from memory, not opened.
+  - Family-branch boundaries are judgement calls: TVS, Bajaj, Jindal, Birla and Lalbhai
+    are each split by branch.
+  - A wrong label most likely puts a true sibling in the "baseline" class. That dilutes
+    the group effect, so the test is biased *against* finding one.
 
 ## 4. The pre-registered test (pending)
 

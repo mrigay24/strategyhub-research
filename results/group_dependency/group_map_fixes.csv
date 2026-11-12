@@ -1,0 +1,15 @@
+symbol,column,new_value,reason
+RELIGARE,industry,Finance - NBFC & Housing Finance,one industry per symbol; Religare Finvest (NBFC lending) was the largest business
+NAM-INDIA,same_company_as,,"ITBEES is a Nippon India ETF, not the AMC (a name-list artefact)"
+JKPAPER,group,JK Organisation (Hari Shankar Singhania family),"JK Paper, JK Lakshmi Cement and JK Tyre are all JK Organisation (Hari Shankar Singhania's family; his sons chair different firms)"
+JKLAKSHMI,group,JK Organisation (Hari Shankar Singhania family),same
+JKTYRE,group,JK Organisation (Hari Shankar Singhania family),same
+JKINDUSTRY,group,JK Organisation (Hari Shankar Singhania family),same; JK Industries is JK Tyre's former name
+JKINDUSTRY,same_company_as,JKTYRE,JK Industries was renamed JK Tyre & Industries (2008)
+MEGH,group,Meghmani (Patel family),old Meghmani Organics symbol; same family as MOL/EPIGRAL
+MEGH,group_type,Family,same
+MEGH,confidence,medium,same
+TATAINFOTE,same_company_as,remove link to TCS,Tata Infotech was a separate listed company until it merged into TCS (2006)
+INDSWFTLAB,same_company_as,remove link to INDSWFTLTD,Ind-Swift Labs and Ind-Swift Ltd are separate companies
+NETWORK18,same_company_as,remove link to TV-18,Television Eighteen merged into Network18 in 2011; separate before
+NETWORK18,same_company_as,remove link to TV18,same

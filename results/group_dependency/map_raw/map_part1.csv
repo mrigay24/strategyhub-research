@@ -1,0 +1,442 @@
+symbol,company_name,group,group_type,start,end,industry,confidence,source,notes,same_company_as
+SUNPHARMA,Sun Pharmaceutical Industries Limited,Sun Pharma (Dilip Shanghvi),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Sun_Pharma,,
+TCS,Tata Consultancy Services Limited,Tata,Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Tata_Group,,
+HDFCBANK,HDFC Bank Limited,HDFC,Corporate,2005-01-01,2025-06-30,Banks,medium,https://en.wikipedia.org/wiki/HDFC_Bank,HDFC Ltd promoter until merger Jul 2023; kept under HDFC label as group parent afterwards,
+AXISBANK,Axis Bank Limited,Axis Bank,Professional,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Axis_Bank,,UTIBANK
+TATASTEEL,Tata Steel Limited,Tata,Family,2005-01-01,2025-06-30,Ferrous Metals,high,https://en.wikipedia.org/wiki/Tata_Group,,TISCO
+ADANIENT,Adani Enterprises Limited,Adani,Family,2005-01-01,2025-06-30,Diversified & Holding Companies,high,https://en.wikipedia.org/wiki/Adani_Group,,ADANIEXPO
+MCDOWELL-N,United Spirits Limited,UB (Vijay Mallya),Family,2005-01-01,2013-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/UB_Group,UB Group until Diageo took control,UNITDSPR
+MCDOWELL-N,United Spirits Limited,Diageo,MNC,2013-07-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/United_Spirits,Diageo became promoter Jul 2013 (open offer completed Jul 2014),UNITDSPR
+BSE,BSE Limited,BSE,Corporate,2005-01-01,2025-06-30,Capital Markets,medium,https://en.wikipedia.org/wiki/BSE_Limited,BSE Ltd listed 2017; parent of CDSL,
+RELIANCE,Reliance Industries Limited,Reliance (Mukesh Ambani),Family,2005-01-01,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Reliance_Industries,,
+SBIN,State Bank of India,State: SBI,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/State_Bank_of_India,Government of India majority; SBI is parent of SBI Life/SBI Cards,
+IRCTC,Indian Railway Catering And Tourism Corporation Limited,State: Government of India,State,2005-01-01,2025-06-30,"Hotels, Leisure & Travel",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+INFY,Infosys Limited,Infosys,Professional,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Infosys,,INFOSYSTCH
+YESBANK,Yes Bank Limited,Yes Bank (Rana Kapoor),Family,2005-01-01,2020-03-12,Banks,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Rana Kapoor founder-promoter until RBI moratorium Mar 2020,
+YESBANK,Yes Bank Limited,State: SBI,State,2020-03-13,2025-06-30,Banks,medium,https://en.wikipedia.org/wiki/State_Bank_of_India,SBI-led reconstruction scheme from 13 Mar 2020 (SBI 26%+),
+ICICIBANK,ICICI Bank Limited,ICICI,Corporate,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/ICICI_Bank,,
+TATAMOTORS,Tata Motors Limited,Tata,Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Tata_Group,,TATAMTRDVR
+TISCO,Tata Steel Limited,Tata,Family,2005-01-01,2025-06-30,Ferrous Metals,high,https://en.wikipedia.org/wiki/Tata_Group,Old symbol of Tata Steel,TATASTEEL
+UNITECH,Unitech Limited,Unitech (Chandra family),Family,2005-01-01,2025-06-30,Realty,high,knowledge,,
+RPL,Reliance Petroleum Limited,Reliance (Mukesh Ambani),Family,2005-01-01,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Reliance_Industries,Reliance Petroleum Ltd (Jamnagar export refinery) listed 2006 merged into RIL 2008,
+JETAIRWAYS,Jet Airways (India) Limited,Jet Airways (Naresh Goyal),Family,2005-01-01,2025-06-30,Airlines,high,knowledge,Goyal until 2019 insolvency,
+RELCAPITAL,Reliance Capital Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Reliance_Group,Anil Ambani from Reliance family split 2005-06,
+BAJFINANCE,Bajaj Finance Limited,Bajaj (Rahul Bajaj family),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Bajaj_Group,,
+REL,Reliance Infrastructure Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Reliance_Group,Reliance Energy (ex BSES),RELINFRA
+INFOSYSTCH,Infosys Limited,Infosys,Professional,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Infosys,Old symbol of Infosys,INFY
+TATAPOWER,Tata Power Company Limited,Tata,Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Tata_Group,,
+PCJEWELLER,PC Jeweller Limited,PC Jeweller (Balram Garg),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+RVNL,Rail Vikas Nigam Limited,State: Government of India,State,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Ministry of Railways,
+IFCI,IFCI Limited,State: Government of India,State,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+SAMMAANCAP,Sammaan Capital Limited,Indiabulls (Sameer Gehlaut),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,medium,https://en.wikipedia.org/wiki/Indiabulls,Indiabulls Housing Finance; Gehlaut promoter stake fell sharply from 2022,INDIABULLS
+RNRL,Reliance Natural Resources Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Oil & Gas - Exploration & Production,high,https://en.wikipedia.org/wiki/Reliance_Group,Reliance Natural Resources; merged into Reliance Power 2010,
+SATYAMCOMP,Satyam Computer Services Limited,Satyam (B Ramalinga Raju),Family,2005-01-01,2009-04-12,IT Services & Software,high,knowledge,Raju family until fraud Jan 2009,
+SATYAMCOMP,Satyam Computer Services Limited,Mahindra,Family,2009-04-13,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Mahindra_Group,"Tech Mahindra won Satyam auction, control 13 Apr 2009; merged Tech Mahindra 2013",
+ETERNAL,ETERNAL LIMITED,Eternal (Zomato),Professional,2005-01-01,2025-06-30,Retail,high,knowledge,No promoter; Info Edge largest holder but not controlling,
+MARUTI,Maruti Suzuki India Limited,Suzuki,MNC,2005-01-01,2025-06-30,Automobiles,high,knowledge,,
+HDFC,Housing Development Finance Corporation Limited,HDFC,Corporate,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/HDFC_Bank,HDFC Ltd merged into HDFC Bank Jul 2023,
+RCOM,Reliance Communications Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Reliance_Group,,
+ADANIPORTS,Adani Ports and Special Economic Zone Limited,Adani,Family,2005-01-01,2025-06-30,Transport Infrastructure,high,https://en.wikipedia.org/wiki/Adani_Group,,MUNDRAPORT
+BHARTIARTL,Bharti Airtel Limited,Bharti (Sunil Mittal),Family,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Bharti_Enterprises,Singtel co-promoter,BHARTI
+INDIABULLS,Indiabulls Financial Services Limited,Indiabulls (Sameer Gehlaut),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Indiabulls,Indiabulls Financial Services (renamed Indiabulls Housing Finance),SAMMAANCAP
+INDUSINDBK,IndusInd Bank Limited,Hinduja,Family,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Hinduja_Group,,
+HAL,Hindustan Aeronautics Limited,State: Government of India,State,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+LT,Larsen & Toubro Limited,L&T,Corporate,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/Larsen_%26_Toubro,,
+DHFL,Dewan Housing Finance Corporation Limited,"Wadhawan (Kapil Wadhawan, DHFL)",Family,2005-01-01,2021-09-29,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Dewan_Housing_Finance_Corporation_Limited,Wadhawan family until RBI insolvency 2019-21,DEWANHOUS
+GMRINFRA,GMR AIRPORTS LIMITED,GMR,Family,2005-01-01,2025-06-30,Transport Infrastructure,high,https://en.wikipedia.org/wiki/GMR_Group,GMR Infrastructure (now GMR Airports),GMRAIRPORT
+RELINFRA,Reliance Infrastructure Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Reliance_Group,,REL
+ITC,ITC Limited,ITC,Professional,2005-01-01,2025-06-30,Tobacco & Diversified FMCG,high,knowledge,BAT holds ~25% but no controlling promoter,
+SUZLON,Suzlon Energy Limited,Suzlon (Tulsi Tanti),Family,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+JIOFIN,Jio Financial Services Limited,Reliance (Mukesh Ambani),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Reliance_Industries,Demerged from RIL Jul 2023,
+DLF,DLF Limited,DLF (K P Singh family),Family,2005-01-01,2025-06-30,Realty,high,knowledge,,
+IRFC,Indian Railway Finance Corporation Limited,State: Government of India,State,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+ONGC,Oil & Natural Gas Corporation Limited,State: ONGC,State,2005-01-01,2025-06-30,Oil & Gas - Exploration & Production,high,https://en.wikipedia.org/wiki/Oil_and_Natural_Gas_Corporation,Parent of MRPL and HPCL (from 2018),
+HINDUNILVR,Hindustan Unilever Limited,Unilever,MNC,2005-01-01,2025-06-30,Personal & Household Products,high,https://en.wikipedia.org/wiki/Hindustan_Unilever,,HINDLEVER
+KOTAKBANK,Kotak Mahindra Bank Limited,Kotak (Uday Kotak),Family,2005-01-01,2025-06-30,Banks,high,knowledge,,
+SRF,SRF Limited,SRF (Bharat Ram family),Family,2005-01-01,2025-06-30,Chemicals,high,knowledge,,
+TITAN,Titan Company Limited,Tata,Family,2005-01-01,2025-06-30,Consumer Durables,high,https://en.wikipedia.org/wiki/Tata_Group,Tata and TIDCO co-promoters; Tata controls,
+MAZDOCK,Mazagon Dock Shipbuilders Limited,State: Government of India,State,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+IDEA,Vodafone Idea Limited,Aditya Birla,Family,2005-01-01,2018-08-30,Telecom Services,high,https://en.wikipedia.org/wiki/Aditya_Birla_Group,Idea Cellular under Aditya Birla until merger with Vodafone India 31 Aug 2018,
+IDEA,Vodafone Idea Limited,Vodafone,MNC,2018-08-31,2025-06-30,Telecom Services,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Vodafone Group largest shareholder post merger (45%); Aditya Birla 26% co-promoter; GoI stake 2023-25,
+EMBDL,Embassy Developments Limited,Indiabulls (Sameer Gehlaut),Family,2005-01-01,2020-12-31,Realty,medium,https://en.wikipedia.org/wiki/Indiabulls,Indiabulls Real Estate,IBREALEST
+EMBDL,Embassy Developments Limited,Embassy (Jitu Virwani),Family,2021-01-01,2025-06-30,Realty,medium,https://en.wikipedia.org/wiki/Embassy_Group,Embassy Property Developments merged in; control date approximate,IBREALEST
+BHARATFIN,Bharat Financial Inclusion Limited,Bharat Financial Inclusion (SKS Microfinance),Professional,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,medium,https://en.wikipedia.org/wiki/Bharat_Financial_Inclusion,PE-backed microfinance; merged into IndusInd Bank Jul 2019,SKSMICRO
+NHPC,NHPC Limited,State: Government of India,State,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+SAIL,Steel Authority of India Limited,State: Government of India,State,2005-01-01,2025-06-30,Ferrous Metals,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+ACC,ACC Limited,Holcim,MNC,2005-01-01,2022-09-15,Cement,high,https://en.wikipedia.org/wiki/Holcim,Holcim control to Adani completion 15 Sep 2022,
+ACC,ACC Limited,Adani,Family,2022-09-16,2025-06-30,Cement,high,https://en.wikipedia.org/wiki/Adani_Group,Adani acquired Holcim India stake 16 Sep 2022,
+SESAGOA,Vedanta Limited,Mitsui,MNC,2005-01-01,2007-04-18,Mining & Minerals,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Sesa Goa controlled by Mitsui & Co until Vedanta acquisition Apr 2007,VEDL
+SESAGOA,Vedanta Limited,Vedanta (Anil Agarwal),Family,2007-04-19,2025-06-30,Mining & Minerals,high,https://en.wikipedia.org/wiki/Vedanta_Limited,Vedanta Resources acquired 51% Apr 2007; became Sesa Sterlite/Vedanta Ltd 2013,VEDL
+TECHM,Tech Mahindra Limited,Mahindra,Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Mahindra_Group,British Telecom co-promoter until 2009,
+STER,Sterlite Industries (India) Limited,Vedanta (Anil Agarwal),Family,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Vedanta_Limited,Sterlite Industries (India); merged into Sesa Sterlite 2013,
+PNB,Punjab National Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+DRREDDY,Dr. Reddy's Laboratories Limited,Dr Reddy's (Reddy family),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+EDUCOMP,Educomp Solutions Limited,Educomp (Shantanu Prakash),Family,2005-01-01,2025-06-30,Commercial & Other Services,high,knowledge,,
+JPASSOCIAT,Jaiprakash Associates Limited,Jaypee,Family,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/Jaypee_Group,,
+AUROPHARMA,Aurobindo Pharma Limited,Aurobindo (Reddy family),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+ESSAROIL,Essar Oil Limited,Essar (Ruia),Family,2005-01-01,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Essar_Group,Delisted 2015; Rosneft 2017,
+HDIL,Housing Development and Infrastructure Limited,HDIL (Rakesh Wadhawan),Family,2005-01-01,2025-06-30,Realty,high,knowledge,Separate Wadhawan branch from DHFL,
+LICHSGFIN,LIC Housing Finance Limited,State: LIC,State,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Life_Insurance_Corporation,,
+VSNL,Tata Communications Limited,Tata,Family,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Tata_Group,Tata took 25% and control Feb 2002,TATACOMM
+LUPIN,Lupin Limited,Lupin (Gupta family),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+ABAN,Aban Offshore Limited,Aban (Reji Abraham),Family,2005-01-01,2025-06-30,Oil & Gas - Exploration & Production,high,https://en.wikipedia.org/wiki/Aban_Offshore,Offshore drilling,ABANLOYD
+GESCOCORP,Mahindra Lifespace Developers Limited,Mahindra,Family,2005-01-01,2025-06-30,Realty,high,https://en.wikipedia.org/wiki/Mahindra_Group,Gesco Corp became Mahindra Lifespace,MAHLIFE
+ADANIPOWER,Adani Power Limited,Adani,Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Adani_Group,,
+IVRCLINFRA,IVRCL Limited,IVRCL (E Sudhir Reddy),Family,2005-01-01,2025-06-30,Construction & Engineering,high,knowledge,,
+AMBUJACEM,Ambuja Cements Limited,Holcim,MNC,2005-01-01,2022-09-15,Cement,medium,https://en.wikipedia.org/wiki/Holcim,Holcim controlling shareholder of Gujarat Ambuja from 2005-06; exit Sep 2022,GUJAMBCEM
+AMBUJACEM,Ambuja Cements Limited,Adani,Family,2022-09-16,2025-06-30,Cement,high,https://en.wikipedia.org/wiki/Adani_Group,Adani acquired Holcim India stake 16 Sep 2022,GUJAMBCEM
+BHEL,Bharat Heavy Electricals Limited,State: Government of India,State,2005-01-01,2025-06-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+HINDALCO,Hindalco Industries Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Aditya_Birla_Group,,HINDALC0
+M&M,Mahindra & Mahindra Limited,Mahindra,Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Mahindra_Group,,
+BEL,Bharat Electronics Limited,State: Government of India,State,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+CAIRN,Cairn India Limited,Cairn Energy,MNC,2005-01-01,2011-12-07,Oil & Gas - Exploration & Production,high,knowledge,Cairn India listed 2007; Cairn Energy plc until Vedanta Dec 2011,
+CAIRN,Cairn India Limited,Vedanta (Anil Agarwal),Family,2011-12-08,2025-06-30,Oil & Gas - Exploration & Production,high,https://en.wikipedia.org/wiki/Vedanta_Limited,Vedanta acquired 58.5% on 8 Dec 2011; merged into Vedanta 2017,
+INDIACEM,The India Cements Limited,India Cements (N Srinivasan),Family,2005-01-01,2024-06-30,Cement,high,knowledge,Srinivasan family until UltraTech acquisition 2024,
+INDIACEM,The India Cements Limited,Aditya Birla,Family,2024-07-01,2025-06-30,Cement,medium,https://en.wikipedia.org/wiki/Aditya_Birla_Group,UltraTech bought controlling stake from mid 2024; exact date approximate,
+JSWSTEEL,JSW Steel Limited,JSW (Sajjan Jindal),Family,2005-01-01,2025-06-30,Ferrous Metals,high,https://en.wikipedia.org/wiki/JSW_Group,,JSWSTL
+SIEMENS,Siemens Limited,Siemens,MNC,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+COCHINSHIP,Cochin Shipyard Limited,State: Government of India,State,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+IEX,Indian Energy Exchange Limited,Indian Energy Exchange,Professional,2005-01-01,2025-06-30,Capital Markets,high,knowledge,,
+ZEEL,Zee Entertainment Enterprises Limited,Essel (Subhash Chandra),Family,2005-01-01,2025-06-30,Media & Entertainment,high,https://en.wikipedia.org/wiki/Essel_Group,Promoter holding fell to ~4% by 2021 after pledge sales but family still promoters,ZEETELE
+VEDL,Vedanta Limited,Vedanta (Anil Agarwal),Family,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Vedanta_Limited,,SESAGOA
+ZEETELE,Zee Entertainment Enterprises Limited,Essel (Subhash Chandra),Family,2005-01-01,2025-06-30,Media & Entertainment,high,https://en.wikipedia.org/wiki/Essel_Group,,ZEEL
+ESSARGUJ,Essar Gujarat Limited (Essar Steel),Essar (Ruia),Family,2005-01-01,2025-06-30,Ferrous Metals,medium,https://en.wikipedia.org/wiki/Essar_Group,"Essar Gujarat, early name of Essar Steel",ESTL
+RANBAXY,Ranbaxy Laboratories Limited,Fortis (Singh brothers),Family,2005-01-01,2008-11-06,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Fortis_Healthcare,Singh family until Daiichi Sankyo deal closed Nov 2008,
+RANBAXY,Ranbaxy Laboratories Limited,Daiichi Sankyo,MNC,2008-11-07,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,Daiichi 63.9% from Nov 2008; merged into Sun Pharma Mar 2015,
+HEROMOTOCO,Hero MotoCorp Limited,Hero (Munjal family),Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Hero_MotoCorp,Honda co-promoter in JV until 2011,HEROHONDA
+JINDALSTEL,JINDAL STEEL LIMITED,Jindal (Naveen Jindal),Family,2005-01-01,2025-06-30,Ferrous Metals,high,knowledge,Jindal Steel and Power,
+BAJAJFINSV,Bajaj Finserv Limited,Bajaj (Rahul Bajaj family),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Bajaj_Group,,
+HINDALC0,Hindalco Industries Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Aditya_Birla_Group,Duplicate symbol (zero for O) of Hindalco,HINDALCO
+NTPC,NTPC Limited,State: Government of India,State,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+WOCKPHARMA,Wockhardt Limited,Wockhardt (Khorakiwala),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+EICHERMOT,Eicher Motors Limited,Eicher (Lal family),Family,2005-01-01,2025-06-30,Automobiles,high,knowledge,,
+HCLTECH,HCL Technologies Limited,HCL (Shiv Nadar),Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/HCL_Technologies,,
+COALINDIA,Coal India Limited,State: Government of India,State,2005-01-01,2025-06-30,Mining & Minerals,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+IDFC,IDFC Limited,IDFC,Corporate,2005-01-01,2025-06-30,Capital Markets,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),IDFC Ltd infrastructure lender; GoI/institutional holders; parent of IDFC Bank 2015-2018 then IDFC First,
+GRSE,Garden Reach Shipbuilders & Engineers Limited,State: Government of India,State,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+BOMDYEING,Bombay Dyeing & Mfg Company Limited,Wadia,Family,2005-01-01,2025-06-30,Textiles & Apparel,high,https://en.wikipedia.org/wiki/Wadia_Group,,
+GDL,Gateway Distriparks Limited,Gateway Distriparks (Prem Kishan Gupta),Family,2005-01-01,2025-06-30,Shipping & Logistics,medium,https://en.wikipedia.org/wiki/Gateway_Distriparks,Identified as Gateway Distriparks (symbol GDL); parent of Snowman Logistics,
+DIXON,Dixon Technologies (India) Limited,Dixon (Sunil Vachani),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+PAYTM,One 97 Communications Limited,Paytm (One 97 Communications),Professional,2005-01-01,2025-06-30,Commercial & Other Services,high,knowledge,No identifiable promoter at IPO,
+KALYANKJIL,Kalyan Jewellers India Limited,Kalyan Jewellers (TS Kalyanaraman),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+ADANIGREEN,Adani Green Energy Limited,Adani,Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Adani_Group,,
+RBLBANK,RBL Bank Limited,RBL Bank,Professional,2005-01-01,2025-06-30,Banks,high,knowledge,,
+RECLTD,REC Limited,State: Government of India,State,2005-01-01,2019-03-27,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,REC held by GoI until PFC acquisition 28 Mar 2019,
+RECLTD,REC Limited,State: PFC,State,2019-03-28,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Power_Finance_Corporation,PFC acquired 52.63% of REC Mar 2019,
+HINDLEVER,Hindustan Unilever Limited,Unilever,MNC,2005-01-01,2025-06-30,Personal & Household Products,high,https://en.wikipedia.org/wiki/Hindustan_Unilever,Old symbol of HUL,HINDUNILVR
+HINDOILEXP,Hindustan Oil Exploration Company Limited,Hindustan Oil Exploration,Professional,2005-01-01,2025-06-30,Oil & Gas - Exploration & Production,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+CENTURYTEX,Aditya Birla Real Estate Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Textiles & Apparel,medium,https://en.wikipedia.org/wiki/Aditya_Birla_Group,Century Textiles and Industries (now Aditya Birla Real Estate); Kumar Mangalam Birla chairs,ABREL
+DIVISLAB,Divi's Laboratories Limited,Divi's (Murali Divi),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+WIPRO,Wipro Limited,Wipro (Azim Premji),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,
+BHARTI,Bharti Airtel Limited,Bharti (Sunil Mittal),Family,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Bharti_Enterprises,Old symbol of Bharti Airtel,BHARTIARTL
+TATAELXSI,Tata Elxsi Limited,Tata,Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Tata_Group,,
+PFC,Power Finance Corporation Limited,State: PFC,State,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Power_Finance_Corporation,PFC parent of REC from 2019,
+JUSTDIAL,Just Dial Limited,Just Dial (VSS Mani),Family,2005-01-01,2021-06-30,Commercial & Other Services,high,knowledge,Mani family until Reliance Retail open offer 2021,
+JUSTDIAL,Just Dial Limited,Reliance (Mukesh Ambani),Family,2021-07-01,2025-06-30,Commercial & Other Services,medium,https://en.wikipedia.org/wiki/Reliance_Industries,Reliance Retail acquired ~41% via open offer mid 2021,
+FORTIS,Fortis Healthcare Limited,Fortis (Singh brothers),Family,2005-01-01,2018-11-12,Healthcare Services,high,https://en.wikipedia.org/wiki/Fortis_Healthcare,Singh brothers until IHH Healthcare acquisition Nov 2018,
+FORTIS,Fortis Healthcare Limited,IHH Healthcare,MNC,2018-11-13,2025-06-30,Healthcare Services,high,knowledge,Northern TK Venture (IHH) acquired control 13 Nov 2018,
+INDUSTOWER,Indus Towers Limited,Bharti (Sunil Mittal),Family,2005-01-01,2025-06-30,Telecom Services,medium,https://en.wikipedia.org/wiki/Bharti_Enterprises,Bharti Infratel (Bharti Airtel ~53%); Indus Towers since 2020 merger with Vodafone Idea towers; Bharti largest holder,
+IPCL,Indian Petrochemicals Corporation Limited,Reliance (Mukesh Ambani),Family,2005-01-01,2025-06-30,Chemicals,high,https://en.wikipedia.org/wiki/Reliance_Industries,Indian Petrochemicals Corp; RIL bought GoI stake 2002; merged into RIL 2007,
+BANKBARODA,Bank of Baroda,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+IREDA,Indian Renewable Energy Development Agency Limited,State: Government of India,State,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+ORCHIDCHEM,Orchid Pharma Limited,Orchid (K Raghavendra Rao),Family,2005-01-01,2020-07-31,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Orchid_Pharma,Rao family until insolvency,ORCHIDPHAR
+INDIGO,InterGlobe Aviation Limited,InterGlobe (Rahul Bhatia),Family,2005-01-01,2025-06-30,Airlines,high,knowledge,Gangwal co-promoter until 2022,
+BPCL,Bharat Petroleum Corporation Limited,State: Government of India,State,2005-01-01,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+HINDPETRO,Hindustan Petroleum Corporation Limited,State: Government of India,State,2005-01-01,2018-01-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,GoI until ONGC acquisition 31 Jan 2018,
+HINDPETRO,Hindustan Petroleum Corporation Limited,State: ONGC,State,2018-01-31,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Oil_and_Natural_Gas_Corporation,ONGC acquired 51.11% of HPCL 31 Jan 2018,
+ISPATIND,JSW ISPAT Steel Limited,Mittal (Pramod Mittal),Family,2005-01-01,2010-12-31,Ferrous Metals,medium,https://en.wikipedia.org/wiki/Ispat_Industries,Ispat Industries (Pramod Mittal) until JSW Steel acquisition Dec 2010,JSWISPAT
+ISPATIND,JSW ISPAT Steel Limited,JSW (Sajjan Jindal),Family,2011-01-01,2025-06-30,Ferrous Metals,medium,https://en.wikipedia.org/wiki/JSW_Group,JSW Steel took control of Ispat Industries Dec 2010; merged 2012,JSWISPAT
+CIPLA,Cipla Limited,Cipla (Hamied family),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+IDBI,IDBI Bank Limited,State: Government of India,State,2005-01-01,2019-01-20,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,GoI until LIC took control Jan 2019,IDBIBANK
+IDBI,IDBI Bank Limited,State: LIC,State,2019-01-21,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Life_Insurance_Corporation,LIC 51% from 21 Jan 2019,IDBIBANK
+AKRUTI,Hubtown Limited,Hubtown (Vyomesh Shah),Family,2005-01-01,2025-06-30,Realty,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Akruti City renamed Hubtown,ACKRUTI
+CDSL,Central Depository Services (India) Limited,BSE,Corporate,2005-01-01,2025-06-30,Capital Markets,medium,https://en.wikipedia.org/wiki/BSE_Limited,BSE Ltd largest shareholder/promoter of CDSL,
+FEL,Future Enterprises Limited,Future (Kishore Biyani),Family,2005-01-01,2025-06-30,Retail,high,https://en.wikipedia.org/wiki/Future_Group,"Future Enterprises, ex Pantaloon Retail",PANTALOONR
+IOC,Indian Oil Corporation Limited,State: IOC,State,2005-01-01,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Indian_Oil_Corporation,Parent of CPCL,
+ORIENTBANK,Oriental Bank of Commerce,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Merged into PNB Apr 2020,
+BANDHANBNK,Bandhan Bank Limited,Bandhan (Chandra Shekhar Ghosh),Family,2005-01-01,2025-06-30,Banks,high,knowledge,,
+PBAINFRA,PBA Infrastructure Limited,PBA Infrastructure promoters,Family,2005-01-01,2025-06-30,Construction & Engineering,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+GRASIM,Grasim Industries Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Diversified & Holding Companies,high,https://en.wikipedia.org/wiki/Aditya_Birla_Group,,
+TATACOFFEE,TATA COFFEE LIMITED,Tata,Family,2005-01-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/Tata_Group,,
+TRENT,Trent Limited,Tata,Family,2005-01-01,2025-06-30,Retail,high,https://en.wikipedia.org/wiki/Tata_Group,,
+MTNL,Mahanagar Telephone Nigam Limited,State: Government of India,State,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+ASIANPAINT,Asian Paints Limited,"Asian Paints (Choksey, Dani, Vakil, Mehta families)",Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+KTKBANK,The Karnataka Bank Limited,Karnataka Bank,Professional,2005-01-01,2025-06-30,Banks,high,knowledge,,
+ALBK,Allahabad Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Allahabad Bank; merged into Indian Bank Apr 2020,
+BEML,BEML Limited,State: Government of India,State,2005-01-01,2025-06-30,Industrial Machinery & Products,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+NIPPONDENR,Ispat Industries Limited,Mittal (Pramod Mittal),Family,2005-01-01,2010-12-31,Ferrous Metals,medium,https://en.wikipedia.org/wiki/Ispat_Industries,"Nippon Denro Ispat, merged into Ispat Industries (identified from NSE name); control date to JSW approximate",
+CANBK,Canara Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+ASHOKLEY,Ashok Leyland Limited,Hinduja,Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Hinduja_Group,,
+JUBLFOOD,Jubilant Foodworks Limited,Jubilant (Bhartia),Family,2005-01-01,2025-06-30,"Hotels, Leisure & Travel",high,https://en.wikipedia.org/wiki/Jubilant_Bhartia_Group,,
+FCSSOFT,FCS Software Solutions Limited,FCS Software Solutions promoters,Family,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Could not identify controller,
+BHARATFORG,Bharat Forge Limited,Kalyani,Family,2005-01-01,2025-06-30,Auto Components,high,https://en.wikipedia.org/wiki/Kalyani_Group,,
+NAGARFERT,Nagarjuna Fertilizers and Chemicals Limited,Nagarjuna (KVK Raju),Family,2005-01-01,2025-06-30,Fertilizers & Agrochemicals,high,knowledge,Nagarjuna Fertilizers and Chemicals,
+POWERGRID,Power Grid Corporation of India Limited,State: Government of India,State,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+MINDTREE,MindTree Limited,Mindtree,Professional,2005-01-01,2019-05-31,IT Services & Software,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Founders and VG Siddhartha (Coffee Day) until L&T acquisition 2019,
+MINDTREE,MindTree Limited,L&T,Corporate,2019-06-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Larsen_%26_Toubro,L&T acquired control Jun 2019 (open offer); merged into LTIMindtree 2022,
+HEROHONDA,Hero MotoCorp Limited,Hero (Munjal family),Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Hero_MotoCorp,Old symbol of Hero MotoCorp,HEROMOTOCO
+GAIL,GAIL (India) Limited,State: Government of India,State,2005-01-01,2025-06-30,Gas Transmission & Distribution,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+BAJAJAUTO,Bajaj Holdings & Investment Limited,Bajaj (Rahul Bajaj family),Family,2005-01-01,2025-06-30,Diversified & Holding Companies,high,https://en.wikipedia.org/wiki/Bajaj_Group,"Bajaj Auto Ltd until Mar 2008 demerger, then Bajaj Holdings & Investment (industry set to holding co)",BAJAJHLDNG
+CHAMBLFERT,Chambal Fertilizers & Chemicals Limited,KK Birla (Adventz),Family,2005-01-01,2025-06-30,Fertilizers & Agrochemicals,high,https://en.wikipedia.org/wiki/Adventz_Group,,
+ANGELONE,Angel One Limited,Angel One (Dinesh Thakkar),Family,2005-01-01,2025-06-30,Capital Markets,high,knowledge,,
+EKC,Everest Kanto Cylinder Limited,Everest Kanto Cylinder promoters,Family,2005-01-01,2025-06-30,Industrial Machinery & Products,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+IBREALEST,Embassy Developments Limited,Indiabulls (Sameer Gehlaut),Family,2005-01-01,2020-12-31,Realty,medium,https://en.wikipedia.org/wiki/Indiabulls,Indiabulls Real Estate (old symbol of EMBDL),EMBDL
+GUJAMBCEM,Ambuja Cements Limited,Holcim,MNC,2005-01-01,2022-09-15,Cement,medium,https://en.wikipedia.org/wiki/Holcim,Gujarat Ambuja Cements (old name of Ambuja),AMBUJACEM
+TTML,Tata Teleservices (Maharashtra) Limited,Tata,Family,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Tata_Group,,
+GOKEX,Gokaldas Exports Limited,Gokaldas Exports promoters,Family,2005-01-01,2025-06-30,Textiles & Apparel,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+SUNTV,Sun TV Network Limited,Sun TV (Kalanithi Maran),Family,2005-01-01,2025-06-30,Media & Entertainment,high,https://en.wikipedia.org/wiki/Sun_TV_Network,,
+UPL,UPL Limited,UPL (Shroff family),Family,2005-01-01,2025-06-30,Fertilizers & Agrochemicals,high,https://en.wikipedia.org/wiki/UPL_Limited,,UNIPHOS
+APOLLOHOSP,Apollo Hospitals Enterprise Limited,Apollo Hospitals (Prathap Reddy),Family,2005-01-01,2025-06-30,Healthcare Services,high,knowledge,,
+MOBIKWIK,One Mobikwik Systems Limited,MobiKwik (Bipin Preet Singh),Family,2005-01-01,2025-06-30,Commercial & Other Services,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Listed Dec 2024,
+KERNEX,Kernex Microsystems (India) Limited,Kernex Microsystems promoters,Family,2005-01-01,2025-06-30,Electrical Equipment,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+GLENMARK,Glenmark Pharmaceuticals Limited,Glenmark (Saldanha family),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+HDFCLIFE,HDFC Life Insurance Company Limited,HDFC,Corporate,2005-01-01,2025-06-30,Insurance,high,https://en.wikipedia.org/wiki/HDFC_Bank,Promoter HDFC Ltd (to 2023) then HDFC Bank,
+ANDHRABANK,Andhra Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Merged into Union Bank Apr 2020,
+MCX,Multi Commodity Exchange of India Limited,Financial Technologies (Jignesh Shah),Family,2005-01-01,2013-12-31,Capital Markets,high,https://en.wikipedia.org/wiki/Financial_Technologies_(India),FTIL promoter until FMC fit-and-proper order 2013,
+MCX,Multi Commodity Exchange of India Limited,Multi Commodity Exchange,Professional,2014-01-01,2025-06-30,Capital Markets,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),No controlling promoter after FTIL exit,
+SWIGGY,Swiggy Limited,Swiggy,Professional,2005-01-01,2025-06-30,Retail,high,knowledge,No promoter,
+SHRIRAMFIN,Shriram Finance Limited,Shriram,Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Shriram_Group,Shriram Transport Finance + Shriram City Union merged Dec 2022,SRTRANSFIN
+HDFCAMC,HDFC Asset Management Company Limited,HDFC,Corporate,2005-01-01,2025-06-30,Capital Markets,high,https://en.wikipedia.org/wiki/HDFC_Bank,Promoter HDFC Ltd (to 2023) then HDFC Bank; abrdn co-promoter,
+IDFCFIRSTB,IDFC First Bank Limited,IDFC,Corporate,2005-01-01,2018-12-17,Banks,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),IDFC Bank (listed 2015) subsidiary of IDFC Ltd until merger with Capital First Dec 2018,
+IDFCFIRSTB,IDFC First Bank Limited,IDFC First Bank,Professional,2018-12-18,2025-06-30,Banks,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Post merger widely held; IDFC Ltd holdings declined; IDFC Ltd merged 2024,
+CEATLTD,CEAT Limited,RPG (Harsh Goenka),Family,2005-01-01,2025-06-30,Auto Components,high,https://en.wikipedia.org/wiki/RPG_Group,,CEAT
+BAJAJ-AUTO,Bajaj Auto Limited,Bajaj (Rahul Bajaj family),Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Bajaj_Group,,
+VAKRANGEE,Vakrangee Limited,Vakrangee (Dinesh Nandwana),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,VAKRANSOFT
+AMBER,Amber Enterprises India Limited,Amber Enterprises (Jasbir Singh),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+TATAMTRDVR,Tata Motors Limited (DVR shares),Tata,Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/Tata_Group,Tata Motors DVR shares,TATAMOTORS
+COFORGE,Coforge Limited,NIIT (Rajendra Pawar),Family,2005-01-01,2019-12-31,IT Services & Software,medium,https://en.wikipedia.org/wiki/NIIT,NIIT Technologies; NIIT promoters (Pawar/Thadani) sold to Baring PE,NIITTECH
+COFORGE,Coforge Limited,Coforge,Professional,2020-01-01,2025-06-30,IT Services & Software,medium,https://en.wikipedia.org/wiki/Coforge,Baring PE Asia (Hulst BV) ~26% from 2019-20 but not classed as controlling promoter,NIITTECH
+APOLLOTYRE,Apollo Tyres Limited,Apollo Tyres (Singh family),Family,2005-01-01,2025-06-30,Auto Components,high,knowledge,,
+IRCON,Ircon International Limited,State: Government of India,State,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+WAAREEENER,Waaree Energies Limited,Waaree (Doshi family),Family,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+PUNJLLOYD,Punj Lloyd Limited,Punj Lloyd (Atul Punj),Family,2005-01-01,2025-06-30,Construction & Engineering,high,knowledge,,
+POLYCAB,Polycab India Limited,Polycab (Jaina family),Family,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+BOSCHLTD,Bosch Limited,Bosch,MNC,2005-01-01,2025-06-30,Auto Components,high,https://en.wikipedia.org/wiki/Bosch_Limited,,MICO
+BANKINDIA,Bank of India,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+STERLINBIO,STERLING BIOTECH LTD,Sterling (Sandesara family),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Sterling Biotech,
+ULTRACEMCO,UltraTech Cement Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Cement,high,https://en.wikipedia.org/wiki/Aditya_Birla_Group,,
+SJVN,SJVN Limited,State: Government of India,State,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Himachal Pradesh co-promoter,
+JPHYDRO,Jaiprakash Power Ventures Limited,Jaypee,Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Jaypee_Group,,JPPOWER
+BAJAJHIND,Bajaj Hindusthan Sugar Limited,Bajaj Hindusthan (Kushagra Bajaj),Family,2005-01-01,2025-06-30,Sugar & Agri Commodities,high,knowledge,Separate Bajaj family from Rahul Bajaj,
+IRB,IRB Infrastructure Developers Limited,IRB (Virendra Mhaiskar),Family,2005-01-01,2025-06-30,Transport Infrastructure,high,knowledge,,
+ZYDUSLIFE,Zydus Lifesciences Limited,Zydus (Cadila),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Zydus_Lifesciences,,CADILAHC
+SBILIFE,SBI Life Insurance Company Limited,State: SBI,State,2005-01-01,2025-06-30,Insurance,high,https://en.wikipedia.org/wiki/State_Bank_of_India,SBI majority; BNP Paribas Cardif minority,
+HTMEDIA,HT Media Limited,Hindustan Times (Shobhana Bhartia),Family,2005-01-01,2025-06-30,Media & Entertainment,high,knowledge,KK Birla's daughter branch,
+PEL,Piramal Enterprises Limited,Piramal,Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Piramal_Group,Piramal Enterprises; pharma until 2015 then lender,NICOLASPIR;PIRHEALTH
+ABREL,Aditya Birla Real Estate Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Textiles & Apparel,medium,https://en.wikipedia.org/wiki/Aditya_Birla_Group,As CENTURYTEX,CENTURYTEX
+RENUKA,Shree Renuka Sugars Limited,Renuka (Narendra Murkumbi),Family,2005-01-01,2010-07-31,Sugar & Agri Commodities,high,knowledge,Murkumbi until Wilmar,
+RENUKA,Shree Renuka Sugars Limited,Wilmar,MNC,2010-08-01,2025-06-30,Sugar & Agri Commodities,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Wilmar acquired 33% 2010 and took control; date approximate,
+UNIONBANK,Union Bank of India,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+MOTHERSON,Samvardhana Motherson International Limited,Motherson (Sehgal family),Family,2005-01-01,2025-06-30,Auto Components,high,knowledge,Sumitomo Wiring is co-promoter,MOTHERSUMI
+BDL,Bharat Dynamics Limited,State: Government of India,State,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+KAYNES,Kaynes Technology India Limited,Kaynes (Ramesh Kannan),Family,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+GESHIPPING,The Great Eastern Shipping Company Limited,Great Eastern Shipping (Sheth / Bhiwandiwalla family),Family,2005-01-01,2025-06-30,Shipping & Logistics,high,https://en.wikipedia.org/wiki/Great_Eastern_Shipping,Old symbol of GESHIP,GESHIP
+BALRAMCHIN,Balrampur Chini Mills Limited,Balrampur (Saraogi family),Family,2005-01-01,2025-06-30,Sugar & Agri Commodities,high,knowledge,,
+HAPPSTMNDS,Happiest Minds Technologies Limited,Happiest Minds (Ashok Soota),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,
+ROLTA,Rolta India Limited,Rolta (Kamal Singh),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,
+INDIAINFO,IIFL Finance Limited,IIFL (Nirmal Jain),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,knowledge,India Infoline (now IIFL Finance),IIFL
+CGPOWER,CG Power and Industrial Solutions Limited,Avantha (Gautam Thapar),Family,2005-01-01,2020-11-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/Avantha_Group,Crompton Greaves under Thapar until creditors/Murugappa takeover,CROMPGREAV
+CGPOWER,CG Power and Industrial Solutions Limited,Murugappa,Family,2020-12-01,2025-06-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/Murugappa_Group,Tube Investments (Murugappa) acquired control Nov 2020 under revival plan,CROMPGREAV
+RPOWER,Reliance Power Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Reliance_Group,,
+PIRHEALTH,Piramal Enterprises Limited,Piramal,Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Piramal_Group,Piramal Healthcare (Nicholas Piramal),NICOLASPIR;PEL
+ITI,ITI Limited,State: Government of India,State,2005-01-01,2025-06-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+MAXHEALTH,Max Healthcare Institute Limited,Radiant (Abhay Soi),Family,2005-01-01,2025-06-30,Healthcare Services,high,knowledge,Max Healthcare merged with Radiant Life Care (Abhay Soi) 2020; listed 2020,
+HIMACHLFUT,Himachal Futuristic Communications Limited,HFCL (Mahendra Nahata),Family,2005-01-01,2025-06-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/HFCL_Limited,"Himachal Futuristic Communications, now HFCL",HFCL
+DHAMPURSUG,Dhampur Sugar Mills Limited,Dhampur (Goel family),Family,2005-01-01,2025-06-30,Sugar & Agri Commodities,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+MUTHOOTFIN,Muthoot Finance Limited,Muthoot (Muthoot family),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,knowledge,,
+BIOCON,Biocon Limited,Biocon (Kiran Mazumdar-Shaw),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Biocon,,
+ADLABSFILM,Reliance MediaWorks Limited,Reliance ADAG (Anil Ambani),Family,2005-01-01,2025-06-30,Media & Entertainment,medium,https://en.wikipedia.org/wiki/Reliance_Group,Adlabs Films acquired by Reliance (Anil Ambani) 2005-06; became Reliance MediaWorks,RELMEDIA
+GODREJPROP,Godrej Properties Limited,Godrej,Family,2005-01-01,2025-06-30,Realty,high,https://en.wikipedia.org/wiki/Godrej_Group,,
+VBL,Varun Beverages Limited,RJ Corp (Ravi Jaipuria),Family,2005-01-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/RJ_Corp,,
+PRAJIND,Praj Industries Limited,Praj (Pramod Chaudhari),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+TATACHEM,Tata Chemicals Limited,Tata,Family,2005-01-01,2025-06-30,Chemicals,high,https://en.wikipedia.org/wiki/Tata_Group,,
+NMDC,NMDC Limited,State: Government of India,State,2005-01-01,2025-06-30,Mining & Minerals,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+NATIONALUM,National Aluminium Company Limited,State: Government of India,State,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+ESCORTS,Escorts Kubota Limited,Escorts (Nanda family),Family,2005-01-01,2022-02-28,Automobiles,high,knowledge,Nanda family until Kubota stake 2022,
+ESCORTS,Escorts Kubota Limited,Kubota,MNC,2022-03-01,2025-06-30,Automobiles,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),"Kubota preferential allotment + open offer, ~44% by Mar 2022",
+BFUTILITIE,BF Utilities Limited,Kalyani,Family,2005-01-01,2025-06-30,Power,medium,https://en.wikipedia.org/wiki/Kalyani_Group,BF Utilities (Baba Kalyani group),
+ARVINDMILL,Arvind Limited,Arvind (Lalbhai family),Family,2005-01-01,2025-06-30,Textiles & Apparel,high,https://en.wikipedia.org/wiki/Arvind_Limited,,ARVIND
+PARSVNATH,Parsvnath Developers Limited,Parsvnath (Pradeep Jain),Family,2005-01-01,2025-06-30,Realty,high,knowledge,,
+SRTRANSFIN,Shriram Finance Limited,Shriram,Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Shriram_Group,,SHRIRAMFIN
+VMM,Vishal Mega Mart Limited,Kedaara Capital,PE,2005-01-01,2025-06-30,Retail,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Samayat Services (Kedaara-backed) promoter; listed Dec 2024,
+MATRIXLABS,Matrix Laboratories Limited,Matrix Labs (Prasad family),Family,2005-01-01,2006-12-31,Pharmaceuticals & Biotechnology,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Matrix Laboratories until Mylan control,
+MATRIXLABS,Matrix Laboratories Limited,Mylan,MNC,2007-01-01,2025-06-30,Pharmaceuticals & Biotechnology,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Mylan acquired ~71% from Merrill Lynch/promoters; date approximate,
+IGL,Indraprastha Gas Limited,State: Government of India,State,2005-01-01,2025-06-30,Gas Transmission & Distribution,medium,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,"GAIL and BPCL 22.5% each, Delhi govt 5%",
+HUDCO,Housing & Urban Development Corporation Limited,State: Government of India,State,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+RIIL,Reliance Industrial Infrastructure Limited,Reliance (Mukesh Ambani),Family,2005-01-01,2025-06-30,Commercial & Other Services,high,https://en.wikipedia.org/wiki/Reliance_Industries,,
+NDTV,New Delhi Television Limited,NDTV (Prannoy Roy),Family,2005-01-01,2022-11-29,Media & Entertainment,high,knowledge,Roy couple until Adani (VCPL) took control Nov 2022,
+ARVIND,Arvind Limited,Arvind (Lalbhai family),Family,2005-01-01,2025-06-30,Textiles & Apparel,high,https://en.wikipedia.org/wiki/Arvind_Limited,,ARVINDMILL
+63MOONS,63 moons technologies limited,Financial Technologies (Jignesh Shah),Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Financial_Technologies_(India),63 moons technologies (ex Financial Technologies India),FINANTECH
+LITL,Lanco Infratech Limited,Lanco,Family,2005-01-01,2025-06-30,Power,high,knowledge,,
+NEYVELILIG,NLC India Limited,State: Government of India,State,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,NLCINDIA
+NYKAA,FSN E-Commerce Ventures Limited,Nykaa (Falguni Nayar),Family,2005-01-01,2025-06-30,Retail,high,knowledge,,
+I-FLEX,Oracle Financial Services Software Limited,Citigroup,MNC,2005-01-01,2005-07-31,IT Services & Software,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),i-flex Solutions: Citigroup until Oracle bought ~41% and control Aug 2005,OFSS
+I-FLEX,Oracle Financial Services Software Limited,Oracle,MNC,2005-08-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Oracle_Financial_Services_Software,Oracle Corp from Aug 2005,OFSS
+OIL,Oil India Limited,State: Government of India,State,2005-01-01,2025-06-30,Oil & Gas - Exploration & Production,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+AIAENG,AIA Engineering Limited,AIA Engineering (Bhadresh Shah),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+HEG,HEG Advanced Materials Limited,LNJ Bhilwara (Shekhar Agarwal),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+GTL,GTL Limited,GTL (Manoj Tirodkar),Family,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/GTL_Limited,,
+SPARC,Sun Pharma Advanced Research Company Limited,Sun Pharma (Dilip Shanghvi),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Sun_Pharma,,
+MRPL,Mangalore Refinery and Petrochemicals Limited,State: ONGC,State,2005-01-01,2025-06-30,Petroleum Refining & Marketing,high,https://en.wikipedia.org/wiki/Oil_and_Natural_Gas_Corporation,ONGC subsidiary since 2003,
+NBCC,NBCC (India) Limited,State: Government of India,State,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+HFCL,HFCL Limited,HFCL (Mahendra Nahata),Family,2005-01-01,2025-06-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/HFCL_Limited,,HIMACHLFUT
+ABGSHIP,ABG Shipyard Limited,ABG (Rishi Agarwal),Family,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,knowledge,,
+OLECTRA,Olectra Greentech Limited,Goldstone (KV Pradeep),Family,2005-01-01,2017-12-31,Automobiles,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Goldstone Infratech/Olectra; MEIL stake rose from ~2016-18,
+OLECTRA,Olectra Greentech Limited,Megha Engineering (PP Reddy),Family,2018-01-01,2025-06-30,Automobiles,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),MEIL became largest holder (~40%+); date approximate,
+LTIM,LTIMindtree Limited,L&T,Corporate,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Larsen_%26_Toubro,,
+BRITANNIA,Britannia Industries Limited,Wadia,Family,2005-01-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/Wadia_Group,,
+ABB,ABB India Limited,ABB,MNC,2005-01-01,2025-06-30,Electrical Equipment,high,https://en.wikipedia.org/wiki/ABB_Group,,
+GMDCLTD,Gujarat Mineral Development Corporation Limited,State: Government of Gujarat,State,2005-01-01,2025-06-30,Mining & Minerals,high,https://en.wikipedia.org/wiki/Gujarat_State_Petroleum_Corporation,,
+GRAPHITE,Graphite India Limited,Graphite India (KK Bangur family),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+NESTLEIND,Nestle India Limited,Nestle,MNC,2005-01-01,2025-06-30,Food & Beverages,high,knowledge,,
+SASKEN,Sasken Technologies Limited,Sasken (Rajiv Mody),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,
+STCINDIA,The State Trading Corporation of India Limited,State: Government of India,State,2005-01-01,2025-06-30,Commercial & Other Services,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+IOB,Indian Overseas Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+RAYMOND,Raymond Limited,Raymond (Gautam Singhania),Family,2005-01-01,2025-06-30,Textiles & Apparel,high,knowledge,,
+UCOBANK,UCO Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+DISHTV,Dish TV India Limited,Essel (Subhash Chandra),Family,2005-01-01,2025-06-30,Media & Entertainment,high,https://en.wikipedia.org/wiki/Essel_Group,,
+DMART,Avenue Supermarts Limited,Avenue Supermarts (Radhakishan Damani),Family,2005-01-01,2025-06-30,Retail,high,knowledge,,
+GVKPIL,GVK Power & Infrastructure Limited,GVK,Family,2005-01-01,2025-06-30,Power,high,knowledge,,
+RAIN,Rain Industries Limited,Rain Industries (Jagan Mohan Reddy),Family,2005-01-01,2025-06-30,Chemicals,high,https://en.wikipedia.org/wiki/Rain_Industries,,RAINCALCIN;RAINCOM
+UTIBANK,Axis Bank Limited,Axis Bank,Professional,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Axis_Bank,Old symbol of Axis Bank,AXISBANK
+M&MFIN,Mahindra & Mahindra Financial Services Limited,Mahindra,Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Mahindra_Group,,
+GHCL,GHCL Limited,GHCL (Sanjay Dalmia),Family,2005-01-01,2025-06-30,Chemicals,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+PERSISTENT,Persistent Systems Limited,Persistent (Anand Deshpande),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,
+APTECHT,Aptech Limited,Aptech promoters,Family,2005-01-01,2025-06-30,Commercial & Other Services,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+INFIBEAM,AvenuesAI Limited,Infibeam (Vishal Mehta),Family,2005-01-01,2025-06-30,IT Services & Software,high,knowledge,,
+VIPIND,VIP Industries Limited,VIP (Dilip Piramal),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,Separate Piramal branch from Ajay Piramal,
+NAUKRI,Info Edge (India) Limited,Info Edge (Sanjeev Bikhchandani),Family,2005-01-01,2025-06-30,Commercial & Other Services,high,knowledge,,
+POLARIS,POLARIS CONSULTING & SERVICES LIMITED,Intellect (Arun Jain),Family,2005-01-01,2016-03-31,IT Services & Software,high,https://en.wikipedia.org/wiki/Intellect_Design_Arena,Polaris Consulting; Arun Jain until Virtusa takeover 2016,
+POLARIS,POLARIS CONSULTING & SERVICES LIMITED,Virtusa,MNC,2016-04-01,2025-06-30,IT Services & Software,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Virtusa acquired Polaris 2016; delisted,
+INDHOTEL,The Indian Hotels Company Limited,Tata,Family,2005-01-01,2025-06-30,"Hotels, Leisure & Travel",high,https://en.wikipedia.org/wiki/Tata_Group,,
+PIRAMYDRET,SORIL Infra Resources Limited,Indiabulls (Sameer Gehlaut),Family,2005-01-01,2025-06-30,Retail,low,https://en.wikipedia.org/wiki/Indiabulls,SORIL Infra Resources (ex Piramyd Retail); controller could not be fully confirmed,SORILINFRA
+PETRONET,Petronet LNG Limited,State: Government of India,State,2005-01-01,2025-06-30,Gas Transmission & Distribution,medium,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,"GAIL, ONGC, IOC, BPCL 12.5% each plus GDF Suez",
+TATACONSUM,TATA CONSUMER PRODUCTS LIMITED,Tata,Family,2005-01-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/Tata_Group,,TATAGLOBAL;TATATEA
+PVRINOX,PVR INOX Limited,PVR (Ajay Bijli),Family,2005-01-01,2025-06-30,Media & Entertainment,high,knowledge,Merged with Inox Leisure Feb 2023,PVR
+LIQUIDBEES,NIPPON INDIA ETF LIQUID BEES,ETF (not a company),Unknown,2005-01-01,2025-06-30,Capital Markets,high,n/a (exchange-traded fund),Exchange-traded fund; exclude from group analysis,
+GUJNRECOKE,Gujarat NRE Coke Limited,Gujarat NRE Coke promoters,Family,2005-01-01,2025-06-30,Mining & Minerals,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Could not confirm controller,
+FEDERALBNK,The Federal Bank  Limited,Federal Bank,Professional,2005-01-01,2025-06-30,Banks,high,knowledge,,
+DEEPAKNTR,Deepak Nitrite Limited,Deepak Nitrite (Mehta family),Family,2005-01-01,2025-06-30,Chemicals,high,knowledge,Separate branch from Deepak Fertilisers,
+KPITTECH,KPIT Technologies Limited,KPIT (Kishor Patil),Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/KPIT_Technologies,KPIT Technologies demerged 2019,
+LICI,Life Insurance Corporation Of India,State: LIC,State,2005-01-01,2025-06-30,Insurance,high,https://en.wikipedia.org/wiki/Life_Insurance_Corporation,,
+AFTEKINFO,Aftek Limited,Aftek promoters,Family,2005-01-01,2025-06-30,IT Services & Software,low,https://en.wikipedia.org/wiki/Aftek,,AFTEK
+STAR,Strides Pharma Science Limited,Strides (Arun Kumar),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+ADANIENSOL,Adani Energy Solutions Limited,Adani,Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Adani_Group,,
+SHOPERSTOP,Shoppers Stop Limited,K Raheja Corp (Chandru Raheja),Family,2005-01-01,2025-06-30,Retail,high,knowledge,,
+MRF,MRF Limited,MRF (Mammen Mappillai family),Family,2005-01-01,2025-06-30,Auto Components,high,knowledge,,
+SBICARD,SBI Cards and Payment Services Limited,State: SBI,State,2005-01-01,2025-06-30,Capital Markets,high,https://en.wikipedia.org/wiki/State_Bank_of_India,SBI 69%; Carlyle minority,
+HINDCOPPER,Hindustan Copper Limited,State: Government of India,State,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+EXIDEIND,Exide Industries Limited,Exide (Chloride Group),Family,2005-01-01,2025-06-30,Auto Components,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Chloride promoter group,CHLORIDIND
+GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Limited,State: Government of Gujarat,State,2005-01-01,2025-06-30,Fertilizers & Agrochemicals,high,https://en.wikipedia.org/wiki/Gujarat_State_Petroleum_Corporation,,
+DATAPATTNS,Data Patterns (India) Limited,Data Patterns (Rangarajan family),Family,2005-01-01,2025-06-30,"Aerospace, Defence & Shipbuilding",high,knowledge,,
+ATGL,Adani Total Gas Limited,Adani,Family,2005-01-01,2025-06-30,Gas Transmission & Distribution,high,https://en.wikipedia.org/wiki/Adani_Group,TotalEnergies co-promoter,
+EVEREADY,Eveready Industries India Limited,Khaitan (BM Khaitan group),Family,2005-01-01,2021-12-31,Auto Components,medium,https://en.wikipedia.org/wiki/Williamson_Magor_Group,Khaitan family until Burman family acquisition ~2022,UNIONCARBI
+EVEREADY,Eveready Industries India Limited,Dabur (Burman family),Family,2022-01-01,2025-06-30,Auto Components,medium,https://en.wikipedia.org/wiki/Dabur,Burman group became controlling promoter early 2022 (approx),UNIONCARBI
+HMT,HMT Limited,State: Government of India,State,2005-01-01,2025-06-30,Industrial Machinery & Products,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+DELTACORP,Delta Corp Limited,Delta Corp (Jaydev Mody),Family,2005-01-01,2025-06-30,"Hotels, Leisure & Travel",high,knowledge,,
+RCF,Rashtriya Chemicals and Fertilizers Limited,State: Government of India,State,2005-01-01,2025-06-30,Fertilizers & Agrochemicals,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+HINDMOTOR,Hindustan Motors Limited,CK Birla,Family,2005-01-01,2025-06-30,Automobiles,high,https://en.wikipedia.org/wiki/CK_Birla_Group,,
+VISUALSOFT,VisualSoft Technologies Limited,VisualSoft promoters,Family,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+TELEDATAIN,Teledata Informatics Limited,Teledata promoters,Family,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Could not confirm controller,
+SOBHA,Sobha Limited,Sobha (PNC Menon),Family,2005-01-01,2025-06-30,Realty,high,knowledge,,
+UNITDSPR,United Spirits Limited,UB (Vijay Mallya),Family,2005-01-01,2013-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/UB_Group,United Spirits as MCDOWELL-N,MCDOWELL-N
+UNITDSPR,United Spirits Limited,Diageo,MNC,2013-07-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/United_Spirits,as MCDOWELL-N,MCDOWELL-N
+AIRDECCAN,Kingfisher Airlines Limited,UB (Vijay Mallya),Family,2005-01-01,2025-06-30,Airlines,high,https://en.wikipedia.org/wiki/UB_Group,Kingfisher Airlines (ex Air Deccan merged 2007),KFA
+LTF,L&T Finance Limited,L&T,Corporate,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Larsen_%26_Toubro,L&T Finance,
+SWANENERGY,SWAN CORP LIMITED,Swan Energy (Mehta / Merchant),Family,2005-01-01,2025-06-30,Diversified & Holding Companies,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+JINDALPHOT,Jindal Photo Limited,BC Jindal,Family,2005-01-01,2025-06-30,Diversified & Holding Companies,medium,https://en.wikipedia.org/wiki/Jindal_Poly_Films,,
+CHOLAFIN,Cholamandalam Investment and Finance Company Limited,Murugappa,Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,https://en.wikipedia.org/wiki/Murugappa_Group,,CHOLAINV
+WELGUJ,Welspun Corp Limited,Welspun (BK Goenka),Family,2005-01-01,2025-06-30,Ferrous Metals,high,https://en.wikipedia.org/wiki/Welspun_Group,,WELCORP;WELSPUNGUJ
+EVERONN,Everonn Education Limited,Everonn Education promoters,Family,2005-01-01,2025-06-30,Commercial & Other Services,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+PRITHVI,Prithvi Information Solutions Limited,Prithvi Information Solutions promoters,Family,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+TVSMOTOR,TVS Motor Company Limited,TVS (Venu Srinivasan),Family,2005-01-01,2025-06-30,Automobiles,high,knowledge,,
+CYBERMEDIA,Cyber Media (India) Limited,Cyber Media (Pradeep Gupta),Family,2005-01-01,2025-06-30,Media & Entertainment,high,knowledge,,
+ICICIGI,ICICI Lombard General Insurance Company Limited,ICICI,Corporate,2005-01-01,2025-06-30,Insurance,high,https://en.wikipedia.org/wiki/ICICI_Bank,Fairfax minority,
+MPHASIS,MphasiS Limited,Mphasis (Jaithirth Rao),Family,2005-01-01,2006-05-31,IT Services & Software,medium,https://en.wikipedia.org/wiki/Mphasis,Mphasis BFL; founders until EDS took control 2006,MPHASISBFL
+MPHASIS,MphasiS Limited,Hewlett-Packard (EDS),MNC,2006-06-01,2016-08-31,IT Services & Software,medium,https://en.wikipedia.org/wiki/Mphasis,EDS acquired ~51% 2006; HP acquired EDS 2008; Blackstone Sep 2016,MPHASISBFL
+MPHASIS,MphasiS Limited,Blackstone,PE,2016-09-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Blackstone_Inc.,"Blackstone acquired 60% from HP, completed Sep 2016",MPHASISBFL
+ABIRLANUVO,Aditya Birla Nuvo Limited,Aditya Birla,Family,2005-01-01,2025-06-30,Diversified & Holding Companies,high,https://en.wikipedia.org/wiki/Aditya_Birla_Group,Aditya Birla Nuvo (ex Indian Rayon); merged into Grasim 2017,INDRAYON
+VDOCONINTL,Videocon International Limited,Videocon (Dhoot),Family,2005-01-01,2025-06-30,Consumer Durables,medium,https://en.wikipedia.org/wiki/Videocon,Videocon International,
+CUMMINSIND,Cummins India Limited,Cummins Inc,MNC,2005-01-01,2025-06-30,Industrial Machinery & Products,high,https://en.wikipedia.org/wiki/Cummins_India,,KIRLOSKCUM
+RAILTEL,Railtel Corporation Of India Limited,State: Government of India,State,2005-01-01,2025-06-30,Telecom Services,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,,
+SONACOMS,Sona BLW Precision Forgings Limited,Blackstone,PE,2005-01-01,2025-06-30,Auto Components,medium,https://en.wikipedia.org/wiki/Blackstone_Inc.,Blackstone controlling promoter at IPO Jun 2021; Sunjay Kapur family minority,
+TRIVENI,Triveni Engineering & Industries Limited,Triveni (Dhruv Sawhney),Family,2005-01-01,2025-06-30,Sugar & Agri Commodities,high,https://en.wikipedia.org/wiki/Triveni_Engineering_%26_Industries,,
+DABUR,Dabur India Limited,Dabur (Burman family),Family,2005-01-01,2025-06-30,Personal & Household Products,high,https://en.wikipedia.org/wiki/Dabur,,
+MUNDRAPORT,Adani Ports and Special Economic Zone Limited,Adani,Family,2005-01-01,2025-06-30,Transport Infrastructure,high,https://en.wikipedia.org/wiki/Adani_Group,,ADANIPORTS
+GMRAIRPORT,GMR AIRPORTS LIMITED,GMR,Family,2005-01-01,2025-06-30,Transport Infrastructure,high,https://en.wikipedia.org/wiki/GMR_Group,,GMRINFRA
+BRFL,Bombay Rayon Fashions Limited,Bombay Rayon (Janardhan Agarwal),Family,2005-01-01,2025-06-30,Textiles & Apparel,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Bombay Rayon Fashions,
+UFLEX,UFLEX Limited,UFLEX (Ashok Chaturvedi),Family,2005-01-01,2025-06-30,Paper & Packaging,high,https://en.wikipedia.org/wiki/Uflex,,FLEX
+FINANTECH,63 moons technologies limited,Financial Technologies (Jignesh Shah),Family,2005-01-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Financial_Technologies_(India),,63MOONS
+BANKRAJAS,Bank of Rajasthan Limited,Bank of Rajasthan,Professional,2005-01-01,2025-06-30,Banks,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Merged into ICICI Bank Aug 2010,
+JINDALSAW,Jindal Saw Limited,Jindal (Prithviraj Jindal),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+MPHASISBFL,MphasiS Limited,Mphasis (Jaithirth Rao),Family,2005-01-01,2006-05-31,IT Services & Software,medium,https://en.wikipedia.org/wiki/Mphasis,Pre 2007 symbol of Mphasis,MPHASIS
+MPHASISBFL,MphasiS Limited,Hewlett-Packard (EDS),MNC,2006-06-01,2016-08-31,IT Services & Software,medium,https://en.wikipedia.org/wiki/Mphasis,as MPHASIS,MPHASIS
+JISLJALEQS,Jain Irrigation Systems Limited,Jain Irrigation (Bhavarlal Jain),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+TTKPRESTIG,TTK Prestige Limited,TTK (TTK group),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+PATNI,Patni Computer Systems Limited,Patni (Patni family),Family,2005-01-01,2011-04-30,IT Services & Software,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Patni family until iGate acquisition 2011,
+PATNI,Patni Computer Systems Limited,iGate,MNC,2011-05-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),iGate acquired ~63% 2011; delisted 2011,
+CENTBOP,Centurion Bank of Punjab Limited,Centurion Bank of Punjab (Rana Talwar),Professional,2005-01-01,2025-06-30,Banks,medium,https://en.wikipedia.org/wiki/Centurion_Bank_of_Punjab,Merged into HDFC Bank May 2008,CENBNK
+VIDEOIND,Videocon Industries Limited,Videocon (Dhoot),Family,2005-01-01,2025-06-30,Consumer Durables,high,https://en.wikipedia.org/wiki/Videocon,,
+REPRO,Repro India Limited,Repro India promoters,Family,2005-01-01,2025-06-30,Commercial & Other Services,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+SPICETELE,Spice Communications Limited,Modi (BK Modi),Family,2005-01-01,2008-06-30,Telecom Services,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Spice Communications until Idea Cellular acquired 2008-09,
+SPICETELE,Spice Communications Limited,Aditya Birla,Family,2008-07-01,2025-06-30,Telecom Services,medium,https://en.wikipedia.org/wiki/Aditya_Birla_Group,Idea Cellular acquired Spice stake 2008; merged 2009,
+THINKSOFT,Expleo Solutions Limited,Expleo (Assystem),MNC,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Expleo Solutions (ex Think Software); parent likely French group Expleo/Assystem; date unknown,EXPLEOSOL
+HEXAWARE,Hexaware Technologies Limited,Hexaware (Atul Nishar),Family,2005-01-01,2013-10-13,IT Services & Software,high,knowledge,Nishar-led promoters until Baring PE Asia purchase closed Oct 2013,
+HEXAWARE,Hexaware Technologies Limited,Baring PE Asia (EQT),PE,2013-10-14,2025-06-30,IT Services & Software,high,knowledge,Baring PE Asia ~71% after open offer; delisted 2021,
+HAVELLS,Havells India Limited,Havells (Gupta family),Family,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+DENABANK,Dena Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Merged into Bank of Baroda Apr 2019,
+DISHMAN,Dishman Pharmaceuticals and Chemicals Limited,Dishman (Janmejay Vyas),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+TATATEA,TATA CONSUMER PRODUCTS LIMITED,Tata,Family,2005-01-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/Tata_Group,,TATACONSUM;TATAGLOBAL
+GITANJALI,Gitanjali Gems Limited,Gitanjali Gems (Mehul Choksi),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+SINTEX,Sintex Industries Limited,Sintex (Patel family),Family,2005-01-01,2025-06-30,Building Materials,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+VIVIMEDLAB,Vivimed Labs Limited,Vivimed (Santosh Varalwar),Family,2005-01-01,2025-06-30,Chemicals,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+SELMCL,SEL Manufacturing Company Limited,SEL Manufacturing promoters,Family,2005-01-01,2025-06-30,Textiles & Apparel,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+BATAINDIA,Bata India Limited,Bata Corporation,MNC,2005-01-01,2025-06-30,Retail,high,knowledge,,
+AWL,AWL Agri Business Limited,Adani,Family,2005-01-01,2025-06-30,Food & Beverages,high,https://en.wikipedia.org/wiki/Adani_Group,Adani Wilmar; Wilmar co-promoter 50:50; Adani label chosen (named controller at listing),
+VOLTAS,Voltas Limited,Tata,Family,2005-01-01,2025-06-30,Consumer Durables,high,https://en.wikipedia.org/wiki/Tata_Group,,
+JSTAINLESS,Jindal Stainless Limited,Jindal (Ratan Jindal),Family,2005-01-01,2025-06-30,Ferrous Metals,high,https://en.wikipedia.org/wiki/Jindal_Stainless,Jindal Stainless,JSL
+STROPTICAL,Sterlite Technologies Limited,Sterlite Tech (Pravin Agarwal),Family,2005-01-01,2025-06-30,Electrical Equipment,medium,https://en.wikipedia.org/wiki/Sterlite_Technologies,Sterlite Optical Technologies; Pravin Agarwal branch separate from Anil Agarwal,STLTECH;STRTECH
+BSOFT,BIRLASOFT LIMITED,KPIT (Kishor Patil),Family,2005-01-01,2019-03-31,IT Services & Software,high,https://en.wikipedia.org/wiki/KPIT_Technologies,KPIT Technologies merged with Birlasoft Mar 2019,KPIT
+BSOFT,BIRLASOFT LIMITED,CK Birla,Family,2019-04-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/CK_Birla_Group,Birlasoft under CK Birla after merger,KPIT
+COLGATE,Colgate-Palmolive (India) Limited,Colgate-Palmolive,MNC,2005-01-01,2025-06-30,Personal & Household Products,high,https://en.wikipedia.org/wiki/Colgate-Palmolive,Early symbol of Colgate India,
+APIL,GE Power India Limited,Alstom,MNC,2005-01-01,2015-10-31,Electrical Equipment,high,https://en.wikipedia.org/wiki/Alstom,ABB Alstom Power India; Alstom until GE bought Alstom power Nov 2015,GEPIL
+JAICORPLTD,Jai Corp Limited,Jai Corp (Anand Jain),Family,2005-01-01,2025-06-30,Diversified & Holding Companies,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+SHREECEM,SHREE CEMENT LIMITED,Shree Cement (Bangur family),Family,2005-01-01,2025-06-30,Cement,high,knowledge,,
+POLICYBZR,PB Fintech Limited,PB Fintech,Professional,2005-01-01,2025-06-30,Commercial & Other Services,high,knowledge,No promoter,
+DHANI,Dhani Services Limited,Indiabulls (Sameer Gehlaut),Family,2005-01-01,2025-06-30,Capital Markets,high,https://en.wikipedia.org/wiki/Indiabulls,Indiabulls Ventures / Dhani Services,IBSEC
+HCC,Hindustan Construction Company Limited,HCC (Ajit Gulabchand),Family,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/Hindustan_Construction_Company,,HINDCONS
+SAKHTISUG,Sakthi Sugars Limited,Sakthi Sugars (Mahalingam family),Family,2005-01-01,2025-06-30,Sugar & Agri Commodities,high,knowledge,,
+MCLEODRUSS,Mcleod Russel India Limited,Khaitan (BM Khaitan group),Family,2005-01-01,2025-06-30,Sugar & Agri Commodities,high,https://en.wikipedia.org/wiki/Williamson_Magor_Group,Tea plantations,
+TORNTPHARM,Torrent Pharmaceuticals Limited,Torrent,Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,https://en.wikipedia.org/wiki/Torrent_Group,,
+MANAPPURAM,Manappuram Finance Limited,Manappuram (VP Nandakumar),Family,2005-01-01,2025-06-30,Finance - NBFC & Housing Finance,high,knowledge,,
+UBL,United Breweries Limited,UB (Vijay Mallya),Family,2005-01-01,2017-12-31,Food & Beverages,medium,https://en.wikipedia.org/wiki/UB_Group,UB Group co-promoter with Heineken since 2008; Mallya removed from board 2018,
+UBL,United Breweries Limited,Heineken,MNC,2018-01-01,2025-06-30,Food & Beverages,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),Heineken largest shareholder (46%); control date approximate,
+MOSERBAER,Moser-Baer (I) Limited,Moser Baer (Deepak Puri),Family,2005-01-01,2025-06-30,Electrical Equipment,high,knowledge,,
+BGRENERGY,BGR Energy Systems Limited,BGR Energy (BG Raghupathy),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,knowledge,,
+BHUSANSTL,Tata Steel Bsl Limited,Bhushan (Singal family),Family,2005-01-01,2018-05-17,Ferrous Metals,high,https://en.wikipedia.org/wiki/Bhushan_Steel,Bhushan Steel until Tata Steel acquisition 18 May 2018,TATASTLBSL
+ARE&M,Amara Raja Energy & Mobility Limited,Amara Raja (Galla family),Family,2005-01-01,2025-06-30,Auto Components,high,knowledge,,AMARAJABAT
+UTTAMSTL,Uttam Galva Steels Limited,Uttam Galva (Miglani family),Family,2005-01-01,2025-06-30,Ferrous Metals,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),ArcelorMittal minority holder,
+JPPOWER,Jaiprakash Power Ventures Limited,Jaypee,Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/Jaypee_Group,,JPHYDRO
+SYNDIBANK,Syndicate Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Merged into Canara Bank Apr 2020,
+HINDZINC,Hindustan Zinc Limited,Vedanta (Anil Agarwal),Family,2005-01-01,2025-06-30,Non-Ferrous Metals,high,https://en.wikipedia.org/wiki/Vedanta_Limited,GoI 29.5% minority,
+MFSL,Max Financial Services Limited,Max (Analjit Singh),Family,2005-01-01,2025-06-30,Insurance,high,https://en.wikipedia.org/wiki/Max_Group,Max Financial Services (ex Max India),MAX
+AMTEKAUTO,Amtek Auto Limited,Amtek (Arvind Dham),Family,2005-01-01,2025-06-30,Auto Components,high,https://en.wikipedia.org/wiki/Amtek_Group,,
+COREPROTEC,CORE Education & Technologies Limited,Core Education promoters,Family,2005-01-01,2025-06-30,Commercial & Other Services,low,https://en.wikipedia.org/wiki/Core_Education_%26_Technologies,,COREEDUTEC
+PAGEIND,Page Industries Limited,Page Industries (Genomal family),Family,2005-01-01,2025-06-30,Textiles & Apparel,high,knowledge,"Jockey International licensor, minority",
+RAJESHEXPO,Rajesh Exports Limited,Rajesh Exports (Rajesh Mehta),Family,2005-01-01,2025-06-30,Consumer Durables,high,knowledge,,
+VIJAYABANK,Vijaya Bank,State: Government of India,State,2005-01-01,2025-06-30,Banks,high,https://en.wikipedia.org/wiki/Public_sector_undertakings_in_India,Merged into Bank of Baroda Apr 2019,
+NAGARCONST,NCC Limited,NCC (Raju family),Family,2005-01-01,2025-06-30,Construction & Engineering,high,https://en.wikipedia.org/wiki/NCC_Limited,Nagarjuna Construction Company (AAV Ranga Raju); not same as Nagarjuna Fertilizers,NCC
+AEGISLOG,Aegis Logistics Limited,Aegis (Chandaria family),Family,2005-01-01,2025-06-30,Shipping & Logistics,high,knowledge,,AEGISCHEM
+FOURSOFT,Palred Technologies Limited,Palred promoters,Family,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+HYUNDAI,Hyundai Motor India Limited,Hyundai Motor Company,MNC,2005-01-01,2025-06-30,Automobiles,high,knowledge,,
+GTCIND,Golden Tobacco Limited,Golden Tobacco promoters,Family,2005-01-01,2025-06-30,Tobacco & Diversified FMCG,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,GOLDENTOBC
+LAURUSLABS,Laurus Labs Limited,Laurus (Satyanarayana Chava),Family,2005-01-01,2025-06-30,Pharmaceuticals & Biotechnology,high,knowledge,,
+TIINDIA,Tube Investments of India Limited,Murugappa,Family,2005-01-01,2025-06-30,Auto Components,high,https://en.wikipedia.org/wiki/Murugappa_Group,,
+3IINFOTECH,3i Infotech Limited,3i Infotech,Professional,2005-01-01,2025-06-30,IT Services & Software,low,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),ex ICICI Infotech; controller unclear,
+OFSS,Oracle Financial Services Software Limited,Oracle,MNC,2005-08-01,2025-06-30,IT Services & Software,high,https://en.wikipedia.org/wiki/Oracle_Financial_Services_Software,Same company as I-FLEX,I-FLEX
+NIITTECH,Coforge Limited,NIIT (Rajendra Pawar),Family,2005-01-01,2019-12-31,IT Services & Software,medium,https://en.wikipedia.org/wiki/NIIT,as COFORGE,COFORGE
+ALOKTEXT,Alok Industries Limited,Alok (Dilip Jiwrajka),Family,2005-01-01,2019-03-07,Textiles & Apparel,high,https://en.wikipedia.org/wiki/Alok_Industries,Jiwrajka family until NCLT resolution Mar 2019,ALOKINDS
+AUBANK,AU Small Finance Bank Limited,AU Small Finance Bank (Sanjay Agarwal),Family,2005-01-01,2025-06-30,Banks,high,knowledge,,
+GREAVESCOT,Greaves Cotton Limited,Greaves Cotton promoters,Family,2005-01-01,2025-06-30,Industrial Machinery & Products,medium,knowledge (unverified; promoter group per SEBI shareholding pattern from memory),,
+TWL,TITAGARH RAIL SYSTEMS LIMITED,Titagarh (Chaturvedi family),Family,2005-01-01,2025-06-30,Industrial Machinery & Products,high,https://en.wikipedia.org/wiki/Titagarh_Rail_Systems,Titagarh Wagons / Rail Systems,TITAGARH
+JSWENERGY,JSW Energy Limited,JSW (Sajjan Jindal),Family,2005-01-01,2025-06-30,Power,high,https://en.wikipedia.org/wiki/JSW_Group,,
