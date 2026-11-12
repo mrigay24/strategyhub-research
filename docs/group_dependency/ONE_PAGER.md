@@ -13,7 +13,7 @@ counting tickers overstates diversification. And standard risk models, which est
 co-movement from calm-period prices, would not see it coming.
 
 **1. Contagion beyond correlation (pre-registered pilot).**
-- **Setup:** 113 crash events in 49 Indian business groups, 2005–2025. Groups were mapped
+- **Setup:** 113 crash events in 49 Indian business groups, 2006–2025. Groups were mapped
   for 1,700 NSE stocks and checked against shareholding filings. The rules and the map
   were committed publicly before any return was computed.
 - **Comparison:** each "sibling", a same-group company in an *unrelated* industry, is
