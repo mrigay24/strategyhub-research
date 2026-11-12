@@ -1,0 +1,249 @@
+{
+  "note": "NOT pre-registered; descriptive diagnostics after the registered run",
+  "D1_leave_one_group_out": {
+    "max_beta_S": {
+      "dropped_group": "Adani",
+      "n_events_dropped": 6,
+      "beta_S": -0.0305398627731999,
+      "t_month": -2.3278098253615664
+    },
+    "min_beta_S": {
+      "dropped_group": "Tata",
+      "n_events_dropped": 6,
+      "beta_S": -0.06795069732393542,
+      "t_month": -2.954792915984946
+    },
+    "n_groups": 30,
+    "n_with_t_le_-1.96": 30
+  },
+  "D2_no_paper1_ar_d0": {
+    "beta_S": -0.013701282943929721,
+    "t_month": -2.565069733128524,
+    "beta_R": -0.0015273139303911526,
+    "t_R": -1.2172126843583226,
+    "S_minus_R": -0.01217396901353857,
+    "t_S_minus_R": -2.192411764721103,
+    "n_events": 91
+  },
+  "D2_no_paper1_bhar_0_20": {
+    "beta_S": -0.018748895178024846,
+    "t_month": -1.8292690364558661,
+    "beta_R": -0.005416810461397884,
+    "t_R": -0.5649307405777785,
+    "S_minus_R": -0.013332084716626964,
+    "t_S_minus_R": -1.0838287639293191,
+    "n_events": 91
+  },
+  "D2_no_paper1_car_0_20": {
+    "beta_S": -0.01868552549554983,
+    "t_month": -1.8000280079224558,
+    "beta_R": -0.006549292474115602,
+    "t_R": -0.764918809673092,
+    "S_minus_R": -0.012136233021434226,
+    "t_S_minus_R": -0.9924073097924747,
+    "n_events": 91
+  },
+  "D2_events_dropped": [
+    "E0073",
+    "E0075",
+    "E0077",
+    "E0078",
+    "E0080",
+    "E0081",
+    "E0108"
+  ],
+  "D3_events": {
+    "n": 74,
+    "mean": -0.04368673524807607,
+    "median": -0.02929419840460195,
+    "share_of_total_from_worst_5": 0.5387300833847429,
+    "share_of_total_from_worst_10": 0.9296878378684733,
+    "mean_without_worst_5": -0.021611621415295535,
+    "worst_10": [
+      {
+        "event_id": "E0108",
+        "date": "2023-01-27",
+        "trigger": "ADANIENT",
+        "group": "Adani",
+        "n_S": 7,
+        "mean_resid": -0.44060462707581405
+      },
+      {
+        "event_id": "E0083",
+        "date": "2020-02-28",
+        "trigger": "FCONSUMER",
+        "group": "Future (Kishore Biyani)",
+        "n_S": 1,
+        "mean_resid": -0.37723097000836253
+      },
+      {
+        "event_id": "E0088",
+        "date": "2020-03-18",
+        "trigger": "INDUSINDBK",
+        "group": "Hinduja",
+        "n_S": 1,
+        "mean_resid": -0.3337213288196746
+      },
+      {
+        "event_id": "E0015",
+        "date": "2007-11-06",
+        "trigger": "RPL",
+        "group": "Reliance (Mukesh Ambani)",
+        "n_S": 1,
+        "mean_resid": -0.29663058990656704
+      },
+      {
+        "event_id": "E0020",
+        "date": "2008-10-07",
+        "trigger": "GTOFFSHORE",
+        "group": "Bharati (Vijay Sheth)",
+        "n_S": 1,
+        "mean_resid": -0.2934290148918194
+      },
+      {
+        "event_id": "E0035",
+        "date": "2009-11-03",
+        "trigger": "INDIABULLS",
+        "group": "Indiabulls (Sameer Gehlaut)",
+        "n_S": 2,
+        "mean_resid": -0.2880173184569096
+      },
+      {
+        "event_id": "E0081",
+        "date": "2019-09-27",
+        "trigger": "DHANI",
+        "group": "Indiabulls (Sameer Gehlaut)",
+        "n_S": 3,
+        "mean_resid": -0.2837824028457436
+      },
+      {
+        "event_id": "E0098",
+        "date": "2021-08-20",
+        "trigger": "UJJIVANSFB",
+        "group": "Ujjivan (Samit Ghosh)",
+        "n_S": 1,
+        "mean_resid": -0.25434336773944777
+      },
+      {
+        "event_id": "E0073",
+        "date": "2019-02-04",
+        "trigger": "RELCAPITAL",
+        "group": "Reliance ADAG (Anil Ambani)",
+        "n_S": 5,
+        "mean_resid": -0.23346457192111858
+      },
+      {
+        "event_id": "E0078",
+        "date": "2019-08-07",
+        "trigger": "EMBDL",
+        "group": "Indiabulls (Sameer Gehlaut)",
+        "n_S": 2,
+        "mean_resid": -0.20428776462194645
+      }
+    ],
+    "best_5": [
+      {
+        "event_id": "E0053",
+        "date": "2014-03-03",
+        "trigger": "JPPOWER",
+        "group": "Jaypee",
+        "n_S": 2,
+        "mean_resid": 0.10344926599630863
+      },
+      {
+        "event_id": "E0014",
+        "date": "2007-08-30",
+        "trigger": "NIITTECH",
+        "group": "NIIT (Rajendra Pawar)",
+        "n_S": 1,
+        "mean_resid": 0.12495953405490434
+      },
+      {
+        "event_id": "E0021",
+        "date": "2008-10-07",
+        "trigger": "BOMDYEING",
+        "group": "Wadia",
+        "n_S": 1,
+        "mean_resid": 0.1584532910393164
+      },
+      {
+        "event_id": "E0025",
+        "date": "2008-10-23",
+        "trigger": "KEC",
+        "group": "RPG (Harsh Goenka)",
+        "n_S": 1,
+        "mean_resid": 0.17460777054432436
+      },
+      {
+        "event_id": "E0106",
+        "date": "2022-05-11",
+        "trigger": "WELSPUNLIV",
+        "group": "Welspun (BK Goenka)",
+        "n_S": 1,
+        "mean_resid": 0.38013576339891636
+      }
+    ]
+  },
+  "D4_by_group_top10": [
+    {
+      "trigger_group": "Tata",
+      "n_events": 6,
+      "n_S_pairs": 78,
+      "mean_resid": -0.002749229727014466
+    },
+    {
+      "trigger_group": "Reliance ADAG (Anil Ambani)",
+      "n_events": 10,
+      "n_S_pairs": 41,
+      "mean_resid": -0.06158782802485818
+    },
+    {
+      "trigger_group": "Adani",
+      "n_events": 6,
+      "n_S_pairs": 24,
+      "mean_resid": -0.16952629914885178
+    },
+    {
+      "trigger_group": "Indiabulls (Sameer Gehlaut)",
+      "n_events": 7,
+      "n_S_pairs": 13,
+      "mean_resid": -0.17342673811789336
+    },
+    {
+      "trigger_group": "Aditya Birla",
+      "n_events": 3,
+      "n_S_pairs": 12,
+      "mean_resid": 0.009333845309179361
+    },
+    {
+      "trigger_group": "RPG (Harsh Goenka)",
+      "n_events": 3,
+      "n_S_pairs": 6,
+      "mean_resid": 0.001879389286686681
+    },
+    {
+      "trigger_group": "Mahindra",
+      "n_events": 3,
+      "n_S_pairs": 6,
+      "mean_resid": -0.01914463457246378
+    },
+    {
+      "trigger_group": "Reliance (Mukesh Ambani)",
+      "n_events": 2,
+      "n_S_pairs": 5,
+      "mean_resid": -0.1300785820340373
+    },
+    {
+      "trigger_group": "Jaypee",
+      "n_events": 4,
+      "n_S_pairs": 5,
+      "mean_resid": 0.03298638713509128
+    },
+    {
+      "trigger_group": "UB (Vijay Mallya)",
+      "n_events": 3,
+      "n_S_pairs": 4,
+      "mean_resid": 0.030233900592294458
+    }
+  ]
+}
