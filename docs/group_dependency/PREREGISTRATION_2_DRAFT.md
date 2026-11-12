@@ -1,4 +1,4 @@
-# DRAFT pre-registration 2: does counting groups predict crisis losses? (portfolio test)
+# [SUPERSEDED by PREREGISTRATION_2.md, 12 Nov 2026] DRAFT pre-registration 2: does counting groups predict crisis losses? (portfolio test)
 
 **Status: DRAFT for Mrigay to approve. Nothing here has been run.** Written 11 Nov 2026,
 after the pilot's GO (`NOTE.md` §5–6). Once approved, it gets committed unchanged as
