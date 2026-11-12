@@ -2,7 +2,7 @@
 
 This guide is for you, Mrigay. Part 1 is the finished paper's result and pitch. Parts 2–3
 cover the ideas you need to own and what to read. Part 7 has the questions a professor
-will ask, and Part 8 the steps from here. Parts 4–6 record how the paper was built and
+will ask, and Part 8 the steps from here. **Part 9 is paper 2 ("Count Groups, Not Stocks").** Parts 4–6 record how the paper was built and
 checked.
 
 ---
@@ -564,6 +564,165 @@ Never hide it. Professors respect a clear, honest answer.
 
 ---
 
+## Part 9 — Paper 2: "Count Groups, Not Stocks" (learn this one too)
+
+### 9.1 The paper in 60 seconds
+
+**Question.** Many Indian listed companies share an owner (a family, holding company or
+parent). Does sharing an owner create crash risk that price-based risk tools miss?
+
+**Claim (current, honest).** When a group company crashes, its sister companies in
+*unrelated* industries fall more than their normal price correlation predicts. The
+effect is clear on the crash day. Over a month, it lives mainly in financially stressed
+groups. Separately, the Indian market is much less diversified by owner than by ticker.
+
+**Evidence:**
+1. **Pre-registered crash test, verified map:**
+   - 113 crash events in 49 groups, 2005–2025.
+   - Over the next month, sister companies in unrelated industries lose **4.7 points
+     more** than stocks that normally move just as closely with the crashing firm
+     (t −2.66; none of 2,000 shuffles came close).
+   - Industry rivals lose almost nothing extra (−0.4 points).
+   - On the crash day itself the extra loss is −2.2 points (t −3.39).
+2. **Robustness:**
+   - With only high-confidence labels it holds (t −2.53).
+   - **Without the famous episodes** (Adani 2023, Anil Ambani 2019, Indiabulls 2019) the
+     month-long effect is not significant (t −1.71). The crash-day effect still is.
+   - By group: Adani and Indiabulls about −17 points, Anil Ambani −6, Tata and Aditya
+     Birla about zero.
+3. **Market concentration (AMFI market caps, Jan–Jun 2026):** the top 500 companies
+   behave like **231** equal-sized companies, but only **156** owner groups, or **82**
+   if the Government of India counts as one owner.
+4. **Funds (25 active funds, Oct 2026):** the median fund holds only about 10% fewer
+   owner groups than stocks. Active managers already spread across owners. The
+   concentration sits in the **cap-weighted market**, which is what index funds buy.
+5. **The portfolio test (Phase 5).** Do portfolios concentrated in fewer owner groups lose
+   more in India's six crises, with everything else held equal? *Being run on 12 Nov;
+   see `NOTE.md` §9 for the result.*
+
+**One-sentence pitch:** "In India, sharing an owner predicts crash spillovers that
+sharing an industry doesn't, beyond what normal price correlation shows. The market is
+far less diversified by owner than by ticker, especially for index investors."
+
+### 9.2 New ideas you must own
+
+- **Business group / promoter group.** Companies controlled by the same family, holding
+  company or parent. SEBI shareholding-pattern filings list each company's "promoter and
+  promoter group". That is how the map was checked.
+- **Sibling vs rival.** A sibling shares the owner but is in a different industry. A
+  rival shares the industry but not the owner. Comparing the two separates "owner risk"
+  from "industry news".
+- **"Beyond correlation" (the key control).** Siblings already move more closely with
+  each other than random stocks do: calm-period correlation 0.15 vs 0.06 for rivals. The
+  test compares each sibling with stocks that have the *same* calm correlation. If
+  correlation explained everything, the sibling effect would vanish. It didn't: it went
+  from −5.6 to −4.5 points.
+- **Event fixed effects and clustering.**
+  - Each crash event gets its own baseline, so market-wide days don't count as
+    contagion.
+  - Standard errors are clustered by month or by group, because events in the same group
+    or month aren't independent.
+  - Clustered by group, the result is borderline (t −1.97). Know this.
+- **Excess tail dependence.** How often two stocks are both in their worst 5% of days,
+  minus what a normal model with their calm correlation predicts. Sharing an owner adds
+  about as much as sharing an industry.
+- **Effective N over owners (G1/G2/G3).** The same entropy formula as in paper 1, but
+  with weights summed by owner group.
+  - G1 counts family and corporate groups.
+  - G2 also counts the state as one owner.
+  - G3 groups MNC subsidiaries by parent.
+- **Meucci's "effective number of bets" (ENB).** The standard correlation-based
+  diversification measure: entropy of how a portfolio's risk splits across independent
+  factors. Paper 2 asks whether owner-based effective N adds information beyond ENB.
+- **Twin portfolios (Phase 5 design).** A base portfolio is compared with two twins, and
+  both twins match the base's ENB and volatility within ±5%:
+  - a **concentrated twin**, which swaps stocks for same-industry stocks from owners
+    *already held*;
+  - a **dispersed twin**, which swaps them for same-industry stocks from *new* owners.
+
+  Concentrated minus dispersed isolates concentration from simply holding group
+  companies.
+- **Placebo groups.** Shuffle the owner labels randomly, keeping group sizes, and rerun
+  everything many times. If the real result beats nearly all shuffles, it isn't luck.
+- **Promoter pledges.** A promoter borrows against their own shares. High pledges signal
+  a stretched owner, the likely "fragile group" variable. Data saved, not yet tested.
+
+### 9.3 Numbers to memorise
+
+| Number | What it is |
+|---|---|
+| −4.7 pp (t −2.66) | Sibling extra loss over a month, verified map |
+| −2.2 pp (t −3.39) | Sibling extra loss on the crash day |
+| −0.4 pp | Industry rival extra loss (nothing) |
+| t −1.71 | The month-long effect without the famous episodes (weak) |
+| 231 / 156 / 82 | Top 500: stocks / owner groups / with the state as one owner |
+| 1.10 | Median fund's ratio of stocks to owner groups (funds aren't hiding it) |
+
+### 9.4 What to read for paper 2 (abstracts and intros only)
+
+- **Khanna & Thomas (2009), *Journal of Financial Economics*.** Firms linked by
+  ownership and board interlocks move together (Chile). This is the "group firms
+  co-move" starting point.
+- **Kwon et al. (2019), *Emerging Markets Finance and Trade*.** Crash risk spreads inside
+  Korean chaebols, measured per firm-year. This is your closest competitor; know how you
+  differ: event level, siblings vs rivals, and an explicit correlation control.
+- **Gopalan, Nanda & Seru (2007), *Journal of Financial Economics*.** Indian group firms
+  financially support each other, and a group firm's default hurts its siblings. This is
+  the Indian mechanism.
+- **Meucci (2009), "Managing Diversification", *Risk*.** The effective number of bets:
+  the benchmark your owner measure is compared against.
+- **Greenwood & Thesmar (2011), *Journal of Financial Economics*.** "Stock price
+  fragility": concentrated ownership plus correlated flows makes prices fragile. A
+  cousin of your idea, about investors rather than promoters.
+
+Links are in `docs/group_dependency/NOTE.md` §2. Read Kwon et al. and Gopalan et al.
+first.
+
+### 9.5 Questions a professor will ask about paper 2
+
+**1. "Isn't this just Adani?"**
+Partly, and say so. The month-long effect is concentrated in stressed groups, and
+without the famous episodes it isn't significant. The crash-day effect survives without
+them. No single group drives it: dropping any one group leaves it significant. The
+honest claim is "owner risk exists and correlation misses it; it bites when the group
+is fragile."
+
+**2. "Group firms co-moving is known."**
+On average days, yes (Khanna & Thomas; Korean studies). What's new:
+- event-level crashes;
+- siblings in *unrelated* industries compared with rivals;
+- an explicit control for calm-period correlation, in India;
+- an ownership-based diversification measure set against Meucci's ENB.
+
+**3. "How is this different from Kwon et al. (2019)?"**
+- They use firm-year crash measures, without controlling for how correlated each pair
+  already was.
+- You use crash events, a sibling-vs-rival design and the correlation control, and you
+  pre-registered the test.
+
+**4. "Does one firm's crash *cause* the siblings' fall, or does the news reveal a group
+problem?"**
+Prices can't tell. With Hindenburg, the news was about the whole group. The paper
+claims owner-level risk that correlation misses, not causal transmission.
+
+**5. "An AI built your group map?"**
+- The first version was, from memory, and the paper says so.
+- It was then checked against NSE shareholding-pattern filings: 544 confirmed, 24
+  corrected, 251 unverifiable (old or delisted), 858 not checked (mostly standalone
+  companies).
+- The result held, and got stronger on the high-confidence labels.
+
+**6. "Why don't funds show the concentration?"**
+Active managers already diversify across owners (median ratio 1.10). The cap-weighted
+market doesn't (1.48), so the practical audience is index and passive investors, plus
+anyone holding big positions in one group.
+
+**7. "Why count the government as one owner?"**
+G2 is a sensitivity check, not the main number. State firms share an owner, but their
+crash dynamics differ. The main number (G1) treats them as standalone.
+
+---
+
 ## Glossary (one line each)
 
 | Term | Meaning |
@@ -592,3 +751,9 @@ Never hide it. Professors respect a clear, honest answer.
 | Survivorship bias | Missing dead firms makes the past look better than it was |
 | Look-ahead bias | Using information that wasn't available at the time |
 | Bonus issue / split | More shares at a lower price, no change in value; unadjusted data shows a fake crash |
+| Business / promoter group | Companies controlled by the same family, holding company or parent |
+| Sibling (paper 2) | A same-owner company in a different industry |
+| Effective N of owner groups | exp(entropy) of portfolio weights summed by owner group |
+| Meucci ENB | Effective number of bets: entropy of risk across independent factors |
+| Twin portfolios | Matched portfolios that differ only in how concentrated they are by owner |
+| Promoter pledge | A promoter borrowing against their own shares; a stress signal |
