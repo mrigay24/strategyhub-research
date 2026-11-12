@@ -4760,6 +4760,13 @@ Full note: `docs/entropy_research/RESEARCH_NOTE.md`. Code: `scripts/entropy_rese
 
 **Idea:** Shannon entropy of a share distribution (H = −Σ w ln w; HHI = Σ w²; effective N = 1/HHI) measures how much one firm's identity matters. The deeper variable is *replaceability*: when a firm is hit, do rivals absorb it or share its fate?
 
+**Origin:**
+- Mrigay's own framework, from Thiel's *Zero to One* (p.34): monopoly and the question "does this firm's identity matter?"
+- The investor paradox: "a high-entropy portfolio of firms that each operate in low-entropy markets".
+- Where the track went:
+  - paper 1 (§43) tested *market share* as importance;
+  - paper 2 (§44–§45) moved to *shared ownership*, i.e. entropy over owners, not sales.
+
 **Pilot findings:**
 1. **Portfolio entropy (random N-stock portfolios, 5 windows 2000–24):** the expected ending wealth is the same for every N by construction. Diversification raises the *median* (9.8%/yr for 1 stock vs 11.6% for 50) and cuts the chance of lagging the universe by more than 3 pp/yr from 46% to 5%. The cause is skew: only 39–47% of stocks beat the universe, and the top 10% made 27–77% of net gains.
 2. **Emergent concentration:** a buy-and-hold equal-weight portfolio's effective N falls 17–40% in 5 years with no trading.
@@ -4843,6 +4850,16 @@ Paper: *Market Share Is Not Importance: What Happens to Rivals When a Firm Dies 
 **Literature check (§5).** All 20 references in the old table are real; corrections: Lang & Stulz's competitive effect is in *concentrated, low-leverage* industries; Jorion & Zhang (2007) is Chapter 11 (contagion) vs Chapter 7 (competition) in CDS; Glasserman & Lin (2023) is an arXiv paper and was overstated; Kim et al. and Lopez-Lira & Tang are working papers; Goerner et al.'s phrase is "window of viability". Most useful new references: Aharony & Swary (1983, bank failures from fraud do not spread), Helwege & Zhang (2016), Iyer & Peydró (2011) and Iyer & Puri (2012) (India), Anshuman & Sharma (IIMB WP 604, NBFC funding from liquid mutual funds), Ganguly, Mishra & Platt (2025, Adani). No paper was found that regresses rival reactions on the *failed firm's* share, and no pre-registered corporate-finance event study.
 
 **Data.** `death_test.py`'s India fallback now reads `nse_survivorship_free_adj.parquet`; the 8 cases moved by ≤ 0.2 pp. The project `.venv/` is iCloud-evicted (thousands of dataless files make `import pandas` hang); a copy with the same versions lives at `~/.venvs/strategyhub` (Python 3.9.6, pandas 2.0.3, numpy 1.24.3, pyarrow 12.0.1).
+
+**Robustness of Part A (RESEARCH_NOTE §4c; `scripts/death_test_robustness.py`):**
+- The day-0 hit is robust: −0.90% without Financials, −1.20% without the 2008–09 and 2020
+  crises, and the large-share gap is about 1 pp in every variant.
+- **The in-sample "industry explains 10× more than share" claim was withdrawn.**
+  - With 5-fold cross-validated R², *neither* share nor sub-industry predicts out of
+    sample in the 266-event baseline. The 14% was over-fitting.
+  - With more events (−10% / −20% thresholds), sub-industry predicts about 6–7%, and share
+    never predicts.
+- Lesson: report out-of-sample R² for any model with many dummies.
 
 **Pre-registered out-of-sample test: results (PREREGISTRATION §11, RESEARCH_NOTE §4d).** It ran once, unchanged (`death_test_oos.py run`, code as of c57c331).
 - Registered sample: 26 cases (2 SD / 24 OR). SD rivals −18.0%, OR rivals −3.7% (20-day BHAR); hit rate 50%.
