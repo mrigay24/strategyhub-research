@@ -3,6 +3,13 @@
 *11 Nov 2026. Plan: `PILOT_PLAN.md`. Rules: `PREREGISTRATION.md`. Phase 5 design (draft):
 `PREREGISTRATION_2_DRAFT.md`. Verdict: **GO** (§6), with a narrow reading.*
 
+> **Status, 12 Nov 2026.**
+> - The group map has been checked against NSE filings (v2, §8): 500 symbols confirmed,
+>   21 changed, 230 could not be checked against a filing, and 858 were not checked.
+> - The registered test was re-run unchanged on v2, and **GO holds**.
+> - Not done: Phase 5 (it waits for Mrigay's approval) and verification of the 858
+>   unchecked symbols (mostly standalone firms).
+
 ## 1. The idea
 
 Paper 1 found that a failed firm's market share does not predict how its rivals react, and
@@ -376,3 +383,92 @@ just as closely with the crashing firm. Industry rivals lose almost nothing extr
 - **Calm correlation is a noisy one-year estimate.** That weakens the control. Controlling
   for the calm-implied move instead, or entering correlation as deciles, does not change
   the result.
+
+## 8. Map verification and re-run (v2, 12 Nov 2026; deviation D1)
+
+**Why.** The v1 map came from an AI's memory. With high-confidence labels only, β_S fell to
+*t* −1.67, so the labels were the obvious weak point.
+
+**What was checked:**
+1. **NSE shareholding-pattern filings** (XBRL, 2020/21 onward; 11,106 filings listed,
+   promoter names parsed). These covered 750 priority symbols:
+   - every firm in the 74 sibling events;
+   - every member of a multi-company group;
+   - every low-confidence row.
+
+   For each firm we asked whether it shares a promoter entity (a family member, holding
+   company or trust, or the sibling company itself) with the other members of its group.
+2. **A source check at the event dates** for the 135 firms in those events, which matters
+   because most events fall before 2020 (news, annual reports, group lists;
+   `verify/p1_history.csv`).
+3. **Review of every flagged row,** with a written decision and its source
+   (`verify/decisions.csv`, 95 rows).
+
+**What changed.** 21 symbols, 26 label rows (`group_map_v2_changes.csv`):
+- **Great Offshore and Bharati Shipyard had been merged into one group.** Great Offshore
+  was still run by its own promoter (Vijay Sheth) in 2008, and Bharati took control only
+  in 2009–10. This removes two 2008 events, one of them among the ten biggest in v1.
+- **Control dates corrected:**
+  - Avaya GlobalConnect left Tata in 2004.
+  - UB kept Mangalore Chemicals until end-2014.
+  - Sameer Gehlaut was declassified at Sammaan Capital in Feb 2023.
+  - Orient Cement moved to Adani (2025), Reliance Naval to Swan (2024) and Religare to
+    the Burmans (2025).
+- **Wrong group:**
+  - Maharashtra Seamless and Jindal Drilling are DP Jindal.
+  - Consolidated Finvest is BC Jindal.
+  - Mangalam Cement is BK Birla.
+  - Muthoot Microfin is the Muthoot Pappachan group.
+  - Nuvama is PAG.
+  - VIP Clothing is the Pathare family.
+- **Missed members:**
+  - Yaari Digital belongs to Indiabulls.
+  - Sonata Software belongs to Rajan Raheja.
+  - Hercules Hoists belongs to the Rahul Bajaj family.
+  - Avadh Sugar belongs to the Nopany branch.
+  - Sequent Scientific belonged to Strides (Arun Kumar) before Carlyle.
+- **Joint or cross-family promoters were noted, not relabelled:** Vodafone Idea, Supreme
+  Petrochem, Sterling & Wilson, United Breweries, the Jindal branches and the Birla
+  branches.
+- **Confidence:** low-confidence rows fell from 209 to 117, and high rose from 1,017 to
+  1,149.
+
+**Limits of the check:**
+- 230 symbols have no NSE filing in the 2020+ window (delisted earlier) and no
+  confirming document, so they are "unverifiable".
+- Most pre-2020 "yes" answers rest on group-company lists, not dated filings. Rows that
+  rest *only* on an undated list are medium confidence in v2.
+- 858 symbols, mostly standalone firms, were not checked.
+
+**The re-run** (`results/group_dependency/v2/`, same code and rules, run once):
+
+| | v1 (registered) | v2 (verified map) |
+|---|---|---|
+| Events / with a sibling in another industry / groups | 115 / 74 / 30 | 113 / 72 / 29 |
+| **β_S, BHAR 0–20** | **−4.5 pp (*t* −2.64)** | **−4.7 pp (*t* −2.66)** |
+| β_R (industry rivals) | −0.4 pp (*t* −0.44) | −0.4 pp (*t* −0.38) |
+| β_S − β_R | −4.1 pp (*t* −2.17) | −4.4 pp (*t* −2.26) |
+| Permutation *p* | < 0.0005 | < 0.0005 |
+| **Go / no-go** | **GO** | **GO** |
+| R1 without 2008–09 and Feb–Apr 2020 | −4.7 pp (*t* −2.13) | −5.0 pp (*t* −2.22) |
+| **R2 without paper-1 episodes** | −1.9 pp (*t* −1.83) | **−1.9 pp (*t* −1.71)** |
+| R3 crash day | −2.2 pp (*t* −3.51) | −2.2 pp (*t* −3.39) |
+| **R6 high-confidence labels only** | −3.5 pp (*t* −1.67) | **−7.0 pp (*t* −2.53)** |
+| R5 clustered by trigger group | *t* −1.97 | *t* −1.93 |
+| R8 events weighted equally (share negative, sign *p*) | −4.4 pp (57%, 0.15) | −4.1 pp (56%, 0.20) |
+| Crash day without paper-1 episodes (not registered) | −1.4 pp (*t* −2.57) | −1.3 pp (*t* −2.40) |
+| Tail: excess joint-crash frequency, same group vs unrelated | 0.219% vs 0.155% | 0.218% vs 0.155% |
+
+**What it means, in plain words:**
+- **The labels were not what made the result look fragile.** Fixing them removed one wrong
+  big event and left the main number where it was. When we keep only labels backed by
+  documents, the effect gets stronger (*t* −2.53), not weaker. So the main robustness
+  worry about v1 is answered.
+- **The other worry stays.** The month-long effect still comes from a handful of stressed
+  groups. The 10 worst of 72 events carry essentially all of it; without paper 1's
+  episodes it is −1.9 pp with *t* −1.71; and only about half of events are negative.
+  Tata's siblings still show nothing.
+- **The crash-day effect is the robust part.** Siblings in unrelated industries fall about
+  1.3–2.2 pp more than their normal correlation predicts, in every version.
+- **Promoter pledges** are now saved for later (`promoter_pledges.csv`, from the same
+  filings, no analysis). They are the natural "fragile group" variable for Phase 5.

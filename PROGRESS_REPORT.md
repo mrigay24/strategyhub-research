@@ -2267,3 +2267,13 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
 - **Narrow reading:** the 21-day effect comes mostly from stressed groups (Adani 2023, Indiabulls, Anil Ambani, Future; Tata ≈ 0). It is not significant without paper 1's episodes (*t* −1.83) or with high-confidence labels only (*t* −1.67). The crash-day effect survives both.
 - **Phase 5:** portfolio-test design drafted (`PREREGISTRATION_2_DRAFT.md`), design only, awaiting Mrigay's approval.
 - Not done: source-verified checking of the group map; promoter-pledge (stress) data; an out-of-sample market (Korea).
+- **2026-11-12, map verification (v2):**
+  - The group map was checked against NSE shareholding-pattern filings (750 priority
+    symbols) and against dated sources for the 135 event firms. Result: 500 confirmed,
+    21 changed, 230 unverifiable, 858 not checked (`group_map_v2.csv`, change log,
+    PREREGISTRATION D1).
+  - The registered test was re-run unchanged on v2: **GO holds** (β_S −4.7 pp, *t* −2.66).
+    With high-confidence labels only it is now significant (*t* −2.53, against −1.67 in v1).
+    Without paper 1's episodes it is still weak (*t* −1.71). The crash-day effect is robust.
+  - Promoter pledge figures were saved for later (`promoter_pledges.csv`).
+  - Phase 5 was not started.

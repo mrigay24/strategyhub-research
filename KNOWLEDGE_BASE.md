@@ -4900,3 +4900,33 @@ Docs: `docs/group_dependency/` (`PILOT_PLAN.md`, `NOTE.md`, `PREREGISTRATION.md`
 **Next.** Phase 5 is design only (`PREREGISTRATION_2_DRAFT.md`): matched-twin portfolios (same industries and Meucci ENB, fewer groups), six crisis windows, placebo-group inference, a pre-stated exclusion of the known episodes. It awaits Mrigay's approval, and the multi-company groups need source-verified checking first.
 
 *Last updated: 2026-11-11*
+
+**Update 2026-11-12: map verified against filings (v2, PREREGISTRATION D1).**
+- **Data.** NSE's public `corporate-share-holdings-master` API lists about 20–25
+  quarters per symbol (2020/21 onward only; nothing for delisted firms; renamed firms
+  need the current symbol via `symbolchange.csv`). Each filing links an XBRL file whose
+  promoter rows can be told apart by `TypeOfPromoterShareholding` contexts. Percentages
+  are fractions in some files and percents in others, so detect the unit per file. BSE
+  refuses scripted requests.
+- **Scripts.** `group_dependency_fetch_shp.py` (fetch, polite, cached outside the repo),
+  `group_dependency_verify.py` (promoter-name consistency),
+  `group_dependency_build_map_v2.py` (applies sourced decisions only),
+  `group_dependency_pledges.py` (pledged share of promoter holdings, saved without
+  analysis).
+- **Result.** 500 symbols confirmed, 21 changed, 230 unverifiable, 858 not checked.
+  - The biggest error: Great Offshore and Bharati Shipyard were merged into one group in
+    2008 (it removed 2 events, one among the 10 largest).
+  - Other wrong groups: DP Jindal, BC Jindal, BK Birla, Muthoot Pappachan, PAG.
+  - Missed members: Yaari → Indiabulls, Sonata → Rajan Raheja, Sequent → Strides.
+- **Re-run unchanged on v2: GO holds.**
+  - β_S −4.7 pp (*t* −2.66); β_S − β_R *t* −2.26.
+  - High-confidence labels only: −7.0 pp (*t* −2.53), against *t* −1.67 in v1.
+  - Without paper-1 episodes: −1.9 pp (*t* −1.71), still weak.
+  - Crash day without them: *t* −2.40.
+- **Lesson.** Verifying the labels answered the "bad labels" worry but not the
+  "concentrated in a few stressed groups" worry. Those are different risks and need
+  different checks. A name-overlap check flags real errors, but it also flags expected
+  cross-holdings within a family (Jindal or Birla branches, the KK Birla daughters), so
+  every flag needs a written human decision.
+
+*Last updated: 2026-11-12*
