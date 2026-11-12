@@ -229,3 +229,31 @@ returns. Results go to `results/group_dependency/` and the write-up to `NOTE.md`
 ## 10. Deviation log
 
 *(empty)*
+
+## 11. Part 2 record: the event list (committed before any comparison stock's return)
+
+`scripts/group_dependency_pilot.py events` (code as of 133c5c9), run 11 Nov 2026:
+- The panel without 20 ETF symbols; 1 hole date (2 Jan 2012) set to missing; 25 one-day
+  returns beyond ±45% removed (`removed_returns.csv`).
+- 997 universe stock-days with a return ≤ −15% and AR ≤ −12%. Dropped:
+  - 668: no other firm of the group in the universe that day;
+  - 138: not a Family/Corporate group firm;
+  - 18: industry-adjusted return above −12%;
+  - 1 each: outside the date range, touching the 2011 hole, or next-day reversal.
+- That leaves 170 qualifying days. **115 events from 50 groups** (`events.csv`), after
+  folding 14 same-day co-qualifiers and 41 later days inside an episode. The largest
+  groups are Reliance ADAG 11, Indiabulls 8, Tata 8, Adani 6 and Jaypee 6. 91 trigger
+  labels are high confidence and 24 medium.
+- News check on the random 30 (`news_sample.csv`; a Sonnet subagent, web search, told not
+  to look at other stocks' moves):
+
+  | a (firm/group news) | b (corporate action or artefact) | c (market or industry crash day) | d (no news found) |
+  |---|---|---|---|
+  | 14 | 2 | 8 | 6 |
+
+  - The two b cases are Harrisons Malayalam (31 Aug 2010, demerger ex-date) and Lloyds
+    Engineering (28 Apr 2025, rights-issue ex-date).
+  - So about 7% of events are probably artefacts. They add noise to every class and bias
+    the test toward finding nothing.
+  - About a quarter of events fall on market-wide crash days. R1 drops 2008–09 and
+    February–April 2020.

@@ -178,7 +178,43 @@ from traded value alone, before any return was computed.
   - A wrong label most likely puts a true sibling in the "baseline" class. That dilutes
     the group effect, so the test is biased *against* finding one.
 
-## 4. The pre-registered test (pending)
+## 4. The pre-registered test (Phase 3; full rules in `PREREGISTRATION.md`)
+
+The order of commits is the proof that the rules came first:
+
+| Commit | What it fixed |
+|---|---|
+| 3e6155f | Literature check and universe (traded value only) |
+| 5d74939 | The group map |
+| 133c5c9 | The rules and the go/no-go test (pre-registration Part 1) |
+| (Part 2) | The event list and the news labels, before any comparison stock's return |
+
+**In plain words.**
+1. **Find the crashes.** A *trigger* is a group firm that falls at least 15% in one day.
+   It must fall at least 12 points more than the market, and at least 12 points more than
+   its industry's non-group firms. A firm can trigger only if another firm of its group is
+   in the top 500 that day. Each group gets one event per 20-day episode.
+2. **Sort every other top-500 stock into four classes:**
+   - **S:** a sibling in another industry (the key class);
+   - **SI:** a sibling in the same industry;
+   - **R:** an industry rival outside the group;
+   - **B:** an unrelated stock.
+3. **Measure how each stock did** over the 21 trading days from the crash day, against the
+   market (BHAR).
+4. **Control for "normal" co-movement.** For each stock and the crashing firm, compute
+   their correlation over a calm year ending two weeks before the crash. If siblings fall
+   only because they always move together, this control absorbs it.
+5. **Regress the outcome** on S, SI and R, with that correlation, size and liquidity as
+   controls, plus one fixed effect per event.
+   - β_S answers: *does a sibling in an unrelated industry do worse than an unrelated stock
+     that was just as correlated with the crashing firm?*
+   - β_R answers the same question for industry rivals.
+6. **GO** only if all three hold:
+   - β_S < 0 with *t* ≤ −1.96 (standard errors clustered by month);
+   - a permutation test by event gives *p* < 0.05;
+   - β_S ≤ β_R.
+   Fewer than 30 events with a sibling, or fewer than 10 groups, means "too few to test",
+   which is a STOP.
 
 ## 5. Result (pending)
 
