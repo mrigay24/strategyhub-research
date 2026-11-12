@@ -2277,3 +2277,13 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
     Without paper 1's episodes it is still weak (*t* −1.71). The crash-day effect is robust.
   - Promoter pledge figures were saved for later (`promoter_pledges.csv`).
   - Phase 5 was not started.
+
+## 2026-11-12 — Group concentration headline, fund level, short paper 1 (parent session)
+- **Data layer:** AMFI market-cap pipeline, 18 half-years (`scripts/amfi_marketcap_pipeline.py`).
+- **Market headline:** the top 500 (90% of market cap) behave like 231 stocks but 156
+  owner groups, or 82 counting the state as one owner. The verified map doesn't change
+  this. KB §45.
+- **Fund level:** 25 funds from 7 AMCs. Median stocks-to-groups ratio is 1.10, so funds
+  don't hide much group concentration and the fund-level hook is dropped.
+- **Paper 1:** `PAPER_SHORT` (about 7,000 words) for circulation.
+- **Privacy:** outreach drafts are kept local in `docs/outreach/` (git-excluded).

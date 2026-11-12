@@ -4930,3 +4930,62 @@ Docs: `docs/group_dependency/` (`PILOT_PLAN.md`, `NOTE.md`, `PREREGISTRATION.md`
   every flag needs a written human decision.
 
 *Last updated: 2026-11-12*
+
+### §45 — "Count groups, not stocks": market- and fund-level owner concentration (2026-11-12)
+
+**What it is:** the descriptive side of paper 2. How many independent *owner groups* does
+the Indian market really hold, compared with how many stocks? The measure is effective
+N = exp(H), H = −Σ w ln w, over market-cap weights per stock and per promoter group.
+
+**Data layer.** AMFI's free half-yearly average market-cap lists:
+- 18 half-years, 2017-12 to 2026-06, 4,792–5,427 companies each;
+- built by `scripts/amfi_marketcap_pipeline.py`, using a stdlib .xlsx reader because
+  openpyxl is not in `.venv`;
+- output `data_processed/amfi_avg_mcap.parquet` (gitignored).
+
+**Group definitions** (fixed before any result):
+- **G1:** Family and Corporate groups as groups; everything else standalone.
+- **G2:** G1 plus all State firms as one owner, the Government of India.
+- **G3:** G1 plus MNCs grouped by parent.
+
+**Market level** (`scripts/group_concentration_headline.py`, `results/group_concentration/`):
+
+| | Jan–Jun 2026 | Dec 2017 |
+|---|---|---|
+| Top 500, effective N of stocks | 230.7 | 191.9 |
+| Top 500, effective N of owner groups (G1) | 155.6 | 134.1 |
+| Top 500, owner groups with the state as one owner (G2) | 82.3 | 70.7 |
+| Top 100: stocks / G1 / G2 | 73.4 / 50.6 / 30.5 | 70.8 / 52.2 / 29.6 |
+
+- The top 500 hold about 90% of total market cap.
+- Largest groups by share of top-500 market cap: Tata 5.4%, Reliance 4.9%, Adani 3.7%,
+  HDFC 3.7%, Bajaj 3.2%, Bharti 3.1%.
+- The verified map (v2) gives identical numbers at this level.
+- **Name check** (`NAME_CHECK.md`): there are no naive duplicate group names. Family
+  branches (Bajaj, Jindal, TVS, Mukesh vs Anil Ambani) stay separate, which is the
+  conservative choice.
+
+**Fund level** (`scripts/mf_portfolio_groups.py`):
+- **Data:** 25 equity funds from 7 AMCs, using the public monthly portfolios as on
+  31 Oct 2026.
+- **Results:**
+  - median effective N of stocks is 51, of groups (G1) 47;
+  - the **median ratio is only 1.10** (range 1.00–1.24);
+  - the v2 map gives identical numbers.
+- **Skipped:** HDFC (403), Kotak (captcha), ICICI, Franklin, Quant.
+
+**Lessons:**
+1. **Active funds do not hide much owner-group concentration on average.** Managers
+   already spread across groups.
+2. **The cap-weighted market does** (ratio 1.48). Specific funds also carry large single
+   group exposures, e.g. the HDFC group at 9.8% of Parag Parikh Flexi Cap.
+3. **The "your fund owns N stocks but far fewer families" hook does not hold.** The
+   media and paper hook is the market level plus the contagion result (§44): owner
+   groups crash together beyond correlation.
+
+**Privacy rule:** outreach drafts (emails naming professors, the op-ed skeleton) live in
+`docs/outreach/`, which is git-excluded and local only. They were stripped from unpushed
+history on 12 Nov before a push.
+
+**Paper 1:** the circulation version is `docs/entropy_research/PAPER_SHORT.md` and
+`.docx`, about 7,000 words.
