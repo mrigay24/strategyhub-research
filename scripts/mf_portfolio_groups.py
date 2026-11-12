@@ -54,6 +54,15 @@ FUNDS += [
     ("DSP", "DSP Mid Cap Fund", "Mid cap", DSF, "MIDCAP", "2026-10", DSU),
 ]
 
+TAU = "https://www.tatamutualfund.com/system/files/2026-11/Monthly%20Portfolio%20as%20on%2031st%20October%202026....xlsx"
+TAF = "tata/Tata_Monthly_31_Oct_2026.xlsx"
+FUNDS += [
+    ("Tata", "Tata Small Cap Fund", "Small cap", TAF, "TSCAPF", "2026-10", TAU),
+    ("Tata", "Tata Large Cap Fund", "Large cap", TAF, "TTOFE", "2026-10", TAU),
+    ("Tata", "Tata Flexi Cap Fund", "Flexi cap", TAF, "TMCAPF", "2026-10", TAU),
+    ("Tata", "Tata Mid Cap Fund", "Mid cap", TAF, "TINR", "2026-10", TAU),
+]
+
 
 def parse_fund(path, sheet):
     book = read_xlsx(path)
@@ -65,7 +74,7 @@ def parse_fund(path, sheet):
         if isin_c is None or w_c is None:
             for i, c in enumerate(cells):
                 cl = c.lower().replace("\n", " ")
-                if cl.strip() == "isin": isin_c = i
+                if cl.strip().startswith("isin"): isin_c = i
                 if cl.strip().startswith("% to"): w_c = i
             continue
         if isin_c >= len(cells) or w_c >= len(cells): continue
