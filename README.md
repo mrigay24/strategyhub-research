@@ -6,6 +6,37 @@ Built as a personal portfolio project for quantitative finance, this is not a to
 
 ---
 
+## Research Papers (2026, working drafts)
+
+Both papers come from one question: *what makes a company important to the companies around it?* They use pre-registration: the rules, case lists and code were committed to this repository **before** any result was computed. Every null result is reported.
+
+### 1. *Market Share Is Not Importance: What Happens to Rivals When a Firm Dies (US and India)*
+- **Finding:** in 266 large crashes of S&P 500 firms, rivals fall about 1.2% on the day. But the failed firm's market share has no out-of-sample power to predict their reaction.
+- **Pre-registered test** of a "shared dependency" rule on 40 new US and Indian collapses: too few qualifying cases to test it. The paper says so.
+- **Files:**
+  - [short version](docs/entropy_research/PAPER_SHORT.md);
+  - [full draft](docs/entropy_research/PAPER_DRAFT.md);
+  - [pre-registration](docs/entropy_research/PREREGISTRATION.md);
+  - [referee report and responses](docs/entropy_research/REFEREE_REPORT.md).
+
+### 2. *Count Groups, Not Stocks: Business-Group Contagion and Hidden Concentration in India*
+- **Finding:** when an Indian business-group firm crashes, its sister companies in *unrelated* industries lose about 4.7 points more over the next month than equally correlated stocks (t = −2.66). Industry rivals lose almost nothing extra.
+  - The crash-day effect is robust.
+  - The month-long effect is concentrated in financially stressed groups.
+- **Concentration by owner:** India's top 500 companies behave like 231 stocks but only 156 owner groups. Active funds mostly avoid this concentration (median ratio 1.10).
+- **Portfolio test:** pre-registered; results in [NOTE §9](docs/group_dependency/NOTE.md).
+- **Files:**
+  - [draft](docs/group_dependency/PAPER2_DRAFT.md);
+  - [one-page summary](docs/group_dependency/ONE_PAGER.md);
+  - [pilot pre-registration](docs/group_dependency/PREREGISTRATION.md);
+  - [portfolio-test pre-registration](docs/group_dependency/PREREGISTRATION_2.md).
+
+**Data notes:**
+- The survivorship-free NSE panel (2005–2025) was audited for unadjusted splits and bonuses before use. Fixing them *raised* the India market-neutral alpha.
+- The promoter-group map is checked against NSE shareholding-pattern filings.
+
+---
+
 ## Live Platform
 
 | Service | URL |
