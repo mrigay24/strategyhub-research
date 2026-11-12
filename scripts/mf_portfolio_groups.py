@@ -63,6 +63,13 @@ FUNDS += [
     ("Tata", "Tata Mid Cap Fund", "Mid cap", TAF, "TINR", "2026-10", TAU),
 ]
 
+CAB = "https://www.canararobeco.com/wp-content/uploads/2026/11/"
+FUNDS += [
+    ("Canara Robeco", "Canara Robeco Small Cap Fund", "Small cap", "canara/Canara_Small-Cap.xlsx", None, "2026-10", CAB + "SC-%E2%80%93-Canara-Robeco-Small-Cap-Fund-%E2%80%93-October-2026.xlsx"),
+    ("Canara Robeco", "Canara Robeco Multi Cap Fund", "Multi cap", "canara/Canara_Multi-Cap.xlsx", None, "2026-10", CAB + "MF-%E2%80%93-Canara-Robeco-Multi-Cap-Fund-%E2%80%93-October-2026.xlsx"),
+    ("Canara Robeco", "Canara Robeco Value Fund", "Value", "canara/Canara_Value.xlsx", None, "2026-10", CAB + "VF-%E2%80%93-Canara-Robeco-Value-Fund-%E2%80%93-October-2026.xlsx"),
+]
+
 
 def parse_fund(path, sheet):
     book = read_xlsx(path)
