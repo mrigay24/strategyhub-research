@@ -62,7 +62,7 @@ def main() -> None:
     for ax in axes:
         ax.tick_params(axis="y", length=0)
     axes[1].legend(loc="lower left", frameon=False, fontsize=7.5, handletextpad=0.2)
-    fig.text(0.01, 0.01, "Coefficients vs unrelated stocks with the same calm-period correlation; event fixed "
+    fig.text(0.01, 0.01, "Coefficients vs unrelated stocks with the same pre-event correlation; event fixed "
              "effects; bars = 95% intervals (clustered by month).", color=INK2, fontsize=6.8)
     fig.tight_layout(rect=(0, 0.05, 1, 1))
     fig.savefig(OUT / "fig_pilot_coefficients.png", dpi=200)

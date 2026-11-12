@@ -3,7 +3,7 @@
 **Mrigay Pathak** · Indiana University Bloomington · Working paper draft, November 2026
 
 *Pre-registration: `docs/group_dependency/PREREGISTRATION.md` (pilot) and
-`PREREGISTRATION_2_DRAFT.md` (portfolio test, design). Results: `results/group_dependency/`
+`PREREGISTRATION_2.md` (portfolio test). Results: `results/group_dependency/`
 and `results/group_concentration/`. Every headline number traces to a file listed in
 Appendix C. This paper uses share prices and public filings only and makes no claim about
 any firm's conduct.*
@@ -13,18 +13,19 @@ any firm's conduct.*
 ## Abstract
 
 Investors count diversification in stocks, and risk models measure it from past
-co-movement. In India, many listed firms share a controlling promoter group. We ask
-whether that shared owner adds crash risk that calm-period correlation does not show. In a
-pre-registered event study of 113 one-day crashes of group firms (2006–2025), using a
-promoter-group map checked against NSE shareholding filings, siblings in unrelated
-industries lost 4.7 percentage points more over the next month than unrelated stocks that
-were just as correlated with the crashing firm (*t* = −2.66; placebo *p* < 0.001). Industry
-rivals lost 0.4 points (*t* = −0.38). On the crash day the sibling effect is −2.2 points
-and survives every check. The month-long effect is concentrated: ten of 72 events carry
-almost all of it, and without the best-known episodes it is −1.9 points (*t* = −1.71). By
-market capitalisation, India's top 500 companies behave like 231 equal-sized stocks but only
-156 owner groups (82 with the state as one owner). Active funds hold only about 10% fewer
-owner groups than stocks.
+co-movement. In India, many listed firms share a controlling promoter group. We ask whether
+a shared owner adds crash risk that pre-event correlation does not show. In a
+pre-registered event study of 113 one-day crashes of group firms (2006–2025), with a
+promoter map checked against shareholding filings, siblings in unrelated industries lost
+4.7 percentage points more over the next month than unrelated stocks equally correlated
+with the crashing firm. That is *t* = −2.66 clustered by month, and a wild-bootstrap
+*p* = 0.03 with clustering by group. Industry rivals lost 0.4 points. The effect is
+concentrated. Much of it falls on the crash day, when several group firms often fall on
+the same news, and ten of 72 events carry almost all of it. Without the best-known
+episodes it is −1.9 points and not significant. By market capitalisation, India's top 500
+companies have an effective number of 231 stocks but 156 owner groups, fewer than random
+groupings of the same sizes give (about 190). Active funds hold only about 10% fewer owner
+groups than stocks.
 
 ---
 
@@ -47,56 +48,72 @@ This is a practical problem for three kinds of decision-makers.
   to size a crash.
 
 The question this paper answers is narrow: **after a business-group firm's own crash, do
-its group siblings in other industries fall more than unrelated stocks with the same
-calm-period correlation, and more than the crashing firm's industry rivals?** And how much
+its group siblings in other industries fall more than unrelated stocks with the same pre-event correlation, and more than the crashing firm's industry rivals?** And how much
 does counting owners instead of stocks change the measured diversification of the Indian
 market and of real funds?
 
 **The answer, in three parts.**
 
-1. **Contagion beyond correlation exists, and is concentrated.** In a pre-registered test,
-   siblings in unrelated industries lose about 2.2 points more than their calm correlation
-   predicts on the crash day, and 4.5–4.7 points over the next month. Industry rivals lose
-   almost nothing extra. The crash-day effect survives every check. The month-long effect
-   comes mainly from a handful of episodes in groups under visible financial or market
-   stress. Without the best-known of them, it is no longer significant. Tata's siblings,
-   for example, show nothing.
-2. **The cap-weighted market is concentrated by owner.** The top 500 companies have an
-   effective number of 231 stocks but 156 owner groups. Treating state-owned firms as one
-   owner gives 82.
-3. **Active funds mostly avoid it.** Across 25 equity funds, the median fund holds only
-   10% fewer effective owner groups than effective stocks. The concentration sits in the
-   cap-weighted market that index funds buy, and in specific large positions.
+1. **Owner-level crash co-movement beyond correlation exists, but it is concentrated and
+   statistically fragile.** Siblings in unrelated industries lose 4.5–4.7 points more over
+   the month than equally correlated unrelated stocks, and industry rivals lose almost
+   nothing extra. The month-long effect passes the pre-registered test and a group-level
+   wild bootstrap (*p* = 0.03).
+   - Much of it is several group firms falling on the same day on shared news.
+   - After the crash day the extra loss is −3.4 points and borderline.
+   - Ten events carry nearly all of it.
+   - Without the episodes a companion paper had already studied, almost nothing is left
+     after the crash day.
+   - Tata's siblings show nothing.
+2. **The market is concentrated by owner.** By full market cap, the top 500 companies have
+   an effective number of 231 stocks but 156 owner groups. That is fewer than random
+   groupings of the same sizes would give (about 190), because the largest companies sit
+   together in a few groups.
+3. **Active funds mostly avoid it.** Across 25 equity funds, the median fund holds only 10%
+   fewer effective owner groups than effective stocks. Even large-cap funds sit below the
+   top-100 market's ratio. The concentration sits in the cap-weighted market and in
+   specific large positions.
 
 ### Contribution
 
 The pieces of this argument exist separately. What this paper adds:
 
-- **An event-level test against industry rivals, controlling for each pair's calm
+- **An event-level test against industry rivals, controlling for each pair's pre-event
   correlation** (versus Kwon, Jung, Sunwoo and Yim 2019). Kwon et al. show that crash risk
   spreads among Korean chaebol members, using firm-year crash measures. We work at the
   event level in India and compare siblings in *other* industries with the crashing
-  firm's *industry rivals*. We control directly for how correlated each pair already was.
-  That directly tests whether a correlation-based risk model already sees the risk.
-- **The crash-time price consequence of known group links** (versus Khanna and Thomas
-  2009, and Gopalan, Nanda and Seru 2007). Khanna and Thomas show that shared owners raise
-  stock synchronicity on average days in Chile. Gopalan et al. show that Indian groups
-  support weak members with intragroup loans, and that the first bankruptcy in a group is
-  followed by lower financing, investment and profits at the other members. We show what
-  the link does to siblings' prices when one member crashes, beyond calm co-movement, and
-  that it is concentrated in stressed groups.
+  firm's *industry rivals*. We control directly for how correlated each pair already was,
+  which tests whether a correlation-based risk model already sees the risk.
+- **The crash-time price consequence of known group links.** This is set against Bertrand,
+  Mehta and Mullainathan (2002); Gopalan, Nanda and Seru (2007); Khanna and Thomas (2009);
+  and Faccio, Morck and Yavuz (2021).
+  - Bertrand et al. show that resources move between Indian group firms (tunnelling).
+  - Gopalan et al. show that intragroup loans support weak members, and that the first
+    bankruptcy in a group is followed by lower financing, investment and profits at the
+    other members.
+  - Khanna and Thomas show that shared owners raise stock synchronicity on average days in
+    Chile.
+  - Faccio et al. show that group affiliates' idiosyncratic returns respond less to their
+    own commodity shocks than similar standalone firms' returns do.
+
+  We study what happens to siblings' prices when one member crashes, beyond pre-event
+  co-movement and against industry rivals. Risk sharing inside groups (Khanna and Yafeh
+  2005, who find it in Japanese, Korean and Thai groups but little elsewhere) could push
+  either way: support for a failing member costs its siblings, but expected support can
+  also calm the market.
 - **An ownership-based diversification measure** (versus Meucci 2009, and Greenwood and
-  Thesmar 2011). Meucci's effective number of bets is built from the covariance matrix,
-  so it sees only what past prices show. Greenwood and Thesmar show that concentrated or
-  correlated *investors* make prices fragile. We build an effective number of *owner
-  groups* from holdings and a filing-checked promoter map. We measure it for the Indian
-  market and for 25 funds. As far as we found, no paper builds diversification measures
-  on promoter-group ownership.
+  Thesmar 2011). Meucci's effective number of bets is built from the covariance matrix, so
+  it sees only what past prices show. Greenwood and Thesmar show that concentrated or
+  correlated *investors* make prices fragile, and Antón and Polk (2014) that common
+  institutional owners raise correlation. We build an effective number of *owner groups*
+  from holdings and a filing-checked promoter map, with a random-grouping benchmark. We
+  measure it for the Indian market and for 25 funds. As far as we found, no paper builds
+  diversification measures on promoter-group ownership.
 
 What the paper does not add: that group firms are linked (Gopalan et al.), that they
 co-move (Kim, Kim and Lee 2015), or that crash risk spreads inside groups (Kwon et al.).
-The novelty is the combination: the event design, the correlation control, the
-pre-registration and the ownership-based measure.
+The novelty is the combination: the event design against industry rivals, the
+correlation control, the pre-registration and the ownership-based measure.
 
 ---
 
@@ -130,7 +147,7 @@ member's crash for three reasons.
 On calm days, siblings in unrelated industries need not co-move much, so a covariance
 matrix estimated in calm markets understates their joint crash risk. Prices cannot tell
 these channels apart. The question here is only whether the shared owner predicts
-siblings' losses beyond what calm correlation shows.
+siblings' losses beyond what pre-event correlation shows.
 
 ---
 
@@ -167,8 +184,8 @@ Appendix B has the details. A name check found no duplicate group names; family 
 
 **Market capitalisation.** AMFI publishes half-yearly average market caps for every listed
 company: 18 half-years from December 2017 to June 2026, each with 4,792–5,427 companies.
-The top 500 hold about 90% of total market cap. The map matches between 93% and over 99% of
-top-500 market cap, depending on the half-year.
+The top 500 hold about 90% of total market cap. The map matches 93.2% to 98.5% of top-500 market cap,
+depending on the half-year.
 
 **Fund holdings.** The official monthly portfolio files of 7 asset managers, as of 31
 October 2026: 25 equity funds across small-, mid-, large-, flexi- and multi-cap and value
@@ -197,13 +214,27 @@ companies by AMFI average market cap, December 2017 – June 2026, verified map.
 *Source: `results/group_concentration/v2/headline_by_period.csv`. G3 (multinationals by
 parent) is within 1.5 of G1 in every period.*
 
-**The market.** By market cap, India's 500 largest companies behave like 231 equal-sized
-stocks but only 156 independent owner groups. Treating the state as one owner gives 82. The
-ratio of stocks to groups has stayed between 1.43 and 1.63 since 2017, peaking in December
-2022. The largest owner groups by share of top-500 market cap are Tata (5.4%), Mukesh
-Ambani's Reliance (4.9%), Adani (3.7%), HDFC (3.7%), Bajaj (3.2%) and Bharti (3.1%). A
-cap-weighted index investor therefore holds about a third fewer independent owners than
-independent stocks.
+**The market.** By full market capitalisation, India's 500 largest companies have an
+effective number of 231 stocks but 156 owner groups. Treating the state as one owner gives
+82. Any coarser grouping lowers effective N, so a benchmark matters. We report two, which
+were not pre-registered (`results/paper2_referee/referee_checks.json`).
+- Grouping the same 500 companies by **industry** gives 36 effective industries.
+- **Randomly regrouping** them into groups of the same sizes as the real owner groups gives
+  190 on average, with 90% of draws between 180 and 198.
+
+Real owner groups (156) are more concentrated than every random regrouping: the large
+companies sit together in a few groups. Counting only Family groups, and treating
+Corporate groups such as HDFC, ICICI and L&T as standalone, gives 163.
+
+The ratio of stocks to groups has stayed between 1.43 and 1.63 since 2017, peaking in
+December 2022. The largest owner groups by share of top-500 market cap are Tata (5.4%),
+Mukesh Ambani's Reliance (4.9%), Adani (3.7%), HDFC (3.7%), Bajaj (3.2%) and Bharti
+(3.1%). A full-market-cap investor therefore holds about a third fewer owners than stocks.
+
+Two caveats apply. Index funds weight by free-float market cap, which gives promoter-heavy
+and state-owned firms less weight, so the figure for an index investor will differ; we have
+not computed it. And the December 2025 and June 2026 values use map labels that end in June
+2025, treated as still current.
 
 **Funds: an honest negative.** We expected funds to show the same gap. They mostly do not.
 
@@ -220,13 +251,21 @@ independent stocks.
 Appendix D.*
 
 The median fund holds only about 10% fewer effective owner groups than effective stocks.
-Large-cap funds have the highest ratios (1.11–1.23), and their largest group exposures are
-financial groups with several listed companies, such as HDFC and ICICI. Small-cap funds
-are close to 1 (1.00–1.10). Active managers
-already spread across owners. The owner concentration sits in the cap-weighted market,
-which index funds buy, and in specific large positions. One example is the HDFC group's
-9.8% of the Parag Parikh Flexi Cap Fund. The "your fund owns 50 stocks but far fewer
-families" story does not hold for the typical active fund, and the paper does not make it.
+- **Large-cap funds** have the highest ratios (1.11–1.23). Their largest group exposures
+  are financial groups with several listed companies, such as HDFC and ICICI. Even so,
+  they sit below the top-100 market's ratio of 1.45, so active large-cap managers hold less
+  owner concentration than the cap-weighted top 100.
+- **Small-cap funds** are close to 1 (1.00–1.10). But only 68–84% of their weight is
+  matched to the map, and across the 25 funds the ratio rises with the matched weight
+  (Spearman 0.66). Unmatched holdings count as standalone, so these ratios are biased
+  toward 1.
+- **The sample** is a convenience sample: the funds whose files we could download.
+
+With those caveats, the typical active fund does not hide much owner concentration. The
+concentration sits in the cap-weighted market and in specific large positions, such as the
+HDFC group's 9.8% of the Parag Parikh Flexi Cap Fund. The "your fund owns 50 stocks but far
+fewer families" story does not hold for the typical active fund, and the paper does not
+make it.
 
 ---
 
@@ -251,33 +290,35 @@ sequence is in Appendix A.
   - **B:** an unrelated stock (the baseline).
 - **Outcome.** Each stock's buy-and-hold return over the 21 trading days from the crash
   day, minus the market's (BHAR 0–20).
-- **Control.** Each stock's daily return correlation with the trigger over a calm year
-  ending two weeks before the crash. If siblings fall only because they always move
+- **Control.** Each stock's daily return correlation with the trigger over the pre-event
+  year (trading days −261 to −10). If siblings fall only because they always move
   together, this control absorbs it.
-- **Regression.** The outcome on S, SI and R dummies, the calm correlation, log size and
+- **Regression.** The outcome on S, SI and R dummies, the pre-event correlation, log size and
   log illiquidity, with one fixed effect per event and standard errors clustered by month.
 - **Go / no-go rule (fixed in advance).** All three must hold:
   - β_S < 0 with *t* ≤ −1.96;
-  - an event-level permutation *p* < 0.05;
+  - a permutation *p* < 0.05 (within each event, the sibling label is reshuffled among the
+    sibling and unrelated stocks; 2,000 draws);
   - β_S ≤ β_R.
 
   Fewer than 30 sibling events, or fewer than 10 groups, means "too few to test".
 
 **Two versions.** The registered run used the v1 map. Before any return was computed on
-v2, a deviation (D1) re-ran the identical code once on the verified map. **v1 remains the
-registered result. v2 is reported alongside it** and is the version we lead with, because
-its labels are checked against filings.
+v2, a deviation (D1) re-ran the identical code once on the verified map. **v1 remains the registered result. v2 is reported alongside it** and is the version we
+lead with, because its labels are checked against filings. The verification was done
+after the v1 results, and the diagnostics naming the driving groups, were known. v2 is
+therefore not blind, but its estimates are almost the same as v1's.
 
 ### 5.2 Sample
 
-Under v2, 113 events come from 49 groups. 96 have usable comparison data, and 72 have a
+Under v2, 113 events come from 49 groups. 96 have at least one sibling pair (S or SI) that passes the data filters, and 72 have a
 sibling in another industry (29 groups), which clears the "too few" bar. There are 39,345
 stock pairs: 37,703 unrelated, 1,374 rivals, 227 siblings in other industries and 41
 siblings in the same industry.
 
 **Table 3. Raw averages by class (v2, before any control)**
 
-| Class | Calm correlation with the trigger | Crash-day abnormal return | 21-day BHAR, mean / median |
+| Class | Pre-event correlation with the trigger | Crash-day abnormal return | 21-day BHAR, mean / median |
 |---|---|---|---|
 | B: unrelated | −0.01 | +0.07% | −0.07% / −0.68% |
 | R: industry rivals | 0.06 | −0.31% | −0.94% / −1.42% |
@@ -299,9 +340,9 @@ That is why the correlation control matters.
 | **β_S: sibling, other industry** | **−4.70 pp (*t* −2.66)** | −4.49 pp (*t* −2.64) |
 | β_SI: sibling, same industry | −3.63 pp (*t* −1.29) | −3.65 pp (*t* −1.29) |
 | β_R: industry rival | −0.35 pp (*t* −0.38) | −0.40 pp (*t* −0.44) |
-| Calm correlation (per unit) | −7.05 pp (*t* −2.81) | −6.93 pp (*t* −2.78) |
+| Pre-event correlation (per unit) | −7.05 pp (*t* −2.81) | −6.93 pp (*t* −2.78) |
 | β_S − β_R | −4.35 pp (*t* −2.26) | −4.09 pp (*t* −2.17) |
-| Permutation by event (2,000 draws) | 0 as negative; *p* < 0.0005 | 0 as negative; *p* < 0.0005 |
+| Within-event label permutation (2,000 draws) | 0 as negative; *p* < 0.0005 | 0 as negative; *p* < 0.0005 |
 | β_S without the correlation control | −5.80 pp (*t* −3.10) | −5.55 pp (*t* −3.12) |
 | **Go / no-go** | **GO** | **GO** |
 
@@ -310,15 +351,16 @@ That is why the correlation control matters.
 ![Figure 2. Pilot coefficients](../../results/group_dependency/figures/fig_pilot_coefficients.png)
 
 *Figure 2. Extra loss of siblings in other industries, siblings in the same industry and
-industry rivals, relative to unrelated stocks with the same calm correlation: crash day
+industry rivals, relative to unrelated stocks with the same pre-event correlation: crash day
 (left) and days 0–20 (right). Filled: verified map; hollow: original map. Bars are 95%
 intervals.*
 
 By the rule fixed in advance, the verdict is **GO** in both versions. A firm in an
 unrelated industry that shares an owner with the crashing firm loses about 4.7 points more
 over the next month than an unrelated stock that normally moves just as closely with the
-crashing firm. Industry rivals lose almost nothing extra. The placebo distribution of β_S
-from shuffled event assignments has a mean of 0.0, a standard deviation of 0.9 points and a
+crashing firm. Industry rivals lose almost nothing extra. The same-industry sibling
+coefficient rests on 41 pairs and supports no conclusion. The placebo distribution of β_S
+from reshuffled sibling labels has a mean of 0.0, a standard deviation of 0.9 points and a
 5th percentile of −1.4 points. The correlation control explains about 1 point of the
 sibling effect, not most of it.
 
@@ -336,6 +378,7 @@ sibling effect, not most of it.
 | **R6: high-confidence labels only** | **−7.00 pp (*t* −2.53), 71 events** | −3.54 pp (*t* −1.67), 78 events |
 | R7: news-checked, no artefacts | −10.33 pp (*t* −1.80), 24 events | −10.96 pp (*t* −2.01), 26 events |
 | **R8: events weighted equally** | **mean −4.1, median −2.4 pp; 56% negative (sign *p* 0.205)** | −4.4 / −2.9 pp; 57% (0.148) |
+| R3: BHAR plus the move implied by pre-event beta | −4.29 pp (*t* −2.68) | −4.10 pp (*t* −2.67) |
 | R9: correlation as ten decile dummies | −5.14 pp (*t* −2.90) | −4.92 pp (*t* −2.90) |
 
 *Source: `tests.json` (`robustness`), both versions. R4 (wider group definitions) is
@@ -343,23 +386,51 @@ mis-specified, because triggers come only from Family/Corporate groups. It is id
 the primary result and uninformative; this is disclosed, not re-run. Clustering by event or
 by date gives t of −2.64 and −2.63 (v2).*
 
-Three findings matter:
-- **The crash-day effect is robust.** Siblings in unrelated industries fall about 2.2
-  points more than their calm correlation predicts on the crash day, with *t* above 3 in
-  both versions.
-- **The labels were not what made v1 look fragile.** With high-confidence labels only, the
-  v1 effect weakened to *t* −1.67. With the verified map, the same check *strengthens* it
-  (−7.0 points, *t* −2.53).
-- **The month-long effect depends on a few episodes.** Without the seven events that a companion paper had already studied (Pathak 2026) (Adani 2023, the Anil Ambani group in 2019, Indiabulls in
-  2019), it falls to −1.9 points with *t* −1.71, below the 1.96 bar. Clustered by trigger
-  group, *t* is −1.93. Weighting events equally, only 56% of events have a negative
-  sibling residual.
+Two findings matter.
+- **Every registered check has the predicted sign, but two fall below the 1.96 bar:**
+  dropping the companion paper's episodes (*t* −1.71), and clustering by trigger group
+  (*t* −1.93).
+- **The v2 gain in R6 is a change in the sample, not proof of better labels.** v2's
+  documentation rule moved 79 sibling pairs out of the high-confidence set (mean BHAR
+  +0.1%; 45 of them Tata pairs) and 32 into it (mean −9.4%). 61% of the v2 high-confidence
+  sibling pairs come from events in 2019 or later, whose mean BHAR is −14.1%, against 0.0%
+  before 2019. The verified map leaves the main estimate where it was (−4.5 to −4.7
+  points). It does not show that better labels make the effect stronger. (Not
+  pre-registered; `results/paper2_referee/referee_checks.json`.)
+
+**Table 5b. Inference that allows for dependence within groups (not pre-registered)**
+
+| Outcome, sample | β_S | *t* (month) | *t* (trigger group) | Wild bootstrap *p* |
+|---|---|---|---|---|
+| BHAR 0–20, all 96 events | −4.70 | −2.66 | −1.93 | **0.033** |
+| Crash day, all | −2.16 | −3.39 | −1.90 | 0.085 |
+| CAR 1–20 (after the crash day), all | −3.35 | −1.61 | −1.64 | 0.050 |
+| BHAR 0–20, without the companion episodes (89 events) | −1.85 | −1.71 | −1.58 | 0.047 |
+| Crash day, without the companion episodes | −1.31 | −2.40 | −1.62 | 0.105 |
+| CAR 1–20, without the companion episodes | −0.46 | −0.39 | −0.49 | 0.638 |
+| BHAR 0–20, one event per group and year (83 events) | −4.25 | −2.26 | −1.74 | 0.024 |
+
+*Wild cluster bootstrap-t by trigger group (41 groups), restricted under β_S = 0,
+Rademacher weights, 1,999 draws, two-sided. Source:
+`results/paper2_referee/referee_checks.json`.*
+
+**What this changes.** Allowing for dependence within groups reverses the earlier ranking
+of which result is robust. The month-long effect survives the group-level bootstrap
+(*p* = 0.033); the crash-day effect does not (*p* = 0.085).
+- **Much of the crash-day effect is shared news.** In 10 events, 21 sibling pairs
+  themselves fell 12% or more on day 0. On 4 February 2019, for example, Reliance Capital
+  was the trigger, and Reliance Communications and Reliance Power fell 33% the same day.
+  That is group-level crash co-movement, not transmission from one firm to another.
+- **The response after the crash day is weaker.** Siblings lose a further 3.4 points
+  (*p* = 0.050). Without the companion paper's episodes, they lose almost nothing more
+  (−0.5 points).
 
 ### 5.5 Tails (H3; registered, no verdict)
 
 Across 195,900 stock pairs with at least 750 overlapping days, we count how often both
 stocks are in their worst 5% of days on the same day. We then subtract what a normal model
-with their calm correlation predicts.
+predicts from their calm-day correlation, measured on days when the market return is
+between its 10th and 90th percentiles.
 
 **Table 6. Excess joint-crash frequency (share of days, v2)**
 
@@ -372,8 +443,11 @@ with their calm correlation predicts.
 
 *Source: `results/group_dependency/v2/tests.json` (`tail_dependence`).*
 
-In the tails, sharing an owner adds about as much joint-crash risk as sharing an industry,
-beyond what calm correlation shows.
+The normal model under-predicts joint crashes for every pair type. Same-group pairs in
+different industries crash together on 0.553% of days, against 0.402% for unrelated pairs.
+Their excess (0.218%) is close to the same-industry excess (0.207%), and we did not test
+that difference. In the tails, sharing an owner adds about as much joint-crash risk as
+sharing an industry.
 
 ### 5.6 What drives the month-long effect (NOT pre-registered diagnostics)
 
@@ -382,8 +456,9 @@ These diagnostics were computed after the registered run and are labelled as suc
 - **No single group drives it.** Dropping any one of the 29 groups leaves β_S between −3.3
   points (without Adani, *t* −2.29) and −7.1 points (without Tata, *t* −2.95). It is
   significant in all 29 cases.
-- **A minority of events does.** The 10 worst of 72 events carry essentially all (99%) of
-  the total sibling loss, and the 5 worst carry 60%. Without the worst 5, the mean event
+- **A minority of events does.** The 10 worst of 72 events carry 99% of the *net*
+  sibling loss, and the 5 worst carry 60%. It is net because some events go the other
+  way: the five best have sibling residuals of +10% to +38%. Without the worst 5, the mean event
   residual is −1.8 points. The worst events are:
   - Adani Enterprises after the January 2023 short-seller report;
   - Future Consumer (February 2020);
@@ -398,54 +473,92 @@ These diagnostics were computed after the registered run and are labelled as suc
 - **The crash-day effect survives without the companion paper's episodes:** −1.3 points (*t* −2.40),
   with a sibling-minus-rival difference of *t* −2.01.
 
-**Reading.** On the crash day, sharing an owner predicts a loss that calm correlation and
-industry membership do not. Over the following month, the extra loss is large in groups
-under visible financial or market stress at the time and absent in strong groups such as
-Tata. "Count groups, not stocks" matters most when the group itself is fragile. The
-pre-registered portfolio test (Section 6) is designed around that reading.
+**Reading.** Sharing an owner predicts losses that pre-event correlation and industry
+membership do not. But the evidence is concentrated:
+- it comes from groups under visible financial or market stress at the time;
+- it comes partly from group firms falling on the same day on shared news.
+
+The stress label was judged after the fact. An ex-ante stress measure (promoter pledges,
+or each group's drawdown over the prior six months) is the next test, and so is a
+pre-event placebo window (days −60 to −21). Tata's siblings show nothing. "Count groups,
+not stocks" matters most when the group itself is fragile.
 
 ---
 
-## 6. The portfolio test (pre-registered design)
+## 6. The portfolio test (pre-registered; results pending)
 
-> **PLACEHOLDER: Phase 5 results are not yet in this draft.** The design below follows
-> `PREREGISTRATION_2_DRAFT.md`. The results will be filled in only from committed files in
+> **PLACEHOLDER: the Phase 5 results are not yet in this draft.** The design below is the
+> committed pre-registration (`PREREGISTRATION_2.md`, committed before any portfolio outcome
+> was computed). The results will be filled in only from the committed files in
 > `results/group_dependency/phase5/` (with `NOTE.md` §9), exactly as reported there, nulls
 > included.
 
-**Question.** Do portfolios concentrated in fewer owner groups lose more in crises than
+**Question.** Do portfolios concentrated in fewer business groups lose more in crises than
 otherwise-identical portfolios?
-- **H-P1:** they do, holding constant the number of stocks, industry weights and
-  covariance-based diversification.
-- **H-P2:** group-level effective N predicts crisis drawdowns beyond:
-  - stock-level and industry-level effective N;
-  - Meucci's effective number of bets;
+- **H-P1 (primary):** they do, holding fixed:
+  - the stock count and the industries;
+  - the group-affiliated weight;
+  - covariance-based diversification (Meucci's effective number of bets);
   - trailing volatility.
+- **H-P2:** group-level effective N predicts crisis drawdowns beyond stock-level and
+  industry-level effective N, the effective number of bets and trailing volatility.
 
-**Main design: matched twins.** At each formation date (126 trading days before a crisis
-window):
-1. Draw a random equal-weighted base portfolio of 30 or 60 top-500 stocks.
-2. Build its twin by swapping up to half of its stocks for same-industry stocks that belong
-   to groups already in the portfolio. Each swap must keep the twin's Meucci effective
-   number of bets and trailing volatility within ±5% of the base.
-3. Keep pairs whose group effective N is at least 15% lower than the base's.
+**Windows.** Six crisis windows were fixed in advance, each running from the equal-weighted
+market's high to its low:
+- the global financial crisis (January 2008 – March 2009);
+- the 2013 taper tantrum;
+- the 2018 IL&FS episode;
+- COVID (January – March 2020);
+- the January–February 2023 Adani episode;
+- the 2024–25 small-cap fall.
 
-The twins then differ in owner concentration only. The outcome is the maximum drawdown
-within six crisis windows, fixed in advance: the global financial crisis (2008–09), the
-2013 taper tantrum, the 2018 IL&FS episode, COVID (2020), the January 2023 Adani episode
-and the 2024–25 small-cap fall.
+Portfolios are formed 126 trading days before each window starts, with equal weights, and
+held. The outcome is the maximum drawdown inside the window.
+
+**Matched triplets.** Each draw has three portfolios.
+1. **B (base):** a random equal-weighted portfolio of 30 or 60 top-500 stocks.
+2. **Swaps:** base stocks are swapped one at a time, each only when both of these exist:
+   - a same-industry stock from a multi-company group that is **already in** the portfolio
+     (for the concentrated twin, C);
+   - a same-industry stock from a group in **neither** portfolio (for the dispersed twin,
+     D).
+3. **C and D** therefore replace the same base stocks with group-affiliated stocks, so
+   their group-affiliated weight is identical. They differ only in how many groups that
+   weight is spread over.
+4. **A draw is kept only if:**
+   - C and D each match B's effective number of bets within ±5%;
+   - C and D each match B's trailing volatility within ±5%;
+   - C's group effective N is at most 85% of B's.
 
 **Tests and decision rule.**
-- **Inference** uses placebo group labels, shuffled 500 times with group sizes kept.
-- **Support** requires a pooled placebo *p* < 0.05 and the right sign in at least 4 of the
-  6 windows.
-- **A pre-stated exclusion (T1-x)** drops the Adani window and the groups that drove the
-  pilot (Adani, Anil Ambani, Indiabulls, Future). If the result holds only with them, the
-  claim narrows to "owner concentration matters when a group is under stress".
+- **T1:** the mean of DD(C) − DD(D) over all kept draws (500 per window and size).
+- **Inference** uses placebo groups: group labels are reassigned across stocks at each
+  formation date (200 reruns).
+- **Support** requires a placebo *p* < 0.05 and a negative window-level T1 in at least 4
+  of the 6 windows.
+- **Registered secondaries:**
+  - **T1b:** concentrated minus base.
+  - **T1-x:** without the Adani window and the groups that drove the pilot (Adani, Anil
+    Ambani, Indiabulls, Future). If T1 holds but T1-x fails, the verdict narrows to "group
+    concentration matters when a group is under stress".
+  - **T1-hc:** high-confidence labels only.
+  - **T1 on window excess returns.**
+- **T2 (H-P2):** a regression of drawdown on the five measures with window fixed effects,
+  across 10,002 random portfolios per window. It needs a positive group coefficient, a
+  placebo *p* < 0.05 and a leave-one-window-out R² gain.
+
+**Design notes.**
+- **Same affiliated weight, different groups.** The concentrated and dispersed twins hold
+  the same group-affiliated weight, but different groups: the concentrated twin repeats
+  groups already in the base portfolio, often large groups such as Tata or the Anil Ambani
+  group. Results by group would help, but they are not registered. T1-x and the by-window
+  results are the registered guards.
+- **No power calculation** was registered.
+- **No pledge moderator.** It was dropped, because the pledge data have no figures within
+  100 days of any formation date.
+- **Frozen.** The design was frozen in commit e571bc9.
 
 **Results.** *[To be filled from `results/group_dependency/phase5/` once committed.]*
-
----
 
 ## 7. Implications
 
@@ -453,7 +566,10 @@ and the 2024–25 small-cap fall.
 independent owners than independent stocks. The pilot suggests that owner links matter
 most in a crash, and most in stressed groups. Index users and providers could report
 exposure by promoter group alongside sector exposure. Doing so needs only public
-shareholding filings.
+shareholding filings. SEBI already uses a group lens for some investors. Since August
+2023, foreign portfolio investors with more than half of their Indian equity holdings in a
+single corporate group must make additional look-through ownership disclosures, or cut the
+exposure.
 
 **For fund reporting.** Funds already report holdings by issuer and sector. Adding the top
 promoter-group exposures would show positions like a single group at nearly 10% of a fund,
@@ -471,46 +587,73 @@ group's firms fell, or about any firm's conduct.
 
 ## 8. Limitations
 
-- **The month-long effect is concentrated.** Ten of 72 events carry it. Without the companion paper's
-  episodes it is not significant (*t* −1.71), and clustered by trigger group *t* is −1.93.
-  It is a property of stressed groups, not a general law.
-- **Transmission or revelation.** When news concerns a whole group, all its firms fall
-  because the news is about all of them. The test shows that owner-level risk exists and
-  that calm correlation misses it. It does not show that one firm's crash causes the
-  others' falls.
-- **The map.** It was checked against filings for 750 priority symbols. But 230 symbols are
-  unverifiable and 858 were not checked, and most pre-2020 labels rest on group-company
-  lists rather than dated filings. Family-branch boundaries are judgement calls.
+- **Dependence and concentration.**
+  - Events cluster in a few groups, and the same siblings recur across events.
+  - With inference by trigger group, the crash-day effect is not significant, and the
+    month-long effect is (*p* = 0.033).
+  - Ten of 72 events carry the net effect.
+  - Without the companion paper's episodes, the effect is not significant at the month
+    and absent after the crash day.
+- **Shared news versus transmission.** When news concerns a whole group, all its firms fall
+  because the news is about all of them. Much of the crash-day effect is of this kind. The
+  test shows that owner-level crash risk exists and that pre-event correlation misses it.
+  It does not show that one firm's crash causes the others' falls.
+- **"Stressed groups" is a post-hoc reading.** No ex-ante stress measure was tested. The
+  pledge data are too thin before 2020.
+- **Parent–subsidiary and holding-company links are not separated.** Some sibling pairs are
+  a holding company and its operating company, or a parent and a subsidiary: for example,
+  Ujjivan Financial Services and Ujjivan Small Finance Bank, or Reliance Capital and
+  Reliance Nippon AMC. That is a cash-flow link rather than a shared promoter.
+- **The map.**
+  - It was checked against filings for 750 priority symbols, but 230 symbols are
+    unverifiable and 858 were not checked.
+  - Most pre-2020 labels rest on group-company lists, and the event-date check was done by
+    an AI subagent and reviewed by the author.
+  - v2 was built after the v1 results were known.
+  - Family-branch boundaries are judgement calls.
+  - Industries were assigned by the same labeller; Adani Enterprises is labelled
+    "Diversified & Holding Companies", which makes every Adani sibling an
+    "other-industry" sibling.
 - **R4 was mis-specified,** so nothing is learned about multinational, state or
   private-equity groups.
-- **Event quality.** In a random news-checked sample of 28 events (v2), 14 had firm- or
-  group-specific bad news, 2 were corporate-action artefacts, 7 coincided with market- or
-  industry-wide news and 5 had no news found. Artefacts and market-wide days add noise,
-  not bias toward finding an effect.
+- **Controls.** Size, liquidity and pre-event correlation are controlled. Market beta
+  enters only through the implied-move check (R3), and leverage not at all.
+- **Event quality.** In a random news-checked sample of 28 events (v2):
+  - 14 had firm- or group-specific bad news;
+  - 2 were corporate-action artefacts;
+  - 7 coincided with market- or industry-wide news;
+  - 5 had no news found.
 - **Day 0 is the crash day,** not the news day. Where the news came out earlier, earlier
-  sibling losses are not counted, which understates the effect. For example, the Adani
-  short-seller report came out on 24 January 2023, but the first −15% day was 27 January,
-  so siblings' losses on 25 January are not counted.
-- **Universe.** Only top-500 stocks are seen, so smaller siblings are missed.
-- **Funds.** One month, 25 funds, 7 managers; several large managers could not be
-  downloaded. Unmatched weight counts as standalone, which biases the ratio toward 1.
-- **Not out of sample in time.** The portfolio test reuses the same years. A clean check
-  needs another market with business groups (Korea) or post-2025 data.
+  sibling losses are not counted. For example, the Adani short-seller report came out on
+  24 January 2023, but the first −15% day was 27 January.
+- **Universe.** Only top-500 stocks are seen.
+- **Market concentration** uses full, not free-float, market cap, and labels past the map's
+  June 2025 end.
+- **Funds:** one month, a convenience sample of 25 funds from 7 managers, and partial map
+  coverage that biases ratios toward 1.
+- **Not out of sample in time.** A clean check needs another market with business groups
+  (Korea) or post-2025 data.
 
 ---
 
 ## 9. Conclusion
 
-Counting stocks overstates how many independent owners an Indian investor holds. By market
-cap, the top 500 companies behave like 231 stocks but 156 owner groups. In a pre-registered
-event study, siblings in unrelated industries fall about 2 points more than their calm
-correlation predicts on the day a group firm crashes. That is a risk that correlation-based
-tools miss and industry membership does not explain. Over the following month the extra
-loss is about 4.7 points on average, but it comes from a few episodes in stressed groups
-and is not significant without the best-known ones. Most active funds already spread across
-owners. The concentration sits in the cap-weighted market. The portfolio test, whose
-design is fixed in advance, will say whether counting groups helps predict crisis losses
-once stock count, industry mix and covariance-based diversification are held equal.
+Counting stocks overstates how many owners an Indian investor holds. By full market cap,
+the top 500 companies have an effective number of 231 stocks but 156 owner groups. That is
+fewer than random groupings of the same sizes would give, because the largest companies sit
+together in a few groups.
+
+In a pre-registered event study, siblings in unrelated industries lose about 4.7 points
+more over the month after a group firm crashes than equally correlated unrelated stocks.
+Industry rivals lose nothing extra. This is risk that pre-event correlation misses.
+
+But the evidence is concentrated. Much of it is group firms falling on the same day on
+shared news, ten events carry it, and without the best-known episodes little remains after
+the crash day. Most active funds already spread across owners. The honest claim is
+narrower than the title: owner-level crash co-movement is real and invisible to
+correlation, and it matters most in groups under stress. The registered portfolio test, and
+an ex-ante stress measure, will say whether counting groups helps predict crisis losses in
+general.
 
 ---
 
@@ -526,7 +669,7 @@ once stock count, industry mix and covariance-based diversification are held equ
 | D1 (12 Nov 2026) | Verified map v2 committed before any return was computed on it; identical re-run |
 
 Rules: `docs/group_dependency/PREREGISTRATION.md` (§1 hypotheses, §6 primary test, §8
-robustness, §10 deviation D1). Portfolio test design: `PREREGISTRATION_2_DRAFT.md`.
+robustness, §10 deviation D1). Portfolio test: `PREREGISTRATION_2.md` (committed before any portfolio outcome).
 
 ## Appendix B. Map verification (v1 → v2)
 
@@ -560,6 +703,7 @@ every number below from its file and check that it appears in the text.
 | Top 500 effN groups G2 | 70.7 / 82.3 | `results/group_concentration/v2/headline_by_period.csv` |
 | Top 500 ratio stocks/G1 | 1.43 / 1.48 | `results/group_concentration/v2/headline_by_period.csv` |
 | Top 500 ratio, min and max over periods | 1.43 / 1.63 | `results/group_concentration/v2/headline_by_period.csv` |
+| Top 500 matched market-cap share, min / max | 93.2% / 98.5% | `results/group_concentration/v2/headline_by_period.csv` |
 | Top 100 stocks / G1 / G2, Jun 2026 | 73.4 / 50.6 / 30.5 | `results/group_concentration/v2/headline_by_period.csv` |
 | Headline rounded: 231 / 156 / 82 | 231 / 156 / 82 | `results/group_concentration/v2/headline_by_period.csv` |
 | Group shares of top-500 cap: Tata / Reliance / Adani | 5.4% / 4.9% / 3.7% | `results/group_concentration/v2/top_groups_latest.csv` |
@@ -607,6 +751,24 @@ every number below from its file and check that it appears in the text.
 | Worst 10 / worst 5 share of total sibling loss | 99% / 60% | `results/group_dependency/v2/diagnostics_not_preregistered.json` |
 | Mean without worst 5 | −1.8 | `results/group_dependency/v2/diagnostics_not_preregistered.json` |
 | Crash day without companion episodes: beta_S / t | −1.3 / −2.40 | `results/group_dependency/v2/diagnostics_not_preregistered.json` |
+| Table 5b BHAR 0-20, all: beta / t month / t group / boot p | −4.70 / −2.66 / −1.93 / 0.033 | `results/paper2_referee/referee_checks.json` |
+| Table 5b crash day, all: beta / t month / t group / boot p | −2.16 / −3.39 / −1.90 / 0.085 | `results/paper2_referee/referee_checks.json` |
+| Table 5b CAR 1-20, all: beta / t month / t group / boot p | −3.35 / −1.61 / −1.64 / 0.050 | `results/paper2_referee/referee_checks.json` |
+| Table 5b BHAR, no companion episodes: beta / t month / t group / boot p | −1.85 / −1.71 / −1.58 / 0.047 | `results/paper2_referee/referee_checks.json` |
+| Table 5b crash day, no companion episodes: beta / t month / t group / boot p | −1.31 / −2.40 / −1.62 / 0.105 | `results/paper2_referee/referee_checks.json` |
+| Table 5b CAR 1-20, no companion episodes: beta / t month / t group / boot p | −0.46 / −0.39 / −0.49 / 0.638 | `results/paper2_referee/referee_checks.json` |
+| Table 5b BHAR, one event per group-year: beta / t month / t group / boot p | −4.25 / −2.26 / −1.74 / 0.024 | `results/paper2_referee/referee_checks.json` |
+| Co-crashing siblings: pairs / events | 21 sibling pairs / In 10 events | `results/paper2_referee/referee_checks.json` |
+| R6 shift: out / in / Tata out | moved 79 / 32 into / 45 of them Tata | `results/paper2_referee/referee_checks.json` |
+| R6 shift: mean BHAR out / in | +0.1% / −9.4% | `results/paper2_referee/referee_checks.json` |
+| R6 shift: share 2019+ / mean 2019+ / mean before | 61% / −14.1% / 0.0% | `results/paper2_referee/referee_checks.json` |
+| Market: industries / family-only / random null mean | 36 effective industries / 163 / 190 on average | `results/paper2_referee/referee_checks.json` |
+| Random null 90% range | between 180 and 198 | `results/paper2_referee/referee_checks.json` |
+| Funds: Spearman ratio vs matched weight | Spearman 0.66 | `results/paper2_referee/referee_checks.json` |
+| Funds: small-cap matched weight range | 68–84% | `results/paper2_referee/referee_checks.json` |
+| Funds: large-cap ratio range vs top-100 ratio | 1.11–1.23 / 1.45 | `results/paper2_referee/referee_checks.json` |
+| v2 R3 BHAR plus implied: beta / t | −4.29 pp / −2.68 | `results/group_dependency/v2/tests.json` |
+| v1 R3 BHAR plus implied: beta / t | −4.10 pp / −2.67 | `results/group_dependency/tests.json` |
 
 ## Appendix D. The 25 funds (October 2026, verified map)
 
@@ -647,18 +809,17 @@ every number below from its file and check that it appears in the text.
 - Antón, M. and C. Polk (2014). Connected stocks. *Journal of Finance* 69(3), 1099–1127.
 - Bertrand, M., P. Mehta and S. Mullainathan (2002). Ferreting out tunneling: An
   application to Indian business groups. *Quarterly Journal of Economics* 117(1), 121–148.
-- Coval, J. and E. Stafford (2007). Asset fire sales (and purchases) in equity markets.
-  *Journal of Financial Economics* 86(2), 479–512.
-- Faccio, Morck and Yavuz (2021). Business groups and the incorporation of
+
+- Faccio, M., R. Morck and M. D. Yavuz (2021). Business groups and the incorporation of
   firm-specific shocks into stock prices. *Journal of Financial Economics* 139(3), 852–871.
 - Gopalan, R., V. Nanda and A. Seru (2007). Affiliated firms and financial support:
   Evidence from Indian business groups. *Journal of Financial Economics* 86(3), 759–795.
 - Greenwood, R. and D. Thesmar (2011). Stock price fragility. *Journal of Financial
   Economics* 102(3), 471–490.
-- Khanna, T. and K. Palepu (2000). Is group affiliation profitable in emerging markets? An
-  analysis of diversified Indian business groups. *Journal of Finance* 55(2), 867–891.
 - Khanna, T. and C. Thomas (2009). Synchronicity and firm interlocks in an emerging market.
   *Journal of Financial Economics* 92(2), 182–204.
+- Khanna, T. and Y. Yafeh (2005). Business groups and risk sharing around the world.
+  *Journal of Business* 78(1), 301–340.
 - Kim, Kim and Lee (2015). Stock return commonality within business groups:
   Fundamentals or sentiment? *Pacific-Basin Finance Journal* 35A, 198–224.
 - Kwon, Jung, Sunwoo and Yim (2019). Does stock price crash of firms in the

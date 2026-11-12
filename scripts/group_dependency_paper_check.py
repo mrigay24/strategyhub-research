@@ -56,6 +56,8 @@ def rows() -> list[tuple[str, str, str]]:
         ("Top 500 ratio stocks/G1", f"{t5.loc[a, 'ratio_stocks_to_groups_G1']:.2f} / {t5.loc[b, 'ratio_stocks_to_groups_G1']:.2f}", fh),
         ("Top 500 ratio, min and max over periods",
          f"{t5['ratio_stocks_to_groups_G1'].min():.2f} / {t5['ratio_stocks_to_groups_G1'].max():.2f}", fh),
+        ("Top 500 matched market-cap share, min / max",
+         f"{t5['matched_mcap_share'].min() * 100:.1f}% / {t5['matched_mcap_share'].max() * 100:.1f}%", fh),
         ("Top 100 stocks / G1 / G2, Jun 2026",
          f"{t1.loc[b, 'effN_stocks']:.1f} / {t1.loc[b, 'effN_groups_G1']:.1f} / {t1.loc[b, 'effN_groups_G2']:.1f}", fh),
         ("Headline rounded: 231 / 156 / 82",
@@ -110,6 +112,40 @@ def rows() -> list[tuple[str, str, str]]:
         ("Crash day without companion episodes: beta_S / t",
          f"{f(dg['D2_no_paper1_ar_d0']['beta_S'] * 100, 1)} / {f(dg['D2_no_paper1_ar_d0']['t_month'])}", fdg),
     ]
+    rc = json.load(open(ROOT / "results" / "paper2_referee" / "referee_checks.json"))
+    frc = "results/paper2_referee/referee_checks.json"
+    o = rc["M1_M2_M3_outcomes_by_sample"]
+    for sname, y, lab in [("all", "bhar_0_20", "BHAR 0-20, all"), ("all", "ar_d0", "crash day, all"),
+                          ("all", "car_1_20", "CAR 1-20, all"),
+                          ("no_companion_episodes", "bhar_0_20", "BHAR, no companion episodes"),
+                          ("no_companion_episodes", "ar_d0", "crash day, no companion episodes"),
+                          ("no_companion_episodes", "car_1_20", "CAR 1-20, no companion episodes"),
+                          ("one_event_per_group_year", "bhar_0_20", "BHAR, one event per group-year")]:
+        v = o[sname][y]
+        out.append((f"Table 5b {lab}: beta / t month / t group / boot p",
+                    f"{f(v['beta_S'] * 100)} / {f(v['t_month'])} / {f(v['t_group'])} / "
+                    f"{v['wild_bootstrap']['boot_p_two_sided']:.3f}", frc))
+    cc = rc["M1_co_crashing_siblings"]
+    m4, m6, m7 = rc["M4_high_conf_shift"], rc["M6_market_benchmarks"], rc["M7_funds"]
+    out += [
+        ("Co-crashing siblings: pairs / events", f"{cc['pairs_S_or_SI_with_day0_AR_le_-12pct']} sibling pairs / In {cc['events']} events", frc),
+        ("R6 shift: out / in / Tata out", f"moved {m4['S_pairs_moved_out']} / {m4['S_pairs_moved_in']} into / {m4['moved_out_tata_pairs']} of them Tata", frc),
+        ("R6 shift: mean BHAR out / in", f"+{m4['moved_out_mean_bhar'] * 100:.1f}% / {f(m4['moved_in_mean_bhar'] * 100, 1)}%", frc),
+        ("R6 shift: share 2019+ / mean 2019+ / mean before",
+         f"{m4['v2_hc_S_share_2019_on'] * 100:.0f}% / {f(m4['v2_hc_S_mean_bhar_2019_on'] * 100, 1)}% / {abs(m4['v2_hc_S_mean_bhar_before_2019']) * 100:.1f}%", frc),
+        ("Market: industries / family-only / random null mean",
+         f"{m6['effN_industries_mapped_plus_unmatched_solo']:.0f} effective industries / {m6['effN_groups_family_only']:.0f} / {m6['random_partition_null_mean']:.0f} on average", frc),
+        ("Random null 90% range", f"between {m6['random_partition_null_p05']:.0f} and {m6['random_partition_null_p95']:.0f}", frc),
+        ("Funds: Spearman ratio vs matched weight", f"Spearman {m7['spearman_ratio_matched_weight']:.2f}", frc),
+        ("Funds: small-cap matched weight range",
+         f"{m7['small_cap_matched_weight_min'] * 100:.0f}–{m7['small_cap_matched_weight_max'] * 100:.0f}%", frc),
+        ("Funds: large-cap ratio range vs top-100 ratio",
+         f"{m7['large_cap_ratio_min']:.2f}–{m7['large_cap_ratio_max']:.2f} / {m7['top100_ratio_latest']:.2f}", frc),
+    ]
+    for lab, d in [("v2", v2), ("v1", v1)]:
+        r = d["robustness"]["R3_bhar_plus_implied"]
+        out.append((f"{lab} R3 BHAR plus implied: beta / t", f"{pp(r['coef']['S'])} / {f(r['t']['month']['S'])}",
+                    fv2 if lab == "v2" else fv1))
     return out
 
 

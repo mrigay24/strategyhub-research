@@ -1,0 +1,237 @@
+{
+  "note": "NOT pre-registered; referee-requested diagnostics on the v2 run",
+  "replication_primary": {
+    "beta_S": -0.0470162052149399,
+    "t_month": -2.6575556686007684,
+    "t_group": -1.9277752125587526,
+    "beta_R": -0.0034793279459178843,
+    "t_S_minus_R_month": -2.256018922323392,
+    "t_S_minus_R_group": -1.723471746628837,
+    "n_events": 96
+  },
+  "M1_M2_M3_outcomes_by_sample": {
+    "all": {
+      "bhar_0_20": {
+        "beta_S": -0.0470162052149399,
+        "t_month": -2.6575556686007684,
+        "t_group": -1.9277752125587526,
+        "beta_R": -0.0034793279459178843,
+        "t_S_minus_R_month": -2.256018922323392,
+        "t_S_minus_R_group": -1.723471746628837,
+        "n_events": 96,
+        "wild_bootstrap": {
+          "beta_S": -0.04701620521493993,
+          "t_group_cluster": -1.927775212558753,
+          "n_groups": 41,
+          "n_events": 96,
+          "boot_p_two_sided": 0.03301650825412707
+        }
+      },
+      "ar_d0": {
+        "beta_S": -0.021569315656408065,
+        "t_month": -3.385315429058021,
+        "t_group": -1.8975912303763864,
+        "beta_R": -0.001222015667819849,
+        "t_S_minus_R_month": -3.1213353534301778,
+        "t_S_minus_R_group": -1.702915390435637,
+        "n_events": 96,
+        "wild_bootstrap": {
+          "beta_S": -0.02156931565640807,
+          "t_group_cluster": -1.8975912303763869,
+          "n_groups": 41,
+          "n_events": 96,
+          "boot_p_two_sided": 0.08454227113556778
+        }
+      },
+      "car_1_20": {
+        "beta_S": -0.03349104601750499,
+        "t_month": -1.6124853404713817,
+        "t_group": -1.6446611919723688,
+        "beta_R": -0.0032823388940807128,
+        "t_S_minus_R_month": -1.390399126930935,
+        "t_S_minus_R_group": -1.4250607941477924,
+        "n_events": 96,
+        "wild_bootstrap": {
+          "beta_S": -0.033491046017504966,
+          "t_group_cluster": -1.6446611919723682,
+          "n_groups": 41,
+          "n_events": 96,
+          "boot_p_two_sided": 0.05002501250625312
+        }
+      }
+    },
+    "no_companion_episodes": {
+      "bhar_0_20": {
+        "beta_S": -0.01845456636944879,
+        "t_month": -1.7060963837526895,
+        "t_group": -1.579080025224243,
+        "beta_R": -0.0048238853833690075,
+        "t_S_minus_R_month": -1.101135371562869,
+        "t_S_minus_R_group": -0.9528638244800137,
+        "n_events": 89,
+        "wild_bootstrap": {
+          "beta_S": -0.01845456636944879,
+          "t_group_cluster": -1.5790800252242414,
+          "n_groups": 41,
+          "n_events": 89,
+          "boot_p_two_sided": 0.04652326163081541
+        }
+      },
+      "ar_d0": {
+        "beta_S": -0.013072353970272748,
+        "t_month": -2.3990457862512033,
+        "t_group": -1.6188947704185408,
+        "beta_R": -0.0016496834936014445,
+        "t_S_minus_R_month": -2.0148937301503347,
+        "t_S_minus_R_group": -1.3435159691827931,
+        "n_events": 89,
+        "wild_bootstrap": {
+          "beta_S": -0.013072353970272768,
+          "t_group_cluster": -1.618894770418543,
+          "n_groups": 41,
+          "n_events": 89,
+          "boot_p_two_sided": 0.10505252626313157
+        }
+      },
+      "car_1_20": {
+        "beta_S": -0.004567655722301301,
+        "t_month": -0.39292790487524987,
+        "t_group": -0.4939196774255873,
+        "beta_R": -0.004362399932358511,
+        "t_S_minus_R_month": -0.01635840905467816,
+        "t_S_minus_R_group": -0.015963096853489678,
+        "n_events": 89,
+        "wild_bootstrap": {
+          "beta_S": -0.0045676557223013475,
+          "t_group_cluster": -0.4939196774255922,
+          "n_groups": 41,
+          "n_events": 89,
+          "boot_p_two_sided": 0.6383191595797899
+        }
+      }
+    },
+    "one_event_per_group_year": {
+      "bhar_0_20": {
+        "beta_S": -0.04251788607949711,
+        "t_month": -2.2646472441291987,
+        "t_group": -1.7371097106464042,
+        "beta_R": 0.0009213406284398504,
+        "t_S_minus_R_month": -2.1287933039618796,
+        "t_S_minus_R_group": -1.7099257097514415,
+        "n_events": 83,
+        "wild_bootstrap": {
+          "beta_S": -0.0425178860794971,
+          "t_group_cluster": -1.7371097106464035,
+          "n_groups": 41,
+          "n_events": 83,
+          "boot_p_two_sided": 0.02351175587793897
+        }
+      },
+      "ar_d0": {
+        "beta_S": -0.02286649617802325,
+        "t_month": -3.1289277110569516,
+        "t_group": -1.7108862530648068,
+        "beta_R": -0.001089795682010039,
+        "t_S_minus_R_month": -2.940180442372779,
+        "t_S_minus_R_group": -1.5577474844938677,
+        "n_events": 83,
+        "wild_bootstrap": {
+          "beta_S": -0.02286649617802326,
+          "t_group_cluster": -1.7108862530648077,
+          "n_groups": 41,
+          "n_events": 83,
+          "boot_p_two_sided": 0.07453726863431716
+        }
+      },
+      "car_1_20": {
+        "beta_S": -0.028105464931211823,
+        "t_month": -1.2578773134398236,
+        "t_group": -1.3942012178706744,
+        "beta_R": -3.752352500379801e-05,
+        "t_S_minus_R_month": -1.2057083251269494,
+        "t_S_minus_R_group": -1.3394712965496811,
+        "n_events": 83,
+        "wild_bootstrap": {
+          "beta_S": -0.02810546493121195,
+          "t_group_cluster": -1.3942012178706809,
+          "n_groups": 41,
+          "n_events": 83,
+          "boot_p_two_sided": 0.14207103551775888
+        }
+      }
+    }
+  },
+  "M1_co_crashing_siblings": {
+    "pairs_S_or_SI_with_day0_AR_le_-12pct": 21,
+    "events": 10,
+    "examples": [
+      [
+        "2019-02-04",
+        "RELCAPITAL",
+        "RCOM",
+        "-0.33269374409425156"
+      ],
+      [
+        "2019-02-04",
+        "RELCAPITAL",
+        "RPOWER",
+        "-0.3320406615446173"
+      ],
+      [
+        "2019-01-25",
+        "ZEEL",
+        "DISHTV",
+        "-0.3142911678484666"
+      ],
+      [
+        "2022-04-28",
+        "TV18BRDCST",
+        "NETWORK18",
+        "-0.20066597492486082"
+      ],
+      [
+        "2024-11-21",
+        "ADANIENT",
+        "ADANIENSOL",
+        "-0.18879383152061424"
+      ],
+      [
+        "2023-01-27",
+        "ADANIENT",
+        "ADANIENSOL",
+        "-0.179585922349565"
+      ]
+    ]
+  },
+  "M4_high_conf_shift": {
+    "S_pairs_moved_in": 32,
+    "moved_in_mean_bhar": -0.09427083906529288,
+    "S_pairs_moved_out": 79,
+    "moved_out_mean_bhar": 0.0009897908183256537,
+    "moved_out_tata_pairs": 45,
+    "v2_hc_S_pairs": 128,
+    "v2_hc_S_mean_bhar_2019_on": -0.14114498957325988,
+    "v2_hc_S_mean_bhar_before_2019": 0.00015659237438599537,
+    "v2_hc_S_share_2019_on": 0.609375
+  },
+  "M6_market_benchmarks": {
+    "period": "2026-06-30",
+    "effN_stocks": 230.71105104979733,
+    "effN_groups_G1": 155.55150475042467,
+    "effN_groups_family_only": 162.80039036478203,
+    "effN_industries_mapped_plus_unmatched_solo": 35.80249205766502,
+    "random_partition_null_mean": 190.142839496801,
+    "random_partition_null_p05": 180.47189212628425,
+    "random_partition_null_p95": 197.86147680859938,
+    "share_obs_le_null": 0.0
+  },
+  "M7_funds": {
+    "spearman_ratio_matched_weight": 0.6607692307692308,
+    "spearman_p": 0.0003238429692894346,
+    "large_cap_ratio_min": 1.1082,
+    "large_cap_ratio_max": 1.2315,
+    "top100_ratio_latest": 1.4496,
+    "small_cap_matched_weight_min": 0.6769,
+    "small_cap_matched_weight_max": 0.8401
+  }
+}
