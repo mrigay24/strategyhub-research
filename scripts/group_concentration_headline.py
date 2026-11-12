@@ -95,7 +95,7 @@ for p in periods:
         g["share_of_total_mcap"] = g.w / total
         g.index.name = "group"
         g.index = [u.loc[u.key == k[5:], "company"].iloc[0] + " (standalone)" if str(k).startswith("solo:") else k for k in g.index]
-        latest_groups = g.reset_index().rename(columns={"w": "avg_mcap"})
+        latest_groups = g.rename_axis("group").reset_index().rename(columns={"w": "avg_mcap"})
         latest_groups.insert(0, "period", pd.Timestamp(p).date())
 
 R = pd.DataFrame(res)
