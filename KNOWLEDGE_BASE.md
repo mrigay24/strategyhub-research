@@ -5022,9 +5022,17 @@ N = exp(H), H = −Σ w ln w, over market-cap weights per stock and per promoter
    already spread across groups.
 2. **The cap-weighted market does** (ratio 1.48). Specific funds also carry large single
    group exposures, e.g. the HDFC group at 9.8% of Parag Parikh Flexi Cap.
-3. **The "your fund owns N stocks but far fewer families" hook does not hold.** The
-   media and paper hook is the market level plus the contagion result (§44): owner
-   groups crash together beyond correlation.
+3. **The "your fund owns N stocks but far fewer families" hook does not hold.**
+4. **Update, 12 Nov evening.** The Phase 5 portfolio test (§44, `NOTE.md` §9) found that
+   owner concentration does **not** measurably deepen crisis losses for diversified
+   portfolios (−0.3 pp, *p* 0.125). Group effective N adds nothing beyond volatility and
+   ENB. The paper 2 referee pass found that only the month-long sibling BHAR survives
+   group-level inference (wild cluster bootstrap *p* ≈ 0.03–0.04); the crash-day effect
+   does not.
+   - **Final framing:** owner risk is real for stocks, single-group positions and
+     stressed groups (group-level crash co-movement beyond correlation). It is not a
+     general portfolio-diversification rule.
+   - The paper is being retitled away from "Count Groups, Not Stocks".
 
 **Privacy rule:** outreach drafts (emails naming professors, the op-ed skeleton) live in
 `docs/outreach/`, which is git-excluded and local only. They were stripped from unpushed
