@@ -1,6 +1,10 @@
-# Count Groups, Not Stocks: Business-Group Contagion and Hidden Concentration in India
+# Shared Owners, Shared Crashes? Business Groups, Crash Co-movement and Portfolio Risk in India
 
 **Mrigay Pathak** · Indiana University Bloomington · Working paper draft, November 2026
+
+*Earlier working title: "Count Groups, Not Stocks: Business-Group Contagion and Hidden
+Concentration in India". It was changed because the registered portfolio test (Section 6)
+did not support "count groups" as a portfolio rule.*
 
 *Pre-registration: `docs/group_dependency/PREREGISTRATION.md` (pilot) and
 `PREREGISTRATION_2.md` (portfolio test). Results: `results/group_dependency/`
@@ -13,19 +17,22 @@ any firm's conduct.*
 ## Abstract
 
 Investors count diversification in stocks, and risk models measure it from past
-co-movement. In India, many listed firms share a controlling promoter group. We ask whether
-a shared owner adds crash risk that pre-event correlation does not show. In a
-pre-registered event study of 113 one-day crashes of group firms (2006–2025), with a
-promoter map checked against shareholding filings, siblings in unrelated industries lost
-4.7 percentage points more over the next month than unrelated stocks equally correlated
-with the crashing firm. That is *t* = −2.66 clustered by month, and a wild-bootstrap
-*p* = 0.03 with clustering by group. Industry rivals lost 0.4 points. The effect is
-concentrated. Much of it falls on the crash day, when several group firms often fall on
-the same news, and ten of 72 events carry almost all of it. Without the best-known
-episodes it is −1.9 points and not significant. By market capitalisation, India's top 500
-companies have an effective number of 231 stocks but 156 owner groups, fewer than random
-groupings of the same sizes give (about 190). Active funds hold only about 10% fewer owner
-groups than stocks.
+co-movement. In India, many listed firms share a controlling promoter group. We ask
+whether shared owners add crash risk that pre-event correlation misses, and whether that
+matters for portfolios.
+- **Single stocks.** In a pre-registered event study of 113 one-day crashes of group firms
+  (2006–2025), siblings in unrelated industries lost 4.7 percentage points more over the
+  next month than equally correlated unrelated stocks (wild-bootstrap *p* = 0.03,
+  clustered by group). Industry rivals lost 0.4 points. It is concentrated in a few stressed-group episodes, and much of it falls on the crash day, on shared news.
+- **The market.** India's top 500 companies have an effective number of 231 stocks but only
+  156 owner groups. Active funds hold only about 10% fewer owner groups than stocks.
+- **Portfolios.** A second pre-registered test finds no portfolio effect. Diversified
+  portfolios holding 31 rather than 43 effective owner groups, matched on industries,
+  covariance-based diversification and volatility, lost only 0.30 points more in six
+  crises (placebo *p* = 0.125). Owner-group effective N predicts nothing.
+
+Owner risk matters for single-group positions and stressed groups, not as a general
+diversification rule.
 
 ---
 
@@ -48,31 +55,40 @@ This is a practical problem for three kinds of decision-makers.
   to size a crash.
 
 The question this paper answers is narrow: **after a business-group firm's own crash, do
-its group siblings in other industries fall more than unrelated stocks with the same pre-event correlation, and more than the crashing firm's industry rivals?** And how much
-does counting owners instead of stocks change the measured diversification of the Indian
-market and of real funds?
+its group siblings in other industries fall more than unrelated stocks with the same pre-event correlation, and more than the crashing firm's industry rivals?** How much does
+counting owners instead of stocks change the measured diversification of the Indian market
+and of real funds? And does concentrating a diversified portfolio in fewer owners deepen
+its losses in a crisis?
 
-**The answer, in three parts.**
+**The answer, in four parts.**
 
-1. **Owner-level crash co-movement beyond correlation exists, but it is concentrated and
-   statistically fragile.** Siblings in unrelated industries lose 4.5–4.7 points more over
-   the month than equally correlated unrelated stocks, and industry rivals lose almost
-   nothing extra. The month-long effect passes the pre-registered test and a group-level
-   wild bootstrap (*p* = 0.03).
-   - Much of it is several group firms falling on the same day on shared news.
-   - After the crash day the extra loss is −3.4 points and borderline.
-   - Ten events carry nearly all of it.
-   - Without the episodes a companion paper had already studied, almost nothing is left
-     after the crash day.
+1. **Owner-level crash co-movement beyond correlation exists for single stocks, but it is
+   concentrated.** Siblings in unrelated industries lose 4.5–4.7 points more over the
+   month than equally correlated unrelated stocks, and industry rivals lose almost nothing
+   extra. The month-long effect passes the pre-registered test and a group-level wild
+   bootstrap (*p* = 0.03). But:
+   - much of it is several group firms falling on the same day on shared news;
+   - ten events carry nearly all of it;
+   - without the episodes a companion paper had already studied, almost nothing is left
+     after the crash day;
    - Tata's siblings show nothing.
 2. **The market is concentrated by owner.** By full market cap, the top 500 companies have
    an effective number of 231 stocks but 156 owner groups. That is fewer than random
-   groupings of the same sizes would give (about 190), because the largest companies sit
-   together in a few groups.
-3. **Active funds mostly avoid it.** Across 25 equity funds, the median fund holds only 10%
-   fewer effective owner groups than effective stocks. Even large-cap funds sit below the
-   top-100 market's ratio. The concentration sits in the cap-weighted market and in
-   specific large positions.
+   groupings of the same sizes would give (about 190).
+3. **Active funds mostly avoid it.** The median fund holds only 10% fewer effective owner
+   groups than effective stocks.
+4. **Moderate owner concentration does not measurably deepen a diversified portfolio's
+   crisis losses.** We ran a second pre-registered test with matched portfolios across six
+   Indian crises.
+   - The concentrated portfolios (31 effective owner groups against 43) had the same
+     group-affiliated weight, industries, effective number of bets and trailing
+     volatility.
+   - They lost 0.30 points more, on market falls of 9% to 76%.
+   - They lost more in 4 of 6 windows, but the difference is not distinguishable from
+     chance (placebo *p* = 0.125). The design could detect differences of about 0.5–0.75
+     points.
+   - Owner-group effective N does not help predict crisis drawdowns once volatility and the
+     effective number of bets are known.
 
 ### Contribution
 
@@ -107,13 +123,17 @@ The pieces of this argument exist separately. What this paper adds:
   correlated *investors* make prices fragile, and Antón and Polk (2014) that common
   institutional owners raise correlation. We build an effective number of *owner groups*
   from holdings and a filing-checked promoter map, with a random-grouping benchmark. We
-  measure it for the Indian market and for 25 funds. As far as we found, no paper builds
-  diversification measures on promoter-group ownership.
+  measure it for the Indian market and for 25 funds, and we test it with a pre-registered
+  portfolio experiment. As far as we found, no paper builds diversification measures on
+  promoter-group ownership. Our answer is mixed: the measure describes real concentration
+  in the market, but it does not predict the crisis drawdowns of diversified portfolios.
+  That is a negative result for "count groups" as a general risk rule.
 
 What the paper does not add: that group firms are linked (Gopalan et al.), that they
 co-move (Kim, Kim and Lee 2015), or that crash risk spreads inside groups (Kwon et al.).
-The novelty is the combination: the event design against industry rivals, the
-correlation control, the pre-registration and the ownership-based measure.
+The novelty is the combination: the event design against industry rivals, the correlation
+control, two pre-registrations, the ownership-based measure, and a test of whether it
+matters for portfolios.
 
 ---
 
@@ -480,18 +500,15 @@ membership do not. But the evidence is concentrated:
 
 The stress label was judged after the fact. An ex-ante stress measure (promoter pledges,
 or each group's drawdown over the prior six months) is the next test, and so is a
-pre-event placebo window (days −60 to −21). Tata's siblings show nothing. "Count groups,
-not stocks" matters most when the group itself is fragile.
+pre-event placebo window (days −60 to −21). Tata's siblings show nothing. Owner-level risk matters most when the group itself is
+fragile.
 
 ---
 
-## 6. The portfolio test (pre-registered; results pending)
+## 6. The portfolio test (pre-registered)
 
-> **PLACEHOLDER: the Phase 5 results are not yet in this draft.** The design below is the
-> committed pre-registration (`PREREGISTRATION_2.md`, committed before any portfolio outcome
-> was computed). The results will be filled in only from the committed files in
-> `results/group_dependency/phase5/` (with `NOTE.md` §9), exactly as reported there, nulls
-> included.
+*The design is the committed pre-registration (`PREREGISTRATION_2.md`, commit e571bc9,
+before any portfolio outcome was computed). Results: `results/group_dependency/phase5/`.*
 
 **Question.** Do portfolios concentrated in fewer business groups lose more in crises than
 otherwise-identical portfolios?
@@ -558,30 +575,98 @@ held. The outcome is the maximum drawdown inside the window.
   100 days of any formation date.
 - **Frozen.** The design was frozen in commit e571bc9.
 
-**Results.** *[To be filled from `results/group_dependency/phase5/` once committed.]*
+### Results
+
+The registered run (commit 6eea02f) kept 500 matched draws per window and portfolio size,
+6,000 in all. On average:
+- **Effective owner groups:** 31 in the concentrated twin, 43 in the dispersed twin and 41
+  in the base.
+- **Group-affiliated weight:** 0.38 in both twins.
+- **Effective number of bets:** 1.17–1.18 in all three.
+
+The outcome is the maximum drawdown inside each crisis window; negative means the
+concentrated twin lost more.
+
+**Table 7. The portfolio test: concentrated minus dispersed twin**
+
+| | Drawdown difference | Placebo *p* | Windows with the concentrated twin worse |
+|---|---|---|---|
+| **T1, primary (all windows)** | **−0.30 pp** | **0.125** | **4 of 6** |
+| T1b, concentrated minus base | −0.33 pp | 0.075 | |
+| T1-x, without the Adani window and the pilot's groups | −0.41 pp | 0.125 | 3 of 5 |
+| T1-hc, high-confidence labels only | −0.23 pp | 0.22 | 4 of 6 |
+| Same comparison on window excess return | −0.34 pp | | |
+
+**Table 8. T1 by crisis window**
+
+| Window (equal-weighted market fall) | T1 |
+|---|---|
+| Global financial crisis 2008–09 (−76%) | −0.74 pp |
+| Taper tantrum 2013 (−26%) | −0.02 pp |
+| IL&FS 2018 (−21%) | +0.01 pp |
+| COVID 2020 (−44%) | −1.13 pp |
+| Adani episode 2023 (−9%) | +0.46 pp |
+| Small-cap fall 2024–25 (−23%) | −0.39 pp |
+
+*Source: `results/group_dependency/phase5/results.json` and `twin_pairs.parquet`.*
+
+**What the numbers say.**
+- **Pair level:** the concentrated twin lost more in 55% of draws, with a median
+  difference of −0.16 points.
+- **Placebo:** the T1 values from reshuffled group labels have a mean of 0.0 points, a
+  standard deviation of 0.30 points and a 5th percentile of −0.42 points. So this design
+  could detect only differences of roughly 0.5–0.75 points.
+- **T2 (60,012 random portfolios):**
+  - the coefficient on log group effective N is −0.0006, the wrong sign and essentially
+    zero (placebo *p* = 0.35);
+  - adding it *lowers* the out-of-sample R² (0.074 against 0.076);
+  - trailing volatility is what predicts the drawdown.
+- **Verdicts by the registered rules: H-P1 not supported. H-P2 not supported.**
+
+The direction is the predicted one in the two biggest crashes. In 2008–09 and COVID, the
+concentrated twin lost 0.7–1.1 points more. But that is under a point on market falls of
+44–76%, and it is not distinguishable from chance by the rule fixed in advance. Removing
+the stressed groups that drove the pilot (T1-x) does not change the picture, and neither
+does keeping only the best-documented labels (T1-hc).
+
+**Notes on the run.**
+- In T1-hc, the taper window at 60 stocks found only 6 acceptable draws within the
+  retry cap, as the rules allow.
+- The run took about 2.5 hours, against 26 seconds timed for construction alone. No rule
+  changed.
+- The promoter-pledge moderator was skipped (no pledge figures near any formation date).
+- The planned illustration with one fund's monthly holdings is deferred, because its
+  public monthly files were not fetched.
 
 ## 7. Implications
 
-**For passive and index investors.** A cap-weighted Indian index has about a third fewer
-independent owners than independent stocks. The pilot suggests that owner links matter
-most in a crash, and most in stressed groups. Index users and providers could report
-exposure by promoter group alongside sector exposure. Doing so needs only public
-shareholding filings. SEBI already uses a group lens for some investors. Since August
-2023, foreign portfolio investors with more than half of their Indian equity holdings in a
-single corporate group must make additional look-through ownership disclosures, or cut the
-exposure.
+The combined evidence points to a narrow rule: **owner risk matters for concentrated
+single-group positions and for groups under stress, not as a general diversification
+rule.**
 
-**For fund reporting.** Funds already report holdings by issuer and sector. Adding the top
-promoter-group exposures would show positions like a single group at nearly 10% of a fund,
-which issuer limits do not reveal. For most active funds the summary number would be
-unremarkable (a ratio near 1.1), and that is itself useful information.
+**For investors and fund managers.** Siblings of a crashing group firm lose more than
+their past correlation suggests, mostly when the group is under stress. A large position
+in one group is therefore riskier than its covariance estimate shows, especially around
+group-specific news. Examples are a single group at nearly 10% of a fund, or several
+companies of one stressed group. But a diversified portfolio that holds somewhat fewer
+owners is not measurably riskier in a crisis. Counting effective owner groups is a useful
+description, not a better risk measure than volatility and covariance-based
+diversification.
 
-**For regulators and risk managers.** Covariance-based measures, including Meucci's
-effective number of bets, see only what calm prices show. The evidence here is that a
-shared owner predicts crash-day losses those measures miss. A group-level exposure
-measure, or a stress scenario that shocks all members of a group together, is a simple
-complement. This paper uses prices and public filings only. It makes no claim about why any
-group's firms fell, or about any firm's conduct.
+**For index users and fund reporting.** A cap-weighted Indian index has about a third
+fewer owners than stocks, and six groups each hold between 3.1% and 5.4% of top-500 market cap. Reporting
+the largest promoter-group exposures alongside sector exposure needs only public filings,
+and it flags the single-group positions where the risk sits. For most active funds the
+summary ratio is unremarkable (about 1.1), which is itself useful information.
+
+**For regulators and risk managers.** SEBI already uses a group lens. Since August 2023,
+foreign portfolio investors with more than half of their Indian equity holdings in a single
+corporate group must make additional look-through ownership disclosures, or cut the
+exposure. Our evidence is consistent with a single-group focus of this kind. A stress
+scenario that shocks all members of a group together is a sensible complement for large
+group exposures. Our evidence does not support replacing covariance-based measures with
+owner counts. This paper uses prices and public filings only. It makes no claim about why
+any group's firms fell, or about any firm's conduct.
 
 ---
 
@@ -631,29 +716,38 @@ group's firms fell, or about any firm's conduct.
   June 2025 end.
 - **Funds:** one month, a convenience sample of 25 funds from 7 managers, and partial map
   coverage that biases ratios toward 1.
-- **Not out of sample in time.** A clean check needs another market with business groups
-  (Korea) or post-2025 data.
+- **The portfolio test.**
+  - It could detect differences of only about 0.5–0.75 points.
+  - The concentrated twins were only moderately concentrated (31 against 43 effective
+    groups), and far more concentrated portfolios may behave differently.
+  - The one owner-specific crisis window (Adani, 2023) was a mild market fall of 9%.
+  - Six windows share their shocks within each window.
+- **Not out of sample in time.** Both tests use 2006–2025. A clean check needs another
+  market with business groups (Korea) or post-2025 data.
 
 ---
 
 ## 9. Conclusion
 
 Counting stocks overstates how many owners an Indian investor holds. By full market cap,
-the top 500 companies have an effective number of 231 stocks but 156 owner groups. That is
-fewer than random groupings of the same sizes would give, because the largest companies sit
-together in a few groups.
+the top 500 companies have an effective number of 231 stocks but 156 owner groups, because
+the largest companies sit together in a few groups.
 
-In a pre-registered event study, siblings in unrelated industries lose about 4.7 points
-more over the month after a group firm crashes than equally correlated unrelated stocks.
-Industry rivals lose nothing extra. This is risk that pre-event correlation misses.
+For single stocks, a shared owner is a real channel that pre-event correlation misses.
+Siblings in unrelated industries lose about 4.7 points more over the month after a group
+firm crashes, while industry rivals lose nothing extra. But the evidence is concentrated:
+much of it is group firms falling on the same day on shared news, ten events carry it, and
+without the best-known episodes little remains after the crash day.
 
-But the evidence is concentrated. Much of it is group firms falling on the same day on
-shared news, ten events carry it, and without the best-known episodes little remains after
-the crash day. Most active funds already spread across owners. The honest claim is
-narrower than the title: owner-level crash co-movement is real and invisible to
-correlation, and it matters most in groups under stress. The registered portfolio test, and
-an ex-ante stress measure, will say whether counting groups helps predict crisis losses in
-general.
+For portfolios, the registered test found no rule. Matched portfolios with about a quarter
+fewer effective owners lost only 0.3 points more in six crises, which is not
+distinguishable from chance. Owner-group effective N added nothing beyond volatility and
+covariance-based diversification.
+
+The honest summary is that shared owners mean shared crashes for single positions in
+stressed groups, while diversified portfolios do not need to count groups to measure their
+crisis risk. A clean out-of-sample test needs another market with business groups (Korea)
+or data after 2025.
 
 ---
 
@@ -667,6 +761,8 @@ general.
 | be33f0c | Event list and news labels, before any comparison stock's return (Part 2) |
 | 8b08f04 | The single registered run, plus diagnostics labelled as not pre-registered |
 | D1 (12 Nov 2026) | Verified map v2 committed before any return was computed on it; identical re-run |
+| e571bc9 | Portfolio-test pre-registration and code, before any portfolio outcome |
+| 6eea02f | The single registered portfolio-test run |
 
 Rules: `docs/group_dependency/PREREGISTRATION.md` (§1 hypotheses, §6 primary test, §8
 robustness, §10 deviation D1). Portfolio test: `PREREGISTRATION_2.md` (committed before any portfolio outcome).
@@ -769,6 +865,22 @@ every number below from its file and check that it appears in the text.
 | Funds: large-cap ratio range vs top-100 ratio | 1.11–1.23 / 1.45 | `results/paper2_referee/referee_checks.json` |
 | v2 R3 BHAR plus implied: beta / t | −4.29 pp / −2.68 | `results/group_dependency/v2/tests.json` |
 | v1 R3 BHAR plus implied: beta / t | −4.10 pp / −2.67 | `results/group_dependency/tests.json` |
+| Phase 5 draws | 6,000 in all | `results/group_dependency/phase5/results.json` |
+| T1 / placebo p / windows | −0.30 pp / 0.125 / 4 of 6 | `results/group_dependency/phase5/results.json` |
+| T1b / p | −0.33 pp / 0.075 | `results/group_dependency/phase5/results.json` |
+| T1-x / p / windows | −0.41 pp / 0.125 / 3 of 5 | `results/group_dependency/phase5/results.json` |
+| T1-hc / p | −0.23 pp / 0.22 | `results/group_dependency/phase5/results.json` |
+| T1 on excess return | −0.34 pp | `results/group_dependency/phase5/results.json` |
+| T1 by window | −0.74 pp / −0.02 pp / +0.01 pp / −1.13 pp / +0.46 pp / −0.39 pp | `results/group_dependency/phase5/results.json` |
+| Window market falls | −76% / −26% / −21% / −44% / −9% / −23% | `results/group_dependency/phase5/results.json` |
+| Placebo T1 sd / 5th pct | 0.30 points / −0.42 points | `results/group_dependency/phase5/results.json` |
+| T2 portfolios / group coef / placebo p | 60,012 / −0.0006 / 0.35 | `results/group_dependency/phase5/results.json` |
+| T2 OOS R2 with / without | 0.074 / 0.076 | `results/group_dependency/phase5/results.json` |
+| Verdicts | H-P1 not supported / H-P2 not supported | `results/group_dependency/phase5/results.json` |
+| Twins: effective groups C / D / B | 31 effective owner groups / 43 / 41 | `results/group_dependency/phase5/twin_pairs.parquet` |
+| Twins: affiliated weight / ENB | 0.38 / 1.17–1.18 | `results/group_dependency/phase5/twin_pairs.parquet` |
+| Twins: share C worse / median | 55% of draws / −0.16 points | `results/group_dependency/phase5/twin_pairs.parquet` |
+| Run time | about 2.5 hours | `results/group_dependency/phase5/results.json` |
 
 ## Appendix D. The 25 funds (October 2026, verified map)
 

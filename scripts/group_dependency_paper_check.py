@@ -146,6 +146,34 @@ def rows() -> list[tuple[str, str, str]]:
         r = d["robustness"]["R3_bhar_plus_implied"]
         out.append((f"{lab} R3 BHAR plus implied: beta / t", f"{pp(r['coef']['S'])} / {f(r['t']['month']['S'])}",
                     fv2 if lab == "v2" else fv1))
+    # Phase 5 (portfolio test)
+    ph = json.load(open(GD / "phase5" / "results.json"))
+    fph = "results/group_dependency/phase5/results.json"
+    tw = pd.read_parquet(GD / "phase5" / "twin_pairs.parquet")
+    tw = tw[tw["variant"] == "main"]
+    dd = tw["dd_C"] - tw["dd_D"]
+    m, x, hc, t2 = ph["T1_main"], ph["T1_x"], ph["T1_hc"], ph["T2"]
+    out += [
+        ("Phase 5 draws", f"{m['n_pairs']:,} in all", fph),
+        ("T1 / placebo p / windows", f"{pp(m['T1'])} / {m['placebo']['p_T1']:.3f} / {m['windows_negative']} of {m['n_windows']}", fph),
+        ("T1b / p", f"{pp(m['T1b'])} / {m['placebo']['p_T1b']:.3f}", fph),
+        ("T1-x / p / windows", f"{pp(x['T1'])} / {x['placebo']['p_T1']:.3f} / {x['windows_negative']} of {x['n_windows']}", fph),
+        ("T1-hc / p", f"{pp(hc['T1'])} / {hc['placebo']['p_T1']:.2f}", fph),
+        ("T1 on excess return", pp(m["T1_ret"]), fph),
+        ("T1 by window", " / ".join(f(v * 100, 2, True) + " pp" if v > 0 else pp(v) for v in m["T1_by_window"].values()), fph),
+        ("Window market falls", " / ".join(f"{f(w['market_window_ret'] * 100, 0)}%" for w in ph["windows"]), fph),
+        ("Placebo T1 sd / 5th pct", f"{m['placebo']['placebo_T1_sd'] * 100:.2f} points / {f(m['placebo']['placebo_T1_q05'] * 100)} points", fph),
+        ("T2 portfolios / group coef / placebo p", f"{t2['n_portfolios']:,} / {f(t2['coef']['effn_group'], 4)} / {t2['group_coef_placebo_p']:.2f}", fph),
+        ("T2 OOS R2 with / without", f"{t2['oos_r2_with_group']:.3f} / {t2['oos_r2_without_group']:.3f}", fph),
+        ("Verdicts", f"H-P1 {ph['verdict']['H_P1'].lower()} / H-P2 {ph['verdict']['H_P2'].lower()}", fph),
+        ("Twins: effective groups C / D / B", f"{tw['gN_C'].mean():.0f} effective owner groups / {tw['gN_D'].mean():.0f} / {tw['gN_B'].mean():.0f}",
+         "results/group_dependency/phase5/twin_pairs.parquet"),
+        ("Twins: affiliated weight / ENB", f"{tw['aff_C'].mean():.2f} / {min(tw['enb_B'].mean(), tw['enb_C'].mean(), tw['enb_D'].mean()):.2f}–{max(tw['enb_B'].mean(), tw['enb_C'].mean(), tw['enb_D'].mean()):.2f}",
+         "results/group_dependency/phase5/twin_pairs.parquet"),
+        ("Twins: share C worse / median", f"{(dd < 0).mean() * 100:.0f}% of draws / {f(dd.median() * 100)} points",
+         "results/group_dependency/phase5/twin_pairs.parquet"),
+        ("Run time", f"about {ph['runtime_sec'] / 3600:.1f} hours", fph),
+    ]
     return out
 
 
