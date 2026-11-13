@@ -20,11 +20,15 @@ Both papers come from one question: *what makes a company important to the compa
   - [referee report and responses](docs/entropy_research/REFEREE_REPORT.md).
 
 ### 2. *Count Groups, Not Stocks: Business-Group Contagion and Hidden Concentration in India*
-- **Finding:** when an Indian business-group firm crashes, its sister companies in *unrelated* industries lose about 4.7 points more over the next month than equally correlated stocks (t = −2.66). Industry rivals lose almost nothing extra.
-  - The crash-day effect is robust.
-  - The month-long effect is concentrated in financially stressed groups.
+- **Finding:** when an Indian business-group firm crashes, its sister companies in *unrelated* industries lose about 4.7 points more over the next month than equally correlated stocks (t = −2.66; bootstrap by group, p = 0.03–0.04). Industry rivals lose almost nothing extra.
+  - The effect is concentrated in a few financially stressed groups and is weak without them.
+  - The crash-day part does not survive group-level inference.
 - **Concentration by owner:** India's top 500 companies behave like 231 stocks but only 156 owner groups. Active funds mostly avoid this concentration (median ratio 1.10).
-- **Portfolio test:** pre-registered; results in [NOTE §9](docs/group_dependency/NOTE.md).
+- **Portfolio test (pre-registered): not supported.** For diversified 30–60-stock portfolios:
+  - concentrating in fewer owner groups did not measurably deepen crisis losses (−0.3 pp, placebo p = 0.125);
+  - owner-based effective N added nothing beyond volatility and covariance-based measures.
+  - Details: [NOTE §9](docs/group_dependency/NOTE.md).
+  - So "count groups, not stocks" is *not* established as a portfolio rule. Owner risk matters for single-group positions and stressed groups.
 - **Files:**
   - [draft](docs/group_dependency/PAPER2_DRAFT.md);
   - [one-page summary](docs/group_dependency/ONE_PAGER.md);
