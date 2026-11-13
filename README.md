@@ -19,7 +19,7 @@ Both papers come from one question: *what makes a company important to the compa
   - [pre-registration](docs/entropy_research/PREREGISTRATION.md);
   - [referee report and responses](docs/entropy_research/REFEREE_REPORT.md).
 
-### 2. *Count Groups, Not Stocks: Business-Group Contagion and Hidden Concentration in India*
+### 2. *Shared Owners, Shared Crashes? Business Groups, Crash Co-movement and Portfolio Risk in India*
 - **Finding:** when an Indian business-group firm crashes, its sister companies in *unrelated* industries lose about 4.7 points more over the next month than equally correlated stocks (t = −2.66; bootstrap by group, p = 0.03–0.04). Industry rivals lose almost nothing extra.
   - The effect is concentrated in a few financially stressed groups and is weak without them.
   - The crash-day part does not survive group-level inference.

@@ -2,8 +2,8 @@
 
 *Mrigay Pathak, Indiana University. Research summary, 12 Nov 2026.*
 - Two pre-registered tests: the rules were committed before any result was computed.
-- Working title of the draft: *Count Groups, Not Stocks*, being revised to match the
-  results below.
+- Draft: `PAPER2_DRAFT.md` (retitled from *Count Groups, Not Stocks* to match the
+  results below).
 
 **The question.** Indian investors think in stocks. But many listed companies share a
 promoter group: the same family, holding company or parent. Does sharing an owner create
