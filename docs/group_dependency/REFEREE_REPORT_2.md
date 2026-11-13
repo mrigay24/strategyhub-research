@@ -224,3 +224,105 @@ T1-x is a good guard.
 changes: the robust result is the month-long BHAR under group-level inference
 (*p* = 0.033), concentrated in a few stressed-group episodes. The crash-day effect is
 largely shared news and not significant once dependence within groups is allowed for.
+
+---
+
+# Second look after the portfolio test (12 November 2026)
+
+*After the Phase 5 results were added, the paper was retitled. It was "Count Groups, Not
+Stocks: Business-Group Contagion and Hidden Concentration in India"; it is now "Shared
+Owners, Shared Crashes? Business Groups, Crash Co-movement and Portfolio Risk in India".
+The abstract, introduction, implications, limitations and conclusion were reframed around
+the combined result. A fresh AI subagent (Claude Opus) then read only the revised draft and
+the result files, with one question: does any sentence claim more than the results
+support? Its report is reproduced unedited below, followed by the response table.*
+
+
+Scope: main text through Section 9, checked against the result files only. 6 MAJOR, 6 MINOR.
+
+1. **MAJOR. Abstract: "A second pre-registered test finds no portfolio effect"; Section 9: "diversified portfolios do not need to count groups to measure their crisis risk."**
+   These sentences treat a low-powered null as proof that there is no effect. In `phase5/results.json`, T1 is −0.30 pp in the predicted direction. The concentrated twin was worse in 4 of 6 windows, and T1b has p = 0.075. The placebo SD is 0.30 pp and its 5th percentile is −0.42, so the paper itself says the test could only detect about 0.5–0.75 pp. In COVID, the concentrated twin lost more in about 75% of draws (`twin_pairs.parquet`, −1.13 pp). The concentration contrast was also only moderate (31 vs 43).
+   *Replace (abstract):* "A second pre-registered test finds no detectable portfolio effect: …lost only 0.30 points more in six crises (placebo *p* = 0.125; the design could detect differences of about 0.5–0.75 points)."
+   *Replace (Section 9, last paragraph):* "The honest summary is that shared owners went with shared crashes for single stocks in a few, mostly stressed, groups. Moderately fewer owner groups (31 against 43) did not detectably deepen diversified portfolios' crisis losses, but the test cannot rule out differences below about 0.5–0.75 points or effects at higher concentration."
+
+2. **MAJOR. Abstract: "Owner risk matters for single-group positions and stressed groups"; Section 7: "owner risk matters for concentrated single-group positions and for groups under stress".**
+   Neither part was tested.
+   - No single-group position was tested. The portfolio test is null, and in H3 (`tests.json` `tail_dependence`) the same-group tail excess (0.218%) is about the same as the same-industry excess (0.207%).
+   - "Stress" was labelled after the fact (Section 5.6 admits this). On any obvious reading, at least 2 of the 10 worst events were not stressed-group episodes (`diagnostics_not_preregistered.json` D3): Reliance Petroleum in November 2007 (Mukesh Ambani group) and Ujjivan in 2021 (a holding-company link). A third, IndusInd on 18 March 2020, was a market-wide crash.
+
+   *Replace (abstract):* "The evidence places owner-level crash risk in a few episodes, mostly in groups we judge, after the fact, to have been under stress. It suggests, but does not test, that large single-group positions carry risk a covariance model misses. It does not support counting owner groups as a general diversification rule."
+   *Replace (Section 7, headline):* "owner-level crash risk shows up in a few, mostly stressed, groups' episodes and plausibly matters for large single-group positions (not tested here); it is not supported as a general diversification rule."
+
+3. **MAJOR. Section 5.4: "Every registered check has the predicted sign, but two fall below the 1.96 bar".**
+   More checks fall short than the text says.
+   - In v2, R7 also falls short: β_S = −10.33, *t* −1.80 (`v2/tests.json` `R7_news_checked_clean`, t.month = −1.803). That makes three: R2, R5 and R7.
+   - In v1, R6 falls short (*t* −1.67, Table 5).
+   - R8's sign test is not significant (*p* = 0.205).
+
+   *Replace:* "Every registered check has the predicted sign, but in v2 three fall below the 1.96 bar: dropping the companion paper's episodes (*t* −1.71), news-checked events only (*t* −1.80, 24 events) and clustering by trigger group (*t* −1.93). In v1, high-confidence labels only also falls short (*t* −1.67). In the equal-weighted event test, only 56% of events are negative (sign *p* = 0.205)."
+
+4. **MAJOR. Section 5.6: "The crash-day effect survives without the companion paper's episodes: −1.3 points (*t* −2.40)".**
+   The paper's own preferred inference contradicts this. In Table 5b (`referee_checks.json` → `no_companion_episodes.ar_d0`), the trigger-group *t* is −1.62 and the wild-bootstrap *p* is 0.105. Section 5.3 itself says the group-level inference is the one that decides robustness.
+   *Replace:* "Without the companion paper's episodes, the crash-day coefficient is −1.3 points (*t* −2.40 clustered by month; sibling-minus-rival *t* −2.01). It is not significant with inference by trigger group (*t* −1.62; wild-bootstrap *p* = 0.105, Table 5b)."
+
+5. **MAJOR. Section 4: "so active large-cap managers hold less owner concentration than the cap-weighted top 100"; Section 1, point 3: "Active funds mostly avoid it."**
+   The ratio measures how far the stock count overstates the owner count. It does not measure owner concentration. Large-cap funds hold 25.2–36.2 effective G1 groups, against 50.6 for the top 100 (`fund_level_latest_v2map.csv`; `headline_by_period.csv`, June 2026). In absolute terms they are therefore more owner-concentrated. The ratio is also biased toward 1, because it rises with matched weight (Spearman 0.66, `referee_checks.json` M7).
+   *Replace (Section 4):* "Their ratios are below the cap-weighted top 100's 1.45, so their stock count overstates their owner count less than the index's does. In absolute terms, though, they hold fewer effective owner groups (25–36) than the cap-weighted top 100 (50.6)."
+   *Replace (Section 1):* "**In the 25 active funds we could check, the gap is small.**"
+
+6. **MAJOR. Section 7: "A cap-weighted Indian index has about a third fewer owners than stocks"; Section 9: "Counting stocks overstates how many owners an Indian investor holds."**
+   Both sentences stretch a figure beyond what was measured. The 231 vs 156 figure uses full market cap. Section 4 says free-float (index) weights "will differ; we have not computed it." The funds' median gap is only 1.10.
+   *Replace (Section 7):* "Weighting India's top 500 by full market cap gives about a third fewer effective owners than stocks (156 against 231). We did not compute the free-float weights that Indian indices use, which give promoter-heavy and state-owned firms less weight."
+   *Replace (Section 9):* "For a full-market-cap holder of India's top 500, counting stocks overstates the number of effective owners by about half (231 against 156); in the 25 active funds we checked, the overstatement is about 10%."
+
+7. **MINOR. Section 8: "Without the companion paper's episodes, the effect is not significant at the month".**
+   This understates the result by switching inference: the main result is backed by the bootstrap, but this result is judged by the month *t*. Table 5b gives wild-bootstrap *p* = 0.047 (`referee_checks.json` → `no_companion_episodes.bhar_0_20`).
+   *Replace:* "Without the companion paper's episodes, the month-long effect shrinks to −1.85 points. It is below the registered bar with month clustering (*t* −1.71), but its wild-bootstrap *p* by trigger group is 0.047. Nothing remains after the crash day (−0.46 points, *p* = 0.64)."
+
+8. **MINOR. Section 5.3: "That is group-level crash co-movement, not transmission from one firm to another"; Abstract: "much of it falls on the crash day, on shared news".**
+   Same-day falls cannot separate shared news from fast transmission, such as pledge-driven selling across the group. Section 2 lists that channel and says "Prices cannot tell these channels apart." The count also differs from the text:
+   - the 21 pairs are S *or* SI pairs with day-0 *abnormal* return ≤ −12%, not raw falls (`referee_checks.json` M1);
+   - their share of β_S was never computed.
+
+   *Replace (Section 5.3):* "In 10 events, 21 sibling pairs (either industry class) had day-0 abnormal returns of −12% or worse … Prices cannot tell whether such same-day falls reflect shared news or fast transmission (for example, forced sales of pledged shares across the group); either way, it is group-level crash co-movement."
+   *Replace (abstract):* "much of it falls on the crash day, when several group firms fall together."
+
+9. **MINOR. Section 5.6: "It is significant in all 29 cases."**
+   This holds only with month clustering (`diagnostics_not_preregistered.json` D1, `t_month`). With trigger-group clustering, the full-sample *t* is already −1.93.
+   *Replace:* "Its month-clustered *t* is −1.96 or below in all 29 cases (these runs were not re-tested with clustering by trigger group)."
+
+10. **MINOR. Section 4: "Large-cap funds have the highest ratios (1.11–1.23)".**
+    The highest ratio belongs to DSP Flexi Cap (1.2367, rounded 1.24), and Tata Flexi Cap (1.21) is above three of the five large-cap funds (`fund_level_latest_v2map.csv`).
+    *Replace:* "Large-cap funds have among the highest ratios (1.11–1.23; the single highest, 1.24, is DSP Flexi Cap)."
+
+11. **MINOR. Section 6: "But that is under a point on market falls of 44–76%."**
+    COVID's T1 is −1.13 pp (`phase5/results.json`, `T1_by_window.COVID` = −0.0113).
+    *Replace:* "But that is about a point or less (0.74 and 1.13) on market falls of 44–76%."
+
+12. **MINOR. Abstract: "Industry rivals lost 0.4 points" and "(wild-bootstrap *p* = 0.03, clustered by group)"; Section 9: "industry rivals lose nothing extra".**
+    - The abstract leads with v2 (4.7) but quotes v1's rival coefficient. The v2 value is β_R = −0.35, *t* −0.38 (`v2/tests.json`).
+    - The bootstrap was not pre-registered. The registered group-clustered check (R5) gives *t* −1.93.
+    - "Nothing extra" overstates a −0.35 point estimate.
+
+    *Replace (abstract):* "Industry rivals lost 0.35 points (*t* −0.38)" and "(*t* −2.66 clustered by month, as registered; wild-bootstrap *p* = 0.03 by trigger group, not pre-registered)."
+    *Replace (Section 9):* "while industry rivals lose no significant extra amount (−0.35 points, *t* −0.38)."
+
+## Response to the second look
+
+| # | Finding | What changed |
+|---|---|---|
+| 1 (MAJOR) | A low-powered null was stated as "no portfolio effect" | Abstract and conclusion now say "no detectable effect" and give the detectable range (about 0.5–0.75 points). The conclusion states that the test cannot rule out smaller effects or effects at higher concentration. |
+| 2 (MAJOR) | "Owner risk matters for single-group positions and stressed groups" was not tested | The abstract now ends "not supported as a general diversification rule". §7 says the risk shows up in a few episodes, mostly in groups judged after the fact to be stressed, and that large single-group positions are a plausible but untested case. The investor paragraph says "suggests, but our tests do not show". |
+| 3 (MAJOR) | More registered checks fall short than stated | §5.4 now lists the three v2 checks below 1.96 (R2, R7, R5), plus v1's R6, and R8's sign test (*p* 0.205). |
+| 4 (MAJOR) | Crash day without the companion episodes contradicts the group-level inference | §5.6 now gives *t* −2.40 by month and −1.62 by trigger group (bootstrap *p* 0.105). |
+| 5 (MAJOR) | The fund ratio was read as absolute concentration | §1 point 3 reads "the gap is small". §4 says large-cap funds hold fewer effective owner groups in absolute terms (25–36) than the top 100 (50.6), while their ratio is lower. |
+| 6 (MAJOR) | The full-market-cap figure was stated as if for an index | §7 and §9 now say "by full market cap" and that free-float index weights were not computed. §9 gives both gaps: about half for the top 500, about 10% for funds. |
+| 7 | The R2 null was judged by a different inference | §8 gives month *t* −1.71, bootstrap *p* 0.047, and −0.46 points after the crash day. |
+| 8 | "Shared news, not transmission" is not identified | Replaced with "group firms falling together"; abnormal returns, not raw falls; prices cannot separate shared news from fast transmission. |
+| 9 | "Significant in all 29 cases" | Now "month-clustered *t* ≤ −1.96 in all 29; not re-tested by trigger group". |
+| 10 | Large-cap "highest ratios" | Now "among the highest", noting DSP Flexi Cap at 1.24. |
+| 11 | "Under a point" vs COVID −1.13 | Now "about a point or less (0.74 and 1.13 points)". |
+| 12 | v1 rival coefficient quoted with a v2 headline; bootstrap status | The abstract gives 0.35 points (v2), *t* −2.66 as registered, and the bootstrap marked "not pre-registered"; §9 gives "no significant extra amount (−0.35 points, *t* −0.38)". |
+
+**Traceability after these changes:** `scripts/group_dependency_paper_check.py` passes
+87/87.
