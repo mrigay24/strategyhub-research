@@ -120,6 +120,18 @@ bser = 0.5 * a + math.sqrt(0.75) * g.normal(0.0, 0.05, 240) - 0.01
 d, se, p = L.lw_sharpe_test(a, bser, M=499)
 check("LW bootstrap power (SR gap 0.4)", p < 0.01, f"d={d:.3f}, p={p:.3f}")
 
+# 13. SPA: ordering p_lower <= p_consistent <= p_upper; a clearly superior model is found;
+#     identical models are not
+g = np.random.default_rng(11)
+noise = g.normal(0, 0.04, (240, 5))
+d_sup = noise.copy()
+d_sup[:, 0] += 0.012  # model 0 beats the benchmark by about t = 4.6
+r_sup = L.spa_test(d_sup, B=999)
+check("SPA finds a superior model", r_sup["p_consistent"] < 0.01, f"{r_sup}")
+r_null = L.spa_test(noise - noise.mean(0) - 0.002, B=999)
+check("SPA null (all models slightly worse)", r_null["p_consistent"] > 0.2, f"{r_null}")
+check("SPA p ordering", r_null["p_lower"] <= r_null["p_consistent"] + 1e-12 <= r_null["p_upper"] + 2e-12)
+
 print()
 print("ALL PASS" if not FAILS else f"{len(FAILS)} FAILED: {FAILS}")
 sys.exit(1 if FAILS else 0)

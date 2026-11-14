@@ -5,6 +5,40 @@
 number below is checked against `results/entropy_portfolio/` by
 `scripts/ep_traceability.py`.*
 
+> **Referee corrections pending (13 Nov 2026, late).** A fresh-referee report
+> (`REFEREE_REPORT.md`, recommendation: major revision) found errors. The body below still
+> shows the original values. The corrected values are in
+> `results/entropy_portfolio/{real,holdout}/postfix.json` (`scripts/ep_postfix.py`, from the
+> saved returns, with no re-run):
+> 1. **SPA.** The bootstrap was mis-centred. Corrected consistent p-values: India
+>    **0.117** (was 0.63), US **0.897** (was 0.81); holdout 1.00 for both. Still not
+>    significant.
+> 2. **Holdout.**
+>    - R1 beat R2 in **4 of 6** cases (one tie), not 5 of 6.
+>    - In the US, R1-none did *not* beat the information-free optimisers.
+>    - The knowledge share averaged 0.00–0.12.
+>    - R1 trailed 1/N in all 6 holdout cases.
+>    - The "threshold survived" reading is not identified by R1 vs R2.
+> 3. **H3a.**
+>    - Both axes are ex post, so the test is close to mechanical. It is descriptive, not
+>      evidence about ex-ante information.
+>    - Exact permutation p = **0.033** (not 0.019). Within India ρ = −1.0; within the US
+>      ρ = −0.5; holdout ρ = −0.51 (p = 0.33).
+> 4. **H3b.**
+>    - The 6/6 sign test is post hoc.
+>    - In the holdout, 2 of the 6 "positive" gaps are floating-point ties; the true count
+>      is 4/4, p = 0.125.
+>    - The pre-registered interval test has almost no power.
+> 5. **US universe.** The lookup is survivorship-filtered (LEH, BSC, MER, FNM and FRE are
+>    missing).
+> 6. **Novelty.** Brandt, Santa-Clara & Valkanov (2009) already reduce N unknowns to a few
+>    characteristic coefficients. The contribution is the Gibbs-dial mapping and its
+>    pre-registered test.
+> 7. **Simulation calibration.** The simulation's IC noise (σ_ρ = 0.05) is well below the
+>    data's (about 0.2), so its power and R1/R2 lessons transfer only loosely.
+>
+> The full revision of this note is the next step.
+
 ## 1. The answer in plain language
 
 **The question.** An equal-weight portfolio (1/N) has the most entropy a portfolio can

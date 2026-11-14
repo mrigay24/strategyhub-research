@@ -552,10 +552,16 @@ def spa_test(d: np.ndarray, B: int = 4999, mean_block: float = 6.0, seed: int = 
     stat = max(0.0, float((math.sqrt(T) * dbar / omega).max()))
     thresh = -math.sqrt(2 * math.log(math.log(T)))
     out = {"stat": stat}
+    # Hansen (2005): Z* = d* - g(dbar), i.e. recentre the bootstrap mean at dbar - g(dbar):
+    #   upper g(x) = x            -> null mean 0 for every model (least favourable)
+    #   lower g(x) = max(x, 0)     -> null mean min(dbar, 0)
+    #   consistent g(x) = x 1{sqrt(T) x / omega >= -sqrt(2 loglog T)} -> 0, or dbar if
+    #   the model is clearly worse than the benchmark
+    # (fixed 13 Nov 2026 after the referee report: the first version added the wrong mean)
     for name, mu in {
-        "lower": np.maximum(dbar, 0.0),
-        "consistent": np.where(math.sqrt(T) * dbar / omega >= thresh, dbar, 0.0),
-        "upper": dbar,
+        "lower": np.minimum(dbar, 0.0),
+        "consistent": np.where(math.sqrt(T) * dbar / omega >= thresh, 0.0, dbar),
+        "upper": np.zeros_like(dbar),
     }.items():
         z = math.sqrt(T) * (boot_means - dbar + mu) / omega
         tb = np.maximum(z.max(1), 0.0)

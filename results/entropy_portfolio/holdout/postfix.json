@@ -1,0 +1,73 @@
+{
+ "india": {
+  "spa": {
+   "stat": 0.0,
+   "p_lower": 1.0,
+   "p_consistent": 1.0,
+   "p_upper": 1.0
+  },
+  "pbo": 0.3230769230769231,
+  "pbo_variants": 31,
+  "R1_vs_R2_wins": {
+   "R1": 2,
+   "R2": 1,
+   "tie": 0
+  },
+  "R1_minus_1N_net_ceq_pct": {
+   "none": -0.34651137148686717,
+   "mom": -0.18226830066237798,
+   "lowvol": -0.6991880456299148
+  },
+  "mean_c": {
+   "none": 0.03948093119065566,
+   "mom": 0.12417676944185908,
+   "lowvol": 0.061259043275221046
+  }
+ },
+ "us": {
+  "spa": {
+   "stat": 0.0,
+   "p_lower": 1.0,
+   "p_consistent": 1.0,
+   "p_upper": 1.0
+  },
+  "pbo": 0.7361305361305361,
+  "pbo_variants": 31,
+  "R1_vs_R2_wins": {
+   "R1": 2,
+   "R2": 0,
+   "tie": 1
+  },
+  "R1_minus_1N_net_ceq_pct": {
+   "none": -0.7566996453111401,
+   "mom": -0.2944393552969321,
+   "lowvol": -0.2498051163618023
+  },
+  "mean_c": {
+   "none": 0.052643903678720266,
+   "mom": 0.0,
+   "lowvol": 0.0
+  }
+ },
+ "H3a": {
+  "rho": -0.50709255283711,
+  "p_exact_two_sided": 0.3333333333333333,
+  "rho_within_india": -0.8660254037844387,
+  "rho_within_us": 0.0
+ },
+ "H3b": {
+  "gaps": [
+   0.0,
+   0.1113,
+   0.6275,
+   0.0,
+   0.1974,
+   0.6036
+  ],
+  "positive": 4,
+  "negative": 0,
+  "ties": 2,
+  "sign_test_p_excluding_ties": 0.125,
+  "note": "post hoc (not pre-registered); cases not independent"
+ }
+}
