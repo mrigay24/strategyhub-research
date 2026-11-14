@@ -7,6 +7,11 @@ Outputs: results/entropy_portfolio/{real|holdout}/<market>_returns.csv, summary.
 """
 from __future__ import annotations
 
+import os
+
+for _v in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "VECLIB_MAXIMUM_THREADS"):
+    os.environ.setdefault(_v, "1")  # many small matrices: threads only add overhead
+
 import argparse
 import json
 import math
@@ -55,6 +60,14 @@ def load_market(name):
         close = close.where(close >= cfg["floor"])
     close = close.where(close > 0)
     ret = close.pct_change(fill_method=None)
+    # D8: a daily return above +100% or below -90% is treated as a data error (e.g. US
+    # ticker TIE, 2010-12: -99.9% then +175,000% round trips); real crashes are untouched
+    ret = ret.where((ret <= 1.0) & (ret >= -0.9))
+    # market-wide data gaps (the NSE file has no rows for Jul-Dec 2011): the first return
+    # after a gap of more than 10 calendar days is not a one-day return, so drop it (D7)
+    gap_after = close.index[1:][np.diff(close.index.values).astype("timedelta64[D]").astype(int) > 10]
+    if len(gap_after):
+        ret.loc[gap_after] = np.nan
     per = close.index.to_period("M")
     me_pos = np.where(per[1:] != per[:-1])[0]
     me_pos = np.append(me_pos, len(per) - 1)
@@ -68,6 +81,13 @@ def load_market(name):
     mret = (1 + ret.fillna(0.0)).groupby(per).prod() - 1  # cash after delisting
     nobs = ret.notna().groupby(per).sum()
     mret_sig = mret.where(nobs > 0)
+    # calendar-correct monthly frames: reindex to every month; gap months are NaN, and
+    # month-end closes are carried across a gap so 12-month look-backs stay calendar-based
+    real = set(me_per)
+    full = pd.period_range(me_per[0], me_per[-1], freq="M")
+    close_me = close_me.reindex(full).ffill(limit=12)
+    tv63, cnt252, vol252 = (x.reindex(full) for x in (tv63, cnt252, vol252))
+    mret, mret_sig = mret.reindex(full), mret_sig.reindex(full)
     member = None
     if name == "us":
         lk = pd.read_csv(DATA / "sp500_universe_lookup.csv", parse_dates=["date"])
@@ -82,7 +102,8 @@ def load_market(name):
                                       "F-F_Research_Data_Factors.csv")["RF"]
     else:
         rf = pd.Series(RF_INDIA_MONTHLY, index=mret.index)
-    return dict(ret=ret, me_pos=pd.Series(me_pos, index=me_per), tv63=tv63, cnt252=cnt252,
+    return dict(real=real, gap_after=[str(x.date()) for x in gap_after],
+                ret=ret, me_pos=pd.Series(me_pos, index=me_per), tv63=tv63, cnt252=cnt252,
                 vol252=vol252, close_me=close_me, mret=mret, mret_sig=mret_sig,
                 member=member, rf=rf)
 
@@ -133,7 +154,7 @@ def build_months(d, name, first, last):
     mom_all = cm.shift(1) / cm12 - 1
     none_all = d["mret_sig"].rolling(36, min_periods=24).mean()
     for p in pers:
-        if p + 1 not in d["mret"].index or p not in cm.index:
+        if p not in d["real"] or p + 1 not in d["real"]:
             continue
         ok = cm.loc[p].notna() & cm12.loc[p].notna() & (d["cnt252"].loc[p] >= 200)
         if d["member"] is not None:
@@ -207,7 +228,7 @@ def run_market(name, window, holdout):
         mo = months[p]
         uni = mo["uni"]
         need_rules = ret_month >= ev0
-        hist = [q for q in sig_months if p - T_IC <= q <= p - 1]
+        hist = [q for q in sig_months if q < p][-T_IC:]  # last 36 available months (D7)
         W.setdefault("1/N", {})[p] = pd.Series(1.0 / NU, index=uni)
         for s in SIGNALS:
             z = zscores(mo["sig"][s]).values
@@ -237,6 +258,8 @@ def run_market(name, window, holdout):
                               icbar=float(ic.mean()), Dbar=float(Dbar),
                               forecast_shrunk=c * ic.mean() * Dbar,
                               forecast_raw=ic.mean() * Dbar)
+        if need_rules and (ret_month - ev0).n % 12 == 0:
+            log(f"{name}: rules/baselines at {p}")
         if need_rules:
             for k, v in baselines(d, p, uni).items():
                 W.setdefault(k, {})[p] = v
@@ -248,7 +271,7 @@ def run_market(name, window, holdout):
         for p in sig_months:
             if p not in info[s]:
                 continue
-            hist = [q for q in sig_months if p - T_IC <= q <= p - 1]
+            hist = [q for q in sig_months if q < p][-T_IC:]
             ceqs = [L.ceq(np.array([lr[lv][q] for q in hist]), GAMMA) for lv in LEVELS]
             best = LEVELS[int(np.argmax(ceqs))]
             W.setdefault(f"{s}:R3", {})[p] = W[f"{s}:L{best:.2f}"][p]
@@ -296,7 +319,8 @@ def run_market(name, window, holdout):
     common = sorted(set.intersection(*[set(v.index) for k, v in res.items()
                                        if not k.split(":")[-1].startswith("L")]))
     res = {k: v.loc[[m for m in v.index if m in common]] for k, v in res.items()}
-    log(f"{name}: {len(common)} evaluation months {common[0]}..{common[-1]}")
+    log(f"{name}: {len(common)} evaluation months {common[0]}..{common[-1]}; "
+        f"data gaps after {d['gap_after']}")
     return d, months, diag, info, res, common
 
 
@@ -439,7 +463,9 @@ def main():
     outdir.mkdir(parents=True, exist_ok=True)
     commit = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True,
                             cwd=ROOT).stdout.strip()
-    allout = {"commit": commit, "mode": tag}
+    sp = outdir / "summary.json"
+    allout = json.loads(sp.read_text()) if sp.exists() else {}
+    allout.update({"commit": commit, "mode": tag})
     for name in a.markets.split(","):
         win = MARKETS[name]["hold" if a.holdout else "eval"]
         d, months, diag, info, res, common = run_market(name, win, a.holdout)

@@ -1,0 +1,22 @@
+22:03:20 us: loading
+22:03:23 us: 227 signal months built
+22:03:24 us: rules/baselines at 2005-01
+22:03:25 us: rules/baselines at 2006-01
+22:03:27 us: rules/baselines at 2007-01
+22:03:29 us: rules/baselines at 2008-01
+22:03:31 us: rules/baselines at 2009-01
+22:03:34 us: rules/baselines at 2010-01
+22:03:36 us: rules/baselines at 2011-01
+22:03:37 us: rules/baselines at 2012-01
+22:03:39 us: rules/baselines at 2013-01
+22:03:41 us: rules/baselines at 2014-01
+22:03:43 us: rules/baselines at 2015-01
+22:03:45 us: rules/baselines at 2016-01
+22:03:46 us: rules/baselines at 2017-01
+22:03:48 us: rules/baselines at 2018-01
+22:03:49 us: rules/baselines at 2019-01
+22:03:51 us: rules/baselines at 2020-01
+22:03:54 us: weights built
+22:04:00 us: 191 evaluation months 2005-02..2020-12; data gaps after []
+22:04:17 us: done
+22:04:17 all done

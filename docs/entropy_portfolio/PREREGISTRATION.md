@@ -191,3 +191,25 @@ All seeds are fixed (`ep_lib.SEED`). One command per phase:
     CEQ curve, because the theory has no costs. The net argmax is reported too.
   - **D6.** In its first month, each real-time rule and baseline is charged turnover for
     switching from 1/N, not for building from cash.
+- **D7 (13 Nov 2026, found on the first run, before any India result was read).**
+  - **The gap.** The NSE file has no rows at all for July–December 2011. The first run
+    lost about 40 evaluation months: the rules require 36 consecutive months, and
+    positional 12-month shifts crossed the gap.
+  - **Fix, part 1.** The first daily return after any gap longer than 10 calendar days is
+    set to missing.
+  - **Fix, part 2.** Monthly frames are reindexed to the full calendar, with month-end
+    closes carried across the gap (at most 12 months), so look-backs stay calendar-based.
+  - **Fix, part 3.** The 36-month IC and cross-validation windows use the **last 36
+    available** signal months.
+  - **Effect.** India loses only the return months 2011-07 to 2012-01 (7 months). The US
+    file has no such gap.
+- **D8 (13 Nov 2026, after the first full run, before any result was interpreted).**
+  - **What happened.** US 1/N had a CEQ of −267% a month, which is impossible for an
+    equal-weight portfolio of 100 large caps. The cause was ticker TIE in the raw US file,
+    with three price round trips in 2010–2012 (−99.9%, then +175,000%).
+  - **Rule, both markets.** A daily return above +100% or below −90% is a data error and
+    is set to missing.
+  - **Scope.** In the raw US file this affects 257 daily returns; in India, 1. Real large
+    moves are kept: AIG's −84% month in September 2008 and India's May 2009 election
+    rally are untouched.
+  - The run was repeated in full with this rule. No other change was made.

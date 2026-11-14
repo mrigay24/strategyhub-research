@@ -1,0 +1,17 @@
+22:02:37 india: loading
+22:02:40 india: 160 signal months built
+22:02:41 india: rules/baselines at 2010-01
+22:02:43 india: rules/baselines at 2011-01
+22:02:44 india: rules/baselines at 2012-01
+22:02:45 india: rules/baselines at 2013-01
+22:02:47 india: rules/baselines at 2014-01
+22:02:49 india: rules/baselines at 2015-01
+22:02:50 india: rules/baselines at 2016-01
+22:02:50 india: rules/baselines at 2017-01
+22:02:51 india: rules/baselines at 2018-01
+22:02:52 india: rules/baselines at 2019-01
+22:02:53 india: rules/baselines at 2020-01
+22:02:55 india: weights built
+22:03:02 india: 124 evaluation months 2010-02..2020-12; data gaps after ['2012-01-02']
+22:03:18 india: done
+22:03:18 all done
