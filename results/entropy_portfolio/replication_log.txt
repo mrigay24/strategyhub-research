@@ -1,0 +1,50 @@
+
+== Industry: N=11, T=497, OOS=377
+  1/N            SR 0.1353  p nan  CEQ 0.497%  TO 0.022  ref 0.1353 diff -0.0000 OK
+  mv             SR -0.0186  p 0.03  CEQ -3.993%  TO 52.562  ref -0.0363 diff +0.0177 OK  LOO range [-0.036, 0.029]
+  mv|abs|        SR -0.0494  p 0.01  CEQ -4.799%  TO 47.115  LOO range [-0.062, -0.017]
+  min            SR 0.1537  p 0.65  CEQ 0.501%  TO 0.464  ref 0.1554 diff -0.0016 OK
+  mv-c           SR 0.0622  p 0.05  CEQ 0.193%  TO 0.171
+  min-c          SR 0.1445  p 0.76  CEQ 0.470%  TO 0.052
+  mv-min(KZ)     SR -0.0327  p 0.02  CEQ -1.987%  TO 27.110
+  TZ(1/N+ML)     SR 0.0273  p 0.05  CEQ -0.068%  TO 8.664
+  min-LW         SR 0.1565  p 0.53  CEQ 0.506%  TO 0.125
+  min-norm2-CV   SR 0.1569  p 0.52  CEQ 0.508%  TO 0.405
+
+== MKT/SMB/HML: N=3, T=497, OOS=377
+  1/N            SR 0.2347  p nan  CEQ 0.422%  TO 0.024  ref 0.2240 diff +0.0107 MISS
+  mv             SR 0.2135  p 0.69  CEQ 0.426%  TO 0.059  ref 0.2186 diff -0.0051 OK  LOO range [0.207, 0.245]
+  mv|abs|        SR 0.2135  p 0.69  CEQ 0.426%  TO 0.059  LOO range [0.207, 0.245]
+  min            SR 0.2574  p 0.51  CEQ 0.404%  TO 0.024  ref 0.2492 diff +0.0082 OK
+  mv-c           SR 0.1093  p 0.02  CEQ 0.315%  TO 0.092
+  min-c          SR 0.2574  p 0.51  CEQ 0.404%  TO 0.024
+  mv-min(KZ)     SR 0.2524  p 0.67  CEQ 0.429%  TO 0.039
+  TZ(1/N+ML)     SR 0.2295  p 0.91  CEQ 0.419%  TO 0.052
+  min-LW         SR 0.2598  p 0.40  CEQ 0.404%  TO 0.023
+  min-norm2-CV   SR 0.2607  p 0.41  CEQ 0.407%  TO 0.028
+
+== FF-1-factor: N=21, T=497, OOS=377
+  1/N            SR 0.1613  p nan  CEQ 0.729%  TO 0.016  ref 0.1628 diff -0.0015 OK
+  mv             SR 0.0110  p 0.04  CEQ -70.989%  TO 140.815  LOO range [-0.026, 0.038]
+  mv|abs|        SR 0.0513  p 0.11  CEQ -65.971%  TO 174.984  ref -0.0227 diff +0.0740 MISS  LOO range [0.025, 0.073]
+  min            SR 0.2496  p 0.06  CEQ 0.882%  TO 0.738
+  mv-c           SR 0.1962  p 0.06  CEQ 0.902%  TO 0.314
+  min-c          SR 0.1554  p 0.76  CEQ 0.609%  TO 0.069
+  mv-min(KZ)     SR 0.0786  p 0.23  CEQ -5.682%  TO 66.463
+  TZ(1/N+ML)     SR 0.2487  p 0.11  CEQ 1.748%  TO 3.079
+  min-LW         SR 0.2582  p 0.01  CEQ 0.892%  TO 0.287
+  min-norm2-CV   SR 0.2549  p 0.02  CEQ 0.895%  TO 0.596
+
+== FF-4-factor: N=24, T=497, OOS=377
+  1/N            SR 0.1745  p nan  CEQ 0.719%  TO 0.020  ref 0.1761 diff -0.0016 OK
+  mv             SR -0.0477  p 0.00  CEQ -2.769%  TO 19.064  LOO range [-0.099, -0.021]
+  mv|abs|        SR 0.1650  p 0.89  CEQ 1.329%  TO 29.690  ref 0.1443 diff +0.0207 OK  LOO range [0.160, 0.197]
+  min            SR 0.0326  p 0.04  CEQ 0.011%  TO 0.123
+  mv-c           SR 0.1977  p 0.59  CEQ 0.755%  TO 0.331
+  min-c          SR 0.3649  p 0.00  CEQ 0.522%  TO 0.033
+  mv-min(KZ)     SR 0.1678  p 0.93  CEQ 1.334%  TO 21.610
+  TZ(1/N+ML)     SR 0.0775  p 0.17  CEQ -226.010%  TO 94.107
+  min-LW         SR 0.3585  p 0.00  CEQ 0.246%  TO 0.093
+  min-norm2-CV   SR 0.0595  p 0.09  CEQ 0.020%  TO 0.135
+
+Within tolerance: 8/10
