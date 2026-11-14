@@ -275,3 +275,28 @@ scales with c². "Hold as much entropy as you have ignorance" is a statement abo
 See `LITERATURE.md` (Kan & Zhou 2007; Tu & Zhou 2011; DeMiguel, Garlappi & Uppal 2009;
 DeMiguel, Garlappi, Nogales & Uppal 2009; Grinold 1989; Qian & Hua 2004; Jaynes 1957;
 Chopra & Ziemba 1993; Jagannathan & Ma 2003).
+
+## 8. What the simulation found (added 13 Nov 2026, before any real data)
+
+The known-truth simulation (`results/entropy_portfolio/simulation.md`) checked two parts of
+this theory separately.
+
+1. **The structural part holds.** With the IC known, the predicted optimal effective N
+   (Gibbs dial, idiosyncratic concentration cost D²q(β), signal-factor risk) is within
+   one grid step of the true optimum for IC ≥ 0.02, with normal or fat-tailed returns.
+2. **The linear Kan–Zhou shrinkage over-shrinks on the Gibbs dial.**
+   - Acting on the full estimate (c = 1 whenever the mean IC > 0) beat the shrunk rule
+     (c = t²/(1+t²)) at every IC > 0. Shrinkage helped only at IC = 0.
+   - Reason: (3.2) assumes the portfolio is linear in the estimate. The dial is concave
+     (cost ∝ e^{β²}), so it already damps estimation noise.
+   - So "hold as much entropy as you have ignorance" holds, in this model, at the
+     *threshold*: with no information, hold 1/N. It does not hold as a proportional rule.
+3. **Consequences for the tests:**
+   - **P3** (the amount) compares the ex-post optimum of the dial with the
+     **full-information** prediction (c = 1, full-sample IC). An ex-post best fixed level is
+     a full-information object.
+   - **P4** (information matching) becomes a contest between real-time rules: the
+     theory's κ = 1, the no-shrinkage plug-in and nested cross-validation. Data decide
+     which is best.
+   - **The theory is not changed after seeing real data.** These are the predictions as
+     they stand when the pre-registration is committed.
