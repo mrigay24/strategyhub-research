@@ -2294,3 +2294,27 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
   - **H-P2 not supported:** group effective N adds nothing beyond stock, industry and
     covariance measures.
   - Write-up: `docs/group_dependency/NOTE.md` §9.
+
+## 2026-11-13 — Paper 3: entropy budget vs 1/N (prefix `paper 3`)
+- **Phase 1, literature** (`docs/entropy_portfolio/LITERATURE.md`).
+  - 26 citations checked.
+  - One weak India 1/N study was found; Mrigay chose to continue.
+  - No paper links IC to a numeric optimal effective N.
+- **Phases 2–4:**
+  - THEORY.md: knowledge share t²/(1+t²), the Gibbs dial, a numeric N_eff\*;
+  - DGU replication 8 of 10 within tolerance;
+  - simulation: the structure is recovered, but the Kan–Zhou shrinkage over-shrinks.
+- **Phase 5:** PREREGISTRATION.md committed before any real data. Deviations D1–D8 are
+  logged in it, among them the India risk-free proxy, the 2011 NSE gap and US data
+  errors.
+- **Phase 6, India 2010–2020 and US 2005–2020:**
+  - the entropy rule matches 1/N net of costs;
+  - H3a direction supported (ρ −0.89);
+  - the predicted amount is over-concentrated in 6 of 6 cases;
+  - timing fails.
+- **Phase 7, holdout 2021–2025 (once):** the signals died, 1/N won, and shrinkage beat no
+  shrinkage in 5 of 6 cases.
+- **Phase 8:** NOTE.md (traceability 150/150), PROPOSAL.md with 2 figures, the referee
+  report, KB §46, and STUDY_GUIDE Part 10.
+- **Not pushed:** the auto-mode classifier blocked `git push` to the public repo. Mrigay
+  to approve.

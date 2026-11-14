@@ -5040,3 +5040,60 @@ history on 12 Nov before a push.
 
 **Paper 1:** the circulation version is `docs/entropy_research/PAPER_SHORT.md` and
 `.docx`, about 7,000 words.
+
+### §46 — Paper 3: entropy budget vs 1/N — does diversification match signal information? (2026-11-13)
+
+**Question.** 1/N is the maximum-entropy portfolio. Does the optimal departure from it,
+measured as effective N = exp(entropy), depend on how much information the signal
+carries, and does it match estimation-risk theory? Everything lives in
+`docs/entropy_portfolio/` and `scripts/ep_*.py`; the brief is `SESSION_PROMPT.md`.
+
+**Theory (THEORY.md).**
+- Kan–Zhou: the plug-in rule should be scaled by θ²/(θ² + N/T).
+- A cross-sectional signal leaves one unknown (the tilt's payoff), so the knowledge share
+  becomes t²/(1+t²) of the IC t-statistic. The ignorance term N/T becomes 1/T.
+- The maximum-entropy long-only tilt is Gibbs, wᵢ ∝ exp(βzᵢ), with N_eff/N = exp(−β²/2)
+  for normal scores.
+- Optimising utility along the dial with a concentration cost e^{β²} gives a numeric
+  N_eff\*(IC, N, T).
+- Near 1/N an entropy penalty is the DGNU 2-norm constraint (Σw² = ‖w − 1/N‖² + 1/N), so
+  the only possible contribution is the matching rule.
+
+**Replication.** DGU on French data: 8 of 10 checks within pre-set tolerance. The printed
+RFS table is paywalled, so we matched the authors' 2006 working paper and Kan–Wang–Zhou
+2016. Misses: SMB/HML data revisions, and mv fragility.
+
+**Simulation.**
+- The structural theory finds the true optimum within one dial step.
+- **The Kan–Zhou shrinkage over-shrinks on the concave Gibbs dial.** Acting on the full
+  estimate won whenever IC > 0.
+- About 300–1,000 months are needed for t = 2 at IC 0.02–0.03.
+
+**Pre-registered real data.** India top-100 NSE, 2010–2020, 124 months; US PIT S&P,
+2005–2020, 191 months. Signals: none, momentum, low volatility.
+- **H1.** In India plug-in mean–variance fails economically (CEQ −37%/month, turnover
+  1,426), but the Sharpe test is not significant (p = 0.33).
+- **H2.** The entropy rule matches 1/N net of costs (India 3 of 3) and never wins
+  significantly (SPA p 0.63 India, 0.81 US).
+- **H3a.** More IC means a lower best N_eff (Spearman −0.89, p = 0.019).
+- **H3b.** The predictions sit inside the wide intervals in 6 of 6 cases, but theory is
+  over-concentrated in 6 of 6 (+0.28 N, p = 0.031). Correlated residuals are the stated
+  suspect.
+- **H3c.** Shrink vs no shrink is undecided.
+- **H3d.** Timing by the 36-month IC fails.
+
+**Holdout 2021–2025 (run once).**
+- The signals lost their information and 1/N won.
+- The rules beat all information-free optimisers.
+- R1 beat R2 in 5 of 6 cases.
+- The unshrunk covariance (low-vol) tilt was the costly assumption.
+
+**Lessons:**
+1. The NSE file has no rows for July–December 2011. Rolling windows need "last 36
+   available months" and calendar reindexing (D7).
+2. The raw US file has data-error round trips (TIE, 2010–12). Treat daily returns above
+   +100% or below −90% as missing (D8).
+3. Single-thread BLAS (`OMP_NUM_THREADS=1`) makes the 100×100 baselines about 40× faster.
+
+Deliverables: NOTE (traceability 150/150), PROPOSAL (2 figures), REFEREE_REPORT, and
+STUDY_GUIDE Part 10.
