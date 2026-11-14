@@ -1,0 +1,10 @@
+22:07:23 us: loading
+22:07:28 us: 275 signal months built
+22:07:31 us: rules/baselines at 2020-12
+22:07:33 us: rules/baselines at 2021-12
+22:07:35 us: rules/baselines at 2022-12
+22:07:38 us: rules/baselines at 2023-12
+22:07:41 us: weights built
+22:07:47 us: 48 evaluation months 2021-01..2024-12; data gaps after []
+22:08:05 us: done
+22:08:05 all done

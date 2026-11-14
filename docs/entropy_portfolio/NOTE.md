@@ -61,6 +61,17 @@ direction the thesis predicts, but the textbook formulas overstate how far. Real
 call for more diversification than independent-noise theory allows, and a short IC
 history is too noisy to time the tilt.
 
+**The holdout (2021–2025, run once).**
+- Every signal's information disappeared (mean ICs between −0.03 and +0.02), and 1/N won
+  in both markets.
+- The entropy rule shrank its information-driven tilt toward zero, as designed. It still
+  lost to 1/N (not significantly), because its unshrunk risk-reduction tilt toward
+  low-volatility stocks lost money.
+- It beat every optimiser that ignores information.
+- Shrinking by the knowledge share beat acting on the full estimate in 5 of 6 holdout
+  cases. **The part of the thesis that survived everything is the threshold: when your
+  information is gone, go back to maximum entropy.**
+
 ## 2. Why this question
 
 DGU (2009) is one of the most cited results in portfolio choice. Kan & Zhou (2007) and Tu
@@ -255,9 +266,48 @@ its best dial level: **−0.89 (p = 0.019)**. **Supported.**
 - The ex-ante information measure is good at telling signals apart (H3a) but useless for
   timing a given signal.
 
-## 7. Holdout (2021–2025)
+## 7. Holdout (2021–2025): run once, unchanged
 
-*To be filled in after the single pre-registered holdout run.*
+- **Run.** Code commit `6ac9821`, run once with no changes.
+- **Window.** India January 2021 – June 2025 (54 months; data end); US January 2021 –
+  December 2024 (48 months).
+
+**The signals stopped carrying information.** The holdout mean ICs were:
+- India: none −0.011, momentum 0.019, low volatility 0.003;
+- US: none −0.027, momentum −0.011, low volatility 0.003.
+
+India's 2021–2024 small- and mid-cap rally punished low-risk stocks, and momentum
+whipsawed. This is a real out-of-sample test of what a rule does when its information
+vanishes.
+
+| Net Sharpe (monthly) | 1/N | R1 none | R1 momentum | R1 low volatility | Min-var, long-only | Min-var, Ledoit–Wolf | Sample mean–variance |
+|---|---|---|---|---|---|---|---|
+| India | **0.248** | 0.169 | 0.193 | 0.106 | −0.128 | −0.014 | −0.093 |
+| US | **0.150** | 0.026 | 0.094 | 0.097 | 0.095 | 0.019 | −0.318 |
+
+1. **1/N won in both markets.** The entropy rules lost to it, though no difference is
+   significant (LW p 0.13–0.58), and they beat every optimiser that ignores information
+   (minimum variance in all forms, mean–variance, Kan–Zhou).
+2. **The rule did move toward 1/N, but not all the way.** The knowledge share averaged
+   only 0.04–0.12, so the *information* part of the tilt switched off as theory says.
+   What kept the portfolios at 32–82% of N was the **covariance (risk-reduction) term**,
+   which the theory does not shrink. That tilt is the low-volatility exposure, and it
+   lost money in 2021–2025. Not shrinking covariances turned out to be the costly
+   assumption.
+3. **Shrinkage paid when information died.** R1 (shrink by the knowledge share) beat R2
+   (act on the whole estimate) in 5 of 6 holdout cases, e.g. India momentum 0.731 vs
+   0.440 net CEQ and US low volatility 0.187 vs 0.070 (p = 0.051). This is the opposite
+   of the simulation, where the signal never died. **The threshold half of the thesis
+   ("with no information, hold 1/N") is what earned its keep.**
+4. **H3 in the holdout:**
+   - the direction has the same sign but is not significant (Spearman −0.51, p = 0.30);
+   - 4 of 6 predictions fall inside the intervals;
+   - the theory again never predicted *less* concentration than was best.
+   - Calibration (H3d) turned significantly **negative** (India slope −3.93, US −8.25):
+     a signal that had worked over the past 36 months tended to fail next. The ex-ante
+     IC is not a timing tool.
+5. **H1 in the holdout.** Plug-in mean–variance lost to 1/N again: Sharpe gap −0.247 in
+   India (p = 0.17) and −0.335 in the US (p = 0.060). Same sign, not significant.
 
 ## 8. Scorecard
 
@@ -270,7 +320,8 @@ its best dial level: **−0.89 (p = 0.019)**. **Supported.**
 | H3a, more information → fewer effective stocks | Yes (ρ = −0.89, p = 0.019) |
 | H3b, the predicted amount | Inside the intervals 6 of 6, but biased toward over-concentration in 6 of 6 (p = 0.031) |
 | H3c, the shrinkage rule | Undecided |
-| H3d, timing by the ex-ante IC | No |
+| H3d, timing by the ex-ante IC | No (significantly negative in the holdout) |
+| Holdout 2021–2025 | Signals lost their information; 1/N won; the entropy rules beat all information-free optimisers; shrinkage beat no shrinkage in 5 of 6 cases |
 
 ## 9. Limitations
 
