@@ -743,6 +743,87 @@ crisis is untested: Hindenburg 2023 was too mild a market fall to tell.
 
 ---
 
+## Part 10 — Paper 3: hold as much entropy as you have ignorance? (13 Nov)
+
+*Files: `docs/entropy_portfolio/` (NOTE, THEORY, PREREGISTRATION, PROPOSAL) and
+`scripts/ep_*.py`.*
+
+### 10.1 The paper in 60 seconds
+
+**Question.** Equal weight (1/N) is the maximum-entropy portfolio. Does the right amount
+of entropy to give up depend on how much your signal knows? Can theory predict it as a
+number?
+
+**Answer (honest):**
+1. **Direction: yes.** The more a signal knew (its IC), the fewer effective stocks the
+   best portfolio held (ρ −0.89 across six cases).
+2. **Amount: theory overshoots.** In 6 of 6 cases the best portfolio was *more*
+   diversified than predicted. Stock-specific risks are not independent; sectors move
+   together.
+3. **Safety: yes.** The rule never lost significantly to 1/N, and it beat every
+   optimiser that ignores information.
+4. **Holdout (2021–2025): the signals died and 1/N won.** Shrinking by your knowledge
+   share beat acting on the full estimate in 5 of 6 cases.
+5. **The surviving thesis: with no information, go back to maximum entropy.**
+
+### 10.2 Ideas you must own
+
+1. **Estimation risk.** You never know true expected returns, only estimates from T
+   months. A plug-in Markowitz investor treats estimates as truth. The error in N
+   estimated means swamps the gain whenever N/T is large. *Your number: plug-in
+   Markowitz on 100 Indian stocks turned over 1,426× its capital a month.*
+2. **The 1/N puzzle (DGU 2009).** Across 14 models and 7 datasets, none reliably beat
+   equal weight out of sample. You replicated it on French data: 1/N on the industry
+   portfolios matched their 0.13531 to five decimals.
+3. **Shrinkage.** When an estimate is noisy, pull it toward a simple target.
+   - **Kan–Zhou:** scale the Markowitz portfolio by θ²/(θ² + N/T), the true share of
+     what you estimated.
+   - **Tu–Zhou:** mix 1/N and Markowitz with weight bias²/(bias² + variance).
+   - **Ledoit–Wolf:** shrink the covariance toward a scaled identity.
+   - **Jagannathan–Ma:** a no-short-sale constraint does the same job by accident.
+4. **The fundamental law (Grinold).** IR ≈ IC·√breadth. Qian–Hua's refinement:
+   IR ≈ mean(IC)/sd(IC), because the IC itself varies over time. **Your key step:** a
+   signal leaves only ONE unknown (how much it pays), so the ignorance term becomes 1/T
+   instead of N/T, and the knowledge share is t²/(1+t²), where t is the IC's
+   t-statistic.
+5. **Entropy regularisation.** Maximising entropy subject to a signal exposure gives
+   wᵢ ∝ exp(βzᵢ): Jaynes's maximum-entropy principle, solved by mirror descent.
+   - For normal scores, effective N = N·exp(−β²/2).
+   - Near 1/N it is the *same* as DGNU's 2-norm constraint, because
+     Σw² = ‖w − 1/N‖² + 1/N.
+   - So say plainly: the penalty is not new; the matching rule is.
+
+### 10.3 What to say about the results
+
+| If asked… | Say |
+|---|---|
+| "Did you beat 1/N?" | "Not significantly. The simulation said that needs 300–1,000 months; I had 124–191. What I can show is that the rule never lost significantly and that information decides the direction." |
+| "Is H1 the 1/N puzzle in India?" | "Economically overwhelming, but the pre-registered Sharpe test is p = 0.33, because the Sharpe ratio of an exploding-leverage portfolio is itself noise." |
+| "Why does theory over-concentrate?" | "It charges idiosyncratic risk as if independent across stocks. Sector co-movement makes concentration costlier. I named that failure direction before seeing the data." |
+| "What happened in 2021–2025?" | "The signals' ICs went to about zero. The rule switched off its information tilt, but its risk-reduction tilt toward low volatility stayed on and lost. Next step: shrink covariances too." |
+| "What's new vs Kan–Zhou or Tu–Zhou?" | "They shrink a plug-in estimate of N means. I show a signal collapses that to one unknown, give a numeric effective-N prediction from IC, N and T, and test it pre-registered with a holdout." |
+
+### 10.4 Questions a professor will ask
+
+1. *"Why CEQ and not Sharpe for the dial?"* The theory maximises mean–variance utility
+   (γ = 2.5), so CEQ is the matched criterion. Sharpe is reported alongside.
+2. *"Isn't picking the best dial level in-sample?"* Yes. That is why the curves are
+   labelled diagnostics; only the pre-registered real-time rules (R1, R2, R3) are
+   evaluated.
+3. *"How did you handle multiple testing?"* Hansen's SPA over 12 rules (p 0.63 India,
+   0.81 US) and PBO over 33 dial variants (0.23 India, 0.76 US).
+4. *"What changed after you saw data?"* Only the logged deviations D7 (the NSE 2011 gap)
+   and D8 (US price errors), both data fixes made before results were interpreted. R2 was
+   added after the *simulation*, before any real data.
+5. *"Your risk-free rate for India?"* A constant 6.5% proxy, because the RBI fetch failed.
+   It cancels in CEQ differences between strategies.
+
+### 10.5 The one thing to ask your professor
+
+"Would you frame this through frequentist estimation risk (Kan–Zhou / Tu–Zhou), or
+Bayesian (Black–Litterman / Pástor, with 1/N as the maximum-entropy prior)?" They differ
+exactly where the paper failed: signals whose information changes over time.
+
 ## Glossary (one line each)
 
 | Term | Meaning |
