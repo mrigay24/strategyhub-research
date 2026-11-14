@@ -182,3 +182,12 @@ All seeds are fixed (`ep_lib.SEED`). One command per phase:
   - a Newey–West HAC standard error for the original statistic and a block-based standard
     error inside the bootstrap, instead of the prewhitened QS kernel;
   - the block size is fixed at b = 5 instead of calibrated (see LITERATURE §4).
+- **D3–D6 (13 Nov 2026, implementation choices made while writing `ep_real_data.py`,
+  before it was run).**
+  - **D3.** A universe stock whose signal is missing gets the neutral score z = 0. This
+    happens only for "none", which needs 24 months while the universe needs 12.
+  - **D4.** R3 picks its level by *gross* CEQ.
+  - **D5.** H3b compares the full-information prediction with the argmax of the *gross*
+    CEQ curve, because the theory has no costs. The net argmax is reported too.
+  - **D6.** In its first month, each real-time rule and baseline is charged turnover for
+    switching from 1/N, not for building from cash.
