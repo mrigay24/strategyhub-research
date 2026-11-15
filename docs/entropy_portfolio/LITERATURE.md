@@ -37,6 +37,8 @@ pass; this file is the record.*
 | 24 | Kan, R., Wang, X. & Zhou, G. (2016 WP; *JFQA* 2022). Optimal portfolio choice with estimation risk: no risk-free asset case. | Verified (working paper read) | Replicates DGU's published datasets; we use it as reference (B) in the replication. |
 | 25 | Lassance, N., Vanderveken, R. & Vrins, F. (2026). Optimal portfolio size under parameter uncertainty. *JFQA* 61(5), 2312–2352. | Verified (partly read) | The optimal **number** of assets given T and the assets' Sharpe ratios. It is the closest recent analytic work. |
 | 26 | Bouchaud, J.-P., Potters, M. & Aguilar, J.-P. (1997). Missing information and asset allocation. arXiv cond-mat/9707042. | Verified (abstract) | Imposes a minimum 1/Σw² because forecasts are unreliable. This is a heuristic version of our idea with no information-matched rule. |
+| 27 | Brandt, M., Santa-Clara, P. & Valkanov, R. (2009). Parametric portfolio policies: exploiting characteristics in the cross-section of equity returns. *RFS* 22(9), 3411–3447. | Verified (EconPapers record), added 14 Nov after the referee report | Weights are a linear function of a few characteristics, w = w̄ + θ′x/N, with θ estimated by maximising utility. **This already reduces N unknown means to a handful of coefficients.** It is the closest prior to our "N unknowns become one" step. |
+| 28 | Black, F. & Litterman, R. (1992). Global portfolio optimization. *Financial Analysts Journal* 48(5), 28–43. | Standard citation, not re-checked this session | A view blended with an equilibrium prior by precision. For one view, the posterior weight on the view is a signal-to-noise ratio of the same form as t²/(1+t²). |
 
 **Emerging-market 1/N studies.**
 - **India:** one study was found. "Optimal vs 1/N diversification and portfolio evaluation: a study on Indian stock market", *Asian Journal of Management* 10(3), 2019. It uses Nifty 50 stocks and finds that minimum variance beats 1/N. Its design looks in-sample, and it has no rolling DGU protocol and no survivorship control. Details are unverified because the full text was not read.
@@ -57,6 +59,17 @@ The targeted search found no paper that does all of the following:
 - tests that number out of sample, pre-registered, in India and the US, with a holdout.
 
 That is the contribution, if it survives. The entropy penalty itself is **not** new and, locally, not even distinct: it is a norm constraint (§2.4).
+
+**Narrowed on 14 Nov, after the referee report.** Parts of the second bullet are known:
+- Brandt, Santa-Clara & Valkanov (2009) already collapse N means to a few characteristic
+  coefficients;
+- the one-view Black–Litterman weight has the same precision form as t²/(1+t²).
+
+What remains specific to this paper:
+1. The mapping of that knowledge share through the maximum-entropy (Gibbs) dial into a
+   numeric effective N.
+2. Its pre-registered out-of-sample test with a holdout. That test supported the
+   direction but not the amount.
 
 **What is only partly new:**
 - **H1 (the 1/N puzzle in India).** One Indian study exists (Nifty 50, apparently in-sample). A rolling, survivorship-free DGU-protocol test on NSE data was not found. H1 is therefore best described as "the first DGU-protocol replication in India", not a new question.

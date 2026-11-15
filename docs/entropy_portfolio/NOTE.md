@@ -5,39 +5,10 @@
 number below is checked against `results/entropy_portfolio/` by
 `scripts/ep_traceability.py`.*
 
-> **Referee corrections pending (13 Nov 2026, late).** A fresh-referee report
-> (`REFEREE_REPORT.md`, recommendation: major revision) found errors. The body below still
-> shows the original values. The corrected values are in
-> `results/entropy_portfolio/{real,holdout}/postfix.json` (`scripts/ep_postfix.py`, from the
-> saved returns, with no re-run):
-> 1. **SPA.** The bootstrap was mis-centred. Corrected consistent p-values: India
->    **0.117** (was 0.63), US **0.897** (was 0.81); holdout 1.00 for both. Still not
->    significant.
-> 2. **Holdout.**
->    - R1 beat R2 in **4 of 6** cases (one tie), not 5 of 6.
->    - In the US, R1-none did *not* beat the information-free optimisers.
->    - The knowledge share averaged 0.00–0.12.
->    - R1 trailed 1/N in all 6 holdout cases.
->    - The "threshold survived" reading is not identified by R1 vs R2.
-> 3. **H3a.**
->    - Both axes are ex post, so the test is close to mechanical. It is descriptive, not
->      evidence about ex-ante information.
->    - Exact permutation p = **0.033** (not 0.019). Within India ρ = −1.0; within the US
->      ρ = −0.5; holdout ρ = −0.51 (p = 0.33).
-> 4. **H3b.**
->    - The 6/6 sign test is post hoc.
->    - In the holdout, 2 of the 6 "positive" gaps are floating-point ties; the true count
->      is 4/4, p = 0.125.
->    - The pre-registered interval test has almost no power.
-> 5. **US universe.** The lookup is survivorship-filtered (LEH, BSC, MER, FNM and FRE are
->    missing).
-> 6. **Novelty.** Brandt, Santa-Clara & Valkanov (2009) already reduce N unknowns to a few
->    characteristic coefficients. The contribution is the Gibbs-dial mapping and its
->    pre-registered test.
-> 7. **Simulation calibration.** The simulation's IC noise (σ_ρ = 0.05) is well below the
->    data's (about 0.2), so its power and R1/R2 lessons transfer only loosely.
->
-> The full revision of this note is the next step.
+> **Revised 14 Nov 2026 after a fresh-referee report** (`REFEREE_REPORT.md`; point-by-point
+> answers in `REFEREE_RESPONSE.md`). The corrections fix an SPA bug and several overclaims. Every
+> number below comes from `results/entropy_portfolio/{real,holdout}/` (`summary.json`,
+> `h3_extra.json`, `postfix.json`). Nothing was re-run on the holdout.
 
 ## 1. The answer in plain language
 
@@ -50,45 +21,64 @@ information your signal really carries**, and whether estimation-risk theory can
 that amount as a number.
 
 **What held:**
-1. **The direction.**
-   - Across six signal–market cases (three signals, India and the US), the more a signal
-     knew (its average information coefficient, IC), the fewer effective stocks the best
-     portfolio held.
-   - Rank correlation −0.89 (p = 0.019, six cases).
-   - Information and diversification trade off as the thesis says.
-2. **Safety.**
-   - The pre-registered entropy rule never did meaningfully worse than 1/N after costs.
-   - In India it beat 1/N on all three signals, on both Sharpe ratio and certainty
-     equivalent, though not by statistically significant margins.
-   - It beat plug-in Markowitz by enormous margins: plug-in Markowitz on 100 Indian
-     stocks turned over 1,426 times its capital *per month*.
+1. **The direction (descriptive).**
+   - Across six signal–market cases (three signals, India and the US), the higher a
+     signal's average information coefficient (IC) over the evaluation period, the fewer
+     effective stocks the best portfolio held.
+   - Rank correlation −0.89; exact permutation p = 0.033.
+   - **Caveat.** Both quantities are measured after the fact, so the link is partly
+     mechanical: a signal that paid more makes tilting look better in the same window.
+   - The six cases also fall into two clusters, because every India IC exceeds every US
+     IC. Within India ρ = −1.0; within the US ρ = −0.5. In the holdout ρ = −0.51
+     (p = 0.33).
+   - So this is consistent with the thesis, not a test of *ex-ante* information.
+2. **No significant loss to 1/N, but "matches" only means "could not tell apart".**
+   - Before the holdout, the pre-registered entropy rule was never significantly worse
+     than 1/N after costs. In India its point estimates beat 1/N on all three signals.
+   - In the US its certainty equivalent was below 1/N's for two of three signals. In the
+     2021–2025 holdout it trailed 1/N in all six cases, though not significantly.
+   - The intervals are wide. India "none", for example, beats 1/N by a Sharpe difference
+     of 0.029 with p = 0.60.
+   - It did beat plug-in Markowitz, which on 100 Indian stocks turned over 1,426 times
+     its capital *per month*.
 3. **The theory's structure.**
    - In a simulation with known truth, the theory found the optimal effective N to
      within one step of a 10-step dial.
-   - In real data, all six predictions fell inside the (wide) bootstrap intervals for the
-     best level.
+   - In real data all six predictions fell inside the bootstrap intervals for the best
+     level. The intervals are so wide, though, that almost any prediction would pass:
+     this test has no power.
 
 **What failed:**
-1. **The amount.** In all six real cases the best portfolio held *more* effective stocks
-   than the theory predicted, by 0.28 of N on average (6 of 6, sign test p = 0.031). The
-   theory assumes that the noise in stock returns is independent across stocks. It is not
-   (sectors move together), so concentration costs more than the theory charges. We
-   named this direction of failure in advance (THEORY §7.2).
+1. **The amount.**
+   - In all six real cases the best portfolio held *more* effective stocks than the
+     theory predicted, by 0.28 of N on average.
+   - A sign test gives p = 0.031, but it was chosen after seeing the data and treats
+     related cases as independent. The holdout gives 4 of 4 non-tied cases, p = 0.125.
+   - We named this direction of failure in advance (THEORY §7.2): stock-specific noise
+     is correlated, so concentration costs more than the theory charges. But the
+     simulation already had sector factors and showed no such bias. The more specific
+     suspect is that real signals load on sectors and on volatility, which the simulated
+     signal did not. **That is a hypothesis, not a finding.**
 2. **Timing.** Using the past 36 months' IC to decide *when* to tilt more did not work.
    Next month's payoff to the signal was unrelated to the ex-ante estimate (calibration
    slope −0.75 in India, uninformative in the US).
 3. **Significance.**
-   - No rule beat 1/N at the 5% level once we controlled for trying twelve rules (SPA
-     p = 0.63 India, 0.81 US).
+   - No rule beat 1/N at the 5% level once we controlled for trying twelve rules.
+     Hansen SPA consistent p = 0.117 (India) and 0.897 (US). These are corrected values;
+     the first version of the test was mis-centred.
    - The simulation had warned that about 300–1,000 months would be needed; we had 124
-     and 191.
+     and 191. That warning is itself optimistic, because the simulated IC was less noisy
+     than the real one (§5).
    - H1, the 1/N puzzle in India, is economically overwhelming but does not reach the
      pre-registered significance test, because the Sharpe ratio of a portfolio with
      exploding leverage is itself extremely noisy.
-4. **The proportional shrinkage rule.** Theory says to act on a fraction t²/(1+t²) of the
-   signal (t = the IC's t-statistic). This did not beat acting on the whole estimate in a
-   way that was statistically detectable. In simulation it was clearly too cautious. In
-   real data it won 4 of 6 cases, but no difference was significant.
+4. **The proportional shrinkage rule.**
+   - Theory says to act on a fraction t²/(1+t²) of the signal (t = the IC's
+     t-statistic). It did not beat acting on the whole estimate in any statistically
+     detectable way.
+   - In the simulation it was clearly too cautious. In real data it won 4 of 6 cases
+     before the holdout and 4 of 6 in the holdout (one tie), but no difference was
+     significant.
 
 **The one-sentence version.** Signal information decides how far to move from 1/N, in the
 direction the thesis predicts, but the textbook formulas overstate how far. Real data
@@ -99,12 +89,17 @@ history is too noisy to time the tilt.
 - Every signal's information disappeared (mean ICs between −0.03 and +0.02), and 1/N won
   in both markets.
 - The entropy rule shrank its information-driven tilt toward zero, as designed. It still
-  lost to 1/N (not significantly), because its unshrunk risk-reduction tilt toward
-  low-volatility stocks lost money.
-- It beat every optimiser that ignores information.
-- Shrinking by the knowledge share beat acting on the full estimate in 5 of 6 holdout
-  cases. **The part of the thesis that survived everything is the threshold: when your
-  information is gone, go back to maximum entropy.**
+  trailed 1/N in all six cases (not significantly), because its unshrunk risk-reduction
+  tilt toward low-volatility stocks lost money.
+- In India it beat every optimiser that ignores information. In the US, the momentum and
+  low-volatility versions roughly matched long-only minimum variance, and the "none"
+  version lost to it.
+- Shrinking by the knowledge share beat acting on the full estimate in 4 of 6 holdout
+  cases (one tie). The holdout is consistent with the threshold idea ("when your
+  information is gone, go back to maximum entropy") only in a limited sense. The
+  information part of the tilt did switch off, but the rule as a whole still trailed
+  1/N. And R1 and R2 differ in more than the threshold, so this comparison cannot isolate
+  it.
 
 ## 2. Why this question
 
@@ -114,9 +109,15 @@ estimate **N** expected returns from **T** months, and the loss grows with N/T. 
 Lizieri & Satchell (2019) show that a forecast with enough skill beats 1/N. Pflug,
 Pichler & Wozabal (2012) show that 1/N is optimal under extreme ambiguity.
 
-What we could not find (LITERATURE.md §3) is a rule that maps a signal's *measured*
-information into a *numeric* optimal effective N, and that tests the number out of sample
-under pre-registration. The entropy penalty itself is not new. Near 1/N it is exactly
+Two parts of our argument are already known:
+- collapsing N unknown means into a few coefficients on a characteristic is Brandt,
+  Santa-Clara & Valkanov's (2009) parametric portfolio policy, and Grinold–Kahn's
+  α = IC·σ·z;
+- the knowledge share t²/(1+t²) is the precision weight of a single Black–Litterman view.
+
+What we could not find (LITERATURE.md §3) is the mapping of that share through the
+maximum-entropy dial into a *numeric* optimal effective N, tested out of sample under
+pre-registration. The entropy penalty itself is not new. Near 1/N it is exactly
 DeMiguel–Garlappi–Nogales–Uppal's (2009) 2-norm constraint: Σwᵢ² = ‖w − 1/N‖² + 1/N
 (THEORY §1). So the contribution can only be the **information-matching rule**.
 
@@ -133,7 +134,9 @@ DeMiguel–Garlappi–Nogales–Uppal's (2009) 2-norm constraint: Σwᵢ² = ‖
 3. **The prediction.** Maximise mean–variance utility along the dial, charging two
    costs: signal-factor risk, and the idiosyncratic risk of concentration, which grows
    like e^{β²}. This gives β\* and so a **number** for the optimal effective N. Example:
-   with IC 0.03, N = 100 and T = 36, about 39–45 of 100 effective stocks.
+   with IC 0.03, N = 100 and T = 36, about 39–45 of 100 effective stocks. That example
+   assumes little true variation in the IC (σ²_ρ ≤ 0.01). The measured σ²_ρ is
+   0.03–0.07, which pushes the prediction toward more diversification.
 
 ## 4. Replication of DeMiguel–Garlappi–Uppal (results/entropy_portfolio/replication.md)
 
@@ -161,6 +164,10 @@ DeMiguel–Garlappi–Nogales–Uppal's (2009) 2-norm constraint: Σwᵢ² = ‖
   (normal) to 490 (fat tails).
 - All of this was recorded (THEORY §8) and fed into the pre-registration **before** any
   real-data run.
+- **Calibration caveat (from the referee).** The simulation's IC noise (σ_ρ = 0.05, an IC
+  sd of about 0.11) is well below the data's (IC sd 0.20–0.28, so σ_ρ ≈ 0.2). Real IC
+  t-statistics are therefore about 2.5× smaller than simulated ones at the same mean IC.
+  The power numbers and the R1-vs-R2 lesson transfer only loosely.
 
 ## 6. Real data, before the holdout
 
@@ -168,7 +175,10 @@ DeMiguel–Garlappi–Nogales–Uppal's (2009) 2-norm constraint: Σwᵢ² = ‖
 - the top 100 stocks by 63-day traded value each month;
 - India: survivorship-free NSE data, evaluation February 2010 – December 2020, 124
   months (the NSE file has no data for July–December 2011; deviation D7);
-- US: point-in-time S&P 500, February 2005 – December 2020, 191 months;
+- US: point-in-time S&P 500 lookup, February 2005 – December 2020, 191 months. **This
+  lookup is survivorship-filtered:** it keeps only members present in the price file
+  (387–496 of 503–515 at year-ends) and lacks LEH, BSC, MER, FNM and FRE, so 2008 is
+  understated;
 - signals: rolling 36-month mean ("none"), 12–1 momentum, low volatility;
 - all real-time rules use only past data;
 - costs: India's statutory charges plus market impact by liquidity tercile; US 10 bp per
@@ -196,12 +206,17 @@ DeMiguel–Garlappi–Nogales–Uppal's (2009) 2-norm constraint: Σwᵢ² = ‖
 How to read this table:
 - **The plug-in Markowitz portfolio is a disaster,** as DGU found for small N; with 100
   stocks it is extreme. Its gross CEQ is −37.4% a month.
-- **Every rule that ignores or shrinks the means beats 1/N before costs.** India
-  2010–2020 rewarded low-risk stocks, and 1/N barely beat the 6.5% risk-free proxy.
+- **Every rule that ignores or shrinks the means beats 1/N before costs, except
+  Tu–Zhou.** India 2010–2020 rewarded low-risk stocks, and 1/N barely beat the 6.5%
+  risk-free proxy.
 - **Costs reorder the field.** Unconstrained minimum variance falls from 0.172 to 0.047
   because it trades 146% of the portfolio a month.
-- **The low-volatility entropy rule had the best net Sharpe ratio and the best net CEQ of
-  all strategies,** at a quarter of minimum variance's turnover.
+- **The low-volatility entropy rules were the best strategies net of costs.** The
+  no-shrinkage R2 version was marginally ahead (net Sharpe 0.145, CEQ 0.387) of R1 (0.143,
+  0.378), at about a third of minimum variance's turnover.
+- **The other two entropy rules did not do well.** R1 "none" and R1 momentum lose to
+  every minimum-variance variant net of costs. Matching a 1/N whose net Sharpe is 0.009
+  is weak evidence of safety.
 
 ### 6.2 United States (net of 10 bp per side)
 
@@ -209,9 +224,13 @@ How to read this table:
 |---|---|---|---|---|---|
 | 1/N | 0.174 | 0.171 | 0.538 | 0.13 | 1.00 |
 | Sample mean–variance | 0.091 | 0.064 | (−13,508) | 328.06 | 0.00 |
+| Sample minimum variance | 0.125 | 0.056 | 0.027 | 2.72 | 0.02 |
 | Min-variance, Ledoit–Wolf | 0.147 | 0.103 | 0.208 | 1.52 | 0.06 |
 | Min-variance, 2-norm (CV) | 0.173 | 0.144 | 0.337 | 0.92 | 0.14 |
 | Min-variance, long-only | 0.143 | 0.131 | 0.295 | 0.40 | 0.11 |
+| Mean–variance, long-only | 0.091 | 0.081 | −0.287 | 0.87 | 0.02 |
+| Kan–Zhou three-fund | 0.081 | 0.060 | (−77.3) | 20.45 | 0.02 |
+| Tu–Zhou | 0.036 | −0.034 | −3.066 | 9.15 | 0.09 |
 | Entropy rule R1, none | 0.176 | 0.170 | 0.552 | 0.29 | 0.78 |
 | Entropy rule R1, momentum | 0.174 | 0.168 | 0.526 | 0.33 | 0.77 |
 | Entropy rule R1, low volatility | 0.187 | 0.181 | 0.476 | 0.21 | 0.42 |
@@ -238,7 +257,9 @@ Low-turnover rules survive realistic costs; minimum variance does not.
 - Economically the case is overwhelming: a CEQ gap of 37 percentage points a month,
   turnover of 1,426.
 - The Sharpe test lacks power because the mean–variance return series is dominated by
-  a few months of exploding leverage. DGU report the same pattern.
+  a few months of exploding leverage. In our replication of DGU on 377 months, by
+  contrast, mean–variance's losses *were* significant in 3 of 4 datasets (JKM p
+  0.00–0.04). Here we have 124 months.
 - *US:* difference −0.083, p = 0.43. Same reading.
 
 **H2: the entropy rule matches or beats 1/N and mean–variance, net of costs.**
@@ -251,16 +272,25 @@ Low-turnover rules survive realistic costs; minimum variance does not.
 - *US:* Sharpe ratios within 0.01 of 1/N (p ≥ 0.80). Net CEQ is at or below 1/N's (0.552,
   0.526 and 0.476 vs 0.538), so by the strict pre-registered CEQ criterion R1 matches 1/N
   for one of three signals.
-- **Verdict: "matches 1/N" holds in India (3 of 3); "beats" is not shown anywhere.** That
-  is what the power analysis predicted.
+- **Verdict.** "Matches 1/N" holds in India (3 of 3), but only in the weak sense that we
+  cannot tell the rule apart from 1/N. "Beats" is not shown anywhere.
+- India low volatility (IC 0.078) is a case where the simulation said about 50 months
+  would suffice, yet p = 0.13. So the null is not just low power; the simulation's IC
+  noise was too small.
 - *Multiple testing:*
-  - Hansen SPA over 12 real-time rules vs 1/N: consistent p = 0.63 (India), 0.81 (US).
-  - PBO over the 33 dial variants: 0.23 in India, a moderate overfitting risk;
-    **0.76 in the US**, where the in-sample best variant usually lands below the median
-    out of sample.
+  - Hansen SPA over 12 real-time rules vs 1/N: consistent p = 0.117 (India), 0.897 (US).
+    These are corrected values; the first version mis-centred the bootstrap and reported
+    0.63 and 0.81.
+  - PBO over the 31 distinct dial variants (the three identical 1/N columns counted
+    once): 0.24 in India, a moderate overfitting risk; **0.78 in the US**, where the
+    in-sample best variant usually lands below the median out of sample.
 
-**H3a: direction.** Spearman correlation between a case's evaluation-period mean IC and
-its best dial level: **−0.89 (p = 0.019)**. **Supported.**
+**H3a: direction (descriptive, as pre-registered).**
+- Spearman correlation between a case's evaluation-period mean IC and its best dial
+  level: **−0.89, exact permutation p = 0.033.**
+- Both axes are ex post, so this is consistent with the thesis but partly mechanical,
+  and it does not use the *ex-ante* IC (which failed in H3d).
+- Within India ρ = −1.0, within the US −0.5; holdout −0.51 (p = 0.33).
 
 | Case | Mean IC | Best N_eff/N (gross CEQ) | 90% bootstrap interval | Full-information prediction |
 |---|---|---|---|---|
@@ -273,11 +303,16 @@ its best dial level: **−0.89 (p = 0.019)**. **Supported.**
 
 **H3b: amount.**
 - **6 of 6 predictions fall inside the 90% intervals, so the pre-registered rule says
-  supported.** But this is weak: the intervals average 0.78 wide on a 0-to-1 scale.
-- The informative fact is the **sign**. In all 6 cases the theory predicts *more
-  concentration* than was best, by 0.28 of N on average (sign test p = 0.031). This is
-  the failure THEORY §7.2 named in advance: correlated residuals make concentration
-  costlier than independent-noise theory charges.
+  supported.** The test has almost no power, though:
+  - the intervals average 0.78 wide on a 0-to-1 scale;
+  - *any* constant prediction between 0.1 and 0.4 would also score 6 of 6.
+- The more informative (but post hoc) fact is the **sign**. In all 6 cases the theory
+  predicts *more concentration* than was best, by 0.28 of N on average. A sign test gives
+  p = 0.031, but it was not pre-registered, the cases are not independent, and the 0.05
+  floor of the dial lets low predictions miss mainly upward. The holdout has 4 of 4
+  non-tied cases (p = 0.125).
+- THEORY §7.2 named this direction in advance (correlated residuals). It remains a
+  hypothesis (§1).
 - For US low volatility, the predicted tilt comes entirely from risk reduction
   (covariance with 1/N), because its IC was negative.
 
@@ -288,17 +323,21 @@ its best dial level: **−0.89 (p = 0.019)**. **Supported.**
     low volatility 0.378 / 0.387 / 0.332;
   - US: none 0.552 / 0.538 / 0.604; momentum 0.526 / 0.408 / 0.417;
     low volatility 0.476 / 0.450 / 0.371.
-- R1 beats R2 in 4 of 6 cases, the reverse of the simulation. In real data signals decay
-  and flip, which is exactly when shrinkage pays. **But no R1–R2 difference is
-  significant** (LW p 0.23–0.91). **Not decided.**
+- R1 beats R2 in 4 of 6 cases, the reverse of the simulation.
+- **No R1–R2 difference is significant** (LW p 0.23–0.91). **Not decided.**
+- Real signals decay and flip, which is when shrinkage pays. But the simulation's lower
+  IC noise (§5) is an equally good explanation of why the simulation favoured R2.
 
 **H3d: calibration.**
 - Pooled over signals, the realised unit-tilt return regressed on the shrunk ex-ante
   forecast gives slope −0.75 (95% CI −1.99 to 0.49) in India and 0.09 (−5.28 to 5.45) in
   the US.
 - **Not supported.** The 36-month IC does not forecast next month's signal payoff.
-- The ex-ante information measure is good at telling signals apart (H3a) but useless for
-  timing a given signal.
+- The ex-ante information measure is useless for timing a given signal. (H3a uses ex-post
+  ICs, so it says nothing either way about the ex-ante measure.)
+- Caveat: the pooled regression stacks the three signals and uses Newey–West errors
+  without clustering by month. In the US holdout, ĉ is zero in every momentum and
+  low-volatility month, so that slope rests on about 7 nonzero points.
 
 ## 7. Holdout (2021–2025): run once, unchanged
 
@@ -319,24 +358,30 @@ vanishes.
 | India | **0.248** | 0.169 | 0.193 | 0.106 | −0.128 | −0.014 | −0.093 |
 | US | **0.150** | 0.026 | 0.094 | 0.097 | 0.095 | 0.019 | −0.318 |
 
-1. **1/N won in both markets.** The entropy rules lost to it, though no difference is
-   significant (LW p 0.13–0.58), and they beat every optimiser that ignores information
-   (minimum variance in all forms, mean–variance, Kan–Zhou).
+1. **1/N won in both markets.**
+   - The entropy rules lost to it, though no difference is significant (LW p 0.13–0.58).
+   - In India they beat every optimiser that ignores information.
+   - In the US, R1 momentum and low volatility (0.094, 0.097) roughly matched long-only
+     minimum variance (0.095), and R1 "none" (0.026) lost to it.
 2. **The rule did move toward 1/N, but not all the way.** The knowledge share averaged
-   only 0.04–0.12, so the *information* part of the tilt switched off as theory says.
+   only 0.00–0.12, so the *information* part of the tilt switched off as theory says.
    What kept the portfolios at 32–82% of N was the **covariance (risk-reduction) term**,
    which the theory does not shrink. That tilt is the low-volatility exposure, and it
    lost money in 2021–2025. Not shrinking covariances turned out to be the costly
    assumption.
-3. **Shrinkage paid when information died.** R1 (shrink by the knowledge share) beat R2
-   (act on the whole estimate) in 5 of 6 holdout cases, e.g. India momentum 0.731 vs
-   0.440 net CEQ and US low volatility 0.187 vs 0.070 (p = 0.051). This is the opposite
-   of the simulation, where the signal never died. **The threshold half of the thesis
-   ("with no information, hold 1/N") is what earned its keep.**
+3. **Shrinkage helped when information died.**
+   - R1 (shrink by the knowledge share) beat R2 (act on the whole estimate) in 4 of 6
+     holdout cases, with one tie: for example India momentum 0.731 vs 0.440 net CEQ, and
+     US low volatility 0.187 vs 0.070 (p = 0.051).
+   - None is significant at 5%.
+   - R1 still trailed 1/N, so this supports "shrink when the signal is weak" over "act
+     on the full estimate". It does not show that the rule is a good strategy.
 4. **H3 in the holdout:**
-   - the direction has the same sign but is not significant (Spearman −0.51, p = 0.30);
+   - the direction has the same sign but is not significant (Spearman −0.51, exact
+     p = 0.33);
    - 4 of 6 predictions fall inside the intervals;
-   - the theory again never predicted *less* concentration than was best.
+   - the theory again never predicted *less* concentration than was best: 4 of 4
+     non-tied cases, post hoc p = 0.125.
    - Calibration (H3d) turned significantly **negative** (India slope −3.93, US −8.25):
      a signal that had worked over the past 36 months tended to fail next. The ex-ante
      IC is not a timing tool.
@@ -350,12 +395,12 @@ vanishes.
 | DGU replicated | Yes: 8 of 10 within pre-set tolerance; the misses are explained by data revisions |
 | Theory recovers known truth (simulation) | Yes for the structure; the shrinkage factor is too cautious |
 | H1, 1/N puzzle in India | Economically yes; the pre-registered Sharpe test is not significant (p = 0.33) |
-| H2, entropy rule matches 1/N net of costs | Yes in India (3 of 3); US within 0.01 Sharpe; never significantly better |
-| H3a, more information → fewer effective stocks | Yes (ρ = −0.89, p = 0.019) |
-| H3b, the predicted amount | Inside the intervals 6 of 6, but biased toward over-concentration in 6 of 6 (p = 0.031) |
+| H2, entropy rule matches 1/N net of costs | Not distinguishable from 1/N in India (3 of 3) or the US; never significantly better (SPA p 0.117 / 0.897) |
+| H3a, more information → fewer effective stocks | Consistent, descriptive and ex post (ρ = −0.89, exact p = 0.033; holdout −0.51) |
+| H3b, the predicted amount | Inside the intervals 6 of 6, but the test has no power; post hoc: over-concentrated in 6 of 6 |
 | H3c, the shrinkage rule | Undecided |
 | H3d, timing by the ex-ante IC | No (significantly negative in the holdout) |
-| Holdout 2021–2025 | Signals lost their information; 1/N won; the entropy rules beat all information-free optimisers; shrinkage beat no shrinkage in 5 of 6 cases |
+| Holdout 2021–2025 | Signals lost their information; 1/N won; the entropy rules trailed 1/N in 6 of 6 (not significant); shrinkage beat no shrinkage in 4 of 6 (one tie) |
 
 ## 9. Limitations
 
@@ -375,9 +420,23 @@ vanishes.
 5. **Model misspecification.** Independent residuals, a stationary IC within 36 months,
    and a linear shrinkage applied through a nonlinear dial. The first is the likely
    source of the H3b bias.
-6. **Data fixes, logged before results were read:**
-   - D7: the July–December 2011 NSE gap;
-   - D8: data-error returns in the raw US file.
+6. **Data fixes.**
+   - D7 (the July–December 2011 NSE gap) was found from the evaluation-month count,
+     before any India result was read.
+   - D8 (data-error returns in the raw US file) was triggered by an impossible result
+     (US 1/N CEQ −267% a month), and its thresholds were set afterwards.
+   - Earlier runs were not archived.
+7. **Universe and plumbing:**
+   - the US membership lookup is survivorship-filtered (§6);
+   - month-end closes were forward-filled for all stocks, not only across the NSE gap.
+     The referee counts 82 India and 4 US stock-months admitted without a close on the last trading
+     day, against the pre-registration;
+   - the baselines fill missing daily returns with zero, which slightly understates
+     variance;
+   - there is no India cost-sensitivity case.
+8. **The simulation's IC noise is about 4× too small** (§5).
+9. **A risk term left unshrunk.** The rule shrinks the signal's mean but not its
+   36-month covariance with 1/N. That unshrunk term drove the holdout loss (THEORY §9).
 
 ## 10. Reproduce
 
@@ -398,5 +457,12 @@ python scripts/ep_h3_extra.py holdout
 python scripts/ep_traceability.py
 ```
 
-All seeds are fixed. The French CSVs download automatically. The NSE and US price files
+All seeds are fixed. The French CSVs download automatically.
+
+**Provenance.**
+- `real/summary.json` records commit `6346a96`. It was actually produced by that commit
+  plus the D7/D8 edits, which were committed in `1b71fe9` right after the run.
+- The holdout's recorded commit `6ac9821` is exact.
+- `scripts/ep_postfix.py` recomputes SPA, PBO, H3a and H3b from the saved return files.
+  It re-runs no portfolio. The NSE and US price files
 are local (`data_processed/`), not in the public repository.

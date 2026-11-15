@@ -67,9 +67,10 @@
   0.1974,
   0.6036
  ],
- "H3b_gap_mean": 0.2566412798352782,
- "H3b_gap_positive": 6,
- "H3b_sign_test_p": 0.03125,
+ "H3b_gap_mean": 0.25664127983527774,
+ "H3b_gap_positive": 4,
+ "H3b_gap_ties": 2,
+ "H3b_sign_test_p_excl_ties_posthoc": 0.125,
  "H3b_interval_width_mean": 0.575,
  "us_cost_sensitivity_net_sharpe": {
   "1/N": {

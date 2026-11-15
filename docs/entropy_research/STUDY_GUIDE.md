@@ -760,11 +760,18 @@ number?
 2. **Amount: theory overshoots.** In 6 of 6 cases the best portfolio was *more*
    diversified than predicted. Stock-specific risks are not independent; sectors move
    together.
-3. **Safety: yes.** The rule never lost significantly to 1/N, and it beat every
-   optimiser that ignores information.
-4. **Holdout (2021–2025): the signals died and 1/N won.** Shrinking by your knowledge
-   share beat acting on the full estimate in 5 of 6 cases.
-5. **The surviving thesis: with no information, go back to maximum entropy.**
+3. **Safety: weak.** The rule never lost significantly to 1/N, but it could not be told
+   apart from it either. Two of the three Indian versions lost to every
+   minimum-variance variant.
+4. **Holdout (2021–2025): the signals died and 1/N won.**
+   - The rules trailed 1/N in all six cases (not significantly).
+   - Shrinking by your knowledge share beat acting on the full estimate in 4 of 6 cases
+     (one tie).
+5. **What survives:** with no information, go back toward maximum entropy. But a
+   risk-reduction tilt that is not shrunk can still cost you.
+6. **A referee found mistakes, and they are fixed.** The SPA p-values are now 0.117
+   (India) and 0.897 (US). Several claims were softened. The "one unknown" idea was
+   already in Brandt, Santa-Clara & Valkanov (2009).
 
 ### 10.2 Ideas you must own
 
@@ -801,7 +808,7 @@ number?
 | "Is H1 the 1/N puzzle in India?" | "Economically overwhelming, but the pre-registered Sharpe test is p = 0.33, because the Sharpe ratio of an exploding-leverage portfolio is itself noise." |
 | "Why does theory over-concentrate?" | "It charges idiosyncratic risk as if independent across stocks. Sector co-movement makes concentration costlier. I named that failure direction before seeing the data." |
 | "What happened in 2021–2025?" | "The signals' ICs went to about zero. The rule switched off its information tilt, but its risk-reduction tilt toward low volatility stayed on and lost. Next step: shrink covariances too." |
-| "What's new vs Kan–Zhou or Tu–Zhou?" | "They shrink a plug-in estimate of N means. I show a signal collapses that to one unknown, give a numeric effective-N prediction from IC, N and T, and test it pre-registered with a holdout." |
+| "What's new vs Kan–Zhou or Tu–Zhou?" | "Collapsing N means into one coefficient is already Brandt, Santa-Clara & Valkanov 2009. What's mine is mapping the knowledge share through the maximum-entropy dial into a numeric effective N, and testing it pre-registered with a holdout. The direction held; the amount and the timing did not." |
 
 ### 10.4 Questions a professor will ask
 
@@ -810,10 +817,11 @@ number?
 2. *"Isn't picking the best dial level in-sample?"* Yes. That is why the curves are
    labelled diagnostics; only the pre-registered real-time rules (R1, R2, R3) are
    evaluated.
-3. *"How did you handle multiple testing?"* Hansen's SPA over 12 rules (p 0.63 India,
-   0.81 US) and PBO over 33 dial variants (0.23 India, 0.76 US).
-4. *"What changed after you saw data?"* Only the logged deviations D7 (the NSE 2011 gap)
-   and D8 (US price errors), both data fixes made before results were interpreted. R2 was
+3. *"How did you handle multiple testing?"* Hansen's SPA over 12 rules (p 0.117 India,
+   0.897 US, after fixing a centring bug the referee caught) and PBO over 31 dial
+   variants (0.24 India, 0.78 US).
+4. *"What changed after you saw data?"* The logged deviations D7 (the NSE 2011 gap) and
+   D8 (US price errors). Be honest that D8 was triggered by an impossible result. R2 was
    added after the *simulation*, before any real data.
 5. *"Your risk-free rate for India?"* A constant 6.5% proxy, because the RBI fetch failed.
    It cancels in CEQ differences between strategies.

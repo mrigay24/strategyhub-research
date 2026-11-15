@@ -22,6 +22,7 @@ am = np.array([c["argmax"] for c in cases])
 pr = np.array([c["pred"] for c in cases])
 rho, p = stats.spearmanr(ic, am)
 gap = am - pr
+gap = np.where(np.abs(gap) < 1e-9, 0.0, gap)  # floating-point ties are ties (referee minor)
 out = {
     "cases": cases,
     "H3a_spearman_ic_vs_argmax": float(rho), "H3a_p_two_sided": float(p),
@@ -30,7 +31,9 @@ out = {
     "H3b_gap_argmax_minus_pred": gap.round(4).tolist(),
     "H3b_gap_mean": float(gap.mean()),
     "H3b_gap_positive": int((gap > 0).sum()),
-    "H3b_sign_test_p": float(stats.binomtest(int((gap > 0).sum()), len(gap)).pvalue),
+    "H3b_gap_ties": int((gap == 0).sum()),
+    "H3b_sign_test_p_excl_ties_posthoc": float(stats.binomtest(
+        int((gap > 0).sum()), int((gap != 0).sum())).pvalue) if (gap != 0).any() else None,
     "H3b_interval_width_mean": float(np.mean([c["hi"] - c["lo"] for c in cases])),
 }
 if "us" in S:

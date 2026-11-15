@@ -2318,3 +2318,12 @@ Findings · Scorecard · L/S Portfolio · Factor Rotation · Live Signals · Ind
   report, KB §46, and STUDY_GUIDE Part 10.
 - **Not pushed:** the auto-mode classifier blocked `git push` to the public repo. Mrigay
   to approve.
+- **2026-11-14, paper 3 revised after the referee report** (`REFEREE_RESPONSE.md`).
+  - Fixed: the SPA bug (corrected p 0.117 India, 0.897 US), the overclaims (holdout
+    R1 > R2 is 4 of 6 with one tie; the US holdout did not beat the information-free
+    optimisers), the H3a framing (descriptive, exact p 0.033) and the H3b sign test
+    (post hoc; holdout tie bug).
+  - Disclosed: the US lookup is survivorship-filtered, and the simulation's IC noise is
+    too small.
+  - Novelty narrowed: cites Brandt, Santa-Clara & Valkanov 2009.
+  - Traceability 159/159.

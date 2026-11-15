@@ -29,9 +29,15 @@ wᵢ ∝ exp(βzᵢ) (Jaynes 1957). Maximising mean–variance utility along it,
 cost of concentration, gives a predicted optimal effective N for any (IC, N, T). Example:
 about 40 of 100 stocks at IC 0.03.
 
-Near 1/N the entropy penalty is the same thing as the DeMiguel, Garlappi, Nogales & Uppal
-(2009) 2-norm constraint, because Σw² = ‖w − 1/N‖² + 1/N. So the contribution is the
-*information-matching rule*, not the penalty.
+Two caveats on novelty:
+- Near 1/N the entropy penalty is the same thing as the DeMiguel, Garlappi, Nogales &
+  Uppal (2009) 2-norm constraint, because Σw² = ‖w − 1/N‖² + 1/N.
+- The "one unknown" step is the reduction behind Brandt, Santa-Clara & Valkanov's (2009)
+  parametric portfolio policies, and t²/(1+t²) is the weight on a single Black–Litterman
+  view.
+
+So the contribution is narrow: mapping the knowledge share through the entropy dial into
+a numeric effective N, and testing it under pre-registration.
 
 ## What I have done
 
@@ -43,7 +49,8 @@ All steps were pre-registered before any real data were touched.
    - but the Kan–Zhou shrinkage is too cautious on the concave entropy dial;
    - about 300–1,000 months are needed for a significant win over 1/N.
 3. **Tested on real data:** survivorship-free NSE data (top 100 stocks, 2010–2020) and
-   the point-in-time S&P 500 (2005–2020), with three textbook signals, Indian statutory
+   S&P 500 members (2005–2020; the US membership list is survivorship-filtered, a known
+   weakness), with three textbook signals, Indian statutory
    costs, multiple-testing control (Hansen SPA, PBO), and a holdout (2021–2025) run once.
 
 ![Figure 1](fig1_india_1N_vs_optimisation.png)
@@ -52,9 +59,10 @@ All steps were pre-registered before any real data were touched.
 - Plug-in Markowitz on 100 stocks fails badly: turnover 1,426 times capital a month.
 - Optimisers that ignore expected returns beat 1/N before costs, and lose much of that
   edge after costs.
-- The pre-registered entropy rule with a low-volatility signal had the best net Sharpe
-  ratio (0.143 a month, about 0.50 a year) and the best net certainty equivalent of all
-  strategies. Its edge over 1/N is not statistically significant (p = 0.13).
+- The pre-registered entropy rule with a low-volatility signal was among the best net of
+  costs: Sharpe 0.143 a month, about 0.50 a year. Only its no-shrinkage variant was
+  marginally ahead. Its edge over 1/N is not statistically significant (p = 0.13).
+- The other two signals' entropy rules lost to every minimum-variance variant.
 
 ![Figure 2](fig2_entropy_frontier.png)
 
@@ -62,27 +70,33 @@ All steps were pre-registered before any real data were touched.
 entropy dial, from equal weight (left) to concentrated (right), for each signal.
 - Circles mark the best level, chosen *ex post*; this is a diagnostic, not a strategy.
   Triangles mark the theory's full-information optimum.
-- **Across the six cases, more information meant fewer effective stocks** (Spearman
-  −0.89, p = 0.019).
-- **But in all six the best portfolio was less concentrated than theory predicts** (by
-  0.28 of N on average, p = 0.031). The theory treats stock-specific risk as independent;
-  sectors make concentration costlier.
+- **Across the six cases, a higher IC went with fewer effective stocks** (Spearman −0.89,
+  exact p = 0.033). Both are measured after the fact, so this is descriptive.
+- **In all six the best portfolio was less concentrated than theory predicts**, by 0.28
+  of N on average. A sign test gives p = 0.031, but it was chosen after seeing the data.
+- My leading suspect is that real signals load on sectors and volatility, which the
+  theory's independent-noise model does not charge for.
 
 ## Main findings so far
 
 - **What held:**
-  - information sets the *direction* of the optimal departure from 1/N;
-  - the pre-registered rule never did significantly worse than 1/N and beat every
-    information-free optimiser.
+  - information goes with the *direction* of the optimal departure from 1/N (ex post,
+    descriptive);
+  - the pre-registered rule was never significantly worse than 1/N, though it could not
+    be told apart from it either;
+  - plug-in Markowitz failed badly.
 - **What failed:**
   - the predicted *amount* is biased toward too much concentration;
   - a 36-month IC history cannot time a signal; in the holdout it pointed the wrong way;
   - no rule beat 1/N significantly after multiple-testing control. The simulation said
     this needs far more than 124–191 months.
-- **What survived the 2021–2025 holdout:** the signals' information vanished, 1/N won,
-  and shrinking by the knowledge share beat acting on the full estimate in 5 of 6 cases.
-  The threshold half of the thesis ("with no information, go back to maximum entropy")
-  is the robust part.
+- **The 2021–2025 holdout:**
+  - the signals' information vanished and 1/N won;
+  - the entropy rules trailed it in all six cases (not significantly);
+  - shrinking by the knowledge share beat acting on the full estimate in 4 of 6 (one
+    tie);
+  - the information tilt switched off as designed, but an unshrunk risk-reduction tilt
+    cost money.
 
 ## Proposed next steps (a semester)
 
@@ -92,8 +106,11 @@ entropy dial, from equal weight (left) to concentrated (right), for each signal.
 2. **Shrink covariances too.** In the holdout the unshrunk risk-reduction tilt (toward
    low volatility) lost money, and treating covariances as known was the costly
    assumption.
-3. **Gain power.** Extend India back with BSE data, add more markets, and use
-   cross-market pooling, since a significant result needs hundreds more months.
+3. **Gain power and fix the data.**
+   - Extend India back with BSE data, add more markets and pool across markets.
+   - Recalibrate the simulation to the measured IC noise, which is about 4× the
+     simulated σ_ρ.
+   - Rebuild the US universe from full constituent histories with delisting returns.
 
 ## The question for you
 

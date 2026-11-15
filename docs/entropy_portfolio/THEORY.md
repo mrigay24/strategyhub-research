@@ -300,3 +300,31 @@ this theory separately.
      which is best.
    - **The theory is not changed after seeing real data.** These are the predictions as
      they stand when the pre-registration is committed.
+
+## 9. Assumptions the referee asked us to state (added 14 Nov 2026)
+
+6. **"N unknowns become one" is an assumption, not a theorem.** It holds if expected
+   returns are proportional to the score (μ ∝ z). This is the same reduction as Grinold's
+   α = IC·σ·z and Brandt, Santa-Clara & Valkanov's (2009) parametric portfolio policies.
+   - The real-time rule also estimates σ²_ρ, σ_ef and D̄ from the same 36 months, and
+     shrinks only the mean μ_f.
+   - Chopra–Ziemba's ranking (means matter about 10× more than variances) does not
+     justify leaving a 36-month *factor covariance* σ_ef unshrunk. In the 2021–2025
+     holdout, that unshrunk term is what lost money.
+7. **Riskless asset vs fully invested.**
+   - Kan–Zhou's c\* and Tu–Zhou's δ\* are derived with a riskless asset.
+   - Our baselines and the dial are fully invested (relative weights). That setting is the
+     one in Kan, Wang & Zhou (2016), so c\* ≈ 0 for 100 stocks is a guide to the plug-in
+     baseline's behaviour, not an exact prediction for it.
+8. **Equation (5.1)** assumes homoskedastic, uncorrelated residuals and a linear E[r | z].
+   For a low-volatility score, homoskedasticity fails by construction: low-score stocks
+   are the volatile ones.
+9. **What the slogan really says.**
+   - For small tilts the entropy *given up* scales with c², not with the ignorance share
+     1 − c.
+   - "Hold as much entropy as you have ignorance" is therefore exact only for the
+     *position*: the portfolio sits a fraction 1 − c of the way back to 1/N. In entropy
+     units it is a monotone relationship, not a proportional one.
+10. **Pearson vs Spearman.** Equation (3.1) is a Pearson covariance. The rule measures
+    information with a Spearman (rank) IC, as the brief asked. With normal scores the two
+    are close but not identical.

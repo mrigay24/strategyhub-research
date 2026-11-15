@@ -5073,19 +5073,22 @@ RFS table is paywalled, so we matched the authors' 2006 working paper and Kan–
 2005–2020, 191 months. Signals: none, momentum, low volatility.
 - **H1.** In India plug-in mean–variance fails economically (CEQ −37%/month, turnover
   1,426), but the Sharpe test is not significant (p = 0.33).
-- **H2.** The entropy rule matches 1/N net of costs (India 3 of 3) and never wins
-  significantly (SPA p 0.63 India, 0.81 US).
-- **H3a.** More IC means a lower best N_eff (Spearman −0.89, p = 0.019).
-- **H3b.** The predictions sit inside the wide intervals in 6 of 6 cases, but theory is
-  over-concentrated in 6 of 6 (+0.28 N, p = 0.031). Correlated residuals are the stated
-  suspect.
+- **H2.** The entropy rule cannot be told apart from 1/N net of costs and never wins
+  significantly. Corrected SPA p 0.117 (India) and 0.897 (US); the first SPA version was
+  mis-centred.
+- **H3a.** Higher ex-post IC goes with a lower best N_eff (Spearman −0.89, exact
+  p = 0.033). This is descriptive and partly mechanical.
+- **H3b.** The predictions sit inside the intervals in 6 of 6 cases, but the test has no
+  power. Post hoc: theory is over-concentrated in 6 of 6 (+0.28 N). Correlated
+  residuals and the signals' sector loadings are the suspects.
 - **H3c.** Shrink vs no shrink is undecided.
 - **H3d.** Timing by the 36-month IC fails.
 
 **Holdout 2021–2025 (run once).**
 - The signals lost their information and 1/N won.
-- The rules beat all information-free optimisers.
-- R1 beat R2 in 5 of 6 cases.
+- The rules trailed 1/N in 6 of 6 (not significantly). In India they beat all
+  information-free optimisers; in the US they did not.
+- R1 beat R2 in 4 of 6 cases, with one tie.
 - The unshrunk covariance (low-vol) tilt was the costly assumption.
 
 **Lessons:**
@@ -5095,5 +5098,13 @@ RFS table is paywalled, so we matched the authors' 2006 working paper and Kan–
    +100% or below −90% as missing (D8).
 3. Single-thread BLAS (`OMP_NUM_THREADS=1`) makes the 100×100 baselines about 40× faster.
 
-Deliverables: NOTE (traceability 150/150), PROPOSAL (2 figures), REFEREE_REPORT, and
+Deliverables: NOTE, PROPOSAL (2 figures), REFEREE_REPORT, REFEREE_RESPONSE, and
 STUDY_GUIDE Part 10.
+
+**Referee (14 Nov): major revision.** It found:
+- an SPA bug, now fixed;
+- overclaims, now corrected;
+- that the US lookup keeps only members present in the price file (LEH, BSC, MER, FNM and
+  FRE are missing);
+- that the simulation's IC noise is too small;
+- that Brandt, Santa-Clara & Valkanov (2009) anticipate the "N unknowns become one" step.
